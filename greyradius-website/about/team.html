@@ -4,23 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Team — GreyRadius Consulting</title>
-  <meta name="description" content="Four partners. One method. Every engagement led by a partner from day one.">
-  <link rel="canonical" href="https://greyradius.com/about/team.html">
+  <meta name="description" content="Meet the GreyRadius Consulting team — 5 partners and 10 senior advisors across India, UAE, Singapore and Belgium.">
+  <link rel="canonical" href="https://greyradius.com/about/team/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <style>
     .team-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2.5rem; }
     .team-card { border:1px solid var(--color-border); border-radius:var(--radius-lg); overflow:hidden; background:#fff; transition:var(--transition-med); }
     .team-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-card-hover); }
-    .team-card__photo { height:280px; background:var(--color-off-white); display:flex; align-items:center; justify-content:center; }
+    .team-card__photo { height:260px; background:linear-gradient(135deg,#1F3864 0%,#0F1F3F 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+    .team-card__initials { width:110px; height:110px; border-radius:50%; background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:#fff; letter-spacing:-0.02em; }
     .team-card__body { padding:2rem; }
-    .team-card__name { font-size:1.375rem; font-weight:700; color:var(--color-navy); margin-bottom:0.25rem; }
-    .team-card__role { font-size:var(--text-small); color:var(--color-orange); font-weight:600; margin-bottom:1rem; }
+    .team-card__name { font-size:1.375rem; font-weight:700; color:var(--color-navy); margin-bottom:0.2rem; }
+    .team-card__role { font-size:0.8125rem; color:var(--color-orange); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:1rem; }
     .team-card__bio { font-size:var(--text-small); color:var(--color-text-muted); line-height:1.75; }
-    .team-card__location { display:inline-flex; align-items:center; gap:0.375rem; font-size:0.8125rem; color:var(--color-steel-blue); font-weight:500; margin-top:0.875rem; }
-    @media(max-width:768px){ .team-grid { grid-template-columns:1fr; } }
+    .team-card__meta { margin-top:1.25rem; display:flex; flex-direction:column; gap:0.5rem; }
+    .team-card__meta-row { display:flex; align-items:center; gap:0.5rem; font-size:0.8125rem; color:var(--color-steel-blue); font-weight:500; }
+    .team-card__meta-row a { color:var(--color-navy); font-weight:600; text-decoration:none; }
+    .team-card__meta-row a:hover { color:var(--color-orange); }
+    .advisor-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1.25rem; }
+    .advisor-card { padding:1.5rem 1rem; border:1px solid var(--color-border); border-radius:var(--radius-md); background:#fff; text-align:center; transition:var(--transition-fast); }
+    .advisor-card:hover { border-color:var(--color-orange); transform:translateY(-2px); box-shadow:var(--shadow-card); }
+    .advisor-card__avatar { width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,rgba(31,56,100,0.15) 0%,rgba(31,56,100,0.08) 100%); margin:0 auto 0.75rem; display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--color-navy); font-size:0.875rem; font-family:var(--font-display); }
+    .advisor-card__name { font-size:0.8125rem; font-weight:700; color:var(--color-navy); margin-bottom:0.25rem; }
+    .advisor-card__spec { font-size:0.75rem; color:var(--color-orange); font-weight:600; }
+    .stat-band { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--color-border); border:1px solid var(--color-border); border-radius:var(--radius-md); overflow:hidden; margin-top:3rem; }
+    .stat-band__cell { background:#fff; padding:2rem 1.5rem; text-align:center; }
+    .stat-band__num { font-family:var(--font-display); font-size:2.25rem; font-weight:800; color:var(--color-navy); }
+    .stat-band__label { font-size:0.8125rem; color:var(--color-text-muted); margin-top:0.25rem; }
+    @media(max-width:900px){ .team-grid{grid-template-columns:1fr;} .advisor-grid{grid-template-columns:repeat(2,1fr);} .stat-band{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:480px){ .advisor-grid{grid-template-columns:1fr;} .stat-band{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
@@ -31,6 +46,7 @@
     <a href="/" class="nav-logo"><img src="../assets/images/logo-light.svg" alt="GreyRadius Consulting" class="nav-logo--light" width="160" height="38"><img src="../assets/images/logo-dark.svg" alt="GreyRadius Consulting" class="nav-logo--dark" width="160" height="38" style="display:none;"></a>
     <div class="nav-center">
       <div class="nav-dropdown"><a href="../services/" class="nav-link">Services ▾</a><div class="nav-dropdown__menu"><a href="../services/opportunity-assessment.html" class="nav-dropdown__item">Opportunity Assessment</a><a href="../services/feasibility-and-tev.html" class="nav-dropdown__item">Feasibility &amp; TEV</a><a href="../services/market-entry-execution.html" class="nav-dropdown__item">Market Entry Execution</a><a href="../services/gtm-execution-as-a-service.html" class="nav-dropdown__item">GTM Execution-as-a-Service</a><a href="../services/pitchbook-and-fundraising.html" class="nav-dropdown__item">Pitchbook &amp; Fundraising</a><a href="../services/ai-consulting-and-transformation.html" class="nav-dropdown__item">AI Consulting</a></div></div>
+      <div class="nav-dropdown"><a href="../industries/" class="nav-link">Industries ▾</a><div class="nav-dropdown__menu"><a href="../industries/technology.html" class="nav-dropdown__item">Technology</a><a href="../industries/bfsi.html" class="nav-dropdown__item">BFSI</a><a href="../industries/energy-and-chemicals.html" class="nav-dropdown__item">Energy &amp; Chemicals</a><a href="../industries/cpg-fmcg-retail.html" class="nav-dropdown__item">CPG / FMCG / Retail</a><a href="../industries/healthcare-and-life-sciences.html" class="nav-dropdown__item">Healthcare &amp; Life Sciences</a><a href="../industries/investment-banks-and-pe.html" class="nav-dropdown__item">IB &amp; PE</a></div></div>
       <a href="../case-studies/" class="nav-link">Case Studies</a>
       <a href="../insights/" class="nav-link">Insights</a>
       <div class="nav-dropdown"><a href="index.html" class="nav-link">About ▾</a><div class="nav-dropdown__menu"><a href="index.html" class="nav-dropdown__item">About GreyRadius</a><a href="team.html" class="nav-dropdown__item">The Team</a><a href="method.html" class="nav-dropdown__item">The GR Method</a><a href="why-greyradius.html" class="nav-dropdown__item">Why GreyRadius</a></div></div>
@@ -39,7 +55,7 @@
     <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu-overlay"></div>
-  <nav class="mobile-menu"><button class="mobile-menu__close" aria-label="Close menu">&times;</button><div class="mobile-menu__nav"><a href="../services/" class="mobile-menu__item">Services</a><a href="../case-studies/" class="mobile-menu__item">Case Studies</a><a href="../insights/" class="mobile-menu__item">Insights</a><a href="index.html" class="mobile-menu__item">About</a><a href="../contact.html" class="mobile-menu__item">Contact</a><div style="margin-top:1.5rem;"><a href="../contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book a 30-min call</a></div></div></nav>
+  <nav class="mobile-menu" aria-label="Mobile navigation"><button class="mobile-menu__close" aria-label="Close">&times;</button><div class="mobile-menu__nav"><a href="../services/" class="mobile-menu__item">Services</a><a href="../industries/" class="mobile-menu__item">Industries</a><a href="../case-studies/" class="mobile-menu__item">Case Studies</a><a href="../insights/" class="mobile-menu__item">Insights</a><a href="index.html" class="mobile-menu__item">About</a><a href="../contact.html" class="mobile-menu__item">Contact</a><div style="margin-top:1.5rem;"><a href="../contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book a 30-min call</a></div></div></nav>
 </header>
 
 <main id="main">
@@ -48,151 +64,235 @@
   <div class="container" style="padding-top:9rem;padding-bottom:4rem;position:relative;z-index:1;">
     <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href="/">Home</a></li><li class="breadcrumb__sep">›</li><li><a href="index.html">About</a></li><li class="breadcrumb__sep">›</li><li aria-current="page">Team</li></ol></nav>
     <div style="max-width:660px;">
-      <p class="hero-block__eyebrow">The Partners</p>
-      <h1 class="hero-block__heading" id="team-heading">Four partners.<br>One method.</h1>
-      <p class="hero-block__sub">Every engagement has a partner's name on it. Not a team number. A person you can call.</p>
+      <p class="hero-block__eyebrow">Our People</p>
+      <h1 class="hero-block__heading" id="team-heading">Experienced team.<br>Execution focused.</h1>
+      <p class="hero-block__sub">20+ years average experience. Every engagement is led by a senior leader — not delegated to a team number. A person you can call.</p>
     </div>
   </div>
 </section>
 
-<section class="bg-white section-padding" aria-label="Partner team">
+<!-- CORE TEAM STATS -->
+<section class="bg-white" style="padding:1.5rem 0 0;" aria-label="Team statistics">
   <div class="container">
+    <div class="stat-band">
+      <div class="stat-band__cell"><div class="stat-band__num">20+</div><div class="stat-band__label">Years avg. experience</div></div>
+      <div class="stat-band__cell"><div class="stat-band__num">120+</div><div class="stat-band__label">Projects delivered</div></div>
+      <div class="stat-band__cell"><div class="stat-band__num">4</div><div class="stat-band__label">Office locations</div></div>
+      <div class="stat-band__cell"><div class="stat-band__num">15+</div><div class="stat-band__label">Senior advisors &amp; experts</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE TEAM -->
+<section class="bg-white section-padding" aria-labelledby="core-team-heading">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-heading__eyebrow">Core Team</span>
+      <h2 class="section-heading__title" id="core-team-heading">The leadership team.</h2>
+      <p class="section-heading__sub">Our partners and practice leads bring deep domain expertise across strategy, research, execution, and client success.</p>
+    </div>
     <div class="team-grid">
-      <!-- Chirag -->
+
+      <!-- Chirag Bansal -->
       <article class="team-card reveal">
-        <div class="team-card__photo" aria-label="Photo placeholder for Chirag Bansal — to be replaced with real headshot">
-          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" width="200" height="200" aria-hidden="true">
-            <circle cx="140" cy="110" r="65" fill="rgba(31,56,100,0.12)"/>
-            <ellipse cx="140" cy="230" rx="90" ry="55" fill="rgba(31,56,100,0.08)"/>
-            <text x="140" y="125" text-anchor="middle" font-family="Inter Tight,Inter,sans-serif" font-size="48" font-weight="800" fill="rgba(31,56,100,0.25)">CB</text>
-          </svg>
+        <div class="team-card__photo">
+          <div class="team-card__initials">CB</div>
         </div>
         <div class="team-card__body">
           <h2 class="team-card__name">Chirag Bansal</h2>
-          <p class="team-card__role">Co-founder &amp; Managing Partner</p>
-          <p class="team-card__bio">Chirag founded GreyRadius in 2017 after a decade in strategy consulting across India and the GCC. He leads market entry, GTM execution, and government advisory mandates. His primary research programme has generated 15,000+ interviews across 25 industries.</p>
-          <p class="team-card__bio" style="margin-top:0.875rem;">Chirag is based in Dubai and personally leads every GCC-market engagement.</p>
-          <p class="team-card__location">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Dubai, UAE
-          </p>
+          <p class="team-card__role">Chief Executive Officer &amp; Managing Partner</p>
+          <p class="team-card__bio">Chirag has over 17 years of experience in the business consulting &amp; advisory domain. He has successfully executed over 120 projects across different industries globally, primarily in the Middle East. He has worked with government and corporate clients helping organisations with their market &amp; customer intelligence studies. He leads market entry, GTM execution, and government advisory mandates for GreyRadius.</p>
+          <div class="team-card__meta">
+            <div class="team-card__meta-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Dubai, UAE
+            </div>
+            <div class="team-card__meta-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:chiragbansal@greyradius.com">chiragbansal@greyradius.com</a>
+            </div>
+            <div class="team-card__meta-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 5a2 2 0 0 1 1.95-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.72-.72a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 18z"/></svg>
+              <a href="tel:+971521584200">+971 521 584 200</a> &nbsp;·&nbsp; <a href="tel:+919999228828">+91 99992 28828</a>
+            </div>
+          </div>
         </div>
       </article>
 
-      <!-- Anshuman -->
+      <!-- Anshuman Kumar -->
       <article class="team-card reveal reveal-delay-1">
-        <div class="team-card__photo" aria-label="Photo placeholder for Anshuman Kumar — to be replaced with real headshot">
-          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" width="200" height="200" aria-hidden="true">
-            <circle cx="140" cy="110" r="65" fill="rgba(31,56,100,0.12)"/>
-            <ellipse cx="140" cy="230" rx="90" ry="55" fill="rgba(31,56,100,0.08)"/>
-            <text x="140" y="125" text-anchor="middle" font-family="Inter Tight,Inter,sans-serif" font-size="48" font-weight="800" fill="rgba(31,56,100,0.25)">AK</text>
-          </svg>
+        <div class="team-card__photo">
+          <div class="team-card__initials">AK</div>
         </div>
         <div class="team-card__body">
           <h2 class="team-card__name">Anshuman Kumar</h2>
-          <p class="team-card__role">Co-founder &amp; Partner, India &amp; SEA</p>
-          <p class="team-card__bio">Anshuman co-founded GreyRadius in 2017 and built the Delhi practice from the ground up. He leads India strategy and SME advisory, family-business transformation, and Southeast Asia expansion engagements from our Singapore office.</p>
-          <p class="team-card__bio" style="margin-top:0.875rem;">Anshuman splits his time between Delhi and Singapore, depending on the mandate.</p>
-          <p class="team-card__location">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Delhi, India · Singapore
-          </p>
+          <p class="team-card__role">Chief Business Officer &amp; Managing Partner</p>
+          <p class="team-card__bio">Anshuman has over 20 years of experience in consulting, market research and advisory projects with expertise across strategy formulation and recommendations. Over his career span, Anshuman has worked with multiple clients across different industry domains including TMT, Manufacturing &amp; Industrials, and Food and consumer, among others. He leads India strategy, SME advisory, and Southeast Asia expansion engagements.</p>
+          <div class="team-card__meta">
+            <div class="team-card__meta-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Delhi, India · Singapore
+            </div>
+            <div class="team-card__meta-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:anshuman@greyradius.com">anshuman@greyradius.com</a>
+            </div>
+            <div class="team-card__meta-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 5a2 2 0 0 1 1.95-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.72-.72a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 18z"/></svg>
+              <a href="tel:+919350714751">+91 93507 14751</a>
+            </div>
+          </div>
         </div>
       </article>
 
-      <!-- Dhiraj -->
+      <!-- Mohit Dixit -->
       <article class="team-card reveal reveal-delay-2">
-        <div class="team-card__photo" aria-label="Photo placeholder for Dhiraj — to be replaced with real headshot">
-          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" width="200" height="200" aria-hidden="true">
-            <circle cx="140" cy="110" r="65" fill="rgba(31,56,100,0.12)"/>
-            <ellipse cx="140" cy="230" rx="90" ry="55" fill="rgba(31,56,100,0.08)"/>
-            <text x="140" y="125" text-anchor="middle" font-family="Inter Tight,Inter,sans-serif" font-size="48" font-weight="800" fill="rgba(31,56,100,0.25)">D</text>
-          </svg>
+        <div class="team-card__photo">
+          <div class="team-card__initials">MD</div>
         </div>
         <div class="team-card__body">
-          <h2 class="team-card__name">Dhiraj</h2>
-          <p class="team-card__role">Partner, Fundraising &amp; Capital Advisory</p>
-          <p class="team-card__bio">Dhiraj leads GreyRadius's pitchbook and fundraising practice. In the past three years, he has personally overseen 540+ investor interviews across Series A and B mandates, and supported 12 rounds from deck to close. His track record includes a USD 500M IPO-stage engagement for an edtech company.</p>
-          <p class="team-card__bio" style="margin-top:0.875rem;">Dhiraj is based in Delhi and takes selected mandates in Dubai and Singapore.</p>
-          <p class="team-card__location">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Delhi, India
-          </p>
+          <h2 class="team-card__name">Mohit Dixit</h2>
+          <p class="team-card__role">Vice President — Delivery &amp; Operations</p>
+          <p class="team-card__bio">Mohit has over 17 years of experience in the business consulting &amp; advisory domain. He has successfully executed over 70 projects across different industries globally. He has worked with numerous technology corporate clients in the past while helping organizations with their market &amp; customer intelligence studies. Mohit leads delivery quality and operations across all engagements at GreyRadius.</p>
+          <div class="team-card__meta">
+            <div class="team-card__meta-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              India
+            </div>
+          </div>
         </div>
       </article>
 
-      <!-- Pijush -->
+      <!-- Pijush Sinha -->
       <article class="team-card reveal reveal-delay-3">
-        <div class="team-card__photo" aria-label="Photo placeholder for Pijush Sinha — to be replaced with real headshot">
-          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" width="200" height="200" aria-hidden="true">
-            <circle cx="140" cy="110" r="65" fill="rgba(31,56,100,0.12)"/>
-            <ellipse cx="140" cy="230" rx="90" ry="55" fill="rgba(31,56,100,0.08)"/>
-            <text x="140" y="125" text-anchor="middle" font-family="Inter Tight,Inter,sans-serif" font-size="48" font-weight="800" fill="rgba(31,56,100,0.25)">PS</text>
-          </svg>
+        <div class="team-card__photo">
+          <div class="team-card__initials">PS</div>
         </div>
         <div class="team-card__body">
           <h2 class="team-card__name">Pijush Sinha</h2>
-          <p class="team-card__role">Partner, Growth &amp; AI Practice</p>
-          <p class="team-card__bio">Pijush leads GreyRadius's GTM execution and AI consulting practices. He brings deep experience in B2B SaaS growth, AI product strategy, and go-to-market execution for technology companies entering India and the GCC. He joined as partner in 2022.</p>
-          <p class="team-card__bio" style="margin-top:0.875rem;">Pijush is based in Dubai and leads all AI transformation and GTM-XaaS mandates.</p>
-          <p class="team-card__location">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Dubai, UAE
-          </p>
+          <p class="team-card__role">Vice President — Strategy, Growth &amp; Transformation</p>
+          <p class="team-card__bio">Pijush brings over 15 years of experience in market intelligence, energy research, and go-to-market strategy across industrial, energy, chemicals, and oil &amp; gas sectors. He holds an MBA in Oil &amp; Gas from the University of Petroleum &amp; Energy Studies (UPES), Dehradun, combining deep sector expertise with strong analytical rigor. He leads GreyRadius's GTM execution and growth transformation practices.</p>
+          <div class="team-card__meta">
+            <div class="team-card__meta-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              India
+            </div>
+          </div>
         </div>
       </article>
-    </div>
 
-    <!-- Note about photos -->
-    <div style="margin-top:2rem;padding:1rem 1.5rem;background:var(--color-off-white);border-radius:var(--radius-sm);border-left:3px solid var(--color-orange);">
-      <p style="font-size:var(--text-small);color:var(--color-text-muted);">Partner headshots are placeholders — replace with real photos in the WordPress build. All photos should be consistent in style: square crop, professional, light background preferred.</p>
+      <!-- Mona Kanth -->
+      <article class="team-card reveal" style="grid-column:1/-1;max-width:680px;margin:0 auto;width:100%;">
+        <div style="display:grid;grid-template-columns:280px 1fr;">
+          <div class="team-card__photo" style="height:100%;min-height:220px;">
+            <div class="team-card__initials">MK</div>
+          </div>
+          <div class="team-card__body">
+            <h2 class="team-card__name">Mona Kanth</h2>
+            <p class="team-card__role">Vice President — Customer Success</p>
+            <p class="team-card__bio">Mona Kanth has over 15 years of experience in international marketing, finance, and market research consulting across sectors such as manufacturing, engineering goods, and consumer goods. She leads the company's overseas business development, driving global expansion, strategic partnerships, and export growth. Mona heads customer success across all GreyRadius engagements.</p>
+            <div class="team-card__meta">
+              <div class="team-card__meta-row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Singapore
+              </div>
+              <div class="team-card__meta-row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:monakanth@greyradius.com">monakanth@greyradius.com</a>
+              </div>
+              <div class="team-card__meta-row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 5a2 2 0 0 1 1.95-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.72-.72a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 18z"/></svg>
+                <a href="tel:+6590111264">+65 9011 1264</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
+    <p style="margin-top:1.5rem;font-size:var(--text-small);color:var(--color-text-muted);text-align:center;font-style:italic;">Partner photos to be updated in the WordPress build.</p>
   </div>
 </section>
 
-<!-- ADVISORS -->
+<!-- SENIOR ADVISORS -->
 <section class="bg-off-white section-padding" aria-labelledby="advisors-heading">
   <div class="container">
     <div class="section-heading section-heading--center">
       <span class="section-heading__eyebrow">Advisory Network</span>
-      <h2 class="section-heading__title" id="advisors-heading">10 senior advisors.</h2>
+      <h2 class="section-heading__title" id="advisors-heading">Panel of senior advisors &amp; experts.</h2>
       <p class="section-heading__sub">Sector specialists and geography anchors who augment our core team on select mandates.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;text-align:center;" class="reveal">
-      <div style="padding:1.5rem 1rem;border:1px solid var(--color-border);border-radius:var(--radius-md);background:#fff;">
-        <div style="width:60px;height:60px;border-radius:50%;background:var(--color-off-white);margin:0 auto 0.75rem;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--color-navy);font-size:1.125rem;" aria-hidden="true">A1</div>
-        <p style="font-size:0.8125rem;font-weight:600;color:var(--color-navy);">GCC Government</p>
-        <p style="font-size:0.75rem;color:var(--color-text-muted);">Abu Dhabi</p>
+    <div class="advisor-grid reveal">
+
+      <div class="advisor-card">
+        <div class="advisor-card__avatar">AS</div>
+        <p class="advisor-card__name">Ashish Sharma</p>
+        <p class="advisor-card__spec">Technology &amp; Telecom</p>
       </div>
-      <div style="padding:1.5rem 1rem;border:1px solid var(--color-border);border-radius:var(--radius-md);background:#fff;">
-        <div style="width:60px;height:60px;border-radius:50%;background:var(--color-off-white);margin:0 auto 0.75rem;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--color-navy);font-size:1.125rem;" aria-hidden="true">A2</div>
-        <p style="font-size:0.8125rem;font-weight:600;color:var(--color-navy);">BFSI India</p>
-        <p style="font-size:0.75rem;color:var(--color-text-muted);">Mumbai</p>
+
+      <div class="advisor-card">
+        <div class="advisor-card__avatar">MS</div>
+        <p class="advisor-card__name">Mahmoud Sherif</p>
+        <p class="advisor-card__spec">Sales Strategy &amp; GTM</p>
       </div>
-      <div style="padding:1.5rem 1rem;border:1px solid var(--color-border);border-radius:var(--radius-md);background:#fff;">
-        <div style="width:60px;height:60px;border-radius:50%;background:var(--color-off-white);margin:0 auto 0.75rem;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--color-navy);font-size:1.125rem;" aria-hidden="true">A3</div>
-        <p style="font-size:0.8125rem;font-weight:600;color:var(--color-navy);">Healthcare SEA</p>
-        <p style="font-size:0.75rem;color:var(--color-text-muted);">Singapore</p>
+
+      <div class="advisor-card">
+        <div class="advisor-card__avatar">DJ</div>
+        <p class="advisor-card__name">Dheeraj Jain</p>
+        <p class="advisor-card__spec">Private Equity &amp; VC</p>
       </div>
-      <div style="padding:1.5rem 1rem;border:1px solid var(--color-border);border-radius:var(--radius-md);background:#fff;">
-        <div style="width:60px;height:60px;border-radius:50%;background:var(--color-off-white);margin:0 auto 0.75rem;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--color-navy);font-size:1.125rem;" aria-hidden="true">A4</div>
-        <p style="font-size:0.8125rem;font-weight:600;color:var(--color-navy);">AI &amp; Technology</p>
-        <p style="font-size:0.75rem;color:var(--color-text-muted);">Bengaluru</p>
+
+      <div class="advisor-card">
+        <div class="advisor-card__avatar">PR</div>
+        <p class="advisor-card__name">Priya Ranjan</p>
+        <p class="advisor-card__spec">Market Entry &amp; GTM</p>
       </div>
-      <div style="padding:1.5rem 1rem;border:1px solid var(--color-border);border-radius:var(--radius-md);background:#fff;">
-        <div style="width:60px;height:60px;border-radius:50%;background:var(--color-off-white);margin:0 auto 0.75rem;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--color-navy);font-size:1.125rem;" aria-hidden="true">A5</div>
-        <p style="font-size:0.8125rem;font-weight:600;color:var(--color-navy);">Energy GCC</p>
-        <p style="font-size:0.75rem;color:var(--color-text-muted);">Riyadh</p>
+
+      <div class="advisor-card">
+        <div class="advisor-card__avatar">AA</div>
+        <p class="advisor-card__name">Ajay Aggarwal</p>
+        <p class="advisor-card__spec">Consumer &amp; CX</p>
       </div>
+
+      <div class="advisor-card">
+        <div class="advisor-card__avatar">PK</div>
+        <p class="advisor-card__name">Purnendu Kanth</p>
+        <p class="advisor-card__spec">Energy &amp; Gas</p>
+      </div>
+
+      <div class="advisor-card">
+        <div class="advisor-card__avatar">SD</div>
+        <p class="advisor-card__name">Shishir Das</p>
+        <p class="advisor-card__spec">Investment Banking</p>
+      </div>
+
+      <div class="advisor-card">
+        <div class="advisor-card__avatar">MK</div>
+        <p class="advisor-card__name">Meghna Khandelwal</p>
+        <p class="advisor-card__spec">Market Entry &amp; Competitive</p>
+      </div>
+
+      <div class="advisor-card">
+        <div class="advisor-card__avatar">SS</div>
+        <p class="advisor-card__name">Sushil Sharma</p>
+        <p class="advisor-card__spec">Business &amp; Growth Strategy</p>
+      </div>
+
+      <div class="advisor-card">
+        <div class="advisor-card__avatar">SS</div>
+        <p class="advisor-card__name">Supra Srivastava</p>
+        <p class="advisor-card__spec">Market &amp; Business Research</p>
+      </div>
+
     </div>
-    <p style="text-align:center;margin-top:1.5rem;font-size:var(--text-small);color:var(--color-text-muted);">+ 5 more advisors across CPG, IB, and European markets. Advisor profiles available on request.</p>
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta-block" aria-label="Call to action">
   <div class="container">
     <h2 class="cta-block__heading">Want to work with us?</h2>
-    <p class="cta-block__sub">Every engagement starts with a 30-minute call with the partner who will run it.</p>
+    <p class="cta-block__sub">Every engagement starts with a 30-minute call with the senior leader who will run it.</p>
     <div class="cta-block__buttons">
       <a href="../contact.html" class="btn btn-primary btn-lg">Book a 30-min call</a>
       <a href="../careers.html" class="btn btn-outline-white btn-lg">We're occasionally hiring →</a>
@@ -204,12 +304,12 @@
 
 <footer class="site-footer" aria-label="Site footer">
   <div class="container">
-    <div style="margin-bottom:3rem;"><img src="../assets/images/logo-light.svg" alt="GreyRadius Consulting" width="160" height="38"></div>
+    <div style="margin-bottom:3rem;"><img src="../assets/images/logo-light.svg" alt="GreyRadius Consulting" width="160" height="38"><p style="margin-top:0.875rem;font-size:var(--text-small);color:rgba(255,255,255,0.45);font-style:italic;">Strategy you can execute. Outcomes within reach.</p></div>
     <div class="footer-grid">
       <div class="footer-col"><p class="footer-col__heading">Offerings</p><ul class="footer-col__list"><li><a href="../services/opportunity-assessment.html" class="footer-col__link">Opportunity Assessment</a></li><li><a href="../services/feasibility-and-tev.html" class="footer-col__link">Feasibility &amp; TEV</a></li><li><a href="../services/market-entry-execution.html" class="footer-col__link">Market Entry Execution</a></li><li><a href="../services/gtm-execution-as-a-service.html" class="footer-col__link">GTM Execution-as-a-Service</a></li><li><a href="../services/pitchbook-and-fundraising.html" class="footer-col__link">Pitchbook &amp; Fundraising</a></li><li><a href="../services/ai-consulting-and-transformation.html" class="footer-col__link">AI Consulting</a></li></ul></div>
       <div class="footer-col"><p class="footer-col__heading">Industries</p><ul class="footer-col__list"><li><a href="../industries/technology.html" class="footer-col__link">Technology</a></li><li><a href="../industries/bfsi.html" class="footer-col__link">BFSI</a></li><li><a href="../industries/energy-and-chemicals.html" class="footer-col__link">Energy &amp; Chemicals</a></li><li><a href="../industries/cpg-fmcg-retail.html" class="footer-col__link">CPG / FMCG / Retail</a></li><li><a href="../industries/healthcare-and-life-sciences.html" class="footer-col__link">Healthcare &amp; LSHC</a></li><li><a href="../industries/investment-banks-and-pe.html" class="footer-col__link">IB &amp; PE</a></li></ul></div>
       <div class="footer-col"><p class="footer-col__heading">Company</p><ul class="footer-col__list"><li><a href="index.html" class="footer-col__link">About</a></li><li><a href="team.html" class="footer-col__link">Team</a></li><li><a href="method.html" class="footer-col__link">The GR Method</a></li><li><a href="why-greyradius.html" class="footer-col__link">Why GreyRadius</a></li></ul></div>
-      <div class="footer-col"><p class="footer-col__heading">Contact</p><ul class="footer-col__list"><li><a href="mailto:hello@greyradius.com" class="footer-col__link" style="color:rgba(255,255,255,0.85);">hello@greyradius.com</a></li></ul></div>
+      <div class="footer-col"><p class="footer-col__heading">Contact</p><ul class="footer-col__list"><li><a href="mailto:hello@greyradius.com" class="footer-col__link" style="color:rgba(255,255,255,0.85);">hello@greyradius.com</a></li><li style="margin-top:0.5rem;"><span class="footer-col__link">India · UAE · Singapore · Belgium</span></li></ul></div>
     </div>
     <div class="footer-bottom"><p class="footer-bottom__copy">© 2026 GreyRadius Consulting. All rights reserved.</p><div class="footer-bottom__links"><a href="../legal/privacy.html" class="footer-bottom__link">Privacy</a><a href="../legal/terms.html" class="footer-bottom__link">Terms</a></div></div>
   </div>
