@@ -1590,3 +1590,34 @@ details[open] .faq-icon { transform: rotate(45deg); }
 /* Strong nav logo fix */
 .nav-logo { display: flex; align-items: center; }
 .nav-logo img, .nav-logo svg { height: 38px !important; width: auto !important; display: block !important; }
+
+/* ============================================================
+   NAV — LIGHT THEME FIX
+   The site is fully light-theme. The JS forces top-nav--transparent
+   on page load (scrollY=0), making white nav-links invisible on
+   white backgrounds. Override all nav link colours to navy.
+   ============================================================ */
+.nav-link { color: var(--color-navy) !important; }
+.nav-link:hover { color: var(--color-navy) !important; background: rgba(15,31,63,0.07) !important; }
+.top-nav--transparent {
+  background: rgba(255,255,255,0.97) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(15,31,63,0.07);
+}
+.top-nav--transparent .nav-logo--light { display: none !important; }
+.top-nav--transparent .nav-logo--dark  { display: block !important; }
+.top-nav--transparent .nav-hamburger span { background: var(--color-navy) !important; }
+
+/* Advisor card title row */
+.advisor-card__title {
+  font-size: 0.7rem;
+  color: var(--color-steel-blue);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.2rem;
+}
+
+/* transition-fast alias (used in team.html) */
+:root { --transition-fast: all 0.15s ease; }
