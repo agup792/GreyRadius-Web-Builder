@@ -30,6 +30,13 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+if (process.env["NODE_ENV"] !== "production") {
+  app.use((_req, res, next) => {
+    res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+    next();
+  });
+}
+
 app.use("/api", router);
 
 const websiteDir = path.resolve(process.cwd(), "../../greyradius-website");
