@@ -9,8 +9,8 @@
   --color-navy:         #1F3864;
   --color-navy-mid:     #2D4A7C;
   --color-steel-blue:   #5B7CA8;
-  --color-orange:       #E8554A;
-  --color-orange-soft:  #FFE0DD;
+  --color-orange:       #E8693A;
+  --color-orange-soft:  #FDEEE7;
   --color-white:        #FFFFFF;
   --color-off-white:    #F8F9FB;
   --color-text-dark:    #0F1F3F;
@@ -18,9 +18,9 @@
   --color-text-muted:   #5B6E8C;
   --color-border:       #E5EAF1;
 
-  --font-display:   'Inter Tight', 'Inter', system-ui, sans-serif;
-  --font-heading:   'Inter', system-ui, sans-serif;
-  --font-body:      'Inter', system-ui, sans-serif;
+  --font-display:   'Montserrat', system-ui, sans-serif;
+  --font-heading:   'Montserrat', system-ui, sans-serif;
+  --font-body:      'Montserrat', system-ui, sans-serif;
   --font-mono:      'JetBrains Mono', monospace;
 
   --text-hero:      clamp(2.5rem, 5vw, 4.5rem);
@@ -181,7 +181,7 @@ h4, .h4 {
   background: #d44038;
   border-color: #d44038;
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(232, 85, 74, 0.35);
+  box-shadow: 0 4px 16px rgba(232, 105, 58, 0.35);
 }
 .btn-outline-white {
   background: transparent;
@@ -611,7 +611,7 @@ h4, .h4 {
 }
 .offering-card:hover {
   background: rgba(45, 74, 124, 0.9);
-  border-color: rgba(232, 85, 74, 0.4);
+  border-color: rgba(232, 105, 58, 0.4);
   transform: translateY(-3px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
@@ -1503,3 +1503,90 @@ details[open] .faq-icon { transform: rotate(45deg); }
 .radial-center-pulse {
   animation: pulse 4s ease-in-out infinite;
 }
+
+/* ============================================================
+   LIGHT THEME OVERRIDES — Montserrat / White palette
+   ============================================================ */
+
+/* Hero - white background */
+.hero-block {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+.hero-block::before {
+  background: radial-gradient(ellipse at 20% 60%, rgba(232, 105, 58, 0.07) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(31, 56, 100, 0.04) 0%, transparent 60%);
+}
+.hero-block__heading { color: var(--color-navy-deep); }
+.hero-block__sub { color: var(--color-text-muted); }
+.hero-block__eyebrow { color: var(--color-orange); }
+.hero-block__eyebrow::before { background: var(--color-orange); }
+
+/* Offering cards light */
+.offering-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+.offering-card:hover {
+  background: var(--color-white);
+  border-color: rgba(232, 105, 58, 0.35);
+  box-shadow: 0 12px 32px rgba(15, 31, 63, 0.09);
+  transform: translateY(-3px);
+}
+.offering-card__title  { color: var(--color-navy); }
+.offering-card__tagline { color: var(--color-text-muted); }
+.offering-card__desc   { color: var(--color-text-muted); }
+
+/* Method steps light */
+.method-step__name { color: var(--color-navy); }
+.method-step__desc { color: var(--color-text-muted); }
+.method-step__icon-wrap {
+  border: 2px solid var(--color-border);
+  background: var(--color-off-white);
+  color: var(--color-navy);
+}
+.method-step:hover .method-step__icon-wrap {
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+  color: #fff;
+}
+.method-flow::before {
+  background: linear-gradient(90deg, transparent, var(--color-orange), var(--color-orange), transparent);
+}
+
+/* About strip light */
+.about-strip__stat-number { color: var(--color-navy); }
+.about-strip__stat-label  { color: var(--color-text-muted); }
+.about-strip__partner     { color: var(--color-steel-blue); }
+
+/* About strip light background overrides */
+.about-strip__body p { color: var(--color-text-muted); }
+.partner-name  { color: var(--color-navy); }
+.partner-title { color: var(--color-text-muted); }
+.partner-avatar circle, .partner-avatar ellipse {
+  fill: rgba(31, 56, 100, 0.12);
+}
+
+/* Hero radial SVG adapted for light background */
+.radial-graphic circle[r="220"] { fill: none; }
+.radial-graphic circle[r="48"]  { fill: rgba(232, 105, 58, 0.08); stroke: rgba(232, 105, 58, 0.25); }
+.radial-graphic circle[r="30"]  { fill: rgba(232, 105, 58, 0.14); }
+
+/* stat-strip uses off-white bg already, keep navy numbers */
+.stat-strip__number { color: var(--color-navy); }
+
+/* trust-strip logos use muted color, keep on hover */
+.trust-strip__logo:hover { color: var(--color-navy); }
+
+/* Section heading eyebrow color */
+.section-heading__eyebrow { color: var(--color-orange); }
+
+/* Fix hero height to be more compact on large viewports */
+.hero-block { min-height: min(90vh, 700px); }
+
+/* Ensure nav logo img has correct height */
+.nav-logo img { height: 38px; width: auto; }
+
+/* Strong nav logo fix */
+.nav-logo { display: flex; align-items: center; }
+.nav-logo img, .nav-logo svg { height: 38px !important; width: auto !important; display: block !important; }

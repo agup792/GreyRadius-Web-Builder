@@ -1,6 +1,6 @@
-# [Project name]
+# GreyRadius Consulting
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A multi-page consulting firm website for GreyRadius, served as static HTML/CSS from `greyradius-website/` via a Vite dev server, plus a TypeScript/Express API backend.
 
 ## Run & Operate
 
@@ -14,6 +14,8 @@ _Replace the heading above with the project's name, and this line with one sente
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
+- Frontend: Static HTML + CSS (in `greyradius-website/`), served via Vite dev server
+- React artifact in `artifacts/greyradius/src/` is scaffolding only — Vite points to `greyradius-website/` as root
 - API: Express 5
 - DB: PostgreSQL + Drizzle ORM
 - Validation: Zod (`zod/v4`), `drizzle-zod`
@@ -22,23 +24,36 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `greyradius-website/` — the actual website (HTML pages, CSS, images)
+- `greyradius-website/assets/css/styles.css` — all CSS, design tokens, light-theme overrides at bottom
+- `greyradius-website/assets/images/logo-dark.svg` — navy/orange SVG logo (used in header)
+- `greyradius-website/assets/images/logo.png` — PNG logo (from attached_assets, used in footer)
+- `artifacts/greyradius/vite.config.ts` — Vite config; root points to `../../greyradius-website`
+- `artifacts/greyradius/src/` — React scaffold (not actively used for rendering)
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The `artifacts/greyradius` React app is a scaffold only — `vite.config.ts` overrides `root` to point to `greyradius-website/` (a sibling directory), so all pages are plain HTML/CSS.
+- Light-theme CSS overrides are appended at the bottom of `styles.css` rather than changing base rules, keeping the original dark-theme code intact for reference.
+- Google Fonts Montserrat is loaded via `<link>` in each HTML file's `<head>`; font variables in `:root` map to Montserrat.
+- The nav uses `top-nav--solid` (white background) now that the hero is light; the original `top-nav--transparent` dark variant still exists in CSS for potential re-use.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Multi-page consulting website for GreyRadius: homepage, 6 service pages, 6 industry pages, about/team/method pages, case studies, insights, contact
+- Light grey/white theme with dark navy text and orange (#E8693A) CTAs
+- Montserrat font site-wide; animated radial SVG hero graphic
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+_Populate as you build._
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Do NOT edit `artifacts/greyradius/src/App.tsx` to add content — Vite's `root` is `greyradius-website/`, so React files are not rendered.
+- The `artifacts/greyradius/src/index.css` (Tailwind) is not served — all live styles are in `greyradius-website/assets/css/styles.css`.
+- Light-theme CSS overrides are at the **bottom** of `styles.css`; later rules win.
+- The nav logo needs `.nav-logo img { height: 38px !important; }` because the base reset applies `height: auto` to all `img` elements.
 
 ## Pointers
 

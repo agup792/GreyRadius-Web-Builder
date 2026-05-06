@@ -5,7 +5,7 @@
     <circle cx="0" cy="0" r="11" stroke="white" stroke-width="1.5" fill="none" opacity="0.7"/>
     <circle cx="0" cy="0" r="4" fill="white"/>
     <!-- Orbital dots -->
-    <circle cx="0" cy="-18" r="2.5" fill="#E8554A"/>
+    <circle cx="0" cy="-18" r="2.5" fill="#E8693A"/>
     <circle cx="15.6" cy="-9" r="2" fill="white" opacity="0.6"/>
     <circle cx="15.6" cy="9" r="2" fill="white" opacity="0.6"/>
     <circle cx="0" cy="18" r="2" fill="white" opacity="0.6"/>
@@ -14,6 +14,6 @@
   </g>
   <!-- Wordmark -->
   <text x="50" y="16" font-family="'Inter Tight', 'Inter', sans-serif" font-size="13" font-weight="800" fill="white" letter-spacing="0.5">GREY</text>
-  <text x="50" y="31" font-family="'Inter Tight', 'Inter', sans-serif" font-size="13" font-weight="800" fill="#E8554A" letter-spacing="0.5">RADIUS</text>
+  <text x="50" y="31" font-family="'Inter Tight', 'Inter', sans-serif" font-size="13" font-weight="800" fill="#E8693A" letter-spacing="0.5">RADIUS</text>
   <text x="50" y="42" font-family="'Inter', sans-serif" font-size="7" font-weight="500" fill="rgba(255,255,255,0.55)" letter-spacing="1.5">CONSULTING</text>
 </svg>
