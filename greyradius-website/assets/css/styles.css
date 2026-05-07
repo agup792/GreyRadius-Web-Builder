@@ -2108,3 +2108,8 @@ details[open] .faq-icon { transform: rotate(45deg); }
   border-radius: 20px;
   backdrop-filter: blur(4px);
 }
+
+/* Footer logo — invert the dark PNG to white on the navy footer background */
+.site-footer img[alt="GreyRadius Consulting"] {
+  filter: brightness(0) invert(1);
+}
