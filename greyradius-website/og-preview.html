@@ -435,540 +435,99 @@
 <div class="grid" id="grid"></div>
 
 <script>
-// ── Page data ────────────────────────────────────────────
+// ── Configuration ─────────────────────────────────────────
 const BASE_DOMAIN = 'greyradius.com';
 const PROD_BASE = 'https://' + BASE_DOMAIN;
 
+const OG_TITLE_LIMIT = 60;   // LinkedIn/Facebook truncate ~60 chars
+const OG_DESC_LIMIT  = 160;  // Most platforms truncate ~160 chars
+
+// ── Live meta-tag fetcher ─────────────────────────────────
+// Fetches the page HTML and extracts og:* and twitter:* meta tags.
+async function fetchMeta(path) {
+  try {
+    const resp = await fetch(path, { cache: 'no-store' });
+    if (!resp.ok) return { fetchError: resp.status };
+    const html = await resp.text();
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const get = (attr, val) => {
+      const el = doc.querySelector(`meta[${attr}="${val}"]`);
+      return el ? (el.getAttribute('content') || '') : '';
+    };
+    return {
+      ogTitle: get('property', 'og:title'),
+      ogDesc:  get('property', 'og:description'),
+      ogImage: get('property', 'og:image'),
+      twCard:  get('name', 'twitter:card'),
+      twTitle: get('name', 'twitter:title'),
+      twDesc:  get('name', 'twitter:description'),
+    };
+  } catch (err) {
+    return { fetchError: String(err) };
+  }
+}
+
+// ── Route list ────────────────────────────────────────────
+// OG/Twitter meta values are fetched live from each page's HTML.
+// Only path, section, pageTitle (fallback label) and ogUrl (prod debugger link) live here.
 const PAGES = [
   // ── Core ──────────────────────────────────────────────────
-  {
-    path: '/',
-    section: 'core',
-    pageTitle: 'GreyRadius Consulting — Strategy you can execute. Outcomes within reach.',
-    ogTitle: 'GreyRadius Consulting — Strategy you can execute. Outcomes within reach.',
-    ogDesc: 'Boutique strategy and growth consulting grounded in real primary research, accelerated by AI, delivered as measurable outcomes.',
-    ogImage: '/assets/images/og-homepage.png',
-    ogUrl: 'https://greyradius.com/',
-    twCard: 'summary_large_image',
-    twTitle: 'GreyRadius Consulting — Strategy you can execute.',
-    twDesc: 'Boutique strategy and growth consulting grounded in real primary research, accelerated by AI.',
-  },
-  {
-    path: '/contact',
-    section: 'core',
-    pageTitle: 'Contact GreyRadius — Book a 30-min discovery call',
-    ogTitle: 'Contact GreyRadius — Book a 30-min discovery call',
-    ogDesc: 'Book a 30-minute discovery call with a GreyRadius partner. Delhi · Dubai · Singapore · Brussels. hello@greyradius.com',
-    ogImage: '/assets/images/og-contact.png',
-    ogUrl: 'https://greyradius.com/contact.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/careers',
-    section: 'core',
-    pageTitle: 'Careers — GreyRadius Consulting',
-    ogTitle: 'Careers — GreyRadius Consulting',
-    ogDesc: 'We hire from time to time. Senior consultants with strategy, research, or fundraising advisory experience. Boutique with founder access.',
-    ogImage: '',
-    ogUrl: 'https://greyradius.com/careers.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/about/',
-    section: 'core',
-    pageTitle: 'About GreyRadius Consulting',
-    ogTitle: 'About GreyRadius Consulting',
-    ogDesc: 'Founded 2017. Four partners across Delhi, Dubai, Singapore, Brussels. 200+ projects delivered.',
-    ogImage: '/assets/images/og-about.png',
-    ogUrl: 'https://greyradius.com/about/',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/about/method',
-    section: 'core',
-    pageTitle: 'The GR Method — How GreyRadius works',
-    ogTitle: 'The GR Method — How GreyRadius works',
-    ogDesc: 'Same six steps across every engagement. The first three earn the credibility. The last three deliver the outcome.',
-    ogImage: '/assets/images/og-about.png',
-    ogUrl: 'https://greyradius.com/about/method.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/about/team',
-    section: 'core',
-    pageTitle: 'The Team — GreyRadius Consulting',
-    ogTitle: 'The Team — GreyRadius Consulting',
-    ogDesc: 'Meet the GreyRadius Consulting team — 5 partners and 10 senior advisors across India, UAE, Singapore and Belgium.',
-    ogImage: '/assets/images/og-about.png',
-    ogUrl: 'https://greyradius.com/about/team.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/about/why-greyradius',
-    section: 'core',
-    pageTitle: 'Why GreyRadius — Boutique vs Big-4 vs DIY',
-    ogTitle: 'Why GreyRadius — Boutique vs Big-4 vs DIY',
-    ogDesc: 'Three things you won\'t get from Big-4. Three things you won\'t get from a freelancer or AI tool. GreyRadius sits in the middle — where the work that matters gets done.',
-    ogImage: '/assets/images/og-about.png',
-    ogUrl: 'https://greyradius.com/about/why-greyradius.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/legal/privacy',
-    section: 'core',
-    pageTitle: 'Privacy Policy — GreyRadius Consulting',
-    ogTitle: 'Privacy Policy — GreyRadius Consulting',
-    ogDesc: 'Privacy Policy for GreyRadius Consulting. How we collect, use, and protect your personal data.',
-    ogImage: '',
-    ogUrl: 'https://greyradius.com/legal/privacy.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/legal/terms',
-    section: 'core',
-    pageTitle: 'Terms of Use — GreyRadius Consulting',
-    ogTitle: 'Terms of Use — GreyRadius Consulting',
-    ogDesc: 'Terms of Use for greyradius.com and GreyRadius Consulting services.',
-    ogImage: '',
-    ogUrl: 'https://greyradius.com/legal/terms.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
+  { path: '/',                                           section: 'core',         pageTitle: 'Home',                                          ogUrl: 'https://greyradius.com/' },
+  { path: '/contact',                                    section: 'core',         pageTitle: 'Contact',                                       ogUrl: 'https://greyradius.com/contact.html' },
+  { path: '/careers',                                    section: 'core',         pageTitle: 'Careers',                                       ogUrl: 'https://greyradius.com/careers.html' },
+  { path: '/about/',                                     section: 'core',         pageTitle: 'About',                                         ogUrl: 'https://greyradius.com/about/' },
+  { path: '/about/method',                               section: 'core',         pageTitle: 'The GR Method',                                 ogUrl: 'https://greyradius.com/about/method.html' },
+  { path: '/about/team',                                 section: 'core',         pageTitle: 'The Team',                                      ogUrl: 'https://greyradius.com/about/team.html' },
+  { path: '/about/why-greyradius',                       section: 'core',         pageTitle: 'Why GreyRadius',                                ogUrl: 'https://greyradius.com/about/why-greyradius.html' },
+  { path: '/legal/privacy',                              section: 'core',         pageTitle: 'Privacy Policy',                                ogUrl: 'https://greyradius.com/legal/privacy.html' },
+  { path: '/legal/terms',                                section: 'core',         pageTitle: 'Terms of Use',                                  ogUrl: 'https://greyradius.com/legal/terms.html' },
   // ── Services ──────────────────────────────────────────────
-  {
-    path: '/services/',
-    section: 'services',
-    pageTitle: 'Services — Six output-led offerings | GreyRadius Consulting',
-    ogTitle: 'Services — Six output-led offerings | GreyRadius Consulting',
-    ogDesc: 'Six output-led service offerings: Opportunity Assessment, Feasibility & TEV, Market Entry Execution, GTM Execution-as-a-Service, Pitchbook & Fundraising, and AI Consulting. One method. Real outcomes.',
-    ogImage: '/assets/images/og-services.png',
-    ogUrl: 'https://greyradius.com/services/',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/services/opportunity-assessment',
-    section: 'services',
-    pageTitle: 'Opportunity Assessment — Should you play in this market? | GreyRadius',
-    ogTitle: 'Opportunity Assessment — Should you play in this market? | GreyRadius',
-    ogDesc: 'Primary-research-led market sizing, competitive analysis, and go/no-go recommendation. Know before you commit capital.',
-    ogImage: '/assets/images/og-svc-opportunity.png',
-    ogUrl: 'https://greyradius.com/services/opportunity-assessment.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/services/feasibility-and-tev',
-    section: 'services',
-    pageTitle: 'Feasibility & TEV — Is this play bankable? | GreyRadius',
-    ogTitle: 'Feasibility & TEV — Is this play bankable? | GreyRadius',
-    ogDesc: 'Technical and economic viability studies that answer the one question investors and boards care about: is this play bankable? Four weeks. Fixed fee.',
-    ogImage: '/assets/images/og-svc-feasibility.png',
-    ogUrl: 'https://greyradius.com/services/feasibility-and-tev.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/services/market-entry-execution',
-    section: 'services',
-    pageTitle: 'Market Entry Execution — Land. Sign. Get the first customer. | GreyRadius',
-    ogTitle: 'Market Entry Execution — Land. Sign. Get the first customer. | GreyRadius',
-    ogDesc: 'End-to-end market entry execution: entity setup, partner identification, first-customer acquisition. Month-by-month milestones with contractual outputs.',
-    ogImage: '/assets/images/og-svc-market-entry.png',
-    ogUrl: 'https://greyradius.com/services/market-entry-execution.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/services/gtm-execution-as-a-service',
-    section: 'services',
-    pageTitle: 'GTM Execution-as-a-Service — We run the first 90 days | GreyRadius',
-    ogTitle: 'GTM Execution-as-a-Service — We run the first 90 days | GreyRadius',
-    ogDesc: 'GreyRadius doesn\'t advise on go-to-market — we run it. Pipeline building, ICP refinement, and commercial execution for the first 90 days.',
-    ogImage: '/assets/images/og-svc-gtm.png',
-    ogUrl: 'https://greyradius.com/services/gtm-execution-as-a-service.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/services/pitchbook-and-fundraising',
-    section: 'services',
-    pageTitle: 'Pitchbook & Fundraising — From slides to closed round | GreyRadius',
-    ogTitle: 'Pitchbook & Fundraising — From slides to closed round | GreyRadius',
-    ogDesc: 'Investor-grade pitchbooks, financial models, and fundraising advisory. From deck to closed round in 90 days.',
-    ogImage: '/assets/images/og-svc-pitchbook.png',
-    ogUrl: 'https://greyradius.com/services/pitchbook-and-fundraising.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/services/ai-consulting-and-transformation',
-    section: 'services',
-    pageTitle: 'AI Consulting & Transformation — Strategy that ships | GreyRadius',
-    ogTitle: 'AI Consulting & Transformation — Strategy that ships | GreyRadius',
-    ogDesc: 'AI strategy that ships. Use-case prioritisation, build-vs-buy roadmaps, and hands-on implementation support — not transformation decks.',
-    ogImage: '/assets/images/og-svc-ai.png',
-    ogUrl: 'https://greyradius.com/services/ai-consulting-and-transformation.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
+  { path: '/services/',                                  section: 'services',     pageTitle: 'Services',                                      ogUrl: 'https://greyradius.com/services/' },
+  { path: '/services/opportunity-assessment',            section: 'services',     pageTitle: 'Opportunity Assessment',                        ogUrl: 'https://greyradius.com/services/opportunity-assessment.html' },
+  { path: '/services/feasibility-and-tev',               section: 'services',     pageTitle: 'Feasibility & TEV',                             ogUrl: 'https://greyradius.com/services/feasibility-and-tev.html' },
+  { path: '/services/market-entry-execution',            section: 'services',     pageTitle: 'Market Entry Execution',                        ogUrl: 'https://greyradius.com/services/market-entry-execution.html' },
+  { path: '/services/gtm-execution-as-a-service',        section: 'services',     pageTitle: 'GTM Execution-as-a-Service',                    ogUrl: 'https://greyradius.com/services/gtm-execution-as-a-service.html' },
+  { path: '/services/pitchbook-and-fundraising',         section: 'services',     pageTitle: 'Pitchbook & Fundraising',                       ogUrl: 'https://greyradius.com/services/pitchbook-and-fundraising.html' },
+  { path: '/services/ai-consulting-and-transformation',  section: 'services',     pageTitle: 'AI Consulting & Transformation',                ogUrl: 'https://greyradius.com/services/ai-consulting-and-transformation.html' },
   // ── Industries ────────────────────────────────────────────
-  {
-    path: '/industries/',
-    section: 'industries',
-    pageTitle: 'Industries — GreyRadius Consulting',
-    ogTitle: 'Industries — GreyRadius Consulting',
-    ogDesc: 'Deep sector expertise across Technology, BFSI, Energy & Chemicals, CPG/FMCG/Retail, Healthcare & Life Sciences, and Investment Banking & PE.',
-    ogImage: '/assets/images/og-industries.png',
-    ogUrl: 'https://greyradius.com/industries/',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/industries/technology',
-    section: 'industries',
-    pageTitle: 'Technology — GreyRadius Consulting',
-    ogTitle: 'Technology — GreyRadius Consulting',
-    ogDesc: 'Helping tech products find their market. GTM strategy, product-market fit, and international expansion for SaaS, enterprise software, and technology services firms.',
-    ogImage: '/assets/images/og-ind-technology.png',
-    ogUrl: 'https://greyradius.com/industries/technology.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/industries/bfsi',
-    section: 'industries',
-    pageTitle: 'BFSI — Banking, Financial Services & Insurance | GreyRadius',
-    ogTitle: 'BFSI — Banking, Financial Services & Insurance | GreyRadius',
-    ogDesc: 'Strategy and commercial advisory for financial services firms navigating the most significant industry restructuring in a generation.',
-    ogImage: '/assets/images/og-ind-bfsi.png',
-    ogUrl: 'https://greyradius.com/industries/bfsi.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/industries/energy-and-chemicals',
-    section: 'industries',
-    pageTitle: 'Energy & Chemicals — GreyRadius Consulting',
-    ogTitle: 'Energy & Chemicals — GreyRadius Consulting',
-    ogDesc: 'Market entry, feasibility, and industrial strategy for energy and chemicals clients navigating transition and expansion.',
-    ogImage: '/assets/images/og-ind-energy.png',
-    ogUrl: 'https://greyradius.com/industries/energy-and-chemicals.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/industries/cpg-fmcg-retail',
-    section: 'industries',
-    pageTitle: 'CPG / FMCG / Retail — GreyRadius Consulting',
-    ogTitle: 'CPG / FMCG / Retail — GreyRadius Consulting',
-    ogDesc: 'Consumer brand strategy, GTM execution, and market entry for CPG, FMCG, and retail clients across India, GCC, and South-East Asia.',
-    ogImage: '/assets/images/og-ind-cpg.png',
-    ogUrl: 'https://greyradius.com/industries/cpg-fmcg-retail.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/industries/healthcare-and-life-sciences',
-    section: 'industries',
-    pageTitle: 'Healthcare & Life Sciences — GreyRadius Consulting',
-    ogTitle: 'Healthcare & Life Sciences — GreyRadius Consulting',
-    ogDesc: 'Healthcare strategy where regulatory context determines everything. Market entry, clinical evidence, and commercial strategy for pharma, medtech, and hospital clients.',
-    ogImage: '/assets/images/og-ind-healthcare.png',
-    ogUrl: 'https://greyradius.com/industries/healthcare-and-life-sciences.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/industries/investment-banks-and-pe',
-    section: 'industries',
-    pageTitle: 'Investment Banking & Private Equity — GreyRadius Consulting',
-    ogTitle: 'Investment Banking & Private Equity — GreyRadius Consulting',
-    ogDesc: 'Primary research for investment decisions that can\'t afford to be wrong. Commercial due diligence, market sizing, and sector deep-dives for IB and PE clients.',
-    ogImage: '/assets/images/og-ind-investment.png',
-    ogUrl: 'https://greyradius.com/industries/investment-banks-and-pe.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
+  { path: '/industries/',                                section: 'industries',   pageTitle: 'Industries',                                    ogUrl: 'https://greyradius.com/industries/' },
+  { path: '/industries/technology',                      section: 'industries',   pageTitle: 'Technology',                                    ogUrl: 'https://greyradius.com/industries/technology.html' },
+  { path: '/industries/bfsi',                            section: 'industries',   pageTitle: 'BFSI',                                          ogUrl: 'https://greyradius.com/industries/bfsi.html' },
+  { path: '/industries/energy-and-chemicals',            section: 'industries',   pageTitle: 'Energy & Chemicals',                            ogUrl: 'https://greyradius.com/industries/energy-and-chemicals.html' },
+  { path: '/industries/cpg-fmcg-retail',                 section: 'industries',   pageTitle: 'CPG / FMCG / Retail',                           ogUrl: 'https://greyradius.com/industries/cpg-fmcg-retail.html' },
+  { path: '/industries/healthcare-and-life-sciences',    section: 'industries',   pageTitle: 'Healthcare & Life Sciences',                    ogUrl: 'https://greyradius.com/industries/healthcare-and-life-sciences.html' },
+  { path: '/industries/investment-banks-and-pe',         section: 'industries',   pageTitle: 'Investment Banking & PE',                       ogUrl: 'https://greyradius.com/industries/investment-banks-and-pe.html' },
   // ── Case Studies ──────────────────────────────────────────
-  {
-    path: '/case-studies/',
-    section: 'case-studies',
-    pageTitle: 'Case Studies — GreyRadius Consulting',
-    ogTitle: 'Case Studies — GreyRadius Consulting',
-    ogDesc: '12 engagements. Real primary research. Real outcomes. Real numbers.',
-    ogImage: '/assets/images/og-case-studies.png',
-    ogUrl: 'https://greyradius.com/case-studies/',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/alloy-metals-sea-expansion',
-    section: 'case-studies',
-    pageTitle: 'Alloy & Ferro Metals South-East Asia Expansion — GreyRadius Case Study',
-    ogTitle: 'Alloy & Ferro Metals South-East Asia Expansion — GreyRadius Case Study',
-    ogDesc: 'Six candidate markets screened down to one optimal location for an alloy and ferro metals manufacturer expanding into South-East Asia. Strategy through to deployment.',
-    ogImage: '/assets/images/og-cs-alloy-metals.png',
-    ogUrl: 'https://greyradius.com/case-studies/alloy-metals-sea-expansion.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/coal-mining-enclosed-transport',
-    section: 'case-studies',
-    pageTitle: 'Coal Mining Material Handling Transformation — GreyRadius Case Study',
-    ogTitle: 'Coal Mining Material Handling Transformation — GreyRadius Case Study',
-    ogDesc: 'Execution-focused transformation of a coal mining material handling system — quantifying losses, improving efficiency, and securing regulatory compliance ahead of deadline.',
-    ogImage: '/assets/images/og-cs-coal-mining.png',
-    ogUrl: 'https://greyradius.com/case-studies/coal-mining-enclosed-transport.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/drone-startup-gtm',
-    section: 'case-studies',
-    pageTitle: 'GTM Strategy for a Drone Startup — GreyRadius Case Study',
-    ogTitle: 'GTM Strategy for a Drone Startup — GreyRadius Case Study',
-    ogDesc: 'How GreyRadius helped a drone services startup move from broad market interest to focused ICP, faster conversion cycles, and pilot-to-commercial pathways that actually closed.',
-    ogImage: '/assets/images/og-cs-drone-startup.png',
-    ogUrl: 'https://greyradius.com/case-studies/drone-startup-gtm.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/saas-product-market-fit',
-    section: 'case-studies',
-    pageTitle: 'SaaS Startup Finds Product-Market Fit — GreyRadius Case Study',
-    ogTitle: 'SaaS Startup Finds Product-Market Fit — GreyRadius Case Study',
-    ogDesc: 'How GreyRadius helped a feature-heavy SaaS startup find product-market fit by identifying their highest-converting segment and rebuilding go-to-market around outcomes instead of features.',
-    ogImage: '/assets/images/og-cs-saas-pmf.png',
-    ogUrl: 'https://greyradius.com/case-studies/saas-product-market-fit.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/trinetra-gtm',
-    section: 'case-studies',
-    pageTitle: 'Trinetra North American GTM Strategy — GreyRadius Case Study',
-    ogTitle: 'Trinetra North American GTM Strategy — GreyRadius Case Study',
-    ogDesc: 'How GreyRadius built a North American GTM strategy for Trinetra — a Canadian enterprise integration IT firm — defining their ICP, entry markets, and scalable pipeline.',
-    ogImage: '/assets/images/og-cs-trinetra.png',
-    ogUrl: 'https://greyradius.com/case-studies/trinetra-gtm.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/eye-care-pharma-market-entry',
-    section: 'case-studies',
-    pageTitle: 'Eye Care Pharmaceuticals Market Entry Strategy — GreyRadius Case Study',
-    ogTitle: 'Eye Care Pharmaceuticals Market Entry Strategy — GreyRadius Case Study',
-    ogDesc: 'Competitive market entry strategy for an eye care pharma company — five structural barriers addressed, margins protected, and a growth roadmap built from primary research.',
-    ogImage: '/assets/images/og-cs-eye-care.png',
-    ogUrl: 'https://greyradius.com/case-studies/eye-care-pharma-market-entry.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/hospital-chain-canada',
-    section: 'case-studies',
-    pageTitle: 'US Hospital Chain Canada Market Entry — GreyRadius Case Study',
-    ogTitle: 'US Hospital Chain Canada Market Entry — GreyRadius Case Study',
-    ogDesc: 'Market entry strategy for a US hospital chain expanding into Canada — two compliant entry models, a board-ready financial case, and capital risk avoided.',
-    ogImage: '/assets/images/og-cs-hospital-canada.png',
-    ogUrl: 'https://greyradius.com/case-studies/hospital-chain-canada.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/oncology-abstracts',
-    section: 'case-studies',
-    pageTitle: 'Oncology Clinical Trial Abstracts — GreyRadius Case Study',
-    ogTitle: 'Oncology Clinical Trial Abstracts — GreyRadius Case Study',
-    ogDesc: '100+ oncology clinical trial abstracts standardised and structured for cross-trial analysis — from published data to analysis-ready evidence for commercial and regulatory use.',
-    ogImage: '/assets/images/og-cs-oncology.png',
-    ogUrl: 'https://greyradius.com/case-studies/oncology-abstracts.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/nativfresh-cpg-gtm',
-    section: 'case-studies',
-    pageTitle: 'NativFresh CPG GTM Strategy — GreyRadius Case Study',
-    ogTitle: 'NativFresh CPG GTM Strategy — GreyRadius Case Study',
-    ogDesc: 'Data-led go-to-market for NativFresh, a Bengaluru fresh foods brand — consumer-validated GTM, 18-month expansion roadmap, and launch without guesswork.',
-    ogImage: '/assets/images/og-cs-nativfresh.png',
-    ogUrl: 'https://greyradius.com/case-studies/nativfresh-cpg-gtm.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/retail-market-entry',
-    section: 'case-studies',
-    pageTitle: 'Retail Market Entry Strategy for a New Consumer Brand — GreyRadius Case Study',
-    ogTitle: 'Retail Market Entry Strategy for a New Consumer Brand — GreyRadius Case Study',
-    ogDesc: 'Data-driven retail market entry strategy for a new consumer brand — real market insights, phased entry planning, and protected margins from launch.',
-    ogImage: '/assets/images/og-cs-retail-market.png',
-    ogUrl: 'https://greyradius.com/case-studies/retail-market-entry.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/elearning-gcc-expansion',
-    section: 'case-studies',
-    pageTitle: 'UAE E-Learning Platform GCC Expansion Strategy — GreyRadius Case Study',
-    ogTitle: 'UAE E-Learning Platform GCC Expansion Strategy — GreyRadius Case Study',
-    ogDesc: 'A structured five-workstream market entry strategy helped a UAE-based e-learning platform prioritise GCC markets and build a rollout sequence grounded in primary buyer research.',
-    ogImage: '/assets/images/og-cs-elearning.png',
-    ogUrl: 'https://greyradius.com/case-studies/elearning-gcc-expansion.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/case-studies/agri-chemical-gtm',
-    section: 'case-studies',
-    pageTitle: 'Agri Chemical GTM & Product Development — GreyRadius Case Study',
-    ogTitle: 'Agri Chemical GTM & Product Development — GreyRadius Case Study',
-    ogDesc: 'How GreyRadius ran primary research across the full agricultural value chain to help a leading agri-chemical company accelerate product development and go-to-market.',
-    ogImage: '/assets/images/og-cs-agri-chemical.png',
-    ogUrl: 'https://greyradius.com/case-studies/agri-chemical-gtm.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
+  { path: '/case-studies/',                              section: 'case-studies', pageTitle: 'Case Studies',                                  ogUrl: 'https://greyradius.com/case-studies/' },
+  { path: '/case-studies/alloy-metals-sea-expansion',    section: 'case-studies', pageTitle: 'Alloy Metals SEA Expansion',                    ogUrl: 'https://greyradius.com/case-studies/alloy-metals-sea-expansion.html' },
+  { path: '/case-studies/coal-mining-enclosed-transport',section: 'case-studies', pageTitle: 'Coal Mining Enclosed Transport',                ogUrl: 'https://greyradius.com/case-studies/coal-mining-enclosed-transport.html' },
+  { path: '/case-studies/drone-startup-gtm',             section: 'case-studies', pageTitle: 'Drone Startup GTM',                             ogUrl: 'https://greyradius.com/case-studies/drone-startup-gtm.html' },
+  { path: '/case-studies/saas-product-market-fit',       section: 'case-studies', pageTitle: 'SaaS Product-Market Fit',                       ogUrl: 'https://greyradius.com/case-studies/saas-product-market-fit.html' },
+  { path: '/case-studies/trinetra-gtm',                  section: 'case-studies', pageTitle: 'Trinetra GTM',                                  ogUrl: 'https://greyradius.com/case-studies/trinetra-gtm.html' },
+  { path: '/case-studies/eye-care-pharma-market-entry',  section: 'case-studies', pageTitle: 'Eye Care Pharma Market Entry',                  ogUrl: 'https://greyradius.com/case-studies/eye-care-pharma-market-entry.html' },
+  { path: '/case-studies/hospital-chain-canada',         section: 'case-studies', pageTitle: 'Hospital Chain Canada',                         ogUrl: 'https://greyradius.com/case-studies/hospital-chain-canada.html' },
+  { path: '/case-studies/oncology-abstracts',            section: 'case-studies', pageTitle: 'Oncology Abstracts',                            ogUrl: 'https://greyradius.com/case-studies/oncology-abstracts.html' },
+  { path: '/case-studies/nativfresh-cpg-gtm',            section: 'case-studies', pageTitle: 'NativFresh CPG GTM',                            ogUrl: 'https://greyradius.com/case-studies/nativfresh-cpg-gtm.html' },
+  { path: '/case-studies/retail-market-entry',           section: 'case-studies', pageTitle: 'Retail Market Entry',                           ogUrl: 'https://greyradius.com/case-studies/retail-market-entry.html' },
+  { path: '/case-studies/elearning-gcc-expansion',       section: 'case-studies', pageTitle: 'eLearning GCC Expansion',                       ogUrl: 'https://greyradius.com/case-studies/elearning-gcc-expansion.html' },
+  { path: '/case-studies/agri-chemical-gtm',             section: 'case-studies', pageTitle: 'Agri Chemical GTM',                             ogUrl: 'https://greyradius.com/case-studies/agri-chemical-gtm.html' },
   // ── Insights ──────────────────────────────────────────────
-  {
-    path: '/insights/',
-    section: 'insights',
-    pageTitle: 'Insights — GreyRadius Consulting',
-    ogTitle: 'Insights — GreyRadius Consulting',
-    ogDesc: 'Research findings, market patterns, and practitioner perspective. No AI-generated filler — just what we learned from the interviews.',
-    ogImage: '/assets/images/og-insights.png',
-    ogUrl: 'https://greyradius.com/insights/',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/insights/ai-hype-to-results',
-    section: 'insights',
-    pageTitle: 'Turning AI Hype Into Business Results — GreyRadius Insights',
-    ogTitle: 'Turning AI Hype Into Business Results — GreyRadius Insights',
-    ogDesc: 'The gap between AI interest and AI outcomes is real. What the companies actually capturing AI value are doing differently — and what determines whether your AI initiative is on track.',
-    ogImage: '/assets/images/og-ins-ai-hype.png',
-    ogUrl: 'https://greyradius.com/insights/ai-hype-to-results.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/insights/consultants-vs-inhouse',
-    section: 'insights',
-    pageTitle: 'Business Management Consultants vs In-House Strategy Team — GreyRadius Insights',
-    ogTitle: 'Business Management Consultants vs In-House Strategy Team — GreyRadius Insights',
-    ogDesc: 'When external consultants outperform in-house strategy teams — and when they don\'t. A no-fluff comparison for SME and GCC business leaders.',
-    ogImage: '/assets/images/og-ins-consultants-vs.png',
-    ogUrl: 'https://greyradius.com/insights/consultants-vs-inhouse.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/insights/cost-transformation',
-    section: 'insights',
-    pageTitle: 'Cost Transformation Beyond Cost Cutting — GreyRadius Insights',
-    ogTitle: 'Cost Transformation Beyond Cost Cutting — GreyRadius Insights',
-    ogDesc: 'Why cost cutting rarely changes the underlying cost structure of a business — and what genuine cost transformation actually involves.',
-    ogImage: '/assets/images/og-ins-cost-transform.png',
-    ogUrl: 'https://greyradius.com/insights/cost-transformation.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/insights/resilient-supply-chain',
-    section: 'insights',
-    pageTitle: 'Fragile by Design: Building Supply Chains That Bend Without Breaking — GreyRadius Insights',
-    ogTitle: 'Fragile by Design: Building Supply Chains That Bend Without Breaking — GreyRadius Insights',
-    ogDesc: 'Why your supply chain is now a strategic vulnerability — and what resilient organisations do differently in the new operating environment.',
-    ogImage: '/assets/images/og-ins-supply-chain.png',
-    ogUrl: 'https://greyradius.com/insights/resilient-supply-chain.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/insights/what-management-consultants-do',
-    section: 'insights',
-    pageTitle: 'What Does a Management Consultant Actually Do? — GreyRadius Insights',
-    ogTitle: 'What Does a Management Consultant Actually Do? — GreyRadius Insights',
-    ogDesc: 'A clear-eyed look at what management consultants actually do, when you genuinely need one, and what good consulting looks like versus what to avoid.',
-    ogImage: '/assets/images/og-ins-what-consultants.png',
-    ogUrl: 'https://greyradius.com/insights/what-management-consultants-do.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
-  {
-    path: '/insights/winning-saturated-markets',
-    section: 'insights',
-    pageTitle: 'Winning in Saturated Markets — GreyRadius Insights',
-    ogTitle: 'Winning in Saturated Markets — GreyRadius Insights',
-    ogDesc: 'Why traditional growth levers stop working in mature markets, where growth actually hides, and what winning looks like in practice.',
-    ogImage: '/assets/images/og-ins-saturated-markets.png',
-    ogUrl: 'https://greyradius.com/insights/winning-saturated-markets.html',
-    twCard: '',
-    twTitle: '',
-    twDesc: '',
-  },
+  { path: '/insights/',                                  section: 'insights',     pageTitle: 'Insights',                                      ogUrl: 'https://greyradius.com/insights/' },
+  { path: '/insights/ai-hype-to-results',                section: 'insights',     pageTitle: 'AI Hype to Results',                            ogUrl: 'https://greyradius.com/insights/ai-hype-to-results.html' },
+  { path: '/insights/consultants-vs-inhouse',            section: 'insights',     pageTitle: 'Consultants vs In-House',                       ogUrl: 'https://greyradius.com/insights/consultants-vs-inhouse.html' },
+  { path: '/insights/cost-transformation',               section: 'insights',     pageTitle: 'Cost Transformation',                           ogUrl: 'https://greyradius.com/insights/cost-transformation.html' },
+  { path: '/insights/resilient-supply-chain',            section: 'insights',     pageTitle: 'Resilient Supply Chain',                        ogUrl: 'https://greyradius.com/insights/resilient-supply-chain.html' },
+  { path: '/insights/what-management-consultants-do',    section: 'insights',     pageTitle: 'What Management Consultants Do',                ogUrl: 'https://greyradius.com/insights/what-management-consultants-do.html' },
+  { path: '/insights/winning-saturated-markets',         section: 'insights',     pageTitle: 'Winning in Saturated Markets',                  ogUrl: 'https://greyradius.com/insights/winning-saturated-markets.html' },
 ];
 
 // ── Helpers ──────────────────────────────────────────────
-const OG_TITLE_LIMIT = 60;   // LinkedIn/Facebook truncate around here
-const OG_DESC_LIMIT  = 160;  // Most platforms truncate around here
-
 function getIssues(p) {
   const issues = [];
+  if (p.fetchError) {
+    issues.push({ sev: 'error', msg: `Fetch failed (${p.fetchError})` });
+    return issues;
+  }
   if (!p.ogTitle) {
     issues.push({ sev: 'error', msg: 'Missing og:title' });
   } else if (p.ogTitle.length > OG_TITLE_LIMIT) {
@@ -983,7 +542,7 @@ function getIssues(p) {
   if (!p.twCard) issues.push({ sev: 'warn', msg: 'No Twitter Card tags' });
   else {
     if (!p.twTitle) issues.push({ sev: 'warn', msg: 'Missing twitter:title' });
-    if (!p.twDesc) issues.push({ sev: 'warn', msg: 'Missing twitter:description' });
+    if (!p.twDesc)  issues.push({ sev: 'warn', msg: 'Missing twitter:description' });
   }
   return issues;
 }
@@ -999,30 +558,18 @@ function charBar(len, limit) {
 
 function getBadge(issues) {
   const errors = issues.filter(i => i.sev === 'error').length;
-  const warns = issues.filter(i => i.sev === 'warn').length;
+  const warns  = issues.filter(i => i.sev === 'warn').length;
   if (errors === 0 && warns === 0) return '<span class="badge badge-ok">Complete</span>';
   if (errors > 0) return `<span class="badge badge-error">${errors} missing</span>`;
   return `<span class="badge badge-warn">${warns} warning</span>`;
 }
 
-function displayTitle(p) {
-  return p.ogTitle || p.pageTitle || p.path;
-}
-function displayDesc(p) {
-  return p.ogDesc || '';
-}
-function displayImage(p) {
-  return p.ogImage || '';
-}
-function prodUrl(p) {
-  return p.ogUrl || (PROD_BASE + p.path);
-}
-
+function prodUrl(p) { return p.ogUrl || (PROD_BASE + p.path); }
 function enc(s) { return encodeURIComponent(s); }
 
 // ── Render LinkedIn card ─────────────────────────────────
 function renderLinkedin(p) {
-  const img = displayImage(p);
+  const img = p.ogImage || '';
   const imgHtml = img
     ? `<img class="li-image" src="${img}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
       + `<div class="li-image-placeholder" style="display:none">🖼️</div>`
@@ -1050,9 +597,7 @@ function renderTwitter(p) {
       twitter:card tag is missing — link will appear as plain text, no preview image.
     </div>`;
   }
-  const img = displayImage(p);
-  const title = p.twTitle || displayTitle(p);
-  const desc = p.twDesc || displayDesc(p);
+  const img = p.ogImage || '';
   const imgHtml = img
     ? `<img class="tw-image" src="${img}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
       + `<div class="tw-image-placeholder" style="display:none">🖼️</div>`
@@ -1070,9 +615,7 @@ function renderTwitter(p) {
 
 // ── Render Slack card ────────────────────────────────────
 function renderSlack(p) {
-  const img = displayImage(p);
-  const title = displayTitle(p);
-  const desc = displayDesc(p);
+  const img = p.ogImage || '';
   const imgHtml = img
     ? `<img class="sl-image" src="${img}" alt="" onerror="this.style.display='none'">`
     : '';
@@ -1085,29 +628,26 @@ function renderSlack(p) {
     </div>`;
 }
 
-// ── Build cards ──────────────────────────────────────────
+// ── Build & render cards ──────────────────────────────────
 let currentView = 'linkedin';
 let currentFilter = 'all';
+let enrichedPages = [];
 
-function buildCards() {
+function renderCards(pages) {
   const grid = document.getElementById('grid');
   grid.innerHTML = '';
 
   let total = 0, complete = 0, withIssues = 0, noImage = 0;
 
-  PAGES.forEach((p, idx) => {
+  pages.forEach(p => {
     const issues = getIssues(p);
-    const hasErrors = issues.some(i => i.sev === 'error');
-    const hasWarns = issues.some(i => i.sev === 'warn');
     const isComplete = issues.length === 0;
 
-    if (isComplete) complete++;
-    else withIssues++;
+    if (isComplete) complete++; else withIssues++;
     if (!p.ogImage) noImage++;
     total++;
 
     const purl = prodUrl(p);
-
     const card = document.createElement('div');
     card.className = 'card';
     card.dataset.section = p.section;
@@ -1128,7 +668,6 @@ function buildCards() {
         <span class="page-path">${p.path}</span>
         ${getBadge(issues)}
       </div>
-
       <div class="platform-tabs" role="tablist">
         <button class="platform-tab ${currentView === 'linkedin' ? 'active' : ''}" data-view="linkedin" role="tab">
           <span class="tab-icon">in</span> LinkedIn
@@ -1140,7 +679,6 @@ function buildCards() {
           <span class="tab-icon">⚡</span> Slack
         </button>
       </div>
-
       <div class="preview-panel ${currentView === 'linkedin' ? 'active' : ''}" data-panel="linkedin">
         ${renderLinkedin(p)}
       </div>
@@ -1150,39 +688,27 @@ function buildCards() {
       <div class="preview-panel ${currentView === 'slack' ? 'active' : ''}" data-panel="slack">
         ${renderSlack(p)}
       </div>
-
       ${issuesHtml}
-
       <div class="card-footer">
-        <a class="debugger-link fb" href="https://developers.facebook.com/tools/debug/?q=${enc(purl)}" target="_blank" rel="noopener">
-          FB Debugger ↗
-        </a>
-        <a class="debugger-link li" href="https://www.linkedin.com/post-inspector/inspect/${enc(purl)}" target="_blank" rel="noopener">
-          LI Inspector ↗
-        </a>
-        <a class="debugger-link tw" href="https://cards-dev.twitter.com/validator" target="_blank" rel="noopener">
-          TW Validator ↗
-        </a>
-        <a class="debugger-link og" href="https://opengraph.io/api/1.1/site/${enc(purl)}?app_id=preview" target="_blank" rel="noopener">
-          OG.io ↗
-        </a>
+        <a class="debugger-link fb" href="https://developers.facebook.com/tools/debug/?q=${enc(purl)}" target="_blank" rel="noopener">FB Debugger ↗</a>
+        <a class="debugger-link li" href="https://www.linkedin.com/post-inspector/inspect/${enc(purl)}" target="_blank" rel="noopener">LI Inspector ↗</a>
+        <a class="debugger-link tw" href="https://cards-dev.twitter.com/validator" target="_blank" rel="noopener">TW Validator ↗</a>
+        <a class="debugger-link og" href="https://opengraph.io/api/1.1/site/${enc(purl)}?app_id=preview" target="_blank" rel="noopener">OG.io ↗</a>
         <a class="debugger-link" href="${p.path}" target="_blank" rel="noopener">View page ↗</a>
-      </div>
-    `;
+      </div>`;
 
-    // Tab switching within card
     card.querySelectorAll('.platform-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         const view = tab.dataset.view;
         card.querySelectorAll('.platform-tab').forEach(t => t.classList.toggle('active', t.dataset.view === view));
-        card.querySelectorAll('.preview-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === view));
+        card.querySelectorAll('.preview-panel').forEach(panel => panel.classList.toggle('active', panel.dataset.panel === view));
       });
     });
 
     grid.appendChild(card);
   });
 
-  updateStats(total, complete, withIssues, noImage);
+  updateStats(total, complete, withIssues, noImage, pages.length);
   applyFilter();
 }
 
@@ -1192,11 +718,9 @@ function applyFilter() {
   cards.forEach(card => {
     let show = true;
     if (currentFilter !== 'all') {
-      if (currentFilter === 'issues') {
-        show = card.dataset.hasIssues === '1';
-      } else {
-        show = card.dataset.section === currentFilter;
-      }
+      show = currentFilter === 'issues'
+        ? card.dataset.hasIssues === '1'
+        : card.dataset.section === currentFilter;
     }
     card.classList.toggle('hidden', !show);
     if (show) visible++;
@@ -1213,33 +737,32 @@ function applyFilter() {
   }
 
   document.getElementById('summaryCounts').innerHTML =
-    `Showing <strong>${visible}</strong> of <strong>${PAGES.length}</strong> pages`;
+    `Showing <strong>${visible}</strong> of <strong>${enrichedPages.length}</strong> pages`;
 }
 
-function updateStats(total, complete, withIssues, noImage) {
+function updateStats(total, complete, withIssues, noImage, allTotal) {
   const stats = document.getElementById('statsBar');
-  const pct = Math.round(complete / total * 100);
+  const pct = total > 0 ? Math.round(complete / total * 100) : 0;
   stats.innerHTML = `
     <div class="stat"><span class="stat-dot green"></span><strong>${complete}</strong> fully complete (${pct}%)</div>
     <div class="stat"><span class="stat-dot red"></span><strong>${withIssues}</strong> with issues</div>
     <div class="stat"><span class="stat-dot amber"></span><strong>${noImage}</strong> missing og:image</div>
-    <div class="stat"><span class="stat-dot"></span><strong>${total}</strong> total pages</div>
+    <div class="stat"><span class="stat-dot"></span><strong>${allTotal}</strong> total pages</div>
   `;
 }
 
 // ── Global view toggle ───────────────────────────────────
 function setGlobalView(view) {
   currentView = view;
-  document.getElementById('viewLinkedin').classList.toggle('active', view === 'linkedin');
-  document.getElementById('viewTwitter').classList.toggle('active', view === 'twitter');
-  document.getElementById('viewSlack').classList.toggle('active', view === 'slack');
-
-  document.querySelectorAll('.platform-tab').forEach(tab => {
-    tab.classList.toggle('active', tab.dataset.view === view);
-  });
-  document.querySelectorAll('.preview-panel').forEach(panel => {
-    panel.classList.toggle('active', panel.dataset.panel === view);
-  });
+  ['Linkedin','Twitter','Slack'].forEach(v =>
+    document.getElementById('view' + v).classList.toggle('active', view === v.toLowerCase())
+  );
+  document.querySelectorAll('.platform-tab').forEach(tab =>
+    tab.classList.toggle('active', tab.dataset.view === view)
+  );
+  document.querySelectorAll('.preview-panel').forEach(panel =>
+    panel.classList.toggle('active', panel.dataset.panel === view)
+  );
 }
 
 document.getElementById('viewLinkedin').addEventListener('click', () => setGlobalView('linkedin'));
@@ -1256,8 +779,26 @@ document.getElementById('filterGroup').addEventListener('click', e => {
   applyFilter();
 });
 
-// ── Init ──────────────────────────────────────────────────
-buildCards();
+// ── Init: fetch all pages in parallel ────────────────────
+async function init() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = `
+    <div class="empty-state">
+      <strong>Loading…</strong>
+      Fetching meta tags from ${PAGES.length} pages — this takes a moment.
+    </div>`;
+
+  enrichedPages = await Promise.all(
+    PAGES.map(async route => {
+      const meta = await fetchMeta(route.path);
+      return { ...route, ...meta };
+    })
+  );
+
+  renderCards(enrichedPages);
+}
+
+init();
 </script>
 </body>
 </html>
