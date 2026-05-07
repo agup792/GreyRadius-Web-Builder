@@ -5,10 +5,15 @@
   "type": "module",
   "scripts": {
     "hello": "tsx ./src/hello.ts",
+    "generate-og-images": "tsx ./src/generate-og-images.ts",
+    "add-og-images": "tsx ./src/add-og-images.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {
     "@types/node": "catalog:",
     "tsx": "catalog:"
+  },
+  "dependencies": {
+    "jimp": "^1.6.1"
   }
 }
