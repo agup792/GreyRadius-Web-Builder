@@ -144,24 +144,61 @@
     });
   }
 
-  /* ---- External form submission placeholder ---- */
-  const contactForms = document.querySelectorAll('form[data-form]');
-  contactForms.forEach(form => {
-    form.addEventListener('submit', (e) => {
+  /* ---- Contact form submission ---- */
+  const contactForms = document.querySelectorAll('form[data-form="contact"]');
+  contactForms.forEach(function (form) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const btn = form.querySelector('[type="submit"]');
-      const orig = btn ? btn.textContent : '';
-      if (btn) btn.textContent = 'Sending…';
-      setTimeout(() => {
-        if (btn) btn.textContent = orig;
-        const success = document.createElement('div');
-        success.className = 'form-success';
-        success.style.cssText = 'background:#dcfce7;color:#166534;padding:1rem;border-radius:8px;margin-top:1rem;font-weight:600;';
-        success.textContent = "Thank you — a partner will be in touch within 24 hours.";
-        form.appendChild(success);
-        form.reset();
-        setTimeout(() => success.remove(), 6000);
-      }, 800);
+
+      var btn = form.querySelector('[type="submit"]');
+      var origText = btn ? btn.textContent : '';
+      var existingMsg = form.querySelector('.form-status-msg');
+      if (existingMsg) existingMsg.remove();
+
+      if (btn) {
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+      }
+
+      var formData = new FormData(form);
+      var body = {};
+      formData.forEach(function (val, key) { body[key] = val; });
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+        .then(function (result) {
+          var msg = document.createElement('div');
+          msg.className = 'form-status-msg';
+          if (result.ok && result.data.ok) {
+            msg.style.cssText = 'background:#dcfce7;color:#166534;padding:1rem 1.25rem;border-radius:8px;margin-top:1rem;font-weight:600;font-size:0.9375rem;';
+            msg.textContent = 'Thank you — a partner will be in touch within 24 hours.';
+            form.reset();
+          } else {
+            var errors = (result.data && result.data.errors) ? result.data.errors.join(' ') : 'Something went wrong. Please try again or email us directly.';
+            msg.style.cssText = 'background:#fee2e2;color:#991b1b;padding:1rem 1.25rem;border-radius:8px;margin-top:1rem;font-weight:600;font-size:0.9375rem;';
+            msg.textContent = errors;
+          }
+          form.appendChild(msg);
+          setTimeout(function () { msg.remove(); }, 8000);
+        })
+        .catch(function () {
+          var msg = document.createElement('div');
+          msg.className = 'form-status-msg';
+          msg.style.cssText = 'background:#fee2e2;color:#991b1b;padding:1rem 1.25rem;border-radius:8px;margin-top:1rem;font-weight:600;font-size:0.9375rem;';
+          msg.textContent = 'Network error — please try again or email hello@greyradius.com directly.';
+          form.appendChild(msg);
+          setTimeout(function () { msg.remove(); }, 8000);
+        })
+        .finally(function () {
+          if (btn) {
+            btn.textContent = origText;
+            btn.disabled = false;
+          }
+        });
     });
   });
 
