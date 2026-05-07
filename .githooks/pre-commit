@@ -1,0 +1,21 @@
+#!/bin/sh
+# Inject OG meta tags and OG images into any HTML files before committing.
+# This ensures every page has correct social tags without a manual step.
+
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+echo "Running OG meta/image injection…"
+pnpm --filter @workspace/scripts run og
+
+# Stage any HTML files and OG images modified by the scripts.
+# Use git pathspecs (:(glob)) for portable recursive matching.
+git add \
+  ':(glob)greyradius-website/**/*.html' \
+  ':(glob)greyradius-website/*.html' \
+  ':(glob)greyradius-website/assets/images/og-*.png' \
+  2>/dev/null || true
+
+echo "OG injection complete."
