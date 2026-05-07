@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OG Preview — GreyRadius Social Card Inspector</title>
+  <script>
+    if (window.location.hostname === 'greyradius.com' || window.location.hostname === 'www.greyradius.com') {
+      window.location.replace('/');
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2340;
+      --orange: #E8693A;
+      --grey: #6b7280;
+      --light: #f3f4f6;
+      --border: #e5e7eb;
+      --green: #16a34a;
+      --red: #dc2626;
+      --amber: #d97706;
+      --blue: #2563eb;
+      --card-bg: #ffffff;
+      --page-bg: #f8f9fb;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--page-bg);
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────────────── */
+    .header {
+      background: var(--navy);
+      color: #fff;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .header-logo {
+      font-weight: 700;
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-logo img { height: 30px; }
+    .header-title {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.6);
+    }
+    .header-sep { color: rgba(255,255,255,0.3); margin: 0 4px; }
+    .dev-badge {
+      background: var(--orange);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .header-right { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+    .view-site-link {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    .view-site-link:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+    /* ── Controls bar ───────────────────────────────────── */
+    .controls {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .controls-label { font-size: 12px; font-weight: 600; color: var(--grey); text-transform: uppercase; letter-spacing: 0.06em; }
+    .filter-group { display: flex; gap: 6px; flex-wrap: wrap; }
+    .filter-btn {
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: transparent;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--grey);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: var(--navy); color: var(--navy); }
+    .filter-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .filter-divider { width: 1px; height: 24px; background: var(--border); }
+    .view-toggle { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+    .view-btn {
+      padding: 6px 14px;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--grey);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .view-btn + .view-btn { border-left: 1px solid var(--border); }
+    .view-btn.active { background: var(--navy); color: #fff; }
+    .controls-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+    .summary-counts { font-size: 12px; color: var(--grey); }
+    .summary-counts strong { color: var(--navy); }
+    .count-warn { color: var(--red); font-weight: 600; }
+
+    /* ── Stats bar ──────────────────────────────────────── */
+    .stats-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 32px;
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .stat { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--grey); }
+    .stat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .stat-dot.green { background: var(--green); }
+    .stat-dot.amber { background: var(--amber); }
+    .stat-dot.red { background: var(--red); }
+    .stat strong { color: var(--navy); font-weight: 700; }
+
+    /* ── Grid ───────────────────────────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 24px;
+      padding: 28px 32px;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    /* ── Card ───────────────────────────────────────────── */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.15s;
+    }
+    .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .card.hidden { display: none; }
+
+    .card-header {
+      padding: 10px 14px 8px;
+      background: var(--light);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .page-path {
+      font-size: 11px;
+      font-weight: 600;
+      font-family: 'Courier New', monospace;
+      color: var(--navy);
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .badge {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 2px 6px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .badge-ok { background: #dcfce7; color: var(--green); }
+    .badge-warn { background: #fef9c3; color: var(--amber); }
+    .badge-error { background: #fee2e2; color: var(--red); }
+
+    /* ── Platform tabs ──────────────────────────────────── */
+    .platform-tabs { display: flex; border-bottom: 1px solid var(--border); }
+    .platform-tab {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--grey);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    .platform-tab.active { color: var(--navy); border-bottom-color: var(--navy); }
+    .platform-tab:hover:not(.active) { color: var(--navy); background: var(--light); }
+    .tab-icon { font-size: 14px; line-height: 1; }
+
+    /* ── Social preview panels ──────────────────────────── */
+    .preview-panel { display: none; padding: 14px; }
+    .preview-panel.active { display: block; }
+
+    /* LinkedIn card style */
+    .li-card {
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      overflow: hidden;
+      font-family: -apple-system, sans-serif;
+      background: #fff;
+    }
+    .li-image {
+      width: 100%;
+      aspect-ratio: 1.91 / 1;
+      object-fit: cover;
+      display: block;
+      background: #e5e7eb;
+    }
+    .li-image-placeholder {
+      width: 100%;
+      aspect-ratio: 1.91 / 1;
+      background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: #9ca3af;
+    }
+    .li-body { padding: 10px 12px 12px; background: #f3f2ef; }
+    .li-domain { font-size: 11px; color: #666; text-transform: uppercase; margin-bottom: 2px; }
+    .li-title { font-size: 14px; font-weight: 600; color: #000; line-height: 1.35; margin-bottom: 4px; }
+    .li-desc { font-size: 12px; color: #555; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .li-title.missing, .li-desc.missing { color: var(--red); font-style: italic; font-weight: 400; }
+
+    /* Twitter/X card style */
+    .tw-card {
+      border: 1px solid #e1e8ed;
+      border-radius: 14px;
+      overflow: hidden;
+      font-family: -apple-system, sans-serif;
+      background: #fff;
+      position: relative;
+    }
+    .tw-image {
+      width: 100%;
+      aspect-ratio: 2 / 1;
+      object-fit: cover;
+      display: block;
+      background: #e5e7eb;
+    }
+    .tw-image-placeholder {
+      width: 100%;
+      aspect-ratio: 2 / 1;
+      background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: #9ca3af;
+    }
+    .tw-body { padding: 10px 14px 12px; }
+    .tw-domain { font-size: 11px; color: #8899a6; margin-bottom: 2px; }
+    .tw-title { font-size: 14px; font-weight: 700; color: #14171a; line-height: 1.3; margin-bottom: 2px; }
+    .tw-desc { font-size: 12px; color: #657786; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .tw-title.missing, .tw-desc.missing { color: var(--red); font-style: italic; font-weight: 400; }
+    .tw-no-card {
+      background: #fff8f0;
+      border: 1px dashed var(--amber);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--amber);
+    }
+    .tw-no-card strong { display: block; font-size: 13px; margin-bottom: 4px; }
+
+    /* Slack card style */
+    .sl-card {
+      border-left: 3px solid var(--navy);
+      padding: 8px 12px;
+      background: #fff;
+      font-family: -apple-system, sans-serif;
+    }
+    .sl-site { font-size: 11px; font-weight: 700; color: #1d1c1d; margin-bottom: 4px; }
+    .sl-title { font-size: 14px; font-weight: 700; color: #1264a3; text-decoration: none; line-height: 1.3; margin-bottom: 4px; display: block; }
+    .sl-desc { font-size: 12px; color: #616061; line-height: 1.4; margin-bottom: 8px; }
+    .sl-image { width: 100%; max-height: 200px; object-fit: cover; border-radius: 4px; display: block; background: #e5e7eb; }
+    .sl-title.missing, .sl-desc.missing { color: var(--red); font-style: italic; }
+
+    /* ── Issues list ─────────────────────────────────────── */
+    .issues { padding: 0 14px 14px; }
+    .issues-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--grey); margin-bottom: 6px; }
+    .issue-item {
+      font-size: 11px;
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 3px;
+    }
+    .issue-item.warn { color: var(--amber); }
+    .issue-icon { flex-shrink: 0; }
+
+    /* ── Card footer ─────────────────────────────────────── */
+    .card-footer {
+      padding: 10px 14px;
+      border-top: 1px solid var(--border);
+      background: var(--light);
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .debugger-link {
+      font-size: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--grey);
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .debugger-link:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .debugger-link.li { border-color: #0a66c2; color: #0a66c2; }
+    .debugger-link.li:hover { background: #0a66c2; color: #fff; }
+    .debugger-link.tw { border-color: #000; color: #000; }
+    .debugger-link.tw:hover { background: #000; color: #fff; }
+    .debugger-link.fb { border-color: #1877f2; color: #1877f2; }
+    .debugger-link.fb:hover { background: #1877f2; color: #fff; }
+    .debugger-link.og { border-color: var(--grey); color: var(--grey); }
+
+    /* ── Empty state ─────────────────────────────────────── */
+    .empty-state {
+      grid-column: 1/-1;
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--grey);
+      font-size: 14px;
+    }
+    .empty-state strong { display: block; font-size: 18px; color: var(--navy); margin-bottom: 8px; }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .header { padding: 16px; }
+      .controls { padding: 10px 16px; }
+      .stats-bar { padding: 10px 16px; gap: 16px; }
+      .grid { padding: 16px; gap: 16px; grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────── -->
+<header class="header">
+  <a href="/" class="header-logo">
+    <img src="/assets/images/logo-light.svg" alt="GreyRadius">
+  </a>
+  <span class="header-sep">/</span>
+  <span class="header-title">Social Card Preview</span>
+  <span class="dev-badge">Dev Only</span>
+  <div class="header-right">
+    <a href="/" class="view-site-link">← Back to site</a>
+  </div>
+</header>
+
+<!-- ── Controls ──────────────────────────────────────────── -->
+<div class="controls" id="controls">
+  <span class="controls-label">Filter</span>
+  <div class="filter-group" id="filterGroup">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="core">Core</button>
+    <button class="filter-btn" data-filter="services">Services</button>
+    <button class="filter-btn" data-filter="industries">Industries</button>
+    <button class="filter-btn" data-filter="case-studies">Case Studies</button>
+    <button class="filter-btn" data-filter="insights">Insights</button>
+    <button class="filter-btn" data-filter="issues">Issues only</button>
+  </div>
+  <div class="filter-divider"></div>
+  <div class="view-toggle">
+    <button class="view-btn active" id="viewLinkedin">LinkedIn</button>
+    <button class="view-btn" id="viewTwitter">Twitter/X</button>
+    <button class="view-btn" id="viewSlack">Slack</button>
+  </div>
+  <div class="controls-right">
+    <div class="summary-counts" id="summaryCounts"></div>
+  </div>
+</div>
+
+<!-- ── Stats bar ─────────────────────────────────────────── -->
+<div class="stats-bar" id="statsBar"></div>
+
+<!-- ── Card grid ─────────────────────────────────────────── -->
+<div class="grid" id="grid"></div>
+
+<script>
+// ── Page data ────────────────────────────────────────────
+const BASE_DOMAIN = 'greyradius.com';
+const PROD_BASE = 'https://' + BASE_DOMAIN;
+
+const PAGES = [
+  {
+    path: '/',
+    section: 'core',
+    pageTitle: 'GreyRadius Consulting — Strategy you can execute. Outcomes within reach.',
+    ogTitle: 'GreyRadius Consulting — Strategy you can execute. Outcomes within reach.',
+    ogDesc: 'Boutique strategy and growth consulting grounded in real primary research, accelerated by AI, delivered as measurable outcomes.',
+    ogImage: '/assets/images/og-homepage.png',
+    ogUrl: 'https://greyradius.com/',
+    twCard: 'summary_large_image',
+    twTitle: 'GreyRadius Consulting — Strategy you can execute.',
+    twDesc: 'Boutique strategy and growth consulting grounded in real primary research, accelerated by AI.',
+  },
+  {
+    path: '/contact',
+    section: 'core',
+    pageTitle: 'Contact GreyRadius — Book a 30-min discovery call',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-contact.png',
+    ogUrl: 'https://greyradius.com/contact.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/careers',
+    section: 'core',
+    pageTitle: 'Careers — GreyRadius Consulting',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '',
+    ogUrl: 'https://greyradius.com/careers.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/about/',
+    section: 'core',
+    pageTitle: 'About GreyRadius Consulting',
+    ogTitle: 'About GreyRadius Consulting',
+    ogDesc: 'Founded 2017. Four partners across Delhi, Dubai, Singapore, Brussels. 200+ projects delivered.',
+    ogImage: '/assets/images/og-about.png',
+    ogUrl: '',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/about/method',
+    section: 'core',
+    pageTitle: 'The GR Method — How GreyRadius works',
+    ogTitle: 'The GR Method — How GreyRadius works',
+    ogDesc: 'Same six steps across every engagement. The first three earn the credibility. The last three deliver the outcome.',
+    ogImage: '/assets/images/og-about.png',
+    ogUrl: 'https://greyradius.com/about/method.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/about/team',
+    section: 'core',
+    pageTitle: 'The Team — GreyRadius Consulting',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-about.png',
+    ogUrl: 'https://greyradius.com/about/team/',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/about/why-greyradius',
+    section: 'core',
+    pageTitle: 'Why GreyRadius — Boutique vs Big-4 vs DIY',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-about.png',
+    ogUrl: 'https://greyradius.com/about/why-greyradius.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/services/',
+    section: 'services',
+    pageTitle: 'Services — Six output-led offerings | GreyRadius Consulting',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-services.png',
+    ogUrl: '',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/services/ai-consulting-and-transformation',
+    section: 'services',
+    pageTitle: 'AI Consulting & Transformation — Strategy that ships | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-svc-ai.png',
+    ogUrl: 'https://greyradius.com/services/ai-consulting-and-transformation.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/services/feasibility-and-tev',
+    section: 'services',
+    pageTitle: 'Feasibility & TEV Studies | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-svc-feasibility.png',
+    ogUrl: 'https://greyradius.com/services/feasibility-and-tev.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/services/gtm-execution-as-a-service',
+    section: 'services',
+    pageTitle: 'GTM Execution as a Service | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-svc-gtm.png',
+    ogUrl: 'https://greyradius.com/services/gtm-execution-as-a-service.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/services/market-entry-execution',
+    section: 'services',
+    pageTitle: 'Market Entry Execution | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-svc-market-entry.png',
+    ogUrl: 'https://greyradius.com/services/market-entry-execution.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/services/opportunity-assessment',
+    section: 'services',
+    pageTitle: 'Opportunity Assessment | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-svc-opportunity.png',
+    ogUrl: 'https://greyradius.com/services/opportunity-assessment.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/services/pitchbook-and-fundraising',
+    section: 'services',
+    pageTitle: 'Pitchbook & Fundraising | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-svc-pitchbook.png',
+    ogUrl: 'https://greyradius.com/services/pitchbook-and-fundraising.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/industries/',
+    section: 'industries',
+    pageTitle: 'Industries — GreyRadius Consulting',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-industries.png',
+    ogUrl: '',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/industries/bfsi',
+    section: 'industries',
+    pageTitle: 'BFSI — Banking, Financial Services & Insurance | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ind-bfsi.png',
+    ogUrl: 'https://greyradius.com/industries/bfsi.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/industries/cpg-fmcg-retail',
+    section: 'industries',
+    pageTitle: 'CPG, FMCG & Retail | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ind-cpg.png',
+    ogUrl: 'https://greyradius.com/industries/cpg-fmcg-retail.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/industries/energy-and-chemicals',
+    section: 'industries',
+    pageTitle: 'Energy & Chemicals | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ind-energy.png',
+    ogUrl: 'https://greyradius.com/industries/energy-and-chemicals.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/industries/healthcare-and-life-sciences',
+    section: 'industries',
+    pageTitle: 'Healthcare & Life Sciences | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ind-healthcare.png',
+    ogUrl: 'https://greyradius.com/industries/healthcare-and-life-sciences.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/industries/investment-banks-and-pe',
+    section: 'industries',
+    pageTitle: 'Investment Banks & Private Equity | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ind-investment.png',
+    ogUrl: 'https://greyradius.com/industries/investment-banks-and-pe.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/industries/technology',
+    section: 'industries',
+    pageTitle: 'Technology Industry | GreyRadius',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ind-technology.png',
+    ogUrl: 'https://greyradius.com/industries/technology.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/',
+    section: 'case-studies',
+    pageTitle: 'Case Studies — GreyRadius Consulting',
+    ogTitle: 'Case Studies — GreyRadius Consulting',
+    ogDesc: '12 engagements. Real primary research. Real outcomes. Real numbers.',
+    ogImage: '/assets/images/og-case-studies.png',
+    ogUrl: '',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/agri-chemical-gtm',
+    section: 'case-studies',
+    pageTitle: 'Agri Chemical Company GTM & Product Development — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-agri-chemical.png',
+    ogUrl: 'https://greyradius.com/case-studies/agri-chemical-gtm.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/alloy-metals-sea-expansion',
+    section: 'case-studies',
+    pageTitle: 'Alloy Metals SEA Expansion — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-alloy-metals.png',
+    ogUrl: 'https://greyradius.com/case-studies/alloy-metals-sea-expansion.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/coal-mining-enclosed-transport',
+    section: 'case-studies',
+    pageTitle: 'Coal Mining Enclosed Transport — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-coal-mining.png',
+    ogUrl: 'https://greyradius.com/case-studies/coal-mining-enclosed-transport.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/drone-startup-gtm',
+    section: 'case-studies',
+    pageTitle: 'Drone Startup GTM — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-drone-startup.png',
+    ogUrl: 'https://greyradius.com/case-studies/drone-startup-gtm.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/elearning-gcc-expansion',
+    section: 'case-studies',
+    pageTitle: 'eLearning GCC Expansion — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-elearning.png',
+    ogUrl: 'https://greyradius.com/case-studies/elearning-gcc-expansion.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/eye-care-pharma-market-entry',
+    section: 'case-studies',
+    pageTitle: 'Eye Care Pharma Market Entry — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-eye-care.png',
+    ogUrl: 'https://greyradius.com/case-studies/eye-care-pharma-market-entry.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/hospital-chain-canada',
+    section: 'case-studies',
+    pageTitle: 'Hospital Chain Canada — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-hospital-canada.png',
+    ogUrl: 'https://greyradius.com/case-studies/hospital-chain-canada.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/nativfresh-cpg-gtm',
+    section: 'case-studies',
+    pageTitle: 'NativFresh CPG GTM — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-nativfresh.png',
+    ogUrl: 'https://greyradius.com/case-studies/nativfresh-cpg-gtm.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/oncology-abstracts',
+    section: 'case-studies',
+    pageTitle: 'Oncology Abstracts — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-oncology.png',
+    ogUrl: 'https://greyradius.com/case-studies/oncology-abstracts.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/retail-market-entry',
+    section: 'case-studies',
+    pageTitle: 'Retail Market Entry — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-retail-market.png',
+    ogUrl: 'https://greyradius.com/case-studies/retail-market-entry.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/saas-product-market-fit',
+    section: 'case-studies',
+    pageTitle: 'SaaS Product-Market Fit — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-saas-pmf.png',
+    ogUrl: 'https://greyradius.com/case-studies/saas-product-market-fit.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/case-studies/trinetra-gtm',
+    section: 'case-studies',
+    pageTitle: 'Trinetra GTM — GreyRadius Case Study',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-cs-trinetra.png',
+    ogUrl: 'https://greyradius.com/case-studies/trinetra-gtm.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/insights/',
+    section: 'insights',
+    pageTitle: 'Insights — GreyRadius Consulting',
+    ogTitle: 'Insights — GreyRadius Consulting',
+    ogDesc: 'Research findings, market patterns, and practitioner perspective. No AI-generated filler — just what we learned from the interviews.',
+    ogImage: '/assets/images/og-insights.png',
+    ogUrl: '',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/insights/ai-hype-to-results',
+    section: 'insights',
+    pageTitle: 'Turning AI Hype Into Business Results — GreyRadius Insights',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ins-ai-hype.png',
+    ogUrl: 'https://greyradius.com/insights/ai-hype-to-results.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/insights/consultants-vs-inhouse',
+    section: 'insights',
+    pageTitle: 'Consultants vs In-House Teams — GreyRadius Insights',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ins-consultants-vs.png',
+    ogUrl: 'https://greyradius.com/insights/consultants-vs-inhouse.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/insights/cost-transformation',
+    section: 'insights',
+    pageTitle: 'Cost Transformation — GreyRadius Insights',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ins-cost-transform.png',
+    ogUrl: 'https://greyradius.com/insights/cost-transformation.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/insights/resilient-supply-chain',
+    section: 'insights',
+    pageTitle: 'Resilient Supply Chain — GreyRadius Insights',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ins-supply-chain.png',
+    ogUrl: 'https://greyradius.com/insights/resilient-supply-chain.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/insights/what-management-consultants-do',
+    section: 'insights',
+    pageTitle: 'What Management Consultants Do — GreyRadius Insights',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ins-what-consultants.png',
+    ogUrl: 'https://greyradius.com/insights/what-management-consultants-do.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/insights/winning-saturated-markets',
+    section: 'insights',
+    pageTitle: 'Winning in Saturated Markets — GreyRadius Insights',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '/assets/images/og-ins-saturated-markets.png',
+    ogUrl: 'https://greyradius.com/insights/winning-saturated-markets.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/legal/privacy',
+    section: 'core',
+    pageTitle: 'Privacy Policy — GreyRadius Consulting',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '',
+    ogUrl: 'https://greyradius.com/legal/privacy.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+  {
+    path: '/legal/terms',
+    section: 'core',
+    pageTitle: 'Terms of Service — GreyRadius Consulting',
+    ogTitle: '',
+    ogDesc: '',
+    ogImage: '',
+    ogUrl: 'https://greyradius.com/legal/terms.html',
+    twCard: '',
+    twTitle: '',
+    twDesc: '',
+  },
+];
+
+// ── Helpers ──────────────────────────────────────────────
+function getIssues(p) {
+  const issues = [];
+  if (!p.ogTitle) issues.push({ sev: 'error', msg: 'Missing og:title' });
+  if (!p.ogDesc) issues.push({ sev: 'error', msg: 'Missing og:description' });
+  if (!p.ogImage) issues.push({ sev: 'error', msg: 'Missing og:image' });
+  if (!p.twCard) issues.push({ sev: 'warn', msg: 'No Twitter Card tags' });
+  else {
+    if (!p.twTitle) issues.push({ sev: 'warn', msg: 'Missing twitter:title' });
+    if (!p.twDesc) issues.push({ sev: 'warn', msg: 'Missing twitter:description' });
+  }
+  return issues;
+}
+
+function getBadge(issues) {
+  const errors = issues.filter(i => i.sev === 'error').length;
+  const warns = issues.filter(i => i.sev === 'warn').length;
+  if (errors === 0 && warns === 0) return '<span class="badge badge-ok">Complete</span>';
+  if (errors > 0) return `<span class="badge badge-error">${errors} missing</span>`;
+  return `<span class="badge badge-warn">${warns} warning</span>`;
+}
+
+function displayTitle(p) {
+  return p.ogTitle || p.pageTitle || p.path;
+}
+function displayDesc(p) {
+  return p.ogDesc || '';
+}
+function displayImage(p) {
+  return p.ogImage || '';
+}
+function prodUrl(p) {
+  return p.ogUrl || (PROD_BASE + p.path);
+}
+
+function enc(s) { return encodeURIComponent(s); }
+
+// ── Render LinkedIn card ─────────────────────────────────
+function renderLinkedin(p) {
+  const img = displayImage(p);
+  const title = displayTitle(p);
+  const desc = displayDesc(p);
+  const imgHtml = img
+    ? `<img class="li-image" src="${img}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+      + `<div class="li-image-placeholder" style="display:none">🖼️</div>`
+    : `<div class="li-image-placeholder">🖼️</div>`;
+  return `
+    <div class="li-card">
+      ${imgHtml}
+      <div class="li-body">
+        <div class="li-domain">${BASE_DOMAIN}</div>
+        <div class="li-title${!p.ogTitle ? ' missing' : ''}">${p.ogTitle || '(no og:title — will use page &lt;title&gt; or nothing)'}</div>
+        <div class="li-desc${!p.ogDesc ? ' missing' : ''}">${p.ogDesc || '(no og:description — LinkedIn may scrape body text)'}</div>
+      </div>
+    </div>`;
+}
+
+// ── Render Twitter/X card ────────────────────────────────
+function renderTwitter(p) {
+  if (!p.twCard) {
+    return `<div class="tw-no-card">
+      <strong>No Twitter Card</strong>
+      twitter:card tag is missing — link will appear as plain text, no preview image.
+    </div>`;
+  }
+  const img = displayImage(p);
+  const title = p.twTitle || displayTitle(p);
+  const desc = p.twDesc || displayDesc(p);
+  const imgHtml = img
+    ? `<img class="tw-image" src="${img}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+      + `<div class="tw-image-placeholder" style="display:none">🖼️</div>`
+    : `<div class="tw-image-placeholder">🖼️</div>`;
+  return `
+    <div class="tw-card">
+      ${imgHtml}
+      <div class="tw-body">
+        <div class="tw-domain">${BASE_DOMAIN}</div>
+        <div class="tw-title${!p.twTitle && !p.ogTitle ? ' missing' : ''}">${p.twTitle || p.ogTitle || '(no twitter:title)'}</div>
+        <div class="tw-desc${!p.twDesc && !p.ogDesc ? ' missing' : ''}">${p.twDesc || p.ogDesc || '(no twitter:description)'}</div>
+      </div>
+    </div>`;
+}
+
+// ── Render Slack card ────────────────────────────────────
+function renderSlack(p) {
+  const img = displayImage(p);
+  const title = displayTitle(p);
+  const desc = displayDesc(p);
+  const imgHtml = img
+    ? `<img class="sl-image" src="${img}" alt="" onerror="this.style.display='none'">`
+    : '';
+  return `
+    <div class="sl-card">
+      <div class="sl-site">GreyRadius Consulting</div>
+      <span class="sl-title${!p.ogTitle ? ' missing' : ''}">${p.ogTitle || '(no og:title — Slack will use page title)'}</span>
+      <div class="sl-desc${!p.ogDesc ? ' missing' : ''}">${p.ogDesc || '(no og:description)'}</div>
+      ${imgHtml}
+    </div>`;
+}
+
+// ── Build cards ──────────────────────────────────────────
+let currentView = 'linkedin';
+let currentFilter = 'all';
+
+function buildCards() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+
+  let total = 0, complete = 0, withIssues = 0, noImage = 0;
+
+  PAGES.forEach((p, idx) => {
+    const issues = getIssues(p);
+    const hasErrors = issues.some(i => i.sev === 'error');
+    const hasWarns = issues.some(i => i.sev === 'warn');
+    const isComplete = issues.length === 0;
+
+    if (isComplete) complete++;
+    else withIssues++;
+    if (!p.ogImage) noImage++;
+    total++;
+
+    const purl = prodUrl(p);
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.dataset.section = p.section;
+    card.dataset.hasIssues = issues.length > 0 ? '1' : '0';
+
+    const issuesHtml = issues.length > 0 ? `
+      <div class="issues">
+        <div class="issues-title">Issues detected</div>
+        ${issues.map(i => `
+          <div class="issue-item ${i.sev === 'warn' ? 'warn' : ''}">
+            <span class="issue-icon">${i.sev === 'error' ? '✗' : '⚠'}</span>
+            ${i.msg}
+          </div>`).join('')}
+      </div>` : '';
+
+    card.innerHTML = `
+      <div class="card-header">
+        <span class="page-path">${p.path}</span>
+        ${getBadge(issues)}
+      </div>
+
+      <div class="platform-tabs" role="tablist">
+        <button class="platform-tab ${currentView === 'linkedin' ? 'active' : ''}" data-view="linkedin" role="tab">
+          <span class="tab-icon">in</span> LinkedIn
+        </button>
+        <button class="platform-tab ${currentView === 'twitter' ? 'active' : ''}" data-view="twitter" role="tab">
+          <span class="tab-icon">𝕏</span> Twitter/X
+        </button>
+        <button class="platform-tab ${currentView === 'slack' ? 'active' : ''}" data-view="slack" role="tab">
+          <span class="tab-icon">⚡</span> Slack
+        </button>
+      </div>
+
+      <div class="preview-panel ${currentView === 'linkedin' ? 'active' : ''}" data-panel="linkedin">
+        ${renderLinkedin(p)}
+      </div>
+      <div class="preview-panel ${currentView === 'twitter' ? 'active' : ''}" data-panel="twitter">
+        ${renderTwitter(p)}
+      </div>
+      <div class="preview-panel ${currentView === 'slack' ? 'active' : ''}" data-panel="slack">
+        ${renderSlack(p)}
+      </div>
+
+      ${issuesHtml}
+
+      <div class="card-footer">
+        <a class="debugger-link fb" href="https://developers.facebook.com/tools/debug/?q=${enc(purl)}" target="_blank" rel="noopener">
+          FB Debugger ↗
+        </a>
+        <a class="debugger-link li" href="https://www.linkedin.com/post-inspector/inspect/${enc(purl)}" target="_blank" rel="noopener">
+          LI Inspector ↗
+        </a>
+        <a class="debugger-link tw" href="https://cards-dev.twitter.com/validator" target="_blank" rel="noopener">
+          TW Validator ↗
+        </a>
+        <a class="debugger-link og" href="https://opengraph.io/api/1.1/site/${enc(purl)}?app_id=preview" target="_blank" rel="noopener">
+          OG.io ↗
+        </a>
+        <a class="debugger-link" href="${p.path}" target="_blank" rel="noopener">View page ↗</a>
+      </div>
+    `;
+
+    // Tab switching within card
+    card.querySelectorAll('.platform-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const view = tab.dataset.view;
+        card.querySelectorAll('.platform-tab').forEach(t => t.classList.toggle('active', t.dataset.view === view));
+        card.querySelectorAll('.preview-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === view));
+      });
+    });
+
+    grid.appendChild(card);
+  });
+
+  updateStats(total, complete, withIssues, noImage);
+  applyFilter();
+}
+
+function applyFilter() {
+  const cards = document.querySelectorAll('.card');
+  let visible = 0;
+  cards.forEach(card => {
+    let show = true;
+    if (currentFilter !== 'all') {
+      if (currentFilter === 'issues') {
+        show = card.dataset.hasIssues === '1';
+      } else {
+        show = card.dataset.section === currentFilter;
+      }
+    }
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  const empty = document.querySelector('.empty-state');
+  if (visible === 0 && !empty) {
+    const div = document.createElement('div');
+    div.className = 'empty-state';
+    div.innerHTML = '<strong>No pages found</strong>No pages match this filter.';
+    document.getElementById('grid').appendChild(div);
+  } else if (visible > 0 && empty) {
+    empty.remove();
+  }
+
+  document.getElementById('summaryCounts').innerHTML =
+    `Showing <strong>${visible}</strong> of <strong>${PAGES.length}</strong> pages`;
+}
+
+function updateStats(total, complete, withIssues, noImage) {
+  const stats = document.getElementById('statsBar');
+  const pct = Math.round(complete / total * 100);
+  stats.innerHTML = `
+    <div class="stat"><span class="stat-dot green"></span><strong>${complete}</strong> fully complete (${pct}%)</div>
+    <div class="stat"><span class="stat-dot red"></span><strong>${withIssues}</strong> with issues</div>
+    <div class="stat"><span class="stat-dot amber"></span><strong>${noImage}</strong> missing og:image</div>
+    <div class="stat"><span class="stat-dot"></span><strong>${total}</strong> total pages</div>
+  `;
+}
+
+// ── Global view toggle ───────────────────────────────────
+function setGlobalView(view) {
+  currentView = view;
+  document.getElementById('viewLinkedin').classList.toggle('active', view === 'linkedin');
+  document.getElementById('viewTwitter').classList.toggle('active', view === 'twitter');
+  document.getElementById('viewSlack').classList.toggle('active', view === 'slack');
+
+  document.querySelectorAll('.platform-tab').forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.view === view);
+  });
+  document.querySelectorAll('.preview-panel').forEach(panel => {
+    panel.classList.toggle('active', panel.dataset.panel === view);
+  });
+}
+
+document.getElementById('viewLinkedin').addEventListener('click', () => setGlobalView('linkedin'));
+document.getElementById('viewTwitter').addEventListener('click', () => setGlobalView('twitter'));
+document.getElementById('viewSlack').addEventListener('click', () => setGlobalView('slack'));
+
+// ── Filter buttons ───────────────────────────────────────
+document.getElementById('filterGroup').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentFilter = btn.dataset.filter;
+  applyFilter();
+});
+
+// ── Init ──────────────────────────────────────────────────
+buildCards();
+</script>
+</body>
+</html>
