@@ -145,6 +145,9 @@ const pages: PageSpec[] = [
   { filename: "og-generic.png",    title: "GreyRadius Consulting",          subtitle: "Output-led strategy and market-entry consulting.",   accent: ORANGE },
   { filename: "og-contact.png",    title: "Get in Touch",                   subtitle: "Start a conversation about your next market move.",  accent: ORANGE },
   { filename: "og-about.png",      title: "About GreyRadius",               subtitle: "9 years. 200+ projects. 4 countries.",               accent: BLUE   },
+  { filename: "og-careers.png",    title: "Join GreyRadius",                subtitle: "We hire when we find the right person.",              accent: ORANGE },
+  { filename: "og-privacy.png",    title: "Privacy Policy",                 subtitle: "How GreyRadius collects, uses, and protects your data.", accent: BLUE },
+  { filename: "og-terms.png",      title: "Terms of Use",                   subtitle: "Terms governing use of greyradius.com.",              accent: BLUE   },
 
   { filename: "og-services.png",          title: "Our Services",                          subtitle: "Six output-led offerings built around your growth stage.", accent: ORANGE },
   { filename: "og-svc-opportunity.png",   title: "Opportunity Assessment",                subtitle: "Should you play in this market?",                          accent: ORANGE },
