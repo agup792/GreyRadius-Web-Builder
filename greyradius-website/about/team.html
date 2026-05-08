@@ -11,30 +11,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <style>
-    .team-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2.5rem; }
-    .team-card { border:1px solid var(--color-border); border-radius:var(--radius-lg); overflow:hidden; background:#fff; transition:var(--transition-med); }
+    /* ── Core team grid ───────────────────────────────────────── */
+    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .team-card { border:1px solid var(--color-border); border-radius:var(--radius-lg); background:#fff; padding:2rem 1.5rem 1.75rem; text-align:center; transition:var(--transition-med); display:flex; flex-direction:column; }
     .team-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-card-hover); }
-    .team-card__photo { height:260px; background:linear-gradient(135deg,#1F3864 0%,#0F1F3F 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-    .team-card__initials { width:110px; height:110px; border-radius:50%; background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:#fff; letter-spacing:-0.02em; }
-    .team-card__body { padding:2rem; }
-    .team-card__name { font-size:1.375rem; font-weight:700; color:var(--color-navy); margin-bottom:0.2rem; }
-    .team-card__role { font-size:0.8125rem; color:var(--color-orange); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:1rem; }
-    .team-card__bio { font-size:var(--text-small); color:var(--color-text-muted); line-height:1.75; }
-    .team-card__meta { margin-top:1.25rem; display:flex; flex-direction:column; gap:0.5rem; }
-    .team-card__meta-row { display:flex; align-items:center; gap:0.5rem; font-size:0.8125rem; color:var(--color-steel-blue); font-weight:500; }
+    /* circular avatar */
+    .team-card__avatar { width:150px; height:150px; border-radius:50%; overflow:hidden; margin:0 auto 1.25rem; border:3px solid var(--color-orange); box-shadow:0 4px 18px rgba(232,105,58,0.18); flex-shrink:0; background:linear-gradient(135deg,#1F3864 0%,#0F1F3F 100%); display:flex; align-items:center; justify-content:center; }
+    .team-card__avatar img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+    .team-card__initials { font-family:var(--font-display); font-size:3rem; font-weight:800; color:rgba(255,255,255,0.5); letter-spacing:-0.02em; }
+    /* text */
+    .team-card__body { display:flex; flex-direction:column; flex:1; }
+    .team-card__name { font-size:1.125rem; font-weight:700; color:var(--color-navy); margin-bottom:0.2rem; }
+    .team-card__role { font-size:0.75rem; color:var(--color-orange); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.9rem; line-height:1.4; }
+    .team-card__bio { font-size:0.8125rem; color:var(--color-text-muted); line-height:1.75; text-align:left; flex:1; }
+    .team-card__meta { margin-top:1.1rem; display:flex; flex-direction:column; gap:0.45rem; text-align:left; }
+    .team-card__meta-row { display:flex; align-items:flex-start; gap:0.5rem; font-size:0.8rem; color:var(--color-steel-blue); font-weight:500; }
+    .team-card__meta-row svg { flex-shrink:0; margin-top:1px; }
     .team-card__meta-row a { color:var(--color-navy); font-weight:600; text-decoration:none; }
     .team-card__meta-row a:hover { color:var(--color-orange); }
+    /* placeholder card */
+    .team-card--pending { border-style:dashed; border-width:2px; background:var(--color-off-white,#f8f8f8); }
+    /* ── Advisor grid ─────────────────────────────────────────── */
     .advisor-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1.25rem; }
     .advisor-card { padding:1.5rem 1rem; border:1px solid var(--color-border); border-radius:var(--radius-md); background:#fff; text-align:center; transition:var(--transition-fast); }
     .advisor-card:hover { border-color:var(--color-orange); transform:translateY(-2px); box-shadow:var(--shadow-card); }
-    .advisor-card__avatar { width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,rgba(31,56,100,0.15) 0%,rgba(31,56,100,0.08) 100%); margin:0 auto 0.75rem; display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--color-navy); font-size:0.875rem; font-family:var(--font-display); }
+    .advisor-card__avatar { width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,rgba(31,56,100,0.15) 0%,rgba(31,56,100,0.08) 100%); margin:0 auto 0.75rem; display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--color-navy); font-size:0.875rem; font-family:var(--font-display); overflow:hidden; }
     .advisor-card__name { font-size:0.8125rem; font-weight:700; color:var(--color-navy); margin-bottom:0.25rem; }
     .advisor-card__spec { font-size:0.75rem; color:var(--color-orange); font-weight:600; }
+    /* ── Stats band ───────────────────────────────────────────── */
     .stat-band { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--color-border); border:1px solid var(--color-border); border-radius:var(--radius-md); overflow:hidden; margin-top:3rem; }
     .stat-band__cell { background:#fff; padding:2rem 1.5rem; text-align:center; }
     .stat-band__num { font-family:var(--font-display); font-size:2.25rem; font-weight:800; color:var(--color-navy); }
     .stat-band__label { font-size:0.8125rem; color:var(--color-text-muted); margin-top:0.25rem; }
-    @media(max-width:900px){ .team-grid{grid-template-columns:1fr;} .advisor-grid{grid-template-columns:repeat(2,1fr);} .stat-band{grid-template-columns:repeat(2,1fr);} }
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media(max-width:1024px){ .team-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:640px){ .team-grid{grid-template-columns:1fr;} .advisor-grid{grid-template-columns:repeat(2,1fr);} .stat-band{grid-template-columns:repeat(2,1fr);} }
     @media(max-width:480px){ .advisor-grid{grid-template-columns:1fr;} .stat-band{grid-template-columns:1fr;} }
   </style>
   <meta property="og:image" content="/assets/images/og-about.png">
@@ -102,8 +113,8 @@
 
       <!-- Chirag Bansal -->
       <article class="team-card reveal">
-        <div class="team-card__photo" style="padding:0;">
-          <img src="../assets/images/team/chirag-bansal.jpg" alt="Chirag Bansal" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+        <div class="team-card__avatar">
+          <img src="../assets/images/team/chirag-bansal.jpg" alt="Chirag Bansal">
         </div>
         <div class="team-card__body">
           <h2 class="team-card__name">Chirag Bansal</h2>
@@ -128,8 +139,8 @@
 
       <!-- Anshuman Kumar -->
       <article class="team-card reveal reveal-delay-1">
-        <div class="team-card__photo" style="padding:0;">
-          <img src="../assets/images/team/anshuman-kumar.jpg" alt="Anshuman Kumar" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+        <div class="team-card__avatar">
+          <img src="../assets/images/team/anshuman-kumar.jpg" alt="Anshuman Kumar">
         </div>
         <div class="team-card__body">
           <h2 class="team-card__name">Anshuman Kumar</h2>
@@ -154,8 +165,8 @@
 
       <!-- Mohit Dixit -->
       <article class="team-card reveal reveal-delay-2">
-        <div class="team-card__photo" style="padding:0;">
-          <img src="../assets/images/team/mohit-dixit.jpg" alt="Mohit Dixit" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+        <div class="team-card__avatar">
+          <img src="../assets/images/team/mohit-dixit.jpg" alt="Mohit Dixit">
         </div>
         <div class="team-card__body">
           <h2 class="team-card__name">Mohit Dixit</h2>
@@ -171,9 +182,9 @@
       </article>
 
       <!-- Pijush Sinha -->
-      <article class="team-card reveal reveal-delay-3">
-        <div class="team-card__photo" style="padding:0;">
-          <img src="../assets/images/team/pijush-sinha.jpg" alt="Pijush Sinha" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      <article class="team-card reveal">
+        <div class="team-card__avatar">
+          <img src="../assets/images/team/pijush-sinha.jpg" alt="Pijush Sinha">
         </div>
         <div class="team-card__body">
           <h2 class="team-card__name">Pijush Sinha</h2>
@@ -188,47 +199,45 @@
         </div>
       </article>
 
-      <!-- Dhiraj — 4th Managing Partner -->
-      <article class="team-card reveal reveal-delay-1" style="grid-column:span 1;border:2px dashed var(--color-border);background:var(--color-off-white);">
-        <div class="team-card__photo" style="background:linear-gradient(135deg,rgba(31,56,100,0.08) 0%,rgba(31,56,100,0.04) 100%);">
-          <div class="team-card__initials" style="background:rgba(31,56,100,0.08);border-color:rgba(31,56,100,0.15);color:var(--color-navy);">D</div>
+      <!-- Mona Kanth -->
+      <article class="team-card reveal reveal-delay-1">
+        <div class="team-card__avatar">
+          <img src="../assets/images/team/mona-kanth.jpg" alt="Mona Kanth">
         </div>
         <div class="team-card__body">
-          <h2 class="team-card__name">Dhiraj</h2>
-          <p class="team-card__role">Managing Partner — Fundraising &amp; Capital Advisory</p>
-          <p class="team-card__bio" style="color:var(--color-text-muted);font-style:italic;">Dhiraj leads GreyRadius's pitchbook and fundraising practice. Full bio and contact details to be added before launch — contact Chirag Bansal for the latest profile.</p>
+          <h2 class="team-card__name">Mona Kanth</h2>
+          <p class="team-card__role">Vice President — Customer Success</p>
+          <p class="team-card__bio">Mona Kanth has over 15 years of experience in international marketing, finance, and market research consulting across sectors such as manufacturing, engineering goods, and consumer goods. She leads the company's overseas business development, driving global expansion, strategic partnerships, and export growth. Mona heads customer success across all GreyRadius engagements.</p>
           <div class="team-card__meta">
             <div class="team-card__meta-row">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Delhi, India
+              Singapore
+            </div>
+            <div class="team-card__meta-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:monakanth@greyradius.com">monakanth@greyradius.com</a>
+            </div>
+            <div class="team-card__meta-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 5a2 2 0 0 1 1.95-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.72-.72a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 18z"/></svg>
+              <a href="tel:+6590111264">+65 9011 1264</a>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- Mona Kanth -->
-      <article class="team-card reveal" style="grid-column:1/-1;max-width:680px;margin:0 auto;width:100%;">
-        <div style="display:grid;grid-template-columns:280px 1fr;">
-          <div class="team-card__photo" style="height:100%;min-height:220px;padding:0;">
-            <img src="../assets/images/team/mona-kanth.jpg" alt="Mona Kanth" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-          </div>
-          <div class="team-card__body">
-            <h2 class="team-card__name">Mona Kanth</h2>
-            <p class="team-card__role">Vice President — Customer Success</p>
-            <p class="team-card__bio">Mona Kanth has over 15 years of experience in international marketing, finance, and market research consulting across sectors such as manufacturing, engineering goods, and consumer goods. She leads the company's overseas business development, driving global expansion, strategic partnerships, and export growth. Mona heads customer success across all GreyRadius engagements.</p>
-            <div class="team-card__meta">
-              <div class="team-card__meta-row">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Singapore
-              </div>
-              <div class="team-card__meta-row">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <a href="mailto:monakanth@greyradius.com">monakanth@greyradius.com</a>
-              </div>
-              <div class="team-card__meta-row">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 5a2 2 0 0 1 1.95-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.72-.72a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 18z"/></svg>
-                <a href="tel:+6590111264">+65 9011 1264</a>
-              </div>
+      <!-- Dhiraj — 4th Managing Partner (bio pending) -->
+      <article class="team-card team-card--pending reveal reveal-delay-2">
+        <div class="team-card__avatar" style="background:linear-gradient(135deg,rgba(31,56,100,0.12) 0%,rgba(31,56,100,0.06) 100%);border-color:var(--color-border);">
+          <span class="team-card__initials" style="color:var(--color-navy);opacity:0.35;">D</span>
+        </div>
+        <div class="team-card__body">
+          <h2 class="team-card__name">Dhiraj</h2>
+          <p class="team-card__role">Managing Partner — Fundraising &amp; Capital Advisory</p>
+          <p class="team-card__bio" style="font-style:italic;">Dhiraj leads GreyRadius's pitchbook and fundraising practice. Full bio and contact details to be added before launch — contact Chirag Bansal for the latest profile.</p>
+          <div class="team-card__meta">
+            <div class="team-card__meta-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Delhi, India
             </div>
           </div>
         </div>
