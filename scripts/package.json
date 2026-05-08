@@ -9,7 +9,8 @@
     "add-og-images": "tsx ./src/add-og-images.ts",
     "add-og-meta": "tsx ./src/add-og-meta.ts",
     "add-twitter-cards": "tsx ./src/add-twitter-cards.ts",
-    "og": "tsx ./src/generate-og-images.ts && tsx ./src/add-og-images.ts && tsx ./src/add-og-meta.ts && tsx ./src/add-twitter-cards.ts",
+    "check-og-coverage": "tsx ./src/check-og-coverage.ts",
+    "og": "tsx ./src/check-og-coverage.ts && tsx ./src/generate-og-images.ts && tsx ./src/add-og-images.ts && tsx ./src/add-og-meta.ts && tsx ./src/add-twitter-cards.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {
