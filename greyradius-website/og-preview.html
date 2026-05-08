@@ -87,6 +87,54 @@
       transition: all 0.15s;
     }
     .view-site-link:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .refresh-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .refresh-btn:hover:not(:disabled) { background: rgba(255,255,255,0.1); color: #fff; }
+    .refresh-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .refresh-btn .refresh-icon { display: inline-block; transition: transform 0.15s; }
+    .refresh-btn.loading .refresh-icon { animation: spin 0.7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Per-card loading overlay */
+    .card { position: relative; }
+    .card-loading-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(2px);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--navy);
+      gap: 6px;
+    }
+    .card-loading-overlay::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--border);
+      border-top-color: var(--navy);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      flex-shrink: 0;
+    }
 
     /* ── Controls bar ───────────────────────────────────── */
     .controls {
@@ -405,6 +453,9 @@
   <span class="header-title">Social Card Preview</span>
   <span class="dev-badge">Dev Only</span>
   <div class="header-right">
+    <button class="refresh-btn" id="refreshBtn" title="Re-fetch meta tags from all pages">
+      <span class="refresh-icon">↻</span> Refresh all
+    </button>
     <a href="/" class="view-site-link">← Back to site</a>
   </div>
 </header>
@@ -656,6 +707,7 @@ function renderCards(pages) {
     card.className = 'card';
     card.dataset.section = p.section;
     card.dataset.hasIssues = issues.length > 0 ? '1' : '0';
+    card.dataset.path = p.path;
 
     const issuesHtml = issues.length > 0 ? `
       <div class="issues">
@@ -783,24 +835,131 @@ document.getElementById('filterGroup').addEventListener('click', e => {
   applyFilter();
 });
 
-// ── Init: fetch all pages in parallel ────────────────────
-async function init() {
-  const grid = document.getElementById('grid');
-  grid.innerHTML = `
-    <div class="empty-state">
-      <strong>Loading…</strong>
-      Fetching meta tags from ${PAGES.length} pages — this takes a moment.
+// ── Refresh a single card's content in-place ─────────────
+function updateCardContent(card, p) {
+  const issues = getIssues(p);
+  const purl = prodUrl(p);
+
+  card.dataset.section = p.section;
+  card.dataset.hasIssues = issues.length > 0 ? '1' : '0';
+
+  const issuesHtml = issues.length > 0 ? `
+    <div class="issues">
+      <div class="issues-title">Issues detected</div>
+      ${issues.map(i => `
+        <div class="issue-item ${i.sev === 'warn' ? 'warn' : ''}">
+          <span class="issue-icon">${i.sev === 'error' ? '✗' : '⚠'}</span>
+          ${i.msg}
+        </div>`).join('')}
+    </div>` : '';
+
+  card.innerHTML = `
+    <div class="card-header">
+      <span class="page-path">${p.path}</span>
+      ${getBadge(issues)}
+    </div>
+    <div class="platform-tabs" role="tablist">
+      <button class="platform-tab ${currentView === 'linkedin' ? 'active' : ''}" data-view="linkedin" role="tab">
+        <span class="tab-icon">in</span> LinkedIn
+      </button>
+      <button class="platform-tab ${currentView === 'twitter' ? 'active' : ''}" data-view="twitter" role="tab">
+        <span class="tab-icon">𝕏</span> Twitter/X
+      </button>
+      <button class="platform-tab ${currentView === 'slack' ? 'active' : ''}" data-view="slack" role="tab">
+        <span class="tab-icon">⚡</span> Slack
+      </button>
+    </div>
+    <div class="preview-panel ${currentView === 'linkedin' ? 'active' : ''}" data-panel="linkedin">
+      ${renderLinkedin(p)}
+    </div>
+    <div class="preview-panel ${currentView === 'twitter' ? 'active' : ''}" data-panel="twitter">
+      ${renderTwitter(p)}
+    </div>
+    <div class="preview-panel ${currentView === 'slack' ? 'active' : ''}" data-panel="slack">
+      ${renderSlack(p)}
+    </div>
+    ${issuesHtml}
+    <div class="card-footer">
+      <a class="debugger-link fb" href="https://developers.facebook.com/tools/debug/?q=${enc(purl)}" target="_blank" rel="noopener">FB Debugger ↗</a>
+      <a class="debugger-link li" href="https://www.linkedin.com/post-inspector/inspect/${enc(purl)}" target="_blank" rel="noopener">LI Inspector ↗</a>
+      <a class="debugger-link tw" href="https://cards-dev.twitter.com/validator" target="_blank" rel="noopener">TW Validator ↗</a>
+      <a class="debugger-link og" href="https://opengraph.io/api/1.1/site/${enc(purl)}?app_id=preview" target="_blank" rel="noopener">OG.io ↗</a>
+      <a class="debugger-link" href="${p.path}" target="_blank" rel="noopener">View page ↗</a>
     </div>`;
 
-  enrichedPages = await Promise.all(
-    PAGES.map(async route => {
+  card.querySelectorAll('.platform-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const view = tab.dataset.view;
+      card.querySelectorAll('.platform-tab').forEach(t => t.classList.toggle('active', t.dataset.view === view));
+      card.querySelectorAll('.preview-panel').forEach(panel => panel.classList.toggle('active', panel.dataset.panel === view));
+    });
+  });
+}
+
+// ── Init: fetch all pages in parallel ────────────────────
+let isLoading = false;
+
+async function init(isRefresh = false) {
+  if (isLoading) return;
+  isLoading = true;
+
+  const grid = document.getElementById('grid');
+  const refreshBtn = document.getElementById('refreshBtn');
+
+  if (isRefresh) {
+    refreshBtn.disabled = true;
+    refreshBtn.classList.add('loading');
+    // Add a loading overlay to every visible card
+    document.querySelectorAll('.card').forEach(card => {
+      const overlay = document.createElement('div');
+      overlay.className = 'card-loading-overlay';
+      card.appendChild(overlay);
+    });
+  } else {
+    grid.innerHTML = `
+      <div class="empty-state">
+        <strong>Loading…</strong>
+        Fetching meta tags from ${PAGES.length} pages — this takes a moment.
+      </div>`;
+  }
+
+  enrichedPages = new Array(PAGES.length);
+
+  await Promise.all(
+    PAGES.map(async (route, i) => {
       const meta = await fetchMeta(route.path);
-      return { ...route, ...meta };
+      enrichedPages[i] = { ...route, ...meta };
+
+      if (isRefresh) {
+        const card = grid.querySelector(`.card[data-path="${CSS.escape(route.path)}"]`);
+        if (card) {
+          updateCardContent(card, enrichedPages[i]);
+        }
+      }
     })
   );
 
-  renderCards(enrichedPages);
+  if (isRefresh) {
+    // Tally updated stats
+    let total = 0, complete = 0, withIssues = 0, noImage = 0;
+    enrichedPages.forEach(p => {
+      const issues = getIssues(p);
+      if (issues.length === 0) complete++; else withIssues++;
+      if (!p.ogImage) noImage++;
+      total++;
+    });
+    updateStats(total, complete, withIssues, noImage, enrichedPages.length);
+    applyFilter();
+    refreshBtn.classList.remove('loading');
+    refreshBtn.disabled = false;
+  } else {
+    renderCards(enrichedPages);
+  }
+
+  isLoading = false;
 }
+
+document.getElementById('refreshBtn').addEventListener('click', () => init(true));
 
 init();
 </script>
