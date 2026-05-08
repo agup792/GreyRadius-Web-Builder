@@ -1,5 +1,5 @@
 import { createCanvas, GlobalFonts, type SKRSContext2D } from "@napi-rs/canvas";
-import { writeFileSync } from "fs";
+import { writeFileSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -189,11 +189,33 @@ const pages: PageSpec[] = [
 ];
 
 function main() {
-  console.log("Generating OG images for GreyRadius...\n");
-  for (const page of pages) {
-    makeImage(page);
+  const force = process.argv.includes("--force");
+
+  if (force) {
+    console.log("Regenerating all OG images for GreyRadius (--force)...\n");
+  } else {
+    console.log("Generating missing OG images for GreyRadius...\n");
+    console.log('  (Pass --force to regenerate all images regardless.)\n');
   }
-  console.log(`\nAll ${pages.length} OG images generated successfully.`);
+
+  let generated = 0;
+  let skipped = 0;
+
+  for (const page of pages) {
+    const outPath = `${OUT_DIR}/${page.filename}`;
+    if (!force && existsSync(outPath)) {
+      console.log(`  – ${page.filename} (already exists, skipping)`);
+      skipped++;
+    } else {
+      makeImage(page);
+      generated++;
+    }
+  }
+
+  console.log(`\n${generated} image(s) generated, ${skipped} skipped (already up-to-date).`);
+  if (generated === 0 && skipped > 0) {
+    console.log("  All images are already present. Run with --force to regenerate.");
+  }
 }
 
 main();

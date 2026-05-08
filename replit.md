@@ -9,6 +9,8 @@ A multi-page consulting firm website for GreyRadius, served as static HTML/CSS f
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
+- `pnpm run og:generate` — generate only missing OG images (skips existing files)
+- `pnpm run og:generate:force` — regenerate all OG images from scratch (full consistency refresh)
 - Required env: `DATABASE_URL` — Postgres connection string
 
 ## Stack
