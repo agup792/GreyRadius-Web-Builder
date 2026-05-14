@@ -278,18 +278,18 @@ h4, .h4 {
 }
 .nav-dropdown__menu {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-8px);
   background: #fff;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card-hover);
-  padding: 0.5rem;
+  padding: 0.625rem 0.5rem 0.5rem;
+  padding-top: calc(0.5rem + 0.625rem);
   min-width: 220px;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-50%) translateY(-8px);
-  transition: all 0.2s ease;
+  transition: opacity 0.2s ease 0.15s, visibility 0.2s ease 0.15s, transform 0.2s ease 0.15s;
   pointer-events: none;
 }
 .nav-dropdown:hover .nav-dropdown__menu,
@@ -298,6 +298,7 @@ h4, .h4 {
   visibility: visible;
   transform: translateX(-50%) translateY(0);
   pointer-events: auto;
+  transition-delay: 0s;
 }
 .nav-dropdown__item {
   display: block;
