@@ -1,0 +1,725 @@
+# GreyRadius Website — Complete Developer Brief
+**Issued to:** Replit Developer / Web Build Team  
+**Prepared by:** GreyRadius (Content & Strategy Review)  
+**Current dev URL:** `https://cd6c8558-ede6-4511-8d63-6ff5a5b8d1e2-00-3iatq5ubamfin.pike.replit.dev/`  
+**Reference files (shared separately):**
+- `GR_SEO_AEO_Master.xlsx` — Full SEO keyword audit, new keywords, page-level meta assignments, 90-day action plan
+- `GR_Taxonomy_Filter_Master.xlsx` — Case study and blog taxonomy, filter architecture, industry × service matrix
+- `GR_Website_Review_Master.xlsx` — Full website content review, case study renames, blog registry
+
+---
+
+## HOW TO READ THIS DOCUMENT
+
+Each section below is a numbered instruction set. Items marked **[CRITICAL — PRE-LAUNCH]** must be completed before the site goes live. Items marked **[HIGH]** should be done within the first two weeks post-launch. Items marked **[MEDIUM]** can follow in weeks 3-8.
+
+---
+
+## SECTION 1 — CRITICAL ROUTING AND STRUCTURAL BUGS
+
+These are not cosmetic issues. They break navigation and SEO simultaneously.
+
+### 1.1 Fix the /about/ directory routing [CRITICAL — PRE-LAUNCH]
+
+**Problem:** Navigating to `/about/` currently renders the full homepage instead of an About page. Every nav link from within the `/about/` directory is also broken because relative paths prepend `/about/` to all hrefs (e.g. Services links to `/about/services/`, Industries links to `/about/industries/` — all 404).
+
+**Fix required:**
+- Create `/about/index.html` as a proper standalone About page (not a copy of the homepage).
+- Switch all nav template hrefs from document-relative to root-relative paths. Every `href="services/..."` inside the `/about/` directory should be `href="/services/..."`. This applies to every template partial that generates navigation.
+- Verify: after fix, clicking "About" from any page should land on a distinct About page, and all nav links from that page should route correctly.
+
+### 1.2 Fix the /case-studies/ directory routing [CRITICAL — PRE-LAUNCH]
+
+**Problem:** Same as 1.1. The `/case-studies/` URL serves the homepage instead of a case studies listing page. All nav links from within that directory are broken with `/case-studies/` prepended.
+
+**Fix required:** Same root-relative path fix as 1.1. Build a proper `/case-studies/index.html` listing page.
+
+### 1.3 Fix all canonical tags [CRITICAL — PRE-LAUNCH]
+
+**Problem:** Every page currently has `canonical: https://greyradius.com/` pointing to the old site. When the new site launches on its production domain, Google will read these canonicals and continue crediting all content to the old domain. All new content rankings will be lost.
+
+**Fix required:**
+- On launch, update every page's canonical tag to its own correct URL on the new domain.
+- Format: `<link rel="canonical" href="https://greyradius.com/services/opportunity-assessment.html" />` (using the final production domain, not the Replit dev URL).
+- This must be templated so it auto-generates per-page — not hardcoded per page manually.
+
+### 1.4 Fix the /industries/technology.html 404 [CRITICAL — PRE-LAUNCH]
+
+**Problem:** The URL `/industries/technology.html` returns a 404. This URL is linked from the main nav and from multiple internal pages. Visitors clicking "Technology" under Industries hit a dead page.
+
+**Fix required:** Build all 6 industry pages (see Section 7 for content spec). The page files must exist before launch:
+- `/industries/technology.html`
+- `/industries/bfsi.html`
+- `/industries/energy-and-chemicals.html`
+- `/industries/cpg-fmcg-retail.html`
+- `/industries/healthcare-and-life-sciences.html`
+- `/industries/investment-banks-and-pe.html`
+
+---
+
+## SECTION 2 — CONTACT EMAIL CHANGE (GLOBAL FIND AND REPLACE)
+
+### 2.1 Replace hello@greyradius.com with sales@greyradius.com [HIGH]
+
+**Problem:** The general contact email `hello@greyradius.com` appears in the following locations and must be changed to `sales@greyradius.com`:
+
+**Every instance to update:**
+- Footer on all pages (currently shows `hello@greyradius.com`)
+- `/contact.html` — the line "Not sure which office to contact? Email hello@greyradius.com" → change to `sales@greyradius.com`
+- `/contact.html` meta description — currently contains `hello@greyradius.com`
+- `/contact.html` page body — the "Reach out directly" section fallback email
+- Any `mailto:` href currently pointing to `hello@greyradius.com`
+
+**Do not change:** The individual partner emails (`chiragbansal@`, `anshuman@`, `monakanth@`, `delhi@`, `dubai@`, `sg@`, `brussels@`) — these stay as-is. Only the generic catch-all changes.
+
+---
+
+## SECTION 3 — BLOGS SECTION (CURRENTLY MISSING — BUILD FROM SCRATCH)
+
+The new site has no blog or insights section beyond a single article placeholder. The old site (greyradius.com/blogs/) has 22 published blog posts that must be migrated.
+
+### 3.1 Build the /insights/ listing page [HIGH]
+
+**Page URL:** `/insights/index.html`  
+**Page title:** `Insights — GreyRadius Consulting`  
+**Meta description:** `Primary research-led insights on market entry, GTM strategy, feasibility, and fundraising. For founders and CXOs across India, GCC, and Southeast Asia.`
+
+**Page structure required:**
+- H1: "Insights"
+- Filter bar with two filter dimensions (see Section 3.3 below)
+- Card grid showing all blog posts (22 posts from old site + new posts)
+- Each card must show: post title, publication date, industry tag chip, service tag chip, 1-2 sentence excerpt
+
+### 3.2 Migrate all 22 blog posts from old site [HIGH]
+
+The full list of blogs to migrate — with their titles, dates, industry tags, service tags, and migration notes — is in **`GR_Taxonomy_Filter_Master.xlsx` → Sheet: "Blogs – Full Taxonomy"**.
+
+Each blog post needs its own URL. Use the SEO-friendly slug format below. Do not carry over the old WordPress slugs directly — use the cleaned versions from the reference file.
+
+**Slug format:** `/insights/[short-descriptive-slug].html`
+
+**Example mappings:**
+| Blog Title | New Slug |
+|---|---|
+| Essential Market Entry Strategies for CXOs | `/insights/market-entry-strategies-for-cxos.html` |
+| GTM Strategy for B2B SaaS | `/insights/gtm-strategy-b2b-saas.html` |
+| Retail Is Not Won on the Shelf | `/insights/retail-demand-validation-pricing.html` |
+| Turning AI Hype Into Business Results | `/insights/ai-hype-to-business-results.html` |
+
+Full slug list for all 22 posts is in the reference Excel. Apply the same pattern to every post: lowercase, hyphens only, no dates in URLs, no stop words (the/a/an/for), under 60 characters.
+
+**Each blog post page must include:**
+- Correct `<title>` tag matching the blog headline
+- Unique meta description (150-155 characters) — available in `GR_SEO_AEO_Master.xlsx`
+- Canonical tag pointing to its own URL
+- `<article>` semantic HTML wrapper
+- Author name and publication date in `<time datetime="">` format
+- Industry tag(s) as clickable chips linking back to filtered insights view
+- Service tag(s) as clickable chips
+- "Related posts" section (minimum 2 links)
+- Internal link to the relevant service page (minimum 1 per post)
+- FAQ schema (JSON-LD) on posts that include a FAQ section
+
+### 3.3 Blog filter system [HIGH]
+
+The `/insights/` listing page needs two clickable filter dimensions:
+
+**Filter 1 — Industry** (pill buttons, single or multi-select):
+`All | Technology | CPG / FMCG / Retail | Healthcare & Life Sciences | Energy & Chemicals | Education / EdTech | Manufacturing & Industrials | Government`
+
+**Filter 2 — Service** (pill buttons):
+`All | Opportunity Assessment | Feasibility & TEV | Market Entry Execution | GTM-XaaS | Pitchbook & Fundraising | AI Consulting & Transformation`
+
+**Filter behaviour:**
+- Default state: All posts shown, reverse chronological
+- Active filter: show only posts matching selected tags
+- AND logic between dimensions (Industry AND Service both active = show intersection)
+- No-results state: show "No insights match this filter. Browse all." with reset link
+- URL params update on filter change: `?industry=technology&service=gtm-xaas` (makes filtered views shareable and Google-indexable)
+- On mobile: horizontal scroll row for filter pills
+
+The complete data model and tag assignments for all 22 blogs are in **`GR_Taxonomy_Filter_Master.xlsx` → Sheet: "Blogs – Full Taxonomy"** (columns: Broad Industry, Sub-Sector, Primary Service, Secondary Service, Filter Tags).
+
+---
+
+## SECTION 4 — CASE STUDIES UPDATES
+
+### 4.1 Build the /case-studies/ listing page [CRITICAL — PRE-LAUNCH]
+
+Currently the `/case-studies/` URL serves the homepage (routing bug — see Section 1.2). Build a proper listing page.
+
+**Page URL:** `/case-studies/index.html`  
+**Page title:** `Case Studies — GreyRadius Consulting`  
+**Meta description:** `Real consulting engagements. Market entry, GTM execution, feasibility studies, and fundraising across India, GCC, Southeast Asia, and Europe. 19 case studies.`
+
+**Each case study card must show:**
+- Title (new title — see reference Excel)
+- Industry tag chip (coloured by sector)
+- Service tag chip
+- Geography tag
+- 1-line outcome statement
+- "Read case study" link
+
+### 4.2 Add filter system to case studies [HIGH]
+
+Same two-filter architecture as blogs (Section 3.3) plus an optional Geography filter:
+
+**Filter 1 — Industry:** `All | Technology | CPG / FMCG / Retail | Healthcare & Life Sciences | Energy & Chemicals | Education / EdTech | Manufacturing & Industrials | Government & Public Sector`
+
+**Filter 2 — Service:** `All | Opportunity Assessment | Feasibility & TEV | Market Entry Execution | GTM-XaaS | Pitchbook & Fundraising | AI Consulting & Transformation`
+
+**Filter 3 — Geography (optional, add if time allows):** `All | India | UAE / GCC | South-East Asia | Europe | USA`
+
+Full tag assignments for all 19 case studies are in **`GR_Taxonomy_Filter_Master.xlsx` → Sheet: "Case Studies – Full Taxonomy"**.
+
+### 4.3 Build the 3 missing case study pages [CRITICAL — PRE-LAUNCH]
+
+The homepage "Outcomes, not adjectives" section links to 3 case study pages that do not exist:
+
+| Missing URL | Case Study |
+|---|---|
+| `/case-studies/edtech-saas-uae-indonesia.html` | EdTech SaaS UAE + Indonesia — 180,000 students, USD 500M IPO |
+| `/case-studies/aluminium-refining-uae-europe.html` | Aluminium Refining UAE to Eastern Europe — 2.3x revenue |
+| `/case-studies/performance-food-ksa.html` | FMCG KSA Expansion — 2x sales acceleration |
+
+These three are featured on the homepage with outcome metrics. Until the pages exist, every "Read case study" click from the homepage lands on a 404. Build placeholder pages minimum — full content from client.
+
+### 4.4 Add cover images to case study cards [HIGH]
+
+Case study cards currently show no images. Each card needs a cover image. Options in priority order:
+1. Client-provided images (anonymised where required)
+2. Industry-relevant stock photography (not generic Pexels boardroom shots — use sector-specific visuals: manufacturing floor for industrial case studies, pharma lab for healthcare, etc.)
+3. Illustrated graphics with outcome numbers as the visual (e.g. large "2.3x" on a dark background)
+
+Image dimensions: 800×450px (16:9), WebP format, compressed under 120kb each.
+
+---
+
+## SECTION 5 — TEAM MEMBER IMAGES
+
+### 5.1 Team page images — current status [HIGH]
+
+From inspection of `/about/team.html`, the following team members have image paths defined but the images may not be loading or are blank:
+
+**Photos needed (upload to `/assets/images/team/` with exact filenames below):**
+- `chirag-bansal.jpg` — Pull from old site: `https://greyradius.com/wp-content/uploads/` (Chirag's photo is on the old site About page)
+- `anshuman-kumar.jpg`
+- `mohit-dixit.jpg`
+- `pijush-sinha.jpg`
+- `mona-kanth.jpg`
+- `dhiraj.jpg` — Currently shows a "D" initial placeholder. Add photo or leave placeholder with consistent styling
+- `tapasya.jpg` — Currently shows a "T" initial placeholder
+
+**Advisory panel photos needed:**
+- `ashish-sharma.jpg`
+- `mahmoud-sherif.jpg`
+- `dheeraj-jain.jpg`
+- `priya-ranjan.jpg`
+- `ajay-aggarwal.jpg`
+- `purnendu-kanth.jpg`
+- `shishir-das.jpg`
+- `meghna-khandelwal.jpg`
+- `sushil-sharma.jpg`
+- `supra-srivastava.jpg`
+
+**Source:** Pull all available photos from the old site at `https://greyradius.com/our-team/`. Photos are publicly accessible. Download, resize to 400×400px square, compress to WebP under 60kb each, upload to `/assets/images/team/`.
+
+### 5.2 Homepage team thumbnails [HIGH]
+
+The homepage shows 4 partner thumbnails (Chirag, Anshuman, Dhiraj, Pijush). Currently only Chirag's photo loads. The other three show no image. Apply the same photo files once uploaded per 5.1.
+
+### 5.3 Incomplete team bios [MEDIUM]
+
+Two team members have placeholder bios:
+- **Dhiraj** (`/about/team.html`): "Full bio and contact details to be added before launch." Client to provide full bio text and contact email before this is published.
+- **Tapasya**: "Full bio to be added." Client to provide.
+
+Do not launch the team page with "Full bio to be added" visible to site visitors. Either complete the bios or remove those two cards until content is ready.
+
+---
+
+## SECTION 6 — SEO AND TECHNICAL SEO
+
+All keyword assignments, page-level meta titles, and meta descriptions are fully documented in **`GR_SEO_AEO_Master.xlsx` → Sheet: "Page-Level Assignments"**. Implement exactly as specified there. Below are the technical requirements.
+
+### 6.1 robots.txt [CRITICAL — PRE-LAUNCH]
+
+Create `/robots.txt` at the domain root. The current site has no robots.txt file.
+
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://greyradius.com/sitemap.xml
+```
+
+Notes:
+- Replace `greyradius.com` with the final production domain on launch
+- Do not block any section of the site from crawling
+- Do not block CSS or JS files (a common error that prevents Google from rendering the page)
+
+### 6.2 XML Sitemap [CRITICAL — PRE-LAUNCH]
+
+Create `/sitemap.xml` listing all indexable pages. Submit to Google Search Console on launch day.
+
+**Pages to include in sitemap:**
+```
+/ (homepage)
+/services/opportunity-assessment.html
+/services/feasibility-and-tev.html
+/services/market-entry-execution.html
+/services/gtm-execution-as-a-service.html
+/services/pitchbook-and-fundraising.html
+/services/ai-consulting-and-transformation.html
+/industries/technology.html
+/industries/bfsi.html
+/industries/energy-and-chemicals.html
+/industries/cpg-fmcg-retail.html
+/industries/healthcare-and-life-sciences.html
+/industries/investment-banks-and-pe.html
+/case-studies/ (index)
+/case-studies/[each individual case study].html (19 pages)
+/insights/ (index)
+/insights/[each individual blog post].html (22 pages)
+/about/index.html
+/about/team.html
+/about/method.html
+/about/why-greyradius.html
+/contact.html
+```
+
+**Do not include in sitemap:** `/legal/privacy.html`, `/legal/terms.html`, `/careers.html` (low SEO value pages)
+
+### 6.3 Page title tags — all pages [CRITICAL — PRE-LAUNCH]
+
+Every page needs a unique `<title>` tag under 60 characters. Current pages have either good titles or placeholders. Apply the following (full list in the reference Excel):
+
+| Page | Title Tag |
+|---|---|
+| Homepage | `GreyRadius — Strategy & Market Entry Consulting \| India · UAE · SEA` |
+| Opportunity Assessment | `Opportunity Assessment — Go / Defer / Kill in 2–3 Weeks \| GreyRadius` |
+| Feasibility & TEV | `Feasibility & TEV — Bankable Studies in 4 Weeks \| GreyRadius` |
+| Market Entry Execution | `Market Entry Consulting — Land, Sign, First Customer \| GreyRadius` |
+| GTM-XaaS | `GTM Execution-as-a-Service — We Run Your First 90 Days \| GreyRadius` |
+| Pitchbook & Fundraising | `Pitchbook & Fundraising — From Slides to Closed Round \| GreyRadius` |
+| AI Consulting | `AI Consulting & Transformation — Strategy That Ships \| GreyRadius` |
+| About | `About GreyRadius — Boutique Strategy Consulting \| India · UAE · SEA` |
+| Team | `The Team — GreyRadius Consulting` |
+| GR Method | `The GR Method — How GreyRadius Works` |
+| Case Studies | `Case Studies — GreyRadius Consulting` |
+| Insights | `Insights — Strategy, GTM & Market Entry \| GreyRadius` |
+| Contact | `Contact GreyRadius — Book a 30-min Discovery Call` |
+
+### 6.4 Meta descriptions — all pages [CRITICAL — PRE-LAUNCH]
+
+All meta descriptions must be 150-155 characters, unique per page, and include the primary keyword. Full proposed meta descriptions are in **`GR_SEO_AEO_Master.xlsx` → Sheet: "Page-Level Assignments"** column G. Apply all of them.
+
+**Critical fix first:** `/contact.html` meta description currently contains the email address `hello@greyradius.com`. Remove the email from the meta description entirely — it wastes character space and will need updating every time the email changes. Replace with: `Book a 30-minute strategy call with a GreyRadius partner. Offices in Delhi, Dubai, Singapore, and Brussels. We respond within 24 hours.`
+
+### 6.5 OG tags and Twitter card tags [HIGH]
+
+Every page currently has OG image paths pointing to `/assets/images/og-[pagename].png`. Confirm these images exist and are sized correctly: 1200×630px, under 200kb each. Pages that are missing OG images will show a blank card when shared on LinkedIn — which matters for a B2B consulting firm where LinkedIn is a primary channel.
+
+**OG images needed (create one per section):**
+- `/assets/images/og-homepage.png` — Dark background, "GreyRadius — Strategy you can execute" in white text
+- `/assets/images/og-svc-opportunity.png`
+- `/assets/images/og-svc-feasibility.png`
+- `/assets/images/og-svc-market-entry.png`
+- `/assets/images/og-svc-gtm.png`
+- `/assets/images/og-svc-pitchbook.png`
+- `/assets/images/og-svc-ai.png`
+- `/assets/images/og-about.png`
+- `/assets/images/og-contact.png`
+
+### 6.6 FAQ schema markup (JSON-LD) [HIGH]
+
+Add FAQ structured data to the following pages. This enables rich results in Google SERP and makes GR eligible for citation in Google's AI overviews.
+
+**Pages requiring FAQ schema:**
+
+**`/services/opportunity-assessment.html`** — Add these FAQs to the JSON-LD:
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an opportunity assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An opportunity assessment is a structured analysis of whether a specific market, product, or business opportunity is worth pursuing. It combines primary research — typically 15–25 expert and customer interviews — with competitive benchmarking and financial sizing to produce a Go, Defer, or Kill recommendation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does an opportunity assessment take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A GreyRadius opportunity assessment takes 2–3 weeks from scope agreement to final recommendation. Tier 1 (single geography, 15 interviews) takes 7 business days. Tier 3 (3 geographies, 25+ interviews, full workshop) takes 21 business days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the recommendation is to not pursue the opportunity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We deliver the Kill or Defer recommendation. We have done this over 40 times. The single biggest value of an opportunity assessment is having the evidence to say no — without committing 6 months and significant capital to find out the market was not there."
+      }
+    }
+  ]
+}
+```
+
+Apply the same JSON-LD pattern to:
+- `/services/feasibility-and-tev.html` — use the 3 existing FAQs already on the page
+- `/services/market-entry-execution.html` — use the 3 existing FAQs
+- `/services/gtm-execution-as-a-service.html` — use existing FAQs + add: "What does a go-to-market consultant do?"
+- `/services/pitchbook-and-fundraising.html` — use existing FAQs
+- `/services/ai-consulting-and-transformation.html` — use existing FAQs
+- `/about/method.html` — add FAQ: "What is primary market research?" and "How many interviews do you conduct per engagement?"
+
+Place the JSON-LD block inside a `<script type="application/ld+json">` tag in the `<head>` of each page.
+
+### 6.7 Organization schema (homepage only) [HIGH]
+
+Add Organization structured data to the homepage `<head>`:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GreyRadius Consulting",
+  "url": "https://greyradius.com",
+  "logo": "https://greyradius.com/assets/images/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "sales@greyradius.com",
+    "contactType": "sales"
+  },
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "New Delhi",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Singapore",
+      "addressCountry": "SG"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Brussels",
+      "addressCountry": "BE"
+    }
+  ],
+  "sameAs": [
+    "https://in.linkedin.com/company/greyradius"
+  ]
+}
+```
+
+### 6.8 Image alt text — all pages [HIGH]
+
+Every `<img>` tag on the site must have a descriptive `alt` attribute. Current status: most images have empty or generic alt text.
+
+**Rules:**
+- Logo: `alt="GreyRadius Consulting logo"`
+- Team photos: `alt="[Full name] — [Title] at GreyRadius Consulting"`
+- Case study images: `alt="[Case study topic] — GreyRadius Consulting case study"`
+- Client logos in carousel: `alt="[Client name] logo"` — do not leave as `alt="Logo"`
+- OG/decorative images: `alt=""` (empty string, not missing attribute)
+
+### 6.9 SEO-friendly URL slugs [HIGH]
+
+The current URL structure is mostly good. The following changes are recommended before launch (redirects must be set up if pages already have incoming links):
+
+| Current URL | Recommended URL | Reason |
+|---|---|---|
+| `/services/gtm-execution-as-a-service.html` | `/services/gtm-xaas.html` | Shorter, cleaner, matches how the service is branded in copy. Set 301 redirect from old to new. |
+| `/services/pitchbook-and-fundraising.html` | Keep as-is | Descriptive and keyword-rich |
+| `/services/ai-consulting-and-transformation.html` | `/services/ai-consulting.html` | Shorter. Set 301 redirect. |
+| `/about/method.html` | `/about/how-we-work.html` | "how we work" is more search-intent aligned |
+| `/insights/pitchbook-investor-interviews.html` | Keep as-is | Good slug already |
+
+**For all new blog post URLs (Section 3.2):** Use the slug format specified — lowercase, hyphens, no dates, under 60 characters.
+
+### 6.10 Page speed and Core Web Vitals [HIGH]
+
+Run Lighthouse audit on the homepage and the 3 highest-traffic service pages before launch. Target scores:
+- Performance: above 85 (mobile)
+- Accessibility: above 90
+- Best Practices: above 90
+- SEO: 100
+
+**Common fixes needed for consulting firm static sites:**
+- Serve all images in WebP format
+- Lazy-load images below the fold (`loading="lazy"` attribute)
+- Preload the hero image (`<link rel="preload" as="image">`)
+- Minify CSS and JS
+- Use `font-display: swap` for web fonts
+- Remove render-blocking scripts — move non-critical JS to bottom of `<body>` or use `defer`
+
+### 6.11 HTTPS and www redirect [CRITICAL — PRE-LAUNCH]
+
+Confirm on the production domain:
+- HTTPS is enforced (HTTP redirects to HTTPS)
+- www redirects to non-www (or vice versa — pick one and be consistent)
+- No mixed content warnings (all asset URLs must use `https://`)
+
+### 6.12 404 page [MEDIUM]
+
+Build a custom `/404.html` page. Currently broken URLs show a default server error. The custom 404 should include:
+- Brief message: "This page doesn't exist."
+- Links to: Homepage, Services, Case Studies, Contact
+- The main navigation (so visitors don't leave the site)
+
+---
+
+## SECTION 7 — INDUSTRY PAGES (BUILD FROM SCRATCH)
+
+Six industry pages are linked in the nav but return 404. Each needs to be built as a distinct page. The content structure for each is identical — only the industry-specific content changes.
+
+### 7.1 Standard structure for every industry page
+
+```
+<title>[Industry] Consulting — Market Entry, GTM & Strategy | GreyRadius</title>
+
+H1: [Industry]-specific problem statement
+  (example for Technology: "From Product-Market Fit to First Revenue: Strategy for Technology Companies")
+
+Short intro paragraph (3–4 sentences): what GR does in this sector, geographies, type of clients
+
+Section: "Services most used in [Industry]" — 2-3 service cards linking to service pages
+
+Section: "Case studies in [Industry]" — filtered cards from the case study set
+
+Section: "Insights on [Industry]" — 2-3 relevant blog post links
+
+CTA: "Book a 30-min call" → /contact.html
+```
+
+### 7.2 Technology page `/industries/technology.html`
+
+- **H1:** "From Product-Market Fit to Pipeline: Strategy for Technology Companies"
+- **Primary keyword:** `saas consulting companies` / `saas go to market strategy`
+- **Services to feature:** GTM-XaaS, Opportunity Assessment, Market Entry Execution
+- **Case studies to feature:** Drone Startup GTM, B2B SaaS PMF, B2B SaaS Operating Model, EdTech GCC
+- **Blogs to feature:** "GTM Strategy for B2B SaaS", "SaaS International Market Entry", "How to Build a Market Entry Strategy for SaaS Companies"
+
+### 7.3 Healthcare & Life Sciences page `/industries/healthcare-and-life-sciences.html`
+
+- **H1:** "Primary Research-Led Strategy for Healthcare and Life Sciences Companies"
+- **Primary keyword:** `healthcare industry market research` / `healthcare management consulting`
+- **Services to feature:** Feasibility & TEV, Opportunity Assessment, GTM-XaaS
+- **Case studies to feature:** Oncology Intelligence Platform, Pharma Evidence Platform, US Hospital Chain Canada, UAE Housing Authority CX
+- **Blogs to feature:** "Turning Clinical Trial Data into Strategic Intelligence", "Digital and AI Transformation in Healthcare", "From Volume to Value: Hospital Business Models"
+
+### 7.4 Energy & Chemicals page `/industries/energy-and-chemicals.html`
+
+- **H1:** "Feasibility Studies and Market Entry for Energy, Chemicals, and Industrial Companies"
+- **Primary keyword:** `techno economic feasibility study` / `energy market research companies`
+- **Services to feature:** Feasibility & TEV, Market Entry Execution, Opportunity Assessment
+- **Case studies to feature:** Plastic Recycling UAE, E-Waste Recycling India, Coal Mining Conveyor, Agri-Chemical GTM
+- **Blogs to feature:** "Entering the GCC Renewable Energy Market", "Cost Transformation Beyond Cost Cutting"
+
+### 7.5 CPG / FMCG / Retail page `/industries/cpg-fmcg-retail.html`
+
+- **H1:** "Consumer Market Entry and GTM Strategy for CPG, FMCG, and Retail Brands"
+- **Primary keyword:** `market entry strategy consulting` for FMCG / retail
+- **Services to feature:** GTM-XaaS, Market Entry Execution, Opportunity Assessment
+- **Case studies to feature:** Fresh Foods CPG GTM, CPG Retail Market Entry, FMCG KSA Expansion
+- **Blogs to feature:** "Retail Is Not Won on the Shelf", "Retail Market Entry Strategy", "Identifying High-Growth Opportunities in UAE Consumer Goods"
+
+### 7.6 BFSI page `/industries/bfsi.html`
+
+- **H1:** "Strategy and GTM Consulting for Banking, Financial Services, and Insurance"
+- **Primary keyword:** `corporate finance advisory services`
+- **Note:** No case studies currently tagged to BFSI. Do not feature an empty case study section. Instead show a "We are building case studies for this sector" placeholder, and feature 1-2 relevant blog posts (fintech GTM, BFSI market entry — these need to be written, see Section 3).
+- **Services to feature:** Opportunity Assessment, GTM-XaaS, Pitchbook & Fundraising
+
+### 7.7 IB & PE page `/industries/investment-banks-and-pe.html`
+
+- **H1:** "Fundraising Advisory and Market Intelligence for Investment Banks and PE Firms"
+- **Primary keyword:** `corporate finance advisory services`
+- **Note:** Same as BFSI — no case studies yet. Placeholder approach.
+- **Services to feature:** Pitchbook & Fundraising, Opportunity Assessment, Feasibility & TEV
+
+---
+
+## SECTION 8 — COPY CHANGES ON EXISTING PAGES
+
+### 8.1 Market Entry Execution page — H1 fix [CRITICAL — PRE-LAUNCH]
+
+**Current H1:** "AI-driven market entry for faster, smarter expansion."
+
+**Replace with:** "Land the entity. Sign the partners. Get the first customer."
+
+Reason: "AI-driven" is not why clients hire for market entry. The correct positioning is already used lower on the page as a subheading — move it to H1. Also aligns with primary keyword "market entry consulting" (see SEO sheet).
+
+### 8.2 GTM-XaaS page — hero paragraph [HIGH]
+
+**Current:** "GTM-XaaS by GreyRadius provides dedicated GTM execution support across strategy, sales enablement, channel development, demand generation, and growth acceleration — combining strategic growth consulting, embedded execution teams, and AI-powered commercial intelligence to accelerate customer acquisition and market expansion."
+
+**Replace with:** "We don't advise on GTM. We run it. ICP definition, outreach sequences, pipeline management, and weekly partner-reviewed reporting — for the first 90 days. Outcome-tied billing."
+
+### 8.3 Homepage proof bar — replace one metric [HIGH]
+
+**Current stat:** "80% primary-research-led"
+
+**Replace with:** "20+ interviews per mandate"
+
+Reason: "80% primary-research-led" quantifies your methodology, not a client outcome. "20+ interviews per mandate" is specific, verifiable, and meaningful to a buyer evaluating research quality.
+
+### 8.4 Footer — standardise Healthcare label [MEDIUM]
+
+Footer on some pages shows "Healthcare & LSHC" — inconsistent with "Healthcare & Life Sciences" used in the nav and on other pages.
+
+**Find and replace across all footer templates:** `Healthcare & LSHC` → `Healthcare & Life Sciences`
+
+### 8.5 About section — fix year inconsistency [MEDIUM]
+
+Homepage "Boutique. By design." section says "Eight years later" but the proof bar shows "9 years of practice". Founded 2017, current year 2026 = 9 years.
+
+**Fix:** Change "Eight years later" to "Nine years later" in the About section copy.
+
+### 8.6 Pitchbook page — FAQ contradiction fix [HIGH]
+
+**Current FAQ states:** "We do not take mandates where the company has no revenue."
+
+**Problem:** The capabilities section above it lists "Seed funding and pre-seed mandates." These two statements directly contradict each other.
+
+**Fix — replace the FAQ answer with:**
+"We take pre-seed mandates selectively — typically where the founder has a clear thesis and some market validation, even without revenue. Contact us and we will tell you in the first call whether your stage is a fit. We do not take mandates where there is nothing yet to tell a story about."
+
+### 8.7 AI Consulting page — remove competitor name [MEDIUM]
+
+**Current copy:** "McKinsey QuantumBlack delivers AI strategy at global scale... if you need global scale and have an 18-month runway for the programme, call McKinsey. If you need something working by Q3, call us."
+
+**Replace with:** "Big-3 AI transformation programmes typically start at USD 500k and require 12–18 months before a first use case ships. We work with companies that need something live in 90 days on a budget of USD 30–80k. Different market. Different approach."
+
+Same competitive contrast, no competitor name, no legal exposure.
+
+### 8.8 Opportunity Assessment page — add definition box [HIGH]
+
+At the very top of the page body (before the "What We Do" section), add a visually distinct definition box:
+
+```
+WHAT IS AN OPPORTUNITY ASSESSMENT?
+
+An opportunity assessment is a structured analysis — grounded in primary 
+research — that answers one question: should we pursue this market, 
+product, or geography? GreyRadius delivers a Go / Defer / Kill 
+recommendation in 2–3 weeks, backed by 15–25 real conversations with 
+buyers, experts, and channel partners.
+```
+
+This exact format — short definition in a boxed layout — is what Google pulls as a featured snippet for "what is an opportunity assessment" (1,300 searches/month, difficulty 28).
+
+---
+
+## SECTION 9 — NAVIGATION AND UX
+
+### 9.1 "Healthcare & LSHC" in footer nav [MEDIUM]
+
+Footer Industry section shows "Healthcare & LSHC". Change to "Healthcare & Life Sciences" to match nav dropdown.
+
+### 9.2 Floating CTA button [HIGH]
+
+Add a floating "Book a call" button fixed to the bottom-right corner of every page. Behaviour:
+- Appears after user scrolls 300px down the page
+- Does not appear on `/contact.html` (the page is already a contact page)
+- Links to `/contact.html`
+- On mobile: minimum 48px height tap target
+- Label: "Book a 30-min call"
+- Does not overlap footer content on any viewport
+
+### 9.3 Add testimonials section to homepage [HIGH]
+
+Testimonials exist on the old site (5 entries) but are absent from the new site. Add a testimonials row between the case study proof cards and the bottom CTA section on the homepage.
+
+Minimum 3 testimonials. Use the best 3 from the old site (available at `https://greyradius.com/testimonials/`). Each needs:
+- Quote text
+- Person name and title
+- Company name or description (e.g. "Leading Housing Entity in Dubai")
+- Company logo or photo (if available)
+
+Do not use grey avatar placeholders. If no photo is available, use the company logo.
+
+### 9.4 "Insights" nav item — add post count or "New" badge [MEDIUM]
+
+Currently the Insights nav link leads to a section with only 1 article. Once the 22 blog posts are migrated (Section 3), this will be a full section. Until migration is complete, add a "(22)" count or "New" badge to set expectations. Remove the badge once it is the default state.
+
+---
+
+## SECTION 10 — LAUNCH CHECKLIST
+
+Before moving the site to the production domain (`greyradius.com`), verify all items below:
+
+**Routing and structure:**
+- [ ] `/about/` serves a distinct About page (not homepage)
+- [ ] `/case-studies/` serves a listing page (not homepage)
+- [ ] All 6 industry pages return 200 (not 404)
+- [ ] All 3 missing case study pages exist
+- [ ] All nav links work from every directory
+- [ ] Custom 404 page is in place
+
+**Contact email:**
+- [ ] All instances of `hello@greyradius.com` replaced with `sales@greyradius.com` (except individual partner emails)
+
+**Technical SEO:**
+- [ ] `/robots.txt` exists with correct production domain
+- [ ] `/sitemap.xml` exists and lists all pages
+- [ ] All canonical tags point to correct production URLs (not old site, not Replit dev URL)
+- [ ] HTTPS enforced, www/non-www consistent
+- [ ] All page `<title>` tags are unique and under 60 characters
+- [ ] All meta descriptions are unique and 150-155 characters
+- [ ] FAQ schema (JSON-LD) added to all 6 service pages and GR Method page
+- [ ] Organization schema added to homepage
+- [ ] All images have descriptive alt text
+
+**Content:**
+- [ ] All team photos uploaded and rendering (no broken image icons)
+- [ ] Dhiraj and Tapasya bios completed or cards removed
+- [ ] Blogs section live with all 22 posts migrated
+- [ ] Case study filter system working with correct tag assignments
+- [ ] Blog filter system working
+- [ ] Testimonials section on homepage
+- [ ] Floating CTA button working on all pages
+
+**Copy:**
+- [ ] Market Entry Execution H1 updated
+- [ ] GTM-XaaS hero paragraph updated
+- [ ] Homepage proof bar "80%" metric replaced
+- [ ] Footer "Healthcare & LSHC" corrected everywhere
+- [ ] About section year consistency fixed
+- [ ] Pitchbook FAQ contradiction resolved
+- [ ] AI Consulting competitor name removed
+- [ ] Opportunity Assessment definition box added
+
+**Post-launch (day 1):**
+- [ ] Submit sitemap to Google Search Console
+- [ ] Set up Google Analytics 4 (if not already)
+- [ ] Claim Google Business Profile — Delhi office
+- [ ] Claim Google Business Profile — Dubai office
+- [ ] Run Lighthouse audit on homepage and 3 service pages
+
+---
+
+## REFERENCE FILES
+
+| File | What is in it | Use for |
+|---|---|---|
+| `GR_SEO_AEO_Master.xlsx` | Existing keyword audit (71 keywords), 30 new keywords to add, page-level meta title + description for every page, 90-day action plan | All SEO implementation tasks |
+| `GR_Taxonomy_Filter_Master.xlsx` | Case study taxonomy with all tags, blog taxonomy with all tags, filter architecture dev spec, industry × service matrix, content gap analysis | Filter system build, tag assignments |
+| `GR_Website_Review_Master.xlsx` | Full page-by-page content review, case study title renames (old → new), complete blog registry | Content updates, case study title changes |
+
+---
+
+*Document version: May 2026. Prepared based on full audit of the Replit dev build and live greyradius.com site. All page references reflect the state of the site at time of review.*
