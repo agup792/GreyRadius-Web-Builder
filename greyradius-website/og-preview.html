@@ -799,11 +799,14 @@ function applyFilter() {
 function updateStats(total, complete, withIssues, noImage, allTotal) {
   const stats = document.getElementById('statsBar');
   const pct = total > 0 ? Math.round(complete / total * 100) : 0;
+  const now = new Date();
+  const fetchedAt = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   stats.innerHTML = `
     <div class="stat"><span class="stat-dot green"></span><strong>${complete}</strong> fully complete (${pct}%)</div>
     <div class="stat"><span class="stat-dot red"></span><strong>${withIssues}</strong> with issues</div>
     <div class="stat"><span class="stat-dot amber"></span><strong>${noImage}</strong> missing og:image</div>
     <div class="stat"><span class="stat-dot"></span><strong>${allTotal}</strong> total pages</div>
+    <div class="stat stat-fetched-at" style="margin-left:auto;opacity:0.6;font-size:0.82em;">Fetched at ${fetchedAt}</div>
   `;
 }
 
