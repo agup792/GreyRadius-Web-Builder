@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Most MSMEs Do Not Have a Capability Problem. They Have an Execution Problem. | GreyRadius Consulting</title>
-  <meta name="description" content="MSMEs are investing more in growth than ever. Yet productivity gaps keep widening. The issue is not resources or ambition — it is the absence of structured operating systems that convert effort into consistent outcomes." />
-  <link rel="canonical" href="https://greyradius.com/insights/msme-execution-systems-productivity.html" />
+  <meta name="description" content="MSMEs are investing more in growth than ever. Yet productivity gaps keep widening. The issue is not resources or ambition — it is the absence of structured operating systems that convert effort into consistent outcomes.">
+  <link rel="canonical" href="https://greyradius.com/insights/msme-execution-systems-productivity.html">
   <meta property="og:title" content="Most MSMEs Do Not Have a Capability Problem. They Have an Execution Problem. | GreyRadius Consulting">
   <meta property="og:description" content="MSMEs are investing more in growth than ever. Yet productivity gaps keep widening. The issue is not resources or ambition — it is the absence of structured operating systems that convert effort into consistent outcomes.">
   <meta property="og:image" content="/assets/images/og-insights.png">
@@ -19,138 +19,102 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <style>
-    /* ─── Insight article styles ───────────────────────────────────── */
-    :root {
-      --ink:      #0F1117;
-      --soft:     #3A3D48;
-      --muted:    #7A7E8A;
-      --paper:    #F8F7F4;
-      --acc:      #E8693A;
-      --border:   #E2E0DA;
+    /* ── Insight article layout ────────────────────────────────────── */
+    .insight-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3.5rem;
+      align-items: start;
     }
-    .article-page-wrap { background: var(--paper); padding-top: 4.5rem; }
-
-    /* breadcrumb */
-    .article-breadcrumb {
-      max-width: 740px; margin: 0 auto;
-      padding: 28px 40px 0;
-      font-size: 12px; color: var(--muted);
-      font-family: 'Montserrat', sans-serif;
+    /* body copy */
+    .insight-body h2 {
+      font-size: 1.5rem; color: var(--color-navy);
+      margin: 2.75rem 0 0.875rem; font-weight: 700; line-height: 1.28;
     }
-    .article-breadcrumb a { color: var(--muted); text-decoration: none; }
-    .article-breadcrumb a:hover { color: var(--ink); }
-    .article-breadcrumb span { margin: 0 6px; }
-
-    /* article header */
-    .article-header { max-width: 740px; margin: 0 auto; padding: 28px 40px 36px; }
-    .meta-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
-    .tag {
-      display: inline-block; font-size: 10px; font-weight: 600;
-      letter-spacing: .07em; text-transform: uppercase;
-      padding: 3px 10px; border-radius: 3px; font-family: 'Montserrat', sans-serif;
+    .insight-body h3 {
+      font-size: 1.0625rem; color: var(--color-navy);
+      margin: 1.75rem 0 0.625rem; font-weight: 700;
     }
-    .tag-tech   { background:#E3F2FD; color:#1565C0; }
-    .tag-health { background:#E8F5E9; color:#2E7D32; }
-    .tag-energy { background:#FFF3E0; color:#E65100; }
-    .tag-cpg    { background:#F3E5F5; color:#6A1B9A; }
-    .tag-mfg    { background:#FBE9E7; color:#BF360C; }
-    .tag-edu    { background:#E8EAF6; color:#283593; }
-    .tag-cross  { background:#F5F5F5; color:#424242; }
-    .tag-svc    { background:#FFF8F0; color:#7C4A00; border:1px solid #F5DEB3; }
-    .meta-date  { font-size: 12px; color: var(--muted); margin-left: auto; font-family: 'Montserrat', sans-serif; }
-
-    .article-header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(26px, 3.8vw, 42px);
-      font-weight: 800; line-height: 1.18;
-      margin-bottom: 24px; color: var(--color-navy, #1F3864);
+    .insight-body p {
+      color: var(--color-text-muted); line-height: 1.84;
+      margin-bottom: 1.25rem; font-size: 1.0625rem;
     }
-    .lede {
-      font-size: 18px; line-height: 1.68;
-      color: var(--soft); font-weight: 400;
-      border-left: 3px solid var(--acc);
-      padding-left: 20px; margin-bottom: 0;
-      font-family: 'Montserrat', sans-serif;
+    .insight-body ul, .insight-body ol {
+      color: var(--color-text-muted); line-height: 1.84;
+      margin-bottom: 1.25rem; padding-left: 1.5rem;
     }
-
-    /* article body */
-    .article-body { max-width: 740px; margin: 0 auto; padding: 0 40px 80px; }
-    .article-body p {
-      font-size: 16.5px; line-height: 1.82;
-      color: var(--soft); margin-bottom: 20px;
-      font-family: 'Montserrat', sans-serif; font-weight: 400;
+    .insight-body li { margin-bottom: 0.5rem; font-size: 1.0625rem; }
+    .insight-body blockquote {
+      border-left: 3px solid var(--color-orange);
+      padding: 1.125rem 1.5rem; margin: 2rem 0;
+      background: var(--color-off-white); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     }
-    .article-body h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 22px; font-weight: 700;
-      color: var(--color-navy, #1F3864); margin: 44px 0 14px; line-height: 1.3;
+    .insight-body blockquote p {
+      font-style: italic; color: var(--color-text-dark); margin: 0; font-size: 1.0625rem;
     }
-    .article-body h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px; font-weight: 600;
-      color: var(--ink); margin: 28px 0 10px;
-    }
-    .article-body blockquote {
-      border-left: 3px solid var(--acc);
-      padding: 16px 24px; margin: 32px 0;
-      background: #fff; border-radius: 0 4px 4px 0;
-    }
-    .article-body blockquote p {
-      font-style: italic; font-size: 17px;
-      color: var(--ink); margin: 0; font-weight: 500;
-    }
-
-    /* gr-box */
+    /* GR Perspective box */
     .gr-box {
-      background: var(--color-navy, #1F3864); color: #fff;
-      padding: 28px 32px; border-radius: 4px; margin: 40px 0;
+      background: var(--color-navy); color: #fff;
+      padding: 2rem 2.25rem; border-radius: var(--radius-md); margin: 2.75rem 0;
     }
-    .gr-box h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 14px;
-    }
-    .gr-box p { font-size: 14.5px; color: rgba(255,255,255,.82); margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
+    .gr-box h3 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 0.875rem; }
+    .gr-box p { color: rgba(255,255,255,.82); font-size: 0.9375rem; margin-bottom: 0.75rem; line-height: 1.7; }
     .gr-box p:last-child { margin-bottom: 0; }
     .gr-box strong { color: #fff; }
-
-    /* cta strip */
+    /* CTA strip */
     .cta-strip {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 4px; padding: 36px; margin: 48px 0 0; text-align: center;
+      background: var(--color-off-white); border: 1px solid var(--color-border);
+      border-radius: var(--radius-md); padding: 2.25rem; margin: 2.5rem 0; text-align: center;
     }
-    .cta-strip h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 20px; font-weight: 700;
-      color: var(--color-navy, #1F3864); margin-bottom: 10px;
-    }
-    .cta-strip p { font-size: 14px; color: var(--muted); margin-bottom: 22px; font-family: 'Montserrat', sans-serif; }
+    .cta-strip h3 { color: var(--color-navy); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.625rem; }
+    .cta-strip p { color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 1.375rem; }
     .cta-btn {
-      display: inline-block; background: var(--acc); color: #fff;
-      padding: 13px 30px; border-radius: 3px; text-decoration: none;
-      font-size: 14px; font-weight: 700; letter-spacing: .04em;
-      font-family: 'Montserrat', sans-serif;
+      display: inline-block; background: var(--color-orange); color: #fff;
+      padding: 0.8125rem 1.875rem; border-radius: var(--radius-sm);
+      text-decoration: none; font-size: 0.875rem; font-weight: 700; letter-spacing: .04em;
+      transition: background .18s ease;
     }
     .cta-btn:hover { background: #c4531f; }
-
-    /* related */
-    .related { max-width: 740px; margin: 0 auto; padding: 0 40px 60px; }
-    .related h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 10px; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--muted);
-      margin-bottom: 16px; font-weight: 600;
+    /* Related strip */
+    .related-strip { border-top: 1px solid var(--color-border); padding-top: 2rem; margin-top: 2rem; }
+    .related-strip__label {
+      font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--color-text-muted); margin-bottom: 0.875rem;
     }
-    .related-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .related-links-row { display: flex; gap: 0.625rem; flex-wrap: wrap; }
     .related-link {
-      display: inline-block; padding: 8px 16px;
-      border: 1.5px solid var(--border); border-radius: 3px;
-      font-size: 13px; color: var(--soft); text-decoration: none;
-      transition: all .18s; font-family: 'Montserrat', sans-serif;
+      display: inline-block; padding: 0.4375rem 0.875rem;
+      border: 1.5px solid var(--color-border); border-radius: 100px;
+      font-size: 0.8125rem; color: var(--color-text-muted); text-decoration: none;
+      transition: all .18s ease;
     }
-    .related-link:hover { border-color: var(--color-navy, #1F3864); color: var(--color-navy, #1F3864); }
-
-    @media (max-width: 640px) {
-      .article-breadcrumb, .article-header, .article-body, .related { padding-left: 20px; padding-right: 20px; }
+    .related-link:hover { border-color: var(--color-navy); color: var(--color-navy); }
+    /* Sidebar */
+    .insight-sidebar { position: sticky; top: 5.5rem; }
+    .sidebar-block {
+      background: var(--color-off-white); border-radius: var(--radius-lg);
+      padding: 1.75rem; margin-bottom: 1.25rem;
+    }
+    .sidebar-block__label {
+      font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--color-text-muted); margin-bottom: 1.25rem;
+    }
+    .sidebar-row { margin-bottom: 1rem; }
+    .sidebar-row:last-child { margin-bottom: 0; }
+    .sidebar-row__key { font-size: 0.8125rem; font-weight: 600; color: var(--color-navy); margin-bottom: 0.25rem; }
+    .sidebar-row__val { font-size: 0.8125rem; color: var(--color-text-muted); line-height: 1.5; }
+    .sidebar-cta {
+      display: block; padding: 0.625rem 1rem; border-radius: var(--radius-sm);
+      text-decoration: none; font-size: 0.8125rem; font-weight: 600;
+      transition: all .18s ease; margin-bottom: 0.5rem; text-align: center;
+    }
+    .sidebar-cta--primary { background: var(--color-orange); color: #fff; }
+    .sidebar-cta--primary:hover { background: #c4531f; }
+    .sidebar-cta--outline { border: 1.5px solid var(--color-border); color: var(--color-navy); }
+    .sidebar-cta--outline:hover { border-color: var(--color-navy); background: var(--color-navy); color: #fff; }
+    @media (max-width: 900px) {
+      .insight-layout { grid-template-columns: 1fr; }
+      .insight-sidebar { position: static; }
     }
   </style>
   <script type="application/ld+json">
@@ -172,11 +136,11 @@
   <nav class="top-nav top-nav--solid" aria-label="Main navigation">
     <a href="/" class="nav-logo"><img src="../assets/images/logo.png" alt="GreyRadius Consulting" width="180" height="42" style="height:42px;width:auto;"></a>
     <div class="nav-center">
-      <div class="nav-dropdown"><a href="../services/" class="nav-link">Services ▾</a><div class="nav-dropdown__menu"><a href="../services/opportunity-assessment.html" class="nav-dropdown__item">Opportunity Assessment</a><a href="../services/feasibility-and-tev.html" class="nav-dropdown__item">Feasibility &amp; TEV</a><a href="../services/market-entry-execution.html" class="nav-dropdown__item">Market Entry Execution</a><a href="../services/gtm-execution-as-a-service.html" class="nav-dropdown__item">GTM Execution-as-a-Service</a><a href="../services/pitchbook-and-fundraising.html" class="nav-dropdown__item">Pitchbook &amp; Fundraising</a><a href="../services/ai-consulting-and-transformation.html" class="nav-dropdown__item">AI Consulting</a></div></div>
-      <div class="nav-dropdown"><a href="../industries/" class="nav-link">Industries ▾</a><div class="nav-dropdown__menu"><a href="../industries/technology.html" class="nav-dropdown__item">Technology</a><a href="../industries/bfsi.html" class="nav-dropdown__item">BFSI</a><a href="../industries/energy-and-chemicals.html" class="nav-dropdown__item">Energy &amp; Chemicals</a><a href="../industries/cpg-fmcg-retail.html" class="nav-dropdown__item">CPG / FMCG / Retail</a><a href="../industries/healthcare-and-life-sciences.html" class="nav-dropdown__item">Healthcare</a><a href="../industries/investment-banks-and-pe.html" class="nav-dropdown__item">IB &amp; PE</a></div></div>
+      <div class="nav-dropdown"><a href="../services/" class="nav-link">Services &#9660;</a><div class="nav-dropdown__menu"><a href="../services/opportunity-assessment.html" class="nav-dropdown__item">Opportunity Assessment</a><a href="../services/feasibility-and-tev.html" class="nav-dropdown__item">Feasibility &amp; TEV</a><a href="../services/market-entry-execution.html" class="nav-dropdown__item">Market Entry Execution</a><a href="../services/gtm-execution-as-a-service.html" class="nav-dropdown__item">GTM Execution-as-a-Service</a><a href="../services/pitchbook-and-fundraising.html" class="nav-dropdown__item">Pitchbook &amp; Fundraising</a><a href="../services/ai-consulting-and-transformation.html" class="nav-dropdown__item">AI Consulting</a></div></div>
+      <div class="nav-dropdown"><a href="../industries/" class="nav-link">Industries &#9660;</a><div class="nav-dropdown__menu"><a href="../industries/technology.html" class="nav-dropdown__item">Technology</a><a href="../industries/bfsi.html" class="nav-dropdown__item">BFSI</a><a href="../industries/energy-and-chemicals.html" class="nav-dropdown__item">Energy &amp; Chemicals</a><a href="../industries/cpg-fmcg-retail.html" class="nav-dropdown__item">CPG / FMCG / Retail</a><a href="../industries/healthcare-and-life-sciences.html" class="nav-dropdown__item">Healthcare</a><a href="../industries/investment-banks-and-pe.html" class="nav-dropdown__item">IB &amp; PE</a></div></div>
       <a href="../case-studies/" class="nav-link">Case Studies</a>
       <a href="index.html" class="nav-link">Insights</a>
-      <div class="nav-dropdown"><a href="../about/" class="nav-link">About ▾</a><div class="nav-dropdown__menu"><a href="../about/" class="nav-dropdown__item">About</a><a href="../about/method.html" class="nav-dropdown__item">GR Method</a></div></div>
+      <div class="nav-dropdown"><a href="../about/" class="nav-link">About &#9660;</a><div class="nav-dropdown__menu"><a href="../about/" class="nav-dropdown__item">About</a><a href="../about/method.html" class="nav-dropdown__item">GR Method</a></div></div>
     </div>
     <a href="../contact.html" class="btn btn-primary btn-sm nav-cta">Book a 30-min call</a>
     <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -185,25 +149,29 @@
   <nav class="mobile-menu"><button class="mobile-menu__close" aria-label="Close">&times;</button><div class="mobile-menu__nav"><a href="../services/" class="mobile-menu__item">Services</a><a href="../industries/" class="mobile-menu__item">Industries</a><a href="../case-studies/" class="mobile-menu__item">Case Studies</a><a href="index.html" class="mobile-menu__item">Insights</a><a href="../about/" class="mobile-menu__item">About</a><a href="../contact.html" class="mobile-menu__item">Contact</a><div style="margin-top:1.5rem;"><a href="../contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book a 30-min call</a></div></div></nav>
 </header>
 
-<div class="article-page-wrap">
 <main id="main">
-<div class="article-breadcrumb">
-  <a href="/">Home</a> <span>›</span>
-  <a href="/insights/">Insights</a> <span>›</span>
-  Most MSMEs Do Not Have a Capability Problem. They Have ...
-</div>
 
-<header class="article-header">
-  <div class="meta-row">
-    <span class="tag tag-mfg">Manufacturing & Industrials</span>
-    <span class="tag tag-svc">GTM-XaaS</span>
-    <span class="meta-date">Nov 2025 · 7 min read</span>
+<section class="hero-block" style="min-height:46vh;" aria-labelledby="article-heading">
+  <div class="container" style="padding-top:9rem;padding-bottom:4rem;position:relative;z-index:1;">
+    <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href="/">Home</a></li><li class="breadcrumb__sep">&rsaquo;</li><li><a href="/insights/">Insights</a></li><li class="breadcrumb__sep">&rsaquo;</li><li aria-current="page">MSME Execution Systems & Productivity</li></ol></nav>
+    <div style="max-width:820px;margin-top:2rem;">
+      <p class="hero-block__eyebrow">Manufacturing & Industrials · GTM-XaaS</p>
+      <h1 class="hero-block__heading" id="article-heading" style="font-size:clamp(1.75rem,4vw,3rem);line-height:1.12;">Most MSMEs Do Not Have a Capability Problem. They Have an Execution Problem.</h1>
+      <p class="hero-block__sub">MSMEs are investing more in growth than ever. They are adopting digital tools, expanding into new markets, modernising operations, and exploring AI-enabled productivity improvements. And yet productivity gaps keep widening. Teams remain overdependent on founders. Processes fail to scale with growth.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;align-items:center;">
+        <span class="case-study-card__stat-chip">Manufacturing & Industrials</span>
+        <span class="case-study-card__stat-chip">GTM Execution-as-a-Service</span>
+        <span style="color:rgba(255,255,255,.45);font-size:0.75rem;margin-left:auto;">Nov 2025 &middot; 7 min read</span>
+      </div>
+    </div>
   </div>
-  <h1>Most MSMEs Do Not Have a Capability Problem. They Have an Execution Problem.</h1>
-  <p class="lede">MSMEs are investing more in growth than ever. They are adopting digital tools, expanding into new markets, modernising operations, and exploring AI-enabled productivity improvements. And yet productivity gaps keep widening. Teams remain overdependent on founders. Processes fail to scale with growth.</p>
-</header>
+</section>
 
-<article class="article-body">
+<section class="bg-white section-padding">
+  <div class="container">
+    <div class="insight-layout">
+
+      <div class="insight-body">
 <h2>This is not a technology problem. It is an execution systems problem.</h2>
 <p>Many MSMEs already possess strong market potential, capable teams, and growing demand. What limits scalability is the absence of structured operational systems capable of converting effort into consistent business outcomes.</p>
 <p>Sustainable expansion no longer depends only on ambition or investment access. It increasingly depends on execution discipline, operational visibility, adaptive workflows, and scalable decision-making systems.</p>
@@ -235,18 +203,49 @@
     <p>30 minutes. No deck. We ask three questions, you ask three, and we both know whether there's something here.</p>
     <a href="/contact.html" class="cta-btn">Book a 30-min call →</a>
   </div>
-</article>
+        <div class="related-strip">
+          <p class="related-strip__label">Related on GreyRadius</p>
+          <div class="related-links-row">
+<a href="/services/gtm-execution-as-a-service.html" class="related-link">Service: GTM Execution-as-a-Service</a>
+<a href="/insights/" class="related-link">← All Insights</a>
+<a href="/case-studies/" class="related-link">Case Studies</a>
+          </div>
+        </div>
+      </div>
 
-<div class="related">
-  <h4>Related on GreyRadius</h4>
-  <div class="related-links">
-    <a href="/services/gtm-execution-as-a-service.html" class="related-link">Service: GTM Execution-as-a-Service</a>
-    <a href="/insights/" class="related-link">← All Insights</a>
-    <a href="/case-studies/" class="related-link">Case Studies</a>
+      <aside class="insight-sidebar">
+        <div class="sidebar-block">
+          <p class="sidebar-block__label">About this article</p>
+          <div class="sidebar-row">
+            <p class="sidebar-row__key">Sector</p>
+            <p class="sidebar-row__val">Manufacturing & Industrials</p>
+          </div>
+          <div class="sidebar-row">
+            <p class="sidebar-row__key">Service area</p>
+            <p class="sidebar-row__val">GTM Execution-as-a-Service</p>
+          </div>
+          <div class="sidebar-row">
+            <p class="sidebar-row__key">Reading time</p>
+            <p class="sidebar-row__val">7 min read</p>
+          </div>
+          <div class="sidebar-row">
+            <p class="sidebar-row__key">Published</p>
+            <p class="sidebar-row__val">Nov 2025</p>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <p class="sidebar-block__label">Explore further</p>
+          <a href="/services/gtm-execution-as-a-service.html" class="sidebar-cta sidebar-cta--primary" style="margin-bottom:0.625rem;">GTM Execution-as-a-Service &rarr;</a>
+          <a href="/case-studies/" class="sidebar-cta sidebar-cta--outline" style="margin-bottom:0.5rem;">Case Studies</a>
+          <a href="/contact.html" class="sidebar-cta sidebar-cta--outline">Book a 30-min call</a>
+        </div>
+      </aside>
+
+    </div>
   </div>
-</div>
+</section>
+
 </main>
-</div>
 
 <footer class="site-footer">
   <div class="container">
@@ -255,9 +254,9 @@
       <div class="footer-col"><p class="footer-col__heading">Offerings</p><ul class="footer-col__list"><li><a href="../services/opportunity-assessment.html" class="footer-col__link">Opportunity Assessment</a></li><li><a href="../services/feasibility-and-tev.html" class="footer-col__link">Feasibility &amp; TEV</a></li><li><a href="../services/market-entry-execution.html" class="footer-col__link">Market Entry Execution</a></li><li><a href="../services/gtm-execution-as-a-service.html" class="footer-col__link">GTM Execution-as-a-Service</a></li><li><a href="../services/pitchbook-and-fundraising.html" class="footer-col__link">Pitchbook &amp; Fundraising</a></li><li><a href="../services/ai-consulting-and-transformation.html" class="footer-col__link">AI Consulting</a></li></ul></div>
       <div class="footer-col"><p class="footer-col__heading">Industries</p><ul class="footer-col__list"><li><a href="../industries/technology.html" class="footer-col__link">Technology</a></li><li><a href="../industries/bfsi.html" class="footer-col__link">BFSI</a></li><li><a href="../industries/energy-and-chemicals.html" class="footer-col__link">Energy &amp; Chemicals</a></li><li><a href="../industries/cpg-fmcg-retail.html" class="footer-col__link">CPG / FMCG</a></li><li><a href="../industries/healthcare-and-life-sciences.html" class="footer-col__link">Healthcare</a></li><li><a href="../industries/investment-banks-and-pe.html" class="footer-col__link">IB &amp; PE</a></li></ul></div>
       <div class="footer-col"><p class="footer-col__heading">Company</p><ul class="footer-col__list"><li><a href="../about/" class="footer-col__link">About</a></li><li><a href="../about/method.html" class="footer-col__link">GR Method</a></li><li><a href="../case-studies/" class="footer-col__link">Case Studies</a></li><li><a href="index.html" class="footer-col__link">Insights</a></li><li><a href="../careers.html" class="footer-col__link">Careers</a></li></ul></div>
-      <div class="footer-col"><p class="footer-col__heading">Contact</p><ul class="footer-col__list"><li class="footer-col__link" style="cursor:default;">India · UAE · Singapore · Belgium</li><li><a href="mailto:sales@greyradius.com" class="footer-col__link">sales@greyradius.com</a></li><li><a href="../contact.html" class="footer-col__link">Book a discovery call →</a></li></ul></div>
+      <div class="footer-col"><p class="footer-col__heading">Contact</p><ul class="footer-col__list"><li class="footer-col__link" style="cursor:default;">India &middot; UAE &middot; Singapore &middot; Belgium</li><li><a href="mailto:sales@greyradius.com" class="footer-col__link">sales@greyradius.com</a></li><li><a href="../contact.html" class="footer-col__link">Book a discovery call &rarr;</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p class="footer-bottom__copy">© 2026 GreyRadius Consulting. All rights reserved.</p><div class="footer-bottom__links"><a href="../legal/privacy.html" class="footer-bottom__link">Privacy</a><a href="../legal/terms.html" class="footer-bottom__link">Terms</a></div></div>
+    <div class="footer-bottom"><p class="footer-bottom__copy">&copy; 2026 GreyRadius Consulting. All rights reserved.</p><div class="footer-bottom__links"><a href="../legal/privacy.html" class="footer-bottom__link">Privacy</a><a href="../legal/terms.html" class="footer-bottom__link">Terms</a></div></div>
   </div>
 </footer>
 <script src="../assets/js/main.js" defer></script>

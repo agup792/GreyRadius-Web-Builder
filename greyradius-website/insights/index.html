@@ -8,83 +8,28 @@
   <link rel="canonical" href="https://greyradius.com/insights/">
   <meta property="og:title" content="Insights — GreyRadius Consulting">
   <meta property="og:description" content="18 frameworks and observations built from 200+ client engagements across India, GCC, Southeast Asia, and Europe.">
-  <meta property="og:image" content="/assets/images/og-generic.png">
+  <meta property="og:image" content="/assets/images/og-insights.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Insights — GreyRadius Consulting">
   <meta name="twitter:description" content="18 frameworks and observations built from 200+ client engagements.">
-  <meta name="twitter:image" content="/assets/images/og-generic.png">
+  <meta name="twitter:image" content="/assets/images/og-insights.png">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <style>
-    /* ─── Insights index styles ─────────────────────────────────────── */
-    :root {
-      --acc:       #E8693A;
-      --navy:      #1F3864;
-      --ink-soft:  #3A3D48;
-      --ink-muted: #7A7E8A;
-      --border:    #E2E0DA;
-    }
-
-    /* ── HERO ──────────────────────────────────────────────────────── */
-    .insights-hero {
-      background: var(--navy);
-      color: #fff;
-      padding: 5.5rem 0 4rem;
-    }
-    .insights-hero__inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 40px;
-    }
-    .insights-hero__eyebrow {
-      font-size: 11px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--acc);
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .insights-hero h1 {
-      font-size: clamp(32px, 5vw, 54px);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-    .insights-hero__sub {
-      font-size: 17px;
-      color: rgba(255,255,255,.68);
-      max-width: 580px;
-      line-height: 1.68;
-      font-weight: 400;
-    }
-    .insights-hero__stats {
-      margin-top: 36px;
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-    .insights-hero__stat span { display: block; }
-    .insights-hero__stat .num { font-size: 28px; font-weight: 800; color: #fff; line-height: 1; }
-    .insights-hero__stat .lbl {
-      font-size: 11px; color: rgba(255,255,255,.5);
-      letter-spacing: .07em; text-transform: uppercase; margin-top: 4px;
-    }
-
-    /* ── FILTERS ───────────────────────────────────────────────────── */
+    /* ── Filter strip ──────────────────────────────────────────────── */
     .filters-wrap {
       background: #fff;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--color-border);
       position: sticky;
       top: 0;
       z-index: 200;
-      box-shadow: 0 2px 16px rgba(0,0,0,.07);
+      box-shadow: 0 2px 16px rgba(0,0,0,.06);
     }
     .filters-inner {
-      max-width: 1100px;
+      max-width: var(--max-width);
       margin: 0 auto;
       padding: 14px 40px;
     }
@@ -100,31 +45,31 @@
       font-size: 10px;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--ink-muted);
+      color: var(--color-text-muted);
       font-weight: 700;
-      min-width: 62px;
+      min-width: 60px;
     }
-    .pill {
+    .fpill {
       display: inline-flex;
       align-items: center;
       padding: 5px 14px;
       border-radius: 100px;
-      border: 1.5px solid var(--border);
+      border: 1.5px solid var(--color-border);
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
       background: #fff;
-      color: var(--ink-soft);
+      color: var(--color-text-muted);
       transition: all .18s ease;
       white-space: nowrap;
       user-select: none;
     }
-    .pill:hover { border-color: var(--navy); color: var(--navy); }
-    .pill.active { background: var(--navy); border-color: var(--navy); color: #fff; }
-    .pill.active-svc { background: var(--acc); border-color: var(--acc); color: #fff; }
+    .fpill:hover { border-color: var(--color-navy); color: var(--color-navy); }
+    .fpill.active { background: var(--color-navy); border-color: var(--color-navy); color: #fff; }
+    .fpill.active-svc { background: var(--color-orange); border-color: var(--color-orange); color: #fff; }
     .filter-reset {
       font-size: 11px;
-      color: var(--acc);
+      color: var(--color-orange);
       cursor: pointer;
       text-decoration: underline;
       margin-left: 8px;
@@ -133,99 +78,158 @@
       background: none;
       border: none;
       padding: 0;
-      font-family: 'Montserrat', sans-serif;
     }
     .filter-reset.visible { display: inline; }
 
-    /* ── RESULTS BAR ───────────────────────────────────────────────── */
+    /* ── Results bar ───────────────────────────────────────────────── */
     .results-bar {
-      max-width: 1100px;
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 24px 40px 8px;
+      padding: 1.75rem 40px 0.5rem;
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
     }
-    .results-count { font-size: 13px; color: var(--ink-muted); }
-    .results-count strong { color: #0F1117; }
+    .results-bar strong { color: var(--color-text-dark); }
 
-    /* ── GRID ──────────────────────────────────────────────────────── */
-    .grid-wrap { max-width: 1100px; margin: 0 auto; padding: 8px 40px 80px; }
-    .card-grid {
+    /* ── Insights grid ─────────────────────────────────────────────── */
+    .insights-grid-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.5rem 40px 5rem;
+    }
+    .insights-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.75rem;
     }
 
-    /* ── CARD ──────────────────────────────────────────────────────── */
-    .insight-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-      transition: box-shadow .22s ease, transform .22s ease;
-      text-decoration: none;
-      color: inherit;
+    /* ── Card gradient visual header (CSS-only, no photos needed) ──── */
+    .insight-card-visual {
+      height: 180px;
+      position: relative;
       overflow: hidden;
+      flex-shrink: 0;
     }
-    .insight-card:hover {
-      box-shadow: 0 8px 32px rgba(0,0,0,.1);
-      transform: translateY(-2px);
-    }
-    .card-top { padding: 24px 24px 0; flex: 1; }
-    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
-    .tag {
-      font-size: 10px; font-weight: 700;
-      letter-spacing: .07em; text-transform: uppercase;
-      padding: 3px 9px; border-radius: 3px;
-    }
-    .tag-tech   { background:#E3F2FD; color:#1565C0; }
-    .tag-health { background:#E8F5E9; color:#2E7D32; }
-    .tag-energy { background:#FFF3E0; color:#E65100; }
-    .tag-cpg    { background:#F3E5F5; color:#6A1B9A; }
-    .tag-mfg    { background:#FBE9E7; color:#BF360C; }
-    .tag-edu    { background:#E8EAF6; color:#283593; }
-    .tag-cross  { background:#F5F5F5; color:#424242; }
-    .tag-svc    { background:#FFF8F0; color:#7C4A00; border:1px solid #F5DEB3; }
-    .insight-card h2 {
-      font-size: 17px; font-weight: 700; line-height: 1.38;
-      color: var(--navy); margin-bottom: 12px;
-    }
-    .card-excerpt {
-      font-size: 13px; color: var(--ink-soft);
-      line-height: 1.68; margin-bottom: 20px; font-weight: 400;
-    }
-    .card-footer {
-      padding: 14px 24px;
-      border-top: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .card-date { font-size: 11px; color: var(--ink-muted); }
-    .card-read {
-      font-size: 11px; font-weight: 700; color: var(--acc);
-      letter-spacing: .06em; text-transform: uppercase;
-    }
-    .card-read::after { content: ' →'; }
+    /* per-industry gradient */
+    .ig-tech    { background: linear-gradient(135deg, #0D1F3C 0%, #1A3D70 60%, #1F3864 100%); }
+    .ig-health  { background: linear-gradient(135deg, #0A2E24 0%, #155C45 60%, #1A6B50 100%); }
+    .ig-cpg     { background: linear-gradient(135deg, #2A0B40 0%, #4C1A72 60%, #5A1E85 100%); }
+    .ig-energy  { background: linear-gradient(135deg, #3D1E06 0%, #6B380E 60%, #7C4410 100%); }
+    .ig-mfg     { background: linear-gradient(135deg, #0C1F30 0%, #1A3D58 60%, #1F4A6B 100%); }
+    .ig-edu     { background: linear-gradient(135deg, #121240 0%, #1E1E72 60%, #242490 100%); }
+    .ig-cross   { background: linear-gradient(135deg, #1A1A20 0%, #2A2E3C 60%, #303540 100%); }
 
-    /* ── NO RESULTS ────────────────────────────────────────────────── */
-    .no-results { display: none; text-align: center; padding: 80px 40px; color: var(--ink-muted); }
+    /* geometric SVG decoration */
+    .ig-decoration {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    /* gradient overlay at bottom (like cs-photo-overlay) */
+    .ig-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.4) 100%);
+      pointer-events: none;
+    }
+    /* bottom tag (like cs-photo-tag) */
+    .ig-tag {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.875rem;
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.9);
+      background: rgba(0,0,0,0.45);
+      padding: 0.25rem 0.625rem;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
+    }
+    /* service pill top-right */
+    .ig-service {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.875rem;
+      font-size: 0.5625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: rgba(255,255,255,0.85);
+      background: rgba(232,105,58,0.8);
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+    }
+    /* large decorative icon / letter */
+    .ig-icon {
+      position: absolute;
+      right: -12px;
+      bottom: -12px;
+      font-size: 130px;
+      font-weight: 800;
+      line-height: 1;
+      color: rgba(255,255,255,.04);
+      user-select: none;
+      pointer-events: none;
+      font-family: 'Montserrat', sans-serif;
+    }
+    /* circular accent */
+    .ig-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(232,105,58,0.15);
+      top: -20px;
+      left: -20px;
+      width: 120px;
+      height: 120px;
+    }
+    .ig-circle-2 {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      top: 20px;
+      right: 30px;
+      width: 70px;
+      height: 70px;
+    }
+    /* card hover scale on visual */
+    .case-study-card:hover .insight-card-visual { }
+    .insight-card-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background .28s ease;
+      pointer-events: none;
+    }
+    .case-study-card:hover .insight-card-visual::after {
+      background: rgba(0,0,0,0.07);
+    }
+
+    /* ── No results ────────────────────────────────────────────────── */
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 5rem 2.5rem;
+      color: var(--color-text-muted);
+    }
     .no-results.visible { display: block; }
-    .no-results h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; color: var(--navy); }
-    .no-results p { font-size: 14px; margin-bottom: 20px; }
+    .no-results h3 { font-size: 1.375rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-navy); }
+    .no-results p  { font-size: 0.875rem; margin-bottom: 1.25rem; }
     .no-results button {
-      background: var(--navy); color: #fff; border: none;
-      padding: 12px 28px; border-radius: 3px; font-size: 13px;
-      cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 600;
+      background: var(--color-navy); color: #fff; border: none;
+      padding: 0.75rem 1.75rem; border-radius: var(--radius-sm);
+      font-size: 0.8125rem; cursor: pointer; font-weight: 600;
+      transition: background .18s ease;
     }
-    .no-results button:hover { background: var(--acc); }
+    .no-results button:hover { background: var(--color-orange); }
 
-    /* ── MOBILE ────────────────────────────────────────────────────── */
     @media (max-width: 720px) {
-      .insights-hero { padding: 4.5rem 0 3rem; }
-      .insights-hero__inner { padding: 0 20px; }
       .filters-inner { padding: 12px 20px; }
-      .results-bar { padding: 16px 20px 4px; }
-      .grid-wrap { padding: 8px 20px 60px; }
-      .card-grid { grid-template-columns: 1fr; }
-      .insights-hero__stats { gap: 24px; }
+      .results-bar { padding: 1rem 20px 0.25rem; }
+      .insights-grid-wrap { padding: 0.5rem 20px 3rem; }
+      .insights-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -235,11 +239,11 @@
   <nav class="top-nav top-nav--solid" aria-label="Main navigation">
     <a href="/" class="nav-logo"><img src="../assets/images/logo.png" alt="GreyRadius Consulting" width="180" height="42" style="height:42px;width:auto;"></a>
     <div class="nav-center">
-      <div class="nav-dropdown"><a href="../services/" class="nav-link">Services ▾</a><div class="nav-dropdown__menu"><a href="../services/opportunity-assessment.html" class="nav-dropdown__item">Opportunity Assessment</a><a href="../services/feasibility-and-tev.html" class="nav-dropdown__item">Feasibility &amp; TEV</a><a href="../services/market-entry-execution.html" class="nav-dropdown__item">Market Entry Execution</a><a href="../services/gtm-execution-as-a-service.html" class="nav-dropdown__item">GTM Execution-as-a-Service</a><a href="../services/pitchbook-and-fundraising.html" class="nav-dropdown__item">Pitchbook &amp; Fundraising</a><a href="../services/ai-consulting-and-transformation.html" class="nav-dropdown__item">AI Consulting</a></div></div>
-      <div class="nav-dropdown"><a href="../industries/" class="nav-link">Industries ▾</a><div class="nav-dropdown__menu"><a href="../industries/technology.html" class="nav-dropdown__item">Technology</a><a href="../industries/bfsi.html" class="nav-dropdown__item">BFSI</a><a href="../industries/energy-and-chemicals.html" class="nav-dropdown__item">Energy &amp; Chemicals</a><a href="../industries/cpg-fmcg-retail.html" class="nav-dropdown__item">CPG / FMCG / Retail</a><a href="../industries/healthcare-and-life-sciences.html" class="nav-dropdown__item">Healthcare</a><a href="../industries/investment-banks-and-pe.html" class="nav-dropdown__item">IB &amp; PE</a></div></div>
+      <div class="nav-dropdown"><a href="../services/" class="nav-link">Services &#9660;</a><div class="nav-dropdown__menu"><a href="../services/opportunity-assessment.html" class="nav-dropdown__item">Opportunity Assessment</a><a href="../services/feasibility-and-tev.html" class="nav-dropdown__item">Feasibility &amp; TEV</a><a href="../services/market-entry-execution.html" class="nav-dropdown__item">Market Entry Execution</a><a href="../services/gtm-execution-as-a-service.html" class="nav-dropdown__item">GTM Execution-as-a-Service</a><a href="../services/pitchbook-and-fundraising.html" class="nav-dropdown__item">Pitchbook &amp; Fundraising</a><a href="../services/ai-consulting-and-transformation.html" class="nav-dropdown__item">AI Consulting</a></div></div>
+      <div class="nav-dropdown"><a href="../industries/" class="nav-link">Industries &#9660;</a><div class="nav-dropdown__menu"><a href="../industries/technology.html" class="nav-dropdown__item">Technology</a><a href="../industries/bfsi.html" class="nav-dropdown__item">BFSI</a><a href="../industries/energy-and-chemicals.html" class="nav-dropdown__item">Energy &amp; Chemicals</a><a href="../industries/cpg-fmcg-retail.html" class="nav-dropdown__item">CPG / FMCG / Retail</a><a href="../industries/healthcare-and-life-sciences.html" class="nav-dropdown__item">Healthcare</a><a href="../industries/investment-banks-and-pe.html" class="nav-dropdown__item">IB &amp; PE</a></div></div>
       <a href="../case-studies/" class="nav-link">Case Studies</a>
       <a href="index.html" class="nav-link">Insights</a>
-      <div class="nav-dropdown"><a href="../about/" class="nav-link">About ▾</a><div class="nav-dropdown__menu"><a href="../about/" class="nav-dropdown__item">About</a><a href="../about/method.html" class="nav-dropdown__item">GR Method</a></div></div>
+      <div class="nav-dropdown"><a href="../about/" class="nav-link">About &#9660;</a><div class="nav-dropdown__menu"><a href="../about/" class="nav-dropdown__item">About</a><a href="../about/method.html" class="nav-dropdown__item">GR Method</a></div></div>
     </div>
     <a href="../contact.html" class="btn btn-primary btn-sm nav-cta">Book a 30-min call</a>
     <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -250,16 +254,19 @@
 
 <main id="main">
 
-<!-- HERO -->
-<section class="insights-hero" aria-labelledby="insights-heading">
-  <div class="insights-hero__inner">
-    <p class="insights-hero__eyebrow">Insights</p>
-    <h1 id="insights-heading">What we think.<br>What we've seen.</h1>
-    <p class="insights-hero__sub">Not trend reports. Not LinkedIn reposts. Frameworks and observations built from 200+ client engagements across India, GCC, Southeast Asia, and Europe.</p>
-    <div class="insights-hero__stats">
-      <div class="insights-hero__stat"><span class="num">18</span><span class="lbl">Posts</span></div>
-      <div class="insights-hero__stat"><span class="num">7</span><span class="lbl">Sectors covered</span></div>
-      <div class="insights-hero__stat"><span class="num">6</span><span class="lbl">Service areas</span></div>
+<!-- HERO — uses site hero-block (light theme matches case-studies) -->
+<section class="hero-block" style="min-height:42vh;" aria-labelledby="insights-heading">
+  <div class="container" style="padding-top:9rem;padding-bottom:3.5rem;position:relative;z-index:1;">
+    <div style="max-width:720px;">
+      <p class="hero-block__eyebrow">Insights &amp; Point of View</p>
+      <h1 class="hero-block__heading" id="insights-heading" style="font-size:clamp(2rem,5vw,3.5rem);">What we think.<br>What we've seen.</h1>
+      <p class="hero-block__sub">Not trend reports. Frameworks and observations built from 200+ client engagements across India, GCC, Southeast Asia, and Europe.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.625rem;margin-top:1.75rem;">
+        <span class="case-study-card__stat-chip">18 articles</span>
+        <span class="case-study-card__stat-chip">7 sectors</span>
+        <span class="case-study-card__stat-chip">6 service areas</span>
+        <span class="case-study-card__stat-chip">80% primary-research-led</span>
+      </div>
     </div>
   </div>
 </section>
@@ -269,347 +276,437 @@
   <div class="filters-inner">
     <div class="filter-row">
       <span class="filter-label">Industry</span>
-      <span class="pill active" data-filter="industry" data-value="all" role="button" tabindex="0" aria-pressed="true">All</span>
-      <span class="pill" data-filter="industry" data-value="technology" role="button" tabindex="0" aria-pressed="false">Technology &amp; SaaS</span>
-      <span class="pill" data-filter="industry" data-value="healthcare" role="button" tabindex="0" aria-pressed="false">Healthcare &amp; Life Sciences</span>
-      <span class="pill" data-filter="industry" data-value="cpg" role="button" tabindex="0" aria-pressed="false">CPG / FMCG / Retail</span>
-      <span class="pill" data-filter="industry" data-value="energy" role="button" tabindex="0" aria-pressed="false">Energy &amp; Chemicals</span>
-      <span class="pill" data-filter="industry" data-value="manufacturing" role="button" tabindex="0" aria-pressed="false">Manufacturing &amp; Industrials</span>
-      <span class="pill" data-filter="industry" data-value="education" role="button" tabindex="0" aria-pressed="false">Education / EdTech</span>
-      <span class="pill" data-filter="industry" data-value="cross" role="button" tabindex="0" aria-pressed="false">Cross-sector</span>
+      <span class="fpill active" data-filter="industry" data-value="all" role="button" tabindex="0" aria-pressed="true">All</span>
+      <span class="fpill" data-filter="industry" data-value="technology" role="button" tabindex="0" aria-pressed="false">Technology &amp; SaaS</span>
+      <span class="fpill" data-filter="industry" data-value="healthcare" role="button" tabindex="0" aria-pressed="false">Healthcare &amp; Life Sciences</span>
+      <span class="fpill" data-filter="industry" data-value="cpg" role="button" tabindex="0" aria-pressed="false">CPG / FMCG / Retail</span>
+      <span class="fpill" data-filter="industry" data-value="energy" role="button" tabindex="0" aria-pressed="false">Energy &amp; Chemicals</span>
+      <span class="fpill" data-filter="industry" data-value="manufacturing" role="button" tabindex="0" aria-pressed="false">Manufacturing &amp; Industrials</span>
+      <span class="fpill" data-filter="industry" data-value="education" role="button" tabindex="0" aria-pressed="false">Education / EdTech</span>
+      <span class="fpill" data-filter="industry" data-value="cross" role="button" tabindex="0" aria-pressed="false">Cross-sector</span>
     </div>
     <div class="filter-row">
       <span class="filter-label">Service</span>
-      <span class="pill active" data-filter="service" data-value="all" role="button" tabindex="0" aria-pressed="true">All</span>
-      <span class="pill" data-filter="service" data-value="opportunity-assessment" role="button" tabindex="0" aria-pressed="false">Opportunity Assessment</span>
-      <span class="pill" data-filter="service" data-value="feasibility-tev" role="button" tabindex="0" aria-pressed="false">Feasibility &amp; TEV</span>
-      <span class="pill" data-filter="service" data-value="market-entry-execution" role="button" tabindex="0" aria-pressed="false">Market Entry Execution</span>
-      <span class="pill" data-filter="service" data-value="gtm-xaas" role="button" tabindex="0" aria-pressed="false">GTM-XaaS</span>
-      <span class="pill" data-filter="service" data-value="pitchbook-fundraising" role="button" tabindex="0" aria-pressed="false">Pitchbook &amp; Fundraising</span>
-      <span class="pill" data-filter="service" data-value="ai-consulting" role="button" tabindex="0" aria-pressed="false">AI Consulting</span>
-      <button class="filter-reset" id="resetBtn" aria-label="Reset all filters">Reset all filters</button>
+      <span class="fpill active" data-filter="service" data-value="all" role="button" tabindex="0" aria-pressed="true">All</span>
+      <span class="fpill" data-filter="service" data-value="opportunity-assessment" role="button" tabindex="0" aria-pressed="false">Opportunity Assessment</span>
+      <span class="fpill" data-filter="service" data-value="feasibility-tev" role="button" tabindex="0" aria-pressed="false">Feasibility &amp; TEV</span>
+      <span class="fpill" data-filter="service" data-value="market-entry-execution" role="button" tabindex="0" aria-pressed="false">Market Entry Execution</span>
+      <span class="fpill" data-filter="service" data-value="gtm-xaas" role="button" tabindex="0" aria-pressed="false">GTM-XaaS</span>
+      <span class="fpill" data-filter="service" data-value="pitchbook-fundraising" role="button" tabindex="0" aria-pressed="false">Pitchbook &amp; Fundraising</span>
+      <span class="fpill" data-filter="service" data-value="ai-consulting" role="button" tabindex="0" aria-pressed="false">AI Consulting</span>
+      <button class="filter-reset" id="resetBtn" aria-label="Reset all filters">Reset filters</button>
     </div>
   </div>
 </div>
 
-<!-- RESULTS BAR -->
+<!-- RESULTS COUNT -->
 <div class="results-bar">
-  <p class="results-count"><strong id="countNum">18</strong> insights</p>
+  <strong id="countNum">18</strong> insights
 </div>
 
 <!-- CARD GRID -->
-<div class="grid-wrap">
-  <div class="card-grid" id="cardGrid">
+<div class="insights-grid-wrap">
+  <div class="insights-grid" id="cardGrid">
 
-    <!-- BLOG 01 -->
-    <a class="insight-card" href="saas-international-expansion-model.html"
+    <!-- 01 — SaaS International Expansion -->
+    <a class="case-study-card" href="saas-international-expansion-model.html"
        data-industry="technology" data-service="market-entry-execution gtm-xaas">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-tech">Technology / SaaS</span>
-          <span class="tag tag-svc">Market Entry</span>
-        </div>
-        <h2>Global SaaS Expansion Fails Quietly Long Before Revenue Slows Down</h2>
-        <p class="card-excerpt">Most SaaS companies don't realise their international model is breaking until commercial inefficiencies become impossible to ignore. By then, pipeline has slowed, CAC has climbed, and leadership is still calling it early-stage volatility.</p>
+      <div class="insight-card-visual ig-tech" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">Market Entry · GTM-XaaS</span>
+        <span class="ig-tag">Technology · SaaS · Global</span>
+        <span class="ig-icon">T</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">May 2026 · 8 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Technology / SaaS · Market Entry Execution</p>
+        <h2 class="case-study-card__title">Global SaaS Expansion Fails Quietly Long Before Revenue Slows Down</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">May 2026</span>
+          <span class="case-study-card__stat-chip">8 min read</span>
+          <span class="case-study-card__stat-chip">International GTM</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 02 -->
-    <a class="insight-card" href="retail-expansion-market-understanding.html"
+    <!-- 02 — Retail Expansion -->
+    <a class="case-study-card" href="retail-expansion-market-understanding.html"
        data-industry="cpg" data-service="market-entry-execution opportunity-assessment">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-cpg">CPG / FMCG / Retail</span>
-          <span class="tag tag-svc">Market Entry</span>
-        </div>
-        <h2>Retail Expansion Fails When Growth Moves Faster Than Market Understanding</h2>
-        <p class="card-excerpt">Footfall doesn't convert. CAC climbs. Margins weaken despite growing topline presence. The issue is rarely market potential — it's expansion without operational market intelligence, and most retailers diagnose this too late.</p>
+      <div class="insight-card-visual ig-cpg" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">Market Entry</span>
+        <span class="ig-tag">CPG / FMCG / Retail</span>
+        <span class="ig-icon">R</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Apr 2026 · 7 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">CPG / FMCG / Retail · Market Entry Execution</p>
+        <h2 class="case-study-card__title">Retail Expansion Fails When Growth Moves Faster Than Market Understanding</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Apr 2026</span>
+          <span class="case-study-card__stat-chip">7 min read</span>
+          <span class="case-study-card__stat-chip">Channel strategy</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 03 -->
-    <a class="insight-card" href="gcc-renewable-energy-market-entry.html"
+    <!-- 03 — GCC Renewable Energy -->
+    <a class="case-study-card" href="gcc-renewable-energy-market-entry.html"
        data-industry="energy" data-service="market-entry-execution feasibility-tev">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-energy">Energy &amp; Chemicals</span>
-          <span class="tag tag-svc">Market Entry</span>
-        </div>
-        <h2>The GCC Renewable Energy Opportunity Is Bigger Than Most Companies Realise. So Is the Execution Risk.</h2>
-        <p class="card-excerpt">Demand is expanding. Government commitment is strong. Capital is available. And yet projects stall, regulatory approvals move slower than expected, and international players struggle with ecosystem dynamics they didn't map before entry.</p>
+      <div class="insight-card-visual ig-energy" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">Market Entry · Feasibility</span>
+        <span class="ig-tag">Energy &amp; Chemicals · GCC</span>
+        <span class="ig-icon">E</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Feb 2026 · 9 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Energy &amp; Chemicals · Market Entry Execution</p>
+        <h2 class="case-study-card__title">The GCC Renewable Energy Opportunity Is Bigger Than Most Companies Realise. So Is the Execution Risk.</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Feb 2026</span>
+          <span class="case-study-card__stat-chip">9 min read</span>
+          <span class="case-study-card__stat-chip">GCC Market</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 04 -->
-    <a class="insight-card" href="saas-growth-customer-intelligence.html"
+    <!-- 04 — SaaS Growth Customer Intelligence -->
+    <a class="case-study-card" href="saas-growth-customer-intelligence.html"
        data-industry="technology" data-service="gtm-xaas opportunity-assessment">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-tech">Technology / SaaS</span>
-          <span class="tag tag-svc">GTM-XaaS</span>
-        </div>
-        <h2>Most SaaS Growth Problems Are Not Acquisition Problems. They Are Customer Understanding Problems.</h2>
-        <p class="card-excerpt">When conversion drops, the instinct is to increase spend or adjust messaging. But in most SaaS businesses, the underlying problem is simpler and harder: the company doesn't know why customers behave the way they do.</p>
+      <div class="insight-card-visual ig-tech" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">GTM-XaaS</span>
+        <span class="ig-tag">Technology · SaaS · GTM</span>
+        <span class="ig-icon">G</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Jan 2026 · 8 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Technology / SaaS · GTM Execution-as-a-Service</p>
+        <h2 class="case-study-card__title">Most SaaS Growth Problems Are Not Acquisition Problems. They Are Customer Understanding Problems.</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Jan 2026</span>
+          <span class="case-study-card__stat-chip">8 min read</span>
+          <span class="case-study-card__stat-chip">ICP strategy</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 05 -->
-    <a class="insight-card" href="healthcare-ai-operational-readiness.html"
+    <!-- 05 — Healthcare AI -->
+    <a class="case-study-card" href="healthcare-ai-operational-readiness.html"
        data-industry="healthcare" data-service="ai-consulting gtm-xaas">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-health">Healthcare &amp; Life Sciences</span>
-          <span class="tag tag-svc">AI Consulting</span>
-        </div>
-        <h2>Healthcare's AI Problem Is Not Technology Adoption. It Is Operational Readiness.</h2>
-        <p class="card-excerpt">Pilots stay isolated. Digital platforms improve access but not care coordination. Spend goes up. Measurable outcomes stay uneven. The gap is not innovation — it's the absence of operating systems that can actually absorb what AI produces.</p>
+      <div class="insight-card-visual ig-health" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">AI Consulting</span>
+        <span class="ig-tag">Healthcare &amp; Life Sciences</span>
+        <span class="ig-icon">H</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Jan 2026 · 9 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Healthcare &amp; Life Sciences · AI Consulting</p>
+        <h2 class="case-study-card__title">Healthcare's AI Problem Is Not Technology Adoption. It Is Operational Readiness.</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Jan 2026</span>
+          <span class="case-study-card__stat-chip">9 min read</span>
+          <span class="case-study-card__stat-chip">AI transformation</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 06 -->
-    <a class="insight-card" href="elearning-retention-gtm-strategy.html"
+    <!-- 06 — E-Learning Retention -->
+    <a class="case-study-card" href="elearning-retention-gtm-strategy.html"
        data-industry="education" data-service="gtm-xaas market-entry-execution">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-edu">Education / EdTech</span>
-          <span class="tag tag-svc">GTM-XaaS</span>
-        </div>
-        <h2>Most E-Learning Companies Do Not Have a Growth Problem. They Have a Retention Problem.</h2>
-        <p class="card-excerpt">The e-learning market is expanding rapidly, but sustainable growth is becoming harder to achieve. New platforms launch constantly, and learners expect highly personalised experiences most platforms aren't built to deliver at scale.</p>
+      <div class="insight-card-visual ig-edu" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">GTM-XaaS</span>
+        <span class="ig-tag">Education / EdTech · GCC</span>
+        <span class="ig-icon">L</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Dec 2025 · 7 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Education / EdTech · GTM Execution-as-a-Service</p>
+        <h2 class="case-study-card__title">Most E-Learning Companies Do Not Have a Growth Problem. They Have a Retention Problem.</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Dec 2025</span>
+          <span class="case-study-card__stat-chip">7 min read</span>
+          <span class="case-study-card__stat-chip">Retention strategy</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 07 -->
-    <a class="insight-card" href="standard-of-care-benchmarking-healthcare.html"
+    <!-- 07 — Standard of Care Benchmarking -->
+    <a class="case-study-card" href="standard-of-care-benchmarking-healthcare.html"
        data-industry="healthcare" data-service="opportunity-assessment feasibility-tev">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-health">Healthcare &amp; Life Sciences</span>
-          <span class="tag tag-svc">Opportunity Assessment</span>
-        </div>
-        <h2>Why Defining the Right Benchmark Shapes Better Decisions: Standard of Care (SoC)</h2>
-        <p class="card-excerpt">In healthcare strategy, the benchmark you choose determines the conclusions you reach. The ones making smarter decisions benchmark against the future state of care delivery — a meaningfully different exercise.</p>
+      <div class="insight-card-visual ig-health" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">Opportunity Assessment</span>
+        <span class="ig-tag">Healthcare · Benchmarking</span>
+        <span class="ig-icon">S</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Dec 2025 · 6 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Healthcare &amp; Life Sciences · Opportunity Assessment</p>
+        <h2 class="case-study-card__title">Why Defining the Right Benchmark Shapes Better Decisions: Standard of Care (SoC)</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Dec 2025</span>
+          <span class="case-study-card__stat-chip">6 min read</span>
+          <span class="case-study-card__stat-chip">SoC framework</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 08 -->
-    <a class="insight-card" href="pharma-clinical-trial-decision-intelligence.html"
+    <!-- 08 — Pharma Decision Intelligence -->
+    <a class="case-study-card" href="pharma-clinical-trial-decision-intelligence.html"
        data-industry="healthcare" data-service="feasibility-tev opportunity-assessment">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-health">Healthcare &amp; Life Sciences</span>
-          <span class="tag tag-svc">Feasibility &amp; TEV</span>
-        </div>
-        <h2>Pharma's Biggest Data Problem Is Not Data Availability. It Is Decision Intelligence.</h2>
-        <p class="card-excerpt">Pharmaceutical companies are generating more clinical data than ever. Trial timelines are still inefficient. The data exists — the problem is it never reaches decision-makers in a form they can act on.</p>
+      <div class="insight-card-visual ig-health" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">Feasibility &amp; TEV</span>
+        <span class="ig-tag">Healthcare · Pharma · Clinical</span>
+        <span class="ig-icon">P</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Dec 2025 · 9 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Healthcare / Pharma · Feasibility &amp; TEV</p>
+        <h2 class="case-study-card__title">Pharma's Biggest Data Problem Is Not Data Availability. It Is Decision Intelligence.</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Dec 2025</span>
+          <span class="case-study-card__stat-chip">9 min read</span>
+          <span class="case-study-card__stat-chip">Clinical trials</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 09 -->
-    <a class="insight-card" href="msme-execution-systems-productivity.html"
+    <!-- 09 — MSME Execution -->
+    <a class="case-study-card" href="msme-execution-systems-productivity.html"
        data-industry="manufacturing" data-service="gtm-xaas opportunity-assessment">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-mfg">Manufacturing &amp; Industrials</span>
-          <span class="tag tag-svc">GTM-XaaS</span>
-        </div>
-        <h2>Most MSMEs Do Not Have a Capability Problem. They Have an Execution Problem.</h2>
-        <p class="card-excerpt">MSMEs are investing more in growth than ever — digital tools, new markets, AI-enabled workflows. Yet productivity gaps keep widening. The issue is the absence of structured operating systems that can convert effort into consistent outcomes.</p>
+      <div class="insight-card-visual ig-mfg" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">GTM-XaaS</span>
+        <span class="ig-tag">Manufacturing &amp; Industrials · MSME</span>
+        <span class="ig-icon">M</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Nov 2025 · 7 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Manufacturing &amp; Industrials · GTM Execution-as-a-Service</p>
+        <h2 class="case-study-card__title">Most MSMEs Do Not Have a Capability Problem. They Have an Execution Problem.</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Nov 2025</span>
+          <span class="case-study-card__stat-chip">7 min read</span>
+          <span class="case-study-card__stat-chip">Operating systems</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 10 -->
-    <a class="insight-card" href="india-drone-sector-market-entry.html"
+    <!-- 10 — India Drone Sector -->
+    <a class="case-study-card" href="india-drone-sector-market-entry.html"
        data-industry="technology" data-service="market-entry-execution feasibility-tev">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-tech">Technology / Drones</span>
-          <span class="tag tag-svc">Market Entry</span>
-        </div>
-        <h2>India's Drone Opportunity Is Growing Faster Than Most Companies Can Operationally Handle</h2>
-        <p class="card-excerpt">Policy reforms, enterprise adoption, and defense modernisation are creating real momentum. What breaks most drone businesses is not market access — it is operational and commercial infrastructure that doesn't scale with the opportunity.</p>
+      <div class="insight-card-visual ig-tech" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">Market Entry</span>
+        <span class="ig-tag">Technology · Drones · India</span>
+        <span class="ig-icon">D</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Nov 2025 · 8 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Technology / Deep Tech · Market Entry Execution</p>
+        <h2 class="case-study-card__title">India's Drone Opportunity Is Growing Faster Than Most Companies Can Operationally Handle</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Nov 2025</span>
+          <span class="case-study-card__stat-chip">8 min read</span>
+          <span class="case-study-card__stat-chip">India drone policy</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 11 -->
-    <a class="insight-card" href="plg-vs-slg-which-gtm-model-fits.html"
+    <!-- 11 — PLG vs SLG -->
+    <a class="case-study-card" href="plg-vs-slg-which-gtm-model-fits.html"
        data-industry="technology" data-service="gtm-xaas opportunity-assessment">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-tech">Technology / SaaS</span>
-          <span class="tag tag-svc">GTM-XaaS</span>
-        </div>
-        <h2>Product-Led Growth vs Sales-Led Growth: Which Model Actually Fits Your Stage</h2>
-        <p class="card-excerpt">The PLG vs SLG debate is mostly a distraction. The companies growing consistently aren't choosing between the two — they're building systems where product usage informs sales timing and engagement improves adoption.</p>
+      <div class="insight-card-visual ig-tech" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">GTM-XaaS</span>
+        <span class="ig-tag">Technology · SaaS · GTM Model</span>
+        <span class="ig-icon">P</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Oct 2025 · 7 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Technology / SaaS · GTM Execution-as-a-Service</p>
+        <h2 class="case-study-card__title">Product-Led Growth vs Sales-Led Growth: Which Model Actually Fits Your Stage</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Oct 2025</span>
+          <span class="case-study-card__stat-chip">7 min read</span>
+          <span class="case-study-card__stat-chip">PLG · SLG framework</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 12 -->
-    <a class="insight-card" href="uae-consumer-goods-market-entry.html"
+    <!-- 12 — UAE Consumer Goods -->
+    <a class="case-study-card" href="uae-consumer-goods-market-entry.html"
        data-industry="cpg" data-service="opportunity-assessment market-entry-execution">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-cpg">CPG / FMCG / Retail</span>
-          <span class="tag tag-svc">Opportunity Assessment</span>
-        </div>
-        <h2>The UAE Consumer Goods Market Is Growing. But Growth Is Becoming Harder to Capture Predictably.</h2>
-        <p class="card-excerpt">Product launches generate initial demand, then fail to sustain repeat consumption. The UAE is not a single consumer market — and the companies that treat it as one consistently underperform after a strong launch.</p>
+      <div class="insight-card-visual ig-cpg" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">Opportunity Assessment</span>
+        <span class="ig-tag">CPG / FMCG / Retail · UAE</span>
+        <span class="ig-icon">U</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Oct 2025 · 8 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">CPG / FMCG / Retail · Opportunity Assessment</p>
+        <h2 class="case-study-card__title">The UAE Consumer Goods Market Is Growing. But Growth Is Becoming Harder to Capture Predictably.</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Oct 2025</span>
+          <span class="case-study-card__stat-chip">8 min read</span>
+          <span class="case-study-card__stat-chip">UAE consumer</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 13 -->
-    <a class="insight-card" href="market-expansion-strategy-failures.html"
+    <!-- 13 — Market Expansion Failures -->
+    <a class="case-study-card" href="market-expansion-strategy-failures.html"
        data-industry="cross" data-service="market-entry-execution opportunity-assessment">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-cross">Cross-sector</span>
-          <span class="tag tag-svc">Market Entry</span>
-        </div>
-        <h2>Most Market Expansion Strategies Fail Before the Company Even Enters the Market</h2>
-        <p class="card-excerpt">The plan looks sound. Demand is validated. Resources are allocated. The failure happens before any of that — in the assumptions made before the first conversation with a real buyer in the target market.</p>
+      <div class="insight-card-visual ig-cross" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">Market Entry</span>
+        <span class="ig-tag">Cross-sector · Strategy</span>
+        <span class="ig-icon">X</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Sep 2025 · 8 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Cross-sector · Market Entry Execution</p>
+        <h2 class="case-study-card__title">Most Market Expansion Strategies Fail Before the Company Even Enters the Market</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Sep 2025</span>
+          <span class="case-study-card__stat-chip">8 min read</span>
+          <span class="case-study-card__stat-chip">Entry assumptions</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 14 -->
-    <a class="insight-card" href="supply-chain-resilience-board-strategy.html"
+    <!-- 14 — Supply Chain Resilience -->
+    <a class="case-study-card" href="supply-chain-resilience-board-strategy.html"
        data-industry="manufacturing" data-service="feasibility-tev opportunity-assessment">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-mfg">Manufacturing &amp; Industrials</span>
-          <span class="tag tag-svc">Feasibility &amp; TEV</span>
-        </div>
-        <h2>Why Supply Chain Resilience Is Now a Board-Level Strategy Problem</h2>
-        <p class="card-excerpt">The pandemic, the Suez Canal, the Red Sea — three separate events, one consistent finding: the companies that absorbed the shock were the ones that had built resilience before they needed it.</p>
+      <div class="insight-card-visual ig-mfg" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">Feasibility &amp; TEV</span>
+        <span class="ig-tag">Manufacturing · Supply Chain</span>
+        <span class="ig-icon">S</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Sep 2025 · 9 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Manufacturing &amp; Industrials · Feasibility &amp; TEV</p>
+        <h2 class="case-study-card__title">Why Supply Chain Resilience Is Now a Board-Level Strategy Problem</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Sep 2025</span>
+          <span class="case-study-card__stat-chip">9 min read</span>
+          <span class="case-study-card__stat-chip">Board strategy</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 15 -->
-    <a class="insight-card" href="winning-in-saturated-markets.html"
+    <!-- 15 — Winning in Saturated Markets -->
+    <a class="case-study-card" href="winning-in-saturated-markets.html"
        data-industry="cross" data-service="opportunity-assessment gtm-xaas">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-cross">Cross-sector</span>
-          <span class="tag tag-svc">Opportunity Assessment</span>
-        </div>
-        <h2>Winning in Saturated Markets</h2>
-        <p class="card-excerpt">When the market stops growing, every percentage point of share comes from someone else. The playbooks that worked in an expanding market start producing diminishing returns. The companies that keep winning do something fundamentally different.</p>
+      <div class="insight-card-visual ig-cross" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">Opportunity Assessment</span>
+        <span class="ig-tag">Cross-sector · Market dynamics</span>
+        <span class="ig-icon">W</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Sep 2025 · 7 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Cross-sector · Opportunity Assessment</p>
+        <h2 class="case-study-card__title">Winning in Saturated Markets</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Sep 2025</span>
+          <span class="case-study-card__stat-chip">7 min read</span>
+          <span class="case-study-card__stat-chip">Market share</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 16 -->
-    <a class="insight-card" href="consultants-vs-inhouse-strategy-team.html"
+    <!-- 16 — Consultants vs In-House -->
+    <a class="case-study-card" href="consultants-vs-inhouse-strategy-team.html"
        data-industry="cross" data-service="gtm-xaas opportunity-assessment">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-cross">Cross-sector</span>
-          <span class="tag tag-svc">GTM-XaaS</span>
-        </div>
-        <h2>Business Management Consultants vs In-House Strategy Team: Which Is Right for Your Business</h2>
-        <p class="card-excerpt">The smartest companies aren't choosing between the two. They're running a hybrid — and knowing exactly when each model earns its place. The decision isn't philosophical. It's situational.</p>
+      <div class="insight-card-visual ig-cross" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">GTM-XaaS</span>
+        <span class="ig-tag">Cross-sector · Strategy teams</span>
+        <span class="ig-icon">C</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">May 2026 · 8 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Cross-sector · GTM Execution-as-a-Service</p>
+        <h2 class="case-study-card__title">Business Management Consultants vs In-House Strategy Team: Which Is Right for Your Business</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">May 2026</span>
+          <span class="case-study-card__stat-chip">8 min read</span>
+          <span class="case-study-card__stat-chip">Hybrid model</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 17 -->
-    <a class="insight-card" href="cost-transformation-not-cost-cutting.html"
+    <!-- 17 — Cost Transformation -->
+    <a class="case-study-card" href="cost-transformation-not-cost-cutting.html"
        data-industry="cross" data-service="feasibility-tev opportunity-assessment">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-cross">Cross-sector</span>
-          <span class="tag tag-svc">Feasibility &amp; TEV</span>
-        </div>
-        <h2>Cost Transformation Beyond Cost Cutting</h2>
-        <p class="card-excerpt">Cost cutting reduces resources. Cost transformation changes how work gets done. The ones building lasting competitive advantage treat it as an operating discipline, not a crisis response.</p>
+      <div class="insight-card-visual ig-cross" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">Feasibility &amp; TEV</span>
+        <span class="ig-tag">Cross-sector · Cost strategy</span>
+        <span class="ig-icon">C</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Apr 2026 · 7 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Cross-sector · Feasibility &amp; TEV</p>
+        <h2 class="case-study-card__title">Cost Transformation Beyond Cost Cutting</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Apr 2026</span>
+          <span class="case-study-card__stat-chip">7 min read</span>
+          <span class="case-study-card__stat-chip">Operating discipline</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-    <!-- BLOG 18 -->
-    <a class="insight-card" href="ai-hype-to-business-results.html"
+    <!-- 18 — AI Hype to Results -->
+    <a class="case-study-card" href="ai-hype-to-business-results.html"
        data-industry="technology" data-service="ai-consulting gtm-xaas">
-      <div class="card-top">
-        <div class="card-tags">
-          <span class="tag tag-tech">Technology / AI</span>
-          <span class="tag tag-svc">AI Consulting</span>
-        </div>
-        <h2>Turning AI Hype Into Business Results</h2>
-        <p class="card-excerpt">Most AI investments stall — not because the technology fails, but because the organisation does. The gap between deploying AI and embedding it into how value gets created is where most implementations quietly die.</p>
+      <div class="insight-card-visual ig-tech" aria-hidden="true">
+        <div class="ig-circle"></div><div class="ig-circle-2"></div>
+        <div class="ig-overlay"></div>
+        <span class="ig-service">AI Consulting</span>
+        <span class="ig-tag">Technology · AI · Enterprise</span>
+        <span class="ig-icon">A</span>
       </div>
-      <div class="card-footer">
-        <span class="card-date">Apr 2026 · 8 min read</span>
-        <span class="card-read">Read</span>
+      <div class="case-study-card__body">
+        <p class="case-study-card__tag">Technology / AI · AI Consulting &amp; Transformation</p>
+        <h2 class="case-study-card__title">Turning AI Hype Into Business Results</h2>
+        <div class="case-study-card__stats">
+          <span class="case-study-card__stat-chip">Apr 2026</span>
+          <span class="case-study-card__stat-chip">8 min read</span>
+          <span class="case-study-card__stat-chip">AI implementation</span>
+        </div>
+        <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
-  </div><!-- /card-grid -->
+  </div><!-- /insights-grid -->
 
-  <!-- NO RESULTS STATE -->
+  <!-- NO RESULTS -->
   <div class="no-results" id="noResults" role="status" aria-live="polite">
     <h3>No insights match this combination.</h3>
     <p>Try a different industry or service filter, or browse everything.</p>
@@ -617,6 +714,30 @@
   </div>
 
 </div><!-- /grid-wrap -->
+
+<!-- STATS CALLOUT -->
+<section class="bg-off-white section-padding" aria-label="Engagement stats">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;">
+      <div>
+        <p style="font-size:2.5rem;font-weight:800;color:var(--color-navy);line-height:1;margin-bottom:0.375rem;">200+</p>
+        <p style="font-size:0.875rem;color:var(--color-text-muted);font-weight:500;">Projects delivered</p>
+      </div>
+      <div>
+        <p style="font-size:2.5rem;font-weight:800;color:var(--color-navy);line-height:1;margin-bottom:0.375rem;">80%</p>
+        <p style="font-size:0.875rem;color:var(--color-text-muted);font-weight:500;">Primary-research-led engagements</p>
+      </div>
+      <div>
+        <p style="font-size:2.5rem;font-weight:800;color:var(--color-navy);line-height:1;margin-bottom:0.375rem;">4</p>
+        <p style="font-size:0.875rem;color:var(--color-text-muted);font-weight:500;">Countries &amp; offices</p>
+      </div>
+      <div>
+        <p style="font-size:2.5rem;font-weight:800;color:var(--color-navy);line-height:1;margin-bottom:0.375rem;">9</p>
+        <p style="font-size:0.875rem;color:var(--color-text-muted);font-weight:500;">Years of practice</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 
@@ -627,9 +748,9 @@
       <div class="footer-col"><p class="footer-col__heading">Offerings</p><ul class="footer-col__list"><li><a href="../services/opportunity-assessment.html" class="footer-col__link">Opportunity Assessment</a></li><li><a href="../services/feasibility-and-tev.html" class="footer-col__link">Feasibility &amp; TEV</a></li><li><a href="../services/market-entry-execution.html" class="footer-col__link">Market Entry Execution</a></li><li><a href="../services/gtm-execution-as-a-service.html" class="footer-col__link">GTM Execution-as-a-Service</a></li><li><a href="../services/pitchbook-and-fundraising.html" class="footer-col__link">Pitchbook &amp; Fundraising</a></li><li><a href="../services/ai-consulting-and-transformation.html" class="footer-col__link">AI Consulting</a></li></ul></div>
       <div class="footer-col"><p class="footer-col__heading">Industries</p><ul class="footer-col__list"><li><a href="../industries/technology.html" class="footer-col__link">Technology</a></li><li><a href="../industries/bfsi.html" class="footer-col__link">BFSI</a></li><li><a href="../industries/energy-and-chemicals.html" class="footer-col__link">Energy &amp; Chemicals</a></li><li><a href="../industries/cpg-fmcg-retail.html" class="footer-col__link">CPG / FMCG</a></li><li><a href="../industries/healthcare-and-life-sciences.html" class="footer-col__link">Healthcare</a></li><li><a href="../industries/investment-banks-and-pe.html" class="footer-col__link">IB &amp; PE</a></li></ul></div>
       <div class="footer-col"><p class="footer-col__heading">Company</p><ul class="footer-col__list"><li><a href="../about/" class="footer-col__link">About</a></li><li><a href="../about/method.html" class="footer-col__link">GR Method</a></li><li><a href="../case-studies/" class="footer-col__link">Case Studies</a></li><li><a href="index.html" class="footer-col__link">Insights</a></li><li><a href="../careers.html" class="footer-col__link">Careers</a></li></ul></div>
-      <div class="footer-col"><p class="footer-col__heading">Contact</p><ul class="footer-col__list"><li class="footer-col__link" style="cursor:default;">India · UAE · Singapore · Belgium</li><li><a href="mailto:sales@greyradius.com" class="footer-col__link">sales@greyradius.com</a></li><li><a href="../contact.html" class="footer-col__link">Book a discovery call →</a></li></ul></div>
+      <div class="footer-col"><p class="footer-col__heading">Contact</p><ul class="footer-col__list"><li class="footer-col__link" style="cursor:default;">India &middot; UAE &middot; Singapore &middot; Belgium</li><li><a href="mailto:sales@greyradius.com" class="footer-col__link">sales@greyradius.com</a></li><li><a href="../contact.html" class="footer-col__link">Book a discovery call &rarr;</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p class="footer-bottom__copy">© 2026 GreyRadius Consulting. All rights reserved.</p><div class="footer-bottom__links"><a href="../legal/privacy.html" class="footer-bottom__link">Privacy</a><a href="../legal/terms.html" class="footer-bottom__link">Terms</a></div></div>
+    <div class="footer-bottom"><p class="footer-bottom__copy">&copy; 2026 GreyRadius Consulting. All rights reserved.</p><div class="footer-bottom__links"><a href="../legal/privacy.html" class="footer-bottom__link">Privacy</a><a href="../legal/terms.html" class="footer-bottom__link">Terms</a></div></div>
   </div>
 </footer>
 <script src="../assets/js/main.js" defer></script>
@@ -638,12 +759,12 @@
   let activeIndustry = 'all';
   let activeService  = 'all';
 
-  const cards    = Array.from(document.querySelectorAll('.insight-card'));
+  const cards    = Array.from(document.querySelectorAll('.case-study-card[data-industry]'));
   const noRes    = document.getElementById('noResults');
   const countEl  = document.getElementById('countNum');
   const resetBtn = document.getElementById('resetBtn');
 
-  document.querySelectorAll('.pill').forEach(pill => {
+  document.querySelectorAll('.fpill').forEach(pill => {
     pill.addEventListener('click', () => handlePill(pill));
     pill.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handlePill(pill); }
@@ -653,7 +774,7 @@
   function handlePill(pill) {
     const dim = pill.dataset.filter;
     const val = pill.dataset.value;
-    document.querySelectorAll(`.pill[data-filter="${dim}"]`).forEach(p => {
+    document.querySelectorAll(`.fpill[data-filter="${dim}"]`).forEach(p => {
       p.classList.remove('active', 'active-svc');
       p.setAttribute('aria-pressed', 'false');
     });
@@ -689,7 +810,7 @@
   function resetFilters() {
     activeIndustry = 'all';
     activeService  = 'all';
-    document.querySelectorAll('.pill').forEach(p => {
+    document.querySelectorAll('.fpill').forEach(p => {
       p.classList.remove('active', 'active-svc');
       p.setAttribute('aria-pressed', 'false');
       if (p.dataset.value === 'all') {
@@ -707,26 +828,20 @@
     let needsFilter = false;
     if (p.get('industry')) {
       const ind = p.get('industry');
-      document.querySelectorAll('.pill[data-filter="industry"]').forEach(pl => {
+      document.querySelectorAll('.fpill[data-filter="industry"]').forEach(pl => {
         pl.classList.remove('active');
         pl.setAttribute('aria-pressed', 'false');
-        if (pl.dataset.value === ind) {
-          pl.classList.add('active');
-          pl.setAttribute('aria-pressed', 'true');
-        }
+        if (pl.dataset.value === ind) { pl.classList.add('active'); pl.setAttribute('aria-pressed', 'true'); }
       });
       activeIndustry = ind;
       needsFilter = true;
     }
     if (p.get('service')) {
       const svc = p.get('service');
-      document.querySelectorAll('.pill[data-filter="service"]').forEach(pl => {
+      document.querySelectorAll('.fpill[data-filter="service"]').forEach(pl => {
         pl.classList.remove('active', 'active-svc');
         pl.setAttribute('aria-pressed', 'false');
-        if (pl.dataset.value === svc) {
-          pl.classList.add('active-svc');
-          pl.setAttribute('aria-pressed', 'true');
-        }
+        if (pl.dataset.value === svc) { pl.classList.add('active-svc'); pl.setAttribute('aria-pressed', 'true'); }
       });
       activeService = svc;
       needsFilter = true;
