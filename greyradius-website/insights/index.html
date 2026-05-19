@@ -26,28 +26,24 @@
       position: sticky;
       top: 0;
       z-index: 200;
-      box-shadow: 0 2px 16px rgba(0,0,0,.06);
+      box-shadow: 0 2px 16px rgba(0,0,0,.05);
     }
     .filters-inner {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 14px 40px;
-    }
-    .filter-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       align-items: center;
-      margin-bottom: 8px;
     }
-    .filter-row:last-child { margin-bottom: 0; }
     .filter-label {
       font-size: 10px;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--color-text-muted);
       font-weight: 700;
-      min-width: 60px;
+      margin-right: 4px;
     }
     .fpill {
       display: inline-flex;
@@ -66,13 +62,12 @@
     }
     .fpill:hover { border-color: var(--color-navy); color: var(--color-navy); }
     .fpill.active { background: var(--color-navy); border-color: var(--color-navy); color: #fff; }
-    .fpill.active-svc { background: var(--color-orange); border-color: var(--color-orange); color: #fff; }
     .filter-reset {
       font-size: 11px;
       color: var(--color-orange);
       cursor: pointer;
       text-decoration: underline;
-      margin-left: 8px;
+      margin-left: 4px;
       display: none;
       font-weight: 600;
       background: none;
@@ -91,7 +86,7 @@
     }
     .results-bar strong { color: var(--color-text-dark); }
 
-    /* ── Insights grid ─────────────────────────────────────────────── */
+    /* ── Grid ──────────────────────────────────────────────────────── */
     .insights-grid-wrap {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -101,110 +96,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 1.75rem;
-    }
-
-    /* ── Card gradient visual header (CSS-only, no photos needed) ──── */
-    .insight-card-visual {
-      height: 180px;
-      position: relative;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    /* per-industry gradient */
-    .ig-tech    { background: linear-gradient(135deg, #0D1F3C 0%, #1A3D70 60%, #1F3864 100%); }
-    .ig-health  { background: linear-gradient(135deg, #0A2E24 0%, #155C45 60%, #1A6B50 100%); }
-    .ig-cpg     { background: linear-gradient(135deg, #2A0B40 0%, #4C1A72 60%, #5A1E85 100%); }
-    .ig-energy  { background: linear-gradient(135deg, #3D1E06 0%, #6B380E 60%, #7C4410 100%); }
-    .ig-mfg     { background: linear-gradient(135deg, #0C1F30 0%, #1A3D58 60%, #1F4A6B 100%); }
-    .ig-edu     { background: linear-gradient(135deg, #121240 0%, #1E1E72 60%, #242490 100%); }
-    .ig-cross   { background: linear-gradient(135deg, #1A1A20 0%, #2A2E3C 60%, #303540 100%); }
-
-    /* geometric SVG decoration */
-    .ig-decoration {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-    /* gradient overlay at bottom (like cs-photo-overlay) */
-    .ig-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.4) 100%);
-      pointer-events: none;
-    }
-    /* bottom tag (like cs-photo-tag) */
-    .ig-tag {
-      position: absolute;
-      bottom: 0.75rem;
-      left: 0.875rem;
-      font-size: 0.625rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.9);
-      background: rgba(0,0,0,0.45);
-      padding: 0.25rem 0.625rem;
-      border-radius: 20px;
-      backdrop-filter: blur(4px);
-    }
-    /* service pill top-right */
-    .ig-service {
-      position: absolute;
-      top: 0.75rem;
-      right: 0.875rem;
-      font-size: 0.5625rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: rgba(255,255,255,0.85);
-      background: rgba(232,105,58,0.8);
-      padding: 0.2rem 0.5rem;
-      border-radius: 3px;
-    }
-    /* large decorative icon / letter */
-    .ig-icon {
-      position: absolute;
-      right: -12px;
-      bottom: -12px;
-      font-size: 130px;
-      font-weight: 800;
-      line-height: 1;
-      color: rgba(255,255,255,.04);
-      user-select: none;
-      pointer-events: none;
-      font-family: 'Montserrat', sans-serif;
-    }
-    /* circular accent */
-    .ig-circle {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(232,105,58,0.15);
-      top: -20px;
-      left: -20px;
-      width: 120px;
-      height: 120px;
-    }
-    .ig-circle-2 {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-      top: 20px;
-      right: 30px;
-      width: 70px;
-      height: 70px;
-    }
-    /* card hover scale on visual */
-    .case-study-card:hover .insight-card-visual { }
-    .insight-card-visual::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0);
-      transition: background .28s ease;
-      pointer-events: none;
-    }
-    .case-study-card:hover .insight-card-visual::after {
-      background: rgba(0,0,0,0.07);
     }
 
     /* ── No results ────────────────────────────────────────────────── */
@@ -221,9 +112,7 @@
       background: var(--color-navy); color: #fff; border: none;
       padding: 0.75rem 1.75rem; border-radius: var(--radius-sm);
       font-size: 0.8125rem; cursor: pointer; font-weight: 600;
-      transition: background .18s ease;
     }
-    .no-results button:hover { background: var(--color-orange); }
 
     @media (max-width: 720px) {
       .filters-inner { padding: 12px 20px; }
@@ -254,7 +143,6 @@
 
 <main id="main">
 
-<!-- HERO — uses site hero-block (light theme matches case-studies) -->
 <section class="hero-block" style="min-height:42vh;" aria-labelledby="insights-heading">
   <div class="container" style="padding-top:9rem;padding-bottom:3.5rem;position:relative;z-index:1;">
     <div style="max-width:720px;">
@@ -264,38 +152,25 @@
       <div style="display:flex;flex-wrap:wrap;gap:0.625rem;margin-top:1.75rem;">
         <span class="case-study-card__stat-chip">18 articles</span>
         <span class="case-study-card__stat-chip">7 sectors</span>
-        <span class="case-study-card__stat-chip">6 service areas</span>
         <span class="case-study-card__stat-chip">80% primary-research-led</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FILTERS -->
-<div class="filters-wrap" role="search" aria-label="Filter insights">
+<!-- INDUSTRY FILTER -->
+<div class="filters-wrap" role="search" aria-label="Filter by industry">
   <div class="filters-inner">
-    <div class="filter-row">
-      <span class="filter-label">Industry</span>
-      <span class="fpill active" data-filter="industry" data-value="all" role="button" tabindex="0" aria-pressed="true">All</span>
-      <span class="fpill" data-filter="industry" data-value="technology" role="button" tabindex="0" aria-pressed="false">Technology &amp; SaaS</span>
-      <span class="fpill" data-filter="industry" data-value="healthcare" role="button" tabindex="0" aria-pressed="false">Healthcare &amp; Life Sciences</span>
-      <span class="fpill" data-filter="industry" data-value="cpg" role="button" tabindex="0" aria-pressed="false">CPG / FMCG / Retail</span>
-      <span class="fpill" data-filter="industry" data-value="energy" role="button" tabindex="0" aria-pressed="false">Energy &amp; Chemicals</span>
-      <span class="fpill" data-filter="industry" data-value="manufacturing" role="button" tabindex="0" aria-pressed="false">Manufacturing &amp; Industrials</span>
-      <span class="fpill" data-filter="industry" data-value="education" role="button" tabindex="0" aria-pressed="false">Education / EdTech</span>
-      <span class="fpill" data-filter="industry" data-value="cross" role="button" tabindex="0" aria-pressed="false">Cross-sector</span>
-    </div>
-    <div class="filter-row">
-      <span class="filter-label">Service</span>
-      <span class="fpill active" data-filter="service" data-value="all" role="button" tabindex="0" aria-pressed="true">All</span>
-      <span class="fpill" data-filter="service" data-value="opportunity-assessment" role="button" tabindex="0" aria-pressed="false">Opportunity Assessment</span>
-      <span class="fpill" data-filter="service" data-value="feasibility-tev" role="button" tabindex="0" aria-pressed="false">Feasibility &amp; TEV</span>
-      <span class="fpill" data-filter="service" data-value="market-entry-execution" role="button" tabindex="0" aria-pressed="false">Market Entry Execution</span>
-      <span class="fpill" data-filter="service" data-value="gtm-xaas" role="button" tabindex="0" aria-pressed="false">GTM-XaaS</span>
-      <span class="fpill" data-filter="service" data-value="pitchbook-fundraising" role="button" tabindex="0" aria-pressed="false">Pitchbook &amp; Fundraising</span>
-      <span class="fpill" data-filter="service" data-value="ai-consulting" role="button" tabindex="0" aria-pressed="false">AI Consulting</span>
-      <button class="filter-reset" id="resetBtn" aria-label="Reset all filters">Reset filters</button>
-    </div>
+    <span class="filter-label">Industry</span>
+    <span class="fpill active" data-value="all" role="button" tabindex="0" aria-pressed="true">All</span>
+    <span class="fpill" data-value="technology" role="button" tabindex="0" aria-pressed="false">Technology &amp; SaaS</span>
+    <span class="fpill" data-value="healthcare" role="button" tabindex="0" aria-pressed="false">Healthcare &amp; Life Sciences</span>
+    <span class="fpill" data-value="cpg" role="button" tabindex="0" aria-pressed="false">CPG / FMCG / Retail</span>
+    <span class="fpill" data-value="energy" role="button" tabindex="0" aria-pressed="false">Energy &amp; Chemicals</span>
+    <span class="fpill" data-value="manufacturing" role="button" tabindex="0" aria-pressed="false">Manufacturing &amp; Industrials</span>
+    <span class="fpill" data-value="education" role="button" tabindex="0" aria-pressed="false">Education / EdTech</span>
+    <span class="fpill" data-value="cross" role="button" tabindex="0" aria-pressed="false">Cross-sector</span>
+    <button class="filter-reset" id="resetBtn" aria-label="Reset filter">Reset</button>
   </div>
 </div>
 
@@ -309,396 +184,324 @@
   <div class="insights-grid" id="cardGrid">
 
     <!-- 01 — SaaS International Expansion -->
-    <a class="case-study-card" href="saas-international-expansion-model.html"
-       data-industry="technology" data-service="market-entry-execution gtm-xaas">
-      <div class="insight-card-visual ig-tech" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">Market Entry · GTM-XaaS</span>
-        <span class="ig-tag">Technology · SaaS · Global</span>
-        <span class="ig-icon">T</span>
+    <a class="case-study-card" href="saas-international-expansion-model.html" data-industry="technology">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/saas-team-meeting.webp" alt="SaaS team planning international expansion" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Technology · SaaS</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Technology / SaaS · Market Entry Execution</p>
+        <p class="case-study-card__tag">Technology / SaaS</p>
         <h2 class="case-study-card__title">Global SaaS Expansion Fails Quietly Long Before Revenue Slows Down</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">May 2026</span>
           <span class="case-study-card__stat-chip">8 min read</span>
-          <span class="case-study-card__stat-chip">International GTM</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 02 — Retail Expansion -->
-    <a class="case-study-card" href="retail-expansion-market-understanding.html"
-       data-industry="cpg" data-service="market-entry-execution opportunity-assessment">
-      <div class="insight-card-visual ig-cpg" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">Market Entry</span>
-        <span class="ig-tag">CPG / FMCG / Retail</span>
-        <span class="ig-icon">R</span>
+    <a class="case-study-card" href="retail-expansion-market-understanding.html" data-industry="cpg">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/retail-india.jpg" alt="Retail market expansion in India" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">CPG / FMCG / Retail</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">CPG / FMCG / Retail · Market Entry Execution</p>
+        <p class="case-study-card__tag">CPG / FMCG / Retail</p>
         <h2 class="case-study-card__title">Retail Expansion Fails When Growth Moves Faster Than Market Understanding</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Apr 2026</span>
           <span class="case-study-card__stat-chip">7 min read</span>
-          <span class="case-study-card__stat-chip">Channel strategy</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 03 — GCC Renewable Energy -->
-    <a class="case-study-card" href="gcc-renewable-energy-market-entry.html"
-       data-industry="energy" data-service="market-entry-execution feasibility-tev">
-      <div class="insight-card-visual ig-energy" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">Market Entry · Feasibility</span>
-        <span class="ig-tag">Energy &amp; Chemicals · GCC</span>
-        <span class="ig-icon">E</span>
+    <a class="case-study-card" href="gcc-renewable-energy-market-entry.html" data-industry="energy">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/agri-chemicals-india.jpg" alt="Industrial energy corridor in the GCC" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Energy &amp; Chemicals · GCC</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Energy &amp; Chemicals · Market Entry Execution</p>
+        <p class="case-study-card__tag">Energy &amp; Chemicals</p>
         <h2 class="case-study-card__title">The GCC Renewable Energy Opportunity Is Bigger Than Most Companies Realise. So Is the Execution Risk.</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Feb 2026</span>
           <span class="case-study-card__stat-chip">9 min read</span>
-          <span class="case-study-card__stat-chip">GCC Market</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 04 — SaaS Growth Customer Intelligence -->
-    <a class="case-study-card" href="saas-growth-customer-intelligence.html"
-       data-industry="technology" data-service="gtm-xaas opportunity-assessment">
-      <div class="insight-card-visual ig-tech" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">GTM-XaaS</span>
-        <span class="ig-tag">Technology · SaaS · GTM</span>
-        <span class="ig-icon">G</span>
+    <a class="case-study-card" href="saas-growth-customer-intelligence.html" data-industry="technology">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/enterprise-software-team.webp" alt="Product and growth teams mapping customer segments" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Technology · SaaS</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Technology / SaaS · GTM Execution-as-a-Service</p>
+        <p class="case-study-card__tag">Technology / SaaS</p>
         <h2 class="case-study-card__title">Most SaaS Growth Problems Are Not Acquisition Problems. They Are Customer Understanding Problems.</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Jan 2026</span>
           <span class="case-study-card__stat-chip">8 min read</span>
-          <span class="case-study-card__stat-chip">ICP strategy</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 05 — Healthcare AI -->
-    <a class="case-study-card" href="healthcare-ai-operational-readiness.html"
-       data-industry="healthcare" data-service="ai-consulting gtm-xaas">
-      <div class="insight-card-visual ig-health" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">AI Consulting</span>
-        <span class="ig-tag">Healthcare &amp; Life Sciences</span>
-        <span class="ig-icon">H</span>
+    <a class="case-study-card" href="healthcare-ai-operational-readiness.html" data-industry="healthcare">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/hospital-canada.jpg" alt="Healthcare facility navigating AI-driven operations" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Healthcare &amp; Life Sciences</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Healthcare &amp; Life Sciences · AI Consulting</p>
+        <p class="case-study-card__tag">Healthcare &amp; Life Sciences</p>
         <h2 class="case-study-card__title">Healthcare's AI Problem Is Not Technology Adoption. It Is Operational Readiness.</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Jan 2026</span>
           <span class="case-study-card__stat-chip">9 min read</span>
-          <span class="case-study-card__stat-chip">AI transformation</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 06 — E-Learning Retention -->
-    <a class="case-study-card" href="elearning-retention-gtm-strategy.html"
-       data-industry="education" data-service="gtm-xaas market-entry-execution">
-      <div class="insight-card-visual ig-edu" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">GTM-XaaS</span>
-        <span class="ig-tag">Education / EdTech · GCC</span>
-        <span class="ig-icon">L</span>
+    <a class="case-study-card" href="elearning-retention-gtm-strategy.html" data-industry="education">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/elearning-uae.webp" alt="Digital learning platform in use across the GCC" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Education / EdTech · GCC</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Education / EdTech · GTM Execution-as-a-Service</p>
+        <p class="case-study-card__tag">Education / EdTech</p>
         <h2 class="case-study-card__title">Most E-Learning Companies Do Not Have a Growth Problem. They Have a Retention Problem.</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Dec 2025</span>
           <span class="case-study-card__stat-chip">7 min read</span>
-          <span class="case-study-card__stat-chip">Retention strategy</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 07 — Standard of Care Benchmarking -->
-    <a class="case-study-card" href="standard-of-care-benchmarking-healthcare.html"
-       data-industry="healthcare" data-service="opportunity-assessment feasibility-tev">
-      <div class="insight-card-visual ig-health" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">Opportunity Assessment</span>
-        <span class="ig-tag">Healthcare · Benchmarking</span>
-        <span class="ig-icon">S</span>
+    <a class="case-study-card" href="standard-of-care-benchmarking-healthcare.html" data-industry="healthcare">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/eye-care-pharma.webp" alt="Clinical benchmarking in a specialised healthcare setting" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Healthcare · Benchmarking</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Healthcare &amp; Life Sciences · Opportunity Assessment</p>
+        <p class="case-study-card__tag">Healthcare &amp; Life Sciences</p>
         <h2 class="case-study-card__title">Why Defining the Right Benchmark Shapes Better Decisions: Standard of Care (SoC)</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Dec 2025</span>
           <span class="case-study-card__stat-chip">6 min read</span>
-          <span class="case-study-card__stat-chip">SoC framework</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 08 — Pharma Decision Intelligence -->
-    <a class="case-study-card" href="pharma-clinical-trial-decision-intelligence.html"
-       data-industry="healthcare" data-service="feasibility-tev opportunity-assessment">
-      <div class="insight-card-visual ig-health" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">Feasibility &amp; TEV</span>
-        <span class="ig-tag">Healthcare · Pharma · Clinical</span>
-        <span class="ig-icon">P</span>
+    <a class="case-study-card" href="pharma-clinical-trial-decision-intelligence.html" data-industry="healthcare">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/oncology-research.jpg" alt="Research team managing clinical trial decision flows" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Healthcare · Pharma · Clinical</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Healthcare / Pharma · Feasibility &amp; TEV</p>
+        <p class="case-study-card__tag">Healthcare / Pharma</p>
         <h2 class="case-study-card__title">Pharma's Biggest Data Problem Is Not Data Availability. It Is Decision Intelligence.</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Dec 2025</span>
           <span class="case-study-card__stat-chip">9 min read</span>
-          <span class="case-study-card__stat-chip">Clinical trials</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 09 — MSME Execution -->
-    <a class="case-study-card" href="msme-execution-systems-productivity.html"
-       data-industry="manufacturing" data-service="gtm-xaas opportunity-assessment">
-      <div class="insight-card-visual ig-mfg" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">GTM-XaaS</span>
-        <span class="ig-tag">Manufacturing &amp; Industrials · MSME</span>
-        <span class="ig-icon">M</span>
+    <a class="case-study-card" href="msme-execution-systems-productivity.html" data-industry="manufacturing">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/steel-factory-vietnam.jpg" alt="MSME manufacturing floor where execution gaps are visible" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Manufacturing &amp; Industrials</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Manufacturing &amp; Industrials · GTM Execution-as-a-Service</p>
+        <p class="case-study-card__tag">Manufacturing &amp; Industrials</p>
         <h2 class="case-study-card__title">Most MSMEs Do Not Have a Capability Problem. They Have an Execution Problem.</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Nov 2025</span>
           <span class="case-study-card__stat-chip">7 min read</span>
-          <span class="case-study-card__stat-chip">Operating systems</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 10 — India Drone Sector -->
-    <a class="case-study-card" href="india-drone-sector-market-entry.html"
-       data-industry="technology" data-service="market-entry-execution feasibility-tev">
-      <div class="insight-card-visual ig-tech" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">Market Entry</span>
-        <span class="ig-tag">Technology · Drones · India</span>
-        <span class="ig-icon">D</span>
+    <a class="case-study-card" href="india-drone-sector-market-entry.html" data-industry="technology">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/drone-india.jpg" alt="Commercial drone operations across Indian infrastructure sectors" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Technology · Drones · India</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Technology / Deep Tech · Market Entry Execution</p>
+        <p class="case-study-card__tag">Technology / Deep Tech</p>
         <h2 class="case-study-card__title">India's Drone Opportunity Is Growing Faster Than Most Companies Can Operationally Handle</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Nov 2025</span>
           <span class="case-study-card__stat-chip">8 min read</span>
-          <span class="case-study-card__stat-chip">India drone policy</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 11 — PLG vs SLG -->
-    <a class="case-study-card" href="plg-vs-slg-which-gtm-model-fits.html"
-       data-industry="technology" data-service="gtm-xaas opportunity-assessment">
-      <div class="insight-card-visual ig-tech" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">GTM-XaaS</span>
-        <span class="ig-tag">Technology · SaaS · GTM Model</span>
-        <span class="ig-icon">P</span>
+    <a class="case-study-card" href="plg-vs-slg-which-gtm-model-fits.html" data-industry="technology">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/saas-team-meeting.webp" alt="SaaS leadership weighing product-led vs sales-led GTM" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Technology · SaaS</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Technology / SaaS · GTM Execution-as-a-Service</p>
+        <p class="case-study-card__tag">Technology / SaaS</p>
         <h2 class="case-study-card__title">Product-Led Growth vs Sales-Led Growth: Which Model Actually Fits Your Stage</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Oct 2025</span>
           <span class="case-study-card__stat-chip">7 min read</span>
-          <span class="case-study-card__stat-chip">PLG · SLG framework</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 12 — UAE Consumer Goods -->
-    <a class="case-study-card" href="uae-consumer-goods-market-entry.html"
-       data-industry="cpg" data-service="opportunity-assessment market-entry-execution">
-      <div class="insight-card-visual ig-cpg" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">Opportunity Assessment</span>
-        <span class="ig-tag">CPG / FMCG / Retail · UAE</span>
-        <span class="ig-icon">U</span>
+    <a class="case-study-card" href="uae-consumer-goods-market-entry.html" data-industry="cpg">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/fresh-vegetables-india.jpg" alt="Consumer goods supply dynamics in the GCC market" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">CPG / FMCG · UAE</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">CPG / FMCG / Retail · Opportunity Assessment</p>
+        <p class="case-study-card__tag">CPG / FMCG / Retail</p>
         <h2 class="case-study-card__title">The UAE Consumer Goods Market Is Growing. But Growth Is Becoming Harder to Capture Predictably.</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Oct 2025</span>
           <span class="case-study-card__stat-chip">8 min read</span>
-          <span class="case-study-card__stat-chip">UAE consumer</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 13 — Market Expansion Failures -->
-    <a class="case-study-card" href="market-expansion-strategy-failures.html"
-       data-industry="cross" data-service="market-entry-execution opportunity-assessment">
-      <div class="insight-card-visual ig-cross" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">Market Entry</span>
-        <span class="ig-tag">Cross-sector · Strategy</span>
-        <span class="ig-icon">X</span>
+    <a class="case-study-card" href="market-expansion-strategy-failures.html" data-industry="cross">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/enterprise-software-team.webp" alt="Strategy teams mapping market entry priorities" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Cross-sector · Strategy</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Cross-sector · Market Entry Execution</p>
+        <p class="case-study-card__tag">Cross-sector</p>
         <h2 class="case-study-card__title">Most Market Expansion Strategies Fail Before the Company Even Enters the Market</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Sep 2025</span>
           <span class="case-study-card__stat-chip">8 min read</span>
-          <span class="case-study-card__stat-chip">Entry assumptions</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 14 — Supply Chain Resilience -->
-    <a class="case-study-card" href="supply-chain-resilience-board-strategy.html"
-       data-industry="manufacturing" data-service="feasibility-tev opportunity-assessment">
-      <div class="insight-card-visual ig-mfg" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">Feasibility &amp; TEV</span>
-        <span class="ig-tag">Manufacturing · Supply Chain</span>
-        <span class="ig-icon">S</span>
+    <a class="case-study-card" href="supply-chain-resilience-board-strategy.html" data-industry="manufacturing">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/coal-mining-conveyor.jpg" alt="Industrial supply chain where resilience decisions compound" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Manufacturing · Supply Chain</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Manufacturing &amp; Industrials · Feasibility &amp; TEV</p>
+        <p class="case-study-card__tag">Manufacturing &amp; Industrials</p>
         <h2 class="case-study-card__title">Why Supply Chain Resilience Is Now a Board-Level Strategy Problem</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Sep 2025</span>
           <span class="case-study-card__stat-chip">9 min read</span>
-          <span class="case-study-card__stat-chip">Board strategy</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 15 — Winning in Saturated Markets -->
-    <a class="case-study-card" href="winning-in-saturated-markets.html"
-       data-industry="cross" data-service="opportunity-assessment gtm-xaas">
-      <div class="insight-card-visual ig-cross" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">Opportunity Assessment</span>
-        <span class="ig-tag">Cross-sector · Market dynamics</span>
-        <span class="ig-icon">W</span>
+    <a class="case-study-card" href="winning-in-saturated-markets.html" data-industry="cross">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/retail-india.jpg" alt="Competing for share in dense retail markets" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Cross-sector · Market dynamics</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Cross-sector · Opportunity Assessment</p>
+        <p class="case-study-card__tag">Cross-sector</p>
         <h2 class="case-study-card__title">Winning in Saturated Markets</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Sep 2025</span>
           <span class="case-study-card__stat-chip">7 min read</span>
-          <span class="case-study-card__stat-chip">Market share</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 16 — Consultants vs In-House -->
-    <a class="case-study-card" href="consultants-vs-inhouse-strategy-team.html"
-       data-industry="cross" data-service="gtm-xaas opportunity-assessment">
-      <div class="insight-card-visual ig-cross" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">GTM-XaaS</span>
-        <span class="ig-tag">Cross-sector · Strategy teams</span>
-        <span class="ig-icon">C</span>
+    <a class="case-study-card" href="consultants-vs-inhouse-strategy-team.html" data-industry="cross">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/enterprise-software-team.webp" alt="Consultants and in-house teams in collaborative discussion" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Cross-sector · Strategy</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Cross-sector · GTM Execution-as-a-Service</p>
+        <p class="case-study-card__tag">Cross-sector</p>
         <h2 class="case-study-card__title">Business Management Consultants vs In-House Strategy Team: Which Is Right for Your Business</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">May 2026</span>
           <span class="case-study-card__stat-chip">8 min read</span>
-          <span class="case-study-card__stat-chip">Hybrid model</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 17 — Cost Transformation -->
-    <a class="case-study-card" href="cost-transformation-not-cost-cutting.html"
-       data-industry="cross" data-service="feasibility-tev opportunity-assessment">
-      <div class="insight-card-visual ig-cross" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">Feasibility &amp; TEV</span>
-        <span class="ig-tag">Cross-sector · Cost strategy</span>
-        <span class="ig-icon">C</span>
+    <a class="case-study-card" href="cost-transformation-not-cost-cutting.html" data-industry="cross">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/steel-factory-vietnam.jpg" alt="Manufacturing operations and structural cost efficiency" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Cross-sector · Operations</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Cross-sector · Feasibility &amp; TEV</p>
+        <p class="case-study-card__tag">Cross-sector</p>
         <h2 class="case-study-card__title">Cost Transformation Beyond Cost Cutting</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Apr 2026</span>
           <span class="case-study-card__stat-chip">7 min read</span>
-          <span class="case-study-card__stat-chip">Operating discipline</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
 
     <!-- 18 — AI Hype to Results -->
-    <a class="case-study-card" href="ai-hype-to-business-results.html"
-       data-industry="technology" data-service="ai-consulting gtm-xaas">
-      <div class="insight-card-visual ig-tech" aria-hidden="true">
-        <div class="ig-circle"></div><div class="ig-circle-2"></div>
-        <div class="ig-overlay"></div>
-        <span class="ig-service">AI Consulting</span>
-        <span class="ig-tag">Technology · AI · Enterprise</span>
-        <span class="ig-icon">A</span>
+    <a class="case-study-card" href="ai-hype-to-business-results.html" data-industry="technology">
+      <div class="case-study-card__image case-study-card__image--photo">
+        <img src="../assets/images/case-studies/saas-team-meeting.webp" alt="Strategy team reviewing AI implementation outcomes" loading="lazy">
+        <div class="cs-photo-overlay"></div>
+        <span class="cs-photo-tag">Technology · AI</span>
       </div>
       <div class="case-study-card__body">
-        <p class="case-study-card__tag">Technology / AI · AI Consulting &amp; Transformation</p>
+        <p class="case-study-card__tag">Technology / AI</p>
         <h2 class="case-study-card__title">Turning AI Hype Into Business Results</h2>
         <div class="case-study-card__stats">
           <span class="case-study-card__stat-chip">Apr 2026</span>
           <span class="case-study-card__stat-chip">8 min read</span>
-          <span class="case-study-card__stat-chip">AI implementation</span>
         </div>
         <span class="link-arrow">Read insight <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
@@ -706,11 +509,10 @@
 
   </div><!-- /insights-grid -->
 
-  <!-- NO RESULTS -->
   <div class="no-results" id="noResults" role="status" aria-live="polite">
-    <h3>No insights match this combination.</h3>
-    <p>Try a different industry or service filter, or browse everything.</p>
-    <button onclick="resetFilters()">Browse all insights</button>
+    <h3>No insights match this filter.</h3>
+    <p>Try a different industry, or browse everything.</p>
+    <button onclick="resetFilter()">Browse all insights</button>
   </div>
 
 </div><!-- /grid-wrap -->
@@ -725,7 +527,7 @@
       </div>
       <div>
         <p style="font-size:2.5rem;font-weight:800;color:var(--color-navy);line-height:1;margin-bottom:0.375rem;">80%</p>
-        <p style="font-size:0.875rem;color:var(--color-text-muted);font-weight:500;">Primary-research-led engagements</p>
+        <p style="font-size:0.875rem;color:var(--color-text-muted);font-weight:500;">Primary-research-led</p>
       </div>
       <div>
         <p style="font-size:2.5rem;font-weight:800;color:var(--color-navy);line-height:1;margin-bottom:0.375rem;">4</p>
@@ -756,12 +558,10 @@
 <script src="../assets/js/main.js" defer></script>
 
 <script>
-  let activeIndustry = 'all';
-  let activeService  = 'all';
-
-  const cards    = Array.from(document.querySelectorAll('.case-study-card[data-industry]'));
-  const noRes    = document.getElementById('noResults');
-  const countEl  = document.getElementById('countNum');
+  let active = 'all';
+  const cards   = Array.from(document.querySelectorAll('.case-study-card[data-industry]'));
+  const noRes   = document.getElementById('noResults');
+  const countEl = document.getElementById('countNum');
   const resetBtn = document.getElementById('resetBtn');
 
   document.querySelectorAll('.fpill').forEach(pill => {
@@ -772,83 +572,49 @@
   });
 
   function handlePill(pill) {
-    const dim = pill.dataset.filter;
-    const val = pill.dataset.value;
-    document.querySelectorAll(`.fpill[data-filter="${dim}"]`).forEach(p => {
-      p.classList.remove('active', 'active-svc');
+    document.querySelectorAll('.fpill').forEach(p => {
+      p.classList.remove('active');
       p.setAttribute('aria-pressed', 'false');
     });
-    pill.classList.add(dim === 'service' && val !== 'all' ? 'active-svc' : 'active');
+    pill.classList.add('active');
     pill.setAttribute('aria-pressed', 'true');
-    if (dim === 'industry') activeIndustry = val;
-    if (dim === 'service')  activeService  = val;
-    applyFilters();
+    active = pill.dataset.value;
+    applyFilter();
   }
 
-  function applyFilters() {
+  function applyFilter() {
     let visible = 0;
     cards.forEach(card => {
-      const ind  = card.dataset.industry || '';
-      const svcs = card.dataset.service  || '';
-      const matchInd = activeIndustry === 'all' || ind === activeIndustry;
-      const matchSvc = activeService  === 'all' || svcs.split(' ').includes(activeService);
-      const show = matchInd && matchSvc;
+      const show = active === 'all' || card.dataset.industry === active;
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
     countEl.textContent = visible;
     noRes.classList.toggle('visible', visible === 0);
-    const isFiltered = activeIndustry !== 'all' || activeService !== 'all';
-    resetBtn.classList.toggle('visible', isFiltered);
-    const params = new URLSearchParams();
-    if (activeIndustry !== 'all') params.set('industry', activeIndustry);
-    if (activeService  !== 'all') params.set('service',  activeService);
-    const qs = params.toString();
-    history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+    resetBtn.classList.toggle('visible', active !== 'all');
+    const qs = active !== 'all' ? `?industry=${active}` : location.pathname;
+    history.replaceState(null, '', qs);
   }
 
-  function resetFilters() {
-    activeIndustry = 'all';
-    activeService  = 'all';
+  function resetFilter() {
+    active = 'all';
     document.querySelectorAll('.fpill').forEach(p => {
-      p.classList.remove('active', 'active-svc');
+      p.classList.remove('active');
       p.setAttribute('aria-pressed', 'false');
-      if (p.dataset.value === 'all') {
-        p.classList.add('active');
-        p.setAttribute('aria-pressed', 'true');
-      }
+      if (p.dataset.value === 'all') { p.classList.add('active'); p.setAttribute('aria-pressed', 'true'); }
     });
-    applyFilters();
+    applyFilter();
   }
 
-  resetBtn.addEventListener('click', resetFilters);
+  resetBtn.addEventListener('click', resetFilter);
 
   (function() {
-    const p = new URLSearchParams(location.search);
-    let needsFilter = false;
-    if (p.get('industry')) {
-      const ind = p.get('industry');
-      document.querySelectorAll('.fpill[data-filter="industry"]').forEach(pl => {
-        pl.classList.remove('active');
-        pl.setAttribute('aria-pressed', 'false');
-        if (pl.dataset.value === ind) { pl.classList.add('active'); pl.setAttribute('aria-pressed', 'true'); }
-      });
-      activeIndustry = ind;
-      needsFilter = true;
+    const ind = new URLSearchParams(location.search).get('industry');
+    if (ind) {
+      const pill = document.querySelector(`.fpill[data-value="${ind}"]`);
+      if (pill) { active = ind; handlePill(pill); }
     }
-    if (p.get('service')) {
-      const svc = p.get('service');
-      document.querySelectorAll('.fpill[data-filter="service"]').forEach(pl => {
-        pl.classList.remove('active', 'active-svc');
-        pl.setAttribute('aria-pressed', 'false');
-        if (pl.dataset.value === svc) { pl.classList.add('active-svc'); pl.setAttribute('aria-pressed', 'true'); }
-      });
-      activeService = svc;
-      needsFilter = true;
-    }
-    if (needsFilter) applyFilters();
   })();
 </script>
-
 </body>
 </html>
