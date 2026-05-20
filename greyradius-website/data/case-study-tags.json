@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "alloy-ferro-metals-sea-expansion",
+    "service_primary": "Market Entry Execution",
+    "service_secondary": "Opportunity Assessment",
+    "industry": "Energy & Chemicals",
+    "geo": "Southeast Asia",
+    "client_type": "Industrial Conglomerate"
+  },
+  {
+    "slug": "coal-mining-conveyor-feasibility",
+    "service_primary": "Feasibility & TEV",
+    "service_secondary": "Opportunity Assessment",
+    "industry": "Energy & Chemicals",
+    "geo": "India",
+    "client_type": "Mining Group"
+  },
+  {
+    "slug": "drone-startup-gtm-execution",
+    "service_primary": "GTM Execution-as-a-Service",
+    "service_secondary": "Market Entry Execution",
+    "industry": "Technology",
+    "geo": "India",
+    "client_type": "Startup"
+  },
+  {
+    "slug": "b2b-saas-product-market-fit",
+    "service_primary": "GTM Execution-as-a-Service",
+    "service_secondary": "Pitchbook & Fundraising",
+    "industry": "Technology",
+    "geo": "India",
+    "client_type": "SaaS Startup"
+  },
+  {
+    "slug": "enterprise-integration-gtm-north-america",
+    "service_primary": "Market Entry Execution",
+    "service_secondary": "GTM Execution-as-a-Service",
+    "industry": "Technology",
+    "geo": "North America",
+    "client_type": "SaaS Platform"
+  },
+  {
+    "slug": "ophthalmology-pharma-gcc-market-entry",
+    "service_primary": "Market Entry Execution",
+    "service_secondary": "Opportunity Assessment",
+    "industry": "Healthcare & Life Sciences",
+    "geo": "GCC",
+    "client_type": "Pharma Brand"
+  },
+  {
+    "slug": "us-hospital-chain-canada-market-entry",
+    "service_primary": "Market Entry Execution",
+    "service_secondary": "Feasibility & TEV",
+    "industry": "Healthcare & Life Sciences",
+    "geo": "North America",
+    "client_type": "Hospital Chain"
+  },
+  {
+    "slug": "oncology-clinical-trial-intelligence",
+    "service_primary": "Opportunity Assessment",
+    "service_secondary": "AI Consulting",
+    "industry": "Healthcare & Life Sciences",
+    "geo": "Global",
+    "client_type": "Research Organisation"
+  },
+  {
+    "slug": "fresh-foods-cpg-bengaluru-gtm",
+    "service_primary": "GTM Execution-as-a-Service",
+    "service_secondary": "Opportunity Assessment",
+    "industry": "CPG / FMCG / Retail",
+    "geo": "India",
+    "client_type": "CPG Brand"
+  },
+  {
+    "slug": "uae-retail-market-entry",
+    "service_primary": "Market Entry Execution",
+    "service_secondary": "GTM Execution-as-a-Service",
+    "industry": "CPG / FMCG / Retail",
+    "geo": "GCC",
+    "client_type": "Consumer Brand"
+  },
+  {
+    "slug": "edtech-gcc-market-entry",
+    "service_primary": "Market Entry Execution",
+    "service_secondary": "GTM Execution-as-a-Service",
+    "industry": "Technology",
+    "geo": "GCC",
+    "client_type": "EdTech Platform"
+  },
+  {
+    "slug": "agri-chemical-commercialisation",
+    "service_primary": "GTM Execution-as-a-Service",
+    "service_secondary": "Opportunity Assessment",
+    "industry": "Energy & Chemicals",
+    "geo": "India & SEA",
+    "client_type": "Agri-Chemical Company"
+  },
+  {
+    "slug": "ewaste-recycling-startup",
+    "service_primary": "GTM Execution-as-a-Service",
+    "service_secondary": "Opportunity Assessment",
+    "industry": "Energy & Chemicals",
+    "geo": "India",
+    "client_type": "Startup"
+  },
+  {
+    "slug": "uae-government-housing-cx",
+    "service_primary": "Opportunity Assessment",
+    "service_secondary": "AI Consulting",
+    "industry": "Technology",
+    "geo": "GCC",
+    "client_type": "Government Authority"
+  }
+]

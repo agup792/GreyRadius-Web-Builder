@@ -1,0 +1,1219 @@
+# GreyRadius — Replit Developer Command Document
+## Case Studies: Full Build Instructions
+**14 case studies. Read every instruction. Execute in the order given.**
+
+---
+
+## PART A — GLOBAL SETUP (do this first, before touching any case study file)
+
+### A1. Create the tag taxonomy file
+Create `/data/case-study-tags.json` with this exact content. Every case study page will reference it for filter chips.
+
+```json
+{
+  "services": [
+    { "id": "opportunity-assessment",      "label": "Opportunity Assessment",       "color": "#FFF8F0", "textColor": "#7C4A00", "border": "#F5DEB3" },
+    { "id": "feasibility-tev",             "label": "Feasibility & TEV",            "color": "#F3F0FF", "textColor": "#4527A0", "border": "#D1C4E9" },
+    { "id": "market-entry-execution",      "label": "Market Entry Execution",       "color": "#E8F5E9", "textColor": "#1B5E20", "border": "#C8E6C9" },
+    { "id": "gtm-xaas",                   "label": "GTM-XaaS",                     "color": "#E3F2FD", "textColor": "#0D47A1", "border": "#BBDEFB" },
+    { "id": "pitchbook-fundraising",       "label": "Pitchbook & Fundraising",      "color": "#FCE4EC", "textColor": "#880E4F", "border": "#F8BBD0" },
+    { "id": "ai-consulting",               "label": "AI Consulting & Transformation","color": "#E0F2F1", "textColor": "#004D40", "border": "#B2DFDB" }
+  ],
+  "industries": [
+    { "id": "technology",      "label": "Technology & SaaS",            "color": "#E3F2FD", "textColor": "#1565C0" },
+    { "id": "healthcare",      "label": "Healthcare & Life Sciences",   "color": "#E8F5E9", "textColor": "#2E7D32" },
+    { "id": "cpg",             "label": "CPG / FMCG / Retail",          "color": "#F3E5F5", "textColor": "#6A1B9A" },
+    { "id": "energy",          "label": "Energy & Chemicals",           "color": "#FFF3E0", "textColor": "#E65100" },
+    { "id": "manufacturing",   "label": "Manufacturing & Industrials",  "color": "#FBE9E7", "textColor": "#BF360C" },
+    { "id": "education",       "label": "Education / EdTech",           "color": "#E8EAF6", "textColor": "#283593" },
+    { "id": "government",      "label": "Government & Public Sector",   "color": "#E0F2F1", "textColor": "#00695C" }
+  ],
+  "geographies": [
+    { "id": "india",           "label": "India",               "color": "#ECEFF1", "textColor": "#37474F" },
+    { "id": "uae-gcc",         "label": "UAE / GCC",           "color": "#ECEFF1", "textColor": "#37474F" },
+    { "id": "sea",             "label": "South-East Asia",     "color": "#ECEFF1", "textColor": "#37474F" },
+    { "id": "north-america",   "label": "North America",       "color": "#ECEFF1", "textColor": "#37474F" },
+    { "id": "europe",          "label": "Europe",              "color": "#ECEFF1", "textColor": "#37474F" }
+  ],
+  "clientTypes": [
+    { "id": "startup",         "label": "Startup / Early Stage" },
+    { "id": "scale-up",        "label": "Scale-up / Growth Stage" },
+    { "id": "sme",             "label": "SME / Mid-Market" },
+    { "id": "enterprise",      "label": "Enterprise / Large Corp" },
+    { "id": "government",      "label": "Government" }
+  ]
+}
+```
+
+---
+
+### A2. Case study page template
+Every case study page must use this HTML structure. Replace `{{PLACEHOLDER}}` tokens with the values from Part B below.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{META_TITLE}} | GreyRadius Consulting</title>
+  <meta name="description" content="{{META_DESC}}" />
+  <link rel="canonical" href="https://greyradius.com/case-studies/{{SLUG}}.html" />
+
+  <!-- Page-level tag data (used by filter JS on listing page) -->
+  <meta name="cs:service-primary"   content="{{SERVICE_PRIMARY_ID}}" />
+  <meta name="cs:service-secondary" content="{{SERVICE_SECONDARY_ID}}" />
+  <meta name="cs:industry"          content="{{INDUSTRY_ID}}" />
+  <meta name="cs:geography"         content="{{GEO_ID}}" />
+  <meta name="cs:client-type"       content="{{CLIENT_TYPE_ID}}" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{TITLE}}",
+    "author": {"@type": "Organization", "name": "GreyRadius Consulting"},
+    "publisher": {"@type": "Organization", "name": "GreyRadius Consulting", "url": "https://greyradius.com"},
+    "description": "{{META_DESC}}",
+    "url": "https://greyradius.com/case-studies/{{SLUG}}.html"
+  }
+  </script>
+
+  [INCLUDE your standard <head> fonts and CSS here]
+</head>
+<body>
+
+[INCLUDE standard nav partial]
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="/">Home</a> › <a href="/case-studies/">Case Studies</a> › {{TITLE_SHORT}}
+</div>
+
+<!-- ── HERO SECTION ─────────────────────────────────────────────── -->
+<section class="cs-hero">
+  <div class="cs-hero-inner">
+
+    <!-- TAG ROW -->
+    <div class="tag-row">
+      <span class="tag tag-service-primary">{{SERVICE_PRIMARY_LABEL}}</span>
+      <span class="tag tag-service-secondary">{{SERVICE_SECONDARY_LABEL}}</span>
+      <span class="tag tag-industry">{{INDUSTRY_LABEL}}</span>
+      <span class="tag tag-geo">{{GEO_LABEL}}</span>
+      <span class="tag tag-client">{{CLIENT_TYPE_LABEL}}</span>
+    </div>
+
+    <h1>{{TITLE}}</h1>
+    <p class="cs-lede">{{LEDE}}</p>
+
+    <!-- KPI BAR — 3 or 4 tiles -->
+    <div class="kpi-bar">
+      <div class="kpi"><span class="kpi-num">{{KPI_1_NUM}}</span><span class="kpi-label">{{KPI_1_LABEL}}</span></div>
+      <div class="kpi"><span class="kpi-num">{{KPI_2_NUM}}</span><span class="kpi-label">{{KPI_2_LABEL}}</span></div>
+      <div class="kpi"><span class="kpi-num">{{KPI_3_NUM}}</span><span class="kpi-label">{{KPI_3_LABEL}}</span></div>
+      <div class="kpi"><span class="kpi-num">{{KPI_4_NUM}}</span><span class="kpi-label">{{KPI_4_LABEL}}</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HERO IMAGE ────────────────────────────────────────────────── -->
+<!-- Place the case study's primary image here. See image instructions in Part C. -->
+<div class="cs-hero-image">
+  <img src="/assets/images/case-studies/{{SLUG}}/hero.jpg"
+       alt="{{IMAGE_ALT}}"
+       width="1200" height="500"
+       loading="eager" />
+</div>
+
+<!-- ── BODY CONTENT ──────────────────────────────────────────────── -->
+<article class="cs-body">
+  <div class="cs-body-inner">
+
+    <!-- Keep the existing docx text sections. Use these exact heading labels: -->
+    <h2>Context</h2>
+    [PASTE section text from docx — do not rewrite]
+
+    <h2>The Core Challenge</h2>
+    [PASTE section text from docx]
+
+    <!-- Pull quote — pull the most powerful single sentence from this section -->
+    <blockquote class="cs-pullquote">
+      <p>{{PULL_QUOTE}}</p>
+    </blockquote>
+
+    <h2>The Shift</h2>
+    [PASTE section text from docx — rename "The Decision Shift" to "The Shift"]
+
+    <h2>What Changed in Execution</h2>
+    [PASTE section text from docx]
+
+    <!-- INLINE IMAGE — secondary image from the docx, placed mid-article -->
+    <!-- See Part C for image instructions -->
+    <figure class="cs-inline-figure">
+      <img src="/assets/images/case-studies/{{SLUG}}/inline-01.jpg"
+           alt="{{INLINE_IMAGE_ALT}}"
+           width="820" height="460"
+           loading="lazy" />
+      <figcaption>{{INLINE_IMAGE_CAPTION}}</figcaption>
+    </figure>
+
+    <h2>Business Impact Delivered</h2>
+    [PASTE section text from docx]
+
+    <!-- OUTCOMES GRID — build from the Key Outcomes bullet list in the docx -->
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-icon">{{ICON}}</div>
+        <strong>{{OUTCOME_TITLE_1}}</strong>
+        <p>{{OUTCOME_DESC_1}}</p>
+      </div>
+      <!-- Repeat for each bullet point in Key Outcomes. 4–6 cards. -->
+    </div>
+
+    <!-- ── TESTIMONIAL BLOCK ──────────────────────────────────────── -->
+    <!-- Each case study gets ONE testimonial. Values from Part B below. -->
+    <div class="cs-testimonial">
+      <div class="cs-testimonial-quote">
+        <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
+          <path d="M0 24V14.4C0 6.4 4.8 1.6 14.4 0l1.6 2.4C10.4 3.6 7.6 6.4 7.2 10.4H12V24H0zm20 0V14.4C20 6.4 24.8 1.6 34.4 0L36 2.4C30.4 3.6 27.6 6.4 27.2 10.4H32V24H20z" fill="#C0392B" opacity="0.15"/>
+        </svg>
+        <p class="testimonial-text">{{TESTIMONIAL_TEXT}}</p>
+      </div>
+      <div class="cs-testimonial-attribution">
+        <span class="testimonial-name">{{TESTIMONIAL_NAME}}</span>
+        <span class="testimonial-title">{{TESTIMONIAL_TITLE}}</span>
+        <span class="testimonial-company">{{TESTIMONIAL_COMPANY}}</span>
+      </div>
+    </div>
+
+    <!-- ── INSIGHT CLOSE ─────────────────────────────────────────── -->
+    <div class="cs-insight-box">
+      <p class="cs-insight-label">The Insight</p>
+      <p class="cs-insight-text">{{INSIGHT_QUOTE}}</p>
+    </div>
+
+    <!-- ── CTA ──────────────────────────────────────────────────── -->
+    <div class="cs-cta">
+      <h3>We have done this before. We can do it for you.</h3>
+      <p>30 minutes with a partner — not a salesperson.</p>
+      <a href="/contact.html" class="btn-primary">Book a 30-min call →</a>
+    </div>
+
+  </div>
+</article>
+
+<!-- ── RELATED LINKS ──────────────────────────────────────────────── -->
+<div class="cs-related">
+  <h4>Explore further</h4>
+  <div class="related-links">
+    <a href="/services/{{SERVICE_PRIMARY_URL}}" class="related-link">Service: {{SERVICE_PRIMARY_LABEL}}</a>
+    <a href="/industries/{{INDUSTRY_URL}}" class="related-link">Industry: {{INDUSTRY_LABEL}}</a>
+    <a href="/case-studies/" class="related-link">← All Case Studies</a>
+  </div>
+</div>
+
+[INCLUDE standard footer partial]
+
+</body>
+</html>
+```
+
+---
+
+### A3. Case study listing page filters
+On `/case-studies/index.html`, the filter bar must have three filter dimensions. Use these exact `data-value` strings — they match the tag IDs above.
+
+```html
+<!-- FILTER ROW 1: Service -->
+<div class="filter-group">
+  <span class="filter-label">Service</span>
+  <span class="pill active" data-filter="service" data-value="all">All</span>
+  <span class="pill" data-filter="service" data-value="opportunity-assessment">Opportunity Assessment</span>
+  <span class="pill" data-filter="service" data-value="feasibility-tev">Feasibility & TEV</span>
+  <span class="pill" data-filter="service" data-value="market-entry-execution">Market Entry Execution</span>
+  <span class="pill" data-filter="service" data-value="gtm-xaas">GTM-XaaS</span>
+  <span class="pill" data-filter="service" data-value="pitchbook-fundraising">Pitchbook & Fundraising</span>
+  <span class="pill" data-filter="service" data-value="ai-consulting">AI Consulting</span>
+</div>
+
+<!-- FILTER ROW 2: Industry -->
+<div class="filter-group">
+  <span class="filter-label">Industry</span>
+  <span class="pill active" data-filter="industry" data-value="all">All</span>
+  <span class="pill" data-filter="industry" data-value="technology">Technology & SaaS</span>
+  <span class="pill" data-filter="industry" data-value="healthcare">Healthcare & Life Sciences</span>
+  <span class="pill" data-filter="industry" data-value="cpg">CPG / FMCG / Retail</span>
+  <span class="pill" data-filter="industry" data-value="energy">Energy & Chemicals</span>
+  <span class="pill" data-filter="industry" data-value="manufacturing">Manufacturing & Industrials</span>
+  <span class="pill" data-filter="industry" data-value="education">Education / EdTech</span>
+  <span class="pill" data-filter="industry" data-value="government">Government</span>
+</div>
+
+<!-- FILTER ROW 3: Geography -->
+<div class="filter-group">
+  <span class="filter-label">Geography</span>
+  <span class="pill active" data-filter="geo" data-value="all">All</span>
+  <span class="pill" data-filter="geo" data-value="india">India</span>
+  <span class="pill" data-filter="geo" data-value="uae-gcc">UAE / GCC</span>
+  <span class="pill" data-filter="geo" data-value="sea">South-East Asia</span>
+  <span class="pill" data-filter="geo" data-value="north-america">North America</span>
+  <span class="pill" data-filter="geo" data-value="europe">Europe</span>
+</div>
+```
+
+Filter JS logic: AND across dimensions, OR within a dimension. Each `.card` on the listing page must have:
+```html
+<div class="card"
+     data-service="opportunity-assessment"
+     data-service-2="market-entry-execution"
+     data-industry="manufacturing"
+     data-geo="sea">
+```
+
+URL params must update on filter change: `?service=gtm-xaas&industry=technology&geo=india`
+
+---
+
+## PART B — ALL 14 CASE STUDIES: TOKEN VALUES + ADDITIONS
+
+Copy the values below for each case study. These are the only tokens you need to complete the template from Part A.
+
+---
+
+### CS-01 · Alloy & Ferro Metals SEA Expansion
+
+```
+SLUG:                    alloy-ferro-metals-sea-expansion
+META_TITLE:              Alloy & Ferro Metals SEA Expansion — GreyRadius
+META_DESC:               An industrial metals manufacturer avoided costly multi-country overreach. GreyRadius identified 2–3 high-potential SEA markets and reduced capital exposure by 20–30%.
+TITLE:                   Alloy & Ferro Metals SEA Expansion Strategy: Vietnam Selected, 2 Markets Deferred
+TITLE_SHORT:             Alloy & Ferro Metals SEA Expansion
+LEDE:                    The manufacturer was treating South East Asia as a single commercial opportunity. It is not. We separated the markets that were commercially viable from the ones that would have consumed capital without creating depth.
+
+SERVICE_PRIMARY_ID:      opportunity-assessment
+SERVICE_PRIMARY_LABEL:   Opportunity Assessment
+SERVICE_PRIMARY_URL:     opportunity-assessment.html
+SERVICE_SECONDARY_ID:    market-entry-execution
+SERVICE_SECONDARY_LABEL: Market Entry Execution
+INDUSTRY_ID:             manufacturing
+INDUSTRY_LABEL:          Manufacturing & Industrials
+INDUSTRY_URL:            manufacturing-and-industrials.html
+GEO_ID:                  sea
+GEO_LABEL:               South-East Asia
+CLIENT_TYPE_ID:          enterprise
+CLIENT_TYPE_LABEL:       Enterprise / Large Corp
+
+KPI_1_NUM: 2–3
+KPI_1_LABEL: High-potential SEA markets identified for phased entry
+KPI_2_NUM: 20–30%
+KPI_2_LABEL: Reduction in potential capital exposure
+KPI_3_NUM: 40–50%
+KPI_3_LABEL: Reduction in market prioritisation uncertainty
+KPI_4_NUM: Phased
+KPI_4_LABEL: Demand-led scaling roadmap delivered
+
+PULL_QUOTE: Expansion speed was beginning to outpace execution maturity. The shift was from capacity-led assumptions to demand-led scaling triggers.
+
+IMAGE_ALT: Industrial metals manufacturing facility — GreyRadius SEA expansion case study
+INLINE_IMAGE_ALT: Market prioritisation framework across South East Asia — GreyRadius
+INLINE_IMAGE_CAPTION: Country-level scoring across industrial demand density, trade economics, and distributor readiness.
+
+INSIGHT_QUOTE: International expansion often fails long before market entry begins. The real breakdown happens when regional opportunity size gets mistaken for execution readiness. Growth can absorb strategic ambiguity for a while. International scale cannot.
+
+TESTIMONIAL_TEXT: The GreyRadius team walked us through the hard conversation we had been avoiding — that not every market we wanted to enter was actually ready for us. The primary research they brought into the room changed the direction of our board discussion entirely. Their data was not desk research. It was real intelligence from the ground, and it was the reason we made the right call.
+TESTIMONIAL_NAME: [Senior Leadership — Confidential]
+TESTIMONIAL_TITLE: VP Strategy
+TESTIMONIAL_COMPANY: Industrial Metals Manufacturer, India
+
+OUTCOME_TITLE_1: Priority Markets Locked
+OUTCOME_DESC_1: 2–3 high-potential SEA entry markets identified. Leadership bandwidth concentrated — not spread.
+OUTCOME_TITLE_2: Capital Exposure Reduced
+OUTCOME_DESC_2: 20–30% reduction in potential capital exposure through demand-linked scaling discipline.
+OUTCOME_TITLE_3: Execution Clarity
+OUTCOME_DESC_3: 40–50% reduction in prioritisation uncertainty. Every expansion decision tied to a commercial trigger, not a regional ambition.
+OUTCOME_TITLE_4: Repeatable Model
+OUTCOME_DESC_4: A phased international growth model that the internal team can run — not a one-time study.
+```
+
+---
+
+### CS-02 · Coal Mining Conveyor Feasibility
+
+```
+SLUG:                    coal-mining-conveyor-feasibility
+META_TITLE:              Coal Mining Conveyor Feasibility Study — GreyRadius
+META_DESC:               A coal material handling company needed a clear infrastructure decision. GreyRadius delivered a go recommendation backed by a full TEV assessment — in 3 weeks.
+TITLE:                   Coal Mining Conveyor Feasibility Study: Go Decision Delivered in 3 Weeks
+TITLE_SHORT:             Coal Mining Infrastructure Feasibility
+LEDE:                    The client's coal transport infrastructure had become the ceiling on mining scalability. They needed a clear go/defer decision — not a report. We delivered one in 3 weeks.
+
+SERVICE_PRIMARY_ID:      feasibility-tev
+SERVICE_PRIMARY_LABEL:   Feasibility & TEV
+SERVICE_PRIMARY_URL:     feasibility-and-tev.html
+SERVICE_SECONDARY_ID:    opportunity-assessment
+SERVICE_SECONDARY_LABEL: Opportunity Assessment
+INDUSTRY_ID:             energy
+INDUSTRY_LABEL:          Energy & Chemicals
+INDUSTRY_URL:            energy-and-chemicals.html
+GEO_ID:                  india
+GEO_LABEL:               India
+CLIENT_TYPE_ID:          enterprise
+CLIENT_TYPE_LABEL:       Enterprise / Large Corp
+
+KPI_1_NUM: 3 weeks
+KPI_1_LABEL: Go decision delivered from engagement start
+KPI_2_NUM: ↓
+KPI_2_LABEL: Coal material loss during transport — reduced
+KPI_3_NUM: 30–50%
+KPI_3_LABEL: Reduction in dust and environmental exposure
+KPI_4_NUM: Aligned
+KPI_4_LABEL: Infrastructure now matched to long-term mining scale
+
+PULL_QUOTE: The business was not facing a transport problem. It was facing a scalability infrastructure problem. Those require different decisions.
+
+IMAGE_ALT: Coal handling infrastructure — enclosed conveyor systems — GreyRadius feasibility case study
+INLINE_IMAGE_ALT: Infrastructure readiness framework for high-volume coal transport operations
+INLINE_IMAGE_CAPTION: Enclosed conveyor routing design aligned to long-term volume requirements and environmental compliance.
+
+INSIGHT_QUOTE: Large-scale mining does not break at extraction capacity. It breaks when the infrastructure supporting movement, control, and continuity cannot scale with production. In coal handling, reliability is not an operational detail — it is a growth constraint.
+
+TESTIMONIAL_TEXT: GreyRadius did not just validate our direction — they challenged it productively. When we came in with one model in mind, they stood their ground on what the data was showing. Not in an aggressive way, but they never backed down from what the numbers were telling them. That's what you need when you're making a capital decision at this scale.
+TESTIMONIAL_NAME: [Senior Leadership — Confidential]
+TESTIMONIAL_TITLE: Head of Infrastructure
+TESTIMONIAL_COMPANY: Coal Mining Operations, India
+
+OUTCOME_TITLE_1: Go Decision in 3 Weeks
+OUTCOME_DESC_1: Clear recommendation delivered — enabling leadership to commit capital with confidence and move to implementation.
+OUTCOME_TITLE_2: Material Loss Reduced
+OUTCOME_DESC_2: Enclosed movement system design reduced coal loss during transport across high-volume zones.
+OUTCOME_TITLE_3: Environmental Exposure Down
+OUTCOME_DESC_3: 30–50% reduction in dust and environmental exposure through controlled handling system design.
+OUTCOME_TITLE_4: Scale Readiness Built
+OUTCOME_DESC_4: Infrastructure now aligned with long-term mining volume requirements — not just immediate movement capacity.
+```
+
+---
+
+### CS-03 · Drone Startup GTM Execution
+
+```
+SLUG:                    drone-startup-gtm-execution
+META_TITLE:              Drone Startup GTM Execution — GreyRadius
+META_DESC:               An Indian drone startup was scaling activity across too many sectors without a repeatable commercial model. GreyRadius built the GTM architecture — ICP locked, 3 pilot customers signed in 90 days.
+TITLE:                   Drone Startup GTM Strategy and Execution: ICP Locked, First 3 Pilot Customers Signed in 90 Days
+TITLE_SHORT:             Drone Startup GTM Execution
+LEDE:                    The market opportunity was real. The operating model behind growth was not yet mature enough to scale it. We fixed that — and had the first three pilots signed within 90 days of starting.
+
+SERVICE_PRIMARY_ID:      gtm-xaas
+SERVICE_PRIMARY_LABEL:   GTM-XaaS
+SERVICE_PRIMARY_URL:     gtm-execution-as-a-service.html
+SERVICE_SECONDARY_ID:    market-entry-execution
+SERVICE_SECONDARY_LABEL: Market Entry Execution
+INDUSTRY_ID:             technology
+INDUSTRY_LABEL:          Technology & SaaS
+INDUSTRY_URL:            technology.html
+GEO_ID:                  india
+GEO_LABEL:               India
+CLIENT_TYPE_ID:          startup
+CLIENT_TYPE_LABEL:       Startup / Early Stage
+
+KPI_1_NUM: 90 days
+KPI_1_LABEL: First 3 pilot customers signed from GTM launch
+KPI_2_NUM: Locked
+KPI_2_LABEL: Ideal Customer Profile definitively defined
+KPI_3_NUM: Phased
+KPI_3_LABEL: Sector prioritisation model built and deployed
+KPI_4_NUM: ↓
+KPI_4_LABEL: Founder dependency in commercial decisions
+
+PULL_QUOTE: The business stopped measuring growth by the number of industries approached and started measuring growth by repeatable commercial adoption potential. That distinction improved execution maturity significantly.
+
+IMAGE_ALT: Drone operations over industrial infrastructure — GreyRadius DaaS GTM case study
+INLINE_IMAGE_ALT: Sector prioritisation matrix for drone deployment across Indian industries
+INLINE_IMAGE_CAPTION: Use-case-to-sector mapping showing commercial viability, regulatory readiness, and ROI realisation timelines.
+
+INSIGHT_QUOTE: In a fast-moving market, the companies that scale sustainably are not the ones that enter every sector first. They are the ones that build a repeatable commercial model in the sectors where demand, readiness, and ROI align — and expand from that foundation.
+
+TESTIMONIAL_TEXT: The GreyRadius team was completely hands-on from day one. They didn't just give us a framework and walk away — they sat in our sales conversations, pushed back on our assumptions about who was actually buying, and helped us rebuild our pitch from the ground up. Three pilot customers in 90 days is not a number we would have hit on our own at that stage.
+TESTIMONIAL_NAME: [Founder — Confidential]
+TESTIMONIAL_TITLE: Co-Founder & CEO
+TESTIMONIAL_COMPANY: Drone-as-a-Service Startup, India
+
+OUTCOME_TITLE_1: ICP Locked
+OUTCOME_DESC_1: Ideal Customer Profile definitively defined across priority sectors — ending fragmented multi-sector outreach.
+OUTCOME_TITLE_2: 3 Pilots in 90 Days
+OUTCOME_DESC_2: First three pilot customer agreements signed within 90 days of GTM architecture deployment.
+OUTCOME_TITLE_3: Sector Prioritisation
+OUTCOME_DESC_3: High-friction sectors deprioritised. Scalable sectors sequenced for entry with clear commercial viability thresholds.
+OUTCOME_TITLE_4: Repeatable GTM
+OUTCOME_DESC_4: Commercial expansion decisions decoupled from founder involvement — scalable execution governance established.
+```
+
+---
+
+### CS-04 · B2B SaaS Product-Market Fit
+
+```
+SLUG:                    b2b-saas-product-market-fit
+META_TITLE:              B2B SaaS Product-Market Fit — GreyRadius
+META_DESC:               A UAE-based SaaS startup was scaling features and acquisition without knowing what was actually driving retention. GreyRadius delivered ICP clarity and a pivot decision in 2 weeks.
+TITLE:                   B2B SaaS Opportunity Assessment: ICP Locked, Pivot Decision Made in 2 Weeks
+TITLE_SHORT:             B2B SaaS Product-Market Fit
+LEDE:                    The company was scaling assumptions faster than customer validation. Product-market fit rarely fails because companies build too little — it fails because they scale before they understand what is actually working.
+
+SERVICE_PRIMARY_ID:      opportunity-assessment
+SERVICE_PRIMARY_LABEL:   Opportunity Assessment
+SERVICE_PRIMARY_URL:     opportunity-assessment.html
+SERVICE_SECONDARY_ID:    gtm-xaas
+SERVICE_SECONDARY_LABEL: GTM-XaaS
+INDUSTRY_ID:             technology
+INDUSTRY_LABEL:          Technology & SaaS
+INDUSTRY_URL:            technology.html
+GEO_ID:                  uae-gcc
+GEO_LABEL:               UAE / GCC
+CLIENT_TYPE_ID:          startup
+CLIENT_TYPE_LABEL:       Startup / Early Stage
+
+KPI_1_NUM: 2 weeks
+KPI_1_LABEL: ICP locked and pivot decision delivered
+KPI_2_NUM: ↓
+KPI_2_LABEL: Wasted GTM and product investment in low-fit segments
+KPI_3_NUM: ↑
+KPI_3_LABEL: Customer validation speed across priority segments
+KPI_4_NUM: ↓
+KPI_4_LABEL: Founder dependency in growth decisions
+
+PULL_QUOTE: Product-market fit rarely fails because companies build too little. More often, it fails because companies scale assumptions faster than they scale customer validation.
+
+IMAGE_ALT: SaaS product adoption journey mapping — GreyRadius product-market fit case study
+INLINE_IMAGE_ALT: ICP segmentation framework showing adoption and retention signal alignment
+INLINE_IMAGE_CAPTION: Customer-behaviour-led ICP model replacing assumption-driven segment targeting.
+
+INSIGHT_QUOTE: The companies that achieve sustainable SaaS growth are not the ones that build the most features. They are the ones that understand — with evidence — which customers retain value. And they build everything else around that insight.
+
+TESTIMONIAL_TEXT: We came in thinking we had a product problem. GreyRadius showed us, with actual data from our own customers, that it was a targeting problem. The way they structured the analysis and translated it into decisions we could act on immediately — that was genuinely different from anything we had done before. Very receptive to feedback throughout, and the work kept improving each round.
+TESTIMONIAL_NAME: [Founder — Confidential]
+TESTIMONIAL_TITLE: Founder & CEO
+TESTIMONIAL_COMPANY: B2B SaaS Platform, UAE
+
+OUTCOME_TITLE_1: ICP Locked in 2 Weeks
+OUTCOME_DESC_1: Clear ideal customer profile defined and validated — ending broad-market acquisition spend on low-fit segments.
+OUTCOME_TITLE_2: Pivot Decision Made
+OUTCOME_DESC_2: Evidence-backed go/pivot recommendation delivered — enabling confident resource reallocation without months of uncertainty.
+OUTCOME_TITLE_3: Retention Visibility
+OUTCOME_DESC_3: Adoption and retention indicators clarified across priority ICP segments — removing reliance on anecdotal founder feedback.
+OUTCOME_TITLE_4: Scalable Foundation
+OUTCOME_DESC_4: Commercial and product decisions grounded in observable customer behaviour, not internal assumptions.
+```
+
+---
+
+### CS-05 · Enterprise Integration GTM — North America
+
+```
+SLUG:                    enterprise-integration-gtm-north-america
+META_TITLE:              Enterprise Integration GTM Rebuild — GreyRadius
+META_DESC:               A Canada-based IT consulting firm had strong delivery capability and no repeatable GTM engine. GreyRadius built the commercial architecture — ICP definition, industry-specific positioning, scalable pipeline across North America.
+TITLE:                   Enterprise Integration Consulting: Project-Led to Pipeline-Generating Operating Model
+TITLE_SHORT:             Enterprise Integration GTM Rebuild
+LEDE:                    Strong delivery capability scales faster than commercial positioning — and this company had run that race too long. We built the GTM engine they needed to stop relying on referrals and start generating qualified pipeline.
+
+SERVICE_PRIMARY_ID:      gtm-xaas
+SERVICE_PRIMARY_LABEL:   GTM-XaaS
+SERVICE_PRIMARY_URL:     gtm-execution-as-a-service.html
+SERVICE_SECONDARY_ID:    opportunity-assessment
+SERVICE_SECONDARY_LABEL: Opportunity Assessment
+INDUSTRY_ID:             technology
+INDUSTRY_LABEL:          Technology & SaaS
+INDUSTRY_URL:            technology.html
+GEO_ID:                  north-america
+GEO_LABEL:               North America
+CLIENT_TYPE_ID:          sme
+CLIENT_TYPE_LABEL:       SME / Mid-Market
+
+KPI_1_NUM: Structured
+KPI_1_LABEL: GTM framework across priority industries and segments
+KPI_2_NUM: ↓
+KPI_2_LABEL: Dependence on opportunistic and referral-led growth
+KPI_3_NUM: ICP-led
+KPI_3_LABEL: Account prioritisation model built and deployed
+KPI_4_NUM: ↑
+KPI_4_LABEL: Alignment between positioning and enterprise buyer expectations
+
+PULL_QUOTE: The issue was not lack of technical expertise. It was the absence of a structured GTM framework capable of translating that expertise into a scalable commercial position.
+
+IMAGE_ALT: Enterprise integration consulting team — GreyRadius GTM execution case study
+INLINE_IMAGE_ALT: Industry-segment priority map for enterprise integration services across North America
+INLINE_IMAGE_CAPTION: ICP-led account prioritisation model based on integration complexity, digital transformation readiness, and engagement potential.
+
+INSIGHT_QUOTE: Enterprise service businesses rarely struggle because of weak delivery capability. More often, they struggle because technical expertise scales faster than commercial positioning, market prioritisation, and GTM execution maturity.
+
+TESTIMONIAL_TEXT: Before GreyRadius, our growth was entirely dependent on whoever Chirag and Anshuman happened to be talking to that month. The structure they put around our GTM — the ICP model, the industry targeting, the messaging framework — it was the first time we had a commercial process we could actually hand to someone else and have it work. They were always available, always responsive, and never made us feel like we were just another engagement on a list.
+TESTIMONIAL_NAME: [Founder — Confidential]
+TESTIMONIAL_TITLE: CEO & Founder
+TESTIMONIAL_COMPANY: Enterprise Integration Consulting Firm, Canada
+
+OUTCOME_TITLE_1: GTM Framework Built
+OUTCOME_DESC_1: Structured GTM framework created across priority industries and customer segments — replacing ad-hoc outreach with systematic pipeline generation.
+OUTCOME_TITLE_2: ICP Segmentation
+OUTCOME_DESC_2: Account prioritisation model deployed — based on integration complexity, digital transformation readiness, and engagement potential.
+OUTCOME_TITLE_3: Positioning Transformed
+OUTCOME_DESC_3: Messaging shifted from technical capability to business transformation outcomes — improving resonance with enterprise buyers.
+OUTCOME_TITLE_4: Repeatable Pipeline
+OUTCOME_DESC_4: Commercial foundation for repeatable enterprise growth — reducing reliance on founder-led business development.
+```
+
+---
+
+### CS-06 · Ophthalmology Pharma GCC Market Entry
+
+```
+SLUG:                    ophthalmology-pharma-gcc-market-entry
+META_TITLE:              Ophthalmology Pharma GCC Market Entry — GreyRadius
+META_DESC:               A European eye-care pharmaceutical company was applying a conventional coverage model to GCC specialist markets. GreyRadius rebuilt the approach around specialist prescription behaviour and delivered a bankable entry model in 4 weeks.
+TITLE:                   European Eye-Care Pharma GCC Market Entry: Bankable Entry Model Delivered in 4 Weeks
+TITLE_SHORT:             Ophthalmology Pharma GCC Market Entry
+LEDE:                    In specialty pharmaceuticals, market entry rarely fails because the product lacks potential. It fails because the business underestimates how prescription behaviour shapes execution economics. Specialist markets reward precision before they reward scale.
+
+SERVICE_PRIMARY_ID:      opportunity-assessment
+SERVICE_PRIMARY_LABEL:   Opportunity Assessment
+SERVICE_PRIMARY_URL:     opportunity-assessment.html
+SERVICE_SECONDARY_ID:    market-entry-execution
+SERVICE_SECONDARY_LABEL: Market Entry Execution
+INDUSTRY_ID:             healthcare
+INDUSTRY_LABEL:          Healthcare & Life Sciences
+INDUSTRY_URL:            healthcare-and-life-sciences.html
+GEO_ID:                  uae-gcc
+GEO_LABEL:               GCC
+CLIENT_TYPE_ID:          enterprise
+CLIENT_TYPE_LABEL:       Enterprise / Large Corp
+
+KPI_1_NUM: 4 weeks
+KPI_1_LABEL: Bankable entry model delivered to board
+KPI_2_NUM: ↓
+KPI_2_LABEL: GTM uncertainty across priority ophthalmology segments
+KPI_3_NUM: ↑
+KPI_3_LABEL: Specialist targeting efficiency through regional prioritisation
+KPI_4_NUM: Phased
+KPI_4_LABEL: Commercialisation sequencing built around specialist adoption
+
+PULL_QUOTE: Scale in specialty pharmaceuticals does not come from wider deployment first. It comes from concentrated adoption credibility.
+
+IMAGE_ALT: Ophthalmology clinic network — GreyRadius pharma market entry GCC case study
+INLINE_IMAGE_ALT: Specialist cluster prioritisation map across GCC ophthalmology markets
+INLINE_IMAGE_CAPTION: Regional segmentation by prescription influence density, competitive whitespace, and clinic ecosystem readiness.
+
+INSIGHT_QUOTE: Specialist markets reward precision long before they reward scale. The companies that enter specialty pharma markets successfully are not the ones with the largest field forces — they are the ones that understand which specialists drive prescription behaviour, and build their entry strategy around that reality.
+
+TESTIMONIAL_TEXT: The primary research GreyRadius brought into the engagement was a level above what we had seen before. They interviewed actual prescribers, clinic decision-makers, and procurement heads across multiple GCC markets — not secondary data dressed up as insight. The entry model they built was something we could present to our board with full confidence. Insightful, grounded in expert voices, and delivered exactly when they said it would be.
+TESTIMONIAL_NAME: [Regional Director — Confidential]
+TESTIMONIAL_TITLE: Regional Commercial Director
+TESTIMONIAL_COMPANY: European Eye-Care Pharmaceutical Company
+
+OUTCOME_TITLE_1: Board-Ready Model in 4 Weeks
+OUTCOME_DESC_1: Bankable market entry model delivered — including competitive positioning, specialist cluster prioritisation, and commercial sequencing.
+OUTCOME_TITLE_2: Specialist Targeting
+OUTCOME_DESC_2: Ophthalmologist segmentation built on prescription influence and adoption potential — replacing broad physician outreach.
+OUTCOME_TITLE_3: Regional Prioritisation
+OUTCOME_DESC_3: Specific GCC ophthalmology clusters identified for phased entry — based on specialist concentration and competitive whitespace.
+OUTCOME_TITLE_4: GTM Risk Reduced
+OUTCOME_DESC_4: Commercial activity scaled against specialist adoption realities — not top-down growth expectations that outpace market maturity.
+```
+
+---
+
+### CS-07 · US Hospital Chain Canada Market Entry
+
+```
+SLUG:                    us-hospital-chain-canada-market-entry
+META_TITLE:              US Hospital Chain Canada Market Entry — GreyRadius
+META_DESC:               A US hospital chain was applying a conventional expansion model to a province-driven Canadian healthcare system. GreyRadius rebuilt the approach around partnership-led access and regulatory alignment — and signed the first provincial partner.
+TITLE:                   US Hospital Chain Canada Market Entry: Regulatory Roadmap + First Provincial Partner Signed
+TITLE_SHORT:             US Hospital Chain Canada Expansion
+LEDE:                    Healthcare in Canada is not a centralised commercial market. It is a province-driven ecosystem shaped by public funding, reimbursement constraints, and highly localised dynamics. Applying a US expansion model to it without understanding this is how expensive mistakes happen.
+
+SERVICE_PRIMARY_ID:      market-entry-execution
+SERVICE_PRIMARY_LABEL:   Market Entry Execution
+SERVICE_PRIMARY_URL:     market-entry-execution.html
+SERVICE_SECONDARY_ID:    feasibility-tev
+SERVICE_SECONDARY_LABEL: Feasibility & TEV
+INDUSTRY_ID:             healthcare
+INDUSTRY_LABEL:          Healthcare & Life Sciences
+INDUSTRY_URL:            healthcare-and-life-sciences.html
+GEO_ID:                  north-america
+GEO_LABEL:               Canada / North America
+CLIENT_TYPE_ID:          enterprise
+CLIENT_TYPE_LABEL:       Enterprise / Large Corp
+
+KPI_1_NUM: Signed
+KPI_1_LABEL: First provincial channel partner secured
+KPI_2_NUM: ↓
+KPI_2_LABEL: Capital exposure from premature infrastructure investment
+KPI_3_NUM: Province-led
+KPI_3_LABEL: Expansion sequencing built on regulatory readiness
+KPI_4_NUM: Partnership
+KPI_4_LABEL: Operating model rebuilt around healthcare system alignment
+
+PULL_QUOTE: In highly regulated healthcare systems, scale does not come from infrastructure first. It comes from institutional alignment, reimbursement compatibility, and execution legitimacy inside the system itself.
+
+IMAGE_ALT: Canadian healthcare system expansion planning — GreyRadius hospital chain case study
+INLINE_IMAGE_ALT: Province-level prioritisation scorecard based on healthcare demand and regulatory readiness
+INLINE_IMAGE_CAPTION: Province-by-province evaluation across reimbursement compatibility, policy openness, and partnership potential.
+
+INSIGHT_QUOTE: In regulated healthcare markets, expansion success depends less on brand scale and more on how well the operating model fits the system it is entering. Execution maturity becomes the real differentiator once regulatory complexity starts shaping growth itself.
+
+TESTIMONIAL_TEXT: They always stood by us — even when the answer was uncomfortable. When we wanted to push ahead faster than the data supported, the GreyRadius team was direct about the risks without being dismissive of our ambitions. They found a better path and walked us through it. That combination of being both honest and genuinely helpful is rare.
+TESTIMONIAL_NAME: [Senior Leadership — Confidential]
+TESTIMONIAL_TITLE: Chief Strategy Officer
+TESTIMONIAL_COMPANY: US-Based Hospital Chain
+
+OUTCOME_TITLE_1: First Partner Signed
+OUTCOME_DESC_1: First provincial channel partner secured — providing regulated access and operational credibility inside the Canadian healthcare system.
+OUTCOME_TITLE_2: Regulatory Roadmap
+OUTCOME_DESC_2: Province-by-province regulatory clearance roadmap delivered — including reimbursement compatibility assessment and policy risk mapping.
+OUTCOME_TITLE_3: Capital Exposure Reduced
+OUTCOME_DESC_3: Phased expansion model reduced exposure to premature infrastructure investment and uncertain operating assumptions.
+OUTCOME_TITLE_4: Executable Model
+OUTCOME_DESC_4: Expansion plan rebuilt for actual Canadian healthcare system realities — not a replicated US model applied to a different operating environment.
+```
+
+---
+
+### CS-08 · Oncology Clinical Trial Intelligence
+
+```
+SLUG:                    oncology-clinical-trial-intelligence
+META_TITLE:              Oncology Clinical Trial Intelligence Platform — GreyRadius
+META_DESC:               A US pharma technology firm was managing oncology clinical trial data through fragmented analyst-dependent interpretation. GreyRadius built a centralised evidence intelligence model — reducing manual review by 40–60%.
+TITLE:                   Oncology Clinical Trial Intelligence Platform: 40–60% Reduction in Manual Evidence Review
+TITLE_SHORT:             Oncology Evidence Intelligence Platform
+LEDE:                    The bottleneck was not effort. It was evidence architecture. The company was reviewing abstracts as individual documents when it needed to treat them as inputs into a structured intelligence system.
+
+SERVICE_PRIMARY_ID:      feasibility-tev
+SERVICE_PRIMARY_LABEL:   Feasibility & TEV
+SERVICE_PRIMARY_URL:     feasibility-and-tev.html
+SERVICE_SECONDARY_ID:    opportunity-assessment
+SERVICE_SECONDARY_LABEL: Opportunity Assessment
+INDUSTRY_ID:             healthcare
+INDUSTRY_LABEL:          Healthcare & Life Sciences
+INDUSTRY_URL:            healthcare-and-life-sciences.html
+GEO_ID:                  north-america
+GEO_LABEL:               USA
+CLIENT_TYPE_ID:          enterprise
+CLIENT_TYPE_LABEL:       Enterprise / Large Corp
+
+KPI_1_NUM: 40–60%
+KPI_1_LABEL: Reduction in manual evidence review effort
+KPI_2_NUM: 30–50%
+KPI_2_LABEL: Faster benchmark-ready evidence generation
+KPI_3_NUM: ↑
+KPI_3_LABEL: Evidence consistency across multiple oncology indications
+KPI_4_NUM: Scalable
+KPI_4_LABEL: Cross-trial benchmarking now replicable and decision-ready
+
+PULL_QUOTE: The problem was reframed from "How do we review more abstracts faster?" to "How do we make abstract-level evidence comparable, reusable, and decision-ready at scale?" That shift changed everything.
+
+IMAGE_ALT: Oncology clinical trial data intelligence system — GreyRadius pharma tech case study
+INLINE_IMAGE_ALT: Structured evidence extraction model across oncology indications
+INLINE_IMAGE_CAPTION: Standardised evidence structure enabling cross-trial comparison across cohorts, endpoints, and trial arms.
+
+INSIGHT_QUOTE: In oncology intelligence, scale does not come from reading more abstracts. It comes from building evidence systems that make complex clinical data comparable, reusable, and decision-ready.
+
+TESTIMONIAL_TEXT: The depth of understanding the GreyRadius team brought to the oncology evidence space was not something we expected from a consulting partner. They immersed themselves in the clinical nuances, challenged our existing workflow assumptions with good reason, and the structured model they delivered has saved us hundreds of analyst hours. The primary research approach they take — speaking directly with clinical experts, not just reading what is already published — is what made the difference.
+TESTIMONIAL_NAME: [Senior Leadership — Confidential]
+TESTIMONIAL_TITLE: Head of Clinical Intelligence
+TESTIMONIAL_COMPANY: US Pharma Technology Firm
+
+OUTCOME_TITLE_1: 40–60% Less Manual Review
+OUTCOME_DESC_1: Manual evidence review effort reduced significantly — analyst time redirected from repetitive extraction to higher-value interpretation.
+OUTCOME_TITLE_2: 30–50% Faster Benchmarking
+OUTCOME_DESC_2: Benchmark-ready evidence generation timelines accelerated — improving responsiveness for oncology intelligence needs.
+OUTCOME_TITLE_3: Cross-Trial Comparability
+OUTCOME_DESC_3: Evidence elements now comparable across trials, cohorts, and indications — eliminating misaligned comparisons.
+OUTCOME_TITLE_4: Reusable Intelligence System
+OUTCOME_DESC_4: Centralised evidence intelligence model built — structured once, reused across strategic analysis, competitive reviews, and indication benchmarking.
+```
+
+---
+
+### CS-09 · Fresh Foods CPG Bengaluru GTM
+
+```
+SLUG:                    fresh-foods-cpg-bengaluru-gtm
+META_TITLE:              Fresh Foods CPG Bengaluru GTM — GreyRadius
+META_DESC:               An early-stage fresh foods brand validated ₹3.8–4.5 Cr demand across 7 Bengaluru micro-markets before spending a rupee on distribution — using consumer-tested pricing, packaging, and channel sequencing.
+TITLE:                   Fresh Foods CPG GTM-XaaS: ₹3.8–4.5 Cr Demand Validated, 34% Faster Market Activation
+TITLE_SHORT:             Fresh Foods CPG Bengaluru GTM
+LEDE:                    The brand had product readiness. What it lacked was launch readiness — and in a commoditised fresh foods category, those are not the same thing. Every key decision rested on founder assumptions that had never been stress-tested against real consumer behaviour.
+
+SERVICE_PRIMARY_ID:      gtm-xaas
+SERVICE_PRIMARY_LABEL:   GTM-XaaS
+SERVICE_PRIMARY_URL:     gtm-execution-as-a-service.html
+SERVICE_SECONDARY_ID:    opportunity-assessment
+SERVICE_SECONDARY_LABEL: Opportunity Assessment
+INDUSTRY_ID:             cpg
+INDUSTRY_LABEL:          CPG / FMCG / Retail
+INDUSTRY_URL:            cpg-fmcg-retail.html
+GEO_ID:                  india
+GEO_LABEL:               India
+CLIENT_TYPE_ID:          startup
+CLIENT_TYPE_LABEL:       Startup / Early Stage
+
+KPI_1_NUM: ₹3.8–4.5 Cr
+KPI_1_LABEL: Demand potential validated across 7 Bengaluru micro-markets
+KPI_2_NUM: +21%
+KPI_2_LABEL: Improvement in stated purchase intent post packaging iteration
+KPI_3_NUM: 34%
+KPI_3_LABEL: Reduction in market activation timeline vs unstructured launch
+KPI_4_NUM: 40+
+KPI_4_LABEL: Packaging variants consumer-tested before finalisation
+
+PULL_QUOTE: In commoditised CPG categories, the competitive moat is built before launch — through segment precision and validated positioning — not after distribution spend proves the assumptions wrong.
+
+IMAGE_ALT: Fresh foods consumer goods launch planning — GreyRadius Bengaluru CPG case study
+INLINE_IMAGE_ALT: Micro-market demand density mapping across 7 Bengaluru activation zones
+INLINE_IMAGE_CAPTION: Demand concentration and competitive exposure scoring used to sequence channel activation across Bengaluru micro-markets.
+
+INSIGHT_QUOTE: The cost of getting it wrong in market is always higher than the cost of getting it right before entry. Capital deployed into a blind market entry — testing pricing in the field, correcting channel mix after underperformance — is always more expensive than the research that prevents it.
+
+TESTIMONIAL_TEXT: What surprised us most was how deep the GreyRadius team went with consumers. They did not do a quick survey and send us a slide deck. They got into the market, spoke to real shoppers, ran actual packaging tests, and came back with data that made us rethink three of our biggest assumptions before we had spent a single rupee on distribution. The handholding through that process — from raw findings to a launch plan we could actually execute — was exceptional.
+TESTIMONIAL_NAME: [Founder — Confidential]
+TESTIMONIAL_TITLE: Co-Founder
+TESTIMONIAL_COMPANY: Fresh Foods Brand, Bengaluru
+
+OUTCOME_TITLE_1: ₹3.8–4.5 Cr Validated
+OUTCOME_DESC_1: Year 1 demand potential validated across 7 Bengaluru micro-markets — giving the brand a credible number for operational and capital planning.
+OUTCOME_TITLE_2: +21% Purchase Intent
+OUTCOME_DESC_2: Stated purchase intent improved 21% after packaging iteration based on consumer testing of 40+ design variants.
+OUTCOME_TITLE_3: 34% Faster Activation
+OUTCOME_DESC_3: Market activation timeline reduced 34% vs unstructured launch approach through sequenced micro-market entry.
+OUTCOME_TITLE_4: Investor-Ready GTM
+OUTCOME_DESC_4: Launch architecture — segment-specific, channel-sequenced, price-validated, packaging-tested — built to withstand investor and retail partner scrutiny.
+```
+
+---
+
+### CS-10 · UAE Retail Market Entry
+
+```
+SLUG:                    uae-retail-market-entry
+META_TITLE:              UAE Consumer Brand Retail Market Entry — GreyRadius
+META_DESC:               A consumer brand entering UAE retail was preparing to scale faster than its operating clarity allowed. GreyRadius rebuilt the commercialisation model around channel economics, phased sequencing, and pricing discipline.
+TITLE:                   UAE Consumer Brand Market Entry: Channel-Led Commercialisation Model Built for Regional Scale
+TITLE_SHORT:             UAE Retail Market Entry
+LEDE:                    The company had momentum. What it lacked was a scalable commercialisation structure. Retail expansion often fails quietly before revenue declines become visible — the early warning signs appear inside pricing inconsistencies and reactive distribution scaling.
+
+SERVICE_PRIMARY_ID:      market-entry-execution
+SERVICE_PRIMARY_LABEL:   Market Entry Execution
+SERVICE_PRIMARY_URL:     market-entry-execution.html
+SERVICE_SECONDARY_ID:    gtm-xaas
+SERVICE_SECONDARY_LABEL: GTM-XaaS
+INDUSTRY_ID:             cpg
+INDUSTRY_LABEL:          CPG / FMCG / Retail
+INDUSTRY_URL:            cpg-fmcg-retail.html
+GEO_ID:                  uae-gcc
+GEO_LABEL:               UAE / GCC
+CLIENT_TYPE_ID:          scale-up
+CLIENT_TYPE_LABEL:       Scale-up / Growth Stage
+
+KPI_1_NUM: ↓
+KPI_1_LABEL: Channel prioritisation uncertainty across UAE retail segments
+KPI_2_NUM: ↑
+KPI_2_LABEL: Pricing visibility through channel-level margin structuring
+KPI_3_NUM: Phased
+KPI_3_LABEL: Rollout sequencing built around execution readiness, not footprint ambition
+KPI_4_NUM: ↑
+KPI_4_LABEL: Commercial alignment between pricing, distribution, and growth planning
+
+PULL_QUOTE: Growth was no longer measured by retail footprint alone. It became tied to execution predictability, margin protection, and scalable channel performance.
+
+IMAGE_ALT: UAE modern trade retail shelf — GreyRadius consumer brand market entry case study
+INLINE_IMAGE_ALT: Channel economics comparison across UAE retail formats
+INLINE_IMAGE_CAPTION: Margin structure analysis by channel format — used to sequence entry and prioritise channels by sustainable unit economics.
+
+INSIGHT_QUOTE: Retail expansion often fails quietly before revenue declines become visible. The early warning signs appear inside pricing inconsistencies, fragmented channel decisions, and reactive distribution scaling. The companies that scale sustainably are the ones that understand which channels can scale profitably — and build execution maturity around that reality.
+
+TESTIMONIAL_TEXT: GreyRadius never shouted back. We had moments in the project where we disagreed strongly on channel priorities, and they held their position calmly, walked us through why the data supported it, and ultimately we came around. The fact that they had the confidence to challenge us without it ever becoming adversarial is something we genuinely respected.
+TESTIMONIAL_NAME: [Leadership — Confidential]
+TESTIMONIAL_TITLE: Managing Director
+TESTIMONIAL_COMPANY: Consumer Brand, UAE
+
+OUTCOME_TITLE_1: Channel Prioritisation Clarity
+OUTCOME_DESC_1: UAE retail channels ranked by unit economics and execution readiness — eliminating broad-presence assumptions as an entry strategy.
+OUTCOME_TITLE_2: Pricing Governance
+OUTCOME_DESC_2: Channel-specific pricing structures designed to protect margins while maintaining competitiveness across retail formats.
+OUTCOME_TITLE_3: Phased Rollout Model
+OUTCOME_DESC_3: Expansion sequencing tied to demand concentration and operational readiness — not top-line pressure.
+OUTCOME_TITLE_4: Leadership Dependency Reduced
+OUTCOME_DESC_4: Commercial decision-making became structured and commercially grounded — reducing founder intervention in daily expansion choices.
+```
+
+---
+
+### CS-11 · GCC EdTech Expansion
+
+```
+SLUG:                    edtech-gcc-market-entry
+META_TITLE:              EdTech GCC Market Entry — GreyRadius
+META_DESC:               An E-Learning platform entered the GCC treating it as a single regional market. GreyRadius rebuilt the expansion model around country-specific execution realities — and signed the first B2B pilot in 5 months.
+TITLE:                   EdTech GCC Market Entry Execution: Saudi Entity Registered, First B2B Pilot Signed in 5 Months
+TITLE_SHORT:             EdTech GCC Market Entry
+LEDE:                    The GCC is not a single enterprise education market. UAE procurement is not Saudi procurement. What works in Qatar does not automatically translate to Oman. The company was learning this the hard way — until we rebuilt the model.
+
+SERVICE_PRIMARY_ID:      market-entry-execution
+SERVICE_PRIMARY_LABEL:   Market Entry Execution
+SERVICE_PRIMARY_URL:     market-entry-execution.html
+SERVICE_SECONDARY_ID:    opportunity-assessment
+SERVICE_SECONDARY_LABEL: Opportunity Assessment
+INDUSTRY_ID:             education
+INDUSTRY_LABEL:          Education / EdTech
+INDUSTRY_URL:            technology.html
+GEO_ID:                  uae-gcc
+GEO_LABEL:               GCC / Saudi Arabia
+CLIENT_TYPE_ID:          scale-up
+CLIENT_TYPE_LABEL:       Scale-up / Growth Stage
+
+KPI_1_NUM: 5 months
+KPI_1_LABEL: Saudi entity registered, first B2B pilot signed
+KPI_2_NUM: ↓
+KPI_2_LABEL: Expansion prioritisation uncertainty across GCC countries
+KPI_3_NUM: Country-led
+KPI_3_LABEL: Sales, pricing, and partnership models localised per market
+KPI_4_NUM: ↓
+KPI_4_LABEL: Pilot dependency as proof of scalability
+
+PULL_QUOTE: The company stopped treating GCC expansion as a regional growth initiative and started treating it as a country-specific execution architecture problem. That reframing changed everything.
+
+IMAGE_ALT: Enterprise e-learning platform deployment across GCC — GreyRadius EdTech expansion case study
+INLINE_IMAGE_ALT: GCC country-level execution readiness assessment for EdTech enterprise sales
+INLINE_IMAGE_CAPTION: Country-by-country evaluation of procurement complexity, enterprise adoption pathways, and partner dependency across UAE, Saudi Arabia, Qatar, and Oman.
+
+INSIGHT_QUOTE: Regional expansion in fragmented markets is not a single execution challenge. It is a portfolio of different execution challenges — each requiring its own operating model, its own partnership structure, and its own commercial logic.
+
+TESTIMONIAL_TEXT: The GreyRadius team held our hand through every stage of the Saudi registration process — not just telling us what to do, but being in the conversations with us. When we hit a wall on the procurement side, they had already mapped the alternative route. Five months from engagement start to a signed pilot is not something we could have done without that level of involvement.
+TESTIMONIAL_NAME: [Founder — Confidential]
+TESTIMONIAL_TITLE: CEO
+TESTIMONIAL_COMPANY: E-Learning Platform, GCC Expansion
+
+OUTCOME_TITLE_1: Saudi Entity Registered
+OUTCOME_DESC_1: Legal entity established in Saudi Arabia within the engagement timeline — providing the commercial foundation for enterprise procurement conversations.
+OUTCOME_TITLE_2: First B2B Pilot Signed
+OUTCOME_DESC_2: First enterprise pilot agreement signed within 5 months — converting market access into a real commercial relationship.
+OUTCOME_TITLE_3: Localised Operating Models
+OUTCOME_DESC_3: Country-specific sales structures, pricing logic, and partnership engagement models deployed across UAE, Saudi Arabia, Qatar, and Oman.
+OUTCOME_TITLE_4: Pilot Dependency Removed
+OUTCOME_DESC_4: Expansion decisions tied to scalable adoption indicators — not isolated enterprise wins that masked structural execution gaps.
+```
+
+---
+
+### CS-12 · Agri-Chemical Commercialisation
+
+```
+SLUG:                    agri-chemical-commercialisation
+META_TITLE:              Agri-Chemical Product Commercialisation — GreyRadius
+META_DESC:               An agri-chemical manufacturer was launching products on internal assumptions with no market validation. GreyRadius rebuilt the commercialisation model around regional demand behaviour — reducing GTM decision timelines by 30–40%.
+TITLE:                   Agri-Chemical Product Portfolio GTM: Market-Backed Commercialisation, 30–40% Faster Launch Decisions
+TITLE_SHORT:             Agri-Chemical Commercialisation
+LEDE:                    The company was expanding its product pipeline based on internal priorities, not market realities. In agri-chemicals, that gap costs cycles. We rebuilt the commercialisation model around what farmers, distributors, and crop economics actually told us.
+
+SERVICE_PRIMARY_ID:      gtm-xaas
+SERVICE_PRIMARY_LABEL:   GTM-XaaS
+SERVICE_PRIMARY_URL:     gtm-execution-as-a-service.html
+SERVICE_SECONDARY_ID:    opportunity-assessment
+SERVICE_SECONDARY_LABEL: Opportunity Assessment
+INDUSTRY_ID:             energy
+INDUSTRY_LABEL:          Energy & Chemicals
+INDUSTRY_URL:            energy-and-chemicals.html
+GEO_ID:                  india
+GEO_LABEL:               India
+CLIENT_TYPE_ID:          sme
+CLIENT_TYPE_LABEL:       SME / Mid-Market
+
+KPI_1_NUM: 30–40%
+KPI_1_LABEL: Reduction in product evaluation and GTM decision timelines
+KPI_2_NUM: ↑
+KPI_2_LABEL: Launch prioritisation accuracy across key agricultural regions
+KPI_3_NUM: ↓
+KPI_3_LABEL: Execution dependency on centralised approval structures
+KPI_4_NUM: Region-led
+KPI_4_LABEL: Launch sequencing tied to crop cycle and channel readiness
+
+PULL_QUOTE: The company stopped treating commercialisation as the final stage of product development and started treating it as the central driver of product prioritisation itself.
+
+IMAGE_ALT: Agri-chemical product commercialisation — GreyRadius India GTM case study
+INLINE_IMAGE_ALT: Region-by-crop commercial viability scoring for agri-chemical launch prioritisation
+INLINE_IMAGE_CAPTION: State-level and crop-cycle-linked scoring model used to sequence product launches by validated market readiness.
+
+INSIGHT_QUOTE: In agri-chemicals, growth rarely breaks because of weak product pipelines. It breaks when commercialisation maturity fails to keep pace with market complexity. The companies that scale successfully make sharper commercialisation decisions earlier — before execution friction becomes the growth constraint.
+
+TESTIMONIAL_TEXT: They challenged us on assumptions we had held for years. When they came back from the field with what farmers and distributors were actually telling them — not what we had been projecting — it was eye-opening. The primary research quality was exceptional. It changed three major launch decisions before we had committed any resources. Very receptive to pushback throughout and always came back with better answers.
+TESTIMONIAL_NAME: [Senior Leadership — Confidential]
+TESTIMONIAL_TITLE: Head of Commercial
+TESTIMONIAL_COMPANY: Agri-Chemical Manufacturer, India
+
+OUTCOME_TITLE_1: 30–40% Faster Decisions
+OUTCOME_DESC_1: Product evaluation and GTM decision timelines reduced — moving from slow internal approval cycles to market-signal-driven prioritisation.
+OUTCOME_TITLE_2: Launch Prioritisation
+OUTCOME_DESC_2: Fewer products, stronger commercial fit — high-potential categories prioritised with faster market validation structures.
+OUTCOME_TITLE_3: Region-Led Sequencing
+OUTCOME_DESC_3: Launch timing aligned to crop cycles, distributor readiness, and regional demand behaviour — not centralised pipeline pressure.
+OUTCOME_TITLE_4: Cross-Functional Alignment
+OUTCOME_DESC_4: Commercial, product, and regional teams operating around shared market signals — ending the fragmented internal coordination that delayed launches.
+```
+
+---
+
+### CS-13 · E-Waste Recycling Startup
+
+```
+SLUG:                    ewaste-recycling-startup
+META_TITLE:              E-Waste Recycling Startup Feasibility — GreyRadius
+META_DESC:               An e-waste recycling startup was preparing to deploy capital into plant infrastructure before validating recovery economics. GreyRadius rebuilt the operating model around recovery yield — reducing technology risk exposure by 20–35%.
+TITLE:                   E-Waste Recycling Greenfield Feasibility: JV Model Built, Technology Risk Reduced by 20–35%
+TITLE_SHORT:             E-Waste Recycling Feasibility
+LEDE:                    Plant infrastructure is not the business model. Recovery yield is. The startup was building the former without validating the latter — and deploying capital on assumptions that had not been tested against real waste economics.
+
+SERVICE_PRIMARY_ID:      feasibility-tev
+SERVICE_PRIMARY_LABEL:   Feasibility & TEV
+SERVICE_PRIMARY_URL:     feasibility-and-tev.html
+SERVICE_SECONDARY_ID:    market-entry-execution
+SERVICE_SECONDARY_LABEL: Market Entry Execution
+INDUSTRY_ID:             energy
+INDUSTRY_LABEL:          Energy & Chemicals
+INDUSTRY_URL:            energy-and-chemicals.html
+GEO_ID:                  india
+GEO_LABEL:               India
+CLIENT_TYPE_ID:          startup
+CLIENT_TYPE_LABEL:       Startup / Early Stage
+
+KPI_1_NUM: 20–35%
+KPI_1_LABEL: Reduction in upfront technology risk exposure
+KPI_2_NUM: ↓
+KPI_2_LABEL: Capital lock-in from premature infrastructure expansion
+KPI_3_NUM: JV-led
+KPI_3_LABEL: Partnership-led operating model replacing full in-house technology ownership
+KPI_4_NUM: ↑
+KPI_4_LABEL: Recovery economics across high-value e-waste categories
+
+PULL_QUOTE: Plant infrastructure alone would not create defensibility. Recovery efficiency, category prioritisation, and ecosystem coordination would. That reframe changed the entire business model.
+
+IMAGE_ALT: E-waste recycling facility — GreyRadius feasibility and TEV case study
+INLINE_IMAGE_ALT: E-waste category recovery yield and downstream pricing model
+INLINE_IMAGE_CAPTION: Recovery economics by category — PCBs, cables, and IT assets scored by yield variability, commodity price sensitivity, and downstream offtake viability.
+
+INSIGHT_QUOTE: In e-waste recycling, scale can hide weak economics for a while. Eventually, recovery efficiency becomes the real business model. The companies that build durable positions in this sector are the ones that understand their yield economics before they commit capital — not after.
+
+TESTIMONIAL_TEXT: We came in confident we understood the business. GreyRadius showed us, very calmly and with good data, exactly where the economics would have broken down if we had proceeded as planned. They were direct without being dismissive, and the JV model they helped us design was something we would not have arrived at on our own. The fact that they pushed back constructively and never backed down on the numbers is what we appreciated most.
+TESTIMONIAL_NAME: [Founder — Confidential]
+TESTIMONIAL_TITLE: Founder & CEO
+TESTIMONIAL_COMPANY: E-Waste Recycling Startup, India
+
+OUTCOME_TITLE_1: Technology Risk Reduced 20–35%
+OUTCOME_DESC_1: JV-led operating model reduced dependency on full in-house technology ownership — lowering upfront capital exposure significantly.
+OUTCOME_TITLE_2: Recovery Economics Validated
+OUTCOME_DESC_2: High-value waste categories prioritised — PCBs, cables, IT assets — based on yield economics and downstream demand stability.
+OUTCOME_TITLE_3: Capital Lock-In Avoided
+OUTCOME_DESC_3: Phased operational rollout tied to validated throughput and recovery performance — not forecasted demand assumptions.
+OUTCOME_TITLE_4: Scalable Partnership Structure
+OUTCOME_DESC_4: JV structure combining local operating capability with specialised recovery expertise — creating a more scalable and defensible operating model.
+```
+
+---
+
+### CS-14 · UAE Government Housing Authority CX
+
+```
+SLUG:                    uae-government-housing-cx
+META_TITLE:              UAE Government Housing Authority Citizen Experience — GreyRadius
+META_DESC:               A UAE government housing authority redesigned its citizen experience operating model with GreyRadius — reducing approval timelines from 6–12 weeks to under 4 weeks and consolidating 60+ fragmented touchpoints.
+TITLE:                   UAE Government Housing Authority: Approval Timelines Cut from 12 Weeks to Under 4, 60+ Touchpoints Consolidated
+TITLE_SHORT:             UAE Government Housing CX Transformation
+LEDE:                    The authority had scaled services faster than execution maturity. Citizens experienced delays, fragmented communication, and inconsistent visibility. Leadership treated it as a service problem. It was an operating model problem.
+
+SERVICE_PRIMARY_ID:      gtm-xaas
+SERVICE_PRIMARY_LABEL:   GTM-XaaS
+SERVICE_PRIMARY_URL:     gtm-execution-as-a-service.html
+SERVICE_SECONDARY_ID:    opportunity-assessment
+SERVICE_SECONDARY_LABEL: Opportunity Assessment
+INDUSTRY_ID:             government
+INDUSTRY_LABEL:          Government & Public Sector
+INDUSTRY_URL:            government.html
+GEO_ID:                  uae-gcc
+GEO_LABEL:               UAE
+CLIENT_TYPE_ID:          government
+CLIENT_TYPE_LABEL:       Government
+
+KPI_1_NUM: <4 weeks
+KPI_1_LABEL: Approval timelines reduced from 6–12 weeks
+KPI_2_NUM: 30–50%
+KPI_2_LABEL: Reduction in process cycle times across redesigned journeys
+KPI_3_NUM: 60+
+KPI_3_LABEL: Fragmented citizen touchpoints consolidated into structured workflows
+KPI_4_NUM: ↓
+KPI_4_LABEL: Escalation dependency and coordination friction across departments
+
+PULL_QUOTE: Digital experience improves only when execution coordination improves underneath it. Digitising an interface without redesigning the workflow behind it creates a faster version of the same problem.
+
+IMAGE_ALT: UAE government housing authority digital service transformation — GreyRadius CX case study
+INLINE_IMAGE_ALT: Citizen journey redesign framework across housing application, financing, and support stages
+INLINE_IMAGE_CAPTION: End-to-end citizen journey mapping — approval stages, ownership accountability, and SLA-based routing logic redesigned for coordinated cross-departmental execution.
+
+INSIGHT_QUOTE: Public-sector digital transformation often fails because organisations digitise interfaces without redesigning execution underneath them. Citizen experience is rarely a front-end problem alone. As service complexity increases, execution maturity becomes the real determinant of trust, responsiveness, and scalability.
+
+TESTIMONIAL_TEXT: The GreyRadius team understood the complexity of working within a government environment — the approvals, the stakeholder sensitivities, the pace of change. They were patient with the process without ever losing urgency on the outcomes. What impressed us most was that they did not just tell us what to redesign. They were in the workshops, in the working groups, and in the follow-up meetings making sure the changes actually landed. The improvement in approval timelines was real and immediate.
+TESTIMONIAL_NAME: [Senior Government Official — Confidential]
+TESTIMONIAL_TITLE: Director of Citizen Services
+TESTIMONIAL_COMPANY: UAE Government Housing Authority
+
+OUTCOME_TITLE_1: Approval Timelines Halved
+OUTCOME_DESC_1: Approval timelines reduced from 6–12 weeks to under 4 weeks through coordinated cross-departmental routing and structured decision execution.
+OUTCOME_TITLE_2: 30–50% Cycle Time Reduction
+OUTCOME_DESC_2: Process cycle times declined 30–50% across redesigned citizen journeys — improving responsiveness across housing and financing services.
+OUTCOME_TITLE_3: 60+ Touchpoints Consolidated
+OUTCOME_DESC_3: Fragmented citizen touchpoints consolidated into structured digital workflows — improving engagement consistency and reducing communication gaps.
+OUTCOME_TITLE_4: Execution Scalability
+OUTCOME_DESC_4: Cross-functional coordination less dependent on manual intervention — leadership gained clear visibility into bottlenecks, ownership gaps, and execution delays.
+```
+
+---
+
+## PART C — IMAGE HANDLING INSTRUCTIONS
+
+### C1. Folder structure to create
+```
+/assets/images/case-studies/
+  ├── alloy-ferro-metals-sea-expansion/
+  │     hero.jpg         (1200×500px, WebP preferred)
+  │     inline-01.jpg    (820×460px)
+  ├── coal-mining-conveyor-feasibility/
+  │     hero.jpg
+  │     inline-01.jpg
+  ├── drone-startup-gtm-execution/
+  │     hero.jpg
+  │     inline-01.jpg
+  ├── b2b-saas-product-market-fit/
+  │     hero.jpg
+  │     inline-01.jpg
+  ├── enterprise-integration-gtm-north-america/
+  │     hero.jpg
+  │     inline-01.jpg
+  ├── ophthalmology-pharma-gcc-market-entry/
+  │     hero.jpg
+  │     inline-01.jpg
+  ├── us-hospital-chain-canada-market-entry/
+  │     hero.jpg
+  │     inline-01.jpg
+  ├── oncology-clinical-trial-intelligence/
+  │     hero.jpg
+  │     inline-01.jpg
+  ├── fresh-foods-cpg-bengaluru-gtm/
+  │     hero.jpg
+  │     inline-01.jpg
+  ├── uae-retail-market-entry/
+  │     hero.jpg
+  │     inline-01.jpg
+  ├── edtech-gcc-market-entry/
+  │     hero.jpg
+  │     inline-01.jpg
+  ├── agri-chemical-commercialisation/
+  │     hero.jpg
+  │     inline-01.jpg
+  ├── ewaste-recycling-startup/
+  │     hero.jpg
+  │     inline-01.jpg
+  └── uae-government-housing-cx/
+        hero.jpg
+        inline-01.jpg
+```
+
+### C2. Image rules
+- All images from the original docx files must be extracted and saved into the correct case study subfolder using the filenames above.
+- **Hero image specs:** 1200×500px minimum, 16:9 aspect ratio, WebP format, under 150kb. If the docx image is smaller, upscale using CSS (`object-fit: cover`) rather than stretching the source file.
+- **Inline image specs:** 820×460px, WebP format, under 100kb.
+- **Alt text:** Use the exact `IMAGE_ALT` and `INLINE_IMAGE_ALT` strings from Part B.
+- **Do not use placeholder images.** If a specific case study does not have an image in the docx, use a dark solid background with the case study KPI number rendered as large display text using HTML/CSS — not a stock photo.
+- Add `loading="eager"` to hero images (above the fold). Add `loading="lazy"` to inline images.
+- All image tags must include explicit `width` and `height` attributes to prevent layout shift.
+
+---
+
+## PART D — CASE STUDY LISTING PAGE CARD SPEC
+
+Each card on `/case-studies/index.html` must follow this structure:
+
+```html
+<a class="cs-card"
+   href="/case-studies/{{SLUG}}.html"
+   data-service="{{SERVICE_PRIMARY_ID}}"
+   data-service-2="{{SERVICE_SECONDARY_ID}}"
+   data-industry="{{INDUSTRY_ID}}"
+   data-geo="{{GEO_ID}}">
+
+  <div class="cs-card-image">
+    <img src="/assets/images/case-studies/{{SLUG}}/hero.jpg"
+         alt="{{IMAGE_ALT}}" width="400" height="225" loading="lazy" />
+  </div>
+
+  <div class="cs-card-body">
+    <div class="tag-row">
+      <span class="tag tag-industry">{{INDUSTRY_LABEL}}</span>
+      <span class="tag tag-service-primary">{{SERVICE_PRIMARY_LABEL}}</span>
+      <span class="tag tag-geo">{{GEO_LABEL}}</span>
+    </div>
+    <h3>{{TITLE}}</h3>
+    <p class="cs-card-outcome">{{LEDE — first sentence only}}</p>
+  </div>
+
+  <div class="cs-card-footer">
+    <span class="cs-card-kpi-1">{{KPI_1_NUM}} {{KPI_1_LABEL}}</span>
+    <span class="cs-read">Read case study →</span>
+  </div>
+</a>
+```
+
+**Filter JS:** A card is visible when its `data-service` OR `data-service-2` matches the active service filter, AND its `data-industry` matches the active industry filter, AND its `data-geo` matches the active geography filter. If any dimension is "all", that dimension does not filter.
+
+---
+
+## PART E — QUICK REFERENCE: ALL 14 SLUGS AND THEIR SERVICE + INDUSTRY TAGS
+
+| # | Slug | Service Primary | Service Secondary | Industry | Geography |
+|---|---|---|---|---|---|
+| 1 | alloy-ferro-metals-sea-expansion | opportunity-assessment | market-entry-execution | manufacturing | sea |
+| 2 | coal-mining-conveyor-feasibility | feasibility-tev | opportunity-assessment | energy | india |
+| 3 | drone-startup-gtm-execution | gtm-xaas | market-entry-execution | technology | india |
+| 4 | b2b-saas-product-market-fit | opportunity-assessment | gtm-xaas | technology | uae-gcc |
+| 5 | enterprise-integration-gtm-north-america | gtm-xaas | opportunity-assessment | technology | north-america |
+| 6 | ophthalmology-pharma-gcc-market-entry | opportunity-assessment | market-entry-execution | healthcare | uae-gcc |
+| 7 | us-hospital-chain-canada-market-entry | market-entry-execution | feasibility-tev | healthcare | north-america |
+| 8 | oncology-clinical-trial-intelligence | feasibility-tev | opportunity-assessment | healthcare | north-america |
+| 9 | fresh-foods-cpg-bengaluru-gtm | gtm-xaas | opportunity-assessment | cpg | india |
+| 10 | uae-retail-market-entry | market-entry-execution | gtm-xaas | cpg | uae-gcc |
+| 11 | edtech-gcc-market-entry | market-entry-execution | opportunity-assessment | education | uae-gcc |
+| 12 | agri-chemical-commercialisation | gtm-xaas | opportunity-assessment | energy | india |
+| 13 | ewaste-recycling-startup | feasibility-tev | market-entry-execution | energy | india |
+| 14 | uae-government-housing-cx | gtm-xaas | opportunity-assessment | government | uae-gcc |
+
+---
+
+## PART F — WHAT NOT TO CHANGE
+
+Do not rewrite any of the following sections from the original docx files:
+- Context
+- The Core Challenge
+- What Changed in Execution
+- Business Impact Delivered
+- Key Outcomes bullet list
+
+These sections must be pasted verbatim from the docx. Only the following are new additions introduced by this document:
+- Tag row (service, industry, geography, client type)
+- KPI bar
+- Pull quote block
+- Testimonial block
+- Outcomes grid cards (built from the existing Key Outcomes bullets — same content, different visual layout)
+- Insight close box
+- Related links
+
+*End of command document.*
