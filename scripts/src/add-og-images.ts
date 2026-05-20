@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
+import { assertOgCoverage } from "./lib/og-coverage.js";
 
 const ROOT = resolve(process.cwd(), "../greyradius-website");
 
@@ -57,6 +58,8 @@ const pages: PageDef[] = [
 
 const ogImageTag = (src: string) =>
   `  <meta property="og:image" content="${src}">`;
+
+assertOgCoverage({ imagePages: new Set(pages.map((p) => p.file)) });
 
 let updated = 0;
 let replaced = 0;
