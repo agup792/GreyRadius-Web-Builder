@@ -2364,3 +2364,36 @@ details[open] .faq-icon { transform: rotate(45deg); }
   .filter-bar { padding:1.25rem; }
   .filter-label { min-width:60px; }
 }
+
+/* ── Project Snapshots Gallery ──────────────────────────────── */
+.cs-snapshots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.875rem;
+  margin-top: 2rem;
+}
+.cs-snapshots-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.cs-snapshots-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.cs-snap {
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-off-white);
+}
+.cs-snap img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.cs-snap:hover img { transform: scale(1.04); }
+@media (max-width: 960px) {
+  .cs-snapshots-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-snapshots-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .cs-snapshots-grid, .cs-snapshots-grid.cols-2, .cs-snapshots-grid.cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
