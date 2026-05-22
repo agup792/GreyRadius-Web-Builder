@@ -1,0 +1,19 @@
+RewriteEngine On
+
+# Block access to .git and other VCS metadata
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.githooks
+RedirectMatch 404 /\.gitignore
+
+# Serve the site's index for the root request
+RewriteRule ^$ /greyradius-website/index.html [L]
+
+# Don't rewrite if the request is already inside greyradius-website/
+RewriteCond %{REQUEST_URI} !^/greyradius-website/
+
+# Don't rewrite real files/directories at the root (e.g. robots.txt, .well-known)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite everything else into greyradius-website/
+RewriteRule ^(.*)$ /greyradius-website/$1 [L]
