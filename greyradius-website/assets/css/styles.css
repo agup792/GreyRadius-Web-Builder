@@ -500,15 +500,21 @@ h4, .h4 {
   gap: 2rem 3rem;
 }
 .trust-strip__logo {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #c8d0dd;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: var(--transition-base);
-  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.trust-strip__logo:hover { color: var(--color-steel-blue); }
+.trust-strip__logo img {
+  height: 44px;
+  max-width: 140px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.55);
+  transition: filter 0.25s ease;
+}
+.trust-strip__logo img:hover {
+  filter: grayscale(0%) opacity(1);
+}
 
 /* ============================================================
    STAT STRIP
@@ -1576,8 +1582,9 @@ details[open] .faq-icon { transform: rotate(45deg); }
 /* stat-strip uses off-white bg already, keep navy numbers */
 .stat-strip__number { color: var(--color-navy); }
 
-/* trust-strip logos use muted color, keep on hover */
-.trust-strip__logo:hover { color: var(--color-navy); }
+/* trust-strip image logos */
+.trust-strip__logo img { filter: grayscale(100%) opacity(0.55); }
+.trust-strip__logo img:hover { filter: grayscale(0%) opacity(1); }
 
 /* Section heading eyebrow color */
 .section-heading__eyebrow { color: var(--color-orange); }
