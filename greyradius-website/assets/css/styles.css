@@ -34,7 +34,7 @@
 
   --max-width:         1280px;
   --max-width-narrow:  960px;
-  --padding-section-y: clamp(4rem, 8vw, 8rem);
+  --padding-section-y: clamp(2.5rem, 5vw, 5rem);
   --padding-page-x:    clamp(1.5rem, 5vw, 4rem);
   --gap-grid:          clamp(1.5rem, 3vw, 3rem);
   --radius-sm:         6px;
