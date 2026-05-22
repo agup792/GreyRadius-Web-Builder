@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Don't rewrite if the request is already inside greyradius-website/
+RewriteCond %{REQUEST_URI} !^/greyradius-website/
+
+# Don't rewrite real files/directories at the root (e.g. robots.txt, .well-known)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite everything else into greyradius-website/
+RewriteRule ^(.*)$ /greyradius-website/$1 [L]
