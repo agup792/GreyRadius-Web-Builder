@@ -1,0 +1,930 @@
+You are updating the GreyRadius Consulting website. Make the following 
+changes exactly as specified. Do not change anything not listed below.
+Work page by page.
+
+---
+
+## GLOBAL CHANGES (apply across ALL pages and files)
+
+1. Replace every em dash (—) with an en dash (–) across all HTML files.
+
+2. Replace every instance of "Big-4" with "top-tier consulting firms".
+
+3. Replace every instance of "Big-3" with "top-tier consulting firms".
+
+4. Standardize all references to primary research to:
+   "~30+ interviews and 200+ surveys per mandate"
+   Remove every instance of "10+", "20+", and "40+" used as 
+   interview or conversation counts and replace with this 
+   standardized phrase wherever context allows. Where a shorter 
+   form is needed, use "30+ interviews per mandate".
+
+5. Standardize all project delivery counts to "200+" wherever 
+   "120+" or any lower number appears in context of projects 
+   delivered.
+
+6. Replace every em dash in meta description tags and title tags 
+   with en dashes.
+
+7. Remove every individual email address visible in body copy, 
+   office location blocks, team sections, and footers across all 
+   pages. Replace with one single line:
+   "Write to us: sales@greyradius.com"
+   Place this line only once — in the footer and on the contact 
+   page. Nowhere else.
+
+8. In all visible body copy, do not use the words "UAE", "Dubai", 
+   "GCC", "Abu Dhabi", "Riyadh", or any specific Gulf city name. 
+   Replace with natural regional language:
+   - "UAE" → "the region" or "the Gulf"
+   - "Dubai" → "the Gulf" or "our regional hub"
+   - "GCC" → "the Middle East" or "Gulf markets"
+   - "Saudi Arabia" / "KSA" → "the wider Middle East"
+   These geo terms may only appear inside JSON-LD schema blocks 
+   and meta tags — not in any user-visible text.
+
+9. Replace every instance of "Book a 30-min call" across all 
+   pages, nav bars, footers, and CTAs with "Get in touch".
+   All links pointing to contact.html remain unchanged.
+
+---
+
+## HTML <title> TAGS AND H1 HEADINGS — SEO/AEO UPDATE
+(Update both the <title> tag and the visible H1 on each page)
+
+10. Homepage (index.html):
+    <title>Boutique Strategy & Growth Consulting | 
+    Primary Research, AI-Augmented Delivery | GreyRadius</title>
+    H1: "Strategy you can execute. Outcomes within reach."
+    (keep existing H1 — already SEO-strong)
+
+11. Services index (services/index.html):
+    <title>Consulting Services | Opportunity Assessment, Market 
+    Entry, GTM, Feasibility & Fundraising | GreyRadius</title>
+    H1: "Consulting services built for execution"
+
+12. Opportunity Assessment (services/opportunity-assessment.html):
+    <title>Opportunity Assessment Consulting | Market Validation 
+    & Go/No-Go Analysis | GreyRadius</title>
+    H1: "Opportunity assessment and market validation"
+
+13. Feasibility & TEV (services/feasibility-and-tev.html):
+    <title>Feasibility Study & TEV Consulting | 
+    Technical and Economic Viability Analysis | GreyRadius</title>
+    H1: "Feasibility study and technical economic viability"
+
+14. Market Entry (services/market-entry-execution.html):
+    <title>Market Entry Consulting | Entry Strategy & 
+    Execution for New Markets | GreyRadius</title>
+    H1: "Market entry strategy and execution"
+
+15. GTM Execution (services/gtm-execution-as-a-service.html):
+    <title>GTM Execution as a Service | Go-to-Market Strategy 
+    & Launch Consulting | GreyRadius</title>
+    H1: "GTM execution as a service"
+
+16. Pitchbook & Fundraising 
+    (services/pitchbook-and-fundraising.html):
+    <title>Pitch Book Preparation & Fundraising Advisory | 
+    Investor Deck & Capital Raise Support | GreyRadius</title>
+    H1: "Pitch book preparation and fundraising advisory"
+
+17. AI Consulting 
+    (services/ai-consulting-and-transformation.html):
+    <title>AI Consulting & Transformation | AI-Augmented 
+    Strategy Delivery | GreyRadius</title>
+    H1: "AI consulting and workflow transformation"
+
+18. About (about/index.html):
+    <title>About GreyRadius | Boutique Strategy Consulting 
+    Firm | India, Gulf, Singapore, Belgium</title>
+    H1: "A boutique consulting firm built for execution"
+
+19. The Team (about/team.html):
+    <title>Our Team | Senior Strategy Consultants & 
+    Expert Advisors | GreyRadius</title>
+    H1: "The people behind every mandate"
+
+20. The GR Method (about/method.html):
+    <title>The GreyRadius Method | How We Deliver 
+    Strategy, Research & Execution | GreyRadius</title>
+    H1: "How we work: the GreyRadius method"
+
+21. Why GreyRadius (about/why-greyradius.html):
+    <title>Why GreyRadius | Boutique Consulting vs 
+    Top-Tier Firms vs DIY | GreyRadius</title>
+    H1: "Why GreyRadius over top-tier consulting firms or DIY"
+
+22. Case Studies (case-studies/index.html):
+    <title>Consulting Case Studies | Market Entry, GTM & 
+    Feasibility Outcomes | GreyRadius</title>
+    H1: "Client outcomes and case studies"
+
+23. Insights (insights/index.html):
+    <title>Strategy & Market Insights | 
+    Consulting Perspectives | GreyRadius</title>
+    H1: "Insights from the field"
+
+24. Careers (careers.html):
+    <title>Careers at GreyRadius | Join a Boutique 
+    Strategy Consulting Firm | GreyRadius</title>
+    H1: "Build your consulting career at GreyRadius"
+
+25. Contact (contact.html):
+    <title>Contact GreyRadius | Start a Strategy 
+    Consulting Conversation | GreyRadius</title>
+    H1: "Start a conversation"
+
+---
+
+## index.html (Homepage)
+
+26. In the stats row, remove the entire stat block for 
+    "100+ SaaS & tech products". Shift remaining stats evenly.
+
+27. In the "Execution-led, not deck-led" section, replace:
+    "Pricing reflects this — we are billed on outcomes, not on 
+    hours or slides delivered."
+    with:
+    "Billed on outcomes, not on hours or slides delivered."
+
+28. In the "AI-augmented delivery" section, replace:
+    "Same-quality answer in 4 weeks, not 12."
+    with:
+    "High-quality outcomes delivered 3x faster."
+
+29. In "The gap we close" section under 
+    "Execution-Focused External Market View", replace:
+    "Hands-on senior engagement — not junior decks"
+    with:
+    "Hands-on senior engagement – not junior-produced decks"
+
+30. In the "Boutique. By design." section, replace any 
+    reference to "Big-3 brand" or "Big-3" with 
+    "top-tier consulting firms".
+
+31. In the "Our Framework" matrix, replace 
+    "Gap Analysis & Recs" with 
+    "Gap Analysis & Recommendations".
+
+32. In the radar chart, ensure labels "Feasibility", 
+    "Market Entry", and "Fundraising" render in full 
+    without truncation. Increase label container width 
+    or reduce font size to prevent clipping.
+
+33. In the services cards section ("Six offerings. One method."),
+    remove USD price ranges from all six cards entirely.
+    Replace each price line with:
+    "Output-defined. Fixed scope. Scoped to your engagement."
+
+34. Replace the hero CTA "Book a 30-min discovery call" 
+    button label with "Start a conversation" 
+    linking to contact.html.
+
+35. Add the following FAQ section before the footer:
+
+    <section id="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <h3>What does GreyRadius Consulting do?</h3>
+        <p>GreyRadius is a boutique strategy and growth consulting 
+        firm with offices across South Asia, the Gulf, Southeast 
+        Asia, and Europe. We help founders, CXOs, and business 
+        leaders with opportunity assessment, market entry, GTM 
+        execution, feasibility studies, pitch books, and 
+        fundraising – grounded in primary research and 
+        accelerated by AI.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How is GreyRadius different from a large 
+        consulting firm?</h3>
+        <p>Every engagement is run by the senior partner who 
+        sold it. We ground every insight in primary research – 
+        real interviews with buyers, experts, and channel 
+        partners, not database downloads. AI-augmented delivery 
+        compresses timelines without reducing quality. 
+        We bill on outputs, not hours.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What markets does GreyRadius serve?</h3>
+        <p>We work with clients expanding into the Middle East, 
+        Southeast Asia, South Asia, and Europe. Our teams are 
+        present in four markets with active mandates across 
+        more than twenty countries.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How does GreyRadius use AI in consulting delivery?</h3>
+        <p>We use AI internally across research synthesis, 
+        financial modelling, competitive mapping, and outreach 
+        automation. This compresses delivery timelines by up 
+        to 3x without replacing the primary research and senior 
+        judgment that drive real decisions.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is primary research in consulting?</h3>
+        <p>Primary research means gathering insight directly 
+        from the market – through structured interviews, 
+        expert panels, CATI surveys, and field research. 
+        GreyRadius conducts ~30+ interviews and 200+ surveys 
+        per mandate. This is the input that desk research 
+        and AI cannot replicate.</p>
+      </div>
+    </section>
+
+36. Add JSON-LD schema inside the <head> tag:
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "GreyRadius Consulting",
+      "url": "https://greyradius.com",
+      "description": "Boutique strategy and growth consulting 
+      grounded in primary research, accelerated by AI, 
+      delivered as measurable outcomes. Serving the Middle 
+      East, Southeast Asia, South Asia, and Europe.",
+      "areaServed": [
+        "UAE", "Saudi Arabia", "GCC", "India", 
+        "Singapore", "Southeast Asia", "Belgium", "Europe"
+      ],
+      "serviceType": [
+        "Market Entry Consulting",
+        "GTM Strategy Consulting",
+        "Opportunity Assessment",
+        "Feasibility Study",
+        "Pitch Book Preparation",
+        "Fundraising Advisory",
+        "AI Consulting"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AE",
+        "addressLocality": "Dubai"
+      }
+    }
+    </script>
+
+---
+
+## contact.html (Full restructure)
+
+37. Restructure the contact page in this exact order:
+
+    SECTION 1 — Heading
+    H1: "Start a conversation"
+    Subtext: "Tell us about your mandate. We will get back 
+    within one business day."
+
+    SECTION 2 — HubSpot meeting embed (immediately below 
+    the heading):
+    <!-- Start of Meetings Embed Script -->
+    <div class="meetings-iframe-container" 
+    data-src="https://meetings.hubspot.com/chiragbansal?embed=true">
+    </div>
+    <script type="text/javascript" 
+    src="https://static.hsappstatic.net/MeetingsEmbed/ex/
+    MeetingsEmbedCode.js"></script>
+    <!-- End of Meetings Embed Script -->
+
+    SECTION 3 — Our offices
+    Title: "Our offices"
+    Four blocks, no email IDs, no individual phone numbers:
+
+    Dubai
+    "Regional hub – market entry, GTM, and feasibility 
+    mandates across the Gulf and wider Middle East."
+
+    Delhi
+    "Delivery centre – primary research, opportunity 
+    assessment, and South Asia engagements."
+
+    Singapore
+    "Southeast Asia anchor – regional expansion and 
+    market entry mandates."
+
+    Brussels
+    "European market access and cross-border 
+    strategy engagements."
+
+    SECTION 4 — Single contact line:
+    "Write to us: sales@greyradius.com"
+
+38. Remove all individual email addresses and phone numbers 
+    from the contact page entirely.
+
+---
+
+## about/index.html (Our Story)
+
+39. Replace "Series A rounds" with "funding rounds".
+
+40. Replace "six geographies" with "four office locations 
+    across South Asia, the Gulf, Southeast Asia, and Europe".
+
+41. In the "Our History" 2026 entry, capitalize:
+    "primary research, AI velocity, execution output"
+    to:
+    "Primary Research, AI Velocity, Execution Output"
+
+42. In "Our Offices" section, add one sentence per office:
+    Dubai: "Primary hub for market entry, GTM, and feasibility 
+    mandates across the Gulf."
+    Delhi: "Delivery centre for primary research, opportunity 
+    assessment, and South Asia mandates."
+    Singapore: "Anchor for Southeast Asia market entry and 
+    regional expansion engagements."
+    Brussels: "European market access and cross-border 
+    strategy engagements."
+    Remove all individual email addresses from this section.
+
+---
+
+## about/team.html (The Team) — full team restructure
+
+43. In the Leadership Team section, make these changes:
+
+    REMOVE from Leadership Team:
+    - Tapsya S.
+
+    ADD to Leadership Team (after Mona Kanth, before 
+    the advisory section):
+    Name: Dhiraj Jain
+    Title: Vice President
+    Specialization: Investment Banking and Fund Raising
+    Photo: Use the existing photo of Dheeraj Jain currently 
+    in the advisory panel (the man in the suit with tie, 
+    third from left in the top row of the advisors grid — 
+    as visible in the uploaded screenshot).
+    Alt text: "Dhiraj Jain, Vice President Investment Banking 
+    and Fund Raising, GreyRadius Consulting"
+
+44. In the Panel of Senior Advisors and Experts section, 
+    make these changes:
+
+    REMOVE from advisory panel:
+    - Dheeraj Jain (now moved to leadership team above)
+
+    ADD to advisory panel (position: after Sushil Sharma):
+    Name: Tapsya S.
+    Title: Senior Advisor
+    Specialization: GTM Strategy & Execution
+    Photo: Use the uploaded photo of Tapsya (young woman 
+    in black top, dark hair, smiling against a light wall 
+    — as per the uploaded Tapsya.png file).
+    Alt text: "Tapsya S., Senior Advisor GTM Strategy 
+    and Execution, GreyRadius Consulting"
+
+45. Standardize "120+ Delivered" to "200+ Delivered" 
+    in the highlighter stat block.
+
+46. Remove all individual email addresses from this page.
+
+47. Update alt text for all existing team member photos:
+    - Chirag Bansal: alt="Chirag Bansal, CEO and Managing 
+      Partner, GreyRadius Consulting"
+    - Anshuman Kumar: alt="Anshuman Kumar, Chief Business 
+      Officer and Managing Partner, GreyRadius Consulting"
+    - Mohit Dixit: alt="Mohit Dixit, Vice President Delivery 
+      and Operations, GreyRadius Consulting"
+    - Pijush Sinha: alt="Pijush Sinha, Vice President Strategy 
+      Growth and Transformation, GreyRadius Consulting"
+    - Mona Kanth: alt="Mona Kanth, Vice President Customer 
+      Success, GreyRadius Consulting"
+    - Ashish Sharma: alt="Ashish Sharma, Senior Advisor 
+      Technology and Telecom, GreyRadius Consulting"
+    - Mahmoud Sherif: alt="Mahmoud Sherif, Senior Advisor 
+      Sales Strategy and GTM, GreyRadius Consulting"
+    - Priya Ranjan: alt="Priya Ranjan, Senior Advisor Market 
+      Entry and GTM, GreyRadius Consulting"
+    - Ajay Aggarwal: alt="Ajay Aggarwal, Senior Advisor 
+      Consumer and Customer Experience, GreyRadius Consulting"
+    - Purnendu Kanth: alt="Purnendu Kanth, Senior Advisor 
+      Energy and Gas, GreyRadius Consulting"
+    - Shishir Das: alt="Shishir Das, Senior Advisor 
+      Investment Banking, GreyRadius Consulting"
+    - Meghna Khandelwal: alt="Meghna Khandelwal, Principal 
+      Consultant Market Entry and Competitive Assessment, 
+      GreyRadius Consulting"
+    - Sushil Sharma: alt="Sushil Sharma, Senior Consultant 
+      Business and Growth Strategy, GreyRadius Consulting"
+    - Supra Srivastava: alt="Supra Srivastava, Manager 
+      Market and Business Research, GreyRadius Consulting"
+
+---
+
+## about/method.html (The GR Method)
+
+48. Replace "No ambiguity. No creep." with 
+    "No ambiguity. No scope drift."
+
+49. Replace every instance of "minimum of 10 primary 
+    conversations" or "minimum of 20 primary conversations" 
+    with "a minimum of 30 interviews and 200+ surveys 
+    per mandate".
+
+50. Add the following FAQ section before the footer:
+
+    <section id="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <h3>What is the GreyRadius engagement method?</h3>
+        <p>Every GreyRadius engagement follows three 
+        non-negotiables: primary research as the foundation, 
+        senior partner-led delivery throughout, and 
+        output-defined scope with no billing by the hour.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How many interviews does GreyRadius conduct 
+        per project?</h3>
+        <p>A minimum of 30+ interviews and 200+ surveys 
+        per mandate. This covers buyers, channel partners, 
+        industry experts, and in relevant cases, 
+        competitor-side intelligence.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does GreyRadius use AI in research and delivery?</h3>
+        <p>Yes. AI is used internally for research synthesis, 
+        financial modelling, and competitive mapping. It 
+        compresses timelines without replacing the primary 
+        fieldwork and senior judgment that define the output.</p>
+      </div>
+    </section>
+
+---
+
+## about/why-greyradius.html (Why GreyRadius)
+
+51. Replace all "Big-4" references in body copy, title tag, 
+    meta description, and H1 with 
+    "top-tier consulting firms".
+
+52. Add the following FAQ section before the footer:
+
+    <section id="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <h3>Why choose a boutique consulting firm over 
+        a large one?</h3>
+        <p>Boutique firms deliver partner-led work on every 
+        engagement. At top-tier firms, partners sell and 
+        associates deliver. At GreyRadius, the partner who 
+        scopes your mandate runs it – the interviews, 
+        workshops, model reviews, and client sessions.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is boutique consulting less rigorous than 
+        large firms?</h3>
+        <p>No. GreyRadius conducts 30+ interviews and 200+ 
+        surveys per mandate – more primary research than most 
+        top-tier firm engagements at this price point. 
+        Rigour comes from methodology, not headcount.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is the difference between GreyRadius 
+        and a freelance consultant?</h3>
+        <p>Freelancers bring individual expertise. GreyRadius 
+        brings a structured team – senior partners, research 
+        analysts, primary fieldwork capability, financial 
+        modelling, and execution networks across four markets. 
+        The output is institutional, not individual.</p>
+      </div>
+    </section>
+
+---
+
+## careers.html
+
+53. Remove the bullet point: 
+    "A path to partner over 3–5 years"
+    from the "You should want" section entirely.
+
+54. Add the following FAQ section before the footer:
+
+    <section id="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <h3>What kind of work does GreyRadius do?</h3>
+        <p>Market entry, GTM execution, opportunity assessment, 
+        feasibility studies, pitch books, and fundraising 
+        advisory – across the Middle East, Southeast Asia, 
+        South Asia, and Europe. Every engagement is 
+        primary-research-led and execution-focused.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What experience level does GreyRadius hire?</h3>
+        <p>We hire consultants with 5+ years of experience 
+        in strategy, market research, or advisory roles. 
+        We value primary research experience, client-facing 
+        delivery, and comfort with ambiguity.</p>
+      </div>
+    </section>
+
+---
+
+## ALL SERVICE PAGES
+(opportunity-assessment.html, feasibility-and-tev.html,
+market-entry-execution.html, gtm-execution-as-a-service.html,
+pitchbook-and-fundraising.html,
+ai-consulting-and-transformation.html)
+
+55. Remove all pricing information from every service page:
+    - All pricing tier cards or sidebars on the right-hand side
+    - All USD/AED price figures in body copy
+    - All "fixed fee", "starting from", or "from USD X" language
+    - All pricing tables or tier comparison blocks
+    Replace removed pricing blocks with:
+    <div class="cta-block">
+      <p>Engagements are output-defined and fixed scope. 
+      Contact us to discuss your mandate.</p>
+      <a href="/contact.html" class="btn-primary">
+      Start a conversation</a>
+    </div>
+
+56. Replace all "Book a 30-min call" CTAs on service pages with:
+    <a href="/contact.html" class="btn-primary">
+    Start a conversation</a>
+
+57. Add a "You may also be evaluating" related services section 
+    before the FAQ on each service page, linking to 2 relevant 
+    other service pages.
+
+58. Add FAQ sections before the footer on each service page:
+
+    OPPORTUNITY ASSESSMENT:
+    <section id="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What is an opportunity assessment in consulting?</h3>
+        <p>A structured analysis answering whether a market, 
+        product, or geography is worth pursuing. It covers 
+        market sizing (TAM/SAM/SOM), competitive mapping, 
+        buyer interviews, and a Go/Defer/Kill recommendation.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does an opportunity assessment take?</h3>
+        <p>GreyRadius delivers opportunity assessments in 2–3 
+        weeks, including 30+ primary interviews with buyers, 
+        experts, and channel partners.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the output?</h3>
+        <p>A decision-ready report covering market sizing, 
+        competitive landscape, buyer intelligence, and a 
+        prioritized Go/Defer/Kill recommendation.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is TAM SAM SOM analysis?</h3>
+        <p>Total Addressable Market, Serviceable Addressable 
+        Market, and Serviceable Obtainable Market – the three 
+        layers of market sizing that define how large an 
+        opportunity is and how much of it is realistically 
+        capturable given your product, team, and timeline.</p>
+      </div>
+    </section>
+
+    FEASIBILITY AND TEV:
+    <section id="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What is a TEV study?</h3>
+        <p>A Technical and Economic Viability study evaluates 
+        whether a project or investment is financially and 
+        operationally viable. It covers demand validation, 
+        cost structure, revenue model, and ROI projections.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the difference between a feasibility 
+        study and a TEV?</h3>
+        <p>A feasibility study broadly assesses whether a 
+        business idea or project is viable. A TEV is more 
+        specific – it evaluates the technical execution 
+        requirements alongside the economic return model, 
+        typically used in infrastructure, industrial, 
+        or capital-heavy investments.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does a feasibility study take?</h3>
+        <p>Typically 4–6 weeks depending on market complexity 
+        and primary research scope.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What makes a GreyRadius feasibility study 
+        different?</h3>
+        <p>80% of the insight comes from primary research – 
+        real conversations with buyers, regulators, 
+        distributors, and industry experts. The financial 
+        model is AI-built and primary-validated, not 
+        built on market report assumptions.</p>
+      </div>
+    </section>
+
+    MARKET ENTRY EXECUTION:
+    <section id="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What does market entry execution include?</h3>
+        <p>Entity structure, regulatory pathway, distribution 
+        channel mapping, ICP definition, pricing validation, 
+        partner identification, and a 90-day 
+        execution roadmap.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is an ICP in market entry strategy?</h3>
+        <p>Ideal Customer Profile – the precise definition of 
+        which buyer segment to target first, based on 
+        willingness to pay, adoption readiness, deal size, 
+        and competitive intensity. Getting ICP wrong is the 
+        most common reason market entries fail.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does a market entry engagement take?</h3>
+        <p>Typically 6–12 weeks for the full research, 
+        strategy, and execution planning phase.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you support execution after the strategy 
+        is complete?</h3>
+        <p>Yes. Five of our six service lines include 
+        execution – entity setup, partner sign-offs, 
+        pipeline development, and milestone tracking 
+        through 30/60/90-day reviews.</p>
+      </div>
+    </section>
+
+    GTM EXECUTION AS A SERVICE:
+    <section id="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What is GTM Execution-as-a-Service?</h3>
+        <p>A retainer-based engagement where GreyRadius acts 
+        as your embedded GTM team – managing market research, 
+        channel strategy, sales enablement, and pipeline 
+        development across your target markets.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is a go-to-market strategy?</h3>
+        <p>A go-to-market strategy defines how a company 
+        will bring a product or service to a specific market 
+        – covering ICP, positioning, pricing, channels, 
+        sales motion, and launch sequencing.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Who is GTM-XaaS designed for?</h3>
+        <p>Founders and CXOs who have a validated product 
+        or market thesis but lack the in-market team, 
+        networks, or bandwidth to execute the commercial 
+        launch themselves.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is GTM-XaaS different from a GTM strategy 
+        engagement?</h3>
+        <p>A strategy engagement ends with a plan. GTM-XaaS 
+        continues through execution – pipeline built, 
+        partners onboarded, first revenue milestones tracked.</p>
+      </div>
+    </section>
+
+    PITCHBOOK AND FUNDRAISING:
+    <section id="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What is included in a pitch book 
+        preparation service?</h3>
+        <p>Market sizing, investment narrative, financial 
+        model, competitive positioning, and investor outreach 
+        support. Every pitch book is grounded in primary 
+        market research, not desk research alone.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is a pitch book in fundraising?</h3>
+        <p>A pitch book is the core document used to present 
+        a business to investors. It covers the market 
+        opportunity, business model, financial projections, 
+        team, competitive positioning, and the ask. 
+        A strong pitch book is grounded in primary market 
+        data, not generic industry reports.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What types of fundraising does GreyRadius 
+        support?</h3>
+        <p>Seed, Series A, Series B, and PE/VC raise 
+        preparation. We also support strategic investor 
+        identification and introductions across the Middle 
+        East, South Asia, and Southeast Asia.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does it take to prepare a pitch book?</h3>
+        <p>Typically 3–4 weeks for a full pitch book with 
+        primary market research, financial model, and 
+        investor narrative.</p>
+      </div>
+    </section>
+
+    AI CONSULTING AND TRANSFORMATION:
+    <section id="faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What is AI consulting for businesses?</h3>
+        <p>Identifying where AI tools and automation can be 
+        embedded into existing workflows to reduce delivery 
+        time, lower cost, and improve output quality – 
+        without replacing the human judgment that drives 
+        real decisions.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does GreyRadius use AI in its own delivery?</h3>
+        <p>We use AI internally across research synthesis, 
+        financial modelling, competitive mapping, and outreach 
+        automation. This is how we deliver 3x faster at 
+        boutique pricing.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is AI consulting relevant for mid-sized 
+        businesses?</h3>
+        <p>Yes. Most AI efficiency gains are available without 
+        large tech teams – through off-the-shelf tools 
+        configured correctly for specific workflows and 
+        decision points.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is AI-augmented consulting?</h3>
+        <p>A delivery model where AI handles repeatable 
+        analytical tasks – data synthesis, model building, 
+        competitive mapping – while senior consultants 
+        focus on primary research, client judgment, and 
+        execution. The result is faster delivery at 
+        lower cost without sacrificing insight quality.</p>
+      </div>
+    </section>
+
+59. Add JSON-LD schema to the <head> of each service page:
+
+    OPPORTUNITY ASSESSMENT:
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Opportunity Assessment and Market Validation",
+      "serviceType": "Opportunity Assessment Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "GreyRadius Consulting",
+        "url": "https://greyradius.com"
+      },
+      "areaServed": [
+        "Middle East","South Asia","Southeast Asia","Europe"
+      ],
+      "description": "Primary-research-led opportunity 
+      assessment delivering Go/Defer/Kill recommendations 
+      for market entry, product launch, and investment 
+      decisions."
+    }
+    </script>
+
+    FEASIBILITY AND TEV:
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Feasibility Study and Technical Economic 
+      Viability Analysis",
+      "serviceType": "Feasibility Study Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "GreyRadius Consulting",
+        "url": "https://greyradius.com"
+      },
+      "areaServed": [
+        "Middle East","South Asia","Southeast Asia","Europe"
+      ],
+      "description": "Primary-validated feasibility studies 
+      and TEV analysis for investment decisions, market 
+      entry, and capital-intensive projects."
+    }
+    </script>
+
+    MARKET ENTRY EXECUTION:
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Market Entry Strategy and Execution",
+      "serviceType": "Market Entry Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "GreyRadius Consulting",
+        "url": "https://greyradius.com"
+      },
+      "areaServed": [
+        "Middle East","South Asia","Southeast Asia","Europe"
+      ],
+      "description": "End-to-end market entry strategy and 
+      execution – from entity setup and regulatory pathway 
+      to partner identification and 90-day launch roadmap."
+    }
+    </script>
+
+    GTM EXECUTION AS A SERVICE:
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "GTM Execution as a Service",
+      "serviceType": "Go-to-Market Strategy Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "GreyRadius Consulting",
+        "url": "https://greyradius.com"
+      },
+      "areaServed": [
+        "Middle East","South Asia","Southeast Asia","Europe"
+      ],
+      "description": "Embedded GTM execution team covering 
+      market research, channel strategy, sales enablement, 
+      and pipeline development across target markets."
+    }
+    </script>
+
+    PITCHBOOK AND FUNDRAISING:
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Pitch Book Preparation and Fundraising Advisory",
+      "serviceType": "Fundraising Advisory",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "GreyRadius Consulting",
+        "url": "https://greyradius.com"
+      },
+      "areaServed": [
+        "Middle East","South Asia","Southeast Asia","Europe"
+      ],
+      "description": "Primary-research-grounded pitch book 
+      preparation, investor narrative, financial modelling, 
+      and fundraising support for seed through Series B 
+      and PE rounds."
+    }
+    </script>
+
+    AI CONSULTING:
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI Consulting and Workflow Transformation",
+      "serviceType": "AI Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "GreyRadius Consulting",
+        "url": "https://greyradius.com"
+      },
+      "areaServed": [
+        "Middle East","South Asia","Southeast Asia","Europe"
+      ],
+      "description": "AI workflow integration and 
+      transformation consulting – embedding AI tools into 
+      consulting delivery and client operations to compress 
+      timelines and reduce cost."
+    }
+    </script>
+
+---
+
+## ALL PAGES — image alt text audit
+
+60. Audit every <img> tag across all pages. Replace any 
+    empty alt="" or generic alt text with descriptive text 
+    as follows:
+    - Logo: alt="GreyRadius Consulting logo"
+    - Hero/banner images: 
+      alt="Strategy consulting engagement in progress"
+    - Framework diagrams: 
+      alt="GreyRadius growth stage consulting matrix"
+    - Client logos: alt="[Client name] – GreyRadius client"
+    - All team photos: use the alt text list specified 
+      in item 47 above.
+
+---
+
+Do not change any visual styling, layout structure, colors, 
+typography, navigation order, or page structure beyond what 
+is specified above. Only change copy, title tags, H1 headings, 
+schema markup, alt text, pricing blocks, FAQ sections, 
+team member positions, and the contact page structure.
+
+After completing all changes, output a list of every file 
+modified with a one-line summary of what changed in each file.

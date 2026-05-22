@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OG Preview — GreyRadius Social Card Inspector</title>
+  <title>OG Preview – GreyRadius Social Card Inspector</title>
   <script>
     if (window.location.hostname === 'greyradius.com' || window.location.hostname === 'www.greyradius.com') {
       window.location.replace('/');
@@ -435,11 +435,11 @@
       .grid { padding: 16px; gap: 16px; grid-template-columns: 1fr; }
     }
   </style>
-  <meta property="og:title" content="OG Preview — GreyRadius Social Card Inspector">
-  <meta property="og:description" content="Social card preview page for GreyRadius Consulting — inspect og:title, og:description, and og:image tags across all pages.">
+  <meta property="og:title" content="OG Preview – GreyRadius Social Card Inspector">
+  <meta property="og:description" content="Social card preview page for GreyRadius Consulting – inspect og:title, og:description, and og:image tags across all pages.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OG Preview — GreyRadius Social Card Inspector">
-  <meta name="twitter:description" content="Social card preview page for GreyRadius Consulting — inspect og:title, og:description, and og:image tags across all pages.">
+  <meta name="twitter:title" content="OG Preview – GreyRadius Social Card Inspector">
+  <meta name="twitter:description" content="Social card preview page for GreyRadius Consulting – inspect og:title, og:description, and og:image tags across all pages.">
   <meta name="twitter:image" content="/assets/images/og-homepage.png">
 </head>
 <body>
@@ -447,7 +447,7 @@
 <!-- ── Header ─────────────────────────────────────────────── -->
 <header class="header">
   <a href="/" class="header-logo">
-    <img src="/assets/images/logo-transparent.png" alt="GreyRadius" style="filter:brightness(0) invert(1)">
+    <img src="/assets/images/logo-transparent.png" alt="GreyRadius Consulting logo" style="filter:brightness(0) invert(1)">
   </a>
   <span class="header-sep">/</span>
   <span class="header-title">Social Card Preview</span>
@@ -586,12 +586,12 @@ function getIssues(p) {
   if (!p.ogTitle) {
     issues.push({ sev: 'error', msg: 'Missing og:title' });
   } else if (p.ogTitle.length > OG_TITLE_LIMIT) {
-    issues.push({ sev: 'warn', msg: `og:title too long (${p.ogTitle.length}/${OG_TITLE_LIMIT} chars — may be truncated)` });
+    issues.push({ sev: 'warn', msg: `og:title too long (${p.ogTitle.length}/${OG_TITLE_LIMIT} chars – may be truncated)` });
   }
   if (!p.ogDesc) {
     issues.push({ sev: 'error', msg: 'Missing og:description' });
   } else if (p.ogDesc.length > OG_DESC_LIMIT) {
-    issues.push({ sev: 'warn', msg: `og:description too long (${p.ogDesc.length}/${OG_DESC_LIMIT} chars — may be truncated)` });
+    issues.push({ sev: 'warn', msg: `og:description too long (${p.ogDesc.length}/${OG_DESC_LIMIT} chars – may be truncated)` });
   }
   if (!p.ogImage) issues.push({ sev: 'error', msg: 'Missing og:image' });
   if (!p.twCard) issues.push({ sev: 'warn', msg: 'No Twitter Card tags' });
@@ -636,9 +636,9 @@ function renderLinkedin(p) {
       ${imgHtml}
       <div class="li-body">
         <div class="li-domain">${BASE_DOMAIN}</div>
-        <div class="li-title${!p.ogTitle ? ' missing' : ''}">${p.ogTitle || '(no og:title — will use page &lt;title&gt; or nothing)'}</div>
+        <div class="li-title${!p.ogTitle ? ' missing' : ''}">${p.ogTitle || '(no og:title – will use page &lt;title&gt; or nothing)'}</div>
         ${titleBar ? `<div style="margin:-2px 0 4px">${titleBar}</div>` : ''}
-        <div class="li-desc${!p.ogDesc ? ' missing' : ''}">${p.ogDesc || '(no og:description — LinkedIn may scrape body text)'}</div>
+        <div class="li-desc${!p.ogDesc ? ' missing' : ''}">${p.ogDesc || '(no og:description – LinkedIn may scrape body text)'}</div>
         ${descBar ? `<div style="margin-top:4px">${descBar}</div>` : ''}
       </div>
     </div>`;
@@ -649,7 +649,7 @@ function renderTwitter(p) {
   if (!p.twCard) {
     return `<div class="tw-no-card">
       <strong>No Twitter Card</strong>
-      twitter:card tag is missing — link will appear as plain text, no preview image.
+      twitter:card tag is missing – link will appear as plain text, no preview image.
     </div>`;
   }
   const img = p.ogImage || '';
@@ -677,7 +677,7 @@ function renderSlack(p) {
   return `
     <div class="sl-card">
       <div class="sl-site">GreyRadius Consulting</div>
-      <span class="sl-title${!p.ogTitle ? ' missing' : ''}">${p.ogTitle || '(no og:title — Slack will use page title)'}</span>
+      <span class="sl-title${!p.ogTitle ? ' missing' : ''}">${p.ogTitle || '(no og:title – Slack will use page title)'}</span>
       <div class="sl-desc${!p.ogDesc ? ' missing' : ''}">${p.ogDesc || '(no og:description)'}</div>
       ${imgHtml}
     </div>`;
@@ -922,7 +922,7 @@ async function init(isRefresh = false) {
     grid.innerHTML = `
       <div class="empty-state">
         <strong>Loading…</strong>
-        Fetching meta tags from ${PAGES.length} pages — this takes a moment.
+        Fetching meta tags from ${PAGES.length} pages – this takes a moment.
       </div>`;
   }
 
