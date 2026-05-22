@@ -1,0 +1,111 @@
+You are making a second round of copy changes to the GreyRadius 
+Consulting website. These are additive to the previous round of 
+changes already applied. Do not redo previous changes. Only apply 
+what is listed below.
+
+---
+
+## index.html (Homepage)
+
+1. Replace the three-word header above the H1:
+   Current: "Strategy · Research · Execution"
+   Replace with: "Strategy · Growth · Execution"
+
+2. Replace the H1 headline:
+   Current: "Strategy you can execute. Outcomes within reach."
+   Replace with: "We build and execute with you."
+   (This is now the primary hero headline)
+
+3. Replace the hero subtext paragraph:
+   Current: "We don't just advise — we build and execute 
+   with you. Boutique consulting grounded in real primary 
+   research, accelerated by AI, delivered as measurable 
+   outcomes. For founders, CXOs, and family-business leaders 
+   across India, GCC, and Southeast Asia."
+   Replace with:
+   "Combining AI-enabled execution, deep commercial 
+   understanding, and hands-on strategic problem solving, 
+   we help founders, CXOs, and ambitious businesses turn 
+   growth opportunities into measurable business outcomes 
+   across the GCC, Southeast Asia, EMEA, and India."
+
+4. In the rotating/revolving image or text carousel where 
+   the word "Consulting" appears alone:
+   Replace "Consulting" with "Growth Consulting"
+
+6. Replace the section heading:
+   Current: "We sell outcomes. Not slides."
+   Replace with: "We deliver outcomes. Not just strategies."
+
+7. Replace the sub-section heading:
+   Current: "Execution-led, not deck-led"
+   Replace with: "Execution-led, not just strategy-led"
+
+8. In the "AI-augmented delivery" block, replace the entire 
+   heading and body copy:
+
+   Current heading: "AI-augmented delivery"
+   Replace with: "AI-accelerated delivery and execution"
+
+   Current body:
+   "We use AI internally across research synthesis, financial 
+   modelling, and outreach automation. Clients get faster 
+   delivery at boutique pricing. AI is how we deliver – not 
+   what we sell. High-quality outcomes delivered 3x faster."
+
+   Replace with:
+   "AI is embedded across our consulting workflows – 
+   accelerating insight synthesis, modelling, GTM execution, 
+   and decision support to deliver faster, sharper, and more 
+   scalable outcomes, with delivery cycles accelerated 
+   by up to 3x."
+
+9. In the "Primary research as the irreplaceable input" block, 
+   replace the entire heading and body copy:
+
+   Current heading: 
+   "Primary research as the irreplaceable input"
+   Replace with: "On-ground data. Human-validated."
+
+   Current body:
+   "Every key insight is grounded in interviews, surveys, 
+   expert calls, and fieldwork. ~30+ interviews and 200+ 
+   surveys per mandate. AI can do desk research. We do the 
+   work AI cannot – talking directly to buyers, channel 
+   partners, and experts in your target markets."
+
+   Replace with:
+   "Every strategic recommendation is strengthened through 
+   direct conversations with buyers, channel partners, 
+   operators, and industry experts across target markets. 
+   While AI accelerates desk analysis and synthesis, real 
+   market understanding comes from validating assumptions 
+   on the ground – through human interaction, commercial 
+   context, and firsthand market feedback. ~30+ interviews 
+   and 200+ surveys per mandate."
+
+---
+
+## Page title tag — homepage SEO update
+
+10. Update the homepage <title> tag to reflect the 
+    new positioning direction:
+    <title>AI-Enabled Strategy & Growth Consulting | 
+    Execution-Led Outcomes | GreyRadius</title>
+
+11. Update the homepage meta description:
+    <meta name="description" content="GreyRadius helps 
+    founders, CXOs, and ambitious businesses turn growth 
+    opportunities into measurable outcomes. AI-accelerated 
+    delivery, on-ground market intelligence, and hands-on 
+    execution across the GCC, Southeast Asia, EMEA, 
+    and India.">
+
+---
+
+Do not change any visual styling, layout, colors, navigation, 
+or any copy not listed above. Do not re-apply changes from 
+the previous prompt. Only apply the 11 changes listed here.
+
+After completing all changes, confirm which lines were 
+modified in index.html and the title/meta tags.
