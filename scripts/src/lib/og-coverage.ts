@@ -13,13 +13,7 @@ import { resolve, relative } from "path";
  * Alternatively, add  <!-- og-exclude -->  anywhere in the HTML file
  * to opt that specific page out without editing this list.
  */
-export const EXCLUSIONS = new Set<string>([
-  "index.html",          // uses site-default OG image
-  "careers.html",        // no dedicated OG image needed
-  "og-preview.html",     // internal tool page
-  "legal/privacy.html",  // legal utility page
-  "legal/terms.html",    // legal utility page
-]);
+export const EXCLUSIONS = new Set<string>([]);
 
 export function extractPageFiles(scriptPath: string): Set<string> {
   const src = readFileSync(scriptPath, "utf-8");

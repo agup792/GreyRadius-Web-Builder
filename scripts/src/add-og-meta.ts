@@ -200,34 +200,94 @@ const pages: PageDef[] = [
     ogDescription: "Research findings, market patterns, and practitioner perspective. No AI-generated filler — just what we learned from the interviews.",
   },
   {
-    file: "insights/ai-hype-to-results.html",
+    file: "insights/ai-hype-to-business-results.html",
     ogTitle: "Turning AI Hype Into Business Results — GreyRadius Insights",
-    ogDescription: "The gap between AI interest and AI outcomes is real. What the companies actually capturing AI value are doing differently — and what determines whether your AI initiative is on track.",
+    ogDescription: "Most AI investments stall — not because the technology fails, but because the organisation does. The gap between deploying AI and embedding it into how value gets created is where most implementations quietly die.",
   },
   {
-    file: "insights/consultants-vs-inhouse.html",
+    file: "insights/consultants-vs-inhouse-strategy-team.html",
     ogTitle: "Business Management Consultants vs In-House Strategy Team — GreyRadius Insights",
-    ogDescription: "When external consultants outperform in-house strategy teams — and when they don't. A no-fluff comparison for SME and GCC business leaders.",
+    ogDescription: "The consultants vs in-house debate is mostly a false choice. The smartest companies aren't choosing between the two — they're running a hybrid. Here is when each model earns its place.",
   },
   {
-    file: "insights/cost-transformation.html",
+    file: "insights/cost-transformation-not-cost-cutting.html",
     ogTitle: "Cost Transformation Beyond Cost Cutting — GreyRadius Insights",
-    ogDescription: "Why cost cutting rarely changes the underlying cost structure of a business — and what genuine cost transformation actually involves.",
+    ogDescription: "Cost cutting reduces resources. Cost transformation changes how work gets done. Most restructuring programmes do the first. The ones that build lasting competitive advantage do the second.",
   },
   {
-    file: "insights/resilient-supply-chain.html",
-    ogTitle: "Fragile by Design: Building Supply Chains That Bend Without Breaking — GreyRadius Insights",
-    ogDescription: "Why your supply chain is now a strategic vulnerability — and what resilient organisations do differently in the new operating environment.",
+    file: "insights/elearning-retention-gtm-strategy.html",
+    ogTitle: "Most E-Learning Companies Do Not Have a Growth Problem. They Have a Retention Problem. — GreyRadius Insights",
+    ogDescription: "The e-learning market is expanding rapidly, but sustainable growth is becoming harder to achieve. The issue is almost never acquisition — it is what happens to learners after they join.",
   },
   {
-    file: "insights/what-management-consultants-do.html",
-    ogTitle: "What Does a Management Consultant Actually Do? — GreyRadius Insights",
-    ogDescription: "A clear-eyed look at what management consultants actually do, when you genuinely need one, and what good consulting looks like versus what to avoid.",
+    file: "insights/gcc-renewable-energy-market-entry.html",
+    ogTitle: "The GCC Renewable Energy Opportunity Is Bigger Than Most Companies Realize — GreyRadius Insights",
+    ogDescription: "The GCC renewable energy market is attracting global attention for the right reasons. What most international entrants underestimate is what actually determines success once they're inside.",
   },
   {
-    file: "insights/winning-saturated-markets.html",
+    file: "insights/healthcare-ai-operational-readiness.html",
+    ogTitle: "Healthcare's AI Problem Is Not Technology Adoption. It Is Operational Readiness. — GreyRadius Insights",
+    ogDescription: "Healthcare organisations are investing heavily in AI. Many transformation initiatives still struggle to create scalable impact. The gap is not innovation — it is execution integration.",
+  },
+  {
+    file: "insights/india-drone-sector-market-entry.html",
+    ogTitle: "India's Drone Opportunity Is Growing Faster Than Most Companies Can Operationally Handle — GreyRadius Insights",
+    ogDescription: "India's drone sector is entering a phase of commercial acceleration. The demand is there. The regulatory intent is positive. What breaks most drone businesses is not market access — it is operational and commercial infrastructure that doesn't scale.",
+  },
+  {
+    file: "insights/market-expansion-strategy-failures.html",
+    ogTitle: "Most Market Expansion Strategies Fail Before the Company Even Enters the Market — GreyRadius Insights",
+    ogDescription: "Market expansion failures are not usually caused by poor execution. They are caused by flawed assumptions made before any execution began. Here is where those assumptions typically form — and how to test them first.",
+  },
+  {
+    file: "insights/msme-execution-systems-productivity.html",
+    ogTitle: "Most MSMEs Do Not Have a Capability Problem. They Have an Execution Problem. — GreyRadius Insights",
+    ogDescription: "MSMEs are investing more in growth than ever. Yet productivity gaps keep widening. The issue is not resources or ambition — it is the absence of structured operating systems that convert effort into consistent outcomes.",
+  },
+  {
+    file: "insights/pharma-clinical-trial-decision-intelligence.html",
+    ogTitle: "Pharma's Biggest Data Problem Is Not Data Availability. It Is Decision Intelligence. — GreyRadius Insights",
+    ogDescription: "Pharmaceutical companies are generating more clinical data than ever. Trial timelines are still inefficient. The data exists. The problem is that most of it never reaches strategic decision-makers in a form they can act on.",
+  },
+  {
+    file: "insights/plg-vs-slg-which-gtm-model-fits.html",
+    ogTitle: "Product-Led Growth vs Sales-Led Growth: Which Model Actually Fits Your Stage — GreyRadius Insights",
+    ogDescription: "The PLG vs SLG debate occupies more strategic planning time than it deserves. The companies growing consistently aren't choosing between the two — they're building systems where product usage informs sales timing.",
+  },
+  {
+    file: "insights/retail-expansion-market-understanding.html",
+    ogTitle: "Retail Expansion Fails When Growth Moves Faster Than Market Understanding — GreyRadius Insights",
+    ogDescription: "Most retail expansion problems are diagnosed too late. By the time leadership acts, capital is deployed and the expansion model is already under pressure. Here's what to look for earlier.",
+  },
+  {
+    file: "insights/saas-growth-customer-intelligence.html",
+    ogTitle: "Most SaaS Growth Problems Are Not Acquisition Problems. They Are Customer Understanding Problems. — GreyRadius Insights",
+    ogDescription: "When SaaS pipeline conversion drops or retention softens, the immediate response is usually tactical — more spend, adjusted messaging, optimised pricing. In most cases, the underlying problem is different.",
+  },
+  {
+    file: "insights/saas-international-expansion-model.html",
+    ogTitle: "Global SaaS Expansion Fails Quietly Long Before Revenue Slows Down — GreyRadius Insights",
+    ogDescription: "Most SaaS companies don't recognise international expansion problems until the commercial damage is already done. This is what the early warning signals actually look like.",
+  },
+  {
+    file: "insights/standard-of-care-benchmarking-healthcare.html",
+    ogTitle: "Why Defining the Right Benchmark Shapes Better Decisions: Standard of Care — GreyRadius Insights",
+    ogDescription: "In healthcare strategy, the benchmark you choose determines the conclusions you reach. Most organisations benchmark against industry averages. The ones making smarter decisions benchmark differently.",
+  },
+  {
+    file: "insights/supply-chain-resilience-board-strategy.html",
+    ogTitle: "Why Supply Chain Resilience Is Now a Board-Level Strategy Problem — GreyRadius Insights",
+    ogDescription: "The pandemic, the Suez Canal, the Red Sea — three events, three causes, one consistent finding: the companies that absorbed the shock were the ones that had built resilience before they needed it.",
+  },
+  {
+    file: "insights/uae-consumer-goods-market-entry.html",
+    ogTitle: "The UAE Consumer Goods Market Is Growing. But Growth Is Becoming Harder to Capture Predictably. — GreyRadius Insights",
+    ogDescription: "The UAE consumer goods market is attracting global brands, regional distributors, and expansion-focused investors. What most companies underestimate is what it actually takes to sustain growth after the launch.",
+  },
+  {
+    file: "insights/winning-in-saturated-markets.html",
     ogTitle: "Winning in Saturated Markets — GreyRadius Insights",
-    ogDescription: "Why traditional growth levers stop working in mature markets, where growth actually hides, and what winning looks like in practice.",
+    ogDescription: "Every percentage point of market share in a saturated market is taken from someone else. The playbooks that worked in an expanding market stop working. The companies that keep winning do something fundamentally different.",
   },
 
   // ─── Legal ────────────────────────────────────────────────────────────────────

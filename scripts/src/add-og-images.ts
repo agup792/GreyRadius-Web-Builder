@@ -10,6 +10,12 @@ type PageDef = {
 };
 
 const pages: PageDef[] = [
+  { file: "index.html",                                      ogImage: "/assets/images/og-homepage.png" },
+  { file: "careers.html",                                    ogImage: "/assets/images/og-careers.png" },
+  { file: "og-preview.html",                                 ogImage: "/assets/images/og-generic.png" },
+  { file: "legal/privacy.html",                              ogImage: "/assets/images/og-privacy.png" },
+  { file: "legal/terms.html",                                ogImage: "/assets/images/og-terms.png" },
+
   { file: "services/index.html",                             ogImage: "/assets/images/og-services.png" },
   { file: "services/opportunity-assessment.html",            ogImage: "/assets/images/og-svc-opportunity.png" },
   { file: "services/feasibility-and-tev.html",              ogImage: "/assets/images/og-svc-feasibility.png" },
@@ -48,12 +54,24 @@ const pages: PageDef[] = [
   { file: "case-studies/trinetra-gtm.html",                 ogImage: "/assets/images/og-cs-trinetra.png" },
 
   { file: "insights/index.html",                            ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/ai-hype-to-results.html",               ogImage: "/assets/images/og-ins-ai-hype.png" },
-  { file: "insights/consultants-vs-inhouse.html",           ogImage: "/assets/images/og-ins-consultants-vs.png" },
-  { file: "insights/cost-transformation.html",              ogImage: "/assets/images/og-ins-cost-transform.png" },
-  { file: "insights/resilient-supply-chain.html",           ogImage: "/assets/images/og-ins-supply-chain.png" },
-  { file: "insights/what-management-consultants-do.html",   ogImage: "/assets/images/og-ins-what-consultants.png" },
-  { file: "insights/winning-saturated-markets.html",        ogImage: "/assets/images/og-ins-saturated-markets.png" },
+  { file: "insights/winning-in-saturated-markets.html",     ogImage: "/assets/images/og-ins-saturated-markets.png" },
+  { file: "insights/ai-hype-to-business-results.html",              ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/consultants-vs-inhouse-strategy-team.html",     ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/cost-transformation-not-cost-cutting.html",     ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/elearning-retention-gtm-strategy.html",         ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/gcc-renewable-energy-market-entry.html",        ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/healthcare-ai-operational-readiness.html",      ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/india-drone-sector-market-entry.html",          ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/market-expansion-strategy-failures.html",       ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/msme-execution-systems-productivity.html",      ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/pharma-clinical-trial-decision-intelligence.html", ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/plg-vs-slg-which-gtm-model-fits.html",          ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/retail-expansion-market-understanding.html",    ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/saas-growth-customer-intelligence.html",        ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/saas-international-expansion-model.html",       ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/standard-of-care-benchmarking-healthcare.html", ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/supply-chain-resilience-board-strategy.html",   ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/uae-consumer-goods-market-entry.html",          ogImage: "/assets/images/og-insights.png" },
 ];
 
 const ogImageTag = (src: string) =>
