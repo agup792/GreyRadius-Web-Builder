@@ -233,6 +233,32 @@
       gap: 8px;
       flex-wrap: wrap;
     }
+    .card-refresh-btn {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: #fff;
+      color: var(--navy);
+      font-size: 13px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .card-refresh-btn:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+    .card-refresh-btn.spinning {
+      pointer-events: none;
+      animation: spin 0.7s linear infinite;
+    }
     .page-path {
       font-size: 11px;
       font-weight: 600;
@@ -747,6 +773,7 @@ function renderCards(pages) {
       <div class="card-header">
         <span class="page-path">${p.path}</span>
         ${getBadge(issues)}
+        <button class="card-refresh-btn" title="Refresh this card" aria-label="Refresh ${p.path}">↻</button>
       </div>
       <div class="platform-tabs" role="tablist">
         <button class="platform-tab ${currentView === 'linkedin' ? 'active' : ''}" data-view="linkedin" role="tab">
@@ -784,6 +811,8 @@ function renderCards(pages) {
         card.querySelectorAll('.preview-panel').forEach(panel => panel.classList.toggle('active', panel.dataset.panel === view));
       });
     });
+
+    card.querySelector('.card-refresh-btn').addEventListener('click', () => refreshCard(p.path));
 
     grid.appendChild(card);
   });
@@ -884,6 +913,7 @@ function updateCardContent(card, p) {
     <div class="card-header">
       <span class="page-path">${p.path}</span>
       ${getBadge(issues)}
+      <button class="card-refresh-btn" title="Refresh this card" aria-label="Refresh ${p.path}">↻</button>
     </div>
     <div class="platform-tabs" role="tablist">
       <button class="platform-tab ${currentView === 'linkedin' ? 'active' : ''}" data-view="linkedin" role="tab">
@@ -921,6 +951,44 @@ function updateCardContent(card, p) {
       card.querySelectorAll('.preview-panel').forEach(panel => panel.classList.toggle('active', panel.dataset.panel === view));
     });
   });
+
+  card.querySelector('.card-refresh-btn').addEventListener('click', () => refreshCard(p.path));
+}
+
+// ── Per-card refresh ──────────────────────────────────────
+async function refreshCard(path) {
+  const grid = document.getElementById('grid');
+  const card = grid.querySelector(`.card[data-path="${CSS.escape(path)}"]`);
+  if (!card) return;
+
+  const btn = card.querySelector('.card-refresh-btn');
+  if (btn) btn.classList.add('spinning');
+
+  const overlay = document.createElement('div');
+  overlay.className = 'card-loading-overlay';
+  card.appendChild(overlay);
+
+  const meta = await fetchMeta(path);
+  const idx = enrichedPages.findIndex(p => p.path === path);
+  if (idx !== -1) {
+    enrichedPages[idx] = { ...enrichedPages[idx], ...meta };
+    updateCardContent(card, enrichedPages[idx]);
+
+    // Recompute global stats after single-card refresh
+    let total = 0, complete = 0, withIssues = 0, noImage = 0;
+    enrichedPages.forEach(p => {
+      const issues = getIssues(p);
+      if (issues.length === 0) complete++; else withIssues++;
+      if (!p.ogImage) noImage++;
+      total++;
+    });
+    updateStats(total, complete, withIssues, noImage, enrichedPages.length);
+    applyFilter();
+  } else {
+    // overlay/spinner cleanup if not found
+    overlay.remove();
+    if (btn) btn.classList.remove('spinning');
+  }
 }
 
 // ── Init: fetch all pages in parallel ────────────────────
