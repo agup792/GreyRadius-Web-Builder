@@ -1,3 +1,4 @@
-import { assertOgCoverage } from "./lib/og-coverage.js";
+import { assertOgCoverage, assertOgImageSync } from "./lib/og-coverage.js";
 
 assertOgCoverage();
+assertOgImageSync();
