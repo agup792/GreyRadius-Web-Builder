@@ -1,0 +1,347 @@
+You are acting as a senior technical SEO strategist, semantic SEO expert, and conversion-focused website copywriter.
+
+Your task is to optimize my existing website pages for SEO WITHOUT harming readability, user experience, or search engine quality signals.
+
+CRITICAL OBJECTIVE:
+Improve semantic SEO and keyword relevance naturally while ensuring the content sounds human, premium, and non-repetitive.
+
+==================================================
+GLOBAL SEO RULES (APPLIES TO ALL PAGES)
+=======================================
+
+1. DO NOT keyword stuff under any circumstance.
+2. DO NOT repeat the same keyword unnaturally across paragraphs, headings, buttons, FAQs, or image alt text.
+3. Avoid robotic SEO writing patterns.
+4. Avoid AI-generated repetitive sentence structures.
+5. Preserve natural readability and conversational business language.
+6. Maintain a premium consulting-firm tone.
+7. Prioritize semantic relevance over exact keyword density.
+8. Use contextual keyword variations naturally.
+9. If a keyword feels forced, replace it with a semantic alternative.
+10. Every section should read like it was written by a human strategist.
+
+IMPORTANT:
+The website should NEVER feel “SEO optimized.”
+It should feel like a premium consulting and advisory firm with naturally strong topical relevance.
+
+==================================================
+CONTENT QUALITY RULES
+=====================
+
+* Use keywords only where contextually relevant.
+* Keep keyword density low and natural.
+* Spread keywords across the page naturally instead of clustering them together.
+* Use synonyms and semantic variations.
+* Avoid repetitive sentence openings.
+* Avoid repeating identical keyword phrases in consecutive paragraphs.
+* Vary sentence structure and paragraph length.
+* Remove redundant wording.
+* Preserve the existing conversion-focused messaging.
+
+DO NOT create content like:
+
+* “Our market entry consulting services help businesses with market entry consulting.”
+* “We provide AI consulting services for businesses seeking AI consulting.”
+* Repeating the same keyword in every H2.
+* Repeating keywords in CTA buttons.
+* Overusing exact-match commercial keywords.
+
+==================================================
+TECHNICAL SEO RULES
+===================
+
+* Preserve current UI/UX and layout.
+* Keep clean HTML structure.
+* Maintain proper H1 → H2 → H3 hierarchy.
+* Optimize metadata naturally.
+* Improve internal linking where relevant.
+* Add FAQ schema opportunities where appropriate.
+* Do NOT create thin content.
+* Preserve page speed and performance.
+* Do NOT add unnecessary code bloat.
+* Maintain mobile responsiveness.
+
+==================================================
+PAGE-WISE SEO IMPLEMENTATION
+============================
+
+---
+
+1. OPPORTUNITY ASSESSMENT PAGE
+   URL SUGGESTION:
+   /market-opportunity-assessment
+
+---
+
+PRIMARY KEYWORD:
+
+* market opportunity assessment services
+
+SECONDARY KEYWORDS:
+
+* opportunity assessment consulting
+* market sizing consulting
+* market opportunity assessment for B2B
+* go no go decision framework
+
+INFORMATIONAL SUPPORT TERMS:
+
+* how to assess a market opportunity
+* opportunity scorecard template
+* how to prioritise growth opportunities
+
+IMPLEMENTATION INSTRUCTIONS:
+
+* Use the primary keyword naturally in:
+
+  * H1
+  * intro paragraph
+  * meta title
+  * meta description
+* Use secondary keywords only where contextually relevant.
+* Add semantic phrases like:
+
+  * growth evaluation
+  * expansion viability
+  * commercial potential analysis
+  * demand validation
+* Avoid repeating “market opportunity assessment” excessively.
+* Focus on strategic business language rather than SEO-heavy wording.
+
+---
+
+2. FEASIBILITY & TEV PAGE
+   URL SUGGESTION:
+   /feasibility-study-consulting
+
+---
+
+PRIMARY KEYWORD:
+
+* feasibility study consulting services
+
+SECONDARY KEYWORDS:
+
+* techno economic viability study
+* TEV consulting services
+* bankable feasibility study
+* commercial feasibility assessment B2B
+
+INFORMATIONAL TERMS:
+
+* how to conduct a feasibility study
+* what is a TEV report
+* feasibility study vs business plan
+
+IMPLEMENTATION INSTRUCTIONS:
+
+* Use “feasibility study consulting services” naturally in H1 and metadata.
+* Use “techno economic viability study” sparingly.
+* Avoid overusing the acronym “TEV.”
+* Add semantic business phrases like:
+
+  * investment viability
+  * project economics
+  * risk evaluation
+  * commercial sustainability
+* Keep the tone analytical and advisory-focused.
+
+---
+
+3. MARKET ENTRY EXECUTION PAGE
+   URL SUGGESTION:
+   /market-entry-consulting
+
+---
+
+PRIMARY KEYWORD:
+
+* market entry consulting
+
+SECONDARY KEYWORDS:
+
+* market entry strategy consulting firm
+* India market entry consulting
+* UAE market entry consulting
+* channel partner setup consulting
+
+ADDITIONAL SEMANTIC TERMS:
+
+* international expansion
+* cross-border growth
+* new geography launch
+* partner network development
+
+IMPLEMENTATION INSTRUCTIONS:
+
+* Avoid repeating “market entry consulting” in every section.
+* Use geographic keywords naturally and only where relevant.
+* Add internal links to GTM and opportunity assessment pages.
+* Maintain a strategic expansion-focused tone.
+* Avoid sounding generic or overly sales-oriented.
+
+---
+
+4. GTM EXECUTION PAGE
+   URL SUGGESTION:
+   /gtm-execution-services
+
+---
+
+PRIMARY KEYWORD:
+
+* go-to-market execution consulting
+
+SECONDARY KEYWORDS:
+
+* fractional GTM team
+* B2B pipeline building service
+* ICP definition consulting
+* outsourced GTM execution
+
+SUPPORT TERMS:
+
+* sales pipeline generation
+* outbound growth systems
+* ICP development
+* revenue acceleration
+
+IMPLEMENTATION INSTRUCTIONS:
+
+* Avoid repeating “go-to-market execution consulting” multiple times.
+* Use “GTM” and full-form variations naturally.
+* Focus on operational execution and growth language.
+* Make the content sound actionable and outcome-driven.
+* Preserve strong CTA flow.
+
+---
+
+5. PITCHBOOK & FUNDRAISING PAGE
+   URL SUGGESTION:
+   /investor-pitch-deck-consulting
+
+---
+
+PRIMARY KEYWORD:
+
+* investor pitch deck consulting
+
+SECONDARY KEYWORDS:
+
+* fundraising consulting for startups
+* investor pitchbook consulting
+* Series A fundraising consultant
+
+INFORMATIONAL TERMS:
+
+* how to create an investor pitch deck
+* what investors look for in a pitch deck
+* how to raise Series A funding
+
+IMPLEMENTATION INSTRUCTIONS:
+
+* Avoid confusion with the company PitchBook.
+* Use “investor pitchbook” naturally and sparingly.
+* Focus on investor readiness and fundraising strategy language.
+* Add trust-building and credibility-oriented phrasing.
+* Keep the tone sophisticated and investor-focused.
+
+---
+
+6. AI CONSULTING PAGE
+   URL SUGGESTION:
+   /ai-strategy-consulting
+
+---
+
+PRIMARY KEYWORD:
+
+* AI strategy consulting
+
+SECONDARY KEYWORDS:
+
+* AI consulting services for business
+* AI transformation consulting
+* AI strategy consulting for SMEs
+* AI implementation consulting
+* generative AI consulting services
+
+SUPPORT TERMS:
+
+* AI roadmap
+* enterprise AI adoption
+* AI use case prioritisation
+* operational automation
+* AI deployment strategy
+
+IMPLEMENTATION INSTRUCTIONS:
+
+* Avoid excessive repetition of “AI consulting.”
+* Use semantic AI-related business language naturally.
+* Maintain a strategic and enterprise-focused tone.
+* Avoid generic AI buzzwords.
+* Focus on practical implementation and business outcomes.
+
+==================================================
+METADATA RULES
+==============
+
+FOR EVERY PAGE:
+
+* Meta title:
+
+  * 50–60 characters
+  * include primary keyword naturally
+  * avoid repetition
+
+* Meta description:
+
+  * 140–160 characters
+  * human-readable
+  * conversion-focused
+  * no keyword stuffing
+
+==================================================
+FAQ SEO RULES
+=============
+
+* Add 3–5 FAQs per service page.
+* Use informational long-tail keywords naturally.
+* FAQs should sound conversational and useful.
+* Avoid keyword-heavy FAQ questions.
+* Answers should be concise and authoritative.
+
+==================================================
+IMAGE SEO RULES
+===============
+
+* Add descriptive image alt text.
+* Avoid stuffing exact-match keywords.
+* Describe the visual context naturally.
+* Use semantic phrases instead of repetitive keyword use.
+
+==================================================
+FINAL QUALITY CHECK
+===================
+
+Before finalizing changes:
+
+* Review every page for repetitive phrasing.
+* Remove any unnatural keyword usage.
+* Replace repeated keywords with semantic variations.
+* Ensure the copy sounds premium and human-written.
+* Ensure the page flows naturally.
+* Ensure SEO improvements do not reduce readability.
+* Preserve conversion-focused messaging.
+* Preserve the original brand tone and positioning.
+
+FINAL GOAL:
+The website should rank better because of:
+
+* stronger semantic relevance,
+* improved topical authority,
+* better page structure,
+* cleaner on-page SEO,
+* and higher content quality —
+
+NOT because of aggressive keyword repetition.
