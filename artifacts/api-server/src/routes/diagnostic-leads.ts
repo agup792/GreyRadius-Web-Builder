@@ -69,48 +69,9 @@ async function pushToHubSpot(
     );
 
     if (response.status === 409) {
-      // Contact already exists — try to update by email
-      const searchRes = await fetch(
-        "https://api.hubapi.com/crm/v3/objects/contacts/search",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            filterGroups: [
-              {
-                filters: [
-                  {
-                    propertyName: "email",
-                    operator: "EQ",
-                    value: lead.email,
-                  },
-                ],
-              },
-            ],
-          }),
-        },
-      );
-      const searchData = (await searchRes.json()) as {
-        results?: { id: string }[];
-      };
-      const existingId = searchData.results?.[0]?.id;
-      if (existingId) {
-        await fetch(
-          `https://api.hubapi.com/crm/v3/objects/contacts/${existingId}`,
-          {
-            method: "PATCH",
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ properties: body.properties }),
-          },
-        );
-        return existingId;
-      }
+      // Contact already exists — write-only token can't look up by email, skip gracefully
+      log.warn({ email: lead.email }, "HubSpot contact already exists — skipping duplicate");
+      return null;
     }
 
     if (!response.ok) {
