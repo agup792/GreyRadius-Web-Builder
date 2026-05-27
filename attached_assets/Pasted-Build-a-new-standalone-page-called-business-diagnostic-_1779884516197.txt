@@ -1,0 +1,398 @@
+Build a new standalone page called `business-diagnostic.html` 
+for the GreyRadius Consulting website. This page should match 
+the existing website's visual identity exactly:
+- Primary color: deep navy #1B2A4A
+- Accent color: orange #E8612C
+- Background: white #FFFFFF
+- Font: match the existing site's font stack
+- Logo: use the existing GreyRadius logo from the site header
+- Navigation: use the existing site nav header and footer
+
+---
+
+## PAGE PURPOSE
+
+This is a free business diagnostic tool that helps visitors 
+identify which GreyRadius services are most relevant to their 
+current business situation. It is a 4-step quiz with a lead 
+capture gate before results are shown.
+
+Add a prominent entry point on the homepage (index.html) 
+in two places:
+1. In the hero section — add a secondary CTA button next to 
+   the existing "Start a conversation" button, labelled:
+   "Get a free business diagnostic →"
+   linking to business-diagnostic.html
+
+2. In the services section — add a line below the services 
+   grid:
+   "Not sure which service fits your situation? 
+   Take our free 2-minute diagnostic."
+   with a text link to business-diagnostic.html
+
+---
+
+## PAGE STRUCTURE
+
+The page has 6 screens rendered as a single HTML page 
+with JavaScript showing/hiding sections. No page reloads.
+
+Screen 1: Welcome screen
+Screen 2: Question 1
+Screen 3: Question 2
+Screen 4: Question 3
+Screen 5: Lead capture (name + email)
+Screen 6: Results
+
+A progress bar runs across the top of screens 2-5, 
+showing steps 1 of 4, 2 of 4, 3 of 4, 4 of 4.
+Progress bar uses orange #E8612C fill on navy track.
+
+---
+
+## SCREEN 1: WELCOME
+
+Heading: "Find out which GreyRadius service is right for you"
+
+Subtext: 
+"Answer 3 quick questions about your business situation. 
+We will tell you exactly which of our services can help 
+you grow, enter new markets, or solve your current 
+challenges. Takes under 2 minutes."
+
+CTA button: "Start the diagnostic →"
+Button style: orange background, white text, matches 
+existing site CTA button style.
+
+Small text below button: 
+"Free. No commitment. Results in 60 seconds."
+
+---
+
+## SCREEN 2: QUESTION 1 — Business stage
+
+Progress: Step 1 of 4
+
+Heading: "Where is your business right now?"
+
+Subheading: "Select the option that best describes 
+your current stage."
+
+Options (single select, card style):
+Each option is a clickable card. Selected card gets 
+orange left border and navy background highlight.
+
+A) Early stage — We have an idea or early product. 
+   Still validating the market.
+
+B) Growth stage — We have a working business. 
+   Looking to scale or expand.
+
+C) Established — We are an established business 
+   exploring new opportunities or markets.
+
+D) Investment stage — We are preparing for fundraising 
+   or need a valuation.
+
+"Next →" button appears after a selection is made. 
+Disabled and greyed out until a card is selected.
+
+---
+
+## SCREEN 3: QUESTION 2 — Primary challenge
+
+Progress: Step 2 of 4
+
+Heading: "What is your primary goal right now?"
+
+Subheading: "Pick the one that is most urgent for you."
+
+Options (single select, card style):
+
+A) Grow in my existing market
+   I want to increase revenue, reach new customers, 
+   or strengthen my position where I already operate.
+
+B) Enter a new market or geography
+   I want to expand into a new country, region, 
+   or industry segment.
+
+C) Evaluate a new business idea or opportunity
+   I have a new concept or investment opportunity 
+   and want to assess if it is viable.
+
+D) Launch a new product or business
+   I am ready to launch and need a go-to-market 
+   strategy and execution plan.
+
+E) Raise funds or prepare for investment
+   I need a pitch book, valuation, or support 
+   finding the right investors.
+
+F) Use AI to improve how my business operates
+   I want to embed AI into my workflows to reduce 
+   costs and deliver faster.
+
+"Next →" button appears after selection.
+
+---
+
+## SCREEN 4: QUESTION 3 — Geography and timeline
+
+Progress: Step 3 of 4
+
+This screen has TWO sub-questions on the same screen, 
+both required before Next is enabled.
+
+Sub-question A: "Which markets are you focused on?"
+(Single select)
+
+Options as pill/tag buttons (not full cards):
+- Middle East and Gulf
+- India
+- Southeast Asia
+- Europe
+- Multiple markets
+
+Sub-question B: "What is your timeline?"
+(Single select, pill/tag buttons)
+
+- Immediate — I need to move in the next 4-6 weeks
+- Near term — 3 to 6 months
+- Planning ahead — 6 months or more
+- Still exploring
+
+"Next →" button enabled only after both are selected.
+
+---
+
+## SCREEN 5: LEAD CAPTURE
+
+Progress: Step 4 of 4
+
+Heading: "Almost there. Where should we send your results?"
+
+Subtext: 
+"Enter your details below. We will show your personalised 
+service recommendations instantly and follow up within 
+one business day."
+
+Fields:
+- First name (required)
+- Last name (required)  
+- Business email (required, validate format)
+- Company name (required)
+
+Privacy line below form:
+"We do not share your details. You will only hear from 
+the GreyRadius team."
+
+CTA button: "Show my recommendations →"
+Disabled until all fields are filled and email is valid.
+
+On submit: send form data to a simple POST request 
+to a placeholder endpoint:
+POST /api/diagnostic-leads
+with JSON body: 
+{ firstName, lastName, email, company, answers: 
+  { q1, q2, q3_market, q3_timeline } }
+If the POST fails or returns error, still show results. 
+Log the error to console. Do not block the user.
+
+---
+
+## SCREEN 6: RESULTS PAGE
+
+Heading: "Your GreyRadius diagnostic results"
+
+Subheading: "Based on your answers, here is what 
+we recommend for [First Name]'s business."
+
+Show a personalised summary paragraph using the 
+answers, followed by the top 2-3 recommended services.
+
+Then show the HubSpot meeting embed directly on 
+the results page:
+<!-- Start of Meetings Embed Script -->
+<div class="meetings-iframe-container" 
+data-src="https://meetings.hubspot.com/chiragbansal?embed=true">
+</div>
+<script type="text/javascript" 
+src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js">
+</script>
+<!-- End of Meetings Embed Script -->
+
+Above the embed, add the heading:
+"Ready to move forward? Book a 30-minute call with 
+our team — no cost, no commitment."
+
+---
+
+## RECOMMENDATION LOGIC (if-then rules)
+
+Use a JavaScript function called getRecommendations(q1, q2, 
+q3_market, q3_timeline) that returns an array of 2-3 
+service objects. Each service object has:
+{ name, tagline, description, link, urgency }
+
+SERVICE DEFINITIONS (use these exact names and links):
+1. Opportunity Assessment
+   tagline: "Validate before you invest"
+   link: /services/opportunity-assessment.html
+
+2. Feasibility and TEV
+   tagline: "Know if it will work before you build it"
+   link: /services/feasibility-and-tev.html
+
+3. Market Entry Execution
+   tagline: "Enter new markets with a clear roadmap"
+   link: /services/market-entry-execution.html
+
+4. GTM Execution as a Service
+   tagline: "Launch and grow with an embedded GTM team"
+   link: /services/gtm-execution-as-a-service.html
+
+5. Pitch Book and Fundraising
+   tagline: "Raise with confidence"
+   link: /services/pitchbook-and-fundraising.html
+
+6. AI Consulting and Transformation
+   tagline: "Deliver faster and smarter with AI"
+   link: /services/ai-consulting-and-transformation.html
+
+RULES:
+
+Rule Group 1 — Q2 = "Raise funds or prepare for investment":
+  Primary: Pitch Book and Fundraising
+  Secondary: Opportunity Assessment (if Q1 = A or B)
+  Secondary: Feasibility and TEV (if Q1 = C or D)
+
+Rule Group 2 — Q2 = "Enter a new market or geography":
+  Primary: Market Entry Execution
+  Secondary: Opportunity Assessment
+  Tertiary: GTM Execution as a Service 
+  (if Q3_timeline = Immediate or Near term)
+
+Rule Group 3 — Q2 = "Evaluate a new business idea":
+  Primary: Opportunity Assessment
+  Secondary: Feasibility and TEV
+  Tertiary: Pitch Book and Fundraising 
+  (if Q1 = D Investment stage)
+
+Rule Group 4 — Q2 = "Launch a new product or business":
+  Primary: GTM Execution as a Service
+  Secondary: Market Entry Execution 
+  (if Q3_market != India only)
+  Secondary: Opportunity Assessment 
+  (if Q1 = A Early stage)
+
+Rule Group 5 — Q2 = "Grow in my existing market":
+  Primary: GTM Execution as a Service
+  Secondary: Opportunity Assessment
+  Tertiary: AI Consulting and Transformation 
+  (if Q3_timeline = Immediate)
+
+Rule Group 6 — Q2 = "Use AI to improve how my business operates":
+  Primary: AI Consulting and Transformation
+  Secondary: GTM Execution as a Service
+  Tertiary: Opportunity Assessment
+
+Rule Group 7 — Q1 = D (Investment stage) AND Q2 != fundraising:
+  Always add Pitch Book and Fundraising as a third 
+  recommendation regardless of Q2 answer.
+
+Rule Group 8 — Q3_timeline = Immediate:
+  Add urgency flag to the primary recommendation.
+  Show label: "Recommended for immediate action" 
+  in orange above the service card.
+
+---
+
+## RESULTS CARD DESIGN
+
+Each recommended service renders as a card with:
+- Navy left border (4px)
+- Service name in navy bold
+- Tagline in orange
+- 2-line description explaining why this is relevant 
+  to their specific answers (generate dynamically 
+  using their Q1 and Q2 answers in the description text)
+- "Learn more →" link to the service page
+- If urgency flag: orange banner at top of card 
+  saying "Recommended for immediate action"
+
+Below the service cards, add a summary line:
+"Our team typically responds within one business day. 
+You can also write to us directly at sales@greyradius.com"
+
+---
+
+## PERSONALISED SUMMARY PARAGRAPH LOGIC
+
+Generate a 2-3 sentence intro paragraph on the results 
+screen using the answers. Template:
+
+"Based on your situation as a [Q1_label] business 
+focused on [Q2_label] in [Q3_market], 
+[if immediate: with an immediate timeline,] 
+here is what our team recommends. 
+[Add one sentence specific to their challenge 
+from the copy below.]"
+
+Q1 copy inserts:
+A: "an early-stage business still validating 
+    your market"
+B: "a growth-stage business ready to scale"
+C: "an established business exploring new opportunities"
+D: "an investment-ready business preparing to raise"
+
+Q2 copy inserts:
+A: "growing your existing market presence"
+B: "entering a new market or geography"
+C: "evaluating a new business idea"
+D: "launching a new product or business"
+E: "preparing for fundraising"
+F: "embedding AI into your operations"
+
+---
+
+## TECHNICAL REQUIREMENTS
+
+- Single HTML file with embedded CSS and JavaScript
+- No external dependencies except Google Fonts 
+  (use the same font as the existing site) and 
+  the HubSpot embed script on results screen
+- Mobile responsive — works on screens from 375px up
+- All screens transition with a smooth fade 
+  (opacity + slight translateY, 300ms ease)
+- Progress bar animates smoothly between steps
+- Form fields use the existing site's input styling
+- Buttons use the existing site's CTA button styling
+- Back button on each question screen (except screen 1) 
+  to go to previous step
+- No browser back button dependency — 
+  all navigation handled in JS state
+- On mobile, card options stack vertically
+- On desktop, Q1 and Q2 options show in a 2-column grid
+
+---
+
+## FILE AND LINK REFERENCES
+
+Save file as: business-diagnostic.html 
+in the root directory alongside index.html
+
+Update index.html as described above with two 
+entry point links.
+
+Do not create any new CSS files. All styles 
+go inside a <style> block in business-diagnostic.html
+
+Do not modify any other pages.
+
+After completing, confirm:
+1. business-diagnostic.html is created
+2. index.html has been updated with both entry points
+3. All 6 screens render and transition correctly
+4. Recommendation logic covers all Q2 answer combinations
+5. HubSpot embed appears on results screen

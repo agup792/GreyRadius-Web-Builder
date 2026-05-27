@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7DXRX118W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B7DXRX118W');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Business Diagnostic | Find the Right GreyRadius Service | GreyRadius Consulting</title>
+  <meta name="description" content="Answer 3 quick questions about your business situation. We'll tell you exactly which GreyRadius service can help you grow, enter new markets, or solve your current challenges. Takes under 2 minutes.">
+  <link rel="canonical" href="https://greyradius.com/business-diagnostic.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* ── Diagnostic page scoped styles ── */
+    :root {
+      --diag-navy: #1B2A4A;
+      --diag-orange: #E8612C;
+      --diag-white: #ffffff;
+      --diag-off-white: #F8F9FB;
+      --diag-border: #E2E8F0;
+      --diag-text: #1B2A4A;
+      --diag-muted: #64748B;
+      --diag-radius: 10px;
+      --diag-transition: 300ms ease;
+    }
+
+    .diag-wrapper {
+      min-height: calc(100vh - 80px);
+      background: var(--diag-off-white);
+      padding: 0 0 5rem;
+    }
+
+    /* Progress bar */
+    .diag-progress {
+      background: var(--diag-navy);
+      padding: 1.25rem 0;
+    }
+    .diag-progress__inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .diag-progress__label {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.6rem;
+    }
+    .diag-progress__track {
+      height: 5px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .diag-progress__fill {
+      height: 100%;
+      background: var(--diag-orange);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    /* Screen container */
+    .diag-screen {
+      display: none;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity var(--diag-transition), transform var(--diag-transition);
+    }
+    .diag-screen.active {
+      display: block;
+    }
+    .diag-screen.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card container */
+    .diag-card {
+      max-width: 680px;
+      margin: 3rem auto 0;
+      padding: 0 1.5rem;
+    }
+
+    /* Welcome screen */
+    .diag-welcome {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .diag-welcome__eyebrow {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--diag-orange);
+      margin-bottom: 1rem;
+    }
+    .diag-welcome__heading {
+      font-family: Montserrat, sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      color: var(--diag-navy);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .diag-welcome__sub {
+      font-family: Montserrat, sans-serif;
+      font-size: 1rem;
+      color: var(--diag-muted);
+      line-height: 1.7;
+      margin-bottom: 2.25rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .diag-welcome__small {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.78rem;
+      color: var(--diag-muted);
+      margin-top: 1rem;
+    }
+
+    /* Question heading */
+    .diag-q-heading {
+      font-family: Montserrat, sans-serif;
+      font-size: clamp(1.25rem, 3.5vw, 1.7rem);
+      font-weight: 800;
+      color: var(--diag-navy);
+      margin-bottom: 0.4rem;
+    }
+    .diag-q-sub {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.9rem;
+      color: var(--diag-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    /* Option cards (Q1, Q2) */
+    .diag-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.875rem;
+      margin-bottom: 1.75rem;
+    }
+    @media (max-width: 580px) {
+      .diag-options { grid-template-columns: 1fr; }
+    }
+    .diag-option {
+      display: flex;
+      flex-direction: column;
+      background: var(--diag-white);
+      border: 2px solid var(--diag-border);
+      border-radius: var(--diag-radius);
+      padding: 1.1rem 1.25rem;
+      cursor: pointer;
+      transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+      text-align: left;
+      user-select: none;
+    }
+    .diag-option:hover {
+      border-color: #B0BDD0;
+      box-shadow: 0 2px 12px rgba(27,42,74,0.06);
+    }
+    .diag-option.selected {
+      border-color: var(--diag-orange);
+      border-left-width: 4px;
+      background: #FFF8F5;
+      box-shadow: 0 2px 16px rgba(232,97,44,0.1);
+    }
+    .diag-option__title {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--diag-navy);
+      margin-bottom: 0.3rem;
+    }
+    .diag-option__desc {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.8rem;
+      color: var(--diag-muted);
+      line-height: 1.55;
+    }
+
+    /* Pill options (Q3) */
+    .diag-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .diag-pill {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: 2px solid var(--diag-border);
+      border-radius: 999px;
+      padding: 0.45rem 1.1rem;
+      cursor: pointer;
+      background: var(--diag-white);
+      color: var(--diag-navy);
+      transition: border-color 0.15s, background 0.15s, color 0.15s;
+      user-select: none;
+    }
+    .diag-pill:hover { border-color: #B0BDD0; }
+    .diag-pill.selected {
+      background: var(--diag-navy);
+      border-color: var(--diag-navy);
+      color: var(--diag-white);
+    }
+
+    .diag-q3-group-label {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--diag-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    /* Nav buttons */
+    .diag-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      padding-bottom: 1rem;
+    }
+    .diag-back-btn {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--diag-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.15s;
+    }
+    .diag-back-btn:hover { color: var(--diag-navy); }
+
+    .btn-diag-next {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: var(--diag-orange);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.75rem 1.75rem;
+      cursor: pointer;
+      transition: opacity 0.15s, background 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .btn-diag-next:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+    .btn-diag-next:not(:disabled):hover { background: #D0541F; }
+
+    /* Lead capture form */
+    .diag-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .diag-form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 500px) {
+      .diag-form__row { grid-template-columns: 1fr; }
+    }
+    .diag-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .diag-field label {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--diag-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .diag-field input {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.92rem;
+      border: 2px solid var(--diag-border);
+      border-radius: 6px;
+      padding: 0.65rem 0.9rem;
+      color: var(--diag-navy);
+      background: var(--diag-white);
+      transition: border-color 0.15s;
+      outline: none;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .diag-field input:focus { border-color: var(--diag-navy); }
+    .diag-privacy {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.75rem;
+      color: var(--diag-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Results */
+    .diag-results__heading {
+      font-family: Montserrat, sans-serif;
+      font-size: clamp(1.3rem, 3.5vw, 1.75rem);
+      font-weight: 800;
+      color: var(--diag-navy);
+      margin-bottom: 0.4rem;
+    }
+    .diag-results__subheading {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.95rem;
+      color: var(--diag-muted);
+      margin-bottom: 1.5rem;
+    }
+    .diag-summary-para {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.92rem;
+      color: var(--diag-text);
+      background: var(--diag-white);
+      border-left: 4px solid var(--diag-orange);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+    }
+
+    .diag-recs-label {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--diag-orange);
+      margin-bottom: 1rem;
+    }
+
+    /* Result service cards */
+    .diag-rec-card {
+      background: var(--diag-white);
+      border: 1px solid var(--diag-border);
+      border-left: 4px solid var(--diag-navy);
+      border-radius: 0 var(--diag-radius) var(--diag-radius) 0;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .diag-rec-card__urgent {
+      background: var(--diag-orange);
+      color: #fff;
+      font-family: Montserrat, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.35rem 1.25rem;
+    }
+    .diag-rec-card__body {
+      padding: 1.25rem 1.5rem;
+    }
+    .diag-rec-card__name {
+      font-family: Montserrat, sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--diag-navy);
+      margin-bottom: 0.2rem;
+    }
+    .diag-rec-card__tagline {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--diag-orange);
+      margin-bottom: 0.6rem;
+    }
+    .diag-rec-card__desc {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.84rem;
+      color: var(--diag-muted);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .diag-rec-card__link {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--diag-orange);
+      text-decoration: none;
+    }
+    .diag-rec-card__link:hover { text-decoration: underline; }
+
+    .diag-followup {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.82rem;
+      color: var(--diag-muted);
+      text-align: center;
+      margin: 1.5rem 0 2.5rem;
+    }
+    .diag-followup a { color: var(--diag-orange); }
+
+    .diag-booking-heading {
+      font-family: Montserrat, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--diag-navy);
+      margin: 2.5rem 0 1rem;
+      text-align: center;
+    }
+
+    /* Screen card wrapper */
+    .diag-screen-card {
+      background: var(--diag-white);
+      border-radius: 12px;
+      box-shadow: 0 2px 24px rgba(27,42,74,0.07);
+      padding: 2rem 2rem 1.5rem;
+    }
+    @media (max-width: 480px) {
+      .diag-screen-card { padding: 1.5rem 1.25rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Skip to content -->
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ============================================================
+     TOP NAVIGATION
+     ============================================================ -->
+<header>
+  <nav class="top-nav top-nav--solid" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="GreyRadius – go to homepage"><img src="assets/images/logo.png" alt="GreyRadius Consulting logo" width="180" height="42" style="height:42px;width:auto;"></a>
+    <div class="nav-center" role="menubar">
+      <a href="/" class="nav-link" role="menuitem">Home</a>
+      <div class="nav-dropdown">
+        <a href="services/" class="nav-link" role="menuitem" aria-haspopup="true">Services ▾</a>
+        <div class="nav-dropdown__menu" role="menu">
+          <a href="services/opportunity-assessment.html" class="nav-dropdown__item" role="menuitem">Opportunity Assessment</a>
+          <a href="services/feasibility-and-tev.html" class="nav-dropdown__item" role="menuitem">Feasibility &amp; TEV</a>
+          <a href="services/market-entry-execution.html" class="nav-dropdown__item" role="menuitem">Market Entry Execution</a>
+          <a href="services/gtm-execution-as-a-service.html" class="nav-dropdown__item" role="menuitem">GTM Execution-as-a-Service</a>
+          <a href="services/pitchbook-and-fundraising.html" class="nav-dropdown__item" role="menuitem">Pitchbook &amp; Fundraising</a>
+          <a href="services/ai-consulting-and-transformation.html" class="nav-dropdown__item" role="menuitem">AI Consulting &amp; Transformation</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="industries/" class="nav-link" role="menuitem" aria-haspopup="true">Industries ▾</a>
+        <div class="nav-dropdown__menu" role="menu">
+          <a href="industries/technology.html" class="nav-dropdown__item" role="menuitem">Technology</a>
+          <a href="industries/bfsi.html" class="nav-dropdown__item" role="menuitem">BFSI</a>
+          <a href="industries/energy-and-chemicals.html" class="nav-dropdown__item" role="menuitem">Energy &amp; Chemicals</a>
+          <a href="industries/cpg-fmcg-retail.html" class="nav-dropdown__item" role="menuitem">CPG / FMCG / Retail</a>
+          <a href="industries/healthcare-and-life-sciences.html" class="nav-dropdown__item" role="menuitem">Healthcare &amp; Life Sciences</a>
+          <a href="industries/investment-banks-and-pe.html" class="nav-dropdown__item" role="menuitem">IB &amp; PE</a>
+        </div>
+      </div>
+      <a href="case-studies/" class="nav-link" role="menuitem">Case Studies</a>
+      <a href="insights/" class="nav-link" role="menuitem">Insights</a>
+      <div class="nav-dropdown">
+        <a href="about/" class="nav-link" role="menuitem" aria-haspopup="true">About ▾</a>
+        <div class="nav-dropdown__menu" role="menu">
+          <a href="about/" class="nav-dropdown__item" role="menuitem">About GreyRadius</a>
+          <a href="about/team.html" class="nav-dropdown__item" role="menuitem">Team</a>
+          <a href="about/method.html" class="nav-dropdown__item" role="menuitem">Our Methodologies</a>
+          <a href="careers.html" class="nav-dropdown__item" role="menuitem">Careers</a>
+        </div>
+      </div>
+    </div>
+    <a href="contact.html" class="btn btn-primary btn-sm nav-cta" aria-label="Get in touch">Get in touch</a>
+    <button class="nav-hamburger" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <button class="mobile-menu__close" aria-label="Close menu">&times;</button>
+    <div class="mobile-menu__nav">
+      <a href="services/" class="mobile-menu__item">Services</a>
+      <div class="mobile-menu__sub">
+        <a href="services/opportunity-assessment.html" class="mobile-menu__sub-item">Opportunity Assessment</a>
+        <a href="services/feasibility-and-tev.html" class="mobile-menu__sub-item">Feasibility &amp; TEV</a>
+        <a href="services/market-entry-execution.html" class="mobile-menu__sub-item">Market Entry Execution</a>
+        <a href="services/gtm-execution-as-a-service.html" class="mobile-menu__sub-item">GTM Execution-as-a-Service</a>
+        <a href="services/pitchbook-and-fundraising.html" class="mobile-menu__sub-item">Pitchbook &amp; Fundraising</a>
+        <a href="services/ai-consulting-and-transformation.html" class="mobile-menu__sub-item">AI Consulting</a>
+      </div>
+      <a href="industries/" class="mobile-menu__item">Industries</a>
+      <a href="case-studies/" class="mobile-menu__item">Case Studies</a>
+      <a href="insights/" class="mobile-menu__item">Insights</a>
+      <a href="about/" class="mobile-menu__item">About</a>
+      <a href="contact.html" class="mobile-menu__item">Contact</a>
+      <div style="margin-top:1.5rem;">
+        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get in touch</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- Progress bar (hidden on welcome/results) -->
+<div class="diag-progress" id="diagProgress" style="display:none;" aria-label="Quiz progress">
+  <div class="diag-progress__inner">
+    <p class="diag-progress__label" id="diagProgressLabel">Step 1 of 4</p>
+    <div class="diag-progress__track" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4">
+      <div class="diag-progress__fill" id="diagProgressFill" style="width:25%;"></div>
+    </div>
+  </div>
+</div>
+
+<div class="diag-wrapper">
+
+  <!-- ═══════════════════════════════
+       SCREEN 1: WELCOME
+  ═══════════════════════════════ -->
+  <div class="diag-screen active" id="screen-welcome">
+    <div class="diag-welcome">
+      <p class="diag-welcome__eyebrow">Free Business Diagnostic</p>
+      <h1 class="diag-welcome__heading">Find out which GreyRadius service is right for you</h1>
+      <p class="diag-welcome__sub">Answer 3 quick questions about your business situation. We will tell you exactly which of our services can help you grow, enter new markets, or solve your current challenges. Takes under 2 minutes.</p>
+      <button class="btn btn-primary btn-lg" onclick="showScreen('q1')">
+        Start the diagnostic
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+      <p class="diag-welcome__small">Free. No commitment. Results in 60 seconds.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SCREEN 2: QUESTION 1 — Business stage
+  ═══════════════════════════════ -->
+  <div class="diag-screen" id="screen-q1">
+    <div class="diag-card">
+      <div class="diag-screen-card">
+        <h2 class="diag-q-heading">Where is your business right now?</h2>
+        <p class="diag-q-sub">Select the option that best describes your current stage.</p>
+        <div class="diag-options" role="listbox" aria-label="Business stage options">
+          <button class="diag-option" role="option" data-q="q1" data-val="A" onclick="selectOption(this)" aria-selected="false">
+            <span class="diag-option__title">Early stage</span>
+            <span class="diag-option__desc">We have an idea or early product. Still validating the market.</span>
+          </button>
+          <button class="diag-option" role="option" data-q="q1" data-val="B" onclick="selectOption(this)" aria-selected="false">
+            <span class="diag-option__title">Growth stage</span>
+            <span class="diag-option__desc">We have a working business. Looking to scale or expand.</span>
+          </button>
+          <button class="diag-option" role="option" data-q="q1" data-val="C" onclick="selectOption(this)" aria-selected="false">
+            <span class="diag-option__title">Established</span>
+            <span class="diag-option__desc">We are an established business exploring new opportunities or markets.</span>
+          </button>
+          <button class="diag-option" role="option" data-q="q1" data-val="D" onclick="selectOption(this)" aria-selected="false">
+            <span class="diag-option__title">Investment stage</span>
+            <span class="diag-option__desc">We are preparing for fundraising or need a valuation.</span>
+          </button>
+        </div>
+        <div class="diag-nav">
+          <button class="diag-back-btn" onclick="showScreen('welcome')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            Back
+          </button>
+          <button class="btn-diag-next" id="next-q1" disabled onclick="showScreen('q2')">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SCREEN 3: QUESTION 2 — Primary challenge
+  ═══════════════════════════════ -->
+  <div class="diag-screen" id="screen-q2">
+    <div class="diag-card">
+      <div class="diag-screen-card">
+        <h2 class="diag-q-heading">What is your primary goal right now?</h2>
+        <p class="diag-q-sub">Pick the one that is most urgent for you.</p>
+        <div class="diag-options" role="listbox" aria-label="Primary goal options">
+          <button class="diag-option" role="option" data-q="q2" data-val="A" onclick="selectOption(this)" aria-selected="false">
+            <span class="diag-option__title">Grow in my existing market</span>
+            <span class="diag-option__desc">I want to increase revenue, reach new customers, or strengthen my position where I already operate.</span>
+          </button>
+          <button class="diag-option" role="option" data-q="q2" data-val="B" onclick="selectOption(this)" aria-selected="false">
+            <span class="diag-option__title">Enter a new market or geography</span>
+            <span class="diag-option__desc">I want to expand into a new country, region, or industry segment.</span>
+          </button>
+          <button class="diag-option" role="option" data-q="q2" data-val="C" onclick="selectOption(this)" aria-selected="false">
+            <span class="diag-option__title">Evaluate a new business idea or opportunity</span>
+            <span class="diag-option__desc">I have a new concept or investment opportunity and want to assess if it is viable.</span>
+          </button>
+          <button class="diag-option" role="option" data-q="q2" data-val="D" onclick="selectOption(this)" aria-selected="false">
+            <span class="diag-option__title">Launch a new product or business</span>
+            <span class="diag-option__desc">I am ready to launch and need a go-to-market strategy and execution plan.</span>
+          </button>
+          <button class="diag-option" role="option" data-q="q2" data-val="E" onclick="selectOption(this)" aria-selected="false">
+            <span class="diag-option__title">Raise funds or prepare for investment</span>
+            <span class="diag-option__desc">I need a pitch book, valuation, or support finding the right investors.</span>
+          </button>
+          <button class="diag-option" role="option" data-q="q2" data-val="F" onclick="selectOption(this)" aria-selected="false">
+            <span class="diag-option__title">Use AI to improve how my business operates</span>
+            <span class="diag-option__desc">I want to embed AI into my workflows to reduce costs and deliver faster.</span>
+          </button>
+        </div>
+        <div class="diag-nav">
+          <button class="diag-back-btn" onclick="showScreen('q1')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            Back
+          </button>
+          <button class="btn-diag-next" id="next-q2" disabled onclick="showScreen('q3')">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SCREEN 4: QUESTION 3 — Geography + Timeline
+  ═══════════════════════════════ -->
+  <div class="diag-screen" id="screen-q3">
+    <div class="diag-card">
+      <div class="diag-screen-card">
+        <h2 class="diag-q-heading">A little more context</h2>
+        <p class="diag-q-sub">Two quick questions — both are needed to personalise your results.</p>
+
+        <p class="diag-q3-group-label">Which markets are you focused on?</p>
+        <div class="diag-pills" id="pills-market" role="listbox" aria-label="Target market options">
+          <button class="diag-pill" role="option" data-q="q3_market" data-val="Middle East and Gulf" onclick="selectPill(this, 'pills-market')" aria-selected="false">Middle East and Gulf</button>
+          <button class="diag-pill" role="option" data-q="q3_market" data-val="India" onclick="selectPill(this, 'pills-market')" aria-selected="false">India</button>
+          <button class="diag-pill" role="option" data-q="q3_market" data-val="Southeast Asia" onclick="selectPill(this, 'pills-market')" aria-selected="false">Southeast Asia</button>
+          <button class="diag-pill" role="option" data-q="q3_market" data-val="Europe" onclick="selectPill(this, 'pills-market')" aria-selected="false">Europe</button>
+          <button class="diag-pill" role="option" data-q="q3_market" data-val="Multiple markets" onclick="selectPill(this, 'pills-market')" aria-selected="false">Multiple markets</button>
+        </div>
+
+        <p class="diag-q3-group-label">What is your timeline?</p>
+        <div class="diag-pills" id="pills-timeline" role="listbox" aria-label="Timeline options">
+          <button class="diag-pill" role="option" data-q="q3_timeline" data-val="Immediate" onclick="selectPill(this, 'pills-timeline')" aria-selected="false">Immediate — next 4–6 weeks</button>
+          <button class="diag-pill" role="option" data-q="q3_timeline" data-val="Near term" onclick="selectPill(this, 'pills-timeline')" aria-selected="false">Near term — 3 to 6 months</button>
+          <button class="diag-pill" role="option" data-q="q3_timeline" data-val="Planning ahead" onclick="selectPill(this, 'pills-timeline')" aria-selected="false">Planning ahead — 6+ months</button>
+          <button class="diag-pill" role="option" data-q="q3_timeline" data-val="Still exploring" onclick="selectPill(this, 'pills-timeline')" aria-selected="false">Still exploring</button>
+        </div>
+
+        <div class="diag-nav">
+          <button class="diag-back-btn" onclick="showScreen('q2')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            Back
+          </button>
+          <button class="btn-diag-next" id="next-q3" disabled onclick="showScreen('lead')">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SCREEN 5: LEAD CAPTURE
+  ═══════════════════════════════ -->
+  <div class="diag-screen" id="screen-lead">
+    <div class="diag-card">
+      <div class="diag-screen-card">
+        <h2 class="diag-q-heading">Almost there. Where should we send your results?</h2>
+        <p class="diag-q-sub">Enter your details below. We will show your personalised service recommendations instantly and follow up within one business day.</p>
+        <form class="diag-form" id="diagForm" novalidate onsubmit="submitLead(event)">
+          <div class="diag-form__row">
+            <div class="diag-field">
+              <label for="diag-first-name">First name</label>
+              <input type="text" id="diag-first-name" name="firstName" required autocomplete="given-name" placeholder="e.g. Rahul" oninput="checkLeadForm()">
+            </div>
+            <div class="diag-field">
+              <label for="diag-last-name">Last name</label>
+              <input type="text" id="diag-last-name" name="lastName" required autocomplete="family-name" placeholder="e.g. Sharma" oninput="checkLeadForm()">
+            </div>
+          </div>
+          <div class="diag-field">
+            <label for="diag-email">Business email</label>
+            <input type="email" id="diag-email" name="email" required autocomplete="email" placeholder="you@company.com" oninput="checkLeadForm()">
+          </div>
+          <div class="diag-field">
+            <label for="diag-company">Company name</label>
+            <input type="text" id="diag-company" name="company" required autocomplete="organization" placeholder="Your company" oninput="checkLeadForm()">
+          </div>
+          <p class="diag-privacy">We do not share your details. You will only hear from the GreyRadius team.</p>
+          <div class="diag-nav">
+            <button type="button" class="diag-back-btn" onclick="showScreen('q3')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+              Back
+            </button>
+            <button type="submit" class="btn-diag-next" id="btn-submit" disabled>Show my recommendations →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SCREEN 6: RESULTS
+  ═══════════════════════════════ -->
+  <div class="diag-screen" id="screen-results">
+    <div class="diag-card">
+      <h2 class="diag-results__heading">Your GreyRadius diagnostic results</h2>
+      <p class="diag-results__subheading" id="results-subheading">Based on your answers, here is what we recommend.</p>
+
+      <div class="diag-summary-para" id="results-summary"></div>
+
+      <p class="diag-recs-label">Our recommendations for you</p>
+      <div id="results-cards"></div>
+
+      <p class="diag-followup">
+        Our team typically responds within one business day. You can also write to us directly at
+        <a href="mailto:sales@greyradius.com">sales@greyradius.com</a>
+      </p>
+
+      <h3 class="diag-booking-heading">Ready to move forward? Book a 30-minute call with our team — no cost, no commitment.</h3>
+      <!-- Start of Meetings Embed Script -->
+      <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/chiragbansal?embed=true"></div>
+      <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+      <!-- End of Meetings Embed Script -->
+
+      <div style="margin-top:2rem;padding-bottom:1rem;">
+        <button class="diag-back-btn" onclick="showScreen('welcome');resetDiag()" style="color:var(--diag-orange);font-weight:700;">
+          ← Start the diagnostic again
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.diag-wrapper -->
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div style="margin-bottom:3rem;">
+      <img src="assets/images/logo-footer.png" alt="GreyRadius Consulting logo" width="180" height="42" style="height:42px;width:auto;">
+      <p style="margin-top:0.875rem;font-size:var(--text-small);color:rgba(255,255,255,0.45);font-style:italic;">Strategy you can execute. Outcomes within reach.</p>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-col__heading">Offerings</p>
+        <ul class="footer-col__list">
+          <li><a href="services/opportunity-assessment.html" class="footer-col__link">Opportunity Assessment</a></li>
+          <li><a href="services/feasibility-and-tev.html" class="footer-col__link">Feasibility &amp; TEV</a></li>
+          <li><a href="services/market-entry-execution.html" class="footer-col__link">Market Entry Execution</a></li>
+          <li><a href="services/gtm-execution-as-a-service.html" class="footer-col__link">GTM Execution-as-a-Service</a></li>
+          <li><a href="services/pitchbook-and-fundraising.html" class="footer-col__link">Pitchbook &amp; Fundraising</a></li>
+          <li><a href="services/ai-consulting-and-transformation.html" class="footer-col__link">AI Consulting &amp; Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__heading">Industries</p>
+        <ul class="footer-col__list">
+          <li><a href="industries/technology.html" class="footer-col__link">Technology</a></li>
+          <li><a href="industries/bfsi.html" class="footer-col__link">BFSI</a></li>
+          <li><a href="industries/energy-and-chemicals.html" class="footer-col__link">Energy &amp; Chemicals</a></li>
+          <li><a href="industries/cpg-fmcg-retail.html" class="footer-col__link">CPG / FMCG / Retail</a></li>
+          <li><a href="industries/healthcare-and-life-sciences.html" class="footer-col__link">Healthcare &amp; LSHC</a></li>
+          <li><a href="industries/investment-banks-and-pe.html" class="footer-col__link">IB &amp; PE</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__heading">Company</p>
+        <ul class="footer-col__list">
+          <li><a href="about/" class="footer-col__link">About</a></li>
+          <li><a href="about/team.html" class="footer-col__link">Team</a></li>
+          <li><a href="about/method.html" class="footer-col__link">Our Methodologies</a></li>
+          <li><a href="about/why-greyradius.html" class="footer-col__link">Why GreyRadius</a></li>
+          <li><a href="case-studies/" class="footer-col__link">Case Studies</a></li>
+          <li><a href="insights/" class="footer-col__link">Insights</a></li>
+          <li><a href="careers.html" class="footer-col__link">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__heading">Contact</p>
+        <ul class="footer-col__list">
+          <li><span class="footer-col__link">India: Delhi</span></li>
+          <li><span class="footer-col__link">UAE: Dubai</span></li>
+          <li><span class="footer-col__link">Singapore</span></li>
+          <li><span class="footer-col__link">Belgium: Brussels</span></li>
+          <li style="margin-top:0.75rem;"><a href="mailto:sales@greyradius.com" class="footer-col__link" style="color:rgba(255,255,255,0.85);">sales@greyradius.com</a></li>
+          <li style="margin-top:0.375rem;"><a href="https://linkedin.com/company/greyradius" class="footer-col__link" target="_blank" rel="noopener noreferrer" aria-label="GreyRadius on LinkedIn">LinkedIn →</a></li>
+          <li style="margin-top:0.25rem;"><a href="https://x.com/greyradius" class="footer-col__link" target="_blank" rel="noopener noreferrer" aria-label="GreyRadius on X (Twitter)">X (Twitter) ↗</a></li>
+          <li style="margin-top:1rem;font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;"><span style="display:block;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,255,255,0.6);margin-bottom:0.25rem;">Headquarters</span>Nukleus Offices, Regal Building,<br>69 Connaught Circus, Connaught Place,<br>New Delhi 110001, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom__copy">© 2026 GreyRadius Consulting. All rights reserved.</p>
+      <div class="footer-bottom__links">
+        <a href="legal/privacy.html" class="footer-bottom__link">Privacy</a>
+        <a href="legal/terms.html" class="footer-bottom__link">Terms</a>
+        <a href="contact.html" class="footer-bottom__link">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+
+<script>
+// ── State ──────────────────────────────────────────────────────
+const answers = { q1: null, q2: null, q3_market: null, q3_timeline: null };
+const SCREENS = ['welcome','q1','q2','q3','lead','results'];
+
+// ── Screen transitions ──────────────────────────────────────────
+function showScreen(name) {
+  SCREENS.forEach(s => {
+    const el = document.getElementById('screen-' + s);
+    el.classList.remove('active','visible');
+  });
+  const target = document.getElementById('screen-' + name);
+  target.classList.add('active');
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { target.classList.add('visible'); });
+  });
+  updateProgress(name);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress(screenName) {
+  const bar = document.getElementById('diagProgress');
+  const fill = document.getElementById('diagProgressFill');
+  const label = document.getElementById('diagProgressLabel');
+  const map = { q1: 1, q2: 2, q3: 3, lead: 4 };
+  if (map[screenName]) {
+    bar.style.display = 'block';
+    const step = map[screenName];
+    fill.style.width = (step / 4 * 100) + '%';
+    label.textContent = 'Step ' + step + ' of 4';
+    bar.parentElement.querySelector('[role="progressbar"]') &&
+      (bar.querySelector('[role="progressbar"]').setAttribute('aria-valuenow', step));
+  } else {
+    bar.style.display = 'none';
+  }
+}
+
+// ── Option selection (cards) ────────────────────────────────────
+function selectOption(btn) {
+  const q = btn.dataset.q;
+  document.querySelectorAll('[data-q="' + q + '"]').forEach(b => {
+    b.classList.remove('selected');
+    b.setAttribute('aria-selected','false');
+  });
+  btn.classList.add('selected');
+  btn.setAttribute('aria-selected','true');
+  answers[q] = btn.dataset.val;
+  const nextBtn = document.getElementById('next-' + q);
+  if (nextBtn) nextBtn.disabled = false;
+}
+
+// ── Pill selection ──────────────────────────────────────────────
+function selectPill(pill, groupId) {
+  const group = document.getElementById(groupId);
+  group.querySelectorAll('.diag-pill').forEach(p => {
+    p.classList.remove('selected');
+    p.setAttribute('aria-selected','false');
+  });
+  pill.classList.add('selected');
+  pill.setAttribute('aria-selected','true');
+  answers[pill.dataset.q] = pill.dataset.val;
+  checkQ3Next();
+}
+
+function checkQ3Next() {
+  const btn = document.getElementById('next-q3');
+  btn.disabled = !(answers.q3_market && answers.q3_timeline);
+}
+
+// ── Lead form validation ────────────────────────────────────────
+function isValidEmail(e) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+}
+function checkLeadForm() {
+  const fn = document.getElementById('diag-first-name').value.trim();
+  const ln = document.getElementById('diag-last-name').value.trim();
+  const em = document.getElementById('diag-email').value.trim();
+  const co = document.getElementById('diag-company').value.trim();
+  document.getElementById('btn-submit').disabled = !(fn && ln && isValidEmail(em) && co);
+}
+
+// ── Submit & show results ───────────────────────────────────────
+async function submitLead(e) {
+  e.preventDefault();
+  const firstName = document.getElementById('diag-first-name').value.trim();
+  const lastName  = document.getElementById('diag-last-name').value.trim();
+  const email     = document.getElementById('diag-email').value.trim();
+  const company   = document.getElementById('diag-company').value.trim();
+
+  // Fire-and-forget POST
+  fetch('/api/diagnostic-leads', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ firstName, lastName, email, company, answers: { ...answers } })
+  }).catch(err => console.error('Diagnostic lead submission failed:', err));
+
+  renderResults(firstName);
+  showScreen('results');
+}
+
+// ── Recommendation engine ───────────────────────────────────────
+const SERVICES = {
+  OA:  { name: 'Opportunity Assessment',       tagline: 'Validate before you invest',                link: '/services/opportunity-assessment.html' },
+  FEA: { name: 'Feasibility and TEV',          tagline: 'Know if it will work before you build it',  link: '/services/feasibility-and-tev.html' },
+  MEE: { name: 'Market Entry Execution',       tagline: 'Enter new markets with a clear roadmap',    link: '/services/market-entry-execution.html' },
+  GTM: { name: 'GTM Execution as a Service',  tagline: 'Launch and grow with an embedded GTM team', link: '/services/gtm-execution-as-a-service.html' },
+  PB:  { name: 'Pitch Book and Fundraising',  tagline: 'Raise with confidence',                     link: '/services/pitchbook-and-fundraising.html' },
+  AI:  { name: 'AI Consulting and Transformation', tagline: 'Deliver faster and smarter with AI',   link: '/services/ai-consulting-and-transformation.html' }
+};
+
+function getRecommendations(q1, q2, q3_market, q3_timeline) {
+  const isImmediate = q3_timeline === 'Immediate';
+  const isNearTerm  = q3_timeline === 'Near term';
+  let recs = [];
+
+  if (q2 === 'E') {
+    // Rule Group 1: Fundraising
+    recs.push({ ...SERVICES.PB, urgent: isImmediate, desc: buildDesc(q1, q2, 'A pitch book built to close rounds, backed by investor interviews and a structured data room — tailored for your stage and market.') });
+    if (q1 === 'A' || q1 === 'B')
+      recs.push({ ...SERVICES.OA, desc: buildDesc(q1, q2, 'Ground your fundraising narrative in verified market data and competitive intelligence that investors trust.') });
+    else
+      recs.push({ ...SERVICES.FEA, desc: buildDesc(q1, q2, 'A bankable feasibility model that gives investors the financial rigour they need to commit.') });
+  } else if (q2 === 'B') {
+    // Rule Group 2: New market entry
+    recs.push({ ...SERVICES.MEE, urgent: isImmediate, desc: buildDesc(q1, q2, 'End-to-end market entry execution — entity setup, regulatory navigation, channel partnerships, and first-customer acquisition managed by our team.') });
+    recs.push({ ...SERVICES.OA, desc: buildDesc(q1, q2, 'Validate demand, map competition, and get a clear go / defer / kill recommendation before committing capital to a new geography.') });
+    if (isImmediate || isNearTerm)
+      recs.push({ ...SERVICES.GTM, desc: buildDesc(q1, q2, 'We run the first 90 days of your GTM motion in the new market — ICP definition, outbound sequences, and pipeline reviews.') });
+  } else if (q2 === 'C') {
+    // Rule Group 3: Evaluate new idea
+    recs.push({ ...SERVICES.OA, urgent: isImmediate, desc: buildDesc(q1, q2, '30+ buyer interviews, competitive maps, and a clear go / defer / kill recommendation — so you invest with conviction or move on fast.') });
+    recs.push({ ...SERVICES.FEA, desc: buildDesc(q1, q2, 'Demand validation and unit economics that tell you whether the idea is commercially viable before you build.') });
+    if (q1 === 'D')
+      recs.push({ ...SERVICES.PB, desc: buildDesc(q1, q2, 'If the assessment supports the opportunity, we can take you straight into an investor-ready narrative and fundraising campaign.') });
+  } else if (q2 === 'D') {
+    // Rule Group 4: Launch new product/business
+    recs.push({ ...SERVICES.GTM, urgent: isImmediate, desc: buildDesc(q1, q2, 'We own the first 90 days of your launch — ICP definition, outbound sequences, partner onboarding, and pipeline reviews.') });
+    if (q3_market !== 'India')
+      recs.push({ ...SERVICES.MEE, desc: buildDesc(q1, q2, 'If your launch involves a new geography, we handle entity setup, regulatory navigation, and first-customer acquisition end-to-end.') });
+    if (q1 === 'A')
+      recs.push({ ...SERVICES.OA, desc: buildDesc(q1, q2, 'Before you launch, make sure you have validated demand and a clear read on the competitive landscape in your target market.') });
+  } else if (q2 === 'A') {
+    // Rule Group 5: Grow existing market
+    recs.push({ ...SERVICES.GTM, urgent: isImmediate, desc: buildDesc(q1, q2, 'We embed into your team and run the GTM motion — ICP refinement, outbound, partner onboarding, and 30/60/90-day pipeline management.') });
+    recs.push({ ...SERVICES.OA, desc: buildDesc(q1, q2, 'Identify white-space opportunities in your existing market through 30+ buyer interviews and a structured competitive intelligence exercise.') });
+    if (isImmediate)
+      recs.push({ ...SERVICES.AI, desc: buildDesc(q1, q2, 'Embed AI into your sales and delivery workflows to compress cycle times and reduce cost-to-serve — with a live pilot in 4–6 weeks.') });
+  } else if (q2 === 'F') {
+    // Rule Group 6: AI
+    recs.push({ ...SERVICES.AI, urgent: isImmediate, desc: buildDesc(q1, q2, 'Use-case prioritisation, vendor selection, and a live pilot in 4–6 weeks — grounded in your specific workflows, not generic AI frameworks.') });
+    recs.push({ ...SERVICES.GTM, desc: buildDesc(q1, q2, 'Combine AI-enabled operations with a sharper GTM motion to grow faster and at lower cost.') });
+    recs.push({ ...SERVICES.OA, desc: buildDesc(q1, q2, 'Identify which AI-enabled opportunities in your market represent the highest return before committing to a build.') });
+  }
+
+  // Rule Group 7: Investment stage + non-fundraising
+  if (q1 === 'D' && q2 !== 'E' && !recs.find(r => r.name === SERVICES.PB.name)) {
+    recs.push({ ...SERVICES.PB, desc: 'As an investment-stage business, a rigorous pitch book and investor introduction programme is a natural parallel track to your primary goal.' });
+  }
+
+  // Cap at 3
+  return recs.slice(0, 3);
+}
+
+function buildDesc(q1, q2, text) { return text; }
+
+// ── Personalised summary ────────────────────────────────────────
+const Q1_COPY = {
+  A: 'an early-stage business still validating your market',
+  B: 'a growth-stage business ready to scale',
+  C: 'an established business exploring new opportunities',
+  D: 'an investment-ready business preparing to raise'
+};
+const Q2_COPY = {
+  A: 'growing your existing market presence',
+  B: 'entering a new market or geography',
+  C: 'evaluating a new business idea',
+  D: 'launching a new product or business',
+  E: 'preparing for fundraising',
+  F: 'embedding AI into your operations'
+};
+
+function buildSummary(firstName, q1, q2, q3_market, q3_timeline) {
+  const isImmediate = q3_timeline === 'Immediate';
+  return `Based on your situation as ${Q1_COPY[q1] || 'your business'} focused on ${Q2_COPY[q2] || 'your primary goal'} in ${q3_market}${isImmediate ? ', with an immediate timeline' : ''}, here is what our team recommends. ${getChallengeCopy(q2)}`;
+}
+
+function getChallengeCopy(q2) {
+  const copy = {
+    A: 'Sustained growth in an existing market requires both sharper GTM execution and validated intelligence on where the real upside lies.',
+    B: 'Successful market entry is built on primary research, local relationships, and a team that owns execution — not just a strategy slide.',
+    C: 'A rigorous opportunity assessment saves you months of internal debate and protects capital by grounding the decision in real buyer and market data.',
+    D: 'A successful launch requires both a validated market view and a GTM team that can own the first 90 days of pipeline development.',
+    E: 'The most successful fundraising rounds are backed by verified market data and investor-tested narratives — not just a well-designed deck.',
+    F: 'The highest-ROI AI implementations start with use-case prioritisation against your actual workflows, not generic AI transformation playbooks.'
+  };
+  return copy[q2] || '';
+}
+
+// ── Render results ──────────────────────────────────────────────
+function renderResults(firstName) {
+  const { q1, q2, q3_market, q3_timeline } = answers;
+  const recs = getRecommendations(q1, q2, q3_market, q3_timeline);
+
+  document.getElementById('results-subheading').textContent =
+    `Based on your answers, here is what we recommend for ${firstName}'s business.`;
+  document.getElementById('results-summary').textContent =
+    buildSummary(firstName, q1, q2, q3_market, q3_timeline);
+
+  const container = document.getElementById('results-cards');
+  container.innerHTML = '';
+  recs.forEach(rec => {
+    const card = document.createElement('div');
+    card.className = 'diag-rec-card';
+    card.innerHTML = `
+      ${rec.urgent ? '<div class="diag-rec-card__urgent">Recommended for immediate action</div>' : ''}
+      <div class="diag-rec-card__body">
+        <p class="diag-rec-card__name">${rec.name}</p>
+        <p class="diag-rec-card__tagline">${rec.tagline}</p>
+        <p class="diag-rec-card__desc">${rec.desc}</p>
+        <a href="${rec.link}" class="diag-rec-card__link">Learn more →</a>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+// ── Reset ───────────────────────────────────────────────────────
+function resetDiag() {
+  answers.q1 = answers.q2 = answers.q3_market = answers.q3_timeline = null;
+  document.querySelectorAll('.diag-option').forEach(b => {
+    b.classList.remove('selected');
+    b.setAttribute('aria-selected','false');
+  });
+  document.querySelectorAll('.diag-pill').forEach(p => {
+    p.classList.remove('selected');
+    p.setAttribute('aria-selected','false');
+  });
+  ['next-q1','next-q2','next-q3','btn-submit'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.disabled = true;
+  });
+  document.getElementById('diagForm').reset();
+}
+
+// Init first screen
+showScreen('welcome');
+</script>
+
+</body>
+</html>
