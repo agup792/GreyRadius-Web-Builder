@@ -40,19 +40,33 @@ async function pushToHubSpot(
   }
 
   try {
+    const q1Labels: Record<string, string> = {
+      A: "Early stage — validating the market",
+      B: "Growth stage — ready to scale",
+      C: "Established — exploring new opportunities",
+      D: "Investment stage — preparing to raise",
+    };
+    const q2Labels: Record<string, string> = {
+      A: "Grow in existing market",
+      B: "Enter a new market or geography",
+      C: "Evaluate a new business idea",
+      D: "Launch a new product or business",
+      E: "Raise funds or prepare for investment",
+      F: "Use AI to improve operations",
+    };
     const body = {
       properties: {
         firstname: lead.firstName,
         lastname: lead.lastName,
         email: lead.email,
         company: lead.company,
-        hs_lead_status: "NEW",
-        // Store diagnostic answers as HubSpot notes-friendly fields
-        // using custom properties named after the diagnostic
-        gr_diagnostic_q1: lead.q1,
-        gr_diagnostic_q2: lead.q2,
-        gr_diagnostic_market: lead.q3Market,
-        gr_diagnostic_timeline: lead.q3Timeline,
+        message: [
+          "GreyRadius Business Diagnostic",
+          `Business Stage: ${q1Labels[lead.q1] ?? lead.q1}`,
+          `Primary Goal: ${q2Labels[lead.q2] ?? lead.q2}`,
+          `Target Market: ${lead.q3Market}`,
+          `Timeline: ${lead.q3Timeline}`,
+        ].join("\n"),
       },
     };
 
