@@ -54,6 +54,17 @@
       "postalCode": "110001",
       "addressCountry": "IN"
     },
+    "location": {
+      "@type": "Place",
+      "name": "GreyRadius Consulting – Headquarters",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Nukleus Offices, Regal Building, 69, Connaught Circus, Connaught Place",
+        "addressLocality": "New Delhi",
+        "postalCode": "110001",
+        "addressCountry": "IN"
+      }
+    },
     "areaServed": ["India", "UAE", "Singapore", "Belgium", "GCC", "Southeast Asia", "EMEA"]
   },
   {
@@ -162,11 +173,26 @@
         <p class="location-card__detail">Regional hub &ndash; market entry, GTM, and feasibility mandates across the Gulf and wider Middle East.</p>
       </div>
       <div class="location-card">
-        <div class="location-card__flag" aria-hidden="true">&#x1F1EE;&#x1F1F3;</div>
+        <div style="display:flex;align-items:center;gap:0.625rem;margin-bottom:0.5rem;">
+          <div class="location-card__flag" aria-hidden="true" style="margin-bottom:0;">&#x1F1EE;&#x1F1F3;</div>
+          <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff;background:var(--color-orange);padding:0.2rem 0.5rem;border-radius:2rem;">Headquarters</span>
+        </div>
         <h3 class="location-card__city">Delhi</h3>
         <p class="location-card__country">South Asia Office</p>
         <p class="location-card__detail">Delivery centre &ndash; primary research, opportunity assessment, and South Asia engagements.</p>
         <p class="location-card__address" style="margin-top:0.75rem;font-size:var(--text-small);color:var(--color-text-muted);line-height:1.5;">Nukleus Offices, Regal Building<br>69 Connaught Circus, Connaught Place<br>New Delhi 110001</p>
+        <div style="margin-top:1rem;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--color-border);">
+          <iframe
+            src="https://maps.google.com/maps?q=Regal+Building+69+Connaught+Circus+Connaught+Place+New+Delhi+110001&output=embed&z=16"
+            width="100%"
+            height="180"
+            style="border:0;display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="GreyRadius Delhi headquarters on Google Maps"
+            aria-label="Map showing GreyRadius Delhi office at Nukleus Offices, Regal Building, Connaught Place"></iframe>
+        </div>
       </div>
       <div class="location-card">
         <div class="location-card__flag" aria-hidden="true">&#x1F1F8;&#x1F1EC;</div>
