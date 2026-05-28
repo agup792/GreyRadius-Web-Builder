@@ -439,6 +439,103 @@
     @media (max-width: 480px) {
       .diag-screen-card { padding: 1.5rem 1.25rem 1rem; }
     }
+    /* ── Personalised thank-you popup ── */
+    .diag-popup-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,31,63,0.55);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .diag-popup-backdrop.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .diag-popup {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem 2rem;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 24px 64px rgba(15,31,63,0.22);
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;
+      opacity: 0;
+      position: relative;
+    }
+    .diag-popup-backdrop.is-open .diag-popup {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    .diag-popup__icon {
+      width: 64px;
+      height: 64px;
+      background: #fff5f0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 2rem;
+    }
+    .diag-popup__name {
+      font-family: Montserrat, sans-serif;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      font-weight: 800;
+      color: var(--diag-navy);
+      margin-bottom: 0.75rem;
+    }
+    .diag-popup__msg {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.95rem;
+      color: #4a5568;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+    }
+    .diag-popup__msg strong {
+      color: var(--diag-navy);
+    }
+    .diag-popup__cta {
+      display: inline-block;
+      background: var(--diag-orange);
+      color: #fff;
+      font-family: Montserrat, sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.75rem 2rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .diag-popup__cta:hover {
+      background: #c8532a;
+      transform: translateY(-1px);
+    }
+    .diag-popup__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #9aa5b4;
+      font-size: 1.25rem;
+      line-height: 1;
+      padding: 0.25rem;
+      transition: color 0.15s;
+    }
+    .diag-popup__close:hover { color: var(--diag-navy); }
   </style>
 </head>
 <body>
@@ -735,6 +832,19 @@
 
 </div><!-- /.diag-wrapper -->
 
+<!-- ── Personalised thank-you popup ── -->
+<div class="diag-popup-backdrop" id="diagThankYouBackdrop" role="dialog" aria-modal="true" aria-labelledby="diagPopupTitle">
+  <div class="diag-popup">
+    <button class="diag-popup__close" onclick="closeThankYouPopup()" aria-label="Close">✕</button>
+    <div class="diag-popup__icon">🤝</div>
+    <p class="diag-popup__name" id="diagPopupTitle">Hi, <span id="diagPopupName">there</span>!</p>
+    <p class="diag-popup__msg">
+      Your results are ready above. Our <strong>GreyRadius expert team</strong> will review your diagnostic and reach out to you within <strong>24 hours</strong> to walk through the recommendations and support wherever needed.
+    </p>
+    <button class="diag-popup__cta" onclick="closeThankYouPopup()">Got it, thanks!</button>
+  </div>
+</div>
+
 </main>
 
 <!-- ============================================================
@@ -906,7 +1016,25 @@ async function submitLead(e) {
 
   renderResults(firstName);
   showScreen('results');
+  // Show personalised thank-you popup after a short delay
+  setTimeout(() => showThankYouPopup(firstName), 1200);
 }
+
+function showThankYouPopup(firstName) {
+  document.getElementById('diagPopupName').textContent = firstName || 'there';
+  const backdrop = document.getElementById('diagThankYouBackdrop');
+  backdrop.classList.add('is-open');
+  backdrop.focus();
+}
+
+function closeThankYouPopup() {
+  document.getElementById('diagThankYouBackdrop').classList.remove('is-open');
+}
+
+// Close on backdrop click
+document.getElementById('diagThankYouBackdrop').addEventListener('click', function(e) {
+  if (e.target === this) closeThankYouPopup();
+});
 
 // ── Recommendation engine ───────────────────────────────────────
 const SERVICES = {
