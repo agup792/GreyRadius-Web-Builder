@@ -716,6 +716,14 @@
             <span class="diag-option__title">Use AI to improve how my business operates</span>
             <span class="diag-option__desc">I want to embed AI into my workflows to reduce costs and deliver faster.</span>
           </button>
+          <button class="diag-option" role="option" data-q="q2" data-val="G" onclick="selectOption(this)" aria-selected="false">
+            <span class="diag-option__title">Something else — describe my situation</span>
+            <span class="diag-option__desc">My challenge is different. I'll describe it in a few words so the team understands my context.</span>
+          </button>
+        </div>
+        <div id="q2-other-wrap" style="display:none;margin-top:0.75rem;">
+          <label for="q2-other-text" style="font-family:Montserrat,sans-serif;font-size:0.82rem;font-weight:700;color:var(--diag-navy);display:block;margin-bottom:0.4rem;">Briefly describe your business challenge or goal</label>
+          <textarea id="q2-other-text" rows="3" placeholder="e.g. We're a logistics company looking to understand if there's demand for a new B2B service in Southeast Asia…" oninput="onOtherTextInput()" style="font-family:Montserrat,sans-serif;font-size:0.88rem;width:100%;box-sizing:border-box;border:2px solid var(--diag-border);border-radius:6px;padding:0.65rem 0.9rem;color:var(--diag-navy);background:var(--diag-white);resize:vertical;min-height:80px;outline:none;transition:border-color 0.15s;"></textarea>
         </div>
         <div class="diag-nav">
           <button class="diag-back-btn" onclick="showScreen('q1')">
@@ -966,8 +974,31 @@ function selectOption(btn) {
   btn.classList.add('selected');
   btn.setAttribute('aria-selected','true');
   answers[q] = btn.dataset.val;
+
+  // Show / hide the free-text field for Q2 "Something else"
+  if (q === 'q2') {
+    const wrap = document.getElementById('q2-other-wrap');
+    const ta   = document.getElementById('q2-other-text');
+    const nextBtn = document.getElementById('next-q2');
+    if (btn.dataset.val === 'G') {
+      wrap.style.display = 'block';
+      ta.focus();
+      nextBtn.disabled = ta.value.trim().length === 0;
+      return; // don't enable Next until they type something
+    } else {
+      wrap.style.display = 'none';
+      ta.value = '';
+    }
+  }
+
   const nextBtn = document.getElementById('next-' + q);
   if (nextBtn) nextBtn.disabled = false;
+}
+
+function onOtherTextInput() {
+  const ta = document.getElementById('q2-other-text');
+  const nextBtn = document.getElementById('next-q2');
+  nextBtn.disabled = ta.value.trim().length === 0;
 }
 
 // ── Pill selection ──────────────────────────────────────────────
@@ -1009,10 +1040,15 @@ async function submitLead(e) {
   const company   = document.getElementById('diag-company').value.trim();
 
   // Fire-and-forget POST
+  // Include free-text for "Something else" option
+  const otherText = answers.q2 === 'G'
+    ? document.getElementById('q2-other-text').value.trim()
+    : '';
+
   fetch('/api/diagnostic-leads', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ firstName, lastName, email, company, answers: { ...answers } })
+    body: JSON.stringify({ firstName, lastName, email, company, answers: { ...answers, q2OtherText: otherText || undefined } })
   }).catch(err => console.error('Diagnostic lead submission failed:', err));
 
   renderResults(firstName);
@@ -1089,6 +1125,13 @@ function getRecommendations(q1, q2, q3_market, q3_timeline) {
     recs.push({ ...SERVICES.AI, urgent: isImmediate, desc: buildDesc(q1, q2, 'Use-case prioritisation, vendor selection, and a live pilot in 4–6 weeks — grounded in your specific workflows, not generic AI frameworks.') });
     recs.push({ ...SERVICES.GTM, desc: buildDesc(q1, q2, 'Combine AI-enabled operations with a sharper GTM motion to grow faster and at lower cost.') });
     recs.push({ ...SERVICES.OA, desc: buildDesc(q1, q2, 'Identify which AI-enabled opportunities in your market represent the highest return before committing to a build.') });
+  } else if (q2 === 'G') {
+    // Rule Group 7: Custom / other — start with a structured assessment
+    recs.push({ ...SERVICES.OA, urgent: isImmediate, desc: 'Whatever the specific challenge, a structured opportunity assessment is almost always the right first step — it validates the problem, maps the landscape, and surfaces the clearest path forward.' });
+    if (q1 === 'A' || q1 === 'B')
+      recs.push({ ...SERVICES.GTM, desc: 'If your challenge involves reaching new customers or scaling revenue, an embedded GTM team can own the execution while you focus on the business.' });
+    else
+      recs.push({ ...SERVICES.FEA, desc: 'A rigorous feasibility study will stress-test your assumptions, model the financials, and give you a clear go/no-go recommendation before committing resources.' });
   }
 
   // Rule Group 7: Investment stage + non-fundraising
@@ -1115,7 +1158,8 @@ const Q2_COPY = {
   C: 'evaluating a new business idea',
   D: 'launching a new product or business',
   E: 'preparing for fundraising',
-  F: 'embedding AI into your operations'
+  F: 'embedding AI into your operations',
+  G: 'your specific business challenge'
 };
 
 function buildSummary(firstName, q1, q2, q3_market, q3_timeline) {
@@ -1130,7 +1174,8 @@ function getChallengeCopy(q2) {
     C: 'A rigorous opportunity assessment saves you months of internal debate and protects capital by grounding the decision in real buyer and market data.',
     D: 'A successful launch requires both a validated market view and a GTM team that can own the first 90 days of pipeline development.',
     E: 'The most successful fundraising rounds are backed by verified market data and investor-tested narratives — not just a well-designed deck.',
-    F: 'The highest-ROI AI implementations start with use-case prioritisation against your actual workflows, not generic AI transformation playbooks.'
+    F: 'The highest-ROI AI implementations start with use-case prioritisation against your actual workflows, not generic AI transformation playbooks.',
+    G: 'Whatever your specific situation, the right starting point is almost always a structured assessment — to validate the opportunity, understand the market, and build a clear action plan.'
   };
   return copy[q2] || '';
 }
