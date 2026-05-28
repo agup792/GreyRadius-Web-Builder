@@ -2474,6 +2474,16 @@ details[open] .faq-icon { transform: rotate(45deg); }
 }
 
 /* ── Floating Diagnostic Side Tab ─────────────────────────────────── */
+.diag-nav-btn {
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+.diag-nav-btn:hover {
+  background: var(--color-accent) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(232,105,58,0.3);
+  transform: translateY(-1px);
+}
+
 .diag-float {
   position: fixed;
   right: 0;
