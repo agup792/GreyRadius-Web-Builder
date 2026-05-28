@@ -1,0 +1,459 @@
+Create a new industry page called 
+`industries/real-estate-and-infrastructure.html`
+for the GreyRadius Consulting website.
+
+The page must match the existing site's visual identity 
+exactly: navy #1B2A4A, orange #E8612C, white #FFFFFF, 
+same fonts, same header navigation, same footer.
+Use the exact same HTML structure, CSS classes, and 
+component patterns used on existing industry pages 
+such as industries/bfsi.html and industries/technology.html.
+Do not invent new layout patterns — mirror the existing 
+industry page structure throughout.
+
+---
+
+## META TAGS
+
+<title>Real Estate and Infrastructure Consulting | 
+Market Entry, Feasibility & GTM | GreyRadius</title>
+
+<meta name="description" content="GreyRadius helps 
+real estate developers, infrastructure companies, 
+and proptech firms with market entry, feasibility 
+studies, GTM strategy, and fundraising — grounded 
+in primary research across the Gulf, Southeast Asia, 
+and South Asia.">
+
+Add JSON-LD schema in <head>:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Real Estate and Infrastructure Consulting",
+  "serviceType": "Strategy and Growth Consulting",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "GreyRadius Consulting",
+    "url": "https://greyradius.com"
+  },
+  "areaServed": [
+    "Middle East", "South Asia", 
+    "Southeast Asia", "Europe"
+  ],
+  "description": "Market entry, feasibility, GTM 
+  execution, and fundraising advisory for real estate 
+  developers, infrastructure companies, and proptech 
+  firms across the Gulf and wider region."
+}
+</script>
+
+---
+
+## SECTION 1: HERO
+
+H1: "Real estate and infrastructure consulting"
+
+Tagline (styled as hero subheadline, orange accent):
+"From market entry to project launch – strategy 
+grounded in on-ground intelligence."
+
+Body paragraph:
+"The real estate and infrastructure sector across the 
+Gulf and wider region is undergoing its fastest 
+transformation in a generation. New developments, 
+mega-projects, regulatory shifts, and evolving buyer 
+demand are creating both significant opportunity and 
+compressed decision windows. GreyRadius helps 
+developers, investors, operators, and service providers 
+navigate this landscape – with primary research, 
+execution-ready strategy, and AI-accelerated delivery."
+
+Two CTA buttons (match existing industry page CTA style):
+Primary: "Start a conversation" → /contact.html
+Secondary: "Get a free business diagnostic →" 
+→ /business-diagnostic.html
+
+---
+
+## SECTION 2: MARKET CONTEXT
+
+Section heading: "Why real estate and infrastructure 
+clients come to us"
+
+Three stat blocks in a horizontal row 
+(match existing stat block component style):
+
+Block 1:
+Stat: "USD 45B+"
+Label: "Projected size of the Gulf commercial real 
+estate market by 2030"
+Body: "The region's real estate sector is expanding 
+at over 10% annually, driven by infrastructure 
+investment, economic diversification, and foreign 
+ownership reform. Timing market entry correctly is 
+the difference between first-mover advantage and 
+expensive catch-up."
+
+Block 2:
+Stat: "80%"
+Label: "Of our insights sourced from primary research"
+Body: "We do not rely on published market reports 
+alone. We speak directly to developers, investors, 
+regulators, channel partners, and end-buyers to give 
+you an accurate picture of what is actually happening 
+in the market."
+
+Block 3:
+Stat: "3x"
+Label: "Faster delivery through AI-augmented workflows"
+Body: "AI handles research synthesis, financial 
+modelling, and competitive mapping. Our consultants 
+focus on primary conversations and execution. 
+Clients get sharper output in a fraction of the time."
+
+---
+
+## SECTION 3: CHALLENGES WE SOLVE
+
+Section heading: "The challenges we solve for real 
+estate and infrastructure businesses"
+
+Six cards in a 2-column grid (match existing 
+challenge card component style). Each card has 
+a bold heading and a short body paragraph:
+
+Card 1:
+Heading: "New market or geography entry"
+Body: "You are a developer, contractor, or service 
+provider looking to enter a new country or city. 
+You need to understand regulatory pathways, demand 
+dynamics, competitive density, and the right 
+go-to-market approach before committing capital."
+
+Card 2:
+Heading: "Project or investment feasibility"
+Body: "You have a site, a concept, or an investment 
+thesis. You need a rigorous feasibility study covering 
+demand validation, financial modelling, pricing 
+benchmarks, and a clear go/no-go recommendation 
+before committing to execution."
+
+Card 3:
+Heading: "Investor readiness and fundraising"
+Body: "You are preparing to raise capital for a 
+development project or real estate venture. You need 
+a credible pitch book, market-validated assumptions, 
+and a financial model that withstands institutional 
+scrutiny."
+
+Card 4:
+Heading: "GTM for real estate products and services"
+Body: "You provide a product or service to the real 
+estate sector – proptech, construction materials, 
+FM services, smart building solutions – and need a 
+structured go-to-market plan to acquire your first 
+clients or scale in a new market."
+
+Card 5:
+Heading: "Competitive intelligence"
+Body: "You need to understand how competitors are 
+positioning, pricing, and winning deals in your 
+target segment – residential, commercial, industrial, 
+or mixed-use – to sharpen your own strategy."
+
+Card 6:
+Heading: "Opportunity identification"
+Body: "You are evaluating whether a new asset class, 
+geography, or product category is worth pursuing. 
+You need a structured opportunity assessment with 
+TAM/SAM/SOM sizing, buyer intelligence, and a 
+prioritized recommendation."
+
+---
+
+## SECTION 4: SERVICES FOR THIS SECTOR
+
+Section heading: "How GreyRadius works with real 
+estate and infrastructure clients"
+
+Five service blocks in a vertical list layout 
+(match existing industry services list component).
+Each block: service name as H3, orange left border 
+accent, short sector-specific description, 
+"Learn more →" link to the service page.
+
+Service 1:
+Name: "Opportunity Assessment and Market Validation"
+Link: /services/opportunity-assessment.html
+Description: "Validate demand for a new development, 
+asset class, or geography before committing capital. 
+Covers market sizing, buyer segmentation, competitor 
+mapping, and a Go/Defer/Kill recommendation – 
+grounded in 30+ primary interviews with investors, 
+developers, end-buyers, and regulators."
+
+Service 2:
+Name: "Feasibility and TEV"
+Link: /services/feasibility-and-tev.html
+Description: "Full financial and operational 
+feasibility for development projects, infrastructure 
+investments, and real estate ventures. Covers demand 
+analysis, pricing benchmarks, cost structure, revenue 
+model, regulatory pathway, and ROI projections."
+
+Service 3:
+Name: "Market Entry Execution"
+Link: /services/market-entry-execution.html
+Description: "End-to-end market entry support for 
+developers, contractors, and service providers 
+entering new geographies. Entity structure, 
+regulatory pathway, partner identification, 
+ICP definition, and a 90-day execution roadmap."
+
+Service 4:
+Name: "GTM Execution as a Service"
+Link: /services/gtm-execution-as-a-service.html
+Description: "Embedded GTM team for proptech 
+companies, construction material suppliers, FM 
+service providers, and smart building solution 
+vendors. Channel strategy, sales enablement, 
+pipeline development, and first-revenue 
+milestone tracking."
+
+Service 5:
+Name: "Pitch Book and Fundraising"
+Link: /services/pitchbook-and-fundraising.html
+Description: "Investor-ready pitch books for 
+development projects, real estate funds, and 
+proptech ventures. Primary-research-grounded 
+market sizing, financial model, investment 
+narrative, and investor identification support 
+across the Gulf, Southeast Asia, and South Asia."
+
+---
+
+## SECTION 5: WHO WE WORK WITH
+
+Section heading: "Who we work with in this sector"
+
+Six buyer type cards in a 3-column grid 
+(icon + bold label, match existing who-we-work-with 
+component style):
+
+- Real estate developers and landowners
+- Infrastructure and construction companies
+- Proptech and smart building solution providers
+- Real estate investment firms and family offices
+- Construction materials and FM service providers
+- Government and quasi-government real estate entities
+
+Use relevant outline icons from the existing icon 
+library already used on the site. If no matching 
+icons exist, use simple SVG placeholder icons 
+in navy.
+
+---
+
+## SECTION 6: CASE SNAPSHOT
+
+Section heading: "What execution looks like 
+in this sector"
+
+One case snapshot block (match existing case 
+snapshot component style if it exists on other 
+industry pages, otherwise match the case study 
+card style from case-studies pages):
+
+Label tag: "Case snapshot"
+Industry tag: "Real estate and destination 
+development"
+Geography tag: "Gulf region"
+
+Heading: "Market entry and destination development 
+strategy for a mixed-use real estate group"
+
+Four rows (label + content):
+What we did: "Primary research across investors, 
+government stakeholders, and end-buyers. Competitive 
+landscape mapping across comparable destination 
+developments. Feasibility assessment covering demand 
+drivers, pricing benchmarks, and financial viability. 
+Market entry roadmap with regulatory pathway and 
+partner identification."
+
+Outcome: "Decision-ready strategy with a phased 
+entry roadmap and investor-ready financial model 
+delivered in six weeks."
+
+CTA below the case block:
+"See more case studies →" → /case-studies/index.html
+
+---
+
+## SECTION 7: FAQ
+
+Section heading: "Frequently asked questions"
+
+Use the same FAQ component style (collapsible or 
+static) used on other pages. If no FAQ component 
+exists yet, build a simple accordion using the 
+site's existing CSS variables.
+
+Four FAQ items:
+
+Q1: "Does GreyRadius work with real estate 
+developers directly or only with service providers?"
+A1: "Both. We work with developers, investors, and 
+landowners on feasibility and market entry, and with 
+companies that sell products or services into the 
+real estate sector on GTM strategy and market entry."
+
+Q2: "What does a real estate feasibility study cover?"
+A2: "Our feasibility studies cover demand validation 
+through primary buyer research, competitive 
+benchmarking, pricing analysis, regulatory pathway, 
+cost structure, revenue model, and a full financial 
+model with ROI projections. We do not rely on 
+published market reports alone."
+
+Q3: "How long does a market entry engagement take 
+for a real estate company?"
+A3: "Typically 6–10 weeks for the full research, 
+strategy, and execution planning phase. 
+Feasibility studies typically take 4–6 weeks."
+
+Q4: "Do you work on projects outside the Gulf?"
+A4: "Yes. While the Gulf is a primary focus, we run 
+mandates across Southeast Asia, South Asia, and 
+Europe for clients in the real estate and 
+infrastructure sector."
+
+Add JSON-LD FAQPage schema for these four questions 
+inside a second <script type='application/ld+json'> 
+block in the <head>:
+
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does GreyRadius work with real estate 
+      developers directly or only with service 
+      providers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. We work with developers, 
+        investors, and landowners on feasibility 
+        and market entry, and with companies that 
+        sell products or services into the real 
+        estate sector on GTM strategy and 
+        market entry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a real estate feasibility 
+      study cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our feasibility studies cover demand 
+        validation through primary buyer research, 
+        competitive benchmarking, pricing analysis, 
+        regulatory pathway, cost structure, revenue 
+        model, and a full financial model with ROI 
+        projections."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a market entry engagement 
+      take for a real estate company?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typically 6–10 weeks for the full 
+        research, strategy, and execution planning 
+        phase. Feasibility studies typically take 
+        4–6 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work on projects outside 
+      the Gulf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. While the Gulf is a primary 
+        focus, we run mandates across Southeast Asia, 
+        South Asia, and Europe for clients in the 
+        real estate and infrastructure sector."
+      }
+    }
+  ]
+}
+
+---
+
+## SECTION 8: BOTTOM CTA STRIP
+
+Match the existing bottom CTA strip component 
+used on other industry pages.
+
+Heading: "Ready to explore your real estate 
+or infrastructure opportunity?"
+
+Subtext: "Tell us about your mandate. Our team 
+responds within one business day."
+
+Button: "Start a conversation" → /contact.html
+
+---
+
+## NAVIGATION AND LINKING UPDATES
+
+1. Add "Real Estate and Infrastructure" as a link 
+   in the Industries dropdown navigation menu, 
+   pointing to 
+   /industries/real-estate-and-infrastructure.html
+   Position it after the existing industry links 
+   in alphabetical or logical order.
+
+2. On the industries index page 
+   (industries/index.html), add a new industry 
+   card for Real Estate and Infrastructure 
+   matching the style of existing industry cards. 
+   Card content:
+   Heading: "Real estate and infrastructure"
+   Body: "Market entry, feasibility, GTM, and 
+   fundraising for developers, investors, and 
+   sector service providers across the Gulf 
+   and beyond."
+   Link: /industries/real-estate-and-infrastructure.html
+
+---
+
+## IMAGE
+
+In the hero section, use the uploaded image 
+`Real_estate_1.jpg` from the uploads folder 
+as the hero background or right-panel image, 
+matching how other industry pages use their 
+hero images. Apply a dark overlay 
+(rgba 27, 42, 74, 0.55) if used as a 
+background image so the text remains readable.
+
+---
+
+Do not modify any other pages except:
+- Adding the nav dropdown link
+- Adding the industry card on industries/index.html
+
+After completing, confirm:
+1. File created at correct path
+2. All 8 sections are present
+3. Nav dropdown updated
+4. Industries index card added
+5. Meta tags and both JSON-LD schema blocks 
+   are in <head>
+6. Hero image from uploads is referenced correctly
