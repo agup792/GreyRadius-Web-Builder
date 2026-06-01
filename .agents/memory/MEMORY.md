@@ -1,0 +1,1 @@
+- [SEO batch page generation](seo-batch-pages.md) — generator script + template for industries/{parent}/{slug}.html pages; reuse for Batch 2.
