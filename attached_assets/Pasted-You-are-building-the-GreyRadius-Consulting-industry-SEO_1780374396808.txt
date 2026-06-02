@@ -1,0 +1,432 @@
+You are building the GreyRadius Consulting industry SEO page 
+system. Complete all steps in order. Do not skip any step.
+
+═══════════════════════════════════════════════════
+STEP 1: VERIFY FILES EXIST
+═══════════════════════════════════════════════════
+
+Confirm these files exist before proceeding:
+- data/industry-pages-batch1.json
+- data/industry-pages-batch1b.json
+- data/industry-pages-batch2.json
+- templates/industry-page-template.html
+
+If any JSON file is missing, stop and tell me which 
+file is missing so I can upload it.
+
+If the template file is missing, create it per the 
+specification in Step 2 before continuing.
+
+═══════════════════════════════════════════════════
+STEP 2: CREATE OR VERIFY HTML TEMPLATE
+═══════════════════════════════════════════════════
+
+File path: templates/industry-page-template.html
+
+If this file already exists and contains {{ }} tokens, 
+skip to Step 3.
+
+If it does not exist, create it now as follows:
+
+Copy the exact HTML structure, CSS classes, header 
+navigation, and footer from the most complete existing 
+industry page on the site — use industries/bfsi.html 
+or industries/technology.html as the source.
+
+Replace every piece of industry-specific content with 
+the tokens listed below. Do not change any CSS, colors, 
+fonts, nav structure, or footer.
+
+REQUIRED TOKENS — every one must be present:
+
+Head section:
+  {{PAGE_TITLE}}        — <title> tag content
+  {{META_DESC}}         — meta description content
+  {{KEYWORDS}}          — meta keywords content
+  {{SCHEMA_SERVICE}}    — JSON-LD Service schema block
+  {{SCHEMA_FAQ}}        — JSON-LD FAQPage schema block
+
+Hero section:
+  {{H1}}                — page H1 heading
+  {{TAGLINE}}           — italic orange subheadline
+  {{HERO_BODY}}         — hero paragraph
+  {{MARKET_TIMING}}     — orange alert/signal box text
+  {{REGIONS}}           — "Markets covered: ..." line
+
+Stats section (3 stat blocks):
+  {{STAT1N}} {{STAT1L}} {{STAT1B}}
+  {{STAT2N}} {{STAT2L}} {{STAT2B}}
+  {{STAT3N}} {{STAT3L}} {{STAT3B}}
+
+Market insights section (4 items):
+  {{INSIGHT_1}}
+  {{INSIGHT_2}}
+  {{INSIGHT_3}}
+  {{INSIGHT_4}}
+
+Market challenges section (4 structural problems):
+  {{CHALLENGE_M_1}}
+  {{CHALLENGE_M_2}}
+  {{CHALLENGE_M_3}}
+  {{CHALLENGE_M_4}}
+
+Challenges we solve section (6 cards):
+Each value in the JSON is "Heading|Body text"
+Split on the pipe | character to get heading and body.
+  {{CHALLENGE_1_H}} {{CHALLENGE_1_B}}
+  {{CHALLENGE_2_H}} {{CHALLENGE_2_B}}
+  {{CHALLENGE_3_H}} {{CHALLENGE_3_B}}
+  {{CHALLENGE_4_H}} {{CHALLENGE_4_B}}
+  {{CHALLENGE_5_H}} {{CHALLENGE_5_B}}
+  {{CHALLENGE_6_H}} {{CHALLENGE_6_B}}
+
+Services section (6 services — ALWAYS these exact 6):
+Service names and links are FIXED — hardcode them:
+  Service 1: Opportunity Assessment
+    Link: /services/opportunity-assessment.html
+  Service 2: Feasibility & TEV
+    Link: /services/feasibility-and-tev.html
+  Service 3: Market Entry Execution
+    Link: /services/market-entry-execution.html
+  Service 4: GTM Execution-as-a-Service
+    Link: /services/gtm-execution-as-a-service.html
+  Service 5: Pitchbook & Fundraising
+    Link: /services/pitchbook-and-fundraising.html
+  Service 6: AI Consulting & Transformation
+    Link: /services/ai-consulting-and-transformation.html
+
+The body text for each service comes from JSON:
+  {{SERVICE_1_BODY}} through {{SERVICE_6_BODY}}
+
+FAQ section (4 pairs):
+Each value in the JSON is "Question|Answer"
+Split on the pipe | character.
+  {{FAQ_1_Q}} {{FAQ_1_A}}
+  {{FAQ_2_Q}} {{FAQ_2_A}}
+  {{FAQ_3_Q}} {{FAQ_3_A}}
+  {{FAQ_4_Q}} {{FAQ_4_A}}
+
+FIXED SECTIONS — hardcode these, same on every page:
+
+Differentiators section:
+Heading: "What makes GreyRadius different"
+
+  Block 1 heading: "We execute. Not just advise."
+  Block 1 body: "Every engagement ends with a measurable 
+  output — a market entered, a partner signed, a round 
+  closed. Billed on outcomes, not hours."
+
+  Block 2 heading: "AI-accelerated delivery"
+  Block 2 body: "AI compresses research synthesis, 
+  financial modelling, and competitive mapping — 
+  delivering outputs 3x faster at boutique pricing 
+  without losing primary research quality."
+
+  Block 3 heading: "On-ground intelligence. 
+  Human-validated."
+  Block 3 body: "Every mandate includes 30+ interviews 
+  and 200+ surveys with real buyers, channel partners, 
+  regulators, and experts. This is what AI cannot 
+  replicate."
+
+Newsletter section:
+  Heading: "Get our free weekly {{H1}} market 
+  intelligence brief"
+  Body: "Every week our research team covers market 
+  movements, regulatory changes, competitive shifts, 
+  and investment activity. Read by founders, CXOs, 
+  and investment teams globally."
+  Fields: name input, email input
+  Button: "Subscribe free"
+  On submit: POST to /api/newsletter-subscribe 
+  with JSON body: { name, email, topic: "{{SLUG}}" }
+  Success message: "You are subscribed."
+  If POST fails: show success message anyway, 
+  log error to console.
+
+Case study snapshot section:
+  Heading: "What execution looks like in {{H1}}"
+  Use a navy background card with:
+  Label: "Case snapshot"
+  Client: "A company evaluating new market entry"
+  Challenge: "Limited market intelligence and no 
+  primary research on buyer demand, regulatory 
+  requirements, or competitive dynamics"
+  What we did: "30+ primary interviews with buyers, 
+  channel partners, and regulators. Competitive 
+  landscape mapping. Feasibility assessment with 
+  financial modelling. Market entry roadmap with 
+  regulatory pathway and partner identification."
+  Outcome: "Decision-ready strategy with phased 
+  entry roadmap and investor-ready financial model 
+  delivered in six weeks."
+  Quote: "GreyRadius gave us the primary market 
+  intelligence we needed to make a confident 
+  decision — in a fraction of the time we expected."
+
+HubSpot meeting embed — appears TWICE on each page:
+  First placement: immediately after the case study 
+  section, with the heading above it:
+  "Ready to discuss your {{H1}} mandate?"
+
+  Second placement: at the very bottom of the page, 
+  above the footer, with heading:
+  "Start a conversation with our team"
+
+  Embed code for both placements:
+  <!-- Start of Meetings Embed Script -->
+  <div class="meetings-iframe-container" 
+  data-src="https://meetings.hubspot.com/chiragbansal?embed=true">
+  </div>
+  <script type="text/javascript" 
+  src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js">
+  </script>
+  <!-- End of Meetings Embed Script -->
+
+Diagnostic form section — appears once per page, 
+between the differentiators and newsletter sections:
+  Heading: "Not sure where to start?"
+  Subtext: "Take our free 2-minute business 
+  diagnostic to find out which GreyRadius service 
+  fits your situation."
+  Use the existing diagnostic form component 
+  with selector: #diagForm .diag-form
+  Link to: /business-diagnostic.html
+
+Bottom CTA strip (above final HubSpot embed):
+  Background: navy
+  Heading: "Ready to explore your {{H1}} opportunity?"
+  Subtext: "Tell us about your mandate. Our team 
+  responds within one business day."
+  Button: "Start a conversation" 
+  linking to /contact.html
+
+Internal linking — add to every page:
+  Breadcrumb at top: 
+  Home > Industries > [Parent Tier 1 name] > {{H1}}
+  
+  "Related services" section: links to all 6 service 
+  pages using the fixed service names and links above.
+
+Schema markup — add to <head> of every page:
+
+  Service schema:
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "{{H1}} Consulting",
+    "serviceType": "Strategy and Growth Consulting",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "GreyRadius Consulting",
+      "url": "https://greyradius.com"
+    },
+    "areaServed": "{{REGIONS}}",
+    "description": "{{META_DESC}}"
+  }
+  </script>
+
+  FAQPage schema (build from the 4 FAQ pairs):
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "{{FAQ_1_Q}}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{FAQ_1_A}}"
+        }
+      }
+      [repeat for FAQ 2, 3, 4]
+    ]
+  }
+  </script>
+
+Verify the template has ALL tokens before saving.
+Save to: templates/industry-page-template.html
+
+═══════════════════════════════════════════════════
+STEP 3: BUILD ALL PAGES FROM ALL THREE JSON FILES
+═══════════════════════════════════════════════════
+
+Process these three files in order:
+  1. data/industry-pages-batch1.json
+  2. data/industry-pages-batch1b.json
+  3. data/industry-pages-batch2.json
+
+For EACH page object in EACH file:
+
+A. Determine the output file path:
+   If tier == 1:
+     industries/{{slug}}/index.html
+   If tier == 2:
+     industries/{{parent}}/{{slug}}.html
+   If tier == 3:
+     industries/{{parent}}/{{slug}}.html
+   If parent is empty string:
+     industries/{{slug}}/index.html
+
+B. Create the output directory if it does not exist.
+
+C. Read the template file fresh for each page.
+
+D. Replace tokens in this order:
+
+   Simple string replacements:
+   {{PAGE_TITLE}}     → page.title
+   {{META_DESC}}      → page.meta
+   {{KEYWORDS}}       → page.keywords
+   {{SLUG}}           → page.slug
+   {{H1}}             → page.h1
+   {{TAGLINE}}        → page.tagline
+   {{HERO_BODY}}      → page.hero
+   {{MARKET_TIMING}}  → page.market_timing
+   {{REGIONS}}        → page.regions
+   {{STAT1N}}         → page.stat1n
+   {{STAT1L}}         → page.stat1l
+   {{STAT1B}}         → page.stat1b
+   {{STAT2N}}         → page.stat2n
+   {{STAT2L}}         → page.stat2l
+   {{STAT2B}}         → page.stat2b
+   {{STAT3N}}         → page.stat3n
+   {{STAT3L}}         → page.stat3l
+   {{STAT3B}}         → page.stat3b
+   {{INSIGHT_1}}      → page.insights[0]
+   {{INSIGHT_2}}      → page.insights[1]
+   {{INSIGHT_3}}      → page.insights[2]
+   {{INSIGHT_4}}      → page.insights[3]
+   {{CHALLENGE_M_1}}  → page.challenges_market[0]
+   {{CHALLENGE_M_2}}  → page.challenges_market[1]
+   {{CHALLENGE_M_3}}  → page.challenges_market[2]
+   {{CHALLENGE_M_4}}  → page.challenges_market[3]
+
+   Challenge cards (split each on "|"):
+   For i = 1 to 6:
+     parts = page.challenges_we_solve[i-1].split("|")
+     {{CHALLENGE_i_H}} → parts[0].trim()
+     {{CHALLENGE_i_B}} → parts[1].trim()
+
+   Service body text:
+   For i = 1 to 6:
+     {{SERVICE_i_BODY}} → page.service_angles[i-1]
+
+   FAQ pairs (split each on "|"):
+   For i = 1 to 4:
+     parts = page.faq[i-1].split("|")
+     {{FAQ_i_Q}} → parts[0].trim()
+     {{FAQ_i_A}} → parts[1].trim()
+
+   Newsletter topic (use H1 value):
+   Replace the newsletter heading token with 
+   the already-replaced {{H1}} value.
+
+E. Build and inject the Service JSON-LD schema 
+   using the replaced values for H1, META_DESC, 
+   and REGIONS. Replace {{SCHEMA_SERVICE}}.
+
+F. Build and inject the FAQPage JSON-LD schema 
+   using the 4 FAQ Q and A values. 
+   Replace {{SCHEMA_FAQ}}.
+
+G. After ALL replacements, scan the output HTML 
+   for any remaining {{ }} patterns.
+   If any are found:
+   - Log a warning: "Warning: unreplaced token 
+     [TOKEN_NAME] in [slug]"
+   - Replace with empty string so the page 
+     renders cleanly.
+
+H. Write the completed HTML to the output path.
+
+I. Log: "Created: [output path]"
+
+DO NOT write any generation scripts.
+Read each JSON file directly.
+Loop through the entries.
+Write each HTML file.
+That is all.
+
+═══════════════════════════════════════════════════
+STEP 4: UPDATE INDUSTRIES INDEX PAGE
+═══════════════════════════════════════════════════
+
+File: industries/index.html
+
+For each Tier 1 page (where tier == 1) across all 
+three JSON files, add or update an industry card 
+on the index page.
+
+Each card should show:
+- Industry name (use h1 value)
+- One-line description (use first sentence of hero)
+- Link to industries/{{slug}}/index.html
+
+Use the existing card component style on the page.
+Do not remove any cards that already exist.
+
+═══════════════════════════════════════════════════
+STEP 5: UPDATE SITE NAVIGATION
+═══════════════════════════════════════════════════
+
+In the site header file used across all pages, 
+update the Industries dropdown menu:
+
+Group by Tier 1 industry.
+Show Tier 1 name as the section header.
+Show Tier 2 and Tier 3 pages as indented sub-links 
+under their parent Tier 1.
+
+For each Tier 2 page: show in the dropdown directly.
+For each Tier 3 page: show indented under its 
+Tier 2 parent if space allows, otherwise under 
+the Tier 1 parent.
+
+Maximum 8 sub-links visible per Tier 1 group.
+Add a "View all" link at the bottom of each group 
+pointing to the Tier 1 index page.
+
+═══════════════════════════════════════════════════
+STEP 6: UPDATE SITEMAP
+═══════════════════════════════════════════════════
+
+Add all newly created page URLs to sitemap.xml.
+If sitemap.xml does not exist, create it.
+
+Format for each URL:
+<url>
+  <loc>https://greyradius.com/industries/
+  [path to file]</loc>
+  <changefreq>monthly</changefreq>
+  <priority>[see below]</priority>
+</url>
+
+Priority values:
+  Tier 1 pages: 0.9
+  Tier 2 pages: 0.8
+  Tier 3 pages: 0.7
+
+Do not remove any existing URLs from the sitemap.
+
+═══════════════════════════════════════════════════
+STEP 7: FINAL CONFIRMATION
+═══════════════════════════════════════════════════
+
+After completing all steps, output a summary:
+
+1. Total pages created (should be 60 across 
+   all three batches)
+2. List of all file paths created, grouped 
+   by batch
+3. Count of any unreplaced token warnings
+4. Confirm sitemap.xml was updated
+5. Confirm industries/index.html was updated
+6. Confirm site navigation was updated
+7. List any files that failed to create 
+   and why
+
+If any step failed, describe exactly what 
+failed and what is needed to fix it.
