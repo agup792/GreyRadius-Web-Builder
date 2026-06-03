@@ -1,0 +1,110 @@
+STOP. Do not write a generator script. Do not create any 
+script files. This is a direct instruction.
+
+Here is exactly what to do instead:
+
+1. Read data/industry-pages-batch678.json into memory
+2. Read templates/industry-page-template.html into memory
+3. For each page object in the JSON array, in a simple loop:
+   a. Take the template string
+   b. Replace every {{ }} token with the value from the 
+      page object using string replacement
+   c. Write the result directly to the correct output path
+   d. Log: "Created: [path]"
+4. Done
+
+No scripts. No functions. No imports. No modules.
+Just: read JSON, loop, replace tokens, write file.
+
+The output path for each page:
+  If tier == 2: industries/[parent]/[slug].html
+  If tier == 3: industries/[parent]/[slug].html
+  Create the directory first if it does not exist.
+
+Token replacement rules — replace each of these:
+  {{PAGE_TITLE}}     with page.title
+  {{META_DESC}}      with page.meta
+  {{KEYWORDS}}       with page.keywords
+  {{SLUG}}           with page.slug
+  {{H1}}             with page.h1
+  {{TAGLINE}}        with page.tagline
+  {{HERO_BODY}}      with page.hero
+  {{MARKET_TIMING}}  with page.market_timing
+  {{REGIONS}}        with page.regions
+  {{STAT1N}}         with page.stat1n
+  {{STAT1L}}         with page.stat1l
+  {{STAT1B}}         with page.stat1b
+  {{STAT2N}}         with page.stat2n
+  {{STAT2L}}         with page.stat2l
+  {{STAT2B}}         with page.stat2b
+  {{STAT3N}}         with page.stat3n
+  {{STAT3L}}         with page.stat3l
+  {{STAT3B}}         with page.stat3b
+  {{INSIGHT_1}}      with page.insights[0]
+  {{INSIGHT_2}}      with page.insights[1]
+  {{INSIGHT_3}}      with page.insights[2]
+  {{INSIGHT_4}}      with page.insights[3]
+  {{CHALLENGE_M_1}}  with page.challenges_market[0]
+  {{CHALLENGE_M_2}}  with page.challenges_market[1]
+  {{CHALLENGE_M_3}}  with page.challenges_market[2]
+  {{CHALLENGE_M_4}}  with page.challenges_market[3]
+
+  For challenge cards — each item is "Heading|Body":
+    split page.challenges_we_solve[0] on "|"
+    {{CHALLENGE_1_H}} = parts[0].trim()
+    {{CHALLENGE_1_B}} = parts[1].trim()
+    repeat for indexes 1 through 5 giving tokens
+    {{CHALLENGE_2_H}} through {{CHALLENGE_6_B}}
+
+  Service bodies — replace directly:
+    {{SERVICE_1_BODY}} with page.service_angles[0]
+    {{SERVICE_2_BODY}} with page.service_angles[1]
+    {{SERVICE_3_BODY}} with page.service_angles[2]
+    {{SERVICE_4_BODY}} with page.service_angles[3]
+    {{SERVICE_5_BODY}} with page.service_angles[4]
+    {{SERVICE_6_BODY}} with page.service_angles[5]
+
+  FAQ pairs — each item is "Question|Answer":
+    split page.faq[0] on "|"
+    {{FAQ_1_Q}} = parts[0].trim()
+    {{FAQ_1_A}} = parts[1].trim()
+    repeat for indexes 1 through 3 giving tokens
+    {{FAQ_2_Q}} through {{FAQ_4_A}}
+
+  Service names and links are FIXED — hardcode these 
+  in the template, they never change:
+    Service 1: Opportunity Assessment
+      /services/opportunity-assessment.html
+    Service 2: Feasibility & TEV
+      /services/feasibility-and-tev.html
+    Service 3: Market Entry Execution
+      /services/market-entry-execution.html
+    Service 4: GTM Execution-as-a-Service
+      /services/gtm-execution-as-a-service.html
+    Service 5: Pitchbook & Fundraising
+      /services/pitchbook-and-fundraising.html
+    Service 6: AI Consulting & Transformation
+      /services/ai-consulting-and-transformation.html
+
+  After all replacements, scan the output string for 
+  any remaining {{ }} patterns. For each one found, 
+  replace with empty string and log a warning:
+  "Warning: unreplaced token in [slug]: [token]"
+
+5. After writing all page files, update sitemap.xml:
+   Add one <url> block per page. Do not remove 
+   existing URLs.
+   Tier 2 priority: 0.8
+   Tier 3 priority: 0.7
+
+6. Update the industries nav dropdown to include 
+   all new pages grouped by their Tier 1 parent.
+
+7. Print a final summary:
+   - How many files were created
+   - List of all paths
+   - How many token warnings
+   - Sitemap updated: yes/no
+   - Navigation updated: yes/no
+
+That is the complete task. No scripts. Start now.
