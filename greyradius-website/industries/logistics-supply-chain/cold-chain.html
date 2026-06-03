@@ -447,13 +447,10 @@
     <span class="section-heading__eyebrow">Stay informed</span>
     <h2 id="nl-heading" style="margin-bottom:0.75rem;">Market intelligence for logistics-supply-chain leaders.</h2>
     <p style="color:var(--color-text-muted);margin-bottom:2rem;font-size:var(--text-body);">GreyRadius research notes, market entry signals, and sector briefs — delivered monthly. No fluff.</p>
-    <form id="nl-form" action="/api/newsletter-subscribe" method="POST" style="display:flex;gap:0.75rem;max-width:480px;margin:0 auto;flex-wrap:wrap;">
-      <input type="hidden" name="topic" value="Cold chain logistics consulting">
-      <input type="email" name="email" placeholder="your@email.com" required
-             style="flex:1;padding:0.75rem 1rem;border:1px solid #dde1e7;border-radius:6px;font-size:1rem;font-family:inherit;min-width:200px;">
-      <button type="submit" class="btn btn-primary">Subscribe</button>
-    </form>
-    <p id="nl-msg" style="margin-top:0.75rem;font-size:0.875rem;color:var(--color-text-muted);display:none;"></p>
+    <div style="max-width:480px;margin:0 auto;text-align:left;">
+      <script src="https://js.hsforms.net/forms/embed/21337745.js" defer></script>
+      <div class="hs-form-frame" data-region="na1" data-form-id="ada0041f-bbdf-49d3-af83-8f2b6dab19aa" data-portal-id="21337745"></div>
+    </div>
   </div>
 </section>
 
@@ -546,43 +543,6 @@
 <script src="../../assets/js/main.js" defer></script>
 <a href="../../business-diagnostic.html" class="diag-float" aria-label="Take our free 2-minute business diagnostic">Free Expert Assessment</a>
 
-<script>
-(function() {
-  var form = document.getElementById('nl-form');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var msg = document.getElementById('nl-msg');
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true;
-    btn.textContent = 'Subscribing...';
-    fetch('/api/newsletter-subscribe', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        email: form.email.value,
-        topic: form.topic.value
-      })
-    })
-    .then(function(r) { return r.json(); })
-    .then(function() {
-      msg.textContent = 'Thanks — you’re subscribed.';
-      msg.style.color = 'var(--color-navy)';
-      msg.style.display = 'block';
-      form.reset();
-    })
-    .catch(function() {
-      msg.textContent = 'Something went wrong. Please try again.';
-      msg.style.color = 'red';
-      msg.style.display = 'block';
-    })
-    .finally(function() {
-      btn.disabled = false;
-      btn.textContent = 'Subscribe';
-    });
-  });
-})();
-</script>
 
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26936548.js"></script>
