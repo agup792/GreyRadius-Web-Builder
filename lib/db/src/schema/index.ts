@@ -19,3 +19,4 @@
 
 export * from "./contact";
 export * from "./diagnostic-leads";
+export * from "./newsletter";
