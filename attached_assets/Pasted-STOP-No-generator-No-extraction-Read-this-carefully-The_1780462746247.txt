@@ -1,0 +1,120 @@
+STOP. No generator. No extraction. Read this carefully.
+
+The template already exists on this site. Every industry 
+page already built follows the same HTML structure. 
+You do not need to create a template from scratch.
+
+Here is exactly what to do:
+
+STEP 1: Find an existing industry page to use as the 
+template source. Run this:
+
+  ls industries/
+
+Pick the first folder that exists. Then run:
+
+  ls industries/[folder_name]/
+
+Find any .html file inside it. That file IS the template.
+Read it.
+
+STEP 2: Save a copy of that file as the template:
+
+  cp industries/[existing_page_path].html templates/industry-page-template.html
+
+Now open templates/industry-page-template.html and 
+replace every piece of industry-specific content with 
+{{ }} tokens as follows:
+
+  The <title> tag content → {{PAGE_TITLE}}
+  The meta description content → {{META_DESC}}
+  The page H1 text → {{H1}}
+  The tagline/subtitle text → {{TAGLINE}}
+  The hero paragraph text → {{HERO_BODY}}
+  The market timing alert box text → {{MARKET_TIMING}}
+  The "Markets covered:" line → {{REGIONS}}
+
+  The 3 stat blocks:
+    First stat number → {{STAT1N}}
+    First stat label → {{STAT1L}}
+    First stat body → {{STAT1B}}
+    Second stat number → {{STAT2N}}
+    Second stat label → {{STAT2L}}
+    Second stat body → {{STAT2B}}
+    Third stat number → {{STAT3N}}
+    Third stat label → {{STAT3L}}
+    Third stat body → {{STAT3B}}
+
+  The 4 market insight items:
+    → {{INSIGHT_1}} {{INSIGHT_2}} 
+      {{INSIGHT_3}} {{INSIGHT_4}}
+
+  The 4 market challenge items:
+    → {{CHALLENGE_M_1}} {{CHALLENGE_M_2}}
+      {{CHALLENGE_M_3}} {{CHALLENGE_M_4}}
+
+  The 6 challenge cards (heading and body each):
+    → {{CHALLENGE_1_H}} {{CHALLENGE_1_B}}
+    → {{CHALLENGE_2_H}} {{CHALLENGE_2_B}}
+    → {{CHALLENGE_3_H}} {{CHALLENGE_3_B}}
+    → {{CHALLENGE_4_H}} {{CHALLENGE_4_B}}
+    → {{CHALLENGE_5_H}} {{CHALLENGE_5_B}}
+    → {{CHALLENGE_6_H}} {{CHALLENGE_6_B}}
+
+  The 6 service body paragraphs:
+    → {{SERVICE_1_BODY}} through {{SERVICE_6_BODY}}
+
+  The 4 FAQ question and answer pairs:
+    → {{FAQ_1_Q}} {{FAQ_1_A}}
+    → {{FAQ_2_Q}} {{FAQ_2_A}}
+    → {{FAQ_3_Q}} {{FAQ_3_A}}
+    → {{FAQ_4_Q}} {{FAQ_4_A}}
+
+  Keep ALL of this exactly as-is — do not tokenise:
+    - The header and navigation
+    - The footer
+    - The CSS and JavaScript
+    - The HubSpot meeting embed code
+    - The diagnostic form (#diagForm .diag-form)
+    - The newsletter form
+    - The differentiators section
+    - The 6 service names and their links
+    - The bottom CTA strip
+
+Save the template file.
+
+STEP 3: Verify the template has tokens in it:
+
+  grep -c "{{" templates/industry-page-template.html
+
+The number should be at least 40. If it is less than 10 
+the replacement did not work — go back and do Step 2 again.
+
+STEP 4: Now build the pages. For each page in 
+data/industry-pages-batch678.json:
+
+  a. Read templates/industry-page-template.html 
+     fresh as a string
+  b. Replace all {{ }} tokens with page values
+  c. For challenge cards: split "Heading|Body" on |
+  d. For FAQ pairs: split "Question|Answer" on |
+  e. After replacement scan for remaining {{ }} tokens
+     and replace with empty string, log a warning
+  f. Determine output path:
+       tier 2: industries/[parent]/[slug].html
+       tier 3: industries/[parent]/[slug].html
+  g. Create directory if needed
+  h. Write the file
+  i. Log: "Created: [path]"
+
+STEP 5: After all pages are written:
+  - Add new URLs to sitemap.xml
+  - Update industries nav dropdown
+  - Print summary: files created, warnings, 
+    sitemap status, nav status
+
+Do not write any scripts.
+Do not create any generator functions.
+Do not use imports or modules.
+Just copy, tokenise, loop, replace, write.
+Start with Step 1 now.
