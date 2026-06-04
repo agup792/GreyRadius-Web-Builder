@@ -1,1 +1,1 @@
-- [SEO batch page generation](seo-batch-pages.md) — generator script + template for industries/{parent}/{slug}.html pages; reuse for Batch 2.
+- [Batch page generator pattern](batch-generator.md) — inline Python heredoc generates industry pages from JSON; no script files; 5 icon patterns required.
