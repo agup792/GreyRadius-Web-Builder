@@ -54,6 +54,8 @@ A multi-page consulting firm website for GreyRadius, served as static HTML/CSS f
 - Use real data from the PDF deck / asset brief — no placeholders except Dhiraj (bio pending from Chirag)
 - Advisor titles must match the brief exactly: Senior Advisor & Consultant (×7), Principal Consultant (Meghna), Sr Consultant (Sushil), Manager (Supra)
 - Stats: 200+ projects, 100+ SaaS products, 80% primary-research-led, 4 countries/offices, 9 years
+- **Dashes**: Always use en dash (– / &#8211;), NEVER em dash (— / &#8212; / &mdash;) anywhere on the site
+- **Industry pages must have visuals**: All industry/sub-industry pages need inline SVG icons and decorative graphics — not plain text-only cards. See icon patterns below.
 
 ## Gotchas
 
@@ -63,6 +65,18 @@ A multi-page consulting firm website for GreyRadius, served as static HTML/CSS f
 - Nav logo needs `.nav-logo img { height: 38px !important; }` — base reset applies `height: auto` to all `img`.
 - The nav JS forces `top-nav--transparent` on every page-load (scrollY=0). The CSS light-theme override at the bottom counters this — do not remove those rules.
 - Any new inner pages: use Montserrat font link, not Inter. Add full nav with Industries dropdown.
+
+## Industry page visual conventions (167 pages + future batches)
+
+All industry pages generated from `greyradius-website/templates/industry-page-template.html` use these inline SVG icon patterns:
+
+- **MARKET INSIGHTS cards**: orange icon badge (38×38px, rgba(232,105,58,0.1) bg, 8px radius) cycling 4 icons — TrendingUp / Globe / BarChart / Zap — placed before the `<p>` text
+- **CHALLENGES WE SOLVE cards**: check SVG (`polyline points="20 6 9 17 4 12"`, orange) as first child of the title `<p>` (display:flex)
+- **MARKET CHALLENGES list items**: right-arrow SVG (`polyline points="9 18 15 12 9 6"`, orange) + `<span>` wrapper inside each `<li>` (display:flex)
+- **DIFFERENTIATORS**: 52×52px orange-tinted rounded square containers with Lucide SVG icons (microscope = research, zap = AI, target = outcomes) replacing emoji
+- **Hero section**: `position:relative;overflow:hidden;` on `<section>`, plus a 260×260px radial SVG decoration (concentric circles + axis lines, opacity 0.08, positioned absolute right 4%) inside the container
+
+When generating future batches, apply all five icon patterns. Use inline Python via bash heredoc — no separate script files.
 
 ## Pointers
 

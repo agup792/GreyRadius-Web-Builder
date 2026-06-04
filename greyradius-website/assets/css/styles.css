@@ -1,5 +1,5 @@
 /* ============================================================
-   GreyRadius Consulting — Custom Stylesheet
+   GreyRadius Consulting – Custom Stylesheet
    WordPress migration: use these BEM classes directly
    ============================================================ */
 
@@ -1371,7 +1371,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 }
 
 /* ============================================================
-   RESPONSIVE — Tablet (≤1024px)
+   RESPONSIVE – Tablet (≤1024px)
    ============================================================ */
 @media (max-width: 1024px) {
   .offering-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1385,7 +1385,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 }
 
 /* ============================================================
-   RESPONSIVE — Mobile (≤768px)
+   RESPONSIVE – Mobile (≤768px)
    ============================================================ */
 @media (max-width: 768px) {
   .nav-center { display: none; }
@@ -1422,7 +1422,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 }
 
 /* ============================================================
-   RESPONSIVE — Small Mobile (≤640px)
+   RESPONSIVE – Small Mobile (≤640px)
    ============================================================ */
 @media (max-width: 640px) {
   .industry-tiles { grid-template-columns: repeat(2, 1fr); }
@@ -1514,7 +1514,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 }
 
 /* ============================================================
-   LIGHT THEME OVERRIDES — Montserrat / White palette
+   LIGHT THEME OVERRIDES – Montserrat / White palette
    ============================================================ */
 
 /* Hero - white background */
@@ -1602,7 +1602,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 .nav-logo img, .nav-logo svg { height: 38px !important; width: auto !important; display: block !important; }
 
 /* ============================================================
-   NAV — LIGHT THEME FIX
+   NAV – LIGHT THEME FIX
    The site is fully light-theme. The JS forces top-nav--transparent
    on page load (scrollY=0), making white nav-links invisible on
    white backgrounds. Override all nav link colours to navy.
@@ -1644,7 +1644,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
   padding-inline: var(--padding-page-x);
 }
 
-/* Article body — wraps all prose content */
+/* Article body – wraps all prose content */
 .article-body {
   font-size: 1.0625rem;
   line-height: 1.75;
@@ -1688,7 +1688,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
   color: var(--color-navy);
 }
 
-/* Lead paragraph — larger intro text */
+/* Lead paragraph – larger intro text */
 .article-lead {
   font-size: 1.1875rem;
   line-height: 1.7;
@@ -1699,7 +1699,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Article lists — styled bullet and numbered lists */
+/* Article lists – styled bullet and numbered lists */
 .article-list {
   margin: 0 0 1.5rem 0;
   padding-left: 1.5rem;
@@ -2115,7 +2115,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
   backdrop-filter: blur(4px);
 }
 
-/* Footer logo — invert the dark PNG to white on the navy footer background */
+/* Footer logo – invert the dark PNG to white on the navy footer background */
 .site-footer img[alt="GreyRadius Consulting"] {
   filter: brightness(0) invert(1);
 }
@@ -2124,7 +2124,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
    CASE STUDY NEW TEMPLATE COMPONENTS
    ═══════════════════════════════════════════════════════════ */
 
-/* — Tag row ————————————————————————————————————————————————— */
+/* – Tag row ––––––––––––––––––––––––––––––––––––––––––––––––– */
 .tag-row { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.25rem; }
 .tag { display:inline-block; padding:0.25rem 0.75rem; border-radius:2rem; font-size:0.7rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; }
 .tag-service-primary  { background:rgba(232,105,58,0.18); color:#a84c24; border:1px solid rgba(232,105,58,0.3); }
@@ -2133,7 +2133,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 .tag-geo       { background:rgba(55,71,79,0.1);   color:#37474F;  border:1px solid rgba(55,71,79,0.2); }
 .tag-client    { background:rgba(46,125,50,0.1);  color:#2E7D32;  border:1px solid rgba(46,125,50,0.2); }
 
-/* — CS Hero ————————————————————————————————————————————————— */
+/* – CS Hero ––––––––––––––––––––––––––––––––––––––––––––––––– */
 .cs-hero {
   background: linear-gradient(135deg, var(--color-navy) 0%, #1a2a4a 100%);
   min-height: 52vh;
@@ -2145,7 +2145,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 .cs-hero h1 { color:white; font-size:2.25rem; line-height:1.25; margin:1rem 0 1.25rem; }
 .cs-lede { color:rgba(255,255,255,0.78); font-size:1.0625rem; line-height:1.8; max-width:720px; margin:0; }
 
-/* — KPI bar ————————————————————————————————————————————————— */
+/* – KPI bar ––––––––––––––––––––––––––––––––––––––––––––––––– */
 .kpi-bar {
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -2165,7 +2165,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 .kpi-num   { display:block; font-size:1.5rem; font-weight:800; color:var(--color-orange); line-height:1.1; }
 .kpi-label { display:block; font-size:0.7rem; color:rgba(255,255,255,0.7); margin-top:0.375rem; line-height:1.45; }
 
-/* — Pull quote ─────────────────────────────────────────────── */
+/* – Pull quote ─────────────────────────────────────────────── */
 .cs-pullquote {
   border-left: 4px solid var(--color-orange);
   margin: 2.5rem 0;
@@ -2181,7 +2181,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
   margin: 0;
 }
 
-/* — Outcomes grid ──────────────────────────────────────────── */
+/* – Outcomes grid ──────────────────────────────────────────── */
 .outcomes-grid {
   display: grid;
   grid-template-columns: repeat(2,1fr);
@@ -2203,7 +2203,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 }
 .outcome-card p { color:var(--color-text-muted); font-size:0.875rem; line-height:1.7; margin:0; }
 
-/* — Testimonial ────────────────────────────────────────────── */
+/* – Testimonial ────────────────────────────────────────────── */
 .cs-testimonial {
   background: var(--color-navy);
   border-radius: var(--radius-lg);
@@ -2232,7 +2232,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 .testimonial-title   { display:block; color:rgba(255,255,255,0.6); font-size:0.8125rem; margin-top:0.2rem; }
 .testimonial-company { display:block; color:rgba(255,255,255,0.45); font-size:0.8125rem; }
 
-/* — Insight box ────────────────────────────────────────────── */
+/* – Insight box ────────────────────────────────────────────── */
 .cs-insight-box {
   background: linear-gradient(135deg,#f8f4ff 0%,#fff8f2 100%);
   border: 1px solid #e8d5c4;
@@ -2257,7 +2257,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
   margin: 0;
 }
 
-/* — Related links ──────────────────────────────────────────── */
+/* – Related links ──────────────────────────────────────────── */
 .cs-related {
   background: var(--color-off-white);
   border-top: 1px solid var(--color-border);
@@ -2286,7 +2286,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 }
 .related-link:hover { background:var(--color-navy); color:white; border-color:var(--color-navy); }
 
-/* — Case study listing filter bar ─────────────────────────── */
+/* – Case study listing filter bar ─────────────────────────── */
 .filter-bar {
   background: white;
   border: 1.5px solid var(--color-border);
@@ -2323,7 +2323,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 .pill:hover { border-color:var(--color-navy); color:var(--color-navy); }
 .pill.active { background:var(--color-navy); color:white; border-color:var(--color-navy); }
 
-/* — CS listing grid cards ──────────────────────────────────── */
+/* – CS listing grid cards ──────────────────────────────────── */
 .cs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
 .cs-card {
   display: flex;
@@ -2353,7 +2353,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 .cs-card-kpi { font-size:0.8125rem; font-weight:700; color:var(--color-orange); }
 .cs-card-read { font-size:0.8125rem; font-weight:600; color:var(--color-navy); }
 
-/* — Responsive ─────────────────────────────────────────────── */
+/* – Responsive ─────────────────────────────────────────────── */
 @media (max-width:960px) {
   .kpi-bar { grid-template-columns:repeat(2,1fr); }
   .kpi:nth-child(2) { border-right:none; }

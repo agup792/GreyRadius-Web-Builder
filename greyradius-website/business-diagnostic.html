@@ -647,7 +647,7 @@
   </div>
 
   <!-- ═══════════════════════════════
-       SCREEN 2: QUESTION 1 — Business stage
+       SCREEN 2: QUESTION 1 – Business stage
   ═══════════════════════════════ -->
   <div class="diag-screen" id="screen-q1">
     <div class="diag-card">
@@ -684,7 +684,7 @@
   </div>
 
   <!-- ═══════════════════════════════
-       SCREEN 3: QUESTION 2 — Primary challenge
+       SCREEN 3: QUESTION 2 – Primary challenge
   ═══════════════════════════════ -->
   <div class="diag-screen" id="screen-q2">
     <div class="diag-card">
@@ -717,7 +717,7 @@
             <span class="diag-option__desc">I want to embed AI into my workflows to reduce costs and deliver faster.</span>
           </button>
           <button class="diag-option" role="option" data-q="q2" data-val="G" onclick="selectOption(this)" aria-selected="false">
-            <span class="diag-option__title">Something else — describe my situation</span>
+            <span class="diag-option__title">Something else – describe my situation</span>
             <span class="diag-option__desc">My challenge is different. I'll describe it in a few words so the team understands my context.</span>
           </button>
         </div>
@@ -737,13 +737,13 @@
   </div>
 
   <!-- ═══════════════════════════════
-       SCREEN 4: QUESTION 3 — Geography + Timeline
+       SCREEN 4: QUESTION 3 – Geography + Timeline
   ═══════════════════════════════ -->
   <div class="diag-screen" id="screen-q3">
     <div class="diag-card">
       <div class="diag-screen-card">
         <h2 class="diag-q-heading">A little more context</h2>
-        <p class="diag-q-sub">Two quick questions — both are needed to personalise your results.</p>
+        <p class="diag-q-sub">Two quick questions – both are needed to personalise your results.</p>
 
         <p class="diag-q3-group-label">Which markets are you focused on?</p>
         <div class="diag-pills" id="pills-market" role="listbox" aria-label="Target market options">
@@ -756,9 +756,9 @@
 
         <p class="diag-q3-group-label">What is your timeline?</p>
         <div class="diag-pills" id="pills-timeline" role="listbox" aria-label="Timeline options">
-          <button class="diag-pill" role="option" data-q="q3_timeline" data-val="Immediate" onclick="selectPill(this, 'pills-timeline')" aria-selected="false">Immediate — next 4–6 weeks</button>
-          <button class="diag-pill" role="option" data-q="q3_timeline" data-val="Near term" onclick="selectPill(this, 'pills-timeline')" aria-selected="false">Near term — 3 to 6 months</button>
-          <button class="diag-pill" role="option" data-q="q3_timeline" data-val="Planning ahead" onclick="selectPill(this, 'pills-timeline')" aria-selected="false">Planning ahead — 6+ months</button>
+          <button class="diag-pill" role="option" data-q="q3_timeline" data-val="Immediate" onclick="selectPill(this, 'pills-timeline')" aria-selected="false">Immediate – next 4–6 weeks</button>
+          <button class="diag-pill" role="option" data-q="q3_timeline" data-val="Near term" onclick="selectPill(this, 'pills-timeline')" aria-selected="false">Near term – 3 to 6 months</button>
+          <button class="diag-pill" role="option" data-q="q3_timeline" data-val="Planning ahead" onclick="selectPill(this, 'pills-timeline')" aria-selected="false">Planning ahead – 6+ months</button>
           <button class="diag-pill" role="option" data-q="q3_timeline" data-val="Still exploring" onclick="selectPill(this, 'pills-timeline')" aria-selected="false">Still exploring</button>
         </div>
 
@@ -1090,44 +1090,44 @@ function getRecommendations(q1, q2, q3_market, q3_timeline) {
 
   if (q2 === 'E') {
     // Rule Group 1: Fundraising
-    recs.push({ ...SERVICES.PB, urgent: isImmediate, desc: buildDesc(q1, q2, 'A pitch book built to close rounds, backed by investor interviews and a structured data room — tailored for your stage and market.') });
+    recs.push({ ...SERVICES.PB, urgent: isImmediate, desc: buildDesc(q1, q2, 'A pitch book built to close rounds, backed by investor interviews and a structured data room – tailored for your stage and market.') });
     if (q1 === 'A' || q1 === 'B')
       recs.push({ ...SERVICES.OA, desc: buildDesc(q1, q2, 'Ground your fundraising narrative in verified market data and competitive intelligence that investors trust.') });
     else
       recs.push({ ...SERVICES.FEA, desc: buildDesc(q1, q2, 'A bankable feasibility model that gives investors the financial rigour they need to commit.') });
   } else if (q2 === 'B') {
     // Rule Group 2: New market entry
-    recs.push({ ...SERVICES.MEE, urgent: isImmediate, desc: buildDesc(q1, q2, 'End-to-end market entry execution — entity setup, regulatory navigation, channel partnerships, and first-customer acquisition managed by our team.') });
+    recs.push({ ...SERVICES.MEE, urgent: isImmediate, desc: buildDesc(q1, q2, 'End-to-end market entry execution – entity setup, regulatory navigation, channel partnerships, and first-customer acquisition managed by our team.') });
     recs.push({ ...SERVICES.OA, desc: buildDesc(q1, q2, 'Validate demand, map competition, and get a clear go / defer / kill recommendation before committing capital to a new geography.') });
     if (isImmediate || isNearTerm)
-      recs.push({ ...SERVICES.GTM, desc: buildDesc(q1, q2, 'We run the first 90 days of your GTM motion in the new market — ICP definition, outbound sequences, and pipeline reviews.') });
+      recs.push({ ...SERVICES.GTM, desc: buildDesc(q1, q2, 'We run the first 90 days of your GTM motion in the new market – ICP definition, outbound sequences, and pipeline reviews.') });
   } else if (q2 === 'C') {
     // Rule Group 3: Evaluate new idea
-    recs.push({ ...SERVICES.OA, urgent: isImmediate, desc: buildDesc(q1, q2, '30+ buyer interviews, competitive maps, and a clear go / defer / kill recommendation — so you invest with conviction or move on fast.') });
+    recs.push({ ...SERVICES.OA, urgent: isImmediate, desc: buildDesc(q1, q2, '30+ buyer interviews, competitive maps, and a clear go / defer / kill recommendation – so you invest with conviction or move on fast.') });
     recs.push({ ...SERVICES.FEA, desc: buildDesc(q1, q2, 'Demand validation and unit economics that tell you whether the idea is commercially viable before you build.') });
     if (q1 === 'D')
       recs.push({ ...SERVICES.PB, desc: buildDesc(q1, q2, 'If the assessment supports the opportunity, we can take you straight into an investor-ready narrative and fundraising campaign.') });
   } else if (q2 === 'D') {
     // Rule Group 4: Launch new product/business
-    recs.push({ ...SERVICES.GTM, urgent: isImmediate, desc: buildDesc(q1, q2, 'We own the first 90 days of your launch — ICP definition, outbound sequences, partner onboarding, and pipeline reviews.') });
+    recs.push({ ...SERVICES.GTM, urgent: isImmediate, desc: buildDesc(q1, q2, 'We own the first 90 days of your launch – ICP definition, outbound sequences, partner onboarding, and pipeline reviews.') });
     if (q3_market !== 'India')
       recs.push({ ...SERVICES.MEE, desc: buildDesc(q1, q2, 'If your launch involves a new geography, we handle entity setup, regulatory navigation, and first-customer acquisition end-to-end.') });
     if (q1 === 'A')
       recs.push({ ...SERVICES.OA, desc: buildDesc(q1, q2, 'Before you launch, make sure you have validated demand and a clear read on the competitive landscape in your target market.') });
   } else if (q2 === 'A') {
     // Rule Group 5: Grow existing market
-    recs.push({ ...SERVICES.GTM, urgent: isImmediate, desc: buildDesc(q1, q2, 'We embed into your team and run the GTM motion — ICP refinement, outbound, partner onboarding, and 30/60/90-day pipeline management.') });
+    recs.push({ ...SERVICES.GTM, urgent: isImmediate, desc: buildDesc(q1, q2, 'We embed into your team and run the GTM motion – ICP refinement, outbound, partner onboarding, and 30/60/90-day pipeline management.') });
     recs.push({ ...SERVICES.OA, desc: buildDesc(q1, q2, 'Identify white-space opportunities in your existing market through 30+ buyer interviews and a structured competitive intelligence exercise.') });
     if (isImmediate)
-      recs.push({ ...SERVICES.AI, desc: buildDesc(q1, q2, 'Embed AI into your sales and delivery workflows to compress cycle times and reduce cost-to-serve — with a live pilot in 4–6 weeks.') });
+      recs.push({ ...SERVICES.AI, desc: buildDesc(q1, q2, 'Embed AI into your sales and delivery workflows to compress cycle times and reduce cost-to-serve – with a live pilot in 4–6 weeks.') });
   } else if (q2 === 'F') {
     // Rule Group 6: AI
-    recs.push({ ...SERVICES.AI, urgent: isImmediate, desc: buildDesc(q1, q2, 'Use-case prioritisation, vendor selection, and a live pilot in 4–6 weeks — grounded in your specific workflows, not generic AI frameworks.') });
+    recs.push({ ...SERVICES.AI, urgent: isImmediate, desc: buildDesc(q1, q2, 'Use-case prioritisation, vendor selection, and a live pilot in 4–6 weeks – grounded in your specific workflows, not generic AI frameworks.') });
     recs.push({ ...SERVICES.GTM, desc: buildDesc(q1, q2, 'Combine AI-enabled operations with a sharper GTM motion to grow faster and at lower cost.') });
     recs.push({ ...SERVICES.OA, desc: buildDesc(q1, q2, 'Identify which AI-enabled opportunities in your market represent the highest return before committing to a build.') });
   } else if (q2 === 'G') {
-    // Rule Group 7: Custom / other — start with a structured assessment
-    recs.push({ ...SERVICES.OA, urgent: isImmediate, desc: 'Whatever the specific challenge, a structured opportunity assessment is almost always the right first step — it validates the problem, maps the landscape, and surfaces the clearest path forward.' });
+    // Rule Group 7: Custom / other – start with a structured assessment
+    recs.push({ ...SERVICES.OA, urgent: isImmediate, desc: 'Whatever the specific challenge, a structured opportunity assessment is almost always the right first step – it validates the problem, maps the landscape, and surfaces the clearest path forward.' });
     if (q1 === 'A' || q1 === 'B')
       recs.push({ ...SERVICES.GTM, desc: 'If your challenge involves reaching new customers or scaling revenue, an embedded GTM team can own the execution while you focus on the business.' });
     else
@@ -1170,12 +1170,12 @@ function buildSummary(firstName, q1, q2, q3_market, q3_timeline) {
 function getChallengeCopy(q2) {
   const copy = {
     A: 'Sustained growth in an existing market requires both sharper GTM execution and validated intelligence on where the real upside lies.',
-    B: 'Successful market entry is built on primary research, local relationships, and a team that owns execution — not just a strategy slide.',
+    B: 'Successful market entry is built on primary research, local relationships, and a team that owns execution – not just a strategy slide.',
     C: 'A rigorous opportunity assessment saves you months of internal debate and protects capital by grounding the decision in real buyer and market data.',
     D: 'A successful launch requires both a validated market view and a GTM team that can own the first 90 days of pipeline development.',
-    E: 'The most successful fundraising rounds are backed by verified market data and investor-tested narratives — not just a well-designed deck.',
+    E: 'The most successful fundraising rounds are backed by verified market data and investor-tested narratives – not just a well-designed deck.',
     F: 'The highest-ROI AI implementations start with use-case prioritisation against your actual workflows, not generic AI transformation playbooks.',
-    G: 'Whatever your specific situation, the right starting point is almost always a structured assessment — to validate the opportunity, understand the market, and build a clear action plan.'
+    G: 'Whatever your specific situation, the right starting point is almost always a structured assessment – to validate the opportunity, understand the market, and build a clear action plan.'
   };
   return copy[q2] || '';
 }
