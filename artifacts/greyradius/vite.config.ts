@@ -1,5 +1,7 @@
 import { defineConfig } from "vite";
 import path from "path";
+import fs from "fs";
+import type { Plugin } from "vite";
 
 const rawPort = process.env.PORT;
 
@@ -15,10 +17,35 @@ if (Number.isNaN(port) || port <= 0) {
 
 const websiteDir = path.resolve(import.meta.dirname, "../../greyradius-website");
 
+function custom404Plugin(): Plugin {
+  return {
+    name: "custom-404",
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        next();
+      });
+      return () => {
+        server.middlewares.use((req, res, next) => {
+          if (res.statusCode === 404) {
+            const page404 = path.join(websiteDir, "404.html");
+            if (fs.existsSync(page404)) {
+              res.statusCode = 404;
+              res.setHeader("Content-Type", "text/html; charset=utf-8");
+              res.end(fs.readFileSync(page404, "utf-8"));
+              return;
+            }
+          }
+          next();
+        });
+      };
+    },
+  };
+}
+
 export default defineConfig({
   base: "/",
   root: websiteDir,
-  plugins: [],
+  plugins: [custom404Plugin()],
   server: {
     port,
     strictPort: true,

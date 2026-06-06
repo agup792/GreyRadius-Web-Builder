@@ -1,0 +1,253 @@
+You are implementing a comprehensive SEO and AEO fix package for greyradius.com. Work through each task in sequence. Do not skip any step. Confirm completion of each before proceeding to the next.
+
+===================================================
+TASK 1 — CUSTOM 404 PAGE
+===================================================
+
+Create public/404.html (or the equivalent 404 file for this project's server setup).
+
+The page must:
+- Use the existing site header and footer
+- Include <meta name="robots" content="noindex, nofollow">
+- Display a clear "Page not found" message
+- Include links to: Home, Services, Industries, Contact
+- Return HTTP status 404 (not 200)
+
+If the project uses a static server or express, add a catch-all route that serves this file with status 404.
+
+===================================================
+TASK 2 — HOMEPAGE TITLE FIX
+===================================================
+
+In index.html, change the <title> tag from:
+  AI-Enabled Strategy &amp; Growth Consulting | Execution-Led Outcomes | GreyRadius
+to:
+  Market Entry & Strategy Consulting | GreyRadius
+
+Must be under 60 characters. Update the og:title and twitter:title meta tags to match.
+
+===================================================
+TASK 3 — META DESCRIPTION LENGTH FIX ON ALL INDUSTRY PAGES
+===================================================
+
+The industry page template currently generates meta descriptions that exceed 155 characters. 
+Find the template file used to generate pages in industries/*/[slug].html.
+
+The meta description must be trimmed to a maximum of 155 characters. If the current meta value exceeds 155 characters, truncate it at the last complete word before 155 characters and append "." if not already ending with punctuation.
+
+Apply this fix to the template so all future pages also comply.
+Then regenerate or patch all existing industry pages with truncated descriptions.
+
+===================================================
+TASK 4 — HUB PAGES: ADD LINKS TO CHILD PAGES
+===================================================
+
+For each Tier 2 industry hub page:
+  industries/cpg-fmcg-retail.html
+  industries/technology.html
+  industries/healthcare-and-life-sciences.html
+  industries/bfsi.html
+  industries/energy-and-chemicals.html
+  industries/real-estate-and-infrastructure.html
+  industries/investment-banks-and-pe.html
+
+Add a new section at the bottom of the page body (before the final CTA section) with:
+
+  <section class="section-padding bg-light">
+    <div class="container">
+      <h2 class="section-heading__title">Country and sector guides</h2>
+      <p>Browse all our [sector] market entry guides by geography.</p>
+      <ul class="link-grid">
+        [one <li><a href="..."> for every child page under this hub]
+      </ul>
+    </div>
+  </section>
+
+To find the child pages for each hub, read the sitemap.xml and extract all URLs that start with industries/[hub-slug]/.
+
+Use the slug to generate readable link text: "philippines-market-entry" becomes "Philippines market entry", "india-saas-market-entry" becomes "India SaaS market entry", etc. (replace hyphens with spaces, capitalise first word).
+
+The href for each link must be the relative path from the hub page to the child page, e.g.:
+  href="cpg-fmcg-retail/philippines-market-entry.html"
+
+===================================================
+TASK 5 — TIER 3 PAGES: ADD RELATED GUIDES SECTION
+===================================================
+
+For every page in industries/[sector]/[slug].html:
+
+Add a "Related market entry guides" section immediately before the final CTA/meeting section:
+
+  <section class="section-padding" style="background:#f8f9fb;">
+    <div class="container">
+      <h2 class="section-heading__title">Related market entry guides</h2>
+      <ul class="link-grid" style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.75rem;">
+        [4-6 sibling page links]
+      </ul>
+    </div>
+  </section>
+
+Sibling selection logic:
+1. Find all other pages in the same parent directory (same sector).
+2. If fewer than 4 siblings exist, also include pages from geographically adjacent sectors.
+3. Never link to the page itself.
+4. Limit to 6 links per page.
+5. Use readable anchor text (slug with hyphens replaced by spaces, first word capitalised).
+
+===================================================
+TASK 6 — SERVICE PAGES: ADD INDUSTRY CROSS-LINKS
+===================================================
+
+On each of the six service pages (services/opportunity-assessment.html, services/feasibility-and-tev.html, services/market-entry-execution.html, services/gtm-execution-as-a-service.html, services/pitchbook-and-fundraising.html, services/ai-consulting-and-transformation.html):
+
+Add a section before the final CTA:
+
+  <section class="section-padding bg-light">
+    <div class="container">
+      <h2 class="section-heading__title">Explore by industry</h2>
+      <p>We apply this service across sectors. Browse our industry-specific market entry guides.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.5rem;">
+        <a href="../industries/cpg-fmcg-retail.html" class="btn btn--outline">CPG / FMCG / Retail</a>
+        <a href="../industries/technology.html" class="btn btn--outline">Technology</a>
+        <a href="../industries/healthcare-and-life-sciences.html" class="btn btn--outline">Healthcare</a>
+        <a href="../industries/bfsi.html" class="btn btn--outline">BFSI</a>
+        <a href="../industries/energy-and-chemicals.html" class="btn btn--outline">Energy</a>
+        <a href="../industries/real-estate-and-infrastructure.html" class="btn btn--outline">Real Estate</a>
+      </div>
+    </div>
+  </section>
+
+===================================================
+TASK 7 — HOMEPAGE SCHEMA ENRICHMENT
+===================================================
+
+Find the application/ld+json block on index.html that contains "@type": "ProfessionalService".
+Add the following fields to it (merge, do not replace the existing block):
+
+  "foundingDate": "2017",
+  "areaServed": ["India","United Arab Emirates","Saudi Arabia","Indonesia","Vietnam","Nigeria","Kenya","South Africa","Singapore"],
+  "numberOfEmployees": {"@type":"QuantitativeValue","value":20},
+  "knowsAbout": ["Market entry consulting","GTM strategy","Feasibility studies","Fundraising advisory","AI consulting"],
+  "sameAs": ["https://linkedin.com/company/greyradius"]
+
+Also add a separate WebSite schema block to index.html:
+
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "GreyRadius Consulting",
+    "url": "https://greyradius.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://greyradius.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+
+===================================================
+TASK 8 — SECTOR OG IMAGES
+===================================================
+
+The industry pages currently all use /assets/images/og-generic.png.
+
+Create sector-specific OG image references by updating the og:image meta tag on each hub and child page:
+
+  - industries/cpg-fmcg-retail/* → /assets/images/og-cpg.png
+  - industries/technology/* → /assets/images/og-technology.png
+  - industries/healthcare-and-life-sciences/* → /assets/images/og-healthcare.png
+  - industries/bfsi/* → /assets/images/og-bfsi.png
+  - industries/energy-and-chemicals/* → /assets/images/og-energy.png
+  - industries/real-estate-and-infrastructure/* → /assets/images/og-realestate.png
+  - industries/investment-banks-and-pe/* → /assets/images/og-finance.png
+  - All others → /assets/images/og-generic.png
+
+If those image files do not exist, create placeholder references for now (the actual images can be added later). Update the template that generates programmatic pages so future pages inherit the correct sector OG image automatically.
+
+===================================================
+TASK 9 — ADD datePublished AND author TO INDUSTRY PAGES
+===================================================
+
+In the application/ld+json Service schema block on every industry page, add:
+
+  "datePublished": "2025-01-01",
+  "dateModified": "2026-06-01",
+  "author": {
+    "@type": "Organization",
+    "name": "GreyRadius Consulting",
+    "url": "https://greyradius.com"
+  }
+
+Apply this to the template and regenerate all pages.
+
+===================================================
+TASK 10 — ROBOTS.TXT FINAL CHECK
+===================================================
+
+Current robots.txt content:
+  User-agent: *
+  Allow: /
+  Sitemap: https://greyradius.com/sitemap.xml
+
+This is correct for production. No changes needed.
+
+However: add one additional line to disallow any private or staging paths if they exist:
+  Disallow: /draft/
+  Disallow: /staging/
+  Disallow: /admin/
+
+Only add the Disallow lines if those directories actually exist.
+
+===================================================
+TASK 11 — VERIFY ALL FORMS FIRE CORRECTLY
+===================================================
+
+Check the following and report status of each:
+
+1. Contact page HubSpot Meetings embed — confirm the iframe loads (data-src attribute must be present, JS file must load from static.hsappstatic.net)
+
+2. Industry page newsletter form — confirm the hs-form-frame div has data-portal-id="21337745" and data-form-id="8fb2e137-9ca1-4c6e-8152-63225d37d47a" on at least 5 different industry pages
+
+3. Business diagnostic page — confirm the form submission JS function is present and the result section appears after answers are selected (trace the JS logic, do not execute it)
+
+4. HubSpot script loader — confirm //js.hs-scripts.com/21337745.js is present in <body> of every page template
+
+Report any page where the HubSpot script is missing.
+
+===================================================
+TASK 12 — SITEMAP PRIORITY CORRECTION
+===================================================
+
+In sitemap.xml, verify that priorities are set correctly:
+  - Homepage: 1.0
+  - Service pages: 0.9
+  - Industry hub pages (Tier 1): 0.9
+  - Sub-service and geography guide pages (Tier 2): 0.8
+  - Programmatic industry pages (Tier 3): 0.7
+  - Case studies and insights: 0.8
+  - About, team, method: 0.8
+  - Legal pages: 0.3
+
+If the sitemap assigns 0.9 to all industry pages regardless of tier, correct it. Tier 3 pages (industries/[sector]/[slug].html) should be 0.7, not 0.9.
+
+===================================================
+AFTER ALL TASKS: CONFIRM
+===================================================
+
+Output a final confirmation table:
+
+Task | Status | Notes
+1 — 404 page | done/failed | [any notes]
+2 — Homepage title | done/failed |
+3 — Meta desc length | done/failed | [N pages patched]
+4 — Hub page child links | done/failed | [N hub pages updated]
+5 — Sibling page links | done/failed | [N industry pages updated]
+6 — Service page industry links | done/failed |
+7 — Homepage schema | done/failed |
+8 — Sector OG images | done/failed |
+9 — datePublished/author | done/failed |
+10 — robots.txt | done/failed |
+11 — Form audit | done/failed | [any broken forms]
+12 — Sitemap priorities | done/failed |
+
+Then confirm the site is ready for DNS cutover to greyradius.com and Google Search Console verification.
+===================================================
