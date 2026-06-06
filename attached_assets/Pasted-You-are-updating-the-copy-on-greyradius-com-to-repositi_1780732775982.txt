@@ -1,0 +1,224 @@
+You are updating the copy on greyradius.com to reposition AI-related messaging from "AI-first" to "expert-led, AI-enabled." The new positioning is: "AI-enabled execution, validated by experts."
+
+The principle: every mention of AI must be paired with or followed by what human experts do with that output. AI is the accelerant. Expert judgment is the product.
+
+Work through each file below. Make surgical copy edits only — do not change structure, layout, or non-AI copy.
+
+===================================================
+TASK 1 — INDEX.HTML: META TAGS
+===================================================
+
+Find and replace the following meta tag values:
+
+1. <meta name="description" ...>
+   CURRENT: "GreyRadius helps founders, CXOs, and ambitious businesses turn growth opportunities into measurable outcomes. AI-accelerated delivery, on-ground market intelligence, and hands-on execution across the GCC, Southeast Asia, EMEA, and India."
+   NEW: "GreyRadius helps founders, CXOs, and ambitious businesses turn growth opportunities into measurable outcomes. Expert-led delivery, AI-enabled speed, and hands-on execution across the GCC, Southeast Asia, EMEA, and India."
+
+2. <meta property="og:description" ...>
+   CURRENT: "Boutique strategy and growth consulting grounded in real primary research, accelerated by AI, delivered as measurable outcomes."
+   NEW: "Boutique strategy and growth consulting grounded in 30+ expert interviews per mandate, AI-enabled for speed, and delivered as measurable outcomes."
+
+3. <meta name="twitter:description" ...>
+   Same new value as og:description above.
+
+4. In the application/ld+json ProfessionalService schema, find the "description" field:
+   CURRENT: "Boutique strategy and growth consulting grounded in primary research, accelerated by AI, delivered as measurable outcomes..."
+   NEW: "Boutique strategy and growth consulting grounded in 30+ expert interviews per mandate. AI enables speed; human judgment drives every recommendation. Serving the Middle East, Southeast Asia, South Asia, and Europe."
+
+===================================================
+TASK 2 — INDEX.HTML: HERO SECTION
+===================================================
+
+Find the hero paragraph that reads:
+"Combining AI-enabled execution, deep commercial understanding, and hands-on strategic problem solving..."
+
+Replace with:
+"Combining expert-led strategy, AI-enabled execution, and hands-on commercial problem solving, we help founders, CXOs, and ambitious businesses turn growth opportunities into measurable business outcomes across the GCC, Southeast Asia, EMEA, and India."
+
+===================================================
+TASK 3 — INDEX.HTML: "OUR DIFFERENCE" PILLAR CARDS
+===================================================
+
+Find the pillar card with title "AI-accelerated delivery and execution" and body beginning "AI is embedded across our consulting workflows..."
+
+Replace the title with:
+"Expert judgment, AI-enabled speed"
+
+Replace the body with:
+"Our consultants lead every engagement. AI accelerates the heavy work — transcript synthesis, market modelling, pattern recognition across 200+ survey responses — so our experts spend their time on what AI cannot do: judgment, nuance, and accountability. Delivery cycles are 3x faster without trading quality for speed."
+
+Find the pillar card with title "On-ground data. Human-validated." and body beginning "Every strategic recommendation is strengthened through direct conversations..."
+
+This card is correctly positioned. Update the body to sharpen it:
+"Every GreyRadius recommendation traces to a named source — a buyer, a regulator, a channel partner. AI synthesises our transcripts at scale; our partners validate every finding against their commercial experience before it becomes a recommendation. ~30+ interviews and 200+ surveys per mandate. No desk-research shortcuts."
+
+===================================================
+TASK 4 — INDEX.HTML: AI SERVICE CARD IN "SIX OFFERINGS" SECTION
+===================================================
+
+Find the service card for "AI Consulting & Transformation" with body:
+"AI strategy that ships. Not a deck about transformation. Use-case prioritisation, vendor selection, and a live pilot in 4–6 weeks – grounded in your workflows, not generic AI frameworks."
+
+Replace with:
+"AI that works in your business, validated by people who've seen it fail. Use-case prioritisation grounded in expert interviews, vendor selection based on proven deployments, and a live pilot in 4–6 weeks — not a transformation roadmap that sits on a shelf."
+
+===================================================
+TASK 5 — INDEX.HTML: METHOD SECTION (THE SIX STEPS)
+===================================================
+
+Find the "Listen" step in the homepage method section. If it contains any AI-first language, update it to emphasise that primary research is human-conducted.
+
+Find any instance of "AI" in the six-step method labels and ensure it is qualified with human oversight language. If the step reads only "AI" or "AI-powered", change to "AI-assisted, expert-reviewed" or equivalent.
+
+===================================================
+TASK 6 — ABOUT/METHOD.HTML
+===================================================
+
+Find the "Decide" step section that mentions AI. The current text contains:
+"The 'Decide' step is where AI earns its place in our process – Claude and ChatGPT handle..."
+
+This is currently well-calibrated — AI earns its place after human research. Strengthen the human validation language:
+
+Find the sentence or paragraph where AI tools are listed (Claude, ChatGPT, Perplexity, etc.) and ensure it is preceded by or followed by a sentence making clear that:
+- AI output is reviewed by the engagement partner before any finding is included
+- No AI-generated claim reaches a client without human cross-reference to primary interview data
+
+Add after the AI tools list (or wherever the "What AI doesn't replace" language appears):
+
+"What AI never replaces: the judgment call. Every synthesis produced by AI in a GreyRadius engagement is reviewed by the engagement partner against the raw interview transcripts. If a pattern identified by AI is not corroborated by at least two primary sources, it does not become a finding."
+
+Find the heading or label "AI earns its place" or equivalent and change to:
+"Where AI helps — and where humans take over"
+
+===================================================
+TASK 7 — SERVICES/OPPORTUNITY-ASSESSMENT.HTML
+===================================================
+
+Find "Market sizing model (AI-built)" in the deliverables list.
+Change to: "Market sizing model — AI-structured, expert-validated"
+
+Find any instance of "AI-powered intelligence frameworks" in the page intro.
+Change to: "primary research and AI-assisted intelligence frameworks, reviewed by sector experts"
+
+Find the section that explains how AI accelerates the work (Otter.ai, Claude transcripts, etc.).
+The current framing shows AI as an efficiency tool. Add a visible callout or paragraph after this section:
+
+"The AI layer compresses timeline. The expert layer ensures accuracy. Every pattern Claude identifies in our transcripts is cross-checked by the engagement lead against named interview sources before it becomes a recommendation. Speed without accountability is not our model."
+
+===================================================
+TASK 8 — SERVICES/MARKET-ENTRY-EXECUTION.HTML
+===================================================
+
+Find "AI-enabled Market Intelligence" in the core capabilities list (item 06).
+Change the heading to: "Expert-validated market intelligence, AI-enabled"
+Change the body to: "AI-assisted analytics for faster market sensing and competitive monitoring — reviewed and contextualised by our on-ground team before informing any strategic decision."
+
+Find "AI-enabled market intelligence throughout" in the deliverables checklist.
+Change to: "Expert-validated, AI-enabled market intelligence throughout"
+
+===================================================
+TASK 9 — SERVICES/AI-CONSULTING-AND-TRANSFORMATION.HTML
+===================================================
+
+This page is specifically about AI services so "AI-first" language is appropriate here. The repositioning needed is narrower: add the human validation layer explicitly so it does not read as a pure AI vendor.
+
+Find the main hero/intro paragraph and add after the first sentence:
+"Our approach is deliberately human-first: we use expert interviews to identify which AI applications will actually create value in your workflows before recommending any tool or model."
+
+Find the "Why we're not the Big 3" or similar differentiation section. If it only references cost and speed, add:
+"We also don't ship AI outputs as recommendations. Every use-case we identify goes through commercial validation with your team — because AI that is technically correct but operationally irrelevant still fails."
+
+Find any instance of the phrase "AI strategy that ships" and keep it — it is correct positioning for this specific page.
+
+===================================================
+TASK 10 — SERVICES/GTM-EXECUTION-AS-A-SERVICE.HTML
+===================================================
+
+Find any references to "AI-enabled" or "AI-powered" on this page.
+For each one, append the human validation qualifier: replace "[X] AI-enabled [Y]" with "[X] AI-enabled [Y], executed and validated by our commercial team."
+
+If there is a deliverables section listing "AI-generated" sequences, scripts, or outputs, change the label to "AI-drafted, expert-refined" for each item.
+
+===================================================
+TASK 11 — SERVICES/FEASIBILITY-AND-TEV.HTML
+===================================================
+
+Find any mention of AI in financial modelling (e.g., "AI-built model", "AI-assisted analysis").
+Change to: "AI-structured financial model, assumptions validated through primary expert interviews"
+
+If there is a section describing data sources or analysis methodology, add:
+"Financial assumptions in every GreyRadius TEV are cross-referenced against at least two independent primary sources — channel partner interviews, regulatory conversations, or comparable transaction benchmarks — before entering the model."
+
+===================================================
+TASK 12 — ALL INDUSTRY PROGRAMMATIC PAGES
+===================================================
+
+The programmatic industry pages (industries/[sector]/[slug].html) contain stat blocks with labels like "AI-augmented ... delivers [X] market entry strategies efficiently."
+
+Find the template that generates the stat3b field (or the equivalent rendered text on pages).
+
+The current pattern is:
+"AI-augmented [X] and [Y] research delivers [Z] market entry strategies efficiently."
+
+Change the template to produce:
+"AI-augmented [X] and [Y] research, reviewed by sector experts, delivers [Z] market entry strategies that are grounded in human-validated commercial intelligence."
+
+Apply to all programmatic pages or update the template so future builds use the new text.
+
+Also find the tagline section on industry pages — if it includes "AI-augmented" or similar in the visible hero tagline, replace with the service tagline which should not reference AI (the industry pages are market entry pages, not AI service pages).
+
+===================================================
+TASK 13 — HOMEPAGE: ADD A DEDICATED "HUMAN + AI" TRUST SIGNAL
+===================================================
+
+Find the section after the three pillar cards (the "Our Difference" section). After the three cards, add a new trust-signal row (not a card — a simple horizontal strip) with the following HTML:
+
+<div class="ai-trust-strip" style="background:#f0f4f8;border-top:2px solid #1B2A4A;border-bottom:2px solid #1B2A4A;padding:1.5rem 0;margin-top:2.5rem;">
+  <div class="container" style="display:flex;flex-wrap:wrap;gap:2rem;align-items:center;justify-content:center;text-align:center;">
+    <div style="flex:1;min-width:180px;">
+      <p style="font-weight:700;color:#1B2A4A;margin:0;font-size:1rem;">AI-enabled execution</p>
+      <p style="color:#555;font-size:0.875rem;margin:0.25rem 0 0;">Speed and scale across every engagement</p>
+    </div>
+    <div style="font-size:1.5rem;color:#1B2A4A;font-weight:300;">+</div>
+    <div style="flex:1;min-width:180px;">
+      <p style="font-weight:700;color:#1B2A4A;margin:0;font-size:1rem;">Expert-validated findings</p>
+      <p style="color:#555;font-size:0.875rem;margin:0.25rem 0 0;">Every output reviewed by a senior partner</p>
+    </div>
+    <div style="font-size:1.5rem;color:#1B2A4A;font-weight:300;">=</div>
+    <div style="flex:1;min-width:180px;">
+      <p style="font-weight:700;color:#E8612C;margin:0;font-size:1rem;">Outcomes you can act on</p>
+      <p style="color:#555;font-size:0.875rem;margin:0.25rem 0 0;">Not reports. Decisions with evidence.</p>
+    </div>
+  </div>
+</div>
+
+===================================================
+TASK 14 — HOMEPAGE: UPDATE THE "HOW WE WORK" STEP LABELS
+===================================================
+
+In the six-step method section on the homepage, find the step that references AI or synthesis.
+
+If the "Decide" step currently reads only "Synthesis to a clear recommendation", append in a sub-label or description: "(AI-assisted synthesis, partner-reviewed decision)"
+
+This makes the human-in-the-loop visible in the most prominent process diagram on the site.
+
+===================================================
+AFTER ALL TASKS: CONFIRM
+===================================================
+
+Output a summary table:
+
+File | AI copy instances updated | Human validation language added
+index.html | [N] | yes/no
+about/method.html | [N] | yes/no
+services/opportunity-assessment.html | [N] | yes/no
+services/market-entry-execution.html | [N] | yes/no
+services/ai-consulting-and-transformation.html | [N] | yes/no
+services/gtm-execution-as-a-service.html | [N] | yes/no
+services/feasibility-and-tev.html | [N] | yes/no
+Industry page template | [N] | yes/no
+
+Then confirm: no page on the site now leads with AI as the primary value proposition without pairing it with explicit human validation language.
+
+The final positioning test: if you read any single sentence containing "AI" on the site, you should be able to find either in the same sentence or within two sentences: a reference to expert review, partner validation, primary research corroboration, or human judgment. If any AI mention is isolated, flag it.
+===================================================
