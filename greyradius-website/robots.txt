@@ -1,4 +1,34 @@
 User-agent: *
 Allow: /
+Disallow: /og-preview.html
+Disallow: /templates/
+
+# AI answer-engine crawlers — explicitly allowed for AEO visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
 
 Sitemap: https://greyradius.com/sitemap.xml
