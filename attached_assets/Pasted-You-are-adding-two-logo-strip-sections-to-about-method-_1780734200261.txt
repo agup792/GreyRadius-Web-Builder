@@ -1,0 +1,166 @@
+You are adding two logo strip sections to about/method.html to visually display the research databases and tools GreyRadius uses. No structural changes to the page — surgical insertions only.
+
+===================================================
+TASK 1 — DOWNLOAD ALL LOGOS INTO ASSETS
+===================================================
+
+Create the directory: assets/images/logos/tools/
+
+Download the following logos using their official CDN or clearbit logo URLs. Save each as a PNG or SVG with the filename shown. Use the URLs below — these are publicly available brand logo sources:
+
+GROUP 1 — Primary research and expert access tools:
+
+GLG (Gerson Lehrman Group)
+  URL: https://logo.clearbit.com/glginsights.com
+  Save as: assets/images/logos/tools/glg.png
+
+Tegus
+  URL: https://logo.clearbit.com/tegus.co
+  Save as: assets/images/logos/tools/tegus.png
+
+AlphaSense
+  URL: https://logo.clearbit.com/alpha-sense.com
+  Save as: assets/images/logos/tools/alphasense.png
+
+Otter.ai
+  URL: https://logo.clearbit.com/otter.ai
+  Save as: assets/images/logos/tools/otterai.png
+
+Apollo.io
+  URL: https://logo.clearbit.com/apollo.io
+  Save as: assets/images/logos/tools/apollo.png
+
+GROUP 2 — Market intelligence databases:
+
+Euromonitor
+  URL: https://logo.clearbit.com/euromonitor.com
+  Save as: assets/images/logos/tools/euromonitor.png
+
+EMIS (Emerging Markets Information Service)
+  URL: https://logo.clearbit.com/emis.com
+  Save as: assets/images/logos/tools/emis.png
+
+ITC Trade Map
+  URL: https://logo.clearbit.com/trademap.org
+  Save as: assets/images/logos/tools/trademap.png
+
+PitchBook
+  URL: https://logo.clearbit.com/pitchbook.com
+  Save as: assets/images/logos/tools/pitchbook.png
+
+Tracxn
+  URL: https://logo.clearbit.com/tracxn.com
+  Save as: assets/images/logos/tools/tracxn.png
+
+World Bank
+  URL: https://logo.clearbit.com/worldbank.org
+  Save as: assets/images/logos/tools/worldbank.png
+
+Download each with curl or wget. If any download fails (non-200 response), do not skip — use the fallback URL instead:
+  Fallback pattern: https://logo.clearbit.com/[domain]?size=80
+
+After downloading, confirm each file exists and is non-empty (>1KB). List any that failed.
+
+===================================================
+TASK 2 — ADD GROUP 2 LOGOS INTO THE "LISTEN / 20% SECONDARY" SECTION
+===================================================
+
+In about/method.html, find the section containing the text "20% Secondary Research". It will contain a panel or div describing "Market reports, industry databases, earnings calls..."
+
+Immediately after the closing tag of that secondary research panel/div (and before the next section begins), insert the following HTML block:
+
+<div style="margin-top:1.5rem;">
+  <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1rem;">Data sources we use</p>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem 2rem;">
+    <img src="../../assets/images/logos/tools/euromonitor.png" alt="Euromonitor" height="28" style="opacity:0.65;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.65'">
+    <img src="../../assets/images/logos/tools/emis.png" alt="EMIS" height="28" style="opacity:0.65;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.65'">
+    <img src="../../assets/images/logos/tools/trademap.png" alt="ITC Trade Map" height="28" style="opacity:0.65;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.65'">
+    <img src="../../assets/images/logos/tools/pitchbook.png" alt="PitchBook" height="28" style="opacity:0.65;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.65'">
+    <img src="../../assets/images/logos/tools/tracxn.png" alt="Tracxn" height="28" style="opacity:0.65;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.65'">
+    <img src="../../assets/images/logos/tools/worldbank.png" alt="World Bank" height="28" style="opacity:0.65;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.65'">
+  </div>
+</div>
+
+NOTE on paths: The method page is at about/method.html so assets are two levels up. If the project uses root-relative paths (starting with /), use /assets/images/logos/tools/[filename].png instead of ../../assets/...
+
+===================================================
+TASK 3 — REPLACE GROUP 1 TEXT CARDS WITH LOGO STRIP IN THE "DECIDE / TOOLS" SECTION
+===================================================
+
+In about/method.html, find the grid of tool cards inside the dark "Decide" section. These cards currently show text like:
+  - "Expert Access — AlphaSense / Tegus"
+  - "Interviews — Otter.ai / Fireflies"
+  - "Outreach — Apollo + Clay"
+  - "Research — Perplexity"
+  - "Finance — Excel Copilot"
+
+Keep the existing text card grid exactly as it is — do not remove it.
+
+Immediately AFTER the closing </div> of that card grid (and before the closing </div> of the dark section), insert this logo strip:
+
+<div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);">
+  <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.25rem;">Expert networks &amp; primary research access</p>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem 2.5rem;">
+    <img src="/assets/images/logos/tools/glg.png" alt="GLG Gerson Lehrman Group" height="30" style="opacity:0.55;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='0.55'">
+    <img src="/assets/images/logos/tools/tegus.png" alt="Tegus" height="30" style="opacity:0.55;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='0.55'">
+    <img src="/assets/images/logos/tools/alphasense.png" alt="AlphaSense" height="30" style="opacity:0.55;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='0.55'">
+    <img src="/assets/images/logos/tools/otterai.png" alt="Otter.ai" height="30" style="opacity:0.55;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='0.55'">
+    <img src="/assets/images/logos/tools/apollo.png" alt="Apollo.io" height="30" style="opacity:0.55;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='0.55'">
+  </div>
+</div>
+
+===================================================
+TASK 4 — ALSO ADD BOTH LOGO STRIPS TO about/method.html HOMEPAGE MIRROR
+===================================================
+
+Check if the homepage index.html has a "How we work" or method section. If it references the six steps or has a "Listen first. Decide together." section with any tool mentions, add only the Group 1 logo strip (expert networks) at the bottom of that section using the same HTML as Task 3 but with root-relative paths starting with /assets/...
+
+If the homepage has no tool mentions in the method section, skip this task.
+
+===================================================
+TASK 5 — ALT TEXT AND ACCESSIBILITY
+===================================================
+
+Confirm that every logo img tag has:
+- A descriptive alt attribute (e.g., alt="GLG Gerson Lehrman Group — expert network")
+- No empty alt="" (these should have descriptive alts since they convey meaning)
+- title attribute matching the alt text for tooltip support
+
+Update all inserted logo img tags to use this format:
+<img src="..." alt="[Full company name] — [one-word category]" title="[Full company name]" height="30" style="...">
+
+Examples:
+  alt="GLG Gerson Lehrman Group — expert network"
+  alt="Tegus — expert network"
+  alt="AlphaSense — expert network"
+  alt="Otter.ai — interview transcription"
+  alt="Apollo.io — outreach"
+  alt="Euromonitor — market intelligence"
+  alt="EMIS Emerging Markets Information Service — market data"
+  alt="ITC Trade Map — trade data"
+  alt="PitchBook — financial data"
+  alt="Tracxn — startup intelligence"
+  alt="World Bank — economic data"
+
+===================================================
+TASK 6 — FALLBACK: IF LOGOS FAIL TO DOWNLOAD
+===================================================
+
+If any logo download failed in Task 1, implement a text fallback for that specific logo only. Use this pattern:
+
+<span style="display:inline-flex;align-items:center;height:30px;padding:0 0.75rem;background:rgba(255,255,255,0.08);border-radius:4px;font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.55);letter-spacing:0.04em;">[TOOL NAME]</span>
+
+This ensures the strip renders cleanly even if a specific CDN logo is unavailable.
+
+===================================================
+CONFIRM AFTER ALL TASKS
+===================================================
+
+Output:
+1. List of all logos successfully downloaded with file sizes
+2. List of any logos that failed with fallback text used instead
+3. Confirm Group 1 strip added to about/method.html — yes/no, exact location description
+4. Confirm Group 2 strip added to about/method.html — yes/no, exact location description
+5. Confirm homepage method section updated (or skipped with reason)
+6. Screenshot path or preview URL if available
+===================================================
