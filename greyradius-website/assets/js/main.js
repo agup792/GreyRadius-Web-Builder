@@ -203,3 +203,39 @@
   });
 
 })();
+
+// Newsletter signup — posts to HubSpot Forms API (no iframe, no branding)
+function grNewsletterSubmit(e, form) {
+  e.preventDefault();
+  var emailInput = form.querySelector('[name=email]');
+  var email = emailInput ? emailInput.value.trim() : '';
+  if (!email) { return; }
+  var msg = form.querySelector('.gr-nl-msg');
+  var btn = form.querySelector('[type=submit]');
+  var origText = btn ? btn.innerHTML : 'Subscribe &rarr;';
+  if (btn) { btn.disabled = true; btn.textContent = 'Sending\u2026'; }
+  fetch('https://api.hsforms.com/submissions/v3/integration/submit/21337745/8fb2e137-9ca1-4c6e-8152-63225d37d47a', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      fields: [{ objectTypeId: '0-1', name: 'email', value: email }],
+      context: { pageUri: window.location.href, pageName: document.title }
+    })
+  }).then(function (r) {
+    if (msg) {
+      msg.style.display = 'block';
+      if (r.ok) {
+        msg.style.color = '#2a7a4e';
+        msg.textContent = "You\u2019re in. Watch your inbox for the first brief.";
+        if (emailInput) { emailInput.value = ''; }
+      } else {
+        msg.style.color = '#c0392b';
+        msg.textContent = 'Something went wrong \u2013 please try again.';
+      }
+    }
+  }).catch(function () {
+    if (msg) { msg.style.display = 'block'; msg.style.color = '#c0392b'; msg.textContent = 'Could not connect \u2013 please try again.'; }
+  }).finally(function () {
+    if (btn) { btn.disabled = false; btn.innerHTML = origText; }
+  });
+}

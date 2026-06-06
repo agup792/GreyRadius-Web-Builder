@@ -71,7 +71,6 @@
   ]}
 ]
 </script>
-  <script src="https://js.hsforms.net/forms/embed/21337745.js" defer></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -229,7 +228,16 @@
     <span class="section-heading__eyebrow">Stay informed</span>
     <h2 id="nl-heading" style="margin-bottom:0.75rem;">Market intelligence for Healthcare &amp; Life Sciences leaders.</h2>
     <p style="color:var(--color-text-muted);margin-bottom:2rem;font-size:var(--text-body);">GreyRadius research notes, market entry signals, and sector briefs &#8211; delivered monthly. No fluff.</p>
-    <div style="max-width:480px;margin:0 auto;text-align:left;"><div class="hs-form-frame" data-region="na1" data-form-id="8fb2e137-9ca1-4c6e-8152-63225d37d47a" data-portal-id="21337745"></div></div>
+    <div style="max-width:480px;margin:0 auto;text-align:left;"><form class="gr-newsletter-form" onsubmit="grNewsletterSubmit(event,this)" novalidate>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <input type="email" name="email" placeholder="your@email.com" required
+          style="flex:1;min-width:180px;padding:0.75rem 1rem;border:1.5px solid #c8cdd6;border-radius:6px;font-family:var(--font-body,Montserrat,sans-serif);font-size:0.9375rem;color:var(--color-navy,#1B2A4A);background:#fff;outline:none;transition:border-color 0.15s ease;">
+        <button type="submit" style="padding:0.75rem 1.5rem;background:var(--color-orange,#E8693A);color:#fff;border:none;border-radius:6px;font-family:var(--font-body,Montserrat,sans-serif);font-weight:700;font-size:0.9375rem;cursor:pointer;white-space:nowrap;letter-spacing:0.01em;">
+          Subscribe &rarr;
+        </button>
+      </div>
+      <p class="gr-nl-msg" style="display:none;margin-top:0.625rem;font-size:0.875rem;font-family:var(--font-body,Montserrat,sans-serif);line-height:1.5;"></p>
+    </form></div>
   </div>
 </section>
 
