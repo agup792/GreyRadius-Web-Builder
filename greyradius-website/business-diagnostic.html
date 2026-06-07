@@ -33,6 +33,10 @@
       --diag-transition: 300ms ease;
     }
 
+    #main {
+      padding-top: 80px; /* clear fixed nav */
+    }
+
     .diag-wrapper {
       min-height: calc(100vh - 80px);
       background: var(--diag-off-white);
@@ -976,9 +980,7 @@ function showScreen(name) {
     requestAnimationFrame(() => { target.classList.add('visible'); });
   });
   updateProgress(name);
-  requestAnimationFrame(() => {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function updateProgress(screenName) {
