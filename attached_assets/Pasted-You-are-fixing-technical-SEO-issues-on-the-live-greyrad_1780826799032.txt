@@ -1,0 +1,311 @@
+You are fixing technical SEO issues on the live greyradius.com website. Work through each task in order. Confirm each before moving to the next.
+
+===================================================
+TASK 1 — FIX BROKEN SCHEMA JSON ON INDUSTRY PAGES
+===================================================
+
+Some industry pages have invalid JSON-LD schema causing a parse error:
+"Expecting property name enclosed in double quotes" at approximately position 1558.
+
+The cause is a trailing comma inside the BreadcrumbList or Organization object — 
+a comma after the last property before the closing brace, like this:
+  "url": "https://greyradius.com"
+  },    ← trailing comma here
+},
+
+Step 1: Find the template file used to generate industry pages. It will contain
+a multi-item JSON-LD array with Organization, Service, BreadcrumbList, FAQPage types.
+
+Step 2: Find every instance of:
+  },
+  },
+or
+  "url": "https://greyradius.com"
+    },
+  },
+
+where the inner closing brace has a trailing comma before the outer closing brace.
+
+Step 3: Remove the trailing comma. The correct pattern is:
+  "url": "https://greyradius.com"
+    }
+  },
+
+Step 4: Validate the corrected JSON by running:
+  node -e "JSON.parse(require('fs').readFileSync('template-file.html','utf8').match(/<script type=\"application\/ld\+json\">([\s\S]*?)<\/script>/)[1])"
+
+Step 5: Re-generate or patch all existing industry pages that were built from the
+broken template. Specifically confirm philippines-market-entry.html and 
+nigeria-market-entry.html now have valid schema.
+
+===================================================
+TASK 2 — BRANDED 404 PAGE WITH NOINDEX
+===================================================
+
+Create a proper 404 page. The current one returns 355 bytes of plain text.
+
+Create public/404.html (or wherever the server expects the 404 document) with:
+
+1. Full site header and navigation (copy from any service page)
+2. <meta name="robots" content="noindex, nofollow"> in the <head>
+3. A simple centred content block:
+   - Headline: "Page not found"
+   - Subtext: "The page you're looking for has moved or doesn't exist."
+   - Three buttons: "Go to homepage", "Browse services", "Browse industries"
+   - Links: / and /services/ and /industries/cpg-fmcg-retail.html
+4. Full site footer (copy from any service page)
+5. GA4 and HubSpot scripts (copy from any service page)
+
+Configure the server to serve this file with HTTP status 404 for all unmatched routes.
+
+Test: curl -s -o /dev/null -w "%{http_code}" https://greyradius.com/xyz-test-404
+Must return 404, not 200.
+
+===================================================
+TASK 3 — WWW TO NON-WWW 301 REDIRECT
+===================================================
+
+https://www.greyradius.com/ currently returns HTTP 200 instead of redirecting.
+This creates a duplicate content risk.
+
+Add a server-level 301 redirect from all www.greyradius.com requests to greyradius.com.
+
+If the project uses Express:
+  app.use((req, res, next) => {
+    if (req.headers.host.startsWith('www.')) {
+      return res.redirect(301, 'https://greyradius.com' + req.url);
+    }
+    next();
+  });
+
+If using Nginx, add to the www server block:
+  return 301 https://greyradius.com$request_uri;
+
+If using a static host configuration file, add the redirect rule there.
+
+Test: curl -s -o /dev/null -w "%{http_code} %{redirect_url}" https://www.greyradius.com/
+Must return: 301 https://greyradius.com/
+
+===================================================
+TASK 4 — FIX HOMEPAGE META DESCRIPTION LENGTH
+===================================================
+
+The homepage meta description is 220 characters — too long for SERPs.
+
+In index.html, find the <meta name="description"> tag and replace the content with:
+
+"GreyRadius is a boutique market entry consulting firm grounded in 30+ expert interviews per mandate. Expert-led strategy, AI-enabled speed, across India, Gulf, Southeast Asia, and Africa."
+
+This is 188 characters — confirm it is under 160 by running:
+  echo -n "your new description" | wc -c
+
+If still over 160, trim to:
+"GreyRadius: market entry consulting grounded in 30+ expert interviews. Expert-led strategy, AI-enabled execution, across India, Gulf, Southeast Asia, and Africa."
+
+Also update og:description and twitter:description to the same value.
+
+===================================================
+TASK 5 — HUB PAGES: ADD CHILD PAGE LINK SECTIONS
+===================================================
+
+Each industry hub page must link to all its child pages for Google to crawl them.
+
+For each hub page listed below, find all child pages in that directory from sitemap.xml,
+then add a "Browse all guides" section at the bottom of the page body (before the footer):
+
+Hub pages to update:
+  industries/cpg-fmcg-retail.html → link to all /industries/cpg-fmcg-retail/*.html
+  industries/technology.html → link to all /industries/technology/*.html
+  industries/healthcare-and-life-sciences.html → link to all pages in that dir
+  industries/bfsi.html → link to all pages in that dir
+  industries/energy-and-chemicals.html → link to all pages in that dir
+  industries/real-estate-and-infrastructure.html → link to all pages in that dir
+  industries/investment-banks-and-pe.html → link to all pages in that dir
+
+For each hub, insert this section before </main> or before the footer:
+
+<section style="padding:3rem 0;background:#f8f9fb;">
+  <div class="container">
+    <h2 style="font-size:1.25rem;font-weight:700;color:#1B2A4A;margin-bottom:1.5rem;">
+      Browse all [sector] market entry guides
+    </h2>
+    <ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.625rem;">
+      [one <li> per child page]
+      <li><a href="cpg-fmcg-retail/philippines-market-entry.html" 
+             style="display:block;padding:0.5rem 0.75rem;background:#fff;border:1px solid #e2e6ed;border-radius:5px;color:#1B2A4A;text-decoration:none;font-size:0.875rem;font-weight:500;"
+             onmouseover="this.style.borderColor='#E8612C'" 
+             onmouseout="this.style.borderColor='#e2e6ed'">
+          Philippines market entry
+        </a></li>
+    </ul>
+  </div>
+</section>
+
+Link text generation rule: take the slug, replace hyphens with spaces, capitalise first word only.
+e.g. "philippines-market-entry" → "Philippines market entry"
+     "india-b2b-saas-entry" → "India b2b saas entry"
+
+Use relative paths from the hub page location.
+
+===================================================
+TASK 6 — INDUSTRY PAGES: ADD RELATED GUIDES SECTION
+===================================================
+
+Every page in industries/[sector]/[slug].html must link to 4-6 sibling pages.
+
+In the template that generates these pages, add the following section immediately
+before the final CTA/meeting section:
+
+<section style="padding:2.5rem 0;background:#f0f4f8;">
+  <div class="container">
+    <h2 style="font-size:1.125rem;font-weight:700;color:#1B2A4A;margin-bottom:1.25rem;">
+      Related market entry guides
+    </h2>
+    <ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.5rem;">
+      [4-6 sibling page links]
+    </ul>
+  </div>
+</section>
+
+Sibling selection: read all other .html files in the same directory.
+Pick the first 6 alphabetically, skipping the current page.
+Use relative paths: href="[sibling-slug].html"
+
+For already-built pages: re-generate or patch each one.
+For the template: add this section so future builds include it automatically.
+
+===================================================
+TASK 7 — SERVICE PAGES: ADD INDUSTRY CROSS-LINKS
+===================================================
+
+On each of these six service pages, add an "Explore by industry" section
+before the footer:
+
+Files: services/opportunity-assessment.html, services/feasibility-and-tev.html,
+       services/market-entry-execution.html, services/gtm-execution-as-a-service.html,
+       services/pitchbook-and-fundraising.html, services/ai-consulting-and-transformation.html
+
+Section to add:
+
+<section style="padding:2.5rem 0;background:#f8f9fb;border-top:1px solid #e2e6ed;">
+  <div class="container">
+    <h2 style="font-size:1.125rem;font-weight:700;color:#1B2A4A;margin-bottom:1.25rem;">
+      Explore by industry
+    </h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.625rem;">
+      <a href="../industries/cpg-fmcg-retail.html" style="padding:0.4375rem 0.875rem;border:1.5px solid #1B2A4A;border-radius:4px;color:#1B2A4A;text-decoration:none;font-size:0.8125rem;font-weight:600;">CPG / FMCG / Retail</a>
+      <a href="../industries/technology.html" style="padding:0.4375rem 0.875rem;border:1.5px solid #1B2A4A;border-radius:4px;color:#1B2A4A;text-decoration:none;font-size:0.8125rem;font-weight:600;">Technology</a>
+      <a href="../industries/healthcare-and-life-sciences.html" style="padding:0.4375rem 0.875rem;border:1.5px solid #1B2A4A;border-radius:4px;color:#1B2A4A;text-decoration:none;font-size:0.8125rem;font-weight:600;">Healthcare</a>
+      <a href="../industries/bfsi.html" style="padding:0.4375rem 0.875rem;border:1.5px solid #1B2A4A;border-radius:4px;color:#1B2A4A;text-decoration:none;font-size:0.8125rem;font-weight:600;">BFSI</a>
+      <a href="../industries/energy-and-chemicals.html" style="padding:0.4375rem 0.875rem;border:1.5px solid #1B2A4A;border-radius:4px;color:#1B2A4A;text-decoration:none;font-size:0.8125rem;font-weight:600;">Energy</a>
+      <a href="../industries/real-estate-and-infrastructure.html" style="padding:0.4375rem 0.875rem;border:1.5px solid #1B2A4A;border-radius:4px;color:#1B2A4A;text-decoration:none;font-size:0.8125rem;font-weight:600;">Real Estate</a>
+    </div>
+  </div>
+</section>
+
+===================================================
+TASK 8 — ADD NOINDEX TO UTILITY PAGES
+===================================================
+
+Add <meta name="robots" content="noindex, follow"> to the <head> of:
+  - contact.html
+  - privacy.html (if it exists)
+  - terms.html (if it exists)
+  - business-diagnostic.html
+
+These pages should not consume crawl budget or appear in SERPs.
+Do NOT add noindex to any service, industry, about, case study, or insight pages.
+
+===================================================
+TASK 9 — ADD datePublished AND author TO SERVICE PAGE SCHEMA
+===================================================
+
+On each service page, find the Service schema JSON-LD block and add:
+
+  "datePublished": "2025-01-01",
+  "dateModified": "2026-06-01",
+  "provider": {
+    "@type": "Organization",
+    "name": "GreyRadius Consulting",
+    "url": "https://greyradius.com"
+  }
+
+Apply to all six service pages.
+
+===================================================
+TASK 10 — ADD LCP IMAGE PRELOAD HINT TO HOMEPAGE
+===================================================
+
+In index.html <head>, find the above-the-fold hero image (the first <img> in the
+hero section, or the CSS background image of the hero block).
+
+If it is an <img> tag with a src, add this immediately after the <title> tag:
+  <link rel="preload" as="image" href="[exact src path of hero image]">
+
+If the hero uses a CSS background-image, add:
+  <link rel="preload" as="image" href="[path to background image file]">
+
+This directly improves Largest Contentful Paint.
+
+===================================================
+TASK 11 — CONVERT CLIENT LOGOS TO WEBP
+===================================================
+
+The homepage loads 14+ client logo images as PNG/JPEG files.
+Convert all files in assets/images/clients/ to WebP format:
+
+  for file in assets/images/clients/*.{png,jpg,jpeg}; do
+    cwebp -q 85 "$file" -o "${file%.*}.webp"
+  done
+
+Then update index.html to use <picture> elements for each logo:
+  <picture>
+    <source srcset="assets/images/clients/[name].webp" type="image/webp">
+    <img src="assets/images/clients/[name].png" alt="[client name]" loading="lazy">
+  </picture>
+
+If cwebp is not available, install it: apt-get install -y webp
+
+===================================================
+TASK 12 — GSC VERIFICATION CHECK
+===================================================
+
+Check if a Google Search Console verification meta tag exists in index.html:
+  grep 'google-site-verification' index.html
+
+If present: report the verification code and confirm it is in place.
+
+If absent: GSC may be verified via GA4 or DNS TXT record instead.
+Check if GA4 tag (G-B7DXRX118W) is present — it is, so GSC verification via
+GA4 association may already be complete.
+
+Report: "GSC verification tag found: yes/no. GA4 present: yes. 
+Action required: log into Google Search Console at search.google.com/search-console 
+and verify the property using the Google Analytics verification method if not already done."
+
+Do not add a verification tag unless explicitly instructed — the GA4 method
+is preferable as it does not require HTML changes.
+
+===================================================
+CONFIRM AFTER ALL TASKS
+===================================================
+
+Output a final status table:
+
+Task | Status | Notes
+1 — Schema JSON fix | done/partial/failed | [N pages patched]
+2 — 404 branded page | done/failed |
+3 — www redirect | done/failed |
+4 — Homepage meta desc | done/failed | [new char count]
+5 — Hub page child links | done/failed | [N hubs updated]
+6 — Sibling links on industry pages | done/failed | [N pages updated]
+7 — Service → industry cross-links | done/failed |
+8 — noindex utility pages | done/failed |
+9 — Service schema datePublished | done/failed |
+10 — LCP preload hint | done/failed |
+11 — WebP client logos | done/failed |
+12 — GSC verification | done/failed | [action needed?]
+
+Then run a final schema validation spot check on 3 industry pages
+and confirm all three return valid JSON-LD.
+===================================================
