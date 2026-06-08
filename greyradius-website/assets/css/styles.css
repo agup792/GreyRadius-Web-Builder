@@ -2570,12 +2570,33 @@ details[open] .faq-icon { transform: rotate(45deg); }
 }
 
 /* ── Global inline-grid mobile collapse ─────────────────────────────
-   Any element with a hardcoded inline repeat(2,…) or 2-col grid
-   collapses to single column on mobile. Must stay at very end of file.
+   Collapses hardcoded inline grid-template-columns on smaller screens.
+   Must stay at very end of file so these rules win.
 ──────────────────────────────────────────────────────────────────── */
+
+/* ≤768px: 3-col → 2-col; asymmetric (1fr 2fr, auto 1fr) → 1-col */
+@media (max-width: 768px) {
+  [style*="grid-template-columns:repeat(3"],
+  [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  [style*="grid-template-columns:1fr 2fr"],
+  [style*="grid-template-columns: 1fr 2fr"],
+  [style*="grid-template-columns:2fr 1fr"],
+  [style*="grid-template-columns: 2fr 1fr"],
+  [style*="grid-template-columns:auto 1fr"],
+  [style*="grid-template-columns: auto 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* ≤640px: 2-col → 1-col; 3-col → 1-col */
 @media (max-width: 640px) {
   [style*="grid-template-columns:repeat(2"],
   [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns:repeat(3"],
+  [style*="grid-template-columns: repeat(3"],
   [style*="grid-template-columns:1fr 1fr"],
   [style*="grid-template-columns: 1fr 1fr"] {
     grid-template-columns: 1fr !important;
