@@ -2568,3 +2568,16 @@ details[open] .faq-icon { transform: rotate(45deg); }
 @media (max-width: 768px) {
   .diag-float { display: none; }
 }
+
+/* ── Global inline-grid mobile collapse ─────────────────────────────
+   Any element with a hardcoded inline repeat(2,…) or 2-col grid
+   collapses to single column on mobile. Must stay at very end of file.
+──────────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  [style*="grid-template-columns:repeat(2"],
+  [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
