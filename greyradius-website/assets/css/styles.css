@@ -63,7 +63,10 @@ body {
   background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+
+html { overflow-x: hidden; }
 
 img, svg { max-width: 100%; height: auto; display: block; }
 
@@ -1395,6 +1398,14 @@ details[open] .faq-icon { transform: rotate(45deg); }
   .hero-block__grid { grid-template-columns: 1fr; }
   .hero-block__visual { display: none; }
 
+  /* Industry / inner pages: hero grid set via inline style — force single column */
+  .hero-block > .container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-block > .container > div[style*="grid-template-columns"] > div[aria-hidden="true"] {
+    display: none !important;
+  }
+
   .pillar-block { grid-template-columns: 1fr; }
   .offering-grid { grid-template-columns: 1fr; }
   .case-study-grid { grid-template-columns: 1fr; }
@@ -1425,9 +1436,59 @@ details[open] .faq-icon { transform: rotate(45deg); }
    RESPONSIVE – Small Mobile (≤640px)
    ============================================================ */
 @media (max-width: 640px) {
+  :root {
+    --text-hero: clamp(1.75rem, 7.5vw, 2.25rem);
+    --text-h1:   clamp(1.625rem, 6vw, 2rem);
+    --text-h2:   clamp(1.25rem, 5vw, 1.75rem);
+  }
+
   .industry-tiles { grid-template-columns: repeat(2, 1fr); }
-  .stat-strip__number { font-size: 2.75rem; }
-  .trust-strip__logos { gap: 1.5rem 2rem; }
+  .stat-strip__number { font-size: 2.5rem; }
+  .trust-strip__logos { gap: 1rem 1.5rem; }
+  .trust-strip__logo img { height: 32px; max-width: 110px; }
+
+  /* Hero */
+  .hero-block { min-height: 80vh; }
+  .hero-block__heading { word-break: break-word; }
+  .hero-block__sub { font-size: 1rem; margin-bottom: 1.75rem; }
+  .hero-block__ctas { width: 100%; }
+  .hero-block__ctas .btn { width: 100%; justify-content: center; }
+  .hero-block--inner { padding-top: 5.5rem; padding-bottom: 2.5rem; }
+
+  /* Inner page hero sub-text */
+  .hero-block--inner .hero-block__sub { font-size: 0.9375rem; }
+
+  /* Stat strip single column on tiny screens */
+  .stat-strip__grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Section heading breathing room */
+  .section-label { font-size: 0.7rem; }
+
+  /* Industry tile text doesn't overflow */
+  .industry-tile__name { font-size: 0.85rem; }
+
+  /* Footer nav links wrap */
+  .footer-bottom__links { gap: 0.625rem; }
+
+  /* Comparison table always scrollable */
+  .comparison-table-wrap { -webkit-overflow-scrolling: touch; }
+}
+
+/* ============================================================
+   RESPONSIVE – Extra Small (≤400px)
+   ============================================================ */
+@media (max-width: 400px) {
+  :root {
+    --text-hero: clamp(1.625rem, 8vw, 1.875rem);
+    --padding-page-x: 1.25rem;
+  }
+
+  .hero-block__sub { font-size: 0.9375rem; }
+  .stat-strip__number { font-size: 2rem; }
+  .trust-strip__logo img { height: 26px; max-width: 88px; }
+  .trust-strip__logos { gap: 0.75rem 1.25rem; }
+  .btn { padding: 0.75rem 1.25rem; font-size: 0.9375rem; }
+  .industry-tiles { grid-template-columns: 1fr 1fr; }
 }
 
 /* ============================================================
