@@ -19,12 +19,12 @@ run = "pnpm --filter @workspace/greyradius run dev"
 
 [services.production]
 build = [ "pnpm", "--filter", "@workspace/greyradius", "run", "build" ]
-publicDir = "artifacts/greyradius/dist/public"
+publicDir = "artifacts/greyradius/dist"
 serve = "static"
 
 [[services.production.rewrites]]
 from = "/*"
-to = "/index.html"
+to = "/404.html"
 
 [services.env]
 PORT = "18825"
