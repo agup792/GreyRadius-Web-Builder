@@ -1,5 +1,10 @@
 RewriteEngine On
 
+# Block direct public access to the physical site folder.
+# Clean URLs are still internally rewritten there below.
+RewriteCond %{THE_REQUEST} \s/+greyradius-website(?:/|\s|\?) [NC]
+RewriteRule ^greyradius-website(?:/.*)?$ - [R=404,L]
+
 # Block access to .git and other VCS metadata
 RedirectMatch 404 /\.git
 RedirectMatch 404 /\.githooks
