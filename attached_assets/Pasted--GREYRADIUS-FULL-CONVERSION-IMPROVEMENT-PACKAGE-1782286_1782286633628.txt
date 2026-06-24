@@ -1,0 +1,621 @@
+===================================================
+GREYRADIUS — FULL CONVERSION IMPROVEMENT PACKAGE
+Apply to all 313 industry pages
+===================================================
+
+This prompt applies 7 changes to every HTML file inside the
+industries/ directory and its subdirectories.
+Do NOT touch homepage, service pages, about pages, or case studies.
+
+Read this entire prompt before starting.
+Execute all 7 changes in the order listed.
+Use the exact HTML anchors shown — do not guess at selectors.
+
+Confirmed page structure (verified on live site):
+  - Hero: class="hero-block"
+  - Tagline: class="hero-block__sub"
+  - Button row: <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+  - What we solve: closes with </section> then <!-- SERVICE ANGLES -->
+  - Why GreyRadius: closes with </section> then <!-- CASE STUDIES -->
+  - Mandates: <!-- CASE STUDIES --> then <section class="bg-white section-padding"
+  - Final CTA: <section class="cta-block">
+  - Book a call: contains class="meetings-iframe-container"
+  - Newsletter: contains id="nl-heading"
+
+===================================================
+CHANGE 1 — TRUST BADGES IN HERO
+Insert after the hero-block__sub tagline paragraph,
+BEFORE the button row div.
+===================================================
+
+Find this exact pattern in every industry page:
+  </p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+
+Insert this between those two elements:
+
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;
+      margin:1rem 0 0;">
+        <span style="display:flex;align-items:center;gap:0.375rem;
+        font-size:0.775rem;color:rgba(255,255,255,0.65);">
+          <span style="color:#E8612C;font-weight:700;">&#10003;</span>
+          Primary research in every engagement
+        </span>
+        <span style="display:flex;align-items:center;gap:0.375rem;
+        font-size:0.775rem;color:rgba(255,255,255,0.65);">
+          <span style="color:#E8612C;font-weight:700;">&#10003;</span>
+          100+ mandates delivered
+        </span>
+        <span style="display:flex;align-items:center;gap:0.375rem;
+        font-size:0.775rem;color:rgba(255,255,255,0.65);">
+          <span style="color:#E8612C;font-weight:700;">&#10003;</span>
+          Go/Defer/Kill recommendation guaranteed
+        </span>
+      </div>
+
+===================================================
+CHANGE 2 — MID-PAGE DIAGNOSTIC CTA
+Insert immediately after the <!-- SERVICE ANGLES --> section closes.
+That section ends with </section> before <!-- CASE STUDIES -->.
+Insert between that </section> and <!-- CASE STUDIES -->.
+===================================================
+
+Find this exact pattern:
+  </section>
+
+<!-- CASE STUDIES -->
+
+Insert this between them:
+
+<!-- MID-PAGE CTA -->
+<section style="padding:2.5rem 0;background:#f0f4f8;
+border-top:1px solid #e2e6ed;border-bottom:1px solid #e2e6ed;">
+  <div class="container" style="max-width:680px;text-align:center;">
+    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;
+    text-transform:uppercase;color:#E8612C;margin:0 0 0.5rem;">
+      Not sure where to start?</p>
+    <h2 style="font-size:1.375rem;font-weight:700;color:#1B2A4A;
+    margin:0 0 0.75rem;line-height:1.3;">
+      Our free diagnostic tells you which service fits your situation
+    </h2>
+    <p style="color:#555;font-size:0.875rem;margin:0 0 1.5rem;
+    line-height:1.65;">
+      Answer 3 questions about your business stage and market entry goal.
+      Takes 90 seconds. We will tell you which GreyRadius service applies
+      and what a first engagement would look like.
+    </p>
+    <div style="display:flex;gap:1rem;justify-content:center;
+    flex-wrap:wrap;">
+      <a href="../../business-diagnostic.html"
+      style="background:#E8612C;color:#fff;font-weight:700;
+      font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:6px;
+      text-decoration:none;display:inline-block;">
+        Run the free diagnostic &#8594;
+      </a>
+      <a href="../../contact.html"
+      style="background:#fff;color:#1B2A4A;font-weight:700;
+      font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:6px;
+      text-decoration:none;border:1.5px solid #1B2A4A;
+      display:inline-block;">
+        Speak to an expert directly
+      </a>
+    </div>
+    <p style="font-size:0.75rem;color:#888;margin:1rem 0 0;">
+      Free. No commitment. No sales pitch in the first call.</p>
+  </div>
+</section>
+
+NOTE on relative paths: Pages at industries/[parent]/[slug].html
+use ../../ to reach root. Pages at industries/[parent].html (hub pages)
+use ../ to reach root. Adjust the href paths accordingly per file depth.
+For pages 3 levels deep: ../../business-diagnostic.html
+For hub pages 2 levels deep: ../business-diagnostic.html
+
+===================================================
+CHANGE 3 — TRACK RECORD NUMBERS BAR
+Insert at the TOP of the <!-- CASE STUDIES --> section,
+immediately after its opening <section> tag,
+BEFORE the existing section-heading div.
+===================================================
+
+Find:
+  <!-- CASE STUDIES -->
+  <section class="bg-white section-padding"
+
+After that opening section tag and before its first child div, insert:
+
+    <!-- TRACK RECORD BAR -->
+    <div style="background:#1B2A4A;border-radius:10px;
+    padding:1.5rem 2rem;margin-bottom:2rem;display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:1.25rem;text-align:center;">
+      <div>
+        <p style="font-size:1.875rem;font-weight:800;color:#E8612C;
+        margin:0;line-height:1;">100+</p>
+        <p style="font-size:0.775rem;color:rgba(255,255,255,0.7);
+        margin:0.3rem 0 0;line-height:1.4;">mandates delivered
+        since 2017</p>
+      </div>
+      <div>
+        <p style="font-size:1.875rem;font-weight:800;color:#E8612C;
+        margin:0;line-height:1;">30+</p>
+        <p style="font-size:0.775rem;color:rgba(255,255,255,0.7);
+        margin:0.3rem 0 0;line-height:1.4;">primary expert interviews
+        per engagement</p>
+      </div>
+      <div>
+        <p style="font-size:1.875rem;font-weight:800;color:#E8612C;
+        margin:0;line-height:1;">4</p>
+        <p style="font-size:0.775rem;color:rgba(255,255,255,0.7);
+        margin:0.3rem 0 0;line-height:1.4;">geographies &#8212;
+        India, Gulf, Southeast Asia, Africa</p>
+      </div>
+      <div>
+        <p style="font-size:1.875rem;font-weight:800;color:#E8612C;
+        margin:0;line-height:1;">8+</p>
+        <p style="font-size:0.775rem;color:rgba(255,255,255,0.7);
+        margin:0.3rem 0 0;line-height:1.4;">years of emerging
+        market engagements</p>
+      </div>
+    </div>
+    <!-- END TRACK RECORD BAR -->
+
+===================================================
+CHANGE 4 — CLIENT LOGO STRIP
+Insert immediately AFTER the track record bar from Change 3,
+still inside the CASE STUDIES section, before the section-heading.
+===================================================
+
+After the <!-- END TRACK RECORD BAR --> comment, insert:
+
+    <!-- CLIENT LOGOS -->
+    <div style="margin-bottom:2rem;padding-bottom:2rem;
+    border-bottom:1px solid #e2e6ed;">
+      <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;
+      text-transform:uppercase;color:#888;margin:0 0 1.25rem;
+      text-align:center;">Companies that have worked with us</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;
+      justify-content:center;gap:1.75rem 2.5rem;">
+        <img src="/assets/images/clients/Alef.png"
+        alt="Alef Education" height="26"
+        style="object-fit:contain;opacity:0.6;filter:grayscale(100%);"
+        onmouseover="this.style.opacity='1';this.style.filter='none'"
+        onmouseout="this.style.opacity='0.6';
+        this.style.filter='grayscale(100%)'">
+        <img src="/assets/images/clients/Trinetra.png"
+        alt="Trinetra" height="26"
+        style="object-fit:contain;opacity:0.6;filter:grayscale(100%);"
+        onmouseover="this.style.opacity='1';this.style.filter='none'"
+        onmouseout="this.style.opacity='0.6';
+        this.style.filter='grayscale(100%)'">
+        <img src="/assets/images/clients/IOCL.jpg"
+        alt="IOCL" height="26"
+        style="object-fit:contain;opacity:0.6;filter:grayscale(100%);"
+        onmouseover="this.style.opacity='1';this.style.filter='none'"
+        onmouseout="this.style.opacity='0.6';
+        this.style.filter='grayscale(100%)'">
+        <img src="/assets/images/clients/ADCG.png"
+        alt="ADCG" height="26"
+        style="object-fit:contain;opacity:0.6;filter:grayscale(100%);"
+        onmouseover="this.style.opacity='1';this.style.filter='none'"
+        onmouseout="this.style.opacity='0.6';
+        this.style.filter='grayscale(100%)'">
+        <img src="/assets/images/clients/Kognitic.png"
+        alt="Kognitic" height="26"
+        style="object-fit:contain;opacity:0.6;filter:grayscale(100%);"
+        onmouseover="this.style.opacity='1';this.style.filter='none'"
+        onmouseout="this.style.opacity='0.6';
+        this.style.filter='grayscale(100%)'">
+        <img src="/assets/images/clients/SaalAI.png"
+        alt="SaalAI" height="26"
+        style="object-fit:contain;opacity:0.6;filter:grayscale(100%);"
+        onmouseover="this.style.opacity='1';this.style.filter='none'"
+        onmouseout="this.style.opacity='0.6';
+        this.style.filter='grayscale(100%)'">
+      </div>
+    </div>
+    <!-- END CLIENT LOGOS -->
+
+===================================================
+CHANGE 5 — TESTIMONIALS
+Insert immediately AFTER the <!-- END CLIENT LOGOS --> comment,
+still before the section-heading div in the CASE STUDIES section.
+
+The two testimonials to use depend on which industry directory
+the page lives in. The assignment table is below.
+===================================================
+
+THE SEVEN TESTIMONIALS — source data:
+
+TESTIMONIAL A:
+  Quote: "We had internal estimates for the conveyor routes, but
+  GreyRadius found a third route we hadn't considered – one that cut
+  projected capex by 18%. That alone justified the engagement."
+  Role: VP Operations
+  Company: Coal Mining Group
+  Engagement: Infrastructure feasibility study, India
+
+TESTIMONIAL B:
+  Quote: "The buyer research was the turning point. We'd spent 12
+  months building pipeline in the wrong markets. GreyRadius told us
+  where the real demand was, validated by actual decision-makers –
+  not polite interest."
+  Role: CEO
+  Company: UAE-based EdTech platform
+  Engagement: GCC market entry strategy
+
+TESTIMONIAL C:
+  Quote: "GreyRadius gave us the market intelligence we needed to
+  enter GCC with confidence – validated KOL contacts, distributor
+  shortlists, and a regulatory timeline that was 30% faster than
+  our original estimate."
+  Role: Head of International Business
+  Company: Ophthalmology pharma company
+  Engagement: GCC market entry and regulatory mapping
+
+TESTIMONIAL D:
+  Quote: "We almost entered UAE through the wrong channel. GreyRadius's
+  retail format analysis showed us that the channel we assumed was
+  right had the worst margin structure for our category. We pivoted
+  before we spent a dirham."
+  Role: Commercial Director
+  Company: Consumer brand
+  Engagement: UAE retail market entry strategy
+
+TESTIMONIAL E:
+  Quote: "The 80-interview research programme was the most valuable
+  thing we did before Series A. We walked into investor conversations
+  knowing our ICP, our win reasons, and our product roadmap –
+  all evidence-backed."
+  Role: CEO
+  Company: B2B SaaS platform, India
+  Engagement: Product-market fit and GTM strategy
+
+TESTIMONIAL F:
+  Quote: "The buyer research GreyRadius conducted was better than
+  anything our sales team had gathered in 18 months. We now know
+  exactly which verticals to prioritise and how to position against
+  incumbents."
+  Role: VP Sales
+  Company: Enterprise integration platform
+  Engagement: North American GTM strategy
+
+TESTIMONIAL G:
+  Quote: "We had a strong product but no validated map of who would
+  buy it, at what price, through which channels. GreyRadius covered
+  400+ consumer touchpoints across 7 Bengaluru micro-markets and gave
+  us a launch blueprint we could defend to investors and execute
+  immediately."
+  Role: Founder
+  Company: NativFresh, Bengaluru fresh foods brand
+  Engagement: Consumer GTM and market validation
+
+ASSIGNMENT TABLE — use directory name to pick the two testimonials:
+
+  agritech/                 → A + G
+  ai-ml-platforms/          → E + F
+  beauty-personal-care/     → D + G
+  bfsi/                     → E + C
+  carbon-markets/           → A + E
+  corporate-learning/       → B + F
+  cpg-fmcg-retail/          → D + G
+  cybersecurity/            → F + E
+  data-centers/             → F + E
+  diagnostics/              → C + E
+  drones/                   → F + E
+  ecommerce-tech/           → B + F
+  education-edtech/         → B + E
+  electric-vehicles/        → A + F
+  embedded-finance/         → E + F
+  energy-chemicals/         → A + C
+  energy-storage/           → A + F
+  enterprise-saas/          → E + F
+  fintech-payments/         → E + D
+  food-beverage/            → D + G
+  freight-cargo/            → A + F
+  gaming/                   → E + F
+  geographies/              → B + D
+  green-hydrogen/           → A + F
+  health-supplements/       → D + G
+  healthcare-life-sciences/ → C + B
+  healthtech/               → C + E
+  higher-education/         → B + E
+  hospitality-tourism/      → D + B
+  hrtech/                   → F + E
+  insurtech/                → E + C
+  islamic-finance/          → C + D
+  last-mile-delivery/       → F + D
+  logistics-supply-chain/   → F + A
+  manufacturing-industrials/→ A + F
+  media-entertainment/      → B + E
+  medical-devices/          → C + B
+  mental-health-tech/       → C + B
+  pharma/                   → C + A
+  proptech/                 → D + E
+  rare-earth-metals/        → A + F
+  real-estate-infrastructure/→ A + D
+  reit-consulting/          → D + A
+  renewable-energy/         → A + F
+  residential-development/  → D + A
+  satellite-connectivity/   → F + E
+  semiconductors/           → F + A
+  services/                 → E + C
+  technology/               → E + F
+  wealthtech/               → E + F
+
+TESTIMONIAL CARD HTML TEMPLATE:
+Build each card using this structure, substituting values from the
+testimonial data above:
+
+<blockquote style="margin:0;padding:1.375rem 1.5rem;background:#fff;
+border-radius:10px;border:1px solid #e2e6ed;
+border-left:4px solid #E8612C;
+display:flex;flex-direction:column;gap:0.75rem;">
+  <p style="font-size:1.5rem;color:#E8612C;margin:0;line-height:1;
+  font-family:Georgia,serif;">&ldquo;</p>
+  <p style="font-style:italic;color:#333;font-size:0.875rem;
+  line-height:1.75;margin:0;">[QUOTE]</p>
+  <footer style="border-top:1px solid #f0f0f0;padding-top:0.75rem;">
+    <p style="font-size:0.8rem;font-weight:700;color:#1B2A4A;
+    margin:0;">[ROLE]</p>
+    <p style="font-size:0.775rem;color:#666;margin:0.2rem 0 0;">
+      [COMPANY TYPE] &middot; [ENGAGEMENT TYPE]</p>
+  </footer>
+</blockquote>
+
+FULL TWO-TESTIMONIAL SECTION wrapper (insert both cards inside):
+
+    <!-- TESTIMONIALS -->
+    <div style="margin-bottom:2rem;padding-bottom:2rem;
+    border-bottom:1px solid #e2e6ed;">
+      <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;
+      text-transform:uppercase;color:#888;margin:0 0 1.25rem;
+      text-align:center;">What clients say</p>
+      <div style="display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.25rem;">
+        [CARD 1]
+        [CARD 2]
+      </div>
+    </div>
+    <!-- END TESTIMONIALS -->
+
+===================================================
+CHANGE 6 — "WHAT HAPPENS NEXT" PROCESS TIMELINE
+Insert immediately BEFORE <section class="cta-block">
+===================================================
+
+Find this exact string: <section class="cta-block">
+
+Insert this immediately before it:
+
+<!-- PROCESS TIMELINE -->
+<section style="padding:2.5rem 0;background:#f8f9fb;
+border-top:1px solid #e2e6ed;">
+  <div class="container">
+    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;
+    text-transform:uppercase;color:#E8612C;margin:0 0 0.375rem;
+    text-align:center;">When you get in touch</p>
+    <h2 style="font-size:1.25rem;font-weight:700;color:#1B2A4A;
+    margin:0 0 2rem;text-align:center;line-height:1.3;">
+      What happens after you contact us</h2>
+    <div style="display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:0.75rem;max-width:860px;margin:0 auto;">
+
+      <div style="text-align:center;padding:1.25rem 1rem;">
+        <div style="width:38px;height:38px;background:#E8612C;
+        color:#fff;border-radius:50%;display:flex;align-items:center;
+        justify-content:center;font-weight:800;font-size:0.9rem;
+        margin:0 auto 0.75rem;">1</div>
+        <p style="font-weight:700;color:#1B2A4A;font-size:0.825rem;
+        margin:0 0 0.375rem;">Discovery call</p>
+        <p style="font-size:0.775rem;color:#666;margin:0;
+        line-height:1.55;">30 minutes. We learn your situation.
+        You learn how we work.</p>
+        <p style="font-size:0.725rem;color:#E8612C;font-weight:700;
+        margin:0.5rem 0 0;">Within 48 hours</p>
+      </div>
+
+      <div style="text-align:center;padding:1.25rem 1rem;">
+        <div style="width:38px;height:38px;background:#E8612C;
+        color:#fff;border-radius:50%;display:flex;align-items:center;
+        justify-content:center;font-weight:800;font-size:0.9rem;
+        margin:0 auto 0.75rem;">2</div>
+        <p style="font-weight:700;color:#1B2A4A;font-size:0.825rem;
+        margin:0 0 0.375rem;">Engagement scoped</p>
+        <p style="font-size:0.775rem;color:#666;margin:0;
+        line-height:1.55;">Scope, research plan, and outcomes
+        agreed before work begins.</p>
+        <p style="font-size:0.725rem;color:#E8612C;font-weight:700;
+        margin:0.5rem 0 0;">Week 1</p>
+      </div>
+
+      <div style="text-align:center;padding:1.25rem 1rem;">
+        <div style="width:38px;height:38px;background:#E8612C;
+        color:#fff;border-radius:50%;display:flex;align-items:center;
+        justify-content:center;font-weight:800;font-size:0.9rem;
+        margin:0 auto 0.75rem;">3</div>
+        <p style="font-weight:700;color:#1B2A4A;font-size:0.825rem;
+        margin:0 0 0.375rem;">Primary research</p>
+        <p style="font-size:0.775rem;color:#666;margin:0;
+        line-height:1.55;">30+ expert interviews. Buyers,
+        regulators, distributors, competitors.</p>
+        <p style="font-size:0.725rem;color:#E8612C;font-weight:700;
+        margin:0.5rem 0 0;">Weeks 2&#8211;5</p>
+      </div>
+
+      <div style="text-align:center;padding:1.25rem 1rem;">
+        <div style="width:38px;height:38px;background:#E8612C;
+        color:#fff;border-radius:50%;display:flex;align-items:center;
+        justify-content:center;font-weight:800;font-size:0.9rem;
+        margin:0 auto 0.75rem;">4</div>
+        <p style="font-weight:700;color:#1B2A4A;font-size:0.825rem;
+        margin:0 0 0.375rem;">Recommendation delivered</p>
+        <p style="font-size:0.775rem;color:#666;margin:0;
+        line-height:1.55;">Go/Defer/Kill with the primary evidence
+        your board needs to act.</p>
+        <p style="font-size:0.725rem;color:#E8612C;font-weight:700;
+        margin:0.5rem 0 0;">Week 6&#8211;8</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- END PROCESS TIMELINE -->
+
+===================================================
+CHANGE 7 — REBUILD THE FINAL CTA BLOCK
+Replace the contents of <section class="cta-block"> entirely.
+Keep the opening and closing section tags. Replace everything inside.
+===================================================
+
+Find:
+  <section class="cta-block">
+    [everything inside]
+  </section>
+
+Replace the inner content with:
+
+  <div class="container">
+    <h2 class="cta-block__heading">Ready to enter this market?</h2>
+    <p style="text-align:center;color:rgba(255,255,255,0.7);
+    font-size:0.875rem;margin:0 0 2.5rem;max-width:560px;
+    margin-left:auto;margin-right:auto;">
+      Choose the option that matches where you are right now.
+      No commitment required at any stage.</p>
+
+    <div style="display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1.25rem;max-width:860px;margin:0 auto 2rem;">
+
+      <div style="background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.14);border-radius:10px;
+      padding:1.625rem;display:flex;flex-direction:column;gap:0.7rem;">
+        <p style="font-size:0.68rem;font-weight:700;
+        letter-spacing:0.1em;text-transform:uppercase;
+        color:rgba(255,255,255,0.45);margin:0;">Starting out</p>
+        <p style="font-size:0.975rem;font-weight:700;color:#fff;
+        margin:0;line-height:1.3;">Run our free diagnostic</p>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.65);
+        margin:0;line-height:1.6;flex:1;">Answer 3 questions about
+        your situation. Get a personalised service recommendation
+        in 90 seconds.</p>
+        <a href="../../business-diagnostic.html"
+        style="background:#E8612C;color:#fff;font-weight:700;
+        font-size:0.8rem;padding:0.65rem 1.125rem;border-radius:6px;
+        text-decoration:none;text-align:center;margin-top:0.5rem;
+        display:block;">
+          Start the diagnostic &#8594;</a>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.14);border-radius:10px;
+      padding:1.625rem;display:flex;flex-direction:column;gap:0.7rem;">
+        <p style="font-size:0.68rem;font-weight:700;
+        letter-spacing:0.1em;text-transform:uppercase;
+        color:rgba(255,255,255,0.45);margin:0;">Evaluating options</p>
+        <p style="font-size:0.975rem;font-weight:700;color:#fff;
+        margin:0;line-height:1.3;">See how we structure an
+        engagement</p>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.65);
+        margin:0;line-height:1.6;flex:1;">Download our one-page
+        overview — scope, timeline, deliverable format, and what
+        primary research produces.</p>
+        <a href="../../contact.html?ref=one-pager"
+        style="background:transparent;color:#fff;font-weight:700;
+        font-size:0.8rem;padding:0.65rem 1.125rem;border-radius:6px;
+        text-decoration:none;text-align:center;
+        border:1.5px solid rgba(255,255,255,0.35);
+        margin-top:0.5rem;display:block;">
+          Request the overview &#8594;</a>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.14);border-radius:10px;
+      padding:1.625rem;display:flex;flex-direction:column;gap:0.7rem;">
+        <p style="font-size:0.68rem;font-weight:700;
+        letter-spacing:0.1em;text-transform:uppercase;
+        color:rgba(255,255,255,0.45);margin:0;">Ready to start</p>
+        <p style="font-size:0.975rem;font-weight:700;color:#fff;
+        margin:0;line-height:1.3;">Book a 30-minute call</p>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.65);
+        margin:0;line-height:1.6;flex:1;">Speak with a GreyRadius
+        partner. No pitch — we will tell you what primary research
+        in your sector and market would actually reveal.</p>
+        <a href="../../contact.html"
+        style="background:#fff;color:#1B2A4A;font-weight:700;
+        font-size:0.8rem;padding:0.65rem 1.125rem;border-radius:6px;
+        text-decoration:none;text-align:center;margin-top:0.5rem;
+        display:block;">
+          Book the call &#8594;</a>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;font-size:0.725rem;
+    color:rgba(255,255,255,0.35);margin:0;">
+      Typical first response within 4 business hours.
+    </p>
+  </div>
+
+PATH NOTE FOR ALL LINKS IN CHANGES 2 AND 7:
+Pages at industries/[parent]/[slug].html are 2 levels deep.
+Use ../../ to reach root files.
+Hub pages at industries/[parent].html are 1 level deep.
+Use ../ to reach root files.
+Detect depth by counting path segments and adjust all hrefs.
+
+===================================================
+EXECUTION ORDER AND METHOD
+===================================================
+
+1. Get the list of all HTML files in industries/ recursively.
+   Do NOT include files in: /assets/, /templates/, /data/
+
+2. For each file, apply Changes 1 through 7 in order.
+   Each change is a string replacement or insertion at a specific
+   HTML comment or class anchor.
+
+3. For Change 5 (testimonials), look up the file's parent directory
+   name in the assignment table to select the two testimonials.
+   If a directory is not in the table, use E + F as defaults.
+
+4. Write the modified file back to disk.
+
+5. Log each file: "Updated: [filepath] — changes 1-7 applied"
+
+6. After all files, run a spot check on 5 pages:
+   - industries/cpg-fmcg-retail/philippines-market-entry.html
+   - industries/technology/gulf-ai-market-entry.html
+   - industries/healthcare-life-sciences/gulf-healthcare-market-entry.html
+   - industries/energy-chemicals/oman-market-entry.html
+   - industries/fintech-payments/kenya-market-entry.html
+
+   For each, confirm:
+   a) Trust badges present in hero section
+   b) Mid-page diagnostic CTA present after service angles section
+   c) Track record bar present (100+, 30+, 4, 8+)
+   d) Client logos present (6 logos)
+   e) Two testimonial cards present with correct quotes for that sector
+   f) Process timeline present (4 steps)
+   g) Final CTA has 3 columns (diagnostic / overview / book call)
+   h) All relative links use correct ../../ or ../ prefix
+
+===================================================
+AFTER ALL CHANGES: CONFIRM
+===================================================
+
+Output a final summary:
+
+Total HTML files processed: [N]
+Changes 1-7 applied to all: yes/no
+Any files skipped and reason: [list]
+Testimonial assignment errors: [list any directory not in table]
+Spot check results (5 pages): pass/fail per page
+Path depth errors found: [list any incorrect ../ references]
+
+Do NOT update sitemap.xml — no new pages were created.
+Do NOT modify any page outside the industries/ directory.
+Do NOT remove any existing content — only add new sections.
+===================================================
