@@ -1,0 +1,1072 @@
+===================================================
+GREYRADIUS — FULL CONTENT AND NEWSLETTER BUILD
+Build 8 new pages, update homepage, nav, and sitemap
+Execute all 10 parts in order. Confirm each before next.
+===================================================
+
+All new pages use the existing site header, footer,
+GA4 (G-B7DXRX118W), and HubSpot (21337745) scripts.
+All canonical tags point to https://greyradius.com/[path].
+Uploaded files are available at /mnt/user-data/uploads/.
+
+File locations:
+  The Signal HTML:
+    /mnt/user-data/uploads/1782465511150_The_Signal_GreyRadius_AI_Briefing_June15_21_2026_Attractive__2___1_.html
+  Charged HTML:
+    /mnt/user-data/uploads/1782465511149_Charged_GreyRadius_June15_21_2026_Final_Hyperlinks_Verified__1_.html
+  BFSI case study docx:
+    /mnt/user-data/uploads/1782465511148_Case_Study_1.docx
+  SaaS case study docx:
+    /mnt/user-data/uploads/1782465511150_SaaS_Execution_First_Case_Study.docx
+  India blog docx:
+    /mnt/user-data/uploads/1782465511150_GreyRadius_India_Market_Entry_Blog__1_.docx
+  BFSI hero image:
+    /mnt/user-data/uploads/1782465511150_For_BFSI_Industry__1_.png
+  SaaS hero image:
+    /mnt/user-data/uploads/1782465511150_SaaS_Case_Study__1_.png
+
+===================================================
+PART 1 — NEWSLETTER HUB PAGE
+Create: insights/newsletters/index.html
+===================================================
+
+Title: GreyRadius Newsletters — Weekly Market Intelligence
+Meta desc (max 155 chars): Four weekly newsletters from GreyRadius
+covering AI adoption, EV markets, data centres, and semiconductors.
+Expert-led intelligence published every Thursday.
+Canonical: https://greyradius.com/insights/newsletters/
+
+Schema — two blocks:
+1. BreadcrumbList: Home (/) > Insights (/insights/) > Newsletters
+2. WebPage:
+   name: "GreyRadius Newsletters"
+   description: same as meta desc
+   datePublished: "2026-06-26"
+
+PAGE STRUCTURE:
+
+[BREADCRUMB]
+Home / Insights / Newsletters
+
+[HERO — dark navy background #1B2A4A]
+Eyebrow (orange, 0.65rem, uppercase, letter-spacing 0.12em):
+  Weekly intelligence
+H1 (white, 2rem, 800 weight): GreyRadius newsletters
+Subtitle (white 70% opacity, 0.95rem, max-width 560px):
+  Four weekly newsletters covering the sectors that matter
+  most for international business. Published every Thursday
+  on LinkedIn and greyradius.com.
+
+[FOUR NEWSLETTER CARDS]
+Grid: 2 columns desktop, 1 column mobile
+gap: 1.5rem
+Container: max-width standard site container
+
+Card template:
+<article style="background:#fff;border:1px solid #e2e6ed;
+border-top:4px solid [ACCENT];border-radius:10px;
+padding:1.75rem;display:flex;flex-direction:column;gap:1rem;">
+  <div>
+    <p style="font-size:0.65rem;font-weight:700;
+    letter-spacing:0.12em;text-transform:uppercase;
+    color:[ACCENT];margin:0 0 0.375rem;">Weekly</p>
+    <h2 style="font-size:1.375rem;font-weight:800;
+    color:#1B2A4A;margin:0 0 0.5rem;">[NAME]</h2>
+    <p style="font-size:0.8rem;color:#555;margin:0;
+    line-height:1.6;">[DESCRIPTION]</p>
+  </div>
+  <div style="margin-top:auto;border-top:1px solid #f0f0f0;
+  padding-top:1rem;">
+    [LATEST ISSUE OR COMING SOON CONTENT]
+    [ARCHIVE LINK BUTTON]
+  </div>
+</article>
+
+CARD 1 — THE SIGNAL:
+  ACCENT: #E8612C
+  NAME: The Signal
+  DESCRIPTION: Enterprise AI adoption, funding, infrastructure
+  and policy — with a specific lens on India, Gulf, Southeast
+  Asia and Africa. Each issue cuts AI noise to what matters
+  for business decision-makers in emerging markets.
+  LATEST ISSUE TEXT:
+    "Latest: India AI investment, sovereign infrastructure
+    and enterprise controls — June 2026"
+  LATEST ISSUE LINK:
+    href="/insights/newsletters/the-signal/
+    india-ai-investment-sovereign-infrastructure-june-2026/"
+  ARCHIVE BUTTON: "View all issues →"
+  ARCHIVE HREF: /insights/newsletters/the-signal/
+
+CARD 2 — CHARGED:
+  ACCENT: #1B2A4A
+  NAME: Charged
+  DESCRIPTION: Commercial EV electrification, battery chemistry,
+  charging infrastructure and mobility policy. Covers India,
+  Gulf, China and global EV market developments relevant to
+  supply chain, fleet, and investment decisions.
+  LATEST ISSUE TEXT:
+    "Latest: Commercial EV electrification, battery trends
+    and robotaxi policy — June 2026"
+  LATEST ISSUE LINK:
+    href="/insights/newsletters/charged/
+    commercial-ev-electrification-battery-trends-june-2026/"
+  ARCHIVE BUTTON: "View all issues →"
+  ARCHIVE HREF: /insights/newsletters/charged/
+
+CARD 3 — THE STACK:
+  ACCENT: #E8612C
+  NAME: The Stack
+  DESCRIPTION: Data centres, cloud infrastructure and digital
+  sovereignty across India, Gulf and Southeast Asia. Covers
+  government cloud procurement, data localisation regulation
+  and hyperscaler expansion in emerging markets.
+  STATUS: Coming soon
+  BADGE: "Launching July 2026"
+  Badge style: background:#f0f4f8;color:#1B2A4A;
+  font-size:0.7rem;font-weight:700;padding:0.25rem 0.6rem;
+  border-radius:20px;display:inline-block;margin-bottom:0.75rem;
+  BUTTON: "Notify me →" → /contact.html?ref=stack-newsletter
+  Button style: border:1.5px solid #e2e6ed;color:#888;
+  background:#fff;cursor:default; (greyed out appearance)
+
+CARD 4 — WAFER:
+  ACCENT: #1B2A4A
+  NAME: Wafer
+  DESCRIPTION: Semiconductor policy, chip design ecosystems and
+  supply chain intelligence. Covers India ISM DLI scheme, US
+  export controls, Southeast Asia back-end manufacturing and
+  global chip supply chain decisions.
+  STATUS: Coming soon
+  BADGE: "Launching July 2026"
+  BUTTON: "Notify me →" → /contact.html?ref=wafer-newsletter
+  Same greyed style as Card 3.
+
+[SUBSCRIBE STRIP — navy #1B2A4A background]
+H2 (white, 1.25rem): Follow on LinkedIn for weekly delivery
+Body (white 70%, 0.875rem):
+  All newsletters publish every Thursday on the GreyRadius
+  LinkedIn company page. Subscribers receive direct in-app
+  and email notification.
+CTA Button (orange #E8612C, white text):
+  "Follow GreyRadius on LinkedIn →"
+  href="https://www.linkedin.com/company/greyradius"
+  target="_blank" rel="noopener"
+
+Sitemap entry:
+  loc: https://greyradius.com/insights/newsletters/
+  lastmod: 2026-06-26
+  changefreq: weekly
+  priority: 0.8
+
+===================================================
+PART 2 — THE SIGNAL ARCHIVE PAGE
+Create: insights/newsletters/the-signal/index.html
+===================================================
+
+Title: The Signal — Weekly Enterprise AI Intelligence | GreyRadius
+Meta desc: Archive of The Signal by GreyRadius — weekly enterprise
+AI intelligence covering adoption, funding, infrastructure and
+policy across India, Gulf and Southeast Asia. Every Thursday.
+Canonical: https://greyradius.com/insights/newsletters/the-signal/
+
+Breadcrumb: Home / Insights / Newsletters / The Signal
+
+Schema:
+1. BreadcrumbList
+2. CollectionPage:
+   name: "The Signal — Weekly Enterprise AI Intelligence"
+   description: same as meta desc
+   publisher: GreyRadius Consulting org block
+
+PAGE STRUCTURE:
+
+[BREADCRUMB]
+
+[HERO — navy #1B2A4A]
+Eyebrow (orange): Weekly newsletter
+H1 (white, 2rem 800): The Signal
+Subtitle (white 70%): Enterprise AI adoption, infrastructure,
+funding and policy — with an emerging markets lens.
+Published every Thursday.
+CTA: "Subscribe on LinkedIn →"
+href: https://www.linkedin.com/company/greyradius
+target: _blank
+
+[ISSUE LIST]
+
+Issue 002 card (active — has link):
+<a href="/insights/newsletters/the-signal/
+india-ai-investment-sovereign-infrastructure-june-2026/"
+style="display:block;padding:1.25rem 1.5rem;background:#fff;
+border:1px solid #e2e6ed;border-radius:8px;
+text-decoration:none;margin-bottom:0.875rem;
+border-left:4px solid #E8612C;">
+  <p style="font-size:0.7rem;color:#888;text-transform:uppercase;
+  letter-spacing:0.08em;font-weight:700;margin:0 0 0.375rem;">
+    Issue 002 · June 15–21, 2026</p>
+  <p style="font-size:0.95rem;font-weight:700;color:#1B2A4A;
+  margin:0 0 0.375rem;line-height:1.3;">
+    India AI investment, sovereign infrastructure and
+    enterprise controls</p>
+  <p style="font-size:0.8rem;color:#555;margin:0;">
+    Sarvam $234M Series B · stc-HUMAIN MoU · China AI IPO
+    policy · OpenAI enterprise analytics · G7 frontier AI access
+  </p>
+</a>
+
+Issue 001 card (greyed — no link, coming soon):
+<div style="padding:1.25rem 1.5rem;background:#f8f9fb;
+border:1px solid #e2e6ed;border-radius:8px;
+margin-bottom:0.875rem;border-left:4px solid #e2e6ed;">
+  <p style="font-size:0.7rem;color:#bbb;text-transform:uppercase;
+  letter-spacing:0.08em;font-weight:700;margin:0 0 0.375rem;">
+    Issue 001 · June 8–14, 2026</p>
+  <p style="font-size:0.875rem;color:#bbb;margin:0;">
+    Archive coming soon</p>
+</div>
+
+[SUBSCRIBE STRIP — same as hub page]
+
+Sitemap:
+  loc: https://greyradius.com/insights/newsletters/the-signal/
+  lastmod: 2026-06-26
+  changefreq: weekly
+  priority: 0.8
+
+===================================================
+PART 3 — THE SIGNAL ISSUE 002 PAGE
+Create: insights/newsletters/the-signal/
+india-ai-investment-sovereign-infrastructure-june-2026/index.html
+===================================================
+
+Title: India AI Investment, Sovereign Infrastructure and Enterprise
+Controls — The Signal June 2026 | GreyRadius
+Meta desc (max 155 chars): Sarvam $234M Series B, HUMAIN MoU,
+China AI IPO policy, OpenAI enterprise controls and G7 frontier
+AI — GreyRadius weekly AI intelligence, June 2026.
+Canonical: https://greyradius.com/insights/newsletters/the-signal/
+india-ai-investment-sovereign-infrastructure-june-2026/
+
+Schema — two blocks:
+1. BreadcrumbList:
+   Home > Insights > Newsletters > The Signal >
+   India AI Investment June 2026
+2. Article:
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "India AI Investment, Sovereign Infrastructure
+    and Enterprise Controls — The Signal June 2026",
+  "datePublished": "2026-06-19",
+  "dateModified": "2026-06-26",
+  "author": {
+    "@type": "Organization",
+    "name": "GreyRadius Consulting",
+    "url": "https://greyradius.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GreyRadius Consulting",
+    "logo": "https://greyradius.com/assets/images/logo-dark.svg"
+  },
+  "description": "Sarvam $234M Series B, stc-HUMAIN MoU,
+    China AI IPO policy, OpenAI enterprise controls and G7
+    frontier AI access — week of June 15-21, 2026.",
+  "isPartOf": {
+    "@type": "PublicationIssue",
+    "issueNumber": "2",
+    "isPartOf": {
+      "@type": "Periodical",
+      "name": "The Signal by GreyRadius"
+    }
+  }
+}
+
+PAGE LAYOUT:
+
+[SITE HEADER — standard]
+
+[BREADCRUMB]
+Home / Insights / Newsletters / The Signal /
+India AI investment — June 2026
+
+[ISSUE NAVIGATION — above newsletter content]
+<div style="display:flex;justify-content:space-between;
+align-items:center;padding:1rem 0;border-bottom:1px solid
+#e2e6ed;margin-bottom:1.5rem;font-size:0.825rem;">
+  <span style="color:#ccc;">← Issue 001 (coming soon)</span>
+  <a href="/insights/newsletters/the-signal/"
+  style="color:#E8612C;font-weight:600;text-decoration:none;">
+    All Signal issues ↑</a>
+  <span style="color:#ccc;">Issue 003 (coming soon) →</span>
+</div>
+
+[NEWSLETTER CONTENT]
+Read the full HTML from the uploaded Signal file:
+/mnt/user-data/uploads/1782465511150_The_Signal_GreyRadius_AI_Briefing_June15_21_2026_Attractive__2___1_.html
+
+Render the newsletter content inside a centred container
+(max-width: 920px) using the newsletter's own CSS.
+
+Add this <style> block to the page head:
+:root {
+  --nav: #132846;
+  --gold: #b08a3e;
+  --cream: #f7f4ef;
+  --ink: #171717;
+  --muted: #6f716f;
+  --rule: #dedad2;
+  --accent: #e05a1e;
+  --white: #fff;
+  --lt: #f8fafc;
+}
+
+Copy the full CSS class definitions from the Signal HTML file
+into the same style block (shell, hero, brand, kicker, subtitle,
+meta, section, highlights, highlight, briefing, filters, active,
+story, topic, date-region, summary, source, subgrid, insight,
+data, signals, signal, chart-grid, chart, chart-note,
+overview-charts, cta, hidden).
+
+Then render these sections in order from the HTML file:
+A. Newsletter header block (hero class)
+B. Executive Highlights section (5 highlight cards)
+C. This Week's Briefing Spans section
+D. Topic filter tabs (nav.filters) with JavaScript
+   Copy the filter script exactly from the HTML file
+E. All 5 story articles (funding, infrastructure, policy,
+   enterprise, security topics)
+F. CTA block at bottom
+
+IMPORTANT CHANGES to make while rendering:
+1. Replace the GreyRadius logo base64 src with:
+   src="/assets/images/logo-dark.svg"
+2. Replace ALL data:image/...;base64,... src values with:
+   src="/assets/images/newsletters/placeholder-chart.png"
+   Create this file: a 400x200 light grey placeholder PNG
+   with text "Chart" centered. Use Python Pillow to generate:
+   from PIL import Image, ImageDraw
+   img = Image.new('RGB', (400, 200), '#f0f4f8')
+   d = ImageDraw.Draw(img)
+   d.text((190, 95), 'Chart', fill='#999')
+   img.save('public/assets/images/newsletters/
+   placeholder-chart.png')
+3. Fix CTA links in the cta section:
+   "Book a Free Strategy Call" → href="/contact.html"
+   "Visit Our Website" → href="/"
+4. Fix footer text if it contains any broken links
+
+[ISSUE NAVIGATION — below newsletter content]
+Same nav div as above.
+
+[SITE FOOTER — standard]
+
+Sitemap:
+  loc: https://greyradius.com/insights/newsletters/the-signal/
+  india-ai-investment-sovereign-infrastructure-june-2026/
+  lastmod: 2026-06-26
+  changefreq: monthly
+  priority: 0.8
+
+===================================================
+PART 4 — CHARGED ARCHIVE PAGE
+Create: insights/newsletters/charged/index.html
+===================================================
+
+Title: Charged — Weekly EV & Battery Intelligence | GreyRadius
+Meta desc: Archive of Charged by GreyRadius — weekly EV and battery
+intelligence covering commercial electrification, battery technology
+and mobility policy. Every Thursday.
+Canonical: https://greyradius.com/insights/newsletters/charged/
+
+Breadcrumb: Home / Insights / Newsletters / Charged
+Schema: BreadcrumbList + CollectionPage (same pattern as Part 2)
+
+PAGE STRUCTURE: identical to The Signal archive (Part 2)
+with these differences:
+  H1: Charged
+  Subtitle: Commercial EV electrification, battery technology,
+  charging infrastructure and mobility policy — with an emerging
+  markets lens. Published every Thursday.
+
+  Issue 002 card:
+    HREF: /insights/newsletters/charged/
+    commercial-ev-electrification-battery-trends-june-2026/
+    Title: "Commercial EV electrification, battery trends
+    and robotaxi policy"
+    Topics: China heavy-truck target · GM LMR batteries ·
+    Uber-Nuro-Lucid Houston · BMW-Solarwatt integration ·
+    UK EV transition review
+
+  Issue 001: greyed out, coming soon (same as Signal)
+
+Sitemap:
+  loc: https://greyradius.com/insights/newsletters/charged/
+  lastmod: 2026-06-26
+  changefreq: weekly
+  priority: 0.8
+
+===================================================
+PART 5 — CHARGED ISSUE 002 PAGE
+Create: insights/newsletters/charged/
+commercial-ev-electrification-battery-trends-june-2026/index.html
+===================================================
+
+Title: Commercial EV Electrification, Battery Trends and Robotaxi
+Policy — Charged June 2026 | GreyRadius
+Meta desc (max 155 chars): China heavy-truck EV target, GM battery
+chemistry shift, Uber-Nuro-Lucid robotaxi and UK EV transition —
+GreyRadius weekly EV intelligence, June 2026.
+Canonical: https://greyradius.com/insights/newsletters/charged/
+commercial-ev-electrification-battery-trends-june-2026/
+
+Schema — Article:
+  headline: "Commercial EV Electrification, Battery Trends
+    and Robotaxi Policy — Charged June 2026"
+  datePublished: "2026-06-19"
+  dateModified: "2026-06-26"
+  author + publisher: same GreyRadius org blocks as Part 3
+  isPartOf: PublicationIssue 2 of Periodical "Charged by GreyRadius"
+
+BreadcrumbList:
+  Home > Insights > Newsletters > Charged >
+  Commercial EV Electrification June 2026
+
+Read newsletter content from:
+/mnt/user-data/uploads/1782465511149_Charged_GreyRadius_June15_21_2026_Final_Hyperlinks_Verified__1_.html
+
+Apply same approach as Part 3:
+  - Copy full CSS from Charged HTML file
+  - Render all sections (header, highlights, briefing,
+    filters, all story articles, CTA)
+  - Replace logo base64 with /assets/images/logo-dark.svg
+  - Replace chart base64 with placeholder-chart.png
+  - Fix CTA links: /contact.html and /
+  - Add issue navigation above and below content
+
+Issue navigation for Charged:
+  ← Issue 001 (coming soon)
+  All Charged issues ↑ → /insights/newsletters/charged/
+  Issue 003 (coming soon) →
+
+Sitemap:
+  loc: https://greyradius.com/insights/newsletters/charged/
+  commercial-ev-electrification-battery-trends-june-2026/
+  lastmod: 2026-06-26
+  changefreq: monthly
+  priority: 0.8
+
+===================================================
+PART 6 — BLOG: HOW TO ENTER INDIA MARKET
+Create: insights/how-to-enter-india-market.html
+===================================================
+
+Title: How to Enter the Indian Market — 12-Week Roadmap for
+Foreign Companies | GreyRadius
+Meta desc (max 155 chars): A 12-week India market entry roadmap
+covering entry mode, FDI rules, FSSAI, CDSCO, RBI approvals and
+operational setup for foreign companies. GreyRadius Consulting.
+Canonical: https://greyradius.com/insights/
+           how-to-enter-india-market.html
+
+Primary keyword: how to enter India market
+Secondary: India market entry strategy, entering India as a
+foreign company, India regulatory approval, India FDI entry mode
+
+Schema — two blocks:
+1. Article:
+   headline: "How to enter India market: a realistic 12-week
+     roadmap for foreign companies"
+   datePublished: "2026-06-26"
+   dateModified: "2026-06-26"
+   author + publisher: GreyRadius org blocks
+   keywords: "India market entry, FDI India, FSSAI, CDSCO,
+     RBI, India business setup, foreign company India"
+
+2. FAQPage with 5 Q&A pairs (listed below in content section)
+
+Breadcrumb: Home / Insights / How to Enter the Indian Market
+
+BreadcrumbList schema to match.
+
+PAGE STRUCTURE:
+
+[BREADCRUMB]
+
+[BLOG HEADER]
+Topic tag pill: "Market Entry · India"
+H1: How to enter India market: a realistic 12-week roadmap
+for foreign companies
+Published date: 26 June 2026
+Author: GreyRadius Consulting
+Reading time: 12 min read
+
+[HERO IMAGE]
+Read file: /mnt/user-data/uploads/1782465511150_For_BFSI_Industry__1_.png
+Copy to: assets/images/insights/india-market-entry-hero.jpg
+Render:
+<img src="/assets/images/insights/india-market-entry-hero.jpg"
+alt="GreyRadius consulting team reviewing India market entry
+strategy" style="width:100%;border-radius:8px;margin:1.5rem 0;
+max-height:360px;object-fit:cover;object-position:top;">
+
+[CONTENT]
+Read the full blog from:
+/mnt/user-data/uploads/1782465511150_GreyRadius_India_Market_Entry_Blog__1_.docx
+
+Extract all content using extract-text command.
+Map to HTML as follows:
+  Document heading → H1 (already set above)
+  Table of contents → skip (not needed on web page)
+  "Executive summary" → H2
+  Major section headings → H2
+  Sub-section headings → H3
+  Body paragraphs → <p> tags
+  
+  GreyRadius insight callout boxes → render as:
+  <div style="background:#fff3ef;border-left:4px solid #E8612C;
+  padding:1rem 1.25rem;border-radius:0 6px 6px 0;margin:1.5rem 0;">
+    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;
+    text-transform:uppercase;color:#E8612C;margin:0 0 0.375rem;">
+      GreyRadius insight</p>
+    <p style="font-weight:500;color:#1B2A4A;font-size:0.9rem;
+    margin:0;line-height:1.65;">[CALLOUT TEXT]</p>
+  </div>
+
+  Tables → standard HTML table:
+  <table style="width:100%;border-collapse:collapse;
+  font-size:0.875rem;margin:1.5rem 0;">
+    <thead style="background:#1B2A4A;color:#fff;">
+    <tbody>
+    Each <th> and <td> style="padding:0.625rem 0.875rem;
+    border:1px solid #e2e6ed;vertical-align:top;">
+
+  Figure captions (e.g. "Figure 1. A 12-week roadmap...") →
+  render as:
+  <p style="font-size:0.775rem;color:#888;text-align:center;
+  margin-top:0.5rem;font-style:italic;">[CAPTION]</p>
+
+  The "Official references" section at the end of the docx →
+  render as a simple list:
+  <h2>Official references</h2>
+  <ul style="font-size:0.875rem;color:#555;line-height:1.7;">
+    [one <li> per reference]
+  </ul>
+
+[FAQ SECTION — add after official references]
+<section style="margin-top:2.5rem;border-top:1px solid #e2e6ed;
+padding-top:2rem;">
+  <h2>Frequently asked questions</h2>
+
+  [5 details/summary FAQ blocks with this template:]
+  <details style="border-bottom:1px solid #e2e6ed;padding:1rem 0;">
+    <summary style="font-weight:600;color:#1B2A4A;cursor:pointer;
+    font-size:0.9rem;list-style:none;display:flex;
+    justify-content:space-between;align-items:center;">
+      [QUESTION]
+      <span style="color:#E8612C;font-size:1.1rem;
+      flex-shrink:0;">+</span>
+    </summary>
+    <p style="margin:0.75rem 0 0;color:#444;font-size:0.875rem;
+    line-height:1.7;">[ANSWER]</p>
+  </details>
+
+FAQ 1:
+Q: How long does India market entry actually take?
+A: A realistic first-revenue timeline from a standing start is
+12 to 18 months across most sectors. The 12-week roadmap covers
+legal setup and regulatory approvals. GTM execution, distributor
+qualification, and first-revenue milestones then follow and
+typically take a further 3 to 6 months depending on sector and
+channel complexity.
+
+FAQ 2:
+Q: Do I need a local entity before I can sell in India?
+A: If you are selling directly to Indian customers, invoicing
+locally, hiring in India, or warehousing product, you need an
+Indian entity. If you are only conducting market research or
+executing a project for a foreign client, a liaison or project
+office may be sufficient. The structure should be determined by
+what the India business will actually do operationally, not by
+what is most convenient to file.
+
+FAQ 3:
+Q: What is the difference between the automatic route and
+government route for FDI in India?
+A: Under the automatic route, foreign investment does not
+require prior government approval — only post-investment RBI
+reporting is required. Under the government route, prior DPIIT
+approval must be obtained before investment. Which route applies
+depends on the sector and the foreign ownership percentage.
+DPIIT's consolidated FDI policy document lists the current
+sector-wise caps and applicable routes.
+
+FAQ 4:
+Q: Which India regulatory approvals take the longest?
+A: CDSCO approval for medical devices Class B and above typically
+takes 8 to 14 months from application. FSSAI registration for
+health supplements or novel food takes 3 to 6 months and
+sometimes longer. RBI approvals for financial services and IRDAI
+licensing for insurance both have timelines that depend on
+application quality and the current regulatory queue. Most
+foreign companies underestimate these timelines by 30 to 50
+percent versus published official guidelines.
+
+FAQ 5:
+Q: What is the National Single Window System and how should
+I use it?
+A: The NSWS at nsws.gov.in allows companies to identify which
+central and state approvals apply to their business through its
+Know Your Approvals module. It is a useful starting point for
+mapping regulatory exposure. However it should be treated as a
+discovery tool, not as regulatory advice — actual approval
+requirements in practice often differ from the portal output,
+particularly for sector-specific licences under CDSCO, FSSAI,
+or RBI, where current regulatory officer interpretation matters.
+
+[FAQPage SCHEMA — add as separate JSON-LD block]
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does India market entry actually take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A realistic first-revenue timeline from a
+        standing start is 12 to 18 months across most sectors.
+        The 12-week roadmap covers legal setup and regulatory
+        approvals. GTM execution, distributor qualification, and
+        first-revenue milestones then follow and typically take
+        a further 3 to 6 months depending on sector and channel
+        complexity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a local entity before I can sell
+      in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you are selling directly to Indian customers,
+        invoicing locally, hiring in India, or warehousing
+        product, you need an Indian entity. If you are only
+        conducting market research or executing a project for a
+        foreign client, a liaison or project office may be
+        sufficient."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the automatic
+      route and government route for FDI in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under the automatic route, foreign investment
+        does not require prior government approval — only
+        post-investment RBI reporting is required. Under the
+        government route, prior DPIIT approval must be obtained
+        before investment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which India regulatory approvals take the
+      longest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CDSCO approval for medical devices Class B
+        and above typically takes 8 to 14 months. FSSAI
+        registration for health supplements takes 3 to 6 months
+        and sometimes longer. RBI and IRDAI timelines depend on
+        application quality and current regulatory queue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the National Single Window System?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The NSWS at nsws.gov.in helps companies
+        identify which central and state approvals apply through
+        its Know Your Approvals module. It is a useful discovery
+        tool but should not be treated as regulatory advice —
+        actual requirements often differ from portal output."
+      }
+    }
+  ]
+}
+
+[RELATED INSIGHTS — 3 cards linking to existing blog pages]
+Find 3 existing pages from insights/ directory and link them
+as cards at the bottom with title and brief description.
+
+Sitemap:
+  loc: https://greyradius.com/insights/
+       how-to-enter-india-market.html
+  lastmod: 2026-06-26
+  changefreq: monthly
+  priority: 0.8
+
+===================================================
+PART 7 — CASE STUDY: BFSI BANK
+Create: case-studies/bfsi-opportunity-assessment-bank.html
+===================================================
+
+Title: Growth Was Slowing. The Market Was Not. — BFSI Opportunity
+Assessment | GreyRadius Case Study
+Meta desc (max 155 chars): How GreyRadius helped a bank shift from
+assumption-led capital allocation to evidence-based opportunity
+prioritisation before deploying expansion capital.
+Canonical: https://greyradius.com/case-studies/
+           bfsi-opportunity-assessment-bank.html
+
+Schema — Article:
+  headline: "Growth was slowing. The market was not."
+  datePublished: "2026-06-26"
+  keywords: "BFSI, opportunity assessment, bank growth strategy,
+    capital allocation, market intelligence, opportunity
+    prioritisation"
+  author + publisher: GreyRadius org blocks
+
+BreadcrumbList:
+  Home > Case Studies > BFSI Opportunity Assessment
+
+PAGE STRUCTURE:
+
+[BREADCRUMB]
+
+[SECTOR TAG PILLS]
+<div style="display:flex;gap:0.5rem;margin-bottom:1.25rem;">
+  <span style="background:#1B2A4A;color:#fff;font-size:0.7rem;
+  font-weight:700;padding:0.25rem 0.75rem;border-radius:20px;
+  letter-spacing:0.05em;text-transform:uppercase;">BFSI</span>
+  <span style="background:#fff3ef;color:#E8612C;font-size:0.7rem;
+  font-weight:700;padding:0.25rem 0.75rem;border-radius:20px;
+  border:1px solid #E8612C;">Opportunity Assessment</span>
+</div>
+
+[HERO IMAGE]
+Read: /mnt/user-data/uploads/1782465511150_For_BFSI_Industry__1_.png
+Copy to: assets/images/case-studies/bfsi-bank-hero.jpg
+<img src="/assets/images/case-studies/bfsi-bank-hero.jpg"
+alt="BFSI strategy team reviewing growth opportunity data"
+style="width:100%;border-radius:8px;margin:1.25rem 0;
+max-height:380px;object-fit:cover;object-position:top;">
+
+[CONTENT]
+Read case study from:
+/mnt/user-data/uploads/1782465511148_Case_Study_1.docx
+
+Extract full content. Map to HTML:
+  Document title → skip (used as page title above)
+  Subtitle line → subhead paragraph below H1
+  "Context", "The Core Challenge", "The Decision Shift",
+  "What Changed in Execution" → each becomes H2
+
+  H1: Growth was slowing. The market was not.
+  Subhead: How GreyRadius helped a bank identify high-potential
+  growth opportunities before capital was deployed into the
+  wrong markets.
+
+[RESULT CALLOUT — insert before final body section]
+<div style="background:#f0f4f8;border-left:4px solid #1B2A4A;
+padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:2rem 0;">
+  <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:#E8612C;margin:0 0 0.5rem;">
+    Engagement outcome</p>
+  <p style="font-size:1rem;font-weight:700;color:#1B2A4A;
+  margin:0 0 0.375rem;line-height:1.3;">
+    Opportunity prioritisation framework replacing
+    assumption-led capital allocation</p>
+  <p style="font-size:0.875rem;color:#444;margin:0;
+  line-height:1.6;">Growth investment decisions became
+  evidence-led and aligned to market attractiveness rather
+  than internal preferences. Product, distribution, and
+  customer acquisition decisions connected to a shared
+  opportunity assessment framework.</p>
+</div>
+
+[ADD THIS SECTION after the result callout]
+<h2>What this means for similar organisations</h2>
+<p>Banks and financial institutions at a growth plateau often
+treat the challenge as a product or distribution problem. The
+GreyRadius engagement revealed that the real issue was
+opportunity prioritisation — the absence of a common framework
+for assessing market attractiveness across competing growth bets.
+Organisations in similar positions should ask whether expansion
+decisions are based on validated external demand signals or on
+internal assumptions and preferences. That question alone tends
+to change the quality of capital allocation decisions.</p>
+
+[RELATED CASE STUDIES — 3 links at bottom]
+Link to 3 existing pages in case-studies/ directory.
+
+Sitemap:
+  loc: https://greyradius.com/case-studies/
+       bfsi-opportunity-assessment-bank.html
+  lastmod: 2026-06-26
+  changefreq: monthly
+  priority: 0.7
+
+===================================================
+PART 8 — CASE STUDY: SAAS EXECUTION
+Create: case-studies/saas-execution-first-gtm.html
+===================================================
+
+Title: When Growth Outpaces Execution — SaaS GTM Operating
+Model | GreyRadius Case Study
+Meta desc (max 155 chars): How GreyRadius helped a fast-growing
+India SaaS company build execution architecture under its growth
+strategy and reduce founder-dependent coordination.
+Canonical: https://greyradius.com/case-studies/
+           saas-execution-first-gtm.html
+
+Schema — Article:
+  headline: "When growth outpaces execution"
+  datePublished: "2026-06-26"
+  keywords: "SaaS GTM, execution architecture, India SaaS,
+    growth strategy, operating model, commercial scalability"
+  author + publisher: GreyRadius org blocks
+
+BreadcrumbList:
+  Home > Case Studies > SaaS Execution-First GTM
+
+PAGE STRUCTURE:
+
+[BREADCRUMB]
+
+[SECTOR TAG PILLS]
+  Enterprise SaaS (navy pill) · GTM Execution (orange pill)
+  Same style as BFSI case study pills.
+
+[HERO IMAGE]
+Read: /mnt/user-data/uploads/1782465511150_SaaS_Case_Study__1_.png
+Copy to: assets/images/case-studies/saas-execution-hero.jpg
+Same img tag style as BFSI (max-height 380px, object-cover).
+
+[CONTENT]
+Read from:
+/mnt/user-data/uploads/1782465511150_SaaS_Execution_First_Case_Study.docx
+
+Extract all content. Map headings:
+  H1: When growth outpaces execution
+  Subhead: How GreyRadius helped a SaaS company shift from
+  strategy-heavy growth planning to an execution-first
+  operating model built for scalable commercial expansion.
+
+  Sections → H2: Context, The Core Challenge, The Decision Shift
+
+[ADD MISSING SECTION — docx ends incomplete]
+<h2>What changed in execution</h2>
+<p>The organisation moved from founder-driven coordination to
+function-level accountability. Sales, product, and customer
+success aligned around shared commercial outcomes rather than
+separate functional priorities. Execution visibility improved
+through defined ownership at the team level. Commercial
+decisions that previously required founder intervention were
+handled within an agreed operating framework. Growth became an
+integrated execution system rather than a collection of
+parallel strategic initiatives.</p>
+
+[RESULT CALLOUT — after the What Changed section]
+<div style="background:#f0f4f8;border-left:4px solid #1B2A4A;
+padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:2rem 0;">
+  <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:#E8612C;margin:0 0 0.5rem;">
+    Engagement outcome</p>
+  <p style="font-size:1rem;font-weight:700;color:#1B2A4A;
+  margin:0 0 0.375rem;line-height:1.3;">
+    Execution architecture built under the growth strategy</p>
+  <p style="font-size:0.875rem;color:#444;margin:0;
+  line-height:1.6;">Founder coordination dependency reduced.
+  Function-level commercial accountability established across
+  sales, product, and customer success. GTM execution and
+  retention outcomes aligned to shared operating priorities.</p>
+</div>
+
+[ADD THIS SECTION after result callout]
+<h2>What this means for similar organisations</h2>
+<p>Fast-growing SaaS companies frequently encounter this pattern
+— strategy that outpaces the execution architecture beneath it.
+Founders compensate for structural gaps through direct
+coordination, which works until it becomes the bottleneck. The
+right intervention is not more strategic planning. It is building
+the execution layer: clear ownership, aligned metrics, and
+operating discipline across commercial functions so that growth
+compounds rather than stalls under its own weight.</p>
+
+[RELATED CASE STUDIES — 3 links]
+
+Sitemap:
+  loc: https://greyradius.com/case-studies/
+       saas-execution-first-gtm.html
+  lastmod: 2026-06-26
+  changefreq: monthly
+  priority: 0.7
+
+===================================================
+PART 9 — UPDATE SITEMAP
+===================================================
+
+Add all 8 new page URLs to sitemap.xml.
+Do not remove any existing entries.
+
+New entries:
+1. /insights/newsletters/               priority 0.8 weekly
+2. /insights/newsletters/the-signal/    priority 0.8 weekly
+3. /insights/newsletters/the-signal/
+   india-ai-investment-sovereign-
+   infrastructure-june-2026/            priority 0.8 monthly
+4. /insights/newsletters/charged/       priority 0.8 weekly
+5. /insights/newsletters/charged/
+   commercial-ev-electrification-
+   battery-trends-june-2026/            priority 0.8 monthly
+6. /insights/how-to-enter-india-
+   market.html                          priority 0.8 monthly
+7. /case-studies/bfsi-opportunity-
+   assessment-bank.html                 priority 0.7 monthly
+8. /case-studies/saas-execution-
+   first-gtm.html                       priority 0.7 monthly
+
+All entries: lastmod 2026-06-26
+
+===================================================
+PART 10 — HOMEPAGE AND NAVIGATION UPDATES
+===================================================
+
+A. ADD NEWSLETTERS TO INSIGHTS DROPDOWN IN NAVIGATION
+
+Find the main site navigation header.
+Find the Insights nav item — it currently links to insights/
+with a dropdown containing only "All Insights".
+
+Add "Newsletters" as a second dropdown item:
+  All Insights → /insights/
+  Newsletters  → /insights/newsletters/
+
+The dropdown HTML should become:
+<a href="/insights/">Insights ▾</a>
+<div class="dropdown"> (or equivalent dropdown container)
+  <a href="/insights/">All Insights</a>
+  <a href="/insights/newsletters/">Newsletters</a>
+</div>
+
+Match the existing dropdown styling exactly.
+Apply the same change to all pages that share the nav
+(if nav is a shared component or template, update once;
+if nav is duplicated across pages, update all copies).
+
+B. ADD NEWSLETTERS STRIP TO HOMEPAGE
+
+Open index.html.
+Find the "Latest from GreyRadius" section
+(the one with 3 blog insight cards added in a previous prompt).
+
+If that section does not exist, find the newsletter
+subscription section near the bottom of the page.
+
+Insert this section IMMEDIATELY AFTER the blog cards section
+and BEFORE the newsletter subscription section:
+
+<section style="padding:2rem 0;background:#1B2A4A;
+border-top:3px solid #E8612C;">
+  <div class="container" style="display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:1.25rem;">
+    <div>
+      <p style="font-size:0.65rem;font-weight:700;
+      letter-spacing:0.12em;text-transform:uppercase;
+      color:#E8612C;margin:0 0 0.25rem;">Every Thursday</p>
+      <p style="font-size:1rem;font-weight:700;color:#fff;
+      margin:0;line-height:1.3;">
+        Four weekly newsletters — AI, EVs,
+        data centres, semiconductors</p>
+    </div>
+    <a href="/insights/newsletters/"
+    style="background:#E8612C;color:#fff;font-weight:700;
+    font-size:0.825rem;padding:0.65rem 1.375rem;
+    border-radius:6px;text-decoration:none;
+    white-space:nowrap;flex-shrink:0;">
+      Browse newsletters &#8594;
+    </a>
+  </div>
+</section>
+
+C. ADD NEWSLETTERS LINK TO SITE FOOTER
+
+Find the footer section that contains links to Insights
+or Case Studies (typically a footer nav column).
+
+Add: <a href="/insights/newsletters/">Newsletters</a>
+in the same list, below "All Insights" or "Insights".
+
+Match existing footer link styling exactly.
+
+===================================================
+FINAL VERIFICATION — RUN AFTER ALL PARTS
+===================================================
+
+1. Page existence checks:
+   curl -s -o /dev/null -w "%{http_code}" [url] for each
+   of the 8 new pages. All must return 200.
+
+2. Schema validation spot check:
+   For each new page, confirm JSON-LD is valid:
+   python3 -c "import json,re,sys; c=open('[file]').read();
+   [json.loads(s) for s in re.findall(
+   r'application/ld\+json[^>]*>(.*?)</script>',c,re.DOTALL)]
+   print('Schema OK')"
+
+3. Canonical tags: confirm all new pages have canonical
+   pointing to https://greyradius.com/ not replit domain.
+
+4. Newsletter CTA links: confirm no href="#" remains in
+   any newsletter issue page.
+
+5. Base64 images: confirm no data:image/ src remains in
+   any newsletter issue page.
+
+6. Sitemap count: confirm total URL count increased by 8.
+
+7. Homepage newsletter strip: confirm strip is present:
+   curl -s [homepage] | grep -c 'Browse newsletters'
+   Must return: 1
+
+8. Navigation newsletters link: confirm in nav:
+   curl -s [homepage] | grep -c 'insights/newsletters'
+   Must return: at least 2 (nav + strip)
+
+OUTPUT FINAL SUMMARY TABLE:
+
+Page                                    | Created | Schema | Canonical
+insights/newsletters/index.html         | yes/no  | ok/err | ok/err
+insights/newsletters/the-signal/        | yes/no  | ok/err | ok/err
+the-signal/india-ai-investment.../      | yes/no  | ok/err | ok/err
+insights/newsletters/charged/           | yes/no  | ok/err | ok/err
+charged/commercial-ev-electrification.. | yes/no  | ok/err | ok/err
+insights/how-to-enter-india-market.html | yes/no  | ok/err | ok/err
+case-studies/bfsi-opportunity-...html   | yes/no  | ok/err | ok/err
+case-studies/saas-execution-first-...   | yes/no  | ok/err | ok/err
+
+Images copied:
+  assets/images/insights/india-market-entry-hero.jpg  | yes/no
+  assets/images/case-studies/bfsi-bank-hero.jpg       | yes/no
+  assets/images/case-studies/saas-execution-hero.jpg  | yes/no
+  assets/images/newsletters/placeholder-chart.png     | yes/no
+
+Sitemap entries added: [N] — should be 8
+Navigation updated: yes/no
+Homepage newsletter strip added: yes/no
+Footer newsletters link added: yes/no
+No href="#" in newsletter pages: yes/no
+No base64 images in newsletter pages: yes/no
+FAQ schema valid JSON: yes/no
+
+===================================================
+DO NOT modify any existing industry pages.
+DO NOT change robots.txt.
+DO NOT alter existing sitemap entries.
+DO NOT touch any file not explicitly listed above.
+===================================================
