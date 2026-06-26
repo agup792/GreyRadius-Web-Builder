@@ -1,0 +1,275 @@
+Fix the following 3 issues on the Replit version before production
+deployment. Execute in order. Confirm each before moving to the next.
+
+===================================================
+ISSUE 1 — FIX THE 404 PAGE
+===================================================
+
+Currently all missing URLs return HTTP 200 with homepage content.
+This must return HTTP 404 with a branded page.
+
+STEP A — Create public/404.html
+
+Copy the header, navigation, footer, GA4 script, and HubSpot script
+from any existing service page (e.g. services/opportunity-assessment.html).
+
+Build the page body as follows:
+
+<main style="min-height:60vh;display:flex;align-items:center;
+justify-content:center;padding:4rem 1.5rem;">
+  <div style="text-align:center;max-width:520px;">
+    <p style="font-size:4rem;font-weight:800;color:#E8612C;
+    margin:0;line-height:1;">404</p>
+    <h1 style="font-size:1.75rem;font-weight:700;color:#1B2A4A;
+    margin:1rem 0 0.75rem;line-height:1.3;">Page not found</h1>
+    <p style="color:#555;font-size:0.9rem;line-height:1.65;
+    margin:0 0 2rem;">The page you are looking for has moved or
+    does not exist. Try one of the links below.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;
+    justify-content:center;">
+      <a href="/"
+      style="background:#1B2A4A;color:#fff;font-weight:700;
+      font-size:0.875rem;padding:0.7rem 1.375rem;border-radius:6px;
+      text-decoration:none;">Go to homepage</a>
+      <a href="/services/"
+      style="background:#fff;color:#1B2A4A;font-weight:700;
+      font-size:0.875rem;padding:0.7rem 1.375rem;border-radius:6px;
+      text-decoration:none;border:1.5px solid #1B2A4A;">
+      Browse services</a>
+      <a href="/contact.html"
+      style="background:#fff;color:#E8612C;font-weight:700;
+      font-size:0.875rem;padding:0.7rem 1.375rem;border-radius:6px;
+      text-decoration:none;border:1.5px solid #E8612C;">
+      Contact us</a>
+    </div>
+  </div>
+</main>
+
+Add this to the <head> of 404.html:
+<meta name="robots" content="noindex, nofollow">
+
+STEP B — Configure the server to serve this with HTTP 404 status
+
+Find the server entry point (index.js, server.js, or equivalent).
+
+Add a catch-all route AFTER all existing routes:
+
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+});
+
+If the project uses a static file server without Express, check for
+a _redirects, vercel.json, netlify.toml, or .htaccess file and add
+the 404 rule there instead.
+
+STEP C — Test
+
+Run: curl -s -o /dev/null -w "%{http_code}" [replit-url]/xyz-test-404
+Must return: 404
+
+Also confirm the branded page renders:
+curl -s [replit-url]/xyz-test-404 | grep -c 'Page not found'
+Must return: 1
+
+===================================================
+ISSUE 2 — FIX HUB PAGE CHILD LINKS
+===================================================
+
+Several hub pages are missing child page links or have incomplete
+lists. The correct child count per hub (from sitemap.xml) is:
+
+  cpg-fmcg-retail:           31 child pages  (Replit has 31 — CORRECT)
+  technology:                23 child pages  (Replit has 23 — CORRECT)
+  bfsi:                       6 child pages  (Replit has 6 — CORRECT)
+  healthcare-and-life-sciences: 0 in sitemap
+  energy-and-chemicals:         0 in sitemap
+  investment-banks-and-pe:      0 in sitemap
+  real-estate-and-infrastructure: 0 in sitemap
+
+For the 4 hubs showing 0 children in the live sitemap:
+These directories exist in the file system even if not in sitemap.
+Run this check first:
+
+  ls industries/healthcare-and-life-sciences/
+  ls industries/energy-and-chemicals/
+  ls industries/investment-banks-and-pe/
+  ls industries/real-estate-and-infrastructure/
+
+If child HTML files exist in those directories:
+
+STEP A — Add them to sitemap.xml
+For each child page found, add a <url> entry:
+  <url>
+    <loc>https://greyradius.com/industries/[parent]/[slug].html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+STEP B — Add child links to each hub page
+For each of the 4 hub pages, read the child HTML files in their
+directory and build the Browse all guides section.
+
+Find the existing "Browse all guides" section on the hub page.
+It has this structure:
+  <section style="padding:3rem 0;background:#f8f9fb;">
+    <div class="container">
+      <h2 ...>Browse all [sector] market entry guides</h2>
+      <ul ...>
+        [child links]
+      </ul>
+    </div>
+  </section>
+
+If this section exists but is empty, populate the <ul> with one
+<li> per child HTML file found in the directory.
+
+If this section does not exist at all on the hub page, insert it
+before <section class="cta-block"> using this template:
+
+<section style="padding:3rem 0;background:#f8f9fb;
+border-top:1px solid #e2e6ed;">
+  <div class="container">
+    <h2 style="font-size:1.25rem;font-weight:700;color:#1B2A4A;
+    margin-bottom:1.5rem;">
+      Browse all [sector] market entry guides
+    </h2>
+    <ul style="list-style:none;padding:0;display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:0.625rem;">
+      [one <li> per child page]
+    </ul>
+  </div>
+</section>
+
+Each <li> uses this format:
+<li><a href="[parent-slug]/[child-slug].html"
+style="display:block;padding:0.5rem 0.75rem;background:#fff;
+border:1px solid #e2e6ed;border-radius:5px;color:#1B2A4A;
+text-decoration:none;font-size:0.875rem;font-weight:500;"
+onmouseover="this.style.borderColor='#E8612C'"
+onmouseout="this.style.borderColor='#e2e6ed'">
+[readable link text]
+</a></li>
+
+Link text rule: take the slug, replace hyphens with spaces,
+capitalise first word only.
+Example: "philippines-market-entry" → "Philippines market entry"
+
+Use relative hrefs from the hub page location.
+
+STEP C — Confirm
+After fixing, output child link count for all 7 hub pages:
+  industries/cpg-fmcg-retail.html      → [N] child links
+  industries/technology.html           → [N] child links
+  industries/bfsi.html                 → [N] child links
+  industries/healthcare-and-life-sciences.html → [N] child links
+  industries/energy-and-chemicals.html → [N] child links
+  industries/investment-banks-and-pe.html → [N] child links
+  industries/real-estate-and-infrastructure.html → [N] child links
+
+===================================================
+ISSUE 3 — ADD HOMEPAGE BLOG LINKS SECTION
+===================================================
+
+The homepage currently has 0 links to any blog or insights content.
+19 blog pages exist at /insights/. Add a section linking to the
+3 most recent ones.
+
+STEP A — Find the 3 most recent insight pages
+Read sitemap.xml. Filter all <loc> entries containing /insights/.
+Sort by <lastmod> date descending. Take the top 3 URLs.
+For each URL, fetch the page and extract the <title> tag to use
+as link text (strip " | GreyRadius" or " | GreyRadius Consulting"
+from the end of the title).
+
+STEP B — Find the insertion point in index.html
+Find the newsletter subscription section near the bottom of
+index.html. It will contain text like "Stay informed" or have
+a class referencing newsletter.
+
+Insert this section IMMEDIATELY BEFORE the newsletter section:
+
+<section style="padding:3rem 0;background:#fff;
+border-top:1px solid #e2e6ed;">
+  <div class="container">
+    <div style="display:flex;align-items:center;
+    justify-content:space-between;flex-wrap:wrap;
+    gap:1rem;margin-bottom:1.5rem;">
+      <h2 style="font-size:1.125rem;font-weight:700;
+      color:#1B2A4A;margin:0;">Latest from GreyRadius</h2>
+      <a href="/insights/"
+      style="font-size:0.825rem;font-weight:600;color:#E8612C;
+      text-decoration:none;">View all insights &#8594;</a>
+    </div>
+    <div style="display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1rem;">
+
+      [CARD 1 — most recent blog]
+      [CARD 2 — second most recent]
+      [CARD 3 — third most recent]
+
+    </div>
+  </div>
+</section>
+
+Each card uses this template:
+
+<a href="/insights/[slug].html"
+style="display:block;padding:1.25rem;background:#f8f9fb;
+border:1px solid #e2e6ed;border-radius:8px;
+text-decoration:none;color:inherit;
+transition:border-color 0.15s;"
+onmouseover="this.style.borderColor='#E8612C'"
+onmouseout="this.style.borderColor='#e2e6ed'">
+  <p style="font-size:0.7rem;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:#E8612C;margin:0 0 0.5rem;">Insight</p>
+  <p style="font-size:0.9rem;font-weight:600;
+  color:#1B2A4A;margin:0;line-height:1.4;">
+    [BLOG TITLE — stripped of site name suffix]</p>
+</a>
+
+STEP C — Confirm
+After adding, run:
+curl -s [replit-url]/ | grep -c '/insights/'
+Must return 3 or more.
+
+===================================================
+FINAL VERIFICATION — ALL 3 ISSUES
+===================================================
+
+Run these 4 tests and report results:
+
+TEST 1 — 404:
+curl -s -o /dev/null -w "%{http_code}" [replit-url]/xyz-test
+Expected: 404
+
+TEST 2 — Hub child links (spot check 2 hubs):
+curl -s [replit-url]/industries/healthcare-and-life-sciences.html | grep -c 'href="healthcare'
+curl -s [replit-url]/industries/energy-and-chemicals.html | grep -c 'href="energy'
+Expected: greater than 0 on both
+
+TEST 3 — Sitemap completeness:
+curl -s [replit-url]/sitemap.xml | grep -c '<loc>'
+Expected: 373 or more
+
+TEST 4 — Homepage blog links:
+curl -s [replit-url]/ | grep -c '/insights/'
+Expected: 3 or more
+
+Output table:
+Test | Expected | Actual | Pass/Fail
+404 status | 404 | [result] | [pass/fail]
+Healthcare hub child links | >0 | [result] | [pass/fail]
+Energy hub child links | >0 | [result] | [pass/fail]
+Sitemap URL count | 373+ | [result] | [pass/fail]
+Homepage insights links | 3+ | [result] | [pass/fail]
+
+===================================================
+DO NOT change any industry page content.
+DO NOT modify service pages, about pages, or case studies.
+DO NOT alter robots.txt or canonical tags.
+Only the 3 issues above are in scope for this prompt.
+===================================================
