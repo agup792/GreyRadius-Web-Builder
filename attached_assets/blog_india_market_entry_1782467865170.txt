@@ -1,0 +1,182 @@
+**How to enter India market**
+A realistic 12-week roadmap for foreign companies
+
+**GreyRadius Consulting**
+
+Blog article | Strategy to execution
+
+**Table of contents**
+
+Executive summary
+
+Why India market entry needs sequencing
+
+Choose the right entry mode
+
+The practical 12-week roadmap
+
+Regulatory approval flow
+
+Common bottlenecks and mitigation
+
+Sector-specific triggers to plan early
+
+FAQs
+
+Conclusion
+
+Official references
+
+# Executive summary
+
+Entering India is not mainly a question of speed. It is a question of sequencing. Foreign companies that succeed usually define the operating model, choose the right legal vehicle, map the approval stack, and only then localize product, pricing, hiring, and channel design. This sequence matters because India market entry is shaped by multiple official workstreams: DPIIT for FDI policy, MCA for incorporation, RBI for foreign investment reporting, DGFT for import-export registration, CBIC for GST, FSSAI for food, CDSCO for medical devices and cosmetics, NSWS for approval discovery, and Invest India for investor guidance.
+
+The core mistake is to incorporate first and solve the business model later. A more reliable approach is to design the commercial model first, then file only what that model actually requires. A company planning to sell, invoice, hire, warehouse, or contract locally needs a different setup from a company that only wants market research or project execution. Similarly, a food importer, medical device company, or e-commerce marketplace faces a different regulatory route from a pure B2B services business.
+
+This blog presents a practical 12-week roadmap for foreign companies entering India for the first time. It is designed for founders, CXOs, strategy heads, and business development leaders who need a realistic view of what must happen before launch, what can run in parallel, and where delays typically occur.
+
+# Why India market entry needs sequencing
+
+India is a high-opportunity market, but it is not a one-window commercial decision. A market entry plan has to align legal structure, FDI rules, tax registration, banking, product approvals, import-export controls, and go-to-market execution. If these workstreams are treated separately, the launch timeline quickly becomes fragmented. The business team may be ready to sell before the entity can legally invoice, the product team may be ready to ship before import documentation is complete, or the channel team may sign distributors before the FDI model has been tested.
+
+The National Single Window System helps investors identify central and state approvals through its Know Your Approvals module, but it should be treated as an approval discovery tool, not as a substitute for regulatory judgment. Once the approval map is generated, companies still need to validate sector-specific rules through the relevant regulator portals and align contracts, product flows, and operating responsibilities accordingly.
+
+The most practical way to enter India is to manage the first quarter as a coordinated execution program. Strategy, incorporation, tax, foreign exchange, sector approvals, vendors, hiring, and launch planning must move together. A 12-week roadmap does not mean every approval is guaranteed to close in exactly 12 weeks. It means management has a structured operating cadence to avoid preventable delays.
+
+*Figure 1. A 12-week roadmap to enter India market*
+
+# Choose the right entry mode
+
+The entry mode should be determined by operating intent, not by convenience. A foreign company that wants full commercial operations in India will usually need an Indian company, often a private limited company or wholly owned subsidiary. This structure is more suitable for hiring, contracting, invoicing, warehousing, local channel building, and long-term scale.
+
+A joint venture can make sense where local manufacturing, distribution access, regulatory familiarity, or market relationships are central to execution. However, it should not be used only because India feels complex. A JV creates shared control and governance requirements, so the partner thesis must be clear from the start.
+
+An LLP may be viable in limited cases where 100 percent FDI is permitted under the automatic route and there are no FDI-linked performance conditions. It is not a universal substitute for a company. A liaison office is even narrower. RBI guidance limits it to liaison, communication, and market development activities. It cannot become a hidden sales office. A branch office can undertake limited activities as permitted by RBI, while a project office is suited to specific project or service execution where the relevant conditions are met.
+
+The practical decision tree is simple: if the company needs ownership and control, a wholly owned subsidiary is usually the stronger route. If it needs local manufacturing or long-term partner economics, a JV may be appropriate. If it only needs market research, a liaison office may be enough. If it only needs temporary project execution, a branch or project office may work. The key is to avoid selecting a structure before defining what the India business will actually do.
+
+*Figure 2. Entry mode decision tree for foreign companies entering India*
+
+| **GreyRadius insight: **Do not treat the legal vehicle as a filing choice. Treat it as an operating model choice. The right structure should reflect how the company will sell, hire, contract, manage ownership, import, and scale in India. |
+| --- |
+
+| **Entry objective** | **Likely vehicle** | **Practical implication** |
+| --- | --- | --- |
+| Full commercial operations | Wholly owned subsidiary or company | Best fit for hiring, invoicing, contracting, channel building and long-term presence. |
+| Local production or partner-led growth | Joint venture | Useful when local capability, manufacturing, relationships or market access are critical. |
+| Market research only | Liaison office | Limited to representation and communication. Not suitable for commercial operations. |
+| Specific contract or project delivery | Branch office or project office | Suitable only where permitted activities and project conditions are satisfied. |
+
+# The practical 12-week roadmap
+
+Weeks 1 and 2 should focus on strategy and market assessment. The management team must define the India opportunity, value proposition, entry objective, target customers, regulatory exposure, and preferred control model. This is also the right time to test whether the proposed activity falls under the automatic route or government route under India’s FDI framework.
+
+Weeks 3 and 4 should convert strategy into structure. The company should select its entry mode, confirm ownership and governance, identify the resident director where required, decide location and incentives, and prepare the business plan and financial projections. If incorporation is required, the team should prepare documentation for directors, shareholders, registered office, and foreign parent approvals.
+
+Weeks 5 and 6 are the incorporation and setup phase. The company should obtain director identification, incorporate through MCA forms, obtain PAN, TAN and GST registration where applicable, open the bank account, and register for applicable state-level requirements. This is also when capital inflow and RBI reporting mechanics must be aligned.
+
+Weeks 7 and 8 should focus on regulatory approvals. The team should identify sector-specific approvals and apply for licences or registrations such as FSSAI for food, CDSCO for medical devices or cosmetics, RBI approvals where applicable, environmental or local approvals, and other statutory registrations. This workstream should not wait until the product is ready to ship.
+
+Weeks 9 and 10 are about operational readiness. The company should set up office or facility requirements, hire key talent, establish vendor and supply-chain relationships, implement IT, finance and HR systems, and complete labour-law registrations where applicable. By this stage, the organization should be able to run a controlled pilot.
+
+Weeks 11 and 12 are the go-to-market launch preparation phase. The business should finalize product or service adaptation, pricing, distribution strategy, marketing localization, pilot launch, compliance monitoring, and operating reviews. The objective is not just to launch. It is to launch with controls.
+
+| **GreyRadius insight: **A 12-week India entry plan should end with a controlled launch, not just a certificate of incorporation. The real go-live test is whether the company can receive funds, report correctly, import or clear products, invoice legally, and run its channel model within applicable FDI conditions. |
+| --- |
+
+# Regulatory approval flow
+
+The regulatory journey usually begins with entity incorporation through MCA. This includes name reservation, incorporation forms, and certificate of incorporation. Tax and statutory registrations then follow, including PAN, TAN, GST, professional tax, and Shops and Establishment registration where applicable.
+
+Sector-specific approvals are the next major gate. Food companies may require FSSAI business registration or licence and import clearance. Medical device companies may require CDSCO approvals. Foreign investment or external commercial flows may trigger RBI reporting. Importers and exporters generally need an Importer Exporter Code from DGFT unless specifically exempted.
+
+Environmental and local approvals can also affect the timeline for manufacturing, warehousing, factory operations, and physical facilities. Operational readiness then brings bank account opening, IEC, DGFT registrations, labour law registrations, and compliance monitoring. The launch phase should begin only when the approval stack is mapped and ownership is clear.
+
+*Figure 3. Indicative regulatory approval flow for India market entry*
+
+# Common bottlenecks and mitigation
+
+Most India entry delays are predictable. In the strategy and planning stage, companies often underestimate market sizing, choose the wrong entry model, or miss regulatory requirements. This leads to delays, higher costs, and course correction after work has already started. The mitigation is deep market research, early local advisor engagement, and regulatory pre-mapping.
+
+In incorporation and setup, the common bottlenecks are document errors in MCA filings, delays in director identification or PAN/TAN processes, and bank account opening delays. These issues can slow operational readiness even when the market plan is strong. Accurate documentation, professional support, and early bank engagement are critical.
+
+Regulatory approvals create another common pressure point. Companies face multiple approvals, unclear requirements, and slow follow-ups. The practical mitigation is to maintain an approval tracker, run regular review calls, use digital portals where available, and assign a single accountable owner for each approval gate.
+
+Operational readiness delays typically come from late hiring, vendor onboarding issues, and IT or infrastructure readiness gaps. These should be planned as parallel workstreams, not as post-approval activities. Finally, go-to-market launch bottlenecks occur when product-market fit is weak, pricing is misaligned, localization is incomplete, or compliance gaps emerge after launch. Pilot testing and continuous compliance monitoring reduce this risk.
+
+*Figure 4. Common bottlenecks and how to mitigate them*
+
+# Sector-specific triggers to plan early
+
+Not every India entry follows the same approval route. Food, medical devices, cosmetics, e-commerce, import-export businesses, and event-led supply models each introduce additional triggers. A food importer needs to treat FSSAI licensing, product labelling, customs interface, and import clearance as part of market entry, not as a logistics issue. A medical device company must plan the CDSCO import licence workflow and authorized agent model early. A cosmetics importer must treat product registration as a pre-launch gate.
+
+Trade registration also matters. If the business involves import or export, IEC should be included in the critical path. GST also needs early review because compulsory registration may apply in certain cases even before normal turnover thresholds become relevant. Foreign companies doing temporary or event-led supply into India need special care because non-resident taxable person rules may require registration before business begins.
+
+The management lesson is clear: regulated categories need an integrated market access plan. Commercial readiness and regulatory readiness are rarely the same date. If sales teams sign distributors before the product pathway is confirmed, launch quarter becomes an exception-management exercise rather than a growth push.
+
+| **GreyRadius insight: **For regulated categories, the India launch calendar should be built backwards from product access, import clearance, labelling, and regulator requirements. Do not sign channel commitments before the regulatory route is confirmed. |
+| --- |
+
+# FAQs
+
+**What is usually the best structure for a foreign company entering India?**
+
+For most companies that want a real operating presence, an Indian subsidiary or company structure is usually the most practical route. LLPs, liaison offices, branch offices, and project offices can work in specific situations, but they have narrower use cases.
+
+**Can a foreign company start with a liaison office?**
+
+Yes, but only if the immediate objective is market research, representation, and communication. A liaison office is not designed for revenue operations, invoicing, local sales, or full commercial execution.
+
+**When should regulatory approvals be mapped?**
+
+Approval mapping should begin in weeks 1 and 2, before incorporation filings. NSWS can help identify approval dependencies, but companies should validate the final approval stack with the relevant regulators and advisors.
+
+**When do IEC and GST become important?**
+
+IEC becomes important when the India plan includes import or export of goods. GST registration depends on the business model, threshold rules, compulsory registration triggers, and whether the company is acting as a non-resident taxable person.
+
+**What is the biggest reason India entry timelines slip?**
+
+The most common reasons are poor sequencing, incomplete foreign parent documentation, late sector approval mapping, banking delays, and weak ownership of post-incorporation compliance.
+
+# Conclusion
+
+India is large enough for almost every foreign company to build a growth story. The harder question is whether the entry plan is structured to survive legal, banking, tax, customs, regulatory, and operational scrutiny in the first quarter. That is the difference between announcing India and entering India.
+
+A strong India market entry strategy should begin with the operating model, not the filing checklist. Define the commercial thesis, select the right entry mode, map the approval stack, build document readiness, run incorporation and regulatory workstreams in parallel, and launch only when the operating controls are in place.
+
+GreyRadius helps companies move from market-entry ambition to execution-ready operating plans. If your organization is planning to enter India market, start with a structured 12-week roadmap that aligns strategy, regulation, operations, and go-to-market execution from day one.
+
+# Official references
+
+[DPIIT Foreign Direct Investment Policy](https://www.dpiit.gov.in/documents/acts-and-policies/foreign-direct-investment-policy-cDNwATNtQWa?pageTitle=Foreign-Direct-Investment-Policy)
+
+[DPIIT Consolidated FDI Policy Circular](https://www.dpiit.gov.in/static/uploads/2025/07/3ab2ec2a3bdb91c69653b7c34618c14a.pdf)
+
+[Invest India investor guidance and FAQ](https://www.investindia.gov.in/faq-pdf/17/en)
+
+[Invest India Business Guide](https://static.investindia.gov.in/s3fs-public/2019-06/Business%20Guide%20v13_Non-Paginated_English.pdf)
+
+[National Single Window System - Know Your Approvals](https://www.nsws.gov.in/portal/investor-decision)
+
+[National Single Window System - About Us](https://www.nsws.gov.in/about-us)
+
+[RBI FLA Return FAQ](https://www.rbi.org.in/commonman/english/scripts/FAQs.aspx?Id=1171)
+
+[RBI foreign investment reporting guidance](https://www.rbi.org.in/commonman/English/Scripts/Notification.aspx?Id=542)
+
+[DGFT Importer Exporter Code and FTP Chapter 2](https://content.dgft.gov.in/Website/dgftprod/4f665d2f-20cc-4887-ae6a-5ec912bc0d44/FTP2023_Chapter02.pdf)
+
+[CBIC CGST Act Section 22](https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter6/section22_v1.00.html)
+
+[CBIC CGST Act Section 25](https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter6/section25_v1.00.html)
+
+[FSSAI FoSCoS eligibility and licence fee criteria](https://foscos.fssai.gov.in/assets/docs/KindofBusinessEligibilityLatest.pdf)
+
+[FSSAI import regulations](https://www.fssai.gov.in/cms/imports.php)
+
+[CDSCO medical devices and diagnostics](https://cdsco.gov.in/opencms/opencms/en/Medical-Device-Diagnostics/)
+
+[CDSCO cosmetics](https://cdsco.gov.in/opencms/opencms/en/Cosmetics/cosmetics/)
+
+*Source note: This blog has been condensed from the user-provided research document and infographic, using official government and regulator references preserved from the source material.*
