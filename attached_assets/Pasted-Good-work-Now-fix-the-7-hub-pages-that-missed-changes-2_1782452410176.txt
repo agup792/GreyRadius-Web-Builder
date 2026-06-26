@@ -1,0 +1,114 @@
+Good work. Now fix the 7 hub pages that missed changes 2-5.
+
+The hub pages have no <!-- CASE STUDIES --> anchor so the
+mid-page CTA, track record bar, logos, and testimonials were
+skipped. We need to add them using a different insertion point.
+
+===================================================
+FIX HUB PAGES — 7 FILES
+===================================================
+
+Files to fix:
+  industries/bfsi.html
+  industries/cpg-fmcg-retail.html
+  industries/energy-and-chemicals.html
+  industries/healthcare-and-life-sciences.html
+  industries/investment-banks-and-pe.html
+  industries/real-estate-and-infrastructure.html
+  industries/technology.html
+
+For each of these 7 files:
+
+STEP A — Find the insertion anchor.
+Hub pages do not have <!-- CASE STUDIES --> but they do have
+a section containing the child page link grid we added earlier
+(the "Browse all guides" section), OR they have a section with
+class="bg-white" near the bottom before the cta-block.
+
+Use this fallback anchor — find the string:
+  <section class="cta-block">
+
+This is already in all 7 hub pages (Change 7 was applied).
+
+STEP B — Insert changes 2, 3, 4, 5 immediately BEFORE
+<section class="cta-block"> on hub pages — same position as
+Change 6 (process timeline), which is also already there.
+
+The insertion order directly before <section class="cta-block">
+should be:
+
+  1. <!-- MID-PAGE CTA --> (Change 2)
+  2. <!-- TRACK RECORD + LOGOS + TESTIMONIALS block --> (Changes 3,4,5)
+  3. <!-- PROCESS TIMELINE --> (Change 6) — already present
+  4. <section class="cta-block"> (Change 7) — already present
+
+STEP C — Build the combined block for each hub page.
+
+For Changes 3, 4, 5 on hub pages, wrap them in a single section:
+
+<section style="padding:2.5rem 0;background:#fff;
+border-top:1px solid #e2e6ed;">
+  <div class="container">
+
+    [TRACK RECORD BAR — same HTML as Change 3]
+
+    [CLIENT LOGOS — same HTML as Change 4]
+
+    [TESTIMONIALS — same HTML as Change 5]
+
+  </div>
+</section>
+
+TESTIMONIAL ASSIGNMENT FOR HUB PAGES:
+
+  industries/bfsi.html                    → E + C
+  industries/cpg-fmcg-retail.html         → D + G
+  industries/energy-and-chemicals.html    → A + F
+  industries/healthcare-and-life-sciences.html → C + B
+  industries/investment-banks-and-pe.html → E + F
+  industries/real-estate-and-infrastructure.html → A + D
+  industries/technology.html              → E + F
+
+PATH NOTE FOR HUB PAGES:
+Hub pages are 1 level deep (industries/[name].html).
+All hrefs use ../ not ../../
+  ../business-diagnostic.html
+  ../contact.html
+  ../contact.html?ref=one-pager
+
+===================================================
+ALSO — CHANGE 2 (MID-PAGE CTA) ON HUB PAGES
+===================================================
+
+On hub pages, Change 2 was skipped because there was no
+<!-- SERVICE ANGLES --> anchor.
+
+For hub pages only, insert the mid-page diagnostic CTA block
+(same HTML as Change 2 in the original spec) immediately
+BEFORE the new combined track record + logos + testimonials
+section added in Step C above.
+
+Use ../ paths for all links on hub pages.
+
+===================================================
+VERIFY AFTER FIXING
+===================================================
+
+Spot check all 7 hub pages and confirm:
+
+For each hub page, confirm these 5 elements are now present:
+  a) Trust badges in hero (Change 1 — already applied)
+  b) Mid-page diagnostic CTA (Change 2 — now added)
+  c) Track record bar: 100+, 30+, 4, 8+ (Change 3 — now added)
+  d) Six client logos (Change 4 — now added)
+  e) Two testimonial cards with correct sector quotes (Change 5)
+  f) Process timeline — 4 steps (Change 6 — already applied)
+  g) Three-column final CTA (Change 7 — already applied)
+
+Output final confirmation:
+
+Hub pages fixed: [N] of 7
+All 7 changes now present on all hub pages: yes/no
+Any pages still missing changes and reason: [list]
+Total pages with all 7 changes: [should now be 314]
+===================================================
