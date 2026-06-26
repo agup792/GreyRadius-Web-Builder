@@ -1,0 +1,87 @@
+Before the next production deployment, fix the following
+4 issues on the Replit version:
+
+ISSUE 1 — 404 PAGE
+Create public/404.html with:
+- Full site header and footer
+- <meta name="robots" content="noindex, nofollow"> in <head>
+- Headline: "Page not found"
+- Body: "The page you are looking for has moved or does not exist."
+- Three links: Home (/), Services (/services/), 
+  Industries (/industries/cpg-fmcg-retail.html)
+Configure the server to return HTTP 404 status for this page.
+Test: curl -s -o /dev/null -w "%{http_code}" [domain]/xyz-test
+Must return 404.
+
+ISSUE 2 — HUB PAGE CHILD LINKS
+The CPG hub page currently shows 31 child links.
+It should show all pages in industries/cpg-fmcg-retail/*.html.
+Read the sitemap.xml and count all URLs under each hub directory.
+For each hub page, rebuild the "Browse all guides" section to
+include ALL child pages found in sitemap.xml for that directory.
+Check all 7 hub pages:
+  industries/cpg-fmcg-retail.html
+  industries/technology.html
+  industries/healthcare-and-life-sciences.html
+  industries/bfsi.html
+  industries/energy-and-chemicals.html
+  industries/real-estate-and-infrastructure.html
+  industries/investment-banks-and-pe.html
+
+ISSUE 3 — HOMEPAGE SOCIAL PROOF
+In index.html, find the "Why GreyRadius" or differentiation section.
+Add this visible number block somewhere in the hero or above 
+the fold (before first scroll):
+
+<div style="display:flex;flex-wrap:wrap;gap:1rem 2rem;
+margin:1.5rem 0;align-items:center;">
+  <div style="text-align:center;">
+    <p style="font-size:1.75rem;font-weight:800;color:#E8612C;
+    margin:0;line-height:1;">100+</p>
+    <p style="font-size:0.75rem;color:rgba(255,255,255,0.65);
+    margin:0.25rem 0 0;">mandates delivered</p>
+  </div>
+  <div style="text-align:center;">
+    <p style="font-size:1.75rem;font-weight:800;color:#E8612C;
+    margin:0;line-height:1;">30+</p>
+    <p style="font-size:0.75rem;color:rgba(255,255,255,0.65);
+    margin:0.25rem 0 0;">interviews per engagement</p>
+  </div>
+  <div style="text-align:center;">
+    <p style="font-size:1.75rem;font-weight:800;color:#E8612C;
+    margin:0;line-height:1;">4</p>
+    <p style="font-size:0.75rem;color:rgba(255,255,255,0.65);
+    margin:0.25rem 0 0;">geographies</p>
+  </div>
+</div>
+
+ISSUE 4 — HOMEPAGE BLOG LINKS
+Find the footer section or the area just before the footer CTA.
+Add a "Latest from GreyRadius" section with links to the 3 most
+recent blog posts:
+
+<section style="padding:2.5rem 0;background:#f8f9fb;
+border-top:1px solid #e2e6ed;">
+  <div class="container">
+    <h2 style="font-size:1.125rem;font-weight:700;color:#1B2A4A;
+    margin:0 0 1.25rem;">Latest from GreyRadius</h2>
+    <div style="display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1rem;">
+      [link to 3 most recent insight pages from insights/]
+    </div>
+    <a href="/insights/" style="display:inline-block;margin-top:1rem;
+    font-size:0.825rem;font-weight:600;color:#E8612C;
+    text-decoration:none;">View all insights &#8594;</a>
+  </div>
+</section>
+
+Read the sitemap.xml, find the 3 most recent /insights/ URLs
+by lastmod date, and link to them with their page titles as
+anchor text.
+
+After all 4 fixes, confirm:
+- 404 returns correct status: [test result]
+- Hub pages child link counts: [count per hub]
+- Homepage social proof visible: yes/no
+- Homepage blog section present: yes/no
