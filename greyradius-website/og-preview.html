@@ -121,6 +121,16 @@
     .refresh-btn.loading .refresh-icon { animation: spin 0.7s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
+    /* Card updated flash */
+    @keyframes card-updated-flash {
+      0%   { box-shadow: 0 0 0 3px #22c55e, 0 2px 8px rgba(34,197,94,0.25); }
+      55%  { box-shadow: 0 0 0 3px #22c55e, 0 2px 8px rgba(34,197,94,0.25); }
+      100% { box-shadow: 0 0 0 0px #22c55e, 0 2px 8px rgba(34,197,94,0); }
+    }
+    .card--updated {
+      animation: card-updated-flash 2s ease forwards;
+    }
+
     /* Per-card loading overlay */
     .card { position: relative; }
     .card-loading-overlay {
@@ -968,6 +978,19 @@ function updateCardContent(card, p) {
   card.querySelector('.card-refresh-btn').addEventListener('click', () => refreshCard(p.path));
 }
 
+// ── Snapshot of the meta fields we care about ────────────
+function pageSnapshot(p) {
+  return [p.ogTitle, p.ogDesc, p.ogImage, p.twTitle, p.twDesc, p.twCard].join('\x00');
+}
+
+// ── Flash a card green to indicate its data changed ───────
+function flashCardUpdated(card) {
+  card.classList.remove('card--updated');
+  void card.offsetWidth;
+  card.classList.add('card--updated');
+  card.addEventListener('animationend', () => card.classList.remove('card--updated'), { once: true });
+}
+
 // ── Per-card refresh ──────────────────────────────────────
 async function refreshCard(path) {
   const grid = document.getElementById('grid');
@@ -984,8 +1007,10 @@ async function refreshCard(path) {
   const meta = await fetchMeta(path);
   const idx = enrichedPages.findIndex(p => p.path === path);
   if (idx !== -1) {
+    const oldSnap = pageSnapshot(enrichedPages[idx]);
     enrichedPages[idx] = { ...enrichedPages[idx], ...meta };
     updateCardContent(card, enrichedPages[idx]);
+    if (pageSnapshot(enrichedPages[idx]) !== oldSnap) flashCardUpdated(card);
 
     // Recompute global stats after single-card refresh
     let total = 0, complete = 0, withIssues = 0, noImage = 0;
@@ -1031,6 +1056,7 @@ async function init(isRefresh = false) {
       </div>`;
   }
 
+  const prevEnrichedPages = isRefresh ? [...enrichedPages] : [];
   enrichedPages = new Array(PAGES.length);
 
   await Promise.all(
@@ -1041,7 +1067,12 @@ async function init(isRefresh = false) {
       if (isRefresh) {
         const card = grid.querySelector(`.card[data-path="${CSS.escape(route.path)}"]`);
         if (card) {
+          const prev = prevEnrichedPages.find(p => p.path === route.path);
+          const oldSnap = prev ? pageSnapshot(prev) : null;
           updateCardContent(card, enrichedPages[i]);
+          if (oldSnap !== null && pageSnapshot(enrichedPages[i]) !== oldSnap) {
+            flashCardUpdated(card);
+          }
         }
       }
     })
