@@ -1,0 +1,218 @@
+Fix the following 4 issues on the Replit version.
+Execute in order. Do not touch any other pages.
+
+===================================================
+FIX 1 — COMPLETE NEWSLETTER STORY CONTENT
+===================================================
+
+The Signal issue page at:
+insights/newsletters/the-signal/
+india-ai-investment-sovereign-infrastructure-june-2026/index.html
+
+Currently only shows Executive Highlights.
+The full story articles with Strategic Watch and
+GreyRadius Insight blocks are missing.
+
+Read the clean newsletter file that was uploaded:
+public/assets/newsletters/the_signal_issue002_clean.html
+
+If that file is not found, check these alternative paths:
+  attached_assets/the_signal_issue002_clean.html
+  the_signal_issue002_clean.html
+
+The file contains the full newsletter HTML including:
+- .highlight cards (Executive Highlights section)
+- .story articles (5 stories with .subgrid two-column blocks)
+- .filters nav (topic filter buttons)
+- .cta section (call to action)
+
+Take the full body content from that file
+(everything between <body> and </body> excluding any
+outer <header> or <footer> tags that duplicate the site nav)
+and replace the current newsletter body content in the
+issue page with it.
+
+The page structure must be:
+  [Site header]
+  [Breadcrumb]
+  [Issue navigation — ← Issue 001 | All Signal issues ↑ | Issue 003 →]
+  [Full newsletter content from the clean HTML file]
+  [Issue navigation — repeated below]
+  [Site footer]
+
+Apply the same fix to the Charged issue page at:
+insights/newsletters/charged/
+commercial-ev-electrification-battery-trends-june-2026/index.html
+
+Using: public/assets/newsletters/charged_issue002_clean.html
+
+After fixing both pages, confirm:
+  - Word count of Signal issue page is above 3,000 words
+  - 'Strategic Watch' text is present: grep -c 'Strategic Watch'
+  - 'GreyRadius Insight' text is present: grep -c 'GreyRadius Insight'
+  - Story count: grep -c 'class="story"'
+  - No data:image/base64 present: grep -c 'data:image'
+
+===================================================
+FIX 2 — ADD SCHEMA TO NEWSLETTER HUB AND ARCHIVES
+===================================================
+
+A. insights/newsletters/index.html
+Add this JSON-LD block to the <head>:
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://greyradius.com/"},
+      {"@type":"ListItem","position":2,"name":"Insights","item":"https://greyradius.com/insights/"},
+      {"@type":"ListItem","position":3,"name":"Newsletters","item":"https://greyradius.com/insights/newsletters/"}
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "GreyRadius Newsletters — Weekly Market Intelligence",
+    "description": "Four weekly newsletters from GreyRadius covering AI adoption, EV markets, data centres, and semiconductors. Expert-led intelligence published every Thursday.",
+    "url": "https://greyradius.com/insights/newsletters/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "GreyRadius Consulting",
+      "url": "https://greyradius.com"
+    }
+  }
+]
+</script>
+
+B. insights/newsletters/the-signal/index.html
+Add this JSON-LD block to the <head>:
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://greyradius.com/"},
+      {"@type":"ListItem","position":2,"name":"Insights","item":"https://greyradius.com/insights/"},
+      {"@type":"ListItem","position":3,"name":"Newsletters","item":"https://greyradius.com/insights/newsletters/"},
+      {"@type":"ListItem","position":4,"name":"The Signal","item":"https://greyradius.com/insights/newsletters/the-signal/"}
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "The Signal — Weekly Enterprise AI Intelligence",
+    "description": "Archive of The Signal by GreyRadius — weekly enterprise AI intelligence covering adoption, funding, infrastructure and policy across India, Gulf and Southeast Asia.",
+    "url": "https://greyradius.com/insights/newsletters/the-signal/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "GreyRadius Consulting",
+      "url": "https://greyradius.com"
+    }
+  }
+]
+</script>
+
+C. insights/newsletters/charged/index.html
+Same pattern as B with:
+  name: "Charged — Weekly EV & Battery Intelligence"
+  description: "Archive of Charged by GreyRadius — weekly EV and battery intelligence covering commercial electrification, battery technology and mobility policy."
+  url: https://greyradius.com/insights/newsletters/charged/
+  BreadcrumbList position 4: name "Charged"
+
+===================================================
+FIX 3 — ADD NEWSLETTERS TO INSIGHTS NAV DROPDOWN
+===================================================
+
+Find the main navigation in the site header.
+It currently has an Insights nav item.
+
+The Insights dropdown currently contains only "All Insights".
+
+Add "Newsletters" as a second item in that dropdown:
+  All Insights  →  /insights/
+  Newsletters   →  /insights/newsletters/
+
+Match the existing dropdown link styling exactly.
+
+If the nav is in a shared template or component file,
+update that single file — it will propagate to all pages.
+
+If the nav HTML is duplicated across individual pages,
+update every page that contains the nav.
+
+After fixing, confirm:
+  curl -s [homepage] | grep -c 'insights/newsletters'
+  Expected: 2 or more (nav link + homepage strip)
+
+===================================================
+FIX 4 — ADD INDIA BLOG TO HOMEPAGE INSIGHTS SECTION
+===================================================
+
+In index.html, find the "Latest from GreyRadius" section
+(the section with blog insight cards near the bottom).
+
+The India market entry blog should be the first card.
+If it is not present, add it as the first card:
+
+<a href="/insights/how-to-enter-india-market.html"
+style="display:block;padding:1.25rem;background:#f8f9fb;
+border:1px solid #e2e6ed;border-radius:8px;
+text-decoration:none;color:inherit;
+transition:border-color 0.15s;"
+onmouseover="this.style.borderColor='#E8612C'"
+onmouseout="this.style.borderColor='#e2e6ed'">
+  <p style="font-size:0.7rem;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:#E8612C;margin:0 0 0.5rem;">Market Entry · India</p>
+  <p style="font-size:0.9rem;font-weight:600;
+  color:#1B2A4A;margin:0;line-height:1.4;">
+    How to enter the Indian market — a realistic 12-week
+    roadmap for foreign companies</p>
+</a>
+
+If the section already has 3 cards, replace the oldest
+(last) card with this one so the most recent blog is
+always shown first.
+
+After fixing, confirm:
+  curl -s [homepage] | grep -c 'how-to-enter-india-market'
+  Expected: 1 or more
+
+===================================================
+CONFIRM ALL 4 FIXES
+===================================================
+
+Fix 1 — Newsletter content:
+  Signal page word count: [N] (must be 3000+)
+  'Strategic Watch' present: yes/no
+  'GreyRadius Insight' present: yes/no
+  Story blocks: [N] (expect 5)
+  Base64 images: 0
+
+  Charged page word count: [N] (must be 3000+)
+  Story blocks: [N] (expect 5)
+  Base64 images: 0
+
+Fix 2 — Schema added:
+  Newsletter hub schema blocks: [N] (expect 2)
+  Signal archive schema blocks: [N] (expect 2)
+  Charged archive schema blocks: [N] (expect 2)
+
+Fix 3 — Nav:
+  Newsletters link in nav: yes/no
+  Href: /insights/newsletters/
+
+Fix 4 — Homepage blog:
+  India blog linked from homepage: yes/no
+  Href: /insights/how-to-enter-india-market.html
+
+===================================================
+DO NOT modify any industry pages.
+DO NOT touch sitemap.xml — already correct.
+DO NOT change any case study or blog content.
+Only fix the 4 issues listed above.
+===================================================
