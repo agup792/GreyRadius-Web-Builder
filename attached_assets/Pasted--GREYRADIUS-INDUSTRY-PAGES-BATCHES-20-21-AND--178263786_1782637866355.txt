@@ -1,0 +1,311 @@
+===================================================
+GREYRADIUS INDUSTRY PAGES — BATCHES 20, 21, AND 22
+61 pages across 3 batches | Final target: 400 pages
+===================================================
+
+Three Word files are uploaded to this Replit session:
+  GreyRadius_SEO_Batch20.docx  (21 pages)
+  GreyRadius_SEO_Batch21.docx  (20 pages)
+  GreyRadius_SEO_Batch22.docx  (20 pages)
+
+Each docx has three sections:
+  Section 1 — Page index (reference only)
+  Section 2 — This Replit prompt (ignore)
+  Section 3 — JSON appendix (the page data)
+
+STEP 0 — EXTRACT JSON FROM EACH DOCX
+---------------------------------------------------
+Before building any pages, extract the JSON from
+Section 3 of each Word file and save to disk.
+
+For each docx:
+  1. Read the docx using python-docx or extract-text
+  2. Locate Section 3 (heading "Section 3: JSON
+     appendix" or similar)
+  3. Extract the full JSON array that follows
+  4. Parse it with json.loads() to verify it is valid
+  5. Save to the data/ directory:
+
+     GreyRadius_SEO_Batch20.docx → data/industry-pages-batch20.json
+     GreyRadius_SEO_Batch21.docx → data/industry-pages-batch21.json
+     GreyRadius_SEO_Batch22.docx → data/industry-pages-batch22.json
+
+Extraction script to use:
+---
+import json
+from docx import Document
+
+for batch_num, filename, out_file, expected in [
+    (20, 'GreyRadius_SEO_Batch20.docx', 'data/industry-pages-batch20.json', 21),
+    (21, 'GreyRadius_SEO_Batch21.docx', 'data/industry-pages-batch21.json', 20),
+    (22, 'GreyRadius_SEO_Batch22.docx', 'data/industry-pages-batch22.json', 20),
+]:
+    doc = Document(filename)
+    full_text = '\n'.join([p.text for p in doc.paragraphs])
+    # Find the JSON array starting after Section 3 heading
+    # The JSON starts with [ and ends with the last ]
+    start = full_text.find('[\n  {')
+    if start == -1:
+        start = full_text.find('[{')
+    if start == -1:
+        start = full_text.find('[')
+    end = full_text.rfind(']') + 1
+    json_str = full_text[start:end]
+    data = json.loads(json_str)
+    assert len(data) == expected, f"Expected {expected} pages, got {len(data)}"
+    import os
+    os.makedirs('data', exist_ok=True)
+    with open(out_file, 'w') as f:
+        json.dump(data, f, indent=2)
+    print(f"Batch {batch_num}: {len(data)} pages saved to {out_file}")
+---
+
+If the JSON extraction fails (encoding issues or
+formatting from the docx), use this fallback:
+  extract-text GreyRadius_SEO_Batch20.docx | python3 -c "
+  import sys, json, re
+  t = sys.stdin.read()
+  m = re.search(r'(\[.*\])', t, re.DOTALL)
+  data = json.loads(m.group(1))
+  print(len(data), 'pages')
+  open('data/industry-pages-batch20.json','w').write(m.group(1))
+  "
+
+CONFIRM STEP 0 before proceeding:
+  Batch 20 JSON: [N] pages (must equal 21)
+  Batch 21 JSON: [N] pages (must equal 20)
+  Batch 22 JSON: [N] pages (must equal 20)
+  All 3 JSON files valid: yes/no
+
+===================================================
+TOKEN REPLACEMENT RULES (same as all prior batches)
+===================================================
+
+Template: templates/industry-page-template.html
+
+For each page object in the JSON, read the template
+fresh and replace the following tokens:
+
+  {{PAGE_TITLE}}         → page.title
+  {{META_DESC}}          → page.meta
+  {{KEYWORDS}}           → page.keywords
+  {{SLUG}}               → page.slug
+  {{H1}}                 → page.h1
+  {{TAGLINE}}            → page.tagline
+  {{HERO_BODY}}          → page.hero
+  {{MARKET_TIMING}}      → page.market_timing
+  {{REGIONS}}            → page.regions
+  {{STAT1N}} {{STAT1L}} {{STAT1B}} → page.stat1n / stat1l / stat1b
+  {{STAT2N}} {{STAT2L}} {{STAT2B}} → page.stat2n / stat2l / stat2b
+  {{STAT3N}} {{STAT3L}} {{STAT3B}} → page.stat3n / stat3l / stat3b
+  {{INSIGHT_1}} to {{INSIGHT_4}}   → page.insights[0] to [3]
+  {{CHALLENGE_M_1}} to {{CHALLENGE_M_4}} → page.challenges_market[0] to [3]
+
+  challenges_we_solve: each item is "Heading|Body text"
+    parts = item.split('|')
+    {{CHALLENGE_1_H}} → parts[0].strip()  (i=0)
+    {{CHALLENGE_1_B}} → parts[1].strip()  (i=0)
+    ... repeat for i=1 to 5 (indices 1-5)
+
+  service_angles: each item is plain text
+    {{SERVICE_1_BODY}} → page.service_angles[0]
+    ... repeat for i=1 to 5
+
+  faq: each item is "Question|Answer"
+    parts = item.split('|')
+    {{FAQ_1_Q}} → parts[0].strip()  (i=0)
+    {{FAQ_1_A}} → parts[1].strip()  (i=0)
+    ... repeat for i=1 to 3
+
+  {{SCHEMA_SERVICE}} → generate JSON-LD Service schema:
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "[page.h1]",
+    "description": "[page.meta]",
+    "provider": {
+      "@type": "Organization",
+      "name": "GreyRadius Consulting",
+      "url": "https://greyradius.com"
+    },
+    "areaServed": "[page.regions]"
+  }
+
+  {{SCHEMA_FAQ}} → generate JSON-LD FAQPage schema
+  using all 4 FAQ Q&A pairs from page.faq
+
+After all replacements, scan the output for any
+remaining {{ }} tokens and replace with empty string.
+
+===================================================
+STAGE 1 — BATCH 20 (21 pages)
+===================================================
+
+Read: data/industry-pages-batch20.json
+
+Pages to build (21 total):
+   1. [cybersecurity]        gulf-cybersecurity-market-entry
+   2. [cybersecurity]        africa-cybersecurity-market-entry
+   3. [data-centers]         india-data-centre-market-entry
+   4. [data-centers]         gulf-data-centre-market-entry
+   5. [pharma]               gulf-pharma-market-entry
+   6. [pharma]               africa-pharma-market-entry
+   7. [medical-devices]      india-medical-devices-market-entry
+   8. [beauty-personal-care] india-beauty-market-entry
+   9. [beauty-personal-care] gulf-beauty-market-entry
+  10. [food-beverage]        india-food-beverage-market-entry
+  11. [food-beverage]        gulf-food-beverage-market-entry
+  12. [hrtech]               india-hrtech-market-entry
+  13. [hrtech]               gulf-hrtech-market-entry
+  14. [wealthtech]           india-wealthtech-market-entry
+  15. [wealthtech]           gulf-wealthtech-market-entry
+  16. [semiconductors]       india-semiconductor-market-entry
+  17. [semiconductors]       southeast-asia-semiconductor
+  18. [medical-devices]      africa-medical-devices-market-entry
+  19. [semiconductors]       gulf-semiconductor-market-entry
+  20. [beauty-personal-care] africa-beauty-market-entry
+  21. [food-beverage]        africa-food-beverage-market-entry
+
+For each page object:
+  A. mkdir -p industries/[page.parent]
+  B. Read templates/industry-page-template.html fresh
+  C. Replace all tokens as defined above
+  D. Write to industries/[page.parent]/[page.slug].html
+  E. Log: Created industries/[page.parent]/[page.slug].html
+
+After all 21 files written:
+  Add all 21 URLs to sitemap.xml:
+    <url>
+      <loc>https://greyradius.com/industries/[parent]/[slug].html</loc>
+      <lastmod>2026-06-28</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+
+STAGE 1 CONFIRM — output before starting Stage 2:
+  Pages created: [N] / 21
+  Sitemap entries added: 21
+  Token warnings (unfilled {{}}): [N]
+  Failures: none / [list]
+
+===================================================
+STAGE 2 — BATCH 21 (20 pages)
+===================================================
+
+Read: data/industry-pages-batch21.json
+
+Pages to build (20 total):
+   1. [corporate-learning]      gulf-corporate-learning
+   2. [corporate-learning]      india-corporate-learning
+   3. [corporate-learning]      africa-corporate-learning
+   4. [gaming]                  india-gaming-market-entry
+   5. [gaming]                  gulf-gaming-market-entry
+   6. [gaming]                  southeast-asia-gaming
+   7. [higher-education]        india-higher-education
+   8. [higher-education]        gulf-higher-education
+   9. [rare-earth-metals]       africa-rare-earth
+  10. [rare-earth-metals]       india-rare-earth
+  11. [rare-earth-metals]       southeast-asia-rare-earth
+  12. [residential-development] india-residential-development
+  13. [residential-development] gulf-residential-development
+  14. [residential-development] africa-residential-development
+  15. [freight-cargo]           india-freight-cargo
+  16. [freight-cargo]           gulf-freight-cargo
+  17. [last-mile-delivery]      india-last-mile
+  18. [last-mile-delivery]      gulf-last-mile
+  19. [mental-health-tech]      gulf-mental-health
+  20. [mental-health-tech]      india-mental-health
+
+Same process as Stage 1.
+
+STAGE 2 CONFIRM — output before starting Stage 3:
+  Pages created: [N] / 20
+  Sitemap entries added: 20
+  Token warnings: [N]
+  Failures: none / [list]
+
+===================================================
+STAGE 3 — BATCH 22 (20 pages)
+===================================================
+
+Read: data/industry-pages-batch22.json
+
+Pages to build (20 total):
+   1. [embedded-finance]    india-embedded-finance
+   2. [embedded-finance]    gulf-embedded-finance
+   3. [food-beverage]       africa-food-beverage
+   4. [food-beverage]       southeast-asia-food-beverage
+   5. [hrtech]              africa-hrtech
+   6. [hrtech]              southeast-asia-hrtech
+   7. [wealthtech]          africa-wealthtech
+   8. [wealthtech]          southeast-asia-wealthtech
+   9. [medical-devices]     gulf-medical-devices
+  10. [medical-devices]     southeast-asia-medical-devices
+  11. [pharma]              southeast-asia-pharma
+  12. [rare-earth-metals]   gulf-rare-earth
+  13. [data-centers]        africa-data-centre
+  14. [cybersecurity]       southeast-asia-cybersecurity
+  15. [food-beverage]       india-food-tech
+  16. [last-mile-delivery]  africa-last-mile
+  17. [corporate-learning]  southeast-asia-corporate-learning
+  18. [gaming]              africa-gaming
+  19. [higher-education]    africa-higher-education
+  20. [higher-education]    southeast-asia-higher-education
+
+Same process as Stages 1 and 2.
+
+STAGE 3 CONFIRM:
+  Pages created: [N] / 20
+  Sitemap entries added: 20
+  Token warnings: [N]
+  Failures: none / [list]
+
+===================================================
+FINAL VERIFICATION — AFTER ALL 3 STAGES
+===================================================
+
+1. Count total pages created this run:
+   Stage 1: [N] + Stage 2: [N] + Stage 3: [N] = [total]
+   Must equal 61
+
+2. Sitemap URL count check:
+   grep -c '<loc>' sitemap.xml
+   Expected: approximately 443 (382 existing + 61 new)
+
+3. Spot check 3 pages for quality:
+   Pick one from each batch and confirm:
+   - No unreplaced {{ }} tokens in the file
+   - <link rel="canonical"> present, points to greyradius.com
+   - <script type="application/ld+json"> present (schema)
+   - <h1> tag present with correct text
+
+4. Verify parent directories were created:
+   ls industries/ | sort
+   New directories should include:
+   cybersecurity, data-centers, beauty-personal-care,
+   semiconductors, corporate-learning, gaming,
+   higher-education, rare-earth-metals,
+   residential-development, freight-cargo,
+   mental-health-tech, embedded-finance
+   (plus existing directories from prior batches)
+
+FINAL SUMMARY TABLE (output this at the end):
+
+Stage | JSON source              | Pages built | Failures
+  0   | 3 docx files extracted   |    3 JSON   | none/[list]
+  1   | batch20.json             |     /21     | none/[list]
+  2   | batch21.json             |     /20     | none/[list]
+  3   | batch22.json             |     /20     | none/[list]
+
+Total new pages built: [N] / 61
+Sitemap total URLs: [N]
+Industry pages on site now (approx): [N]
+Phase 2 target (400 pages): reached / not yet
+
+===================================================
+DO NOT modify any existing industry pages.
+DO NOT change robots.txt.
+DO NOT alter sitemap entries from prior batches.
+DO NOT rebuild any pages from Batches 1-19.
+Only build the 61 pages listed in Stages 1, 2, 3.
+===================================================
