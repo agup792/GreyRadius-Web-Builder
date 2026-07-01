@@ -1,0 +1,165 @@
+GREYRADIUS — FINAL FIXES, FOURTH REQUEST
+The same three issues have not been fixed across three rounds.
+The reason: you have been editing the wrong files.
+
+There are FOUR separate index.html files on this site.
+The main site template (root index.html) has been fixed.
+The other three have NEVER been touched. Fix them now.
+
+===================================================
+STEP 0 — FIND ALL INDEX.HTML FILES FIRST
+===================================================
+Run in the Replit shell:
+
+  find . -name "index.html" | sort
+
+Paste the output here before making any changes.
+We expect to see at least:
+  ./index.html
+  ./about/index.html
+  ./industries/index.html
+  ./insights/index.html
+
+===================================================
+STEP 1 — EDIT ./about/index.html
+===================================================
+Open ONLY this file: ./about/index.html
+
+Do a find-and-replace for the following strings:
+
+FIND:
+  <title>GreyRadius Consulting — Strategy you can execute. Outcomes within reach.</title>
+REPLACE WITH:
+  <title>About GreyRadius Consulting | Boutique Market Entry Strategy</title>
+
+FIND:
+  <link rel="canonical" href="https://greyradius.com/">
+REPLACE WITH:
+  <link rel="canonical" href="https://greyradius.com/about/">
+
+FIND:
+  <meta property="og:url" content="https://greyradius.com/">
+REPLACE WITH:
+  <meta property="og:url" content="https://greyradius.com/about/">
+
+FIND:
+  <meta property="og:title" content="GreyRadius Consulting — Strategy you can execute. Outcomes within reach.">
+REPLACE WITH:
+  <meta property="og:title" content="About GreyRadius Consulting | Boutique Market Entry Strategy">
+
+Then fix ALL broken nav links in ./about/index.html.
+Do a global find-and-replace across the entire file:
+
+  href="/about/services/   →  href="/services/
+  href="/about/industries/ →  href="/industries/
+  href="/about/case-studies/ → href="/case-studies/
+  href="/about/insights/   →  href="/insights/
+  href="/about/contact.html" → href="/contact.html"
+  href="/about/careers.html" → href="/careers.html"
+  href="/about/business-diagnostic.html" → href="/business-diagnostic.html"
+  href="/about/about/team.html" → href="/about/team.html"
+  href="/about/about/method.html" → href="/about/method.html"
+  href="/about/about/why-greyradius.html" → href="/about/why-greyradius.html"
+  href="/about/about/" → href="/about/"
+
+===================================================
+STEP 2 — EDIT ./industries/index.html
+===================================================
+Open ONLY this file: ./industries/index.html
+
+FIND and REPLACE:
+  <title>Market Entry & Strategy Consulting | GreyRadius</title>
+  →
+  <title>Industries | GreyRadius Market Entry Consulting</title>
+
+  <link rel="canonical" href="https://greyradius.com/">
+  →
+  <link rel="canonical" href="https://greyradius.com/industries/">
+
+  <meta property="og:url" content="https://greyradius.com/">
+  →
+  <meta property="og:url" content="https://greyradius.com/industries/">
+
+  <meta property="og:title" content="Market Entry &amp; Strategy Consulting | GreyRadius">
+  →
+  <meta property="og:title" content="Industries | GreyRadius Market Entry Consulting">
+
+Fix nav links in ./industries/index.html:
+  href="/industries/services/   →  href="/services/
+  href="/industries/industries/ →  href="/industries/
+  href="/industries/case-studies/ → href="/case-studies/
+  href="/industries/insights/   →  href="/insights/
+  href="/industries/about/      →  href="/about/
+  href="/industries/contact.html" → href="/contact.html"
+  href="/industries/careers.html" → href="/careers.html"
+
+===================================================
+STEP 3 — EDIT ./insights/index.html
+===================================================
+Open ONLY this file: ./insights/index.html
+
+FIND and REPLACE:
+  <title>Market Entry & Strategy Consulting | GreyRadius</title>
+  →
+  <title>Insights | Market Entry Research & Newsletters | GreyRadius</title>
+
+  <link rel="canonical" href="https://greyradius.com/">
+  →
+  <link rel="canonical" href="https://greyradius.com/insights/">
+
+  <meta property="og:url" content="https://greyradius.com/">
+  →
+  <meta property="og:url" content="https://greyradius.com/insights/">
+
+  <meta property="og:title" content="Market Entry &amp; Strategy Consulting | GreyRadius">
+  →
+  <meta property="og:title" content="Insights | Market Entry Research &amp; Newsletters | GreyRadius">
+
+Fix nav links in ./insights/index.html:
+  href="/insights/services/   →  href="/services/
+  href="/insights/industries/ →  href="/industries/
+  href="/insights/case-studies/ → href="/case-studies/
+  href="/insights/insights/"  →  href="/insights/"
+  href="/insights/about/      →  href="/about/
+  href="/insights/contact.html" → href="/contact.html"
+  href="/insights/insights/newsletters/" → href="/insights/newsletters/"
+
+===================================================
+STEP 4 — MINOR FIX: /services/ nav index.html suffix
+===================================================
+In service page nav templates, any link to /services/ that
+reads href="/services/index.html" should be:
+  href="/services/"
+
+===================================================
+MANDATORY VERIFICATION — DO NOT SKIP
+===================================================
+After making changes, run these checks and paste results:
+
+CHECK 1: grep the about/index.html file:
+  grep -n "canonical" about/index.html
+  (must show: greyradius.com/about/)
+
+CHECK 2: grep the industries/index.html file:
+  grep -n "canonical" industries/index.html
+  (must show: greyradius.com/industries/)
+
+CHECK 3: grep the insights/index.html file:
+  grep -n "canonical" insights/index.html
+  (must show: greyradius.com/insights/)
+
+CHECK 4: check for any remaining broken about paths:
+  grep -n "/about/services/" about/index.html
+  grep -n "/about/industries/" about/index.html
+  (both must return zero results)
+
+CHECK 5: paste the first <title> line from each file:
+  head -20 about/index.html | grep "<title>"
+  head -20 industries/index.html | grep "<title>"
+  head -20 insights/index.html | grep "<title>"
+
+Also confirm:
+  - robots.txt content (cat robots.txt)
+  - sitemap.xml base URL (head -20 sitemap.xml)
+  - favicon link tag in shared head template
+===================================================
