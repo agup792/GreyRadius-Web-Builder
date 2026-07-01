@@ -1,0 +1,95 @@
+GREYRADIUS WEBSITE — LOGO AND FAVICON FIXES
+
+You will receive three image files to upload to the project first.
+Upload them to these exact paths before making any code changes:
+
+  /assets/images/favicon.png          ← the circular GR icon mark only
+  /assets/images/logo.png             ← full logo, blue/navy on white
+  /assets/images/logo-white.png       ← full logo, white on transparent
+
+===================================================
+FIX 1 — FAVICON (BROWSER TAB ICON)
+===================================================
+Add or replace the favicon tags in the shared <head> template
+that applies to ALL pages. Use these exact tags:
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.png">
+<link rel="shortcut icon" href="/assets/images/favicon.png">
+<link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+Rules:
+- Must be in the shared head template — not on individual pages
+- href must be root-relative (/assets/images/favicon.png)
+- Remove any existing favicon link tags before adding these
+- If the site currently references a Replit default icon or
+  any other favicon path, replace it
+
+Verify: open any page in the browser — the tab should show
+the circular GR icon mark (navy ring with orange accent).
+
+===================================================
+FIX 2 — LOGO ON LIGHT/WHITE BACKGROUND PAGES
+===================================================
+The main site nav uses logo.png. Confirm it is referencing:
+  /assets/images/logo.png
+(the full GREY RADIUS wordmark with navy text)
+
+Check these locations and update the src if wrong:
+- Nav header img tag (shared nav template)
+- Any page section that shows the logo on white/light background
+- The footer logo-transparent or logo reference IF the footer
+  background is light
+
+Rule: any logo on a white or light grey background must use
+/assets/images/logo.png (the blue version).
+
+===================================================
+FIX 3 — LOGO ON DARK/NAVY BACKGROUND
+===================================================
+The footer and any dark-background hero sections must use
+the white logo.
+
+Find every instance where the logo appears on a dark, navy,
+or brand-colour background. This includes:
+- The site footer (likely has a dark navy background)
+- Any hero section or banner with a dark background colour
+- The mobile nav overlay if it has a dark background
+
+For all these locations, update the logo src to:
+  /assets/images/logo-white.png
+
+If the footer currently references logo-transparent.png or
+logo.png on a dark background, replace it with logo-white.png.
+
+===================================================
+FIX 4 — OG IMAGE AND TWITTER CARD IMAGE
+===================================================
+The meta og:image currently references:
+  /assets/images/og-homepage.png
+
+This is fine if that file exists and is correct.
+However, also confirm that no page uses the favicon or the
+Replit default icon as the og:image. The og:image should be
+a 1200x630 px image — not the favicon.
+
+If og-homepage.png does not exist or is missing, use
+/assets/images/logo.png as a fallback og:image for now.
+Do not use favicon.png as the og:image — it is too small.
+
+===================================================
+CONFIRMATION REQUIRED AFTER ALL FIXES
+===================================================
+1. Favicon path now set to: (confirm exact path)
+2. Paste the three <link> favicon tags now in the shared head
+3. Which pages were updated for logo-white.png?
+   (list each file changed)
+4. Does logo.png now correctly show in the nav header?
+5. Does logo-white.png now show in the footer?
+6. Does the browser tab show the circular GR icon?
+7. Confirm no references remain to:
+   - Any Replit default icon
+   - atom/orbital placeholder icon
+   - logo-transparent.png on dark backgrounds
+     (if logo-transparent.png was the white version, keep it
+      but also save a copy as logo-white.png)
+===================================================
