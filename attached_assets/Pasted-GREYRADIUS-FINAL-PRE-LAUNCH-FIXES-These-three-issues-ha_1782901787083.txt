@@ -1,0 +1,179 @@
+GREYRADIUS — FINAL PRE-LAUNCH FIXES
+These three issues have persisted across two rounds of fixes.
+The problem is that /about/, /industries/, and /insights/ each
+have their OWN separate index.html and nav template — separate
+from the main site template. You must edit those specific files.
+
+===================================================
+STEP 1 — FIND THE CORRECT FILES
+===================================================
+Run this search across the entire project to find all
+index.html files:
+
+  find . -name "index.html" | sort
+
+Paste the results so we can see every index.html in the project.
+
+The files we need to fix are:
+  ./about/index.html
+  ./industries/index.html (or index.html inside /industries/)
+  ./insights/index.html  (or index.html inside /insights/)
+
+If any of these do not exist and the folder is instead served
+by a different file (e.g. about.html at root), identify that
+file and fix it.
+
+===================================================
+STEP 2 — FIX /about/index.html HEAD TAGS
+===================================================
+Open the file: about/index.html
+
+Replace the ENTIRE <head> section's title, canonical, and
+OG meta tags with these exact values:
+
+<title>About GreyRadius Consulting | Boutique Market Entry Strategy</title>
+
+<meta name="description" content="GreyRadius is a boutique
+strategy and growth consulting firm founded in 2017. Offices
+in Delhi, Dubai, Singapore, and Brussels. 200+ projects
+delivered across India, GCC, Southeast Asia, and Africa.">
+
+<link rel="canonical" href="https://greyradius.com/about/">
+
+<meta property="og:title"
+  content="About GreyRadius Consulting | Boutique Market Entry Strategy">
+<meta property="og:description"
+  content="Boutique strategy and growth consulting founded in 2017.
+  Primary research, AI-enabled delivery, measurable outcomes.">
+<meta property="og:url" content="https://greyradius.com/about/">
+<meta property="og:type" content="website">
+
+Do NOT change any body content. Head tags only.
+
+===================================================
+STEP 3 — FIX /about/index.html NAV LINKS
+===================================================
+In the same file (about/index.html), find every <a href>
+in the <nav> element.
+
+Every href that starts with /about/ followed by a non-about
+path must be changed to a root-relative path.
+
+Find and replace ALL of these:
+
+  /about/services/           →  /services/
+  /about/industries/         →  /industries/
+  /about/case-studies/       →  /case-studies/
+  /about/insights/           →  /insights/
+  /about/contact.html        →  /contact.html
+  /about/careers.html        →  /careers.html
+  /about/business-diagnostic.html → /business-diagnostic.html
+  /about/about/team.html     →  /about/team.html
+  /about/about/method.html   →  /about/method.html
+  /about/about/why-greyradius.html → /about/why-greyradius.html
+  /about/about/              →  /about/
+
+Keep these paths unchanged (they are correct):
+  /about/team.html
+  /about/method.html
+  /about/why-greyradius.html
+
+After replacing, verify: no href in the nav should contain
+the pattern /about/services/ or /about/industries/ or
+/about/about/ or /about/contact.html
+
+===================================================
+STEP 4 — FIX /industries/index.html
+===================================================
+Open the file: industries/index.html
+
+Replace head tags:
+<title>Industries | GreyRadius Market Entry Consulting</title>
+
+<meta name="description" content="GreyRadius serves Technology,
+BFSI, Healthcare, Energy, CPG, and Real Estate clients across
+India, Gulf, Southeast Asia, and Africa with market entry and
+growth strategy.">
+
+<link rel="canonical" href="https://greyradius.com/industries/">
+
+<meta property="og:title"
+  content="Industries | GreyRadius Market Entry Consulting">
+<meta property="og:url"
+  content="https://greyradius.com/industries/">
+
+Fix nav links — same pattern as Step 3:
+  /industries/services/   →  /services/
+  /industries/industries/ →  /industries/
+  /industries/case-studies/ → /case-studies/
+  /industries/insights/   →  /insights/
+  /industries/about/      →  /about/
+  /industries/contact.html → /contact.html
+
+===================================================
+STEP 5 — FIX /insights/index.html
+===================================================
+Open the file: insights/index.html
+
+Replace head tags:
+<title>Insights | Market Entry Research & Newsletters | GreyRadius</title>
+
+<meta name="description" content="Market entry insights, sector
+research, and weekly newsletters from GreyRadius across India,
+Gulf, Southeast Asia, and Africa.">
+
+<link rel="canonical" href="https://greyradius.com/insights/">
+
+<meta property="og:title"
+  content="Insights | Market Entry Research & Newsletters | GreyRadius">
+<meta property="og:url"
+  content="https://greyradius.com/insights/">
+
+Fix nav links:
+  /insights/services/    →  /services/
+  /insights/industries/  →  /industries/
+  /insights/case-studies/ → /case-studies/
+  /insights/insights/    →  /insights/
+  /insights/about/       →  /about/
+  /insights/contact.html →  /contact.html
+  /insights/insights/newsletters/ → /insights/newsletters/
+
+===================================================
+STEP 6 — FIX HOMEPAGE STAT BLOCK
+===================================================
+Open: index.html (root homepage)
+
+Find the stats section. It currently shows:
+  200+   projects delivered
+  20+    years avg. experience
+  1M+    hours of growth consulting
+  100K+  surveys & interviews conducted
+
+Replace with:
+  200+   projects delivered
+  30+    expert interviews per mandate
+  4      offices: Delhi · Dubai · Singapore · Brussels
+  9      years of practice
+
+===================================================
+VERIFICATION — PASTE BACK ALL OF THESE
+===================================================
+1. Output of: find . -name "index.html" | sort
+
+2. The canonical tag line from each fixed file:
+   - about/index.html → paste canonical line
+   - industries/index.html → paste canonical line
+   - insights/index.html → paste canonical line
+
+3. From about/index.html, paste 3 nav href examples
+   confirming they no longer start with /about/services/
+   or /about/industries/
+
+4. From the root index.html, paste the stats section HTML
+   after the fix
+
+5. Paste the content of /robots.txt
+
+6. Confirm: does /sitemap.xml exist? Paste the total URL
+   count and the base domain used in the URLs.
+===================================================
