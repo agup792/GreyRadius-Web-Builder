@@ -53,29 +53,31 @@ const pages: PageDef[] = [
   { file: "case-studies/saas-product-market-fit.html",      ogImage: "/assets/images/og-cs-saas-pmf.png" },
   { file: "case-studies/trinetra-gtm.html",                 ogImage: "/assets/images/og-cs-trinetra.png" },
 
-  { file: "insights/index.html",                            ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/winning-in-saturated-markets.html",     ogImage: "/assets/images/og-ins-saturated-markets.png" },
-  { file: "insights/ai-hype-to-business-results.html",              ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/consultants-vs-inhouse-strategy-team.html",     ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/cost-transformation-not-cost-cutting.html",     ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/elearning-retention-gtm-strategy.html",         ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/gcc-renewable-energy-market-entry.html",        ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/healthcare-ai-operational-readiness.html",      ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/india-drone-sector-market-entry.html",          ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/market-expansion-strategy-failures.html",       ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/msme-execution-systems-productivity.html",      ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/pharma-clinical-trial-decision-intelligence.html", ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/plg-vs-slg-which-gtm-model-fits.html",          ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/retail-expansion-market-understanding.html",    ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/saas-growth-customer-intelligence.html",        ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/saas-international-expansion-model.html",       ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/standard-of-care-benchmarking-healthcare.html", ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/supply-chain-resilience-board-strategy.html",   ogImage: "/assets/images/og-insights.png" },
-  { file: "insights/uae-consumer-goods-market-entry.html",          ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/index.html",                                         ogImage: "/assets/images/og-insights.png" },
+  { file: "insights/winning-in-saturated-markets.html",                  ogImage: "/assets/images/og-ins-saturated-markets.png" },
+  { file: "insights/ai-hype-to-business-results.html",                   ogImage: "/assets/images/og-ins-ai-hype.png" },
+  { file: "insights/consultants-vs-inhouse-strategy-team.html",          ogImage: "/assets/images/og-ins-consultants-vs.png" },
+  { file: "insights/cost-transformation-not-cost-cutting.html",          ogImage: "/assets/images/og-ins-cost-transform.png" },
+  { file: "insights/elearning-retention-gtm-strategy.html",              ogImage: "/assets/images/og-ins-elearning-retention.png" },
+  { file: "insights/gcc-renewable-energy-market-entry.html",             ogImage: "/assets/images/og-ins-gcc-renewable.png" },
+  { file: "insights/healthcare-ai-operational-readiness.html",           ogImage: "/assets/images/og-ins-healthcare-ai.png" },
+  { file: "insights/india-drone-sector-market-entry.html",               ogImage: "/assets/images/og-ins-india-drone.png" },
+  { file: "insights/market-expansion-strategy-failures.html",            ogImage: "/assets/images/og-ins-market-expansion-failures.png" },
+  { file: "insights/msme-execution-systems-productivity.html",           ogImage: "/assets/images/og-ins-msme-execution.png" },
+  { file: "insights/pharma-clinical-trial-decision-intelligence.html",   ogImage: "/assets/images/og-ins-pharma-clinical.png" },
+  { file: "insights/plg-vs-slg-which-gtm-model-fits.html",              ogImage: "/assets/images/og-ins-plg-vs-slg.png" },
+  { file: "insights/retail-expansion-market-understanding.html",         ogImage: "/assets/images/og-ins-retail-expansion.png" },
+  { file: "insights/saas-growth-customer-intelligence.html",             ogImage: "/assets/images/og-ins-saas-growth.png" },
+  { file: "insights/saas-international-expansion-model.html",            ogImage: "/assets/images/og-ins-saas-international.png" },
+  { file: "insights/standard-of-care-benchmarking-healthcare.html",      ogImage: "/assets/images/og-ins-standard-of-care.png" },
+  { file: "insights/supply-chain-resilience-board-strategy.html",        ogImage: "/assets/images/og-ins-supply-chain-resilience.png" },
+  { file: "insights/uae-consumer-goods-market-entry.html",               ogImage: "/assets/images/og-ins-uae-consumer.png" },
 ];
 
 const ogImageTag = (src: string) =>
   `  <meta property="og:image" content="${src}">`;
+const twitterImageTag = (src: string) =>
+  `  <meta name="twitter:image" content="${src}">`;
 
 assertOgCoverage({ imagePages: new Set(pages.map((p) => p.file)) });
 
@@ -86,43 +88,60 @@ let skipped = 0;
 for (const { file, ogImage } of pages) {
   const path = resolve(ROOT, file);
   let html = readFileSync(path, "utf-8");
+  let changed = false;
 
-  const tag = ogImageTag(ogImage);
-
+  // ── og:image ──────────────────────────────────────────────────────────────
+  const ogTag = ogImageTag(ogImage);
   if (html.includes('property="og:image"')) {
     const existing = html.match(/property="og:image" content="([^"]+)"/)?.[1];
-    if (existing === ogImage) {
-      console.log(`  SKIP (already correct): ${file}`);
-      skipped++;
-      continue;
+    if (existing !== ogImage) {
+      html = html.replace(/<meta property="og:image"[^>]*>/, ogTag.trim());
+      changed = true;
     }
-    html = html.replace(
-      /<meta property="og:image"[^>]*>/,
-      tag.trim()
-    );
-    writeFileSync(path, html, "utf-8");
-    console.log(`  ↻ ${file}  →  ${ogImage}`);
-    replaced++;
+  } else {
+    if (html.includes('property="og:description"')) {
+      html = html.replace(/(<meta property="og:description"[^>]*>)/, `$1\n${ogTag}`);
+    } else if (html.includes('property="og:title"')) {
+      html = html.replace(/(<meta property="og:title"[^>]*>)/, `$1\n${ogTag}`);
+    } else {
+      html = html.replace("</head>", `${ogTag}\n</head>`);
+    }
+    changed = true;
+  }
+
+  // ── twitter:image ─────────────────────────────────────────────────────────
+  const twTag = twitterImageTag(ogImage);
+  if (html.includes('name="twitter:image"')) {
+    const existingTw = html.match(/name="twitter:image" content="([^"]+)"/)?.[1];
+    if (existingTw !== ogImage) {
+      html = html.replace(/<meta name="twitter:image"[^>]*>/, twTag.trim());
+      changed = true;
+    }
+  } else {
+    // Insert after og:image tag so the two stay adjacent
+    if (html.includes('property="og:image"')) {
+      html = html.replace(/(<meta property="og:image"[^>]*>)/, `$1\n${twTag}`);
+    } else {
+      html = html.replace("</head>", `${twTag}\n</head>`);
+    }
+    changed = true;
+  }
+
+  if (!changed) {
+    console.log(`  SKIP (already correct): ${file}`);
+    skipped++;
     continue;
   }
 
-  if (html.includes('property="og:description"')) {
-    html = html.replace(
-      /(<meta property="og:description"[^>]*>)/,
-      `$1\n${tag}`
-    );
-  } else if (html.includes('property="og:title"')) {
-    html = html.replace(
-      /(<meta property="og:title"[^>]*>)/,
-      `$1\n${tag}`
-    );
-  } else {
-    html = html.replace("</head>", `${tag}\n</head>`);
-  }
-
   writeFileSync(path, html, "utf-8");
-  console.log(`  ✓ ${file}`);
-  updated++;
+  const wasReplace = html.includes('property="og:image"');
+  if (wasReplace) {
+    console.log(`  ↻ ${file}  →  ${ogImage}`);
+    replaced++;
+  } else {
+    console.log(`  ✓ ${file}`);
+    updated++;
+  }
 }
 
 console.log(`\nDone. Added: ${updated}, Replaced: ${replaced}, Skipped: ${skipped}`);
