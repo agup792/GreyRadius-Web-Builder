@@ -1,0 +1,282 @@
+GREYRADIUS WEBSITE — PRE-LAUNCH FIX LIST
+Final domain: https://greyradius.com
+Staging: https://cd6c8558-ede6-4511-8d63-6ff5a5b8d1e2-00-3iatq5ubamfin.pike.replit.dev/
+
+Apply all fixes below in order. Do not change any design, layout, or
+content. These are technical and SEO-only changes.
+
+===================================================
+FIX 1 — ROOT-RELATIVE NAV LINKS (CRITICAL)
+===================================================
+Every page except the homepage has broken nav links because the nav
+template is using relative paths. When on /about/, links resolve to
+/about/services/ instead of /services/.
+
+Fix: Update the shared nav template so ALL href values use
+root-relative paths starting with /
+
+Correct examples:
+  /services/opportunity-assessment.html
+  /industries/bfsi.html
+  /insights/
+  /about/team.html
+  /contact.html
+
+Do this in the single nav include/partial/template that is shared
+across all pages — not on individual pages. Verify by loading
+/about/, /industries/, /insights/, /contact.html and confirming
+every nav link resolves correctly.
+
+===================================================
+FIX 2 — HUB PAGES: DISTINCT TITLE, CANONICAL, H1
+===================================================
+These three URLs currently return homepage HTML with the homepage
+canonical. Each needs its own content, title, canonical, and H1.
+
+--- /about/ ---
+<title>About GreyRadius Consulting | Boutique Market Entry Strategy</title>
+<meta name="description" content="GreyRadius is a boutique strategy
+and growth consulting firm founded in 2017. Offices in Delhi, Dubai,
+Singapore, and Brussels. 200+ projects delivered.">
+<link rel="canonical" href="https://greyradius.com/about/">
+<h1>About GreyRadius</h1>
+(keep all existing body content — only fix the head tags and H1)
+
+--- /industries/ ---
+<title>Industries | GreyRadius Market Entry Consulting</title>
+<meta name="description" content="GreyRadius serves Technology, BFSI,
+Healthcare, Energy, CPG, and Real Estate clients across India, Gulf,
+Southeast Asia, and Africa.">
+<link rel="canonical" href="https://greyradius.com/industries/">
+<h1>Industries we serve</h1>
+(keep all existing body content — only fix the head tags and H1)
+
+--- /insights/ ---
+<title>Insights | Market Entry Research & Newsletters | GreyRadius</title>
+<meta name="description" content="Market entry insights, sector
+research, and weekly newsletters from the GreyRadius team across
+India, Gulf, Southeast Asia, and Africa.">
+<link rel="canonical" href="https://greyradius.com/insights/">
+<h1>Insights and research</h1>
+(keep all existing body content — only fix the head tags and H1)
+
+===================================================
+FIX 3 — REMOVE ALL REPLIT URLS FROM PRODUCTION BUILD
+===================================================
+Search the entire codebase for any occurrence of:
+  pike.replit.dev
+  replit.dev
+
+Replace every instance with https://greyradius.com where it appears
+in canonical tags, OG tags, sitemap entries, or any href/src
+attributes. Log every file changed.
+
+===================================================
+FIX 4 — REGENERATE SITEMAP WITH greyradius.com BASE URL
+===================================================
+The sitemap must use https://greyradius.com/ as the base URL for
+all entries. No Replit domain should appear anywhere in sitemap.xml.
+
+Confirm:
+- File exists at /sitemap.xml (accessible as greyradius.com/sitemap.xml)
+- All ~500+ industry page URLs are present
+- All core pages are present: /, /about/, /services/, /contact.html,
+  /case-studies/, /insights/, /careers.html, /legal/privacy.html,
+  /legal/terms.html
+- Format is valid XML with <lastmod>, <changefreq>, <priority> on
+  each URL
+- <lastmod> for all pages is 2026-06-29 or later
+
+===================================================
+FIX 5 — robots.txt
+===================================================
+Ensure /robots.txt exists at the site root with exactly this content:
+
+User-agent: *
+Allow: /
+Sitemap: https://greyradius.com/sitemap.xml
+
+Do not add any Disallow rules. Confirm the file is accessible at
+the root path.
+
+===================================================
+FIX 6 — ORGANIZATION SCHEMA ON HOMEPAGE
+===================================================
+Add the following JSON-LD block inside <head> on the homepage
+(index.html or equivalent) only:
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "GreyRadius Consulting",
+  "legalName": "GreyRadius Informatics P Ltd",
+  "url": "https://greyradius.com",
+  "logo": "https://greyradius.com/assets/images/logo.png",
+  "description": "Boutique strategy and growth consulting firm specialising in market entry, GTM execution, feasibility, and fundraising across India, Gulf, Southeast Asia, and Africa.",
+  "foundingDate": "2017",
+  "numberOfEmployees": {"@type": "QuantitativeValue", "value": 20},
+  "areaServed": ["India","UAE","Singapore","Belgium","Southeast Asia","Africa"],
+  "sameAs": ["https://www.linkedin.com/company/greyradius"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@greyradius.com",
+    "contactType": "customer service",
+    "availableLanguage": "English"
+  },
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Delhi",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Singapore",
+      "addressCountry": "SG"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Brussels",
+      "addressCountry": "BE"
+    }
+  ]
+}
+</script>
+
+===================================================
+FIX 7 — LOCALBUSINESS SCHEMA ON /contact.html
+===================================================
+Add one JSON-LD block per office inside <head> on contact.html:
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "GreyRadius Consulting — Dubai",
+    "url": "https://greyradius.com/contact.html",
+    "email": "dubai@greyradius.com",
+    "telephone": "+971521584200",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
+    },
+    "openingHours": "Mo-Fr 09:00-18:00"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "GreyRadius Consulting — Delhi",
+    "url": "https://greyradius.com/contact.html",
+    "email": "delhi@greyradius.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New Delhi",
+      "addressCountry": "IN"
+    },
+    "openingHours": "Mo-Fr 09:00-18:00"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "GreyRadius Consulting — Singapore",
+    "url": "https://greyradius.com/contact.html",
+    "email": "sg@greyradius.com",
+    "telephone": "+6590111264",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Singapore",
+      "addressCountry": "SG"
+    },
+    "openingHours": "Mo-Fr 09:00-18:00"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "GreyRadius Consulting — Brussels",
+    "url": "https://greyradius.com/contact.html",
+    "email": "brussels@greyradius.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brussels",
+      "addressCountry": "BE"
+    },
+    "openingHours": "Mo-Fr 09:00-18:00"
+  }
+]
+</script>
+
+===================================================
+FIX 8 — STANDARDISE STAT BLOCK
+===================================================
+The homepage and /about/ page show different stat sets. Use this
+stat set consistently on both pages:
+
+200+    projects delivered
+30+     expert interviews per mandate
+4       offices: Delhi · Dubai · Singapore · Brussels
+9       years of practice
+
+Remove "1M+ hours of growth consulting" and "20+ years avg. experience"
+from the homepage stat block. Replace with the above four stats to
+match the /about/ page framing.
+
+===================================================
+FIX 9 — BREADCRUMB SCHEMA ON CORE PAGES
+===================================================
+Add BreadcrumbList JSON-LD to these pages (examples below — follow
+the same pattern for all):
+
+/services/opportunity-assessment.html:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://greyradius.com/"},
+    {"@type":"ListItem","position":2,"name":"Services","item":"https://greyradius.com/services/"},
+    {"@type":"ListItem","position":3,"name":"Opportunity Assessment","item":"https://greyradius.com/services/opportunity-assessment.html"}
+  ]
+}
+</script>
+
+Apply the same pattern to all six service pages, all seven industry
+hub pages, /about/, /about/team.html, /about/method.html,
+/case-studies/, /insights/, and /contact.html.
+
+===================================================
+FIX 10 — VERIFY INDUSTRY PAGE CANONICAL FORMAT
+===================================================
+Sample-check 10 industry pages across different batches and confirm:
+- canonical tag uses https://greyradius.com/ base (not Replit URL)
+- No unfilled {{ }} tokens remain anywhere in the HTML
+- Schema blocks (Service, FAQPage, SpeakableSpecification) are
+  present and valid JSON-LD
+- All internal links within the page use /contact.html not a
+  Replit URL
+
+Report back: any pages where canonicals are wrong, tokens are
+unfilled, or schema is missing.
+
+===================================================
+CONFIRMATION REQUIRED AFTER ALL FIXES
+===================================================
+When complete, confirm:
+1. Nav links on /about/, /industries/, /insights/ all resolve correctly
+2. /about/ canonical is https://greyradius.com/about/
+3. /industries/ canonical is https://greyradius.com/industries/
+4. /insights/ canonical is https://greyradius.com/insights/
+5. robots.txt content (paste it)
+6. Sitemap entry count and first 5 + last 5 URLs
+7. No pike.replit.dev strings in codebase (grep result)
+8. Organization schema present on homepage (paste it)
+9. Stat block updated on homepage and /about/
+10. How many industry pages had unfilled tokens or wrong canonicals
+===================================================
