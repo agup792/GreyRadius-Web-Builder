@@ -1,0 +1,94 @@
+GREYRADIUS — REMAINING FIXES (ROUND 2)
+
+After re-checking the site, the following from the previous
+list are still not applied or not confirmed. Please fix all
+of these and confirm each one.
+
+===================================================
+FIX 1 — /about/ CANONICAL, TITLE, OG TAGS (CRITICAL)
+===================================================
+/about/ is still returning the homepage canonical and title.
+
+The <head> of /about/index.html must be:
+
+<title>About GreyRadius Consulting | Boutique Market Entry Strategy</title>
+<meta name="description" content="GreyRadius is a boutique
+strategy and growth consulting firm founded in 2017. Offices
+in Delhi, Dubai, Singapore, and Brussels. 200+ projects.">
+<link rel="canonical" href="https://greyradius.com/about/">
+<meta property="og:title" content="About GreyRadius Consulting">
+<meta property="og:url" content="https://greyradius.com/about/">
+<meta property="og:description" content="Boutique strategy and
+growth consulting. Primary research, AI-enabled delivery,
+measurable outcomes. India · GCC · Southeast Asia.">
+
+Do NOT change any body content — head tags only.
+
+===================================================
+FIX 2 — /about/ NAV LINKS STILL BROKEN
+===================================================
+The nav on /about/ is using a different template than the
+main site nav. All links in the /about/ nav are broken —
+they prepend /about/ to root paths.
+
+Fix the /about/ nav template to use root-relative paths:
+
+WRONG:  /about/services/opportunity-assessment.html
+RIGHT:  /services/opportunity-assessment.html
+
+WRONG:  /about/industries/technology.html
+RIGHT:  /industries/technology.html
+
+WRONG:  /about/about/team.html
+RIGHT:  /about/team.html
+
+WRONG:  /about/contact.html (if linking from within /about/)
+RIGHT:  /contact.html
+
+Apply to every link in every nav element on the /about/ template.
+After fixing, verify by clicking every nav item from /about/ and
+confirming none return a 404.
+
+===================================================
+FIX 3 — HOMEPAGE STAT BLOCK
+===================================================
+The homepage still shows these four stats:
+  200+   projects delivered
+  20+    years avg. experience
+  1M+    hours of growth consulting
+  100K+  surveys & interviews conducted
+
+Replace with these four stats:
+  200+   projects delivered
+  30+    expert interviews per mandate
+  4      offices: Delhi · Dubai · Singapore · Brussels
+  9      years of practice
+
+Remove "20+ years avg. experience", "1M+ hours of growth
+consulting", and "100K+ surveys & interviews conducted"
+entirely. Do not keep them anywhere on the homepage.
+
+===================================================
+CONFIRMATIONS REQUIRED — PASTE BACK FOR EACH
+===================================================
+1. Paste the full <head> block of /about/ after Fix 1
+
+2. Click every nav link from /about/ — list any that
+   still return 404
+
+3. Paste the current homepage stat block HTML after Fix 3
+
+4. Paste the Organization JSON-LD schema block that was
+   added to the homepage <head> (from the previous round)
+
+5. Paste the full content of /robots.txt
+
+6. Paste the first 5 and last 5 URLs from /sitemap.xml
+   and confirm total URL count
+
+7. Paste the favicon <link> tags currently in the shared
+   <head> template
+
+8. List which files were updated to use logo-white.png
+   on dark backgrounds
+===================================================
