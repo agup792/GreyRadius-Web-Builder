@@ -1,0 +1,664 @@
+GREYRADIUS — CPG/FMCG INDUSTRY PAGE DEEP REBUILD + 3 NEW CASE STUDY PAGES
+
+This is a content and structure expansion task.
+Do NOT change nav, footer, or any other industry page.
+Only touch: industries/cpg-fmcg-retail.html and create 3 new case study files.
+
+===================================================
+PART 1 — REBUILD industries/cpg-fmcg-retail.html
+===================================================
+Open the file: industries/cpg-fmcg-retail.html
+
+Keep the existing page structure (nav, hero, footer).
+ADD the following 8 new sections AFTER the existing
+intro/hero section and BEFORE any existing CTA or
+case studies section. Build in HTML using the site's
+existing CSS variables (--navy, --orange, etc.).
+
+---
+SECTION 1: HERO UPDATE
+---
+Update the existing page title and meta:
+
+<title>CPG & FMCG Strategy Consulting | Market Entry, GTM & Growth | GreyRadius</title>
+
+<meta name="description" content="GreyRadius helps CPG and FMCG
+brands enter new markets, launch new products, optimise distribution,
+and build margin-accretive growth strategies across India, Gulf,
+Southeast Asia, and Africa. 40+ consumer mandates delivered.">
+
+Update the page H1 to:
+  CPG and FMCG strategy consulting
+
+Update the tagline/subhead below H1 to:
+  From new product launch to national scale-up and portfolio
+  optimisation — primary-research-led strategy across India,
+  Gulf, Southeast Asia, and Africa.
+
+Add 3 stat pills below the tagline:
+  40+   consumer product mandates delivered
+  600+  distributor, retailer, and consumer interviews per mandate
+  India · UAE · Southeast Asia · Africa   geographies covered
+
+---
+SECTION 2: THE CPG/FMCG GROWTH CHALLENGE
+---
+Add a navy background section titled:
+  "The CPG / FMCG growth challenge we solve"
+
+Three column cards, each with a problem (orange label) and
+solution (white text):
+
+Card 1:
+  Problem: Fragmented distribution and reactive sales growth
+  Solution: Structured GTM architecture with channel-specific
+  distribution roadmap, numeric and weighted expansion
+  targets, and clear geo prioritisation framework.
+
+Card 2:
+  Problem: Volume growth without profit clarity
+  Solution: Portfolio rationalisation by margin and velocity.
+  SKU contribution analysis. Price-pack architecture
+  optimised for distributor ROI and consumer willingness to pay.
+
+Card 3:
+  Problem: Strategy decks without field adoption
+  Solution: Field-ready execution playbooks. Sales KPI and
+  incentive redesign. Distributor economics rebuilt. Primary-
+  to-secondary conversion tracked and improved.
+
+---
+SECTION 3: HOW GREYRADIUS HELPS — NEW PRODUCT LAUNCH AND GROWTH PLANNING
+---
+Add a section with heading:
+  "How GreyRadius helps with new product launch and growth planning"
+
+Subhead:
+  A five-step structured approach from market ambiguity to
+  field-ready commercial execution.
+
+Build a horizontal clickable step-nav (tabs or accordion on mobile)
+with 5 steps. Each step expands to show detail on click.
+
+STEP 1 — Opportunity assessment
+  Tab label: 01 Opportunity assessment
+  Content:
+  Turning market ambiguity into a Go / No-Go decision.
+  We conduct a structured Go/No-Go evaluation covering:
+  - Target market assessment: category TAM, addressable
+    retail universe, channel potential, geographic attractiveness
+    (urban, semi-urban, rural, export)
+  - Current market and competitive landscape: national and
+    local competitor mapping, price-pack benchmarking,
+    whitespace identification, entry barriers, retailer loyalty
+  - Consumer and trade adoption readiness: purchase drivers,
+    switching behaviour, retailer and distributor appetite,
+    price sensitivity
+  - Product and commercial readiness: product-market fit
+    validation, SKU relevance, pricing and trade margin
+    viability, regulatory and labelling compliance
+  Outputs: Clear Go / No-Go recommendation, validated
+  price-pack architecture, working capital visibility,
+  risk mitigation roadmap.
+
+STEP 2 — Opportunity prioritisation
+  Tab label: 02 Opportunity prioritisation
+  Content:
+  Identifying high-impact, margin-accretive growth levers.
+  We score and rank every growth opportunity on:
+  - Revenue upside potential
+  - Contribution margin impact
+  - Distribution scalability
+  - Trade complexity
+  - Working capital intensity
+  We then build an opportunity heat map: Gold Mine (high
+  impact, high feasibility), Quick Wins (immediate), Major Bets
+  (high impact, investment required), and Moonshots (long-term).
+  Output: Prioritised initiative list with phased execution
+  roadmap, financial viability per initiative, and
+  decision lens scoring.
+
+STEP 3 — Competitive intelligence
+  Tab label: 03 Competitive intelligence
+  Content:
+  Defining your right to win in a crowded category.
+  Our competitive intelligence covers:
+  - Competitor universe mapping: national, regional, local,
+    and emerging challenger brands; private labels;
+    distributor-led competition
+  - Competitive sales and distribution strategy: channel
+    focus, distribution structure, retail penetration, trade
+    margin and scheme structures, sales force model
+  - Marketing and brand positioning intelligence: brand
+    value proposition, price-pack architecture, ATL/BTL mix,
+    digital and influencer footprint, in-store visibility
+  - Whitespace identification: portfolio gaps, price laddering
+    opportunities, under-served geographies, consumer
+    segments lacking strong positioning
+  We interview: competitor distributors, super-stockist
+  partners, GT and MT retailers, former sales managers of
+  competing brands, competitor marketing professionals,
+  modern trade category managers.
+
+STEP 4 — Customer intelligence
+  Tab label: 04 Customer intelligence
+  Content:
+  Purchase drivers, retail dynamics, and shopper journey.
+  We map:
+  - Consumer segments: urban, rural, premium, value-seeking
+  - Customer journey across channels: GT, MT, e-commerce,
+    quick commerce
+  - Decision triggers: price, packaging, brand recall,
+    retailer recommendation, visibility
+  - Consumer pain points: price sensitivity, quality
+    perception, packaging usability, brand trust
+  - Retailer and distributor expectations: margin structure,
+    scheme support, inventory turns, credit terms
+  - Friction points: availability gaps, visibility issues,
+    retailer push bias
+  Primary research methods: CATI interviews with distributors
+  and retailers, mystery shopping, retail audits, shelf-share
+  mapping, beat mapping, consumer intercept surveys.
+
+STEP 5 — Market entry and launch roadmap
+  Tab label: 05 Market entry roadmap
+  Content:
+  Identifying, evaluating, and prioritising the right
+  markets, categories, and SKUs for launch.
+  Our roadmap covers three phases:
+  Phase 1 — Identify: opportunity identification, market
+  landscape analysis (push forces and pull forces),
+  total addressable market mapping (TAM, SAM, SOM)
+  Phase 2 — Evaluate: attractiveness map (Gold Mine, Quick
+  Win, Moon Shot, Questionable), SKU and category scoring
+  by impact versus feasibility, phased implementation by
+  timeline and capability readiness
+  Phase 3 — Prioritise and build: Agile Focus Dartboard
+  (Pursue Now, Keep Open, Place in Storage), priority
+  geographies and channel mix, core versus adjacent
+  category plays, revenue and margin potential decision lens
+  Output: Launch-ready market blueprint with defined GTM
+  and distribution model, target retailer universe, SKU
+  and margin alignment, revenue projection framework,
+  and execution-ready launch foundation.
+
+---
+SECTION 4: PRIMARY RESEARCH CAPABILITY
+---
+Add a section with heading:
+  "Grounded in on-ground primary intelligence"
+
+Subhead:
+  Primary research capabilities built for FMCG distribution,
+  trade, and consumer ecosystems.
+
+Three capability cards:
+
+Card 1 — In-house trade and channel intelligence team
+  We operate a bilingual primary calling team conducting
+  structured CATI interviews across distributors, super-
+  stockists, GT and MT retailers, modern trade category
+  managers, e-commerce sellers, and industry experts.
+  We capture: secondary sales realities, trade scheme
+  effectiveness, margin expectations, channel conflict
+  signals, expansion readiness.
+
+Card 2 — In-house retail and market immersion team
+  Field research specialists conduct structured on-ground
+  assessments: retail audits, shelf-share mapping, numeric
+  and weighted distribution validation, mystery shopping,
+  trade scheme validation, distributor satisfaction studies,
+  beat mapping, territory analysis, geo-level demand
+  assessment.
+  Ensures strategy is validated at the point of sale, not
+  just in the boardroom.
+
+Card 3 — Survey design and strategic advisory integration
+  Every study aligns to commercial objectives, answers
+  revenue-critical questions, translates insights into GTM
+  decisions, and feeds directly into execution playbooks.
+  Study types: expert and industry interviews, distributor
+  and retailer surveys, consumer behaviour and purchase
+  driver analysis, trade satisfaction and ROI studies,
+  descriptive and diagnostic market studies.
+
+Add a row of 6 research type pills below the cards:
+  Expert and industry interviews |
+  Distributor and retailer surveys |
+  Consumer behaviour and purchase drivers |
+  Trade satisfaction and ROI studies |
+  Descriptive and diagnostic market studies |
+  Explanatory revenue and margin assessments
+
+---
+SECTION 5: SOLUTIONS ALIGNED TO GROWTH STAGE
+---
+Add a section with heading:
+  "Solutions aligned to where you are"
+
+Subhead:
+  We calibrate every engagement to your product maturity
+  and channel stage. No single-size playbooks.
+
+Build a 3x3 stage matrix table (or responsive card grid):
+
+Stage I — Entry and early scale:
+  A. Category and opportunity validation: category
+     attractiveness, price-pack architecture validation,
+     competitive intensity mapping, consumer need gap,
+     channel feasibility (GT / MT / E-com)
+  B. Distribution model design: territory and beat planning,
+     SKU and margin viability, trade margin benchmarking,
+     working capital modelling, sales incentive structure
+  C. Go-to-market roll-out: sales force setup and KPI
+     governance, trade schemes and launch programmes,
+     channel partner onboarding, primary vs secondary sales
+     alignment, business planning (revenue, P&L, cash flow)
+
+Stage II — Acceleration and regional leadership:
+  A. Growth gap diagnostics: numeric and weighted
+     distribution gap analysis, sales productivity
+     benchmarking, channel conflict analysis, SKU
+     contribution margin review, win-loss analysis by
+     region and channel
+  B. Topline acceleration and channel optimisation: GTM
+     redesign, new geography prioritisation, modern trade
+     and e-commerce expansion, trade scheme optimisation,
+     sales force productivity, pricing and pack-size
+     rationalisation
+  C. Structured capital and scale enablement: growth
+     capital readiness, business valuation, investor pitch
+     structuring for FMCG scale
+
+Stage III — National and multi-category scale:
+  A. Category adjacency identification: rural market
+     penetration, export and international entry roadmap,
+     channel diversification, customer experience and
+     brand reinforcement
+  B. PE readiness and valuation enhancement: M&A
+     opportunity screening, joint ventures and strategic
+     alliances
+  C. Acquisition target scouting: synergy modelling
+     (distribution and sourcing), post-merger integration
+     governance, portfolio rationalisation post-acquisition
+
+---
+SECTION 6: FIELD INTERVIEW SNAPSHOTS — CREDIBILITY
+---
+Add a section with heading:
+  "What we hear on the ground"
+
+Subhead:
+  Every mandate runs 30+ expert interviews and 200+
+  consumer and trade surveys. Here are the patterns
+  we validate in every CPG engagement.
+
+Build 4 quote-style cards with a pull-quote format
+(large quotation mark, navy card, orange accent):
+
+Quote 1:
+  "Secondary sales are strong in modern trade but we
+  have zero visibility into what actually moves off
+  the shelf in general trade. Our distributor data
+  is primary billing only."
+  — Category head, mid-size FMCG brand, India
+
+Quote 2:
+  "The price gap between our premium SKU and the
+  regional competitor is 18%. Retailers push the
+  competitor because the trade margin is 6 points
+  higher. The consumer never even gets to choose."
+  — National sales manager, packaged foods company
+
+Quote 3:
+  "We have launched in UAE but our Arabic labelling
+  is non-compliant with ESMA standards. Our entire
+  shipment is stuck at Dubai Customs."
+  — Export head, India-origin CPG brand expanding to Gulf
+
+Quote 4:
+  "Health-conscious consumers in urban markets are
+  willing to pay 25-30% premium but they cannot find
+  us in modern trade. Our distribution is GT-heavy
+  in areas where our consumer does not shop."
+  — Founder, better-for-you snacks brand, India
+
+Below the quotes add:
+  600+ distributor, retailer, and consumer interviews
+  conducted across CPG mandates in India and Gulf.
+  [Read how we conduct research →] linking to /about/method.html
+
+---
+SECTION 7: CASE STUDY CARDS — CPG SPECIFIC
+---
+Add a section with heading:
+  "CPG and FMCG mandates — selected work"
+
+Build 3 case study cards horizontally. Each card has:
+sector tag, client type, 3 outcome stats, and a
+"Read case study" link.
+
+Card 1:
+  Tag: Dairy and food products · India
+  Title: New product launch — daily dairy brand
+  Stats: 300+ interviews and surveys conducted |
+  20% increase in retail outlet coverage in UAE |
+  Profitable international expansion within Year 1
+  Link: /case-studies/cpg-dairy-brand-new-product-launch.html
+
+Card 2:
+  Tag: Ethnic snacks · India
+  Title: Strategic growth and expansion — ethnic snacks brand
+  Stats: 600+ interviews and surveys |
+  3% market share increase (9% to 12%) |
+  5+ new SKUs introduced | 6 months to new product range
+  Link: /case-studies/cpg-ethnic-snacks-strategic-expansion.html
+
+Card 3:
+  Tag: Packaged spices and seasonings · UAE and Myanmar
+  Title: Market expansion — chilli powder and seasoning brand
+  Stats: 560+ interviews and surveys |
+  Distribution expanded across 3 new UAE Emirates |
+  18% increase in weighted modern trade distribution
+  Link: /case-studies/cpg-spice-brand-uae-myanmar-expansion.html
+
+Add a 4th card:
+  Tag: Premium supplement · MENA
+  Title: MENA market entry — European protein powder brand
+  Stats: 840+ interviews and surveys |
+  USD 8M yearly sales without marketing spend |
+  12 months to market entry in UAE and KSA |
+  2 new channels: digital-first and select distributor hybrid
+  Link: /case-studies/cpg-protein-brand-mena-market-entry.html
+
+---
+SECTION 8: CPG-SPECIFIC FAQ
+---
+Add an FAQ section with heading:
+  "Common questions on CPG and FMCG consulting"
+
+Build accordion FAQ with these 5 items:
+
+Q1: What does a GreyRadius CPG engagement typically cover?
+A1: Every engagement starts with primary research —
+distributor interviews, consumer intercepts, retailer
+audits, and competitor channel mapping. We then build the
+opportunity assessment, distribution model, GTM roadmap,
+or PE-ready strategy depending on your growth stage.
+Fixed fee. Output-defined. No hourly billing.
+
+Q2: How many interviews do you conduct in a CPG mandate?
+A2: Typically 30 to 100 primary interviews with
+distributors, retailers, consumers, and industry experts,
+combined with 200 to 500 end-user surveys. For full
+market entry mandates in new geographies, we go higher —
+our Myanmar and UAE expansion mandate ran 560+ total
+research touchpoints.
+
+Q3: Can GreyRadius help with both India domestic expansion
+and international CPG market entry?
+A3: Both. Our India practice covers GT and MT distribution
+model design, regional expansion, and Q-commerce strategy.
+Our Gulf and Southeast Asia practice covers export entry,
+Halal certification advisory, Arabic labelling compliance,
+distributor identification, and HORECA channel entry.
+
+Q4: Do you work with early-stage brands or only established
+CPG companies?
+A4: Both. We work with brands at Stage I (new product
+launch, distribution model design) through Stage III
+(PE readiness, M&A scouting, acquisition integration).
+Our engagement framework is calibrated to where you are.
+
+Q5: How long does a CPG market entry or growth mandate take?
+A5: Opportunity assessment with primary research: 3 to 4
+weeks. Full market entry with distribution model and GTM
+roadmap: 8 to 10 weeks. GTM Execution-as-a-Service where
+we run the first 90 days of launch: 3 months ongoing.
+
+===================================================
+PART 2 — CREATE 4 NEW CASE STUDY PAGES
+===================================================
+Create these 4 new HTML files using the existing
+case study page template from any existing case study
+(e.g. case-studies/fresh-foods-cpg-bengaluru-gtm.html).
+Match the exact same structure, nav, footer, and CSS.
+
+---
+FILE 1: case-studies/cpg-dairy-brand-new-product-launch.html
+---
+<title>Daily Dairy Brand — New Product Launch and GTM | GreyRadius</title>
+<meta name="description" content="How GreyRadius helped a daily
+dairy brand launch across Bengaluru with 300+ primary research
+touchpoints, consumer segmentation, and a national GTM rollout.">
+canonical: https://greyradius.com/case-studies/cpg-dairy-brand-new-product-launch.html
+
+Page content:
+
+H1: Daily dairy brand — new product launch and GTM strategy
+Sector tag: Dairy and food products · India · New product launch
+
+CHALLENGE block:
+The client needed to launch a new dairy product in a
+highly saturated Indian market. Key objectives:
+- Launch in a market with dominant regional players and
+  strong price competition
+- Identify whitespace in mass and premium dairy segments
+- Build differentiated brand positioning in a cluttered category
+- Design pricing and distribution strategy for rapid penetration
+- Create a structured GTM playbook to drive early adoption
+
+WHAT WE DID block (4 work-streams):
+1. Market opportunity assessment: category analysis across
+   milk, flavoured milk, curd, paneer, and value-added dairy
+2. Consumer intelligence and segmentation: voice-of-customer
+   study across urban families, health-conscious millennials,
+   and price-sensitive households
+3. Portfolio and SKU prioritisation: identified high-rotation
+   SKUs based on profitability, pricing elasticity, and
+   distribution feasibility
+4. Brand positioning framework: functional and emotional
+   value proposition balancing trust, freshness, and
+   aspirational appeal
+
+HOW WE DID IT block:
+Primary research: 300+ total interviews and surveys
+- 100+ personal interviews: competitor growth and sales
+  interviews, dairy and category experts, distributors
+  and retailers, GT/MT retail surveys, consumer surveys
+  across working and non-working professionals
+- Structured workshops with business, sales, marketing,
+  and product teams on category entry ambition, pricing
+  guardrails, geographic rollout, distributor onboarding,
+  and trade scheme design
+- 7 high-potential Bengaluru micro-markets scored and
+  mapped with population data and residential coverage
+
+OUTCOMES block (3 stat cards):
+- 20% increase in retail outlet coverage in UAE
+- 4+ new SKUs introduced for export market
+- Profitable international expansion within Year 1
+
+Additional outcomes:
+- Clear whitespace identified in value-added dairy segment
+- Differentiated brand positioning defined versus incumbent brands
+- High-velocity SKUs prioritised for initial launch
+- National GTM rollout structured across priority states
+- Early-stage brand traction across multiple consumer cohorts
+
+CTA: Talk to us about your CPG launch →  /contact.html
+
+---
+FILE 2: case-studies/cpg-ethnic-snacks-strategic-expansion.html
+---
+<title>Ethnic Snacks Brand — Strategic Growth and Expansion | GreyRadius</title>
+<meta name="description" content="GreyRadius helped an ethnic
+snacks brand identify a Better-for-You category launch strategy
+and South India acquisition opportunity with 600+ research
+touchpoints and EPS-accretive financial modelling.">
+canonical: https://greyradius.com/case-studies/cpg-ethnic-snacks-strategic-expansion.html
+
+H1: Ethnic snacks brand — strategic growth and expansion
+Sector tag: Ethnic snacks · India · Growth strategy
+
+CHALLENGE block:
+Client in the INR 50,000 Cr+ ethnic snacks market needed to:
+- Identify the highest-impact growth strategy organically
+  (Better-for-You range) and inorganically (South India
+  acquisition)
+- Capture rising health-conscious demand for millet, roasted,
+  and 0% palm oil snacks
+- Build a phased expansion roadmap with financing structure
+
+WHAT WE DID:
+1. Industry and competitive landscape mapping: market share
+   benchmarking versus Haldiram's, Balaji, Gopal, Prataap,
+   Bikanervala; growth driver analysis; regulatory mapping
+2. Opportunity assessment and prioritisation: health segment
+   (millet, makhana, roasted SKUs) versus regional expansion
+   in South India; Q-commerce first GTM for urban millennials
+3. Strategic recommendations:
+   - Strategy 1: Launch "Better-for-You" health sub-brand
+     via Q-commerce (Crunch Lite — 0% palm oil, millet and
+     makhana line)
+   - Strategy 2: Acquire South India ethnic snacks brand (SKC)
+     for geographic scale with 75% cash and 25% equity structure
+4. Financial feasibility: EPS-accretive structure modelled;
+   projected topline addition of INR 100 Cr+ in FY26
+
+HOW WE DID IT:
+- 100+ personal interviews: retailers, competitor ethnic
+  snacks companies, Gen Z consumers, distributor and stockists
+- 500+ partner and end-user surveys
+- Q-commerce search trend analysis for roasted, lite, no-oil
+  snack categories
+- Acquisition target filtration process with scoring on
+  geographic reach, brand fit, distributor network, and
+  valuation multiples
+
+OUTCOMES:
+- 3% market share increase in snacks category (9% to 12%)
+- 5+ new SKUs in introduction plan
+- 6 months timeline to launch new product range
+- South India acquisition identified: EPS accretive,
+  75% cash and 25% equity structure
+- Q-commerce-first GTM mapped for urban millennials
+
+---
+FILE 3: case-studies/cpg-spice-brand-uae-myanmar-expansion.html
+---
+<title>Chilli Powder and Seasoning Brand — UAE and Myanmar Market Expansion | GreyRadius</title>
+<meta name="description" content="GreyRadius helped a packaged
+spice brand strengthen UAE distribution across 3 new Emirates
+and enter Myanmar with 560+ research touchpoints, distributor
+onboarding, and SKU optimisation.">
+canonical: https://greyradius.com/case-studies/cpg-spice-brand-uae-myanmar-expansion.html
+
+H1: Chilli powder and seasoning brand — UAE and Myanmar expansion
+Sector tag: Packaged spices and seasonings · UAE and Myanmar · Market expansion
+
+CHALLENGE block:
+- Expand distribution across additional Emirates in UAE
+- Enter Myanmar as a new high-growth spice and seasoning market
+- Diagnose low secondary sales despite strong primary billing
+- Review pack-size mix and price sensitivity
+- Define competitive right-to-win versus regional and local spice brands
+
+WHAT WE DID:
+1. Market opportunity assessment: category sizing and
+   competitive benchmarking in Myanmar spice market
+2. Consumer and trade journey mapping: purchase drivers
+   (price, purity, packaging, brand trust) across GT and MT
+3. Portfolio optimisation: identified right SKU mix
+   (50g, 100g, 200g, bulk HORECA packs) for UAE and Myanmar
+4. Channel and partner strategy: distributor shortlisting
+   and phased market entry roadmap for both markets
+
+HOW WE DID IT:
+- 60+ personal interviews: retailers, supermarket category
+  managers, distributor discussions in Indonesia, distributor
+  discussions in Myanmar
+- 500+ end-user surveys on spice preferences (heat level,
+  grind texture, pack size)
+- In-store visibility audit across UAE modern trade
+- Packaging compliance review: Halal certification, ESMA
+  labelling, import norms for Myanmar
+- Trade margin benchmarking versus UAE and Myanmar regional
+  competitors
+
+OUTCOMES:
+- Expanded distribution across 3 new Emirates in UAE
+- 18% increase in weighted distribution in modern trade
+- 2 distributors onboarded in Myanmar
+- Optimised 50g and 100g SKUs launched aligned to local
+  price sensitivity
+- Strong secondary offtake achieved within first 6 months
+- Roadmap built for entry into Malaysia next
+
+---
+FILE 4: case-studies/cpg-protein-brand-mena-market-entry.html
+---
+<title>European Protein Powder Brand — MENA Market Entry | GreyRadius</title>
+<meta name="description" content="GreyRadius helped a European
+premium protein supplement brand launch across UAE and KSA with
+840+ research touchpoints, Halal certification advisory, and a
+digital-first distributor hybrid GTM achieving USD 8M yearly sales.">
+canonical: https://greyradius.com/case-studies/cpg-protein-brand-mena-market-entry.html
+
+H1: European protein powder brand — MENA market entry
+Sector tag: Premium protein supplement · UAE and KSA · New market entry
+
+CHALLENGE block:
+- Launch a European premium protein powder brand across
+  priority MENA markets (UAE, KSA, Egypt, North Africa)
+- Overcome low brand awareness outside Europe
+- Adapt positioning, pricing, and packaging for GCC and
+  North Africa
+- Compete against dominant US and Indian supplement brands
+- Build a structured, city-prioritised GTM roadmap
+
+WHAT WE DID:
+1. Market opportunity assessment: category attractiveness
+   and demand analysis across UAE, KSA, Egypt, and North Africa
+2. Consumer and cohort segmentation: gym-goers (UAE and KSA),
+   endurance athletes (North Africa), urban health-conscious
+   millennials
+3. Competitive growth strategy: benchmarking versus US and
+   Indian premium brands on pricing, Halal certification,
+   positioning, and channel strategy
+4. GTM and channel enablement blueprint: city-level rollout
+   roadmap (Dubai, Riyadh, Cairo) aligned to distribution
+   readiness; digital-first and select distributor hybrid model;
+   Amazon UAE, Noon, and Sporter marketplace setup
+
+HOW WE DID IT:
+- 40+ personal interviews: gym owners, supplement retailers,
+  competitors
+- 800+ partner and end-user surveys: supplement retailers,
+  consumer surveys among fitness-conscious millennials
+- Positioning refined to: "European Purity. MENA Performance."
+- Influencer strategy built for Meta and TikTok
+- Halal certification compliance review
+- Arabic labelling adaptation for GCC packaging requirements
+- Pricing structure modelled including import duties and
+  local distributor margins
+- CAC and performance dashboard designed for ongoing
+  optimisation
+
+OUTCOMES:
+- Successful launch in UAE and KSA with city-focused rollout
+- USD 8M yearly sales without marketing spend
+- 12 months to market entry in UAE and KSA
+- 2 new channels: digital-first and select distributor hybrid
+- Strong early traction among gym-going cohorts in Dubai
+  and Riyadh
+- Marketplace-ready listings across Amazon UAE and Noon
+- Foundation created for phased North Africa expansion
+
+===================================================
+PART 3 — UPDATE CASE STUDIES INDEX
+===================================================
+Open: case-studies/index.html (or however the case
+studies hub page is structured)
+
+Add the 4 new CP
