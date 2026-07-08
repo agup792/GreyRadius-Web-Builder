@@ -61,7 +61,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://greyradius.com/about/team/</loc>
+    <loc>https://greyradius.com/about/team.html</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-06-29</lastmod>
     <priority>0.8</priority>
@@ -235,6 +235,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://greyradius.com/case-studies/cpg-dairy-brand-new-product-launch.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/case-studies/cpg-ethnic-snacks-strategic-expansion.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/case-studies/cpg-spice-brand-uae-myanmar-expansion.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/case-studies/cpg-protein-brand-mena-market-entry.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/case-studies/cpg-fmcg-brand-india-market-entry.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://greyradius.com/industries/</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-06-29</lastmod>
@@ -391,6 +421,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://greyradius.com/insights/gulf-market-entry-mistakes.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://greyradius.com/careers.html</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-06-29</lastmod>
@@ -400,6 +436,12 @@
     <loc>https://greyradius.com/contact.html</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-06-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/business-diagnostic.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-01</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -2265,6 +2307,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://greyradius.com/insights/newsletters/the-signal/enterprise-ai-infrastructure-cyber-defense-june-2026/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://greyradius.com/insights/newsletters/charged/</loc>
     <changefreq>weekly</changefreq>
     <lastmod>2026-06-29</lastmod>
@@ -2274,6 +2322,12 @@
     <loc>https://greyradius.com/insights/newsletters/charged/commercial-ev-electrification-battery-trends-june-2026/</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-06-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/charged/sodium-ion-batteries-v2g-charging-june-2026/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-08</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
