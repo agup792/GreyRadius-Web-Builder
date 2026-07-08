@@ -6,3 +6,9 @@ id = "ORF5dygqGk3UEaRhaOW5F"
 uri = "file://greyradius-website-sitemap.xlsx"
 type = "table"
 title = "GreyRadius Sitemap (572 pages)"
+
+[[outputs]]
+id = "IPR7AY5y9Ko3lA9UdAdJ8"
+uri = "file://greyradius-website/sitemap.xml"
+type = "unspecified"
+title = "sitemap.xml"
