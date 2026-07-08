@@ -12,3 +12,9 @@ id = "IPR7AY5y9Ko3lA9UdAdJ8"
 uri = "file://greyradius-website/sitemap.xml"
 type = "unspecified"
 title = "sitemap.xml"
+
+[[outputs]]
+id = "3VRKmkkDLC13LDCavt5lW"
+uri = "file://exports/greyradius-sitemap.xlsx"
+type = "table"
+title = "GreyRadius Sitemap"
