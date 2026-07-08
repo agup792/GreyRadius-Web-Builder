@@ -24,7 +24,13 @@ Always replace `—` (em dash U+2014) with `–` (en dash U+2013) or `&#8211;`. 
 
 ## PARENT_LABELS map
 
-enterprise-saas, fintech-payments, cpg-fmcg-retail, education-edtech, healthcare-life-sciences, proptech, logistics-supply-chain, renewable-energy, technology, cybersecurity, ecommerce-tech
+enterprise-saas, fintech-payments, cpg-fmcg-retail, education-edtech, healthcare-life-sciences, proptech, logistics-supply-chain, renewable-energy, technology, cybersecurity, ecommerce-tech, wealthtech, global-capability-centers, telecom-5g, mining-metals, water-wastewater, foodtech, robotics-automation
+
+## Linking new sub-page dirs into top-level industry pages
+
+New `{parent}/{slug}.html` sub-pages are NOT auto-linked — each top-level industry page (`bfsi.html`, `technology.html`, `energy-and-chemicals.html`, `cpg-fmcg-retail.html`, etc.) has a "Country and sector guides" `<ul>` section that must be updated by hand each batch: append new `<li><a>` entries and re-sort the whole list alphabetically by visible link text (case-insensitive). Also append new URLs to `greyradius-website/sitemap.xml` before `</urlset>`.
+Mapping used so far: wealthtech→bfsi.html; telecom-5g, robotics-automation, global-capability-centers→technology.html; mining-metals, water-wastewater→energy-and-chemicals.html; foodtech→cpg-fmcg-retail.html.
+A new parent dir can reuse an existing top-level page's directory name (e.g. `wealthtech/`) even if that directory already has older, unrelated pages from a prior batch — check for slug collisions only, not directory collisions.
 
 ## HubSpot
 
