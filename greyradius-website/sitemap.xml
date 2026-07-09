@@ -3404,4 +3404,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-signal/enterprise-ai-deployment-compute-financing-july-2026/</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/charged/tesla-byd-q2-ev-deliveries-storage-july-2026/</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-stack/ai-data-centre-power-investment-consolidation-july-2026/</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-wafer/india-osat-europe-fabs-ai-memory-korea-july-2026/</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
