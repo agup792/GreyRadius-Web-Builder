@@ -378,14 +378,35 @@ h4, .h4 {
 }
 .mobile-menu__nav { margin-top: 3rem; }
 .mobile-menu__item {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0.875rem 0;
   border-bottom: 1px solid var(--color-border);
   color: var(--color-navy);
   font-weight: 600;
   font-size: 1.0625rem;
+  cursor: pointer;
 }
-.mobile-menu__sub { padding: 0.375rem 0 0.375rem 1rem; }
+.mobile-menu__item .mobile-menu__chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  color: var(--color-accent);
+}
+.mobile-menu__item--open .mobile-menu__chevron {
+  transform: rotate(180deg);
+}
+.mobile-menu__sub {
+  display: none;
+  padding: 0.375rem 0 0.375rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.mobile-menu__sub--open { display: block; }
 .mobile-menu__sub-item {
   display: block;
   padding: 0.5rem 0;

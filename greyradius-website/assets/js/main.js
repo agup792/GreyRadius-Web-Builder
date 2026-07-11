@@ -131,6 +131,33 @@
     });
   }
 
+  /* ---- Mobile Menu Accordion ---- */
+  const mobileNav = document.querySelector('.mobile-menu__nav');
+  if (mobileNav) {
+    const chevronSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+    mobileNav.querySelectorAll('.mobile-menu__item').forEach(function(item) {
+      var sub = item.nextElementSibling;
+      if (!sub || !sub.classList.contains('mobile-menu__sub')) return;
+      var chevron = document.createElement('span');
+      chevron.className = 'mobile-menu__chevron';
+      chevron.innerHTML = chevronSVG;
+      item.appendChild(chevron);
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        var isOpen = item.classList.contains('mobile-menu__item--open');
+        mobileNav.querySelectorAll('.mobile-menu__item--open').forEach(function(el) {
+          el.classList.remove('mobile-menu__item--open');
+          var s = el.nextElementSibling;
+          if (s && s.classList.contains('mobile-menu__sub')) s.classList.remove('mobile-menu__sub--open');
+        });
+        if (!isOpen) {
+          item.classList.add('mobile-menu__item--open');
+          sub.classList.add('mobile-menu__sub--open');
+        }
+      });
+    });
+  }
+
   /* ---- Location Pin Toggle (About page) ---- */
   const locationPins = document.querySelectorAll('.map-pin');
   const locationCards = document.querySelectorAll('.map-location-card');
