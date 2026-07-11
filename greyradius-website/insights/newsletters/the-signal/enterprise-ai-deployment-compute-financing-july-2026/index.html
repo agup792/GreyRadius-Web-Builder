@@ -68,4 +68,7 @@ footer{border-top:1px solid var(--rule)}
 <script>
 const buttons=[...document.querySelectorAll('.filters button')], stories=[...document.querySelectorAll('.story')];
 buttons.forEach(btn=>btn.addEventListener('click',()=>{buttons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;stories.forEach(s=>s.classList.toggle('hidden', f!=='all' && s.dataset.topic!==f));}));
-</script></body></html>
+</script><!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/21337745.js"></script>
+<!-- End of HubSpot Embed Code -->
+</body></html>
