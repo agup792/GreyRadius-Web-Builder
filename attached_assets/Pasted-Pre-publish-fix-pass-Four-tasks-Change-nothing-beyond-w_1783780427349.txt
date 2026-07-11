@@ -1,0 +1,24 @@
+Pre-publish fix pass. Four tasks. Change nothing beyond what is listed. Use hyphens, never em dashes. Paste verification output per task.
+TASK 1 - Deduplicate FAQs on services/feasibility-and-tev.html
+The FAQ section has overlapping questions. Make these exact edits to both the visible FAQ list and the FAQPage JSON-LD so they stay identical:
+
+There are two "What is the difference between a feasibility study and a TEV..." questions. DELETE the older one (answer beginning "A feasibility study broadly assesses..."). KEEP the one whose answer begins "A feasibility study answers whether the business case works commercially".
+DELETE "How long does a feasibility study take?" (answer "Typically 4-6 weeks..."). KEEP "How long does a TEV study take?" (4-8 weeks).
+In the FAQ "Which lenders and institutions accept GreyRadius TEV formats?", remove the word "IREDA" so the answer reads "...Indian public sector banks and development finance institutions, and Gulf-based project finance lenders..." - no institution names anywhere.
+
+Verify: grep -c '"@type": "Question"' or equivalent count in the page's FAQPage JSON-LD equals the visible question count; grep -c "IREDA" services/feasibility-and-tev.html returns 0; the phrase "broadly assesses" returns 0.
+TASK 2 - Homepage Latest Insight feature swap (interim)
+In index.html, the "Latest Insight" feature block promotes a pitchbook/investor-interviews article that does not exist. Keep the block's layout and styling, replace its content to promote an existing live article: kicker tags "PLG", "SLG", "GTM Models"; heading "Product-led growth vs sales-led growth: which GTM model fits your business"; supporting line "The trade-offs between PLG and SLG motions - and the hybrid pattern winning in 2026."; attribution line removed or kept generic; link the block's button to /insights/plg-vs-slg-which-gtm-model-fits.html with text "Read the full insight".
+Verify: grep -c "540 interviews" index.html returns 0; grep -c "plg-vs-slg-which-gtm-model-fits.html" index.html returns at least 1.
+TASK 3 - Render and integration verification (report only, change nothing)
+Paste raw output:
+
+ls business-setup-consultants-uae.html industries/industrials-manufacturing-and-infrastructure.html industries/education-and-edtech.html
+grep -c "business-setup-consultants-uae|industrials-manufacturing-and-infrastructure|education-and-edtech" sitemap.xml (expect 3)
+grep -o "across India, the Middle East, Gulf, Southeast Asia, and Africa" index.html (expect 1 match)
+grep -c '"@type": "Organization"' index.html (expect 1)
+Count of visible FAQ questions on index.html (expect 11)
+grep -rn "IREDA|CRIF|NITCON|Secant|Pearson" --include="*.html" . | grep -v node_modules (expect nothing after Task 1)
+
+TASK 4 - Contact form wiring (report only)
+Describe exactly how the form on contact.html submits: endpoint or service used, where submissions are delivered, and whether it works on the current dev URL. Do not modify it. If it is not wired to deliver anywhere, say so explicitly - this blocks launch.

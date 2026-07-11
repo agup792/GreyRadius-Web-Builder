@@ -753,34 +753,44 @@
       <div style="background:var(--color-off-white);border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;">
         <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:100%;" aria-hidden="true">
           <rect width="400" height="300" fill="#F8F9FB"/>
-          <rect x="40" y="60" width="200" height="12" rx="6" fill="#E5EAF1"/>
-          <rect x="40" y="84" width="160" height="8" rx="4" fill="#E5EAF1"/>
-          <rect x="40" y="104" width="180" height="8" rx="4" fill="#E5EAF1"/>
-          <rect x="40" y="140" width="240" height="100" rx="8" fill="white" stroke="#E5EAF1" stroke-width="1.5"/>
-          <!-- Bar chart inside (bars compacted left, label fits within card) -->
-          <rect x="55" y="210" width="16" height="20" rx="2" fill="#5B7CA8" opacity="0.4"/>
-          <rect x="75" y="190" width="16" height="40" rx="2" fill="#5B7CA8" opacity="0.6"/>
-          <rect x="95" y="170" width="16" height="60" rx="2" fill="#1F3864" opacity="0.8"/>
-          <rect x="115" y="155" width="16" height="75" rx="2" fill="#E8693A"/>
-          <rect x="135" y="175" width="16" height="55" rx="2" fill="#1F3864" opacity="0.5"/>
-          <rect x="155" y="165" width="16" height="65" rx="2" fill="#5B7CA8" opacity="0.5"/>
-          <!-- Decorative circles -->
-          <circle cx="330" cy="80" r="50" fill="none" stroke="#E8693A" stroke-width="1.5" opacity="0.3"/>
-          <circle cx="330" cy="80" r="35" fill="none" stroke="#1F3864" stroke-width="1.5" opacity="0.2"/>
-          <circle cx="330" cy="80" r="18" fill="#E8693A" opacity="0.15"/>
-          <circle cx="330" cy="80" r="8" fill="#E8693A" opacity="0.6"/>
-          <text x="180" y="170" font-family="Montserrat,sans-serif" font-size="10" fill="#5B6E8C" font-weight="500">Series A</text>
-          <text x="180" y="184" font-family="Montserrat,sans-serif" font-size="10" fill="#5B6E8C" font-weight="500">Fundraising</text>
-          <text x="180" y="198" font-family="Montserrat,sans-serif" font-size="10" fill="#5B6E8C" font-weight="500">Patterns</text>
+          <!-- PLG funnel (left) -->
+          <rect x="40" y="70" width="120" height="22" rx="4" fill="#E8693A" opacity="0.15"/>
+          <rect x="52" y="103" width="96" height="18" rx="4" fill="#E8693A" opacity="0.25"/>
+          <rect x="64" y="132" width="72" height="16" rx="4" fill="#E8693A" opacity="0.45"/>
+          <rect x="76" y="159" width="48" height="14" rx="4" fill="#E8693A" opacity="0.7"/>
+          <text x="100" y="86" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9" fill="#1F3864" font-weight="700">PLG</text>
+          <text x="100" y="117" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" fill="#5B6E8C">Activation</text>
+          <text x="100" y="145" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" fill="#5B6E8C">Expansion</text>
+          <text x="100" y="170" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" fill="#5B6E8C">Revenue</text>
+          <!-- SLG funnel (right) -->
+          <rect x="240" y="70" width="120" height="22" rx="4" fill="#1F3864" opacity="0.12"/>
+          <rect x="252" y="103" width="96" height="18" rx="4" fill="#1F3864" opacity="0.2"/>
+          <rect x="264" y="132" width="72" height="16" rx="4" fill="#1F3864" opacity="0.35"/>
+          <rect x="276" y="159" width="48" height="14" rx="4" fill="#1F3864" opacity="0.55"/>
+          <text x="300" y="86" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9" fill="#1F3864" font-weight="700">SLG</text>
+          <text x="300" y="117" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" fill="#5B6E8C">Qualify</text>
+          <text x="300" y="145" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" fill="#5B6E8C">Demo</text>
+          <text x="300" y="170" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" fill="#5B6E8C">Close</text>
+          <!-- VS divider -->
+          <line x1="200" y1="65" x2="200" y2="185" stroke="#E5EAF1" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <rect x="184" y="113" width="32" height="18" rx="9" fill="#fff" stroke="#E5EAF1" stroke-width="1.5"/>
+          <text x="200" y="125" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" fill="#8a92a6" font-weight="700">VS</text>
+          <!-- Hybrid label -->
+          <rect x="120" y="205" width="160" height="22" rx="6" fill="#E8693A" opacity="0.08"/>
+          <text x="200" y="220" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9" fill="#c0541e" font-weight="700">Hybrid wins in 2026</text>
         </svg>
       </div>
       <!-- Right: content -->
       <div>
-        <span class="text-caption text-orange" style="display:block;margin-bottom:1rem;">Latest Insight</span>
-        <h2 id="insight-heading" style="font-size:var(--text-h3);color:var(--color-navy);margin-bottom:1rem;line-height:1.35;">Why pitchbook clients close faster when the deck is built on investor interviews</h2>
-        <p style="color:var(--color-text-muted);font-size:var(--text-body);line-height:1.75;margin-bottom:1.5rem;">In the last 18 months we ran 540 interviews on Series A fundraising engagements. Here's the pattern in the rounds that closed in 90 days vs the ones that took nine months.</p>
-        <p style="font-size:var(--text-small);color:var(--color-text-muted);margin-bottom:1.5rem;font-weight:500;">Chirag Bansal – Managing Partner</p>
-        <a href="/insights/" class="link-arrow">
+        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem;">
+          <span style="font-size:0.7rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;background:rgba(232,105,58,0.1);color:#c0541e;padding:0.2rem 0.6rem;border-radius:4px;">PLG</span>
+          <span style="font-size:0.7rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;background:rgba(31,56,100,0.08);color:#1F3864;padding:0.2rem 0.6rem;border-radius:4px;">SLG</span>
+          <span style="font-size:0.7rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;background:rgba(31,56,100,0.08);color:#1F3864;padding:0.2rem 0.6rem;border-radius:4px;">GTM Models</span>
+        </div>
+        <span class="text-caption text-orange" style="display:block;margin-bottom:0.75rem;">Latest Insight</span>
+        <h2 id="insight-heading" style="font-size:var(--text-h3);color:var(--color-navy);margin-bottom:1rem;line-height:1.35;">Product-led growth vs sales-led growth: which GTM model fits your business</h2>
+        <p style="color:var(--color-text-muted);font-size:var(--text-body);line-height:1.75;margin-bottom:1.5rem;">The trade-offs between PLG and SLG motions - and the hybrid pattern winning in 2026.</p>
+        <a href="/insights/plg-vs-slg-which-gtm-model-fits.html" class="link-arrow">
           Read the full insight
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
