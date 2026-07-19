@@ -287,9 +287,14 @@
 
 <section style="background:#1B2A4A;padding:3rem 0;">
   <div class="container" style="text-align:center;">
-    <h2 style="color:#fff;font-size:1.25rem;font-weight:700;margin:0 0 0.75rem;">Follow on LinkedIn for weekly delivery</h2>
-    <p style="color:rgba(255,255,255,0.7);font-size:0.875rem;max-width:520px;margin:0 auto 1.75rem;line-height:1.65;">All newsletters publish every Thursday on the GreyRadius LinkedIn company page. Subscribers receive direct in-app and email notification.</p>
-    <a href="https://www.linkedin.com/company/greyradius" target="_blank" rel="noopener" style="display:inline-block;background:#E8612C;color:#fff;font-weight:700;font-size:0.875rem;padding:0.75rem 1.875rem;border-radius:6px;text-decoration:none;">Follow GreyRadius on LinkedIn &rarr;</a>
+    <h2 style="color:#fff;font-size:1.25rem;font-weight:700;margin:0 0 0.5rem;">Subscribe by email &#8211; every Thursday</h2>
+    <p style="color:rgba(255,255,255,0.7);font-size:0.875rem;max-width:520px;margin:0 auto 1.5rem;line-height:1.65;">Four sector briefs delivered directly to your inbox. No fluff.</p>
+    <form class="gr-newsletter-form" onsubmit="grNewsletterSubmit(event,this)" novalidate style="display:flex;gap:0.625rem;justify-content:center;flex-wrap:wrap;margin:0 auto 1.25rem;max-width:460px;">
+      <input type="email" name="email" placeholder="your@email.com" required style="flex:1;min-width:180px;padding:0.7rem 0.875rem;border:none;border-radius:6px;font-family:Montserrat,sans-serif;font-size:0.875rem;color:#1B2A4A;background:#fff;outline:none;">
+      <button type="submit" style="padding:0.7rem 1.5rem;background:#E8693A;color:#fff;border:none;border-radius:6px;font-family:Montserrat,sans-serif;font-weight:700;font-size:0.875rem;cursor:pointer;white-space:nowrap;">Subscribe &rarr;</button>
+      <p class="gr-nl-msg" style="display:none;width:100%;margin:0.25rem 0 0;font-size:0.8rem;"></p>
+    </form>
+    <p style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin:0;">Prefer LinkedIn? <a href="https://www.linkedin.com/company/greyradius" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.65);text-decoration:underline;">Follow GreyRadius</a> for in-app delivery every Thursday.</p>
   </div>
 </section>
 

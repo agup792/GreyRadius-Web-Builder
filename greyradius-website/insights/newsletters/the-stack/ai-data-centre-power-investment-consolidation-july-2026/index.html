@@ -36,7 +36,20 @@ h1{font-family:'Libre Baskerville',serif;color:var(--nav);font-size:52px;line-he
 .hidden{display:none}
 @media(max-width:720px){.shell{margin:0;border:0}.hero,.section,.story,.filters,.cta,footer{padding-left:24px;padding-right:24px}h1{font-size:42px}.highlights,.subgrid,.signals,.overview-charts{grid-template-columns:1fr}.briefing{columns:1}}
 </style>
-</head><body><div class="shell">
+</head><body>
+<div style="background:#E8612C;padding:12px 54px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+<p style="margin:0;font-family:Outfit,sans-serif;font-size:13px;font-weight:700;color:#fff;">Get this newsletter by email &#8211; every Thursday</p>
+<form id="gr-top-form" onsubmit="grNLSubmit(event,this)" novalidate style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+<input type="email" name="email" placeholder="your@email.com" required style="padding:7px 12px;border:none;border-radius:5px;font-family:Outfit,sans-serif;font-size:13px;color:#1B2A4A;background:#fff;outline:none;min-width:170px;">
+<button type="submit" style="padding:7px 16px;background:#fff;color:#E8612C;border:none;border-radius:5px;font-family:Outfit,sans-serif;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap;">Subscribe &rarr;</button>
+<span class="gr-nl-msg" style="display:none;font-size:12px;font-family:Outfit,sans-serif;color:#fff;font-weight:700;"></span>
+</form>
+<a href="https://www.linkedin.com/company/greyradius" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);font-family:Outfit,sans-serif;font-size:12px;text-decoration:underline;white-space:nowrap;">Follow on LinkedIn instead</a>
+</div>
+<script>
+function grNLSubmit(e,f){e.preventDefault();var ei=f.querySelector('[name=email]'),em=ei?ei.value.trim():'';if(!em)return;var msg=f.querySelector('.gr-nl-msg'),btn=f.querySelector('[type=submit]');if(btn){btn.disabled=true;btn.textContent='Sending…';}fetch('https://api.hsforms.com/submissions/v3/integration/submit/21337745/8fb2e137-9ca1-4c6e-8152-63225d37d47a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:[{objectTypeId:'0-1',name:'email',value:em}],context:{pageUri:window.location.href,pageName:document.title}})}).then(function(r){if(msg){msg.style.display='inline';if(r.ok){msg.textContent='✓ You’re in!';if(ei)ei.value='';}else{msg.textContent='Error – try again.';}}}).catch(function(){if(msg){msg.style.display='inline';msg.textContent='Could not connect.';}}).finally(function(){if(btn){btn.disabled=false;btn.textContent='Subscribe →';}});}
+</script>
+<div class="shell">
 <header class="hero"><div class="brand"><div><div class="kicker">Weekly Infrastructure Intelligence</div></div><img alt="GreyRadius Consulting" class="logo" src="/assets/images/logo.png"/></div><h1>The Stack</h1><div class="subtitle">Data Centres • Cloud Infrastructure • AI Infrastructure</div><div class="meta">Published by GreyRadius Consulting&nbsp;&nbsp;|&nbsp;&nbsp;Issue 004&nbsp;&nbsp;|&nbsp;&nbsp;June 29 - July 5, 2026</div></header>
 <section class="section"><h2>Executive Highlights</h2><div class="highlights" style="grid-template-columns:repeat(5,1fr)"><div class="highlight"><b>Global / North America</b>Bloom Energy and Brookfield expand AI infrastructure partnership to $25 billion</div><div class="highlight"><b>United States</b>Digital Realty acquires larger stake in Northern Virginia hyperscale campuses</div><div class="highlight"><b>UK / United States</b>National Grid invests $1.75 billion in AI power infrastructure platform</div><div class="highlight"><b>United Kingdom</b>Xlinks proposes 1.5GW AI data centre campus in Devon</div><div class="highlight"><b>Germany</b>Germany sees proposal for 150MW new data centre</div></div></section>
 <section class="section"><h2>This Week&#8217;s Briefing Spans</h2><ol class="briefing"><li>AI infrastructure investment increasingly tied to dedicated power infrastructure.</li><li>Hyperscale capital continues to concentrate around Northern Virginia.</li><li>Utilities and energy developers moving closer to data centre expansion strategy.</li><li>Integrated AI campus models combining compute, power and storage.</li><li>Permitting and local acceptance emerging as execution risks across Europe.</li></ol></section>

@@ -121,6 +121,19 @@
   </script>
 </head>
 <body>
+<div style="background:#E8612C;padding:12px 54px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+<p style="margin:0;font-family:Outfit,sans-serif;font-size:13px;font-weight:700;color:#fff;">Get this newsletter by email &#8211; every Thursday</p>
+<form id="gr-top-form" onsubmit="grNLSubmit(event,this)" novalidate style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+<input type="email" name="email" placeholder="your@email.com" required style="padding:7px 12px;border:none;border-radius:5px;font-family:Outfit,sans-serif;font-size:13px;color:#1B2A4A;background:#fff;outline:none;min-width:170px;">
+<button type="submit" style="padding:7px 16px;background:#fff;color:#E8612C;border:none;border-radius:5px;font-family:Outfit,sans-serif;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap;">Subscribe &rarr;</button>
+<span class="gr-nl-msg" style="display:none;font-size:12px;font-family:Outfit,sans-serif;color:#fff;font-weight:700;"></span>
+</form>
+<a href="https://www.linkedin.com/company/greyradius" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);font-family:Outfit,sans-serif;font-size:12px;text-decoration:underline;white-space:nowrap;">Follow on LinkedIn instead</a>
+</div>
+<script>
+function grNLSubmit(e,f){e.preventDefault();var ei=f.querySelector('[name=email]'),em=ei?ei.value.trim():'';if(!em)return;var msg=f.querySelector('.gr-nl-msg'),btn=f.querySelector('[type=submit]');if(btn){btn.disabled=true;btn.textContent='Sending…';}fetch('https://api.hsforms.com/submissions/v3/integration/submit/21337745/8fb2e137-9ca1-4c6e-8152-63225d37d47a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:[{objectTypeId:'0-1',name:'email',value:em}],context:{pageUri:window.location.href,pageName:document.title}})}).then(function(r){if(msg){msg.style.display='inline';if(r.ok){msg.textContent='✓ You’re in!';if(ei)ei.value='';}else{msg.textContent='Error – try again.';}}}).catch(function(){if(msg){msg.style.display='inline';msg.textContent='Could not connect.';}}).finally(function(){if(btn){btn.disabled=false;btn.textContent='Subscribe →';}});}
+</script>
+
 <a href="#main" class="skip-link">Skip to main content</a>
 <header>
   <nav class="top-nav top-nav--solid" aria-label="Main navigation">
