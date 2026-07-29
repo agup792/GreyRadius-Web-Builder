@@ -1219,28 +1219,235 @@
   </div>
 </section>
 
-<!-- LATEST INSIGHTS -->
-<section style="padding:3rem 0;background:#fff;border-top:1px solid #e2e6ed;">
+<!-- LATEST UPDATES SCROLLER -->
+<section id="latest-updates" style="padding:3.5rem 0 4rem;background:#f4f6f9;border-top:1px solid #e2e6ed;">
   <div class="container">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;">
-      <h2 style="font-size:1.125rem;font-weight:700;color:#1B2A4A;margin:0;">Latest from GreyRadius</h2>
-      <a href="/insights/" style="font-size:0.825rem;font-weight:600;color:#E8612C;text-decoration:none;">View all insights &#8594;</a>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.875rem;">
+      <div>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#E8612C;display:block;margin-bottom:0.3rem;">What&rsquo;s New</span>
+        <h2 style="font-size:1.375rem;font-weight:800;color:#1B2A4A;margin:0;letter-spacing:-0.01em;">Latest from GreyRadius</h2>
+      </div>
+      <div style="display:flex;gap:0.5rem;align-items:center;">
+        <button id="gr-scroll-prev" onclick="grScrollCards(-1)" aria-label="Previous updates" style="width:38px;height:38px;border:1.5px solid #d0d5de;border-radius:50%;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1B2A4A;font-size:1rem;line-height:1;transition:border-color 0.15s,color 0.15s;" onmouseover="this.style.borderColor='#E8612C';this.style.color='#E8612C'" onmouseout="this.style.borderColor='#d0d5de';this.style.color='#1B2A4A'">&#8592;</button>
+        <button id="gr-scroll-next" onclick="grScrollCards(1)" aria-label="Next updates" style="width:38px;height:38px;border:1.5px solid #d0d5de;border-radius:50%;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1B2A4A;font-size:1rem;line-height:1;transition:border-color 0.15s,color 0.15s;" onmouseover="this.style.borderColor='#E8612C';this.style.color='#E8612C'" onmouseout="this.style.borderColor='#d0d5de';this.style.color='#1B2A4A'">&#8594;</button>
+        <a href="/insights/" style="margin-left:0.5rem;font-size:0.8rem;font-weight:600;color:#E8612C;text-decoration:none;white-space:nowrap;">View all &#8594;</a>
+      </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;">
-      <a href="/insights/how-to-enter-india-market.html" style="display:block;padding:1.25rem;background:#f8f9fb;border:1px solid #e2e6ed;border-radius:8px;text-decoration:none;color:inherit;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#E8612C'" onmouseout="this.style.borderColor='#e2e6ed'">
-        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#E8612C;margin:0 0 0.5rem;">Market Entry &#183; India</p>
-        <p style="font-size:0.9rem;font-weight:600;color:#1B2A4A;margin:0;line-height:1.4;">How to enter the Indian market &#8211; a realistic 12-week roadmap for foreign companies</p>
+
+    <style>
+      #gr-updates-track { scrollbar-width:none; }
+      #gr-updates-track::-webkit-scrollbar { display:none; }
+      .gr-ucard { flex:0 0 272px; border-radius:10px; overflow:hidden; text-decoration:none; background:#fff; border:1px solid #e2e6ed; display:block; transition:box-shadow 0.2s,transform 0.2s; scroll-snap-align:start; }
+      .gr-ucard:hover { box-shadow:0 8px 28px rgba(27,42,74,0.13); transform:translateY(-3px); }
+      .gr-ucard-img { width:100%; height:158px; object-fit:cover; display:block; }
+      .gr-ucard-nl { height:158px; display:flex; flex-direction:column; justify-content:space-between; padding:1.25rem 1.375rem; position:relative; overflow:hidden; }
+      .gr-ucard-nl-blob1 { position:absolute; top:-24px; right:-24px; width:110px; height:110px; border-radius:50%; background:rgba(232,97,44,0.13); }
+      .gr-ucard-nl-blob2 { position:absolute; bottom:-36px; left:20px; width:150px; height:150px; border-radius:50%; background:rgba(232,97,44,0.07); }
+      .gr-ucard-body { padding:1.125rem 1.125rem 1.375rem; }
+      .gr-ucard-tag { font-size:0.59rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; padding:0.22rem 0.5rem; border-radius:3px; display:inline-block; margin-bottom:0.5rem; }
+      .gr-ucard-tag-nl  { background:rgba(232,97,44,0.12); color:#E8612C; }
+      .gr-ucard-tag-cs  { background:rgba(27,42,74,0.1); color:#1B2A4A; }
+      .gr-ucard-tag-ins { background:rgba(232,97,44,0.1); color:#c05520; }
+      .gr-ucard-new { background:#E8612C; color:#fff; font-size:0.57rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; padding:0.22rem 0.48rem; border-radius:3px; display:inline-block; }
+      .gr-ucard-eyebrow { font-size:0.61rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:#E8612C; margin:0 0 0.45rem; }
+      .gr-ucard-title { font-size:0.875rem; font-weight:700; color:#1B2A4A; margin:0 0 0.75rem; line-height:1.45; }
+      .gr-ucard-meta { font-size:0.72rem; color:#7a8494; margin:0; }
+      .gr-ucard-cta { font-size:0.78rem; font-weight:700; color:#E8612C; }
+      @media(max-width:640px){ .gr-ucard { flex:0 0 248px; } }
+    </style>
+
+    <div id="gr-updates-track" style="display:flex;gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:0.75rem;" onmouseenter="grScrollPause()" onmouseleave="grScrollResume()">
+
+      <!-- 1: The Signal 005 -->
+      <a href="/insights/newsletters/the-signal/enterprise-ai-agentic-chips-july13-19-2026/" class="gr-ucard">
+        <div class="gr-ucard-nl" style="background:linear-gradient(135deg,#1B2A4A 0%,#0e1c35 100%);">
+          <div class="gr-ucard-nl-blob1"></div><div class="gr-ucard-nl-blob2"></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1;">
+            <span class="gr-ucard-new">New</span>
+            <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.38);">Newsletter</span>
+          </div>
+          <div style="position:relative;z-index:1;">
+            <p style="font-size:1.1rem;font-weight:900;color:#fff;margin:0;letter-spacing:-0.015em;line-height:1.1;">The Signal</p>
+            <p style="font-size:0.68rem;font-weight:500;color:rgba(255,255,255,0.45);margin:0.25rem 0 0;">AI &bull; Enterprise &bull; Policy</p>
+          </div>
+        </div>
+        <div class="gr-ucard-body">
+          <p class="gr-ucard-eyebrow">Issue 005 &middot; July 13&#8211;19, 2026</p>
+          <p class="gr-ucard-title">Shanghai AI governance body, GOLD EAGLE cyber programme and TYLsemi chiplets</p>
+          <span class="gr-ucard-cta">Read issue &#8594;</span>
+        </div>
       </a>
-      <a href="/insights/ai-hype-to-business-results.html" style="display:block;padding:1.25rem;background:#f8f9fb;border:1px solid #e2e6ed;border-radius:8px;text-decoration:none;color:inherit;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#E8612C'" onmouseout="this.style.borderColor='#e2e6ed'">
-        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#E8612C;margin:0 0 0.5rem;">Insight</p>
-        <p style="font-size:0.9rem;font-weight:600;color:#1B2A4A;margin:0;line-height:1.4;">Turning AI Hype Into Business Results</p>
+
+      <!-- 2: Charged 006 -->
+      <a href="/insights/newsletters/charged/abb-gridserve-ev-india-pli-july13-19-2026/" class="gr-ucard">
+        <div class="gr-ucard-nl" style="background:linear-gradient(135deg,#14333a 0%,#0b2129 100%);">
+          <div class="gr-ucard-nl-blob1"></div><div class="gr-ucard-nl-blob2"></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1;">
+            <span class="gr-ucard-new">New</span>
+            <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.38);">Newsletter</span>
+          </div>
+          <div style="position:relative;z-index:1;">
+            <p style="font-size:1.1rem;font-weight:900;color:#fff;margin:0;letter-spacing:-0.015em;line-height:1.1;">Charged</p>
+            <p style="font-size:0.68rem;font-weight:500;color:rgba(255,255,255,0.45);margin:0.25rem 0 0;">EVs &bull; Batteries &bull; Charging</p>
+          </div>
+        </div>
+        <div class="gr-ucard-body">
+          <p class="gr-ucard-eyebrow">Issue 006 &middot; July 13&#8211;19, 2026</p>
+          <p class="gr-ucard-title">ABB acquires Advantics SiC, GRIDSERVE UK flagship opens, India PLI 10 GWh tender</p>
+          <span class="gr-ucard-cta">Read issue &#8594;</span>
+        </div>
       </a>
-      <a href="/insights/consultants-vs-inhouse-strategy-team.html" style="display:block;padding:1.25rem;background:#f8f9fb;border:1px solid #e2e6ed;border-radius:8px;text-decoration:none;color:inherit;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#E8612C'" onmouseout="this.style.borderColor='#e2e6ed'">
-        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#E8612C;margin:0 0 0.5rem;">Insight</p>
-        <p style="font-size:0.9rem;font-weight:600;color:#1B2A4A;margin:0;line-height:1.4;">Business Management Consultants vs In-House Strategy Team: Which Is Right for Your Business</p>
+
+      <!-- 3: The Stack 004 -->
+      <a href="/insights/newsletters/the-stack/aws-india-hcltech-data-centre-july13-19-2026/" class="gr-ucard">
+        <div class="gr-ucard-nl" style="background:linear-gradient(135deg,#1a2b4a 0%,#0d1f3a 100%);">
+          <div class="gr-ucard-nl-blob1"></div><div class="gr-ucard-nl-blob2"></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1;">
+            <span class="gr-ucard-new">New</span>
+            <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.38);">Newsletter</span>
+          </div>
+          <div style="position:relative;z-index:1;">
+            <p style="font-size:1.1rem;font-weight:900;color:#fff;margin:0;letter-spacing:-0.015em;line-height:1.1;">The Stack</p>
+            <p style="font-size:0.68rem;font-weight:500;color:rgba(255,255,255,0.45);margin:0.25rem 0 0;">Data Centres &bull; Cloud &bull; Sovereignty</p>
+          </div>
+        </div>
+        <div class="gr-ucard-body">
+          <p class="gr-ucard-eyebrow">Issue 004 &middot; July 13&#8211;19, 2026</p>
+          <p class="gr-ucard-title">AWS Telangana expansion, HCLTech $364M data centre, SpaceX–Pentagon AI compute</p>
+          <span class="gr-ucard-cta">Read issue &#8594;</span>
+        </div>
       </a>
+
+      <!-- 4: The Wafer 003 -->
+      <a href="/insights/newsletters/the-wafer/tsmc-micron-intel-ireland-july13-19-2026/" class="gr-ucard">
+        <div class="gr-ucard-nl" style="background:linear-gradient(135deg,#2a1f3d 0%,#1a1228 100%);">
+          <div class="gr-ucard-nl-blob1"></div><div class="gr-ucard-nl-blob2"></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1;">
+            <span class="gr-ucard-new">New</span>
+            <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.38);">Newsletter</span>
+          </div>
+          <div style="position:relative;z-index:1;">
+            <p style="font-size:1.1rem;font-weight:900;color:#fff;margin:0;letter-spacing:-0.015em;line-height:1.1;">The Wafer</p>
+            <p style="font-size:0.68rem;font-weight:500;color:rgba(255,255,255,0.45);margin:0.25rem 0 0;">Semiconductors &bull; Chips &bull; Supply Chain</p>
+          </div>
+        </div>
+        <div class="gr-ucard-body">
+          <p class="gr-ucard-eyebrow">Issue 003 &middot; July 13&#8211;19, 2026</p>
+          <p class="gr-ucard-title">TSMC $265B US commitment, Micron $22B auto deals, Intel €5B Ireland, ASML guidance</p>
+          <span class="gr-ucard-cta">Read issue &#8594;</span>
+        </div>
+      </a>
+
+      <!-- 5: Vision 2030 Blog -->
+      <a href="/insights/vision-2030-foreign-companies-market-entry.html" class="gr-ucard">
+        <img src="/assets/images/insights/dubai-modern-mall.jpg" alt="Saudi Arabia Vision 2030 market entry" class="gr-ucard-img" onerror="this.style.background='#1B2A4A';this.style.height='158px'">
+        <div class="gr-ucard-body">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+            <span class="gr-ucard-tag gr-ucard-tag-ins">Insight</span>
+            <span class="gr-ucard-new">New</span>
+          </div>
+          <p class="gr-ucard-title">Vision 2030 Saudi Arabia: Which Sectors Foreign Companies Can Actually Access and How</p>
+          <p class="gr-ucard-meta" style="margin-bottom:0.75rem;">Market Entry &middot; GCC &middot; July 2026</p>
+          <span class="gr-ucard-cta">Read article &#8594;</span>
+        </div>
+      </a>
+
+      <!-- 6: India Series A Case Study -->
+      <a href="/case-studies/india-series-a-investment-case.html" class="gr-ucard">
+        <img src="/assets/images/insights/india-market-entry-hero.jpg" alt="India Series A investment case" class="gr-ucard-img" onerror="this.style.background='#1B2A4A';this.style.height='158px'">
+        <div class="gr-ucard-body">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+            <span class="gr-ucard-tag gr-ucard-tag-cs">Case Study</span>
+            <span class="gr-ucard-new">New</span>
+          </div>
+          <p class="gr-ucard-title">India Was a Growth Story. Investors Needed an Investment Case.</p>
+          <p class="gr-ucard-meta" style="margin-bottom:0.75rem;">Fundraising &middot; India &middot; Series A</p>
+          <span class="gr-ucard-cta">Read case study &#8594;</span>
+        </div>
+      </a>
+
+      <!-- 7: Pharma Saudi Case Study -->
+      <a href="/case-studies/pharma-market-entry-saudi-arabia.html" class="gr-ucard">
+        <img src="/assets/images/case-studies/cs-ophthalmology-pharma-gcc-market-entry.png" alt="Pharma market entry Saudi Arabia" class="gr-ucard-img" onerror="this.style.background='#1B2A4A';this.style.height='158px'">
+        <div class="gr-ucard-body">
+          <span class="gr-ucard-tag gr-ucard-tag-cs" style="margin-bottom:0.5rem;">Case Study</span>
+          <p class="gr-ucard-title">Pharma Market Entry Saudi Arabia: SFDA Pathway and Hospital Access Strategy</p>
+          <p class="gr-ucard-meta" style="margin-bottom:0.75rem;">Healthcare &middot; GCC &middot; Market Entry</p>
+          <span class="gr-ucard-cta">Read case study &#8594;</span>
+        </div>
+      </a>
+
+      <!-- 8: India Distributor Insight -->
+      <a href="/insights/india-distributor-evaluation-framework.html" class="gr-ucard">
+        <img src="/assets/images/insights/busy-market-street.jpg" alt="India distributor evaluation framework" class="gr-ucard-img" onerror="this.style.background='#1B2A4A';this.style.height='158px'">
+        <div class="gr-ucard-body">
+          <span class="gr-ucard-tag gr-ucard-tag-ins" style="margin-bottom:0.5rem;">Insight</span>
+          <p class="gr-ucard-title">How to Find and Evaluate Distributors in India: A Framework for FMCG and Consumer Goods</p>
+          <p class="gr-ucard-meta" style="margin-bottom:0.75rem;">Distribution &middot; India &middot; FMCG</p>
+          <span class="gr-ucard-cta">Read article &#8594;</span>
+        </div>
+      </a>
+
+      <!-- 9: AI Hype Insight -->
+      <a href="/insights/ai-hype-to-business-results.html" class="gr-ucard">
+        <img src="/assets/images/insights/ai-analytics.jpg" alt="AI in business consulting" class="gr-ucard-img" onerror="this.style.background='#1B2A4A';this.style.height='158px'">
+        <div class="gr-ucard-body">
+          <span class="gr-ucard-tag gr-ucard-tag-ins" style="margin-bottom:0.5rem;">Insight</span>
+          <p class="gr-ucard-title">Turning AI Hype Into Business Results</p>
+          <p class="gr-ucard-meta" style="margin-bottom:0.75rem;">AI &middot; Strategy &middot; Transformation</p>
+          <span class="gr-ucard-cta">Read article &#8594;</span>
+        </div>
+      </a>
+
+    </div><!-- end track -->
+
+    <!-- Scroll indicator dots -->
+    <div id="gr-scroll-dots" style="display:flex;justify-content:center;gap:0.4rem;margin-top:1.375rem;">
+      <span class="gr-sdot gr-sdot-active"></span>
+      <span class="gr-sdot"></span>
+      <span class="gr-sdot"></span>
     </div>
+    <style>
+      .gr-sdot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#d0d5de; transition:background 0.2s,transform 0.2s; }
+      .gr-sdot-active { background:#E8612C; transform:scale(1.35); }
+    </style>
   </div>
+
+  <script>
+  (function(){
+    var track = document.getElementById('gr-updates-track');
+    var dots  = document.querySelectorAll('.gr-sdot');
+    var timer, paused = false;
+    var CARD_W = 272 + 20; // card width + gap
+
+    function updateDots(){
+      var idx = Math.round(track.scrollLeft / (track.scrollWidth / dots.length));
+      idx = Math.max(0, Math.min(dots.length - 1, idx));
+      dots.forEach(function(d,i){ d.classList.toggle('gr-sdot-active', i === idx); });
+    }
+
+    window.grScrollCards = function(dir){
+      track.scrollBy({ left: dir * CARD_W * 2, behavior: 'smooth' });
+      setTimeout(updateDots, 350);
+    };
+    window.grScrollPause  = function(){ paused = true;  };
+    window.grScrollResume = function(){ paused = false; };
+
+    // Auto-advance every 4 s
+    timer = setInterval(function(){
+      if (paused) return;
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= maxScroll - 4) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: CARD_W * 2, behavior: 'smooth' });
+      }
+      setTimeout(updateDots, 350);
+    }, 4000);
+
+    track.addEventListener('scroll', updateDots, { passive: true });
+  })();
+  </script>
 </section>
 
 <!-- NEWSLETTER STRIP -->
@@ -1254,25 +1461,25 @@
       <a href="/insights/newsletters/" style="background:#E8612C;color:#fff;font-weight:700;font-size:0.825rem;padding:0.65rem 1.375rem;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0;">View all issues &#8594;</a>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.75rem;">
-      <a href="/insights/newsletters/the-signal/enterprise-ai-gpt56-july6-12-2026/" style="display:block;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-left:3px solid #E8612C;border-radius:6px;padding:1rem 1.125rem;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+      <a href="/insights/newsletters/the-signal/enterprise-ai-agentic-chips-july13-19-2026/" style="display:block;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-left:3px solid #E8612C;border-radius:6px;padding:1rem 1.125rem;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
         <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#E8612C;margin:0 0 0.375rem;">The Signal &middot; AI</p>
-        <p style="font-size:0.82rem;font-weight:600;color:#fff;margin:0;line-height:1.4;">GPT-5.6, ITU AI governance and Micron $250B</p>
-        <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin:0.375rem 0 0;">Issue 005 &middot; July 6&#8211;12, 2026</p>
+        <p style="font-size:0.82rem;font-weight:600;color:#fff;margin:0;line-height:1.4;">Shanghai AI governance body, GOLD EAGLE and TYLsemi chiplets</p>
+        <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin:0.375rem 0 0;">Issue 005 &middot; July 13&#8211;19, 2026</p>
       </a>
-      <a href="/insights/newsletters/charged/commercial-ev-electrification-july6-12-2026/" style="display:block;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-left:3px solid #E8612C;border-radius:6px;padding:1rem 1.125rem;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+      <a href="/insights/newsletters/charged/abb-gridserve-ev-india-pli-july13-19-2026/" style="display:block;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-left:3px solid #E8612C;border-radius:6px;padding:1rem 1.125rem;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
         <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#E8612C;margin:0 0 0.375rem;">Charged &middot; EVs</p>
-        <p style="font-size:0.82rem;font-weight:600;color:#fff;margin:0;line-height:1.4;">Global EV sales, Eviny&#8211;Mer merger and CATL 8C battery</p>
-        <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin:0.375rem 0 0;">Issue 005 &middot; July 6&#8211;12, 2026</p>
+        <p style="font-size:0.82rem;font-weight:600;color:#fff;margin:0;line-height:1.4;">ABB acquires Advantics SiC, GRIDSERVE UK flagship and India PLI tender</p>
+        <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin:0.375rem 0 0;">Issue 006 &middot; July 13&#8211;19, 2026</p>
       </a>
-      <a href="/insights/newsletters/the-stack/ai-data-centre-meta-alberta-july6-12-2026/" style="display:block;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-left:3px solid #E8612C;border-radius:6px;padding:1rem 1.125rem;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+      <a href="/insights/newsletters/the-stack/aws-india-hcltech-data-centre-july13-19-2026/" style="display:block;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-left:3px solid #E8612C;border-radius:6px;padding:1rem 1.125rem;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
         <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#E8612C;margin:0 0 0.375rem;">The Stack &middot; Data Centres</p>
-        <p style="font-size:0.82rem;font-weight:600;color:#fff;margin:0;line-height:1.4;">Meta C$13B Alberta campus and UK cloud oversight</p>
-        <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin:0.375rem 0 0;">Issue 003 &middot; July 6&#8211;12, 2026</p>
+        <p style="font-size:0.82rem;font-weight:600;color:#fff;margin:0;line-height:1.4;">AWS Telangana expansion, HCLTech $364M DC and SpaceX–Pentagon</p>
+        <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin:0.375rem 0 0;">Issue 004 &middot; July 13&#8211;19, 2026</p>
       </a>
-      <a href="/insights/newsletters/the-wafer/sk-hynix-micron-july6-12-2026/" style="display:block;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-left:3px solid #E8612C;border-radius:6px;padding:1rem 1.125rem;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+      <a href="/insights/newsletters/the-wafer/tsmc-micron-intel-ireland-july13-19-2026/" style="display:block;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-left:3px solid #E8612C;border-radius:6px;padding:1rem 1.125rem;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
         <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#E8612C;margin:0 0 0.375rem;">The Wafer &middot; Semis</p>
-        <p style="font-size:0.82rem;font-weight:600;color:#fff;margin:0;line-height:1.4;">SK hynix $26.5B ADR, Micron $250B and CXMT IPO</p>
-        <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin:0.375rem 0 0;">Issue 002 &middot; July 6&#8211;12, 2026</p>
+        <p style="font-size:0.82rem;font-weight:600;color:#fff;margin:0;line-height:1.4;">TSMC $265B US commitment, Micron $22B auto and Intel €5B Ireland</p>
+        <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin:0.375rem 0 0;">Issue 003 &middot; July 13&#8211;19, 2026</p>
       </a>
     </div>
   </div>
