@@ -1,0 +1,367 @@
+{
+  "series": "market-entry",
+  "canonical_base": "https://greyradius.com",
+  "template_spec": "Conversion landing template: hero (kicker, h1, sub, 3 stat pills, dual CTA) > trend signals (3 dated cards) > proof block (2-3 anonymised engagement cards with numbers) > inline CTA band > 4-step roadmap with weeks > transparency section (cost and timeline, prose) > FAQ (3, with FAQPage JSON-LD) > closing dual CTA. Primary CTA everywhere: 'Get a free expert assessment' -> /business-diagnostic.html. Secondary: 'Talk to a partner' -> /contact.html. Service + FAQPage JSON-LD per page. Sentence-case headings, hyphens never em dashes, sales@greyradius.com only.",
+  "pages": [
+    {
+      "slug": "india-manufacturing-market-entry",
+      "path": "/market-entry/india-manufacturing-market-entry.html",
+      "meta_title": "India Manufacturing Market Entry Consultants | PLI & China+1 | GreyRadius",
+      "meta_description": "Enter Indian manufacturing with a bankable plan - PLI incentive capture, plant siting, acquisition vs greenfield TEV, and execution through to first production. Fixed-fee, 30+ expert interviews per mandate.",
+      "h1": "India manufacturing market entry - built on plant-level evidence",
+      "sub": "PLI incentives, China+1 mandates and customer diversification are pulling manufacturing capacity into India. We turn that macro story into a siting decision, a bankable TEV and an operating plant.",
+      "stat_pills": ["PLI schemes across 14 sectors", "Record manufacturing FDI cycle", "TEV-to-commissioning capability"],
+      "trend_signals": [
+        {"tag": "China+1", "text": "Customer dual-sourcing mandates now carry compliance deadlines - the plant-siting decisions of 2026-2027 lock supplier positions for a decade."},
+        {"tag": "PLI window", "text": "Production-linked incentive schemes reward capacity commissioned inside programme windows; late entrants face the same costs without the subsidies."},
+        {"tag": "Brownfield premium", "text": "Operating plants with approvals and order books are commanding premiums as entrants price the 24-month approval timeline they skip."}
+      ],
+      "proof": [
+        {"tag": "Cross-border acquisition TEV", "text": "Viability study for an industrial acquirer buying an operating SAW pipe plant abroad - technology condition, order-book quality and a price the board could defend."},
+        {"tag": "Institution-financed distillery", "text": "120 KLD ethanol project re-appraised after cost overrun: IDC escalation isolated, revised funding structure prepared for lender sanction."},
+        {"tag": "Rs 800 Cr conveyor feasibility", "text": "Three routes evaluated, preferred route identified, vendors shortlisted - an 18-month implementation plan the client executed."}
+      ],
+      "roadmap": [
+        {"step": "Weeks 1-3", "title": "Market and incentive screen", "text": "Demand validation, PLI and state incentive mapping, competitor capacity analysis."},
+        {"step": "Weeks 4-7", "title": "Entry structure TEV", "text": "Greenfield vs brownfield vs JV economics, siting shortlist, machinery-schedule-level costing."},
+        {"step": "Weeks 8-11", "title": "Partner and site lock", "text": "Land, vendor and partner diligence, approvals register, means of finance."},
+        {"step": "Weeks 12+", "title": "Execution", "text": "Entity, EPC coordination, implementation PMO through to commissioning and first offtake."}
+      ],
+      "transparency": "A manufacturing entry assessment with TEV runs 6-8 weeks on a fixed fee agreed before work starts - not an open-ended retainer. Full entry execution is scoped in phases with commercial milestones, so you commit to the next phase only when the previous one proves out. Ask us for the standard scope letter in the first call.",
+      "faq": [
+        {"q": "Should we build greenfield or buy an operating plant in India?", "a": "Brownfield buys approvals, workforce and an order book at the cost of legacy technology risk; greenfield buys optimal design at the cost of 18-30 months. Our TEV prices both against your customer commitments and incentive eligibility before capital moves."},
+        {"q": "Can foreign manufacturers access PLI incentives?", "a": "Yes - most schemes are ownership-neutral and reward incremental production and investment thresholds. Eligibility depends on sector scheme windows and committed capacity; we model realistic capture, not headline rates."},
+        {"q": "What does GreyRadius actually deliver that a location consultant does not?", "a": "The full case: demand evidence from 30+ primary interviews, machinery-level costing, incentive capture, means of finance and then execution - entity, EPC coordination, distributor and offtake scouting. Location is one chapter, not the report."}
+      ]
+    },
+    {
+      "slug": "india-consumer-fmcg-market-entry",
+      "path": "/market-entry/india-consumer-fmcg-market-entry.html",
+      "meta_title": "India FMCG & Consumer Market Entry Consultants | GreyRadius",
+      "meta_description": "Enter India's consumer market with distributor-capability-led execution - quick commerce strategy, metro-first rollout, channel economics. First revenue in 90-120 days, proven across CPG mandates.",
+      "h1": "India consumer and FMCG market entry - distribution decides winners",
+      "sub": "India is not one consumer market; it is a collection of regional execution systems. We build metro-first, capability-led entries that reach first revenue in 90-120 days instead of burning a year chasing national coverage.",
+      "stat_pills": ["USD 7B+ quick commerce channel", "10M+ retail outlets", "90-120 days to first revenue on our mandates"],
+      "trend_signals": [
+        {"tag": "Quick commerce", "text": "Dark stores now drive a double-digit share of urban FMCG growth - with 2,000-4,000 SKUs per store, shelf entry is algorithmic and unforgiving."},
+        {"tag": "Premiumisation", "text": "The same consumer trades up in some categories and down in others - price-tier architecture beats single-price-point entries."},
+        {"tag": "D2C to omnichannel", "text": "Digital-first brands are moving offline for margin; offline brands are fighting for q-commerce shelf. Both need channel-specific P&Ls."}
+      ],
+      "proof": [
+        {"tag": "Fresh foods GTM, Bengaluru", "text": "400+ consumer touchpoints, 7 micro-markets scored, an 18-month expansion blueprint - executed with the founder team."},
+        {"tag": "International brand, India entry", "text": "National distributor onboarded in 10-14 weeks, modern trade listings in 4-6 metros, first commercial revenue inside 120 days - by making execution maturity the gate, not the launch calendar."}
+      ],
+      "roadmap": [
+        {"step": "Weeks 1-3", "title": "Category and channel map", "text": "Demand validation, price-tier research, channel economics including q-commerce terms."},
+        {"step": "Weeks 4-6", "title": "Entry architecture", "text": "Metro selection, distributor capability screen, pack and pricing architecture."},
+        {"step": "Weeks 7-10", "title": "Partner lock", "text": "Distributor negotiation, platform listings strategy, launch calendar."},
+        {"step": "Weeks 11+", "title": "Launch execution", "text": "Listings, velocity tracking, governance cadence - expansion gated on milestones."}
+      ],
+      "transparency": "Entry strategy plus distributor selection typically runs 8-10 weeks fixed-fee. Launch execution is billed on defined outputs - listings secured, distributors signed, revenue milestones - so our incentives sit with your sell-through, not our timesheet.",
+      "faq": [
+        {"q": "Should we launch on quick commerce or modern trade first?", "a": "Category-dependent: impulse and replenishment categories can be q-commerce-first with lower entry cost and richer data; considered-purchase categories still need offline credibility. We model both channel P&Ls before committing SKUs."},
+        {"q": "How do we choose the right Indian distributor?", "a": "On capability, not coverage claims - operational maturity, category experience, metro depth and financial capacity. Footprint-led selection is the single most common cause of failed FMCG entries we are hired to fix."},
+        {"q": "What does first revenue in 90-120 days require?", "a": "A metro-first scope, distributor onboarding running parallel to listings preparation, and channel-specific pack sizes ready before launch. National-first plans fail this timeline structurally."}
+      ]
+    },
+    {
+      "slug": "india-technology-saas-market-entry",
+      "path": "/market-entry/india-technology-saas-market-entry.html",
+      "meta_title": "India Technology & SaaS Market Entry | GCC Setup & GTM | GreyRadius",
+      "meta_description": "Enter India's technology market - enterprise SaaS GTM, pricing localisation, capability center setup and partner ecosystems. Execution-first entries grounded in buyer interviews.",
+      "h1": "India technology and SaaS entry - price for India, sell like India",
+      "sub": "India is simultaneously a market, a talent base and a delivery hub. We help technology companies decide which India play to run - and then run it: enterprise GTM, pricing localisation, capability center setup and partner ecosystems.",
+      "stat_pills": ["1,600+ global capability centers", "Enterprise SaaS spend compounding double-digit", "AI engineering demand at record levels"],
+      "trend_signals": [
+        {"tag": "GCC 2.0", "text": "New capability centers are engineering and AI charters, not back offices - a new establishment wave is competing for the same senior talent."},
+        {"tag": "AI budgets", "text": "Indian enterprises fund AI on provable operating outcomes - vendors with deployment evidence are displacing incumbents with demos."},
+        {"tag": "Pricing reality", "text": "US price cards fail in India's mid-market; the winners run tiered architectures that capture the volume segment without destroying global pricing."}
+      ],
+      "proof": [
+        {"tag": "SaaS execution-first operating model", "text": "A fast-growing SaaS company moved from founder-coordinated chaos to function-level commercial accountability - retention evidence identified a 94% vs 61% renewal gap between structured and unstructured onboarding."},
+        {"tag": "B2B SaaS product-market fit", "text": "Segment and pricing validation through structured buyer research before the scaling spend was committed."}
+      ],
+      "roadmap": [
+        {"step": "Weeks 1-3", "title": "India play selection", "text": "Market vs delivery-hub vs hybrid; segment sizing and buyer-interview evidence."},
+        {"step": "Weeks 4-6", "title": "GTM architecture", "text": "Pricing tiers, channel vs direct design, partner shortlist."},
+        {"step": "Weeks 7-10", "title": "Motion build", "text": "ICP-based pipeline build, partner enablement, first pursuit support."},
+        {"step": "Weeks 11+", "title": "Run and transfer", "text": "We operate the motion until it is repeatable, then hand over a working engine."}
+      ],
+      "transparency": "GTM strategy engagements run 6-8 weeks fixed-fee; GTM Execution-as-a-Service runs monthly with output-defined targets - qualified pipeline, partner activations, closed references. Capability center feasibility is a separate fixed-scope study. We tell you in the first call which one you actually need.",
+      "faq": [
+        {"q": "Is India a revenue market or a cost base for SaaS companies?", "a": "Both, but not equally for every company. Enterprise India pays near-global rates in the top account tier; the mid-market demands localised packaging. Meanwhile the talent base may be worth more than early revenue - we model both sides before you staff either."},
+        {"q": "Do we need local partners to sell enterprise software in India?", "a": "For the top-50 accounts, usually a hybrid: named-account direct with SI-led fulfilment. Pure channel models stall on enablement economics; pure direct models stall on relationships. Account-tier splits decide it."},
+        {"q": "How fast can an India GTM produce pipeline?", "a": "With an existing product and references, a focused motion produces qualified pipeline in one quarter. Without pricing localisation, it produces meetings and no closes - which is the pattern we are usually hired to break."}
+      ]
+    },
+    {
+      "slug": "saudi-arabia-market-entry",
+      "path": "/market-entry/saudi-arabia-market-entry.html",
+      "meta_title": "Saudi Arabia Market Entry Consultants | Vision 2030 & RHQ | GreyRadius",
+      "meta_description": "Enter Saudi Arabia with structure - Vision 2030 programme mapping, RHQ compliance, localisation scoring, national champion partnerships and execution from our Gulf base.",
+      "h1": "Saudi Arabia market entry - the largest Gulf prize, behind the most structure",
+      "sub": "Saudi Arabia rewards invested presence and punishes export selling. We map the programmes where money actually moves, structure RHQ and localisation compliance, and build the partnerships that gate government-linked revenue.",
+      "stat_pills": ["Vision 2030 programme spend at peak execution", "RHQ rules condition government contracts", "Localisation scoring decides awards"],
+      "trend_signals": [
+        {"tag": "Programme procurement", "text": "Gigaprojects and national programmes buy at programme scale - vendor frameworks and consortium positions decide access, not field sales."},
+        {"tag": "Localisation ratchet", "text": "Local content thresholds rise every cycle; in-Kingdom capability committed now scores for the rest of the decade."},
+        {"tag": "Saudi first, Dubai second", "text": "Categories from beauty to industrial equipment now differentiate brands invested in Saudi retail, talent and partnerships from those shipping via UAE distributors."}
+      ],
+      "proof": [
+        {"tag": "Cross-border industrial acquisition", "text": "TEV for an Indian acquirer buying an operating pipe manufacturing plant in the Kingdom - technology, order book and viability lens on the price."},
+        {"tag": "Gulf market prioritisation", "text": "Multi-country opportunity assessments ranking Saudi entry timing against UAE and Qatar for industrial and consumer clients - named programmes, not general attractiveness."}
+      ],
+      "roadmap": [
+        {"step": "Weeks 1-3", "title": "Programme and demand map", "text": "Named programmes, buyers and procurement routes in your category; localisation requirements."},
+        {"step": "Weeks 4-6", "title": "Structure decision", "text": "RHQ, entity and partner options priced; localisation commitments modelled before they are promised."},
+        {"step": "Weeks 7-10", "title": "Partnership build", "text": "National champion and local partner screening, diligence and negotiation support."},
+        {"step": "Weeks 11+", "title": "Pursuit execution", "text": "Framework qualification, tender support and account coverage from our Gulf team."}
+      ],
+      "transparency": "A Saudi entry assessment runs 6-8 weeks fixed-fee including on-the-ground programme intelligence. We will tell you honestly if your category's realistic path is UAE-first - roughly a third of our Saudi assessments conclude exactly that, and clients save a year of misplaced setup cost.",
+      "faq": [
+        {"q": "Do we need a Saudi RHQ to win business?", "a": "For government-linked contracts, RHQ status is increasingly a condition of eligibility. For private-sector sales it is not - but localisation scoring still shapes competitiveness. We model the decision against your actual pipeline, not the headline rule."},
+        {"q": "How do we engage Saudi national champions as partners?", "a": "With a defined value proposition mapped to their strategic gaps - technology, capability or offtake - and governance boundaries set before term sheets. Precedent-deal intelligence prevents mispriced negotiations."},
+        {"q": "How long before Saudi entry generates revenue?", "a": "Services and technology can generate revenue in 6-18 months; programme-linked and industrial sales follow procurement cycles of 2-5 years. Our roadmaps sequence fast-revenue routes to fund the long-cycle pursuits."}
+      ]
+    },
+    {
+      "slug": "uae-market-entry",
+      "path": "/market-entry/uae-market-entry.html",
+      "meta_title": "UAE Market Entry Consultants | Strategy Before Setup | GreyRadius",
+      "meta_description": "Enter the UAE with demand validated before the licence is printed - free zone vs mainland structuring, distributor architecture, field research depth and GTM execution from our Dubai office.",
+      "h1": "UAE market entry - validate the business before you licence it",
+      "sub": "A thousand firms will register your UAE company in a week. We answer the prior question - whether the business you are registering can win here - then structure, licence and launch it with demand already proven.",
+      "stat_pills": ["Dubai office - on-the-ground delivery", "600+ institutions mapped in one field programme", "Free zone, mainland and offshore structuring"],
+      "trend_signals": [
+        {"tag": "E-commerce depth", "text": "UAE delivery-app and e-commerce penetration leads the region - digital-first entries can now prove demand before physical commitments."},
+        {"tag": "Segmented consumers", "text": "National, Western expat and South Asian expat baskets buy differently - one-assortment entries systematically underperform."},
+        {"tag": "Corporate maturity", "text": "Corporate tax and substance rules ended the letterbox era; structure now follows commercial reality or creates permanent friction."}
+      ],
+      "proof": [
+        {"tag": "Port-sector JV feasibility", "text": "Demand-supply gap, product grade mix and value chain analysis underpinning a two-party joint venture decision at a Gulf bunkering hub."},
+        {"tag": "Recycling sector TEVs", "text": "Two lender-grade viability studies for Gulf recycling ventures - expansion and acquisition - through technical assessment, project cost and means of finance."},
+        {"tag": "600-school field mapping", "text": "Institution-level UAE database built by primary outreach - decision makers, contacts and buying context powering a client's enrollment growth."}
+      ],
+      "roadmap": [
+        {"step": "Weeks 1-3", "title": "Demand validation", "text": "Primary research in your category - buyers, channels, pricing tolerance, segment structure."},
+        {"step": "Weeks 4-5", "title": "Structure design", "text": "Free zone vs mainland vs offshore mapped to customers and invoicing; licence pathway."},
+        {"step": "Weeks 6-8", "title": "Setup coordination", "text": "Formation through vetted partners while we build the commercial pipeline in parallel."},
+        {"step": "Weeks 9+", "title": "First 90 days GTM", "text": "Distributor or direct motion executed by our Dubai team to first revenue."}
+      ],
+      "transparency": "Demand validation plus structure recommendation runs 4-6 weeks fixed-fee - deliberately sequenced so licence costs are committed only after the commercial case holds. If the case does not hold, we say so; a defer recommendation costs a fraction of a failed entry.",
+      "faq": [
+        {"q": "Free zone or mainland for our UAE company?", "a": "Where your customers sit decides it: mainland for onshore B2B and government, free zones for international invoicing and sector clusters. It is a commercial decision that should never be made from a formation agent's package sheet."},
+        {"q": "Is the UAE the right Gulf entry point, or should we go Saudi-first?", "a": "UAE offers speed, talent liquidity and a proving ground; Saudi offers scale behind heavier structure. Category economics decide - and our assessments regularly conclude against the market the client assumed."},
+        {"q": "What does GreyRadius do that setup agents cannot?", "a": "Everything before and after the licence: demand validation with primary research, structure driven by commercial strategy, and GTM execution to first revenue. The licence itself we coordinate through vetted partners - it is the cheapest, least differentiated step in the chain."}
+      ]
+    },
+    {
+      "slug": "government-b2g-market-entry",
+      "path": "/market-entry/government-b2g-market-entry.html",
+      "meta_title": "Government & B2G Market Entry | India and Gulf Public Sector | GreyRadius",
+      "meta_description": "Win government business in India and the Gulf - programme mapping, proposal-grade delivery frameworks, consortium design and localisation compliance. Proven on state-scale programmes.",
+      "h1": "Government and B2G entry - delivery credibility wins tenders",
+      "sub": "Public buyers in India and the Gulf buy delivery certainty, not product capability. We build the programme maps, proposal-grade frameworks and consortium structures that convert government interest into contracts.",
+      "stat_pills": ["State-scale programme delivery frameworks", "India and Gulf public procurement", "Consortium and localisation design"],
+      "trend_signals": [
+        {"tag": "Digitisation programmes", "text": "State education, health and citizen-service digitisation carries multi-year budgets - won by implementation frameworks, not feature lists."},
+        {"tag": "Gigaproject supply chains", "text": "Gulf programme procurement runs through vendor frameworks and local content scoring - positions lock early and cascade."},
+        {"tag": "Outcome procurement", "text": "Public tenders increasingly specify measurable outcomes and quality gates - proposals built that way clear technical evaluation."}
+      ],
+      "proof": [
+        {"tag": "State education programme, India", "text": "Technical proposal and delivery framework for a multilingual, learning-outcome-aligned LMS across government schools - ten-phase delivery model, five quality gates, nine-month implementation roadmap."},
+        {"tag": "Government housing authority, Gulf", "text": "Citizen experience transformation delivering measured satisfaction gains through AI-driven contractor transparency."}
+      ],
+      "roadmap": [
+        {"step": "Weeks 1-3", "title": "Programme map", "text": "Named programmes, budget cycles, decision structures and localisation requirements in your category."},
+        {"step": "Weeks 4-6", "title": "Positioning and consortium", "text": "Bid/no-bid discipline, partner and consortium design, compliance gap closure."},
+        {"step": "Weeks 7-10", "title": "Proposal architecture", "text": "Delivery frameworks with phases, quality gates and governance that evaluators can score."},
+        {"step": "Ongoing", "title": "Pursuit support", "text": "Tender tracking, clarification management and presentation support."}
+      ],
+      "transparency": "Programme mapping runs 3-4 weeks fixed-fee; proposal support is scoped per pursuit. We enforce bid/no-bid discipline honestly - chasing every tender is how B2G teams burn out, and we would rather kill a weak pursuit in week one than bill through a loss.",
+      "faq": [
+        {"q": "How is selling to government different from enterprise sales?", "a": "Procurement rules replace relationships as the gate, delivery credibility replaces product demos as the differentiator, and timelines run on budget cycles. Winning teams engineer proposals to evaluation criteria rather than persuading buyers."},
+        {"q": "Do we need local partners for government work in the Gulf?", "a": "Almost always - local content scoring, in-country delivery expectations and framework eligibility favour consortium structures. Partner quality and role clarity decide outcomes more than prime-sub labels."},
+        {"q": "Can smaller companies realistically win government programmes?", "a": "Yes, in defined niches: as specialist consortium members, through innovation procurement routes, and in state or emirate-level programmes below the mega-tender radar. Programme selection is the strategy."}
+      ]
+    },
+    {
+      "slug": "southeast-asia-manufacturing-entry",
+      "path": "/market-entry/southeast-asia-manufacturing-entry.html",
+      "meta_title": "Southeast Asia Manufacturing Entry | Vietnam, Malaysia, Thailand | GreyRadius",
+      "meta_description": "Site and enter Southeast Asian manufacturing - Vietnam, Malaysia, Thailand, Indonesia contested honestly on labour, incentives, supplier depth and execution reality. From our Singapore office.",
+      "h1": "Southeast Asia manufacturing entry - contest the countries, then commit",
+      "sub": "The China+1 wave made SEA the default answer - but Vietnam, Malaysia, Thailand and Indonesia are four different answers. We run genuine multi-country contests on labour, incentives, supplier depth and execution reality before your capital picks one.",
+      "stat_pills": ["Record manufacturing FDI into SEA", "4-country siting contests", "Singapore office - regional delivery"],
+      "trend_signals": [
+        {"tag": "Compliance deadlines", "text": "Customer dual-sourcing mandates carry 2025-2027 deadlines - siting decisions are being forced, and incentive competition among states is at a peak that will normalise."},
+        {"tag": "Cost vs capability", "text": "Vietnam wins on labour cost, Malaysia on engineering depth, Thailand on automotive supply chains - cost-only siting discovers capability gaps at qualification time."},
+        {"tag": "Automation trigger", "text": "Labour cost inflections in Thai and Vietnamese hubs are firing automation triggers - new plants are designing automation-first."}
+      ],
+      "proof": [
+        {"tag": "Alloy and ferro metals expansion", "text": "International expansion strategy across Southeast Asia for a metals player - a structured market contest that picked the right country before commitment."}
+      ],
+      "roadmap": [
+        {"step": "Weeks 1-3", "title": "Country contest", "text": "Demand access, labour, incentive and supplier-depth scoring across candidate markets."},
+        {"step": "Weeks 4-7", "title": "Site and structure TEV", "text": "Shortlisted sites costed at machinery-schedule level; incentive terms validated with authorities."},
+        {"step": "Weeks 8-11", "title": "Partner and approvals", "text": "JV or wholly-owned structure, industrial zone negotiation, approvals register."},
+        {"step": "Weeks 12+", "title": "Execution", "text": "Entity, EPC and vendor coordination, hiring plan, supplier qualification."}
+      ],
+      "transparency": "A four-country siting contest with TEV runs 8-10 weeks fixed-fee. The deliverable is a defensible siting decision with negotiated incentive terms - not a scorecard. If your customers' sourcing intent contradicts the cost tables, we weight the customers; qualification failures cost more than wage differentials save.",
+      "faq": [
+        {"q": "Vietnam, Malaysia, Thailand or Indonesia - how do we choose?", "a": "By what your product needs: labour cost intensity favours Vietnam, engineering and supplier depth favour Malaysia, automotive integration favours Thailand, domestic market access favours Indonesia. Customer sourcing intent should carry more weight than published cost tables."},
+        {"q": "How real are the incentive packages?", "a": "Real but conditional - headcount, local content and technology thresholds carry clawbacks. We validate terms directly with investment authorities and model conditional value, not brochure value."},
+        {"q": "Can you support the build after the siting decision?", "a": "Yes - entity, industrial zone negotiation, EPC and vendor coordination, hiring and supplier qualification through our Singapore office and in-country partners."}
+      ]
+    },
+    {
+      "slug": "indonesia-market-entry",
+      "path": "/market-entry/indonesia-market-entry.html",
+      "meta_title": "Indonesia Market Entry Consultants | 270M Consumer Market | GreyRadius",
+      "meta_description": "Enter Indonesia with structure - halal certification pathways, local partner architecture, licensing reality and channel economics for the region's largest consumer and digital economy.",
+      "h1": "Indonesia market entry - scale worth the structure it demands",
+      "sub": "Indonesia is Southeast Asia's largest consumer market and its most structurally demanding entry - halal mandates, local content rules, licensing layers and channel economics that punish imported playbooks. We build entries that survive all four.",
+      "stat_pills": ["270M+ consumers", "Largest SEA digital economy", "Halal certification now mandatory in key categories"],
+      "trend_signals": [
+        {"tag": "Halal enforcement", "text": "Mandatory certification is phasing across food, cosmetics and pharma - certification lead time is now a launch-calendar item, not a checkbox."},
+        {"tag": "Social commerce", "text": "TikTok Shop and Shopee drive discovery-led purchasing that collapses funnels - local brands move at content velocity that entrants must match."},
+        {"tag": "Localisation rules", "text": "Local content requirements and import licensing shape structure decisions across sectors - late discovery restructures entries mid-flight."}
+      ],
+      "proof": [
+        {"tag": "EdTech two-market entry study", "text": "Indonesia and Gulf market entry assessment for a learning platform - regulation, localisation, competitive intensity and channel structure driving the sequencing decision."}
+      ],
+      "roadmap": [
+        {"step": "Weeks 1-3", "title": "Demand and regulation map", "text": "Category demand validation, certification pathways, licensing and local content exposure."},
+        {"step": "Weeks 4-6", "title": "Entry architecture", "text": "Structure and partner options, price architecture for Indonesian tiers, channel strategy."},
+        {"step": "Weeks 7-10", "title": "Partner and compliance lock", "text": "Distributor or platform partnerships, certification filings, entity pathway."},
+        {"step": "Weeks 11+", "title": "Launch", "text": "Channel execution with local operating partners; milestones gate expansion."}
+      ],
+      "transparency": "An Indonesia entry assessment runs 6-8 weeks fixed-fee including certification-pathway mapping. Sequencing matters more than speed here: certifying hero SKUs first and phasing the portfolio routinely saves two quarters versus certify-everything plans.",
+      "faq": [
+        {"q": "How long does halal certification take for market entry?", "a": "Plan 3-9 months depending on category, formulation and supply chain complexity - combined with product registration. Hero-SKU-first sequencing gets you trading while the portfolio follows."},
+        {"q": "Do we need an Indonesian partner?", "a": "In several sectors, structurally yes - and in most others, practically yes for licensing navigation and channel depth. Partner architecture with explicit control and data rights beats improvised distribution deals."},
+        {"q": "Is Indonesia worth entering before other SEA markets?", "a": "For scale-driven categories, yes despite the structure; for premium niches, often after a Singapore or Malaysia proving ground. The honest answer is category-specific and our assessments frequently reverse the client's initial sequence."}
+      ]
+    },
+    {
+      "slug": "north-america-entry-for-india-asia-companies",
+      "path": "/market-entry/north-america-entry-for-india-asia-companies.html",
+      "meta_title": "US & North America Market Entry for Indian and Asian Companies | GreyRadius",
+      "meta_description": "Enter the US and Canada from India or Asia - vertical prioritisation, buyer-interview-led GTM, pricing for enterprise credibility and execution support. Proven on technology and healthcare entries.",
+      "h1": "North America entry for Indian and Asian companies - credibility is the product",
+      "sub": "The US buys from companies that sound local, price with confidence and prove references. We build vertical-prioritised, interview-backed entries for Indian and Asian firms taking products and services West.",
+      "stat_pills": ["Buyer-interview-led vertical selection", "Technology and healthcare entry experience", "US GTM playbooks that survived contact"],
+      "trend_signals": [
+        {"tag": "Services flow West", "text": "Indian technology and engineering firms are moving up-value into US enterprise accounts - positioning, not capability, is the binding constraint."},
+        {"tag": "Procurement scrutiny", "text": "US enterprise buying now runs security, compliance and viability gates that under-prepared entrants fail before pricing is discussed."},
+        {"tag": "Nearshore pressure", "text": "Canada and Mexico compete for the same delivery-plus-market play - the North America map is a three-country decision."}
+      ],
+      "proof": [
+        {"tag": "Enterprise platform, US GTM", "text": "USD 50M TAM segment identified across 3 prioritised verticals through 12 enterprise buyer interviews - a full US sales playbook the client executed."},
+        {"tag": "Hospital chain, Canada entry", "text": "Market entry strategy for a US healthcare operator expanding into Canada - regulatory, payer and competitive reality mapped before commitment."}
+      ],
+      "roadmap": [
+        {"step": "Weeks 1-3", "title": "Vertical prioritisation", "text": "Buyer interviews across candidate verticals; TAM by segment; winnability screen."},
+        {"step": "Weeks 4-6", "title": "Positioning and pricing", "text": "US-credible narrative, reference strategy, pricing architecture with confidence."},
+        {"step": "Weeks 7-10", "title": "GTM build", "text": "ICP and account maps, outbound engine, partner and channel options."},
+        {"step": "Weeks 11+", "title": "Pursuit execution", "text": "Pipeline generation and first-account pursuit support until the motion repeats."}
+      ],
+      "transparency": "A US entry assessment with buyer interviews runs 6-8 weeks fixed-fee. The most valuable sentence we deliver is often which verticals NOT to enter - focus is the difference between a US entry that compounds and one that burns two years of BD budget evenly across nothing.",
+      "faq": [
+        {"q": "What do Indian companies most underestimate about US entry?", "a": "The credibility bar: security and compliance posture, reference depth, local presence signals and pricing confidence. Capability parity is assumed; trust is the purchase decision."},
+        {"q": "Should we enter via the US directly or start in Canada?", "a": "Canada offers gentler procurement and healthcare-system entry points but a tenth of the market. It works as a wedge for regulated categories; for most software and services, focused US verticals beat geographic caution."},
+        {"q": "How many verticals should a US entry target?", "a": "One to three, chosen on buyer evidence. Every additional vertical divides your reference-building velocity - and references, not features, are what compound in the US market."}
+      ]
+    },
+    {
+      "slug": "market-entry-via-acquisition",
+      "path": "/market-entry/market-entry-via-acquisition.html",
+      "meta_title": "Market Entry via Acquisition | Buy vs Build TEV | GreyRadius",
+      "meta_description": "Enter markets by buying operating businesses - acquisition TEV, technical and commercial diligence, order-book validation and integration planning. Buy-side discipline for cross-border entries.",
+      "h1": "Market entry via acquisition - buy the position, verify everything",
+      "sub": "In tight markets, buying an operating business beats building one - if the order book is real, the technology holds and the price survives a viability lens. We run the buy-side discipline that makes acquisition entries work.",
+      "stat_pills": ["Acquisition TEVs across India and the Gulf", "Technical + commercial diligence in one team", "Order-book and throughput validation"],
+      "trend_signals": [
+        {"tag": "Brownfield premium", "text": "Approvals, workforce and customer relationships are commanding premiums as entrants price the years they skip - discipline on what you are actually buying matters more than ever."},
+        {"tag": "Cross-border flow", "text": "Indian industrials are buying plants in the Gulf and beyond for market access and supply security - viability lenses beat auction fever."},
+        {"tag": "Succession supply", "text": "Founder-led businesses across SEA and the Gulf are reaching succession points - creating acquisition entries that never reach open market."}
+      ],
+      "proof": [
+        {"tag": "SAW pipe plant acquisition, Middle East", "text": "TEV for an Indian industrial acquirer - technology condition, order-book quality and market assessment determining whether the price survived scrutiny."},
+        {"tag": "E-waste recycling acquisition, Gulf", "text": "Technical assessment with site visits, process line evaluation, project cost and means of finance to lender review standard."}
+      ],
+      "roadmap": [
+        {"step": "Weeks 1-2", "title": "Thesis and screen", "text": "Entry thesis, target screening and approach strategy - or validation of a deal already in hand."},
+        {"step": "Weeks 3-6", "title": "Acquisition TEV", "text": "Site visits, technology and throughput validation, order-book and customer diligence, market durability."},
+        {"step": "Weeks 6-8", "title": "Price and structure", "text": "Viability-based valuation view, means of finance, negotiation support with evidence."},
+        {"step": "Post-close", "title": "First 100 days", "text": "Integration priorities, customer retention plan, capability gaps closed."}
+      ],
+      "transparency": "An acquisition TEV runs 4-6 weeks and fits inside exclusivity windows. We work fixed-fee with no success-fee conflict: our economics do not improve if you overpay, which is exactly why acquirers bring us in alongside their bankers.",
+      "faq": [
+        {"q": "When does acquisition beat greenfield for market entry?", "a": "When approvals, customer relationships or capacity scarcity price above the acquisition premium - and when the technical condition is verifiable. The TEV answers both; roughly half our studies materially reprice or restructure the deal."},
+        {"q": "What does an acquisition TEV cover that financial DD does not?", "a": "The plant and the market: technology condition against nameplate claims, realistic throughput, order-book durability tested through customer interviews, and the capex the seller's deck omits. Financial DD audits the past; the TEV prices the future."},
+        {"q": "Can you work inside a live deal timeline?", "a": "Yes - 4-6 week delivery is designed for exclusivity windows, and we scope to the sanction or board date from day one."}
+      ]
+    },
+    {
+      "slug": "distributor-search-channel-partners",
+      "path": "/market-entry/distributor-search-channel-partners.html",
+      "meta_title": "Distributor Search & Channel Partner Selection | India, Gulf, SEA | GreyRadius",
+      "meta_description": "Find and sign the right distributors - capability-led screening, term negotiation with benchmarks, and governance that keeps partners performing. India, Gulf and Southeast Asia coverage.",
+      "h1": "Distributor search and channel partners - capability decides, not coverage",
+      "sub": "The wrong distributor costs two years and a market reputation. We screen on operational capability, negotiate with term benchmarks, and build the governance that keeps channel partners selling.",
+      "stat_pills": ["Capability-led screening methodology", "Term benchmarks from live mandates", "India - Gulf - SEA partner networks"],
+      "trend_signals": [
+        {"tag": "Channel restructuring", "text": "Brands are unbundling legacy distributor agreements as e-commerce and quick commerce reset channel economics - renewal windows are renegotiation leverage."},
+        {"tag": "Data rights", "text": "Modern channel agreements contest customer data and platform relationships, not just margin - old templates concede both silently."},
+        {"tag": "Hybrid models", "text": "Distributor-plus-direct architectures are replacing exclusive national agreements - role clarity and term design decide whether they work."}
+      ],
+      "proof": [
+        {"tag": "FMCG India entry", "text": "Capability-led screening replaced footprint-led selection - national distributor onboarded in 10-14 weeks, modern trade listings in 4-6 metros, first revenue inside 120 days."},
+        {"tag": "GTM channel architectures", "text": "Distributor and reseller models designed across edtech, industrial and consumer mandates in the Gulf and India - with performance-gated territory rights, not hope."}
+      ],
+      "roadmap": [
+        {"step": "Weeks 1-2", "title": "Channel architecture", "text": "Direct vs distributor vs hybrid economics; role definition and territory logic."},
+        {"step": "Weeks 3-5", "title": "Screen and diligence", "text": "Long-list from field networks, capability audit - infrastructure, category depth, financial capacity, references."},
+        {"step": "Weeks 6-8", "title": "Negotiation", "text": "Terms with cross-mandate benchmarks; performance gates, data rights, exit clauses."},
+        {"step": "Ongoing", "title": "Governance", "text": "Review cadence, scorecards and enablement that keep the partner performing."}
+      ],
+      "transparency": "A distributor search runs 6-8 weeks fixed-fee, independent of which partner is selected - we take no placement fees from distributors, which is precisely why our shortlists can be trusted. Term benchmarks from live mandates typically recover the engagement fee in the first negotiation.",
+      "faq": [
+        {"q": "How do you screen distributors beyond the sales pitch?", "a": "Capability audit: warehouse and logistics infrastructure, category track record, retailer relationships verified through the retailers, financial capacity, and reference checks with current and former principals. Enthusiasm is not a criterion."},
+        {"q": "Should we sign an exclusive national distributor?", "a": "Rarely at entry. Performance-gated regional rights preserve leverage and let evidence allocate territory. National exclusivity is a prize partners earn, not a signing incentive."},
+        {"q": "What terms matter most in emerging-market channel agreements?", "a": "Performance gates with consequences, customer data rights, pricing control boundaries, and exit mechanics. Margin gets negotiated loudly; these four get conceded quietly - and they decide who owns your market."}
+      ]
+    },
+    {
+      "slug": "market-entry-cost",
+      "path": "/market-entry/market-entry-cost.html",
+      "meta_title": "What Market Entry Costs - Honest Breakdown | GreyRadius",
+      "meta_description": "What entering India, the Gulf or Southeast Asia actually costs - strategy, entity, compliance, team and channel build, with timelines and the failure costs nobody publishes. Fixed-fee consulting.",
+      "h1": "What market entry actually costs - the breakdown nobody publishes",
+      "sub": "Every consulting site says 'it depends'. Here is the honest structure of market entry costs across India, the Gulf and Southeast Asia - the categories, the timelines, and the failure costs that dwarf all of them.",
+      "stat_pills": ["Fixed fees agreed before work starts", "Phased commitments gated on evidence", "The expensive part is getting it wrong"],
+      "trend_signals": [
+        {"tag": "Cost of wrong", "text": "The dominant market entry cost is not fees or setup - it is 12-24 months of misdirected burn from entering the wrong segment, with the wrong structure, through the wrong partner."},
+        {"tag": "Phasing beats betting", "text": "Evidence-gated phase commitments are replacing big-bang entries - validate, then structure, then scale, with an exit ramp at each gate."},
+        {"tag": "Transparent consulting", "text": "Output-defined fixed fees are displacing time-and-materials retainers - you should know the price of an answer before you buy it."}
+      ],
+      "proof": [
+        {"tag": "The defer that saved a build", "text": "A board approved a phased entry with a defined order-book trigger instead of an immediate USD 12M capex commitment - because the assessment said not yet."},
+        {"tag": "The entry that paid back fast", "text": "Metro-first FMCG entry reaching first revenue inside 120 days - because scope discipline replaced national ambition."}
+      ],
+      "roadmap": [
+        {"step": "Phase 1", "title": "Validate - weeks 1-6", "text": "Opportunity assessment with primary research. Cost: a defined fixed fee. Output: go, defer or kill - with evidence."},
+        {"step": "Phase 2", "title": "Structure - weeks 6-12", "text": "Entry architecture, entity, partners, compliance. Costs: advisory fixed fee plus statutory setup costs that vary by market and structure."},
+        {"step": "Phase 3", "title": "Launch - months 3-6", "text": "Team or partner build, channel activation, first revenue motion. The largest spend - which is why it comes after evidence, not before."},
+        {"step": "Ongoing", "title": "Scale - gated", "text": "Expansion committed against milestones. Every phase has an exit ramp."}
+      ],
+      "transparency": "GreyRadius works on fixed fees agreed before each phase - assessment, structure, execution - so you always know the price of the next answer and can stop at any gate. On outcomes-billed execution mandates, our fees are tied to listings, partners signed and revenue milestones. Ask for the standard scope letter: we send real numbers in the first conversation, not after three discovery calls.",
+      "faq": [
+        {"q": "What does a market entry assessment cost?", "a": "A fixed fee scoped to markets covered and interview depth - agreed before work starts and a small fraction of one quarter of misdirected entry burn. We share exact numbers in the first call once scope is clear, and the price never changes mid-engagement."},
+        {"q": "What are the hidden costs of entering India or the Gulf?", "a": "Compliance layering (state-level in India, emirate and free-zone level in the Gulf), realistic channel margins, senior local hires you did not plan, working-capital cycles in distributor markets - and above all, time cost of a wrong structure. The assessment exists to surface these before they surface you."},
+        {"q": "Why fixed fees instead of retainers?", "a": "Because open-ended retainers reward duration and we would rather be rewarded for answers. Fixed, output-defined fees keep our incentives on your decision quality - and let you budget the entire entry before committing to any of it."}
+      ]
+    }
+  ]
+}
