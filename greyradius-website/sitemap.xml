@@ -3633,4 +3633,42 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- August 2026 additions -->
+  <url>
+    <loc>https://greyradius.com/insights/b2b-saas-pricing-india.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/case-studies/gulf-renewable-energy-solar-epc-market-entry.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/charged/nio-xpeng-rivian-renault-byd-ev-jul27-aug2-2026/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-signal/anthropic-eu-gigafactory-scale-ai-meta-blackrock-jul27-aug2-2026/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-stack/amazon-schneider-meta-israel-orange-google-jul27-aug2-2026/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-wafer/ionq-samsung-sk-hynix-lam-research-jul27-aug2-2026/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
