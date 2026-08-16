@@ -1,0 +1,169 @@
+{
+  "group": 3,
+  "canonical_base": "https://greyradius.com",
+  "shared_framework_note": "IDENTICAL to groups 1-2 - reuse the shared 6-phase framework block and 3-tier engagement cards exactly as built. Each page's method_intro renders as the italic lead line above the framework.",
+  "pages": [
+    {
+      "type": "landing",
+      "path": "/market-entry/india-market-entry-for-apac-companies.html",
+      "meta_title": "India Market Entry for APAC Companies | Corridor Hub | GreyRadius",
+      "meta_description": "The India entry corridor for APAC companies - Japan, Korea, Singapore, Taiwan, Vietnam and Australia. One proven method: opportunity validation, regulatory clearance, distributor search to signature, launch governance.",
+      "h1": "India market entry for APAC companies - one corridor, one method, your country's map",
+      "sub": "From Tokyo to Sydney, APAC companies entering India share the same four problems: distributor-led channels they cannot read, certification regimes they discover late, price ladders their home logic misprices, and partner decisions made on introductions instead of evidence. One framework solves all four - localised to where you start from.",
+      "stat_pills": ["Japan, Korea, Singapore corridors live", "One framework, six phases, named deliverables", "Delhi + Singapore offices covering the corridor"],
+      "who_this_is_for": [
+        {"title": "APAC brands and manufacturers, $5M-150M revenue", "text": "Established at home, no India entity, moved to act by saturation, export programmes or a competitor already in India."},
+        {"title": "Heads of overseas and export business", "text": "You need a structured process your board can inspect - phase deliverables, not promises - and an India-side team that executes."},
+        {"title": "Taiwan, Vietnam and Australia entrants", "text": "The corridors beyond our Japan-Korea-Singapore pages run on the same method - electronics, F&B, services and equipment all mapped."}
+      ],
+      "why_now": {
+        "heading": "Why the APAC-to-India corridor is compounding",
+        "points": [
+          "Trade architecture favours the corridor: India's agreements with Japan, Korea, ASEAN and Australia carry tariff preferences most entrants never capture - margin their competitors are already keeping.",
+          "Supply chain diversification made India the strategic answer for APAC boards - and the government export programmes across Japan, Korea and Singapore actively fund the exploration your board is considering.",
+          "India's consumption story needs no selling; its execution story does. Channel structures, certification regimes and price ladders are all navigable - with evidence and sequence, which is precisely what generic 'market attractiveness' decks omit."
+        ]
+      },
+      "method_intro": "The framework runs identically across the corridor; what changes by country is the regulatory overlay, the trade-preference capture and the buying culture of your own board - all three localised in phase 1.",
+      "regulatory": {
+        "heading": "The regulatory overlay, by origin",
+        "text": "Certification (BIS, CDSCO, FSSAI by category), import duty structure with FTA and CEPA preference capture for qualifying origins, labelling compliance and entity-or-distributor structure design - resolved in phase 3 for every corridor mandate. Origin questions get particular care: products assembled in one APAC country with components from another face documentation requirements that reward preparation and punish improvisation."
+      },
+      "proof": [
+        {"tag": "Japanese beauty and wellness brand - engagement snapshot", "text": "India distribution partner development in execution: 200-300 organisations longlisted, capability-scored toward structured appointment."},
+        {"tag": "Japanese STEM education company - engagement snapshot", "text": "Distribution partnership mandate with BIS and import-regulatory feasibility run in parallel - targeting signed partners by fiscal year-end."},
+        {"tag": "International FMCG brand - India entry, completed", "text": "National distributor in 10-14 weeks, 4-6 metro listings, first revenue inside 120 days."},
+        {"tag": "SEA metals player - market selection, completed", "text": "Structured multi-market contest across Southeast Asia - the same evidence discipline that picks Indian regions, channels and partners."}
+      ],
+      "transparency": "Every corridor engagement starts with the 3-4 week fixed-fee Diagnostic - opportunity sizing, regulatory applicability and a Go / No-Go your board can inspect. Full entry is phase-priced with approval gates. Japanese and Korean language support is available through our partner network; Singapore working sessions run same-timezone.",
+      "faq": [
+        {"q": "How is entering India different from entering Southeast Asian markets?", "a": "Scale changes the physics: India's channel structures are deeper and more regional, certification regimes broader, and price ladders longer than most SEA markets. The reward is proportionate - but SEA playbooks imported unmodified are the corridor's most common failure pattern."},
+        {"q": "Which APAC countries get Indian tariff preferences?", "a": "Japan and Korea through CEPA agreements, ASEAN members through the ASEAN-India agreement, Australia through ECTA - each with origin qualification rules. Preference capture is a margin line we build into every corridor commercial model; unclaimed preferences are donations to your competitors."},
+        {"q": "Do we need to visit India before committing to entry?", "a": "Visit after the evidence, not instead of it: a Diagnostic first makes your India visit a verification trip with shortlisted partners and validated numbers, rather than an impression-gathering tour that becomes the decision by default."},
+        {"q": "Can you run the entire entry remotely from our headquarters?", "a": "The decision-making can stay at your HQ - phase deliverables are built for board review - while the fieldwork runs through our India teams: interviews, channel checks, distributor scoring and site visits. That split is the model: your control, our ground."},
+        {"q": "What does the Diagnostic cost and what exactly do we get?", "a": "A fixed fee shared in the first call, 3-4 weeks, ending in: opportunity sizing from primary research, regulatory and preference applicability, channel economics, and a Go / No-Go with the evidence attached. It is designed to be the cheapest good decision your India programme will make."}
+      ]
+    },
+    {
+      "type": "landing",
+      "path": "/market-entry/india-entry-food-beverage-brands.html",
+      "meta_title": "Sell Food & Beverage Products in India | FSSAI to First Listing | GreyRadius",
+      "meta_description": "India entry for international F&B brands - FSSAI licensing and labelling, shelf-life and cold chain reality, price-pack architecture and the distributor search. From compliance to first listing, one playbook.",
+      "h1": "India entry for food and beverage brands - from FSSAI to first listing",
+      "sub": "India's F&B shelf is opening to international brands faster than its rulebook is getting easier. FSSAI licensing, labelling and shelf-life norms, cold-chain-dependent distribution and a price ladder that punishes imported pricing logic - our playbook runs compliance and channel in parallel so the launch date survives both.",
+      "stat_pills": ["World's fastest-growing large F&B market", "FSSAI compliance run in parallel with channel build", "Import-to-listing calendar owned end to end"],
+      "who_this_is_for": [
+        {"title": "International F&B brands entering India", "text": "Snacks, beverages, condiments, health foods and specialty ingredients - proven at home, ready for the shelf test India sets."},
+        {"title": "Japanese, Korean and SEA food companies", "text": "Asian flavours are having their Indian moment - matcha to gochujang to tom yum - and the import shelf is being allocated now."},
+        {"title": "Ingredient and B2B food suppliers", "text": "India's food processing sector needs specialty inputs; the channel is different - processors and formulators, not retailers - and so is the playbook."}
+      ],
+      "why_now": {
+        "heading": "Why India, why now - for F&B brands",
+        "points": [
+          "Premiumisation is running through Indian food retail: international and health-positioned products are the fastest-growing modern trade and q-commerce segments, and retailers are actively allocating import-shelf space.",
+          "Quick commerce changed F&B economics - impulse and specialty categories reach urban India in minutes, giving import brands a distribution surface that did not exist three years ago.",
+          "Asian cuisine adoption is compounding beyond metros: Korean and Japanese flavours moved from restaurant trend to retail category, and the first properly-distributed brands in each niche are setting the price anchors."
+        ]
+      },
+      "method_intro": "For F&B mandates, phase 3 runs FSSAI licensing and label compliance in lockstep with phase 4's price-pack work - because shelf-life realities and import lot sizes shape the commercial model, not just the compliance file.",
+      "regulatory": {
+        "heading": "FSSAI and the food import rulebook",
+        "text": "Imported food requires FSSAI central licensing, product and label compliance (mandatory declarations, vegetarian marking, dates in Indian format), and shelf-life rules - consignments must land with the majority of shelf life remaining, which constrains sea-freight economics for short-dated products. Category standards can require reformulation; sampling at port is routine. We run the pathway with specialist food-regulatory partners inside the entry calendar, and design lot sizes and logistics around the shelf-life math from day one."
+      },
+      "proof": [
+        {"tag": "Fresh foods CPG - Bengaluru GTM, completed", "text": "400+ consumer touchpoints, 7 micro-markets scored, an 18-month expansion blueprint executed with the founder team."},
+        {"tag": "International FMCG brand - India entry, completed", "text": "National distributor onboarded in 10-14 weeks, modern trade listings in 4-6 metros, first revenue inside 120 days."},
+        {"tag": "CPG dairy brand - new product launch, completed", "text": "Category entry through structured launch planning - the consumer-validation-first discipline that F&B entries need."}
+      ],
+      "transparency": "An F&B Diagnostic runs 3-4 weeks fixed-fee: category demand and price-tier validation, FSSAI pathway with realistic dates, shelf-life and logistics math, and channel economics including q-commerce terms. Full entry adds the distributor search to signature. If your shelf life cannot survive the supply chain your price point needs, we tell you in week three - not after the first rejected consignment.",
+      "faq": [
+        {"q": "What is required to import and sell food products in India?", "a": "FSSAI central licence for import, product compliance with Indian standards, compliant labels (declarations, veg/non-veg marking, date formats), and shelf-life headroom at port - plus category-specific requirements. The pathway is predictable when sequenced early; it is a launch-killer when discovered at customs."},
+        {"q": "How long does FSSAI registration take for a foreign brand?", "a": "The licence itself moves in weeks; the real calendar is product and label compliance - reformulation where standards differ, label redesign, and first-consignment sampling. Plan 2-4 months from decision to compliant landed stock, hero SKUs first."},
+        {"q": "What are the labelling requirements for imported food in India?", "a": "Mandatory declarations including ingredients, allergens, nutritional panel, veg/non-veg symbol, importer details and dates in the prescribed format - applied before customs clearance, not after. Sticker-labelling at port is permitted within rules but fragile at scale; print-compliant packaging wins."},
+        {"q": "Should we enter Indian retail through quick commerce or modern trade?", "a": "For impulse and specialty F&B, q-commerce is often the fastest proof of demand at the lowest listing cost; modern trade builds the volume base. The winning entries choreograph both - and use velocity data from the first channel to negotiate the second."},
+        {"q": "How do we handle cold chain distribution in India?", "a": "By respecting its patchiness: chilled and frozen categories need distributor partners with verified cold-chain assets - which our capability audits inspect physically, not contractually. Ambient and long-dated formats travel first; cold-dependent SKUs follow proven partners."}
+      ]
+    },
+    {
+      "type": "landing",
+      "path": "/market-entry/india-entry-industrial-medical-equipment.html",
+      "meta_title": "Sell Industrial & Medical Equipment in India | Channel + Regulatory Entry | GreyRadius",
+      "meta_description": "India entry for industrial and medical equipment makers - service-capable channel partners, CDSCO and BIS pathways, reference-install strategy and public procurement. Equipment sells on references; we build them.",
+      "h1": "India entry for industrial and medical equipment - references sell machines",
+      "sub": "Equipment does not sell on brochures in India; it sells on reference installs, service coverage and financing terms. The first channel partner decides all three - which makes partner selection the entry decision, and service-capability auditing the diligence that matters. Our playbook builds the channel and the reference base together.",
+      "stat_pills": ["Manufacturing and healthcare capex at record levels", "Service-capability audits - physical, not contractual", "CDSCO and BIS pathways run in parallel"],
+      "who_this_is_for": [
+        {"title": "Industrial equipment and precision machinery makers", "text": "Machine tools, automation components, test and measurement - your buyers are India's expanding factories, and they buy from whoever can service what they sell."},
+        {"title": "Medical device and consumables companies", "text": "CDSCO registration, hospital procurement dynamics and a distribution landscape split between national players and specialist regionals."},
+        {"title": "Equipment companies with a few Indian installs already", "text": "Opportunistic exports proved demand; a real channel architecture converts enquiries into a business with service revenue attached."}
+      ],
+      "why_now": {
+        "heading": "Why India, why now - for equipment makers",
+        "points": [
+          "India's manufacturing capex cycle is the corridor's strongest demand signal: PLI-backed plants, automation catch-up and quality upgrading all buy imported equipment - and buy service contracts with it.",
+          "Healthcare infrastructure is compounding - hospital chains expanding, diagnostics scaling, public procurement modernising - and import dependence in devices remains high while domestic manufacturing matures.",
+          "The service-coverage bar is rising: Indian buyers have been burned by orphaned equipment, and vendors who arrive with credible service architecture win against cheaper competitors who cannot commit to uptime."
+        ]
+      },
+      "method_intro": "For equipment mandates, phase 5's capability audit goes physical: service workshops inspected, engineer rosters verified, spare-parts inventories counted - because your uptime promise will be kept or broken by the partner's bench.",
+      "regulatory": {
+        "heading": "CDSCO, BIS and the equipment rulebook",
+        "text": "Medical devices require CDSCO registration with risk-class-dependent pathways and an Indian authorised agent; many industrial and electronic products fall under BIS mandatory certification with foreign-manufacturer factory audits. Public procurement adds preference rules for local content that shape channel and assembly decisions. All three run as phase 3 workstreams with specialist partners - resolved before channel commitments, priced into the entry model."
+      },
+      "proof": [
+        {"tag": "Japanese STEM education company - engagement snapshot", "text": "Hardware distribution mandate with BIS certification and import feasibility in parallel - the equipment-entry pattern in execution."},
+        {"tag": "Cross-border plant acquisition TEV, completed", "text": "Technology condition, order-book quality and viability lens on an operating plant purchase - machinery-schedule-level diligence capability."},
+        {"tag": "Rs 800 Cr conveyor feasibility, completed", "text": "Three routes evaluated, vendors shortlisted, an 18-month implementation plan - capital equipment decisions built on evidence."},
+        {"tag": "US hospital chain - Canada entry, completed", "text": "Healthcare market entry discipline: regulatory, payer and competitive reality mapped before commitment."}
+      ],
+      "transparency": "An equipment-sector Diagnostic runs 3-4 weeks fixed-fee: demand validation across buyer segments, CDSCO/BIS applicability with realistic dates, service-coverage requirements and channel economics. Full entry adds the physically-audited partner search to signature. Reference-install strategy - which first customers to win at what terms - is part of the roadmap, because the first three installs are marketing assets, not just revenue.",
+      "faq": [
+        {"q": "How do we sell industrial equipment in India?", "a": "Through service-capable channel partners and reference installs: buyers check uptime commitments and existing installations before price. The entry sequence that works - validate demand by segment, appoint audited partners with service obligations priced in, win 2-3 lighthouse installs at strategic terms, then scale on references."},
+        {"q": "What is CDSCO registration for medical devices and how long does it take?", "a": "India's device registration runs risk-class pathways (A through D) with an Indian authorised agent requirement; timelines run months and vary by class and documentation readiness. It belongs at the start of the entry calendar, filed hero-products-first, with the agent decision treated as strategic - that entity holds your compliance."},
+        {"q": "Should we appoint a national distributor or regional specialists for equipment?", "a": "Equipment usually rewards specialist regionals with real service benches over national generalists with coverage claims - and public procurement, private hospitals and industrial accounts often need different partners entirely. Architecture first, appointments second."},
+        {"q": "How important is 'Make in India' and local content for equipment sales?", "a": "Decisive in public procurement - preference rules reward local content and can gate eligibility - and increasingly relevant in private capex. Many entrants sequence import-led entry with a defined trigger for local assembly; we model the crossover as part of the roadmap."},
+        {"q": "Can you help win the first reference customers, not just find distributors?", "a": "Yes - reference-install strategy is built into the launch phase: target accounts chosen for demonstration value, pursued jointly with the appointed partner, on terms that treat the first installs as the marketing investment they are."}
+      ]
+    },
+    {
+      "type": "insight",
+      "path": "/insights/fdi-routes-india-explained.html",
+      "meta_title": "FDI Routes into India Explained - Automatic vs Approval | GreyRadius",
+      "meta_description": "How foreign direct investment actually enters India - automatic route, approval route, sector caps, the operating decisions behind entity choice, and where entries get structured wrong. An operator's guide.",
+      "h1": "FDI routes into India - the operator's version, not the law firm's",
+      "tags": ["Market Entry", "India", "Regulatory"],
+      "sections": [
+        {"h2": "The two routes and what they actually mean", "body": "India admits foreign direct investment through two doors: the automatic route - no prior government approval, covering 100% ownership in most sectors - and the approval route, where a defined list of sensitive sectors requires government sign-off or carries caps. For most companies entering most sectors, the automatic route applies and the real questions are operational, not permissive: which entity form, funded how, invoicing whom. The mythology that India requires joint ventures or local majority partners is a decade out of date for the overwhelming majority of sectors."},
+        {"h2": "Where the approval route and caps still bite", "body": "The exceptions matter when they apply: multi-brand retail carries conditions that have kept most global retailers structuring creatively; insurance and defence carry caps and conditions; land-border-country investors face government approval regardless of sector - a rule with real consequences for structures involving certain shareholdings. E-commerce carries its own architecture: marketplace models permit FDI, inventory models restrict it, and the distinction shapes how foreign consumer brands structure their online play."},
+        {"h2": "Entity forms - the practical menu", "body": "The wholly-owned subsidiary (private limited company) is the default for operating businesses: full control, clean FDI compliance, standard governance. The LLP suits specific service structures. Branch and liaison offices serve narrow purposes with real activity restrictions - a liaison office cannot invoice, which surprises companies annually. And no entity at all remains a legitimate answer: distributor-led and importer-of-record structures put revenue on the ground without an Indian balance sheet, which is why the entity question belongs after the commercial design, not before it."},
+        {"h2": "The compliance reality nobody budgets", "body": "FDI brings reporting obligations - share allotment filings, annual returns, valuation certificates on share issues and transfers - plus the standing compliance of an Indian entity: statutory audit regardless of size, GST and tax filings, transfer pricing documentation where group transactions exist. None of it is prohibitive; all of it is real. Entities formed casually become compliance debt within a year - which is an argument for entering through channel structures until volume justifies the overhead."},
+        {"h2": "Sequencing: the operator's answer", "body": "The pattern that works across our mandates: commercial validation first, channel-led revenue where the category permits, entity formation when service obligations, enterprise contracts or volumes demand it - with the FDI route and structure designed at that point with specialist counsel, informed by real revenue rather than projections. Companies that incorporate first and validate second buy themselves compliance overhead and sunk-cost pressure before evidence arrives. The route into India is rarely the constraint; the sequence is the strategy."}
+      ],
+      "cta_line": "Deciding between entity-first and channel-first entry? The route-options framework prices both on your numbers.",
+      "faq": [
+        {"q": "Can a foreign company own 100% of an Indian subsidiary?", "a": "In most sectors, yes - through the automatic route with no prior approval. The exceptions are a defined list (insurance, defence, multi-brand retail among them) plus approval requirements for investors from land-border countries. For most entrants the constraint is operational readiness, not permission."},
+        {"q": "Do I need government approval to invest in India?", "a": "Usually not - the automatic route covers most sectors at 100%. Approval applies in listed sensitive sectors and for land-border-country investors. What every route carries is post-investment reporting and entity compliance, which is where unprepared entrants actually stumble."}
+      ]
+    },
+    {
+      "type": "insight",
+      "path": "/insights/how-japanese-korean-brands-win-india.html",
+      "meta_title": "How Japanese and Korean Brands Win in India - Route-to-Market Lessons | GreyRadius",
+      "meta_description": "Why some Japanese and Korean brands built billion-dollar Indian businesses while others retreated - the route-to-market patterns, price localisation decisions and channel structures that separated them.",
+      "h1": "How Japanese and Korean brands win in India - and why some never do",
+      "tags": ["Market Entry", "India", "Strategy"],
+      "sections": [
+        {"h2": "The corridor's split verdict", "body": "The APAC-to-India corridor has produced both categories of legend: Japanese and Korean companies that built market-defining Indian businesses - in automotive, consumer electronics, instant noodles, appliances - and equally capable companies that entered, struggled and retreated. The products were rarely the difference. The route-to-market decisions were: how they priced, how they built channels, how much India-specific product thinking they permitted, and how long their boards gave the compounding to work."},
+        {"h2": "Pattern one: the winners re-priced for the ladder", "body": "Every corridor success story localised its price architecture - developing India-specific products, pack sizes and price points rather than importing home-market positioning. The instant-noodle giants, the appliance leaders and the two-wheeler dominators all built for Indian price tiers explicitly, accepting lower unit margins for ladder position and letting volume and mix do the compounding. The retreats share the mirror image: premium positioning imported intact, waiting for Indian consumers to close the gap. India moves toward value creators faster than it moves toward price points."},
+        {"h2": "Pattern two: the winners treated channels as the product", "body": "The corridor's winners invested in distribution depth as a first-class asset - thousands-strong dealer networks, service coverage that reached where competitors would not, retailer relationships governed with the same discipline as manufacturing quality. Their channel partners became a moat competitors could not quickly replicate. The strugglers appointed importers and hoped: single national distributors chosen on introductions, minimal governance, surprise at drift. In distributor-led India, the channel IS the strategy - a lesson our distribution partner development practice exists to operationalise."},
+        {"h2": "Pattern three: the winners localised decision rights, not just products", "body": "Speed separated the outcomes: winners gave their India operations genuine decision authority - pricing moves, product tweaks, channel responses - within frameworks their headquarters could audit. Strugglers routed every decision through home-office consensus cycles built for slower markets, and watched Indian competitors move twice in the time one approval took. The governance design - what India decides, what HQ reviews - is an entry decision, made explicitly or by default."},
+        {"h2": "What this means for the next wave", "body": "The current corridor wave - beauty, food, education products, specialty equipment - can inherit these lessons instead of re-learning them: price for the Indian ladder from day one, treat distributor selection and governance as the strategic core, and design decision rights for Indian speed. The advantage this wave holds over its predecessors is infrastructure: e-commerce and quick commerce now give corridor brands demand evidence in weeks that the last generation waited years for. The framework that converts these lessons into an entry plan is our six-phase India entry process - evidence first, channel discipline throughout."}
+      ],
+      "cta_line": "Planning your India entry from Japan, Korea or wider APAC? Start with the corridor pages - or the Diagnostic.",
+      "faq": [
+        {"q": "Why do some foreign brands fail in India?", "a": "Three repeating causes: home-market pricing waiting for India to close the gap, channel partners chosen on introductions and left ungoverned, and decision cycles too slow for Indian market speed. All three are design choices - which means all three are avoidable at entry."},
+        {"q": "What is the biggest success factor for foreign brands in India?", "a": "Channel depth with governance, built on India-tier price architecture. Product quality is the entry ticket; distribution discipline is the compounding engine - the corridor's billion-dollar Indian businesses were built by companies that treated their dealer networks as the product."}
+      ]
+    }
+  ]
+}
