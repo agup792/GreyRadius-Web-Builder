@@ -3634,7 +3634,45 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- August 2026 additions -->
+  <!-- August 2026 additions – batch 2 (13 Aug) -->
+  <url>
+    <loc>https://greyradius.com/insights/gtm-strategy-emerging-markets.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/case-studies/vietnam-manufacturing-ecosystem-industrial-zone.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/charged/gm-saic-evgo-byd-brazil-ev-aug3-9-2026/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-signal/openai-astra-amd-microsoft-india-aug3-9-2026/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-stack/indosat-zankore-microsoft-india-coreweve-indonesia-aug3-9-2026/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-wafer/skhynix-terafab-samsung-nand-aug3-9-2026/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- August 2026 additions – batch 1 (6 Aug) -->
   <url>
     <loc>https://greyradius.com/insights/b2b-saas-pricing-india.html</loc>
     <lastmod>2026-08-06</lastmod>
