@@ -1,0 +1,188 @@
+{
+  "group": 1,
+  "canonical_base": "https://greyradius.com",
+  "shared_framework": {
+    "heading": "The India entry framework - six phases, every one ends in a named deliverable",
+    "note": "Render on all three landing pages as numbered steps, preceded by the page's method_intro line.",
+    "phases": [
+      {"n": 1, "title": "Business assessment", "text": "Working sessions inside your business: portfolio, pricing, capacity, export experience and India ambitions - so the entry plan fits the company you actually are. Deliverable: assessment memo and scope lock."},
+      {"n": 2, "title": "Opportunity sizing and validation", "text": "Category demand, price-tier fit and channel potential validated through primary research in India - buyer, retailer and distributor interviews, not database downloads. Deliverable: opportunity report with a Go / No-Go recommendation."},
+      {"n": 3, "title": "Competitive and regulatory intelligence", "text": "Competitor route-to-market mapping, trade margin benchmarks, and the regulatory pathway - certification applicability, import duty structure, labelling - resolved before commitments. Deliverable: competitive map and regulatory register."},
+      {"n": 4, "title": "GTM and commercial design", "text": "Price-pack architecture for Indian tiers, channel sequencing, revenue projection framework and working capital visibility. Deliverable: entry roadmap with commercial model."},
+      {"n": 5, "title": "Distributor search and appointment", "text": "200-300 candidates longlisted from field networks, scored to a 20-30 shortlist on capability, then negotiated - performance gates, data rights, exit mechanics - to 2-3 signed partnerships. Deliverable: signed distribution agreements."},
+      {"n": 6, "title": "Launch and governance", "text": "Launch calendar, sales cadence, partner scorecards and review governance for the first 90 days - expansion gated on milestones. Deliverable: operating launch plan and governance system."}
+    ]
+  },
+  "shared_tiers": {
+    "heading": "Three ways to engage",
+    "tiers": [
+      {"name": "Diagnostic", "duration": "3-4 weeks", "text": "Opportunity sizing and market validation only - the lowest-commitment way to get an evidence-based Go / No-Go before bigger decisions."},
+      {"name": "Full market entry", "duration": "4-6 months", "text": "Assessment through signed distributor appointments - the complete six-phase engagement, fixed-fee by phase."},
+      {"name": "Post-launch retainer", "duration": "Ongoing", "text": "Distributor management, expansion sequencing and governance after launch - so the partnerships keep performing."}
+    ]
+  },
+  "pages": [
+    {
+      "type": "landing",
+      "path": "/market-entry/india-market-entry-for-japanese-companies.html",
+      "meta_title": "India Market Entry for Japanese Companies | Distributor Search & Launch | GreyRadius",
+      "meta_description": "India market entry built for Japanese companies - phase-by-phase process with named deliverables, distributor search to signed appointment, BIS and import-regulatory work handled. Delhi-based team, India-wide execution.",
+      "h1": "India market entry for Japanese companies - process you can trust, partners you can verify",
+      "sub": "Japanese products win Indian consumers; Japanese companies lose Indian distribution - usually by choosing partners without evidence. We run a phase-gated entry with named deliverables at every step, from opportunity validation to 2-3 signed distribution partnerships, with the regulatory work done properly.",
+      "stat_pills": ["200-300 distributor candidates longlisted per mandate", "Certification and import workstreams run in parallel", "Delhi headquarters - your India-side team"],
+      "who_this_is_for": [
+        {"title": "Japanese SMEs and brands with no India entity", "text": "Revenue in the $5M-150M range, established at home, considering India because domestic demand has plateaued, the export push is on, or a competitor already moved."},
+        {"title": "Heads of overseas business", "text": "You answer for the India decision and need structured process with deliverables your board can inspect - not consulting theatre."},
+        {"title": "Companies burned by a first attempt", "text": "An exhibition lead became a distributor became a disappointment. The second entry deserves scoring, references and gates."}
+      ],
+      "why_now": {
+        "heading": "Why India, why now - for Japanese companies",
+        "points": [
+          "Indian consumers pay premiums for Japanese quality in beauty, food, education products and precision equipment - the 'Japan quality' halo is a real pricing asset when channelled correctly.",
+          "Japan-India economic cooperation is at a policy peak: trade frameworks, investment corridors and government export support make this the supported decade, and the trade-body infrastructure (JETRO's India offices, JCCII) exists to help - we work alongside it, not around it.",
+          "Chinese-origin components in Japanese-assembled products raise certification and import questions at Indian customs - answerable, but only when addressed before shipment, not after seizure."
+        ]
+      },
+      "method_intro": "Every phase produces a deliverable you can review in Tokyo before approving the next - transparency by design, because that is how Japanese boards decide.",
+      "regulatory": {
+        "heading": "The regulatory reality - handled in parallel, not discovered late",
+        "text": "BIS certification applicability (including for products with Chinese-origin components exported from Japan), import duty and GST structure, labelling and packaging compliance, and category-specific registrations run as a parallel workstream from phase 3 - so your launch date is set by strategy, not by customs surprises. We coordinate specialist certification partners where formal filings are required."
+      },
+      "proof": [
+        {"tag": "Japanese beauty and wellness brand - engagement snapshot", "text": "India distribution partner development in progress: 200-300 organisations longlisted, capability-scored toward a 20-30 shortlist for structured evaluation and appointment."},
+        {"tag": "Japanese STEM education company - engagement snapshot", "text": "Distribution partnership mandate targeting 2-3 signed India partners, with BIS certification and import-regulatory feasibility run as a parallel workstream."},
+        {"tag": "International FMCG brand - India entry, completed", "text": "National distributor onboarded in 10-14 weeks, modern trade listings across 4-6 metros, first commercial revenue inside 120 days."},
+        {"tag": "Fresh foods CPG - Bengaluru GTM, completed", "text": "400+ consumer touchpoints, 7 micro-markets scored, an 18-month expansion blueprint executed with the founder team."}
+      ],
+      "transparency": "The Diagnostic tier runs 3-4 weeks at a fixed fee - a fraction of one trade-fair booth, for an evidence-based Go / No-Go. Full market entry is priced by phase with each phase gated on your approval. Japanese-language support is available for working sessions and documentation through our partner network - ask in the first call.",
+      "faq": [
+        {"q": "How do Japanese companies typically enter the Indian market?", "a": "Most successful entries in distributor-led categories follow the same path: opportunity validation, regulatory clearance run in parallel, then a scored distributor search to signed appointment - with a subsidiary considered only after channel proof. Direct subsidiary-first entries suit companies with existing India revenue or service obligations; our route-options framework prices both against your case."},
+        {"q": "How do we find a trustworthy distributor in India from Japan?", "a": "Not from exhibition booths: field-network longlisting of 200-300 candidates, capability scoring to 20-30, reference checks with current principals and retailers, then negotiation with performance gates and exit mechanics. Trust is engineered through process, and the scoring is shared with you at every stage."},
+        {"q": "Does BIS certification apply to our products?", "a": "It depends on category - BIS mandatory certification lists cover electronics, toys, steel products, appliances and more, and Chinese-origin components in Japanese-assembled products raise additional scrutiny. We resolve applicability in phase 3 and coordinate certified filing partners where needed, before any inventory moves."},
+        {"q": "How long does India market entry take for a Japanese company?", "a": "Diagnostic: 3-4 weeks. Full entry through signed distributor appointments: typically 4-6 months depending on category and certification lead times. First revenue timing then depends on channel type - our roadmaps set it against milestones, not hope."},
+        {"q": "Do you work with JETRO and Japanese trade bodies?", "a": "We work alongside the Japan-India trade ecosystem - JETRO's India offices, JCCII and sector associations - as an India-side execution partner. Trade bodies open doors and provide market perspective; our role is the on-the-ground work those introductions need next: validation, distributor search and appointment."}
+      ]
+    },
+    {
+      "type": "landing",
+      "path": "/market-entry/india-distribution-partner-development.html",
+      "meta_title": "India Distributor Search & Distribution Partner Development | GreyRadius",
+      "meta_description": "Find, score and sign India distributors as a fixed-phase engagement: 200-300 candidates longlisted, scored to 20-30, negotiated to 2-3 signed partnerships - with performance gates, data rights and governance built in.",
+      "h1": "India distribution partner development - from 300 candidates to 3 signed partners",
+      "sub": "This is the named practice behind our market entry work: a search-to-signature engagement that longlists 200-300 organisations, scores them to a defensible shortlist, and negotiates 2-3 signed distribution partnerships with gates that keep them performing. Fixed phases, named deliverables, no placement fees from distributors - ever.",
+      "stat_pills": ["200-300 longlisted, scored to 20-30, signed to 2-3", "Zero placement fees from distributors - unconflicted", "Search to signature in 8-14 weeks"],
+      "who_this_is_for": [
+        {"title": "Foreign brands entering India", "text": "APAC, Gulf, European or American - if your category sells through channel partners in India, this engagement is the entry mechanism."},
+        {"title": "Brands replacing an underperforming distributor", "text": "Switching has a cost; staying has a bigger one. Alternatives and benchmarks create the leverage a renegotiation needs."},
+        {"title": "Companies scaling from one region to national", "text": "Your first distributor covered one territory; national needs an architecture, not a bigger promise from the same partner."}
+      ],
+      "why_now": {
+        "heading": "Why partner selection is the entry decision",
+        "points": [
+          "In distributor-led categories, your partner IS your market presence: retailer relationships, credit risk, execution energy and your brand's reputation all route through one signature.",
+          "India's channel landscape is mid-transformation - quick commerce, modern trade consolidation and B2B platforms are re-sorting which distributors will matter in five years; scoring for tomorrow's capability beats buying yesterday's coverage.",
+          "The failure pattern is universal: enthusiastic partner, honeymoon quarter, drift, dispute. Every clause that prevents it is negotiated before signature or purchased painfully after."
+        ]
+      },
+      "method_intro": "Phases 5-6 of our entry framework run here in full depth - and phases 1-4 compress into a rapid calibration so the search targets partners for the business you are, not the brochure you sent.",
+      "regulatory": {
+        "heading": "Agreements built for Indian channel reality",
+        "text": "Our negotiation stage builds agreements around the five clauses that decide who owns your market: performance gates with consequences, customer data rights, pricing control boundaries, marketing obligations, and exit mechanics including stock buy-back. Margin is the loud negotiation; these are the quiet ones that matter - and we carry cross-mandate benchmarks into every one."
+      },
+      "proof": [
+        {"tag": "Japanese beauty and wellness brand - engagement snapshot", "text": "200-300 organisation longlist under capability scoring toward structured evaluation and appointment - the full search-to-signature process in motion."},
+        {"tag": "International FMCG brand - completed", "text": "Capability-led screening replaced footprint-led selection: national distributor onboarded in 10-14 weeks, first revenue inside 120 days."},
+        {"tag": "Japanese STEM education company - engagement snapshot", "text": "School-channel distribution mandate targeting 2-3 signed partnerships by fiscal year-end, with regulatory feasibility in parallel."}
+      ],
+      "transparency": "Search-to-signature runs 8-14 weeks at a fixed fee independent of which partners are selected - we take nothing from distributors, which is exactly why our shortlists can be trusted. The distributor economics benchmarks we negotiate with typically recover the fee in the first agreement. Post-signature governance is available as a retainer.",
+      "faq": [
+        {"q": "How do I find a distributor in India for my product?", "a": "Field-network longlisting (not directory scrapes), capability audit across infrastructure, category depth, financial capacity and reference checks made with retailers and current principals, then benchmarked negotiation. The process runs 8-14 weeks; shortcuts show up as disputes in year two."},
+        {"q": "What does a distributor search service cost in India?", "a": "We work fixed-fee by engagement scope - shared in the first call - and take no placement or success fees from distributors, so the recommendation is never for sale. Against the cost of one failed appointment (typically 18-24 lost months plus brand damage), the fee is the cheap part of the decision."},
+        {"q": "What commission or margin do Indian distributors take?", "a": "General trade FMCG typically runs 5-8% distributor and 10-15% retailer margins; equipment and specialty categories run wider distributor margins against service obligations; modern trade and e-commerce add promotion loads. We build your full channel waterfall from live trade interviews before pricing is locked - and benchmark every term against our mandate data."},
+        {"q": "Should we appoint one national distributor or several regional ones?", "a": "Rarely one, at entry: performance-gated regional appointments preserve leverage and let evidence allocate territory. National exclusivity is something a partner earns with velocity, not a signing incentive - and the agreement should say so explicitly."},
+        {"q": "Can you manage the distributor relationship after signing?", "a": "Yes - the post-launch retainer covers scorecards, review cadence, enablement and expansion sequencing. Unmanaged partners drift within two quarters; governed ones compound."}
+      ]
+    },
+    {
+      "type": "landing",
+      "path": "/market-entry/india-entry-route-options.html",
+      "meta_title": "How to Enter the Indian Market - Entry Routes Compared | GreyRadius",
+      "meta_description": "Distributor, subsidiary, joint venture or digital-first - the four routes into India compared on cost, control, speed and risk, with a decision framework priced on your numbers. From the team that executes all four.",
+      "h1": "How to enter the Indian market - four routes, one honest comparison",
+      "sub": "Most India entry advice sells you the route the adviser happens to sell. We execute all four - distributor-led, wholly-owned subsidiary, joint venture and digital-first - so the comparison on this page is a framework, not a funnel. Bring your numbers; the right route falls out.",
+      "stat_pills": ["4 entry routes, one decision framework", "Priced with your numbers, not averages", "Route changes are expensive - choose once"],
+      "who_this_is_for": [
+        {"title": "First-time India entrants", "text": "The route decision shapes everything downstream - tax, control, speed, working capital. It deserves a framework before it gets an opinion."},
+        {"title": "Companies outgrowing their current route", "text": "The distributor got you here; the subsidiary question is on the table. Timing the switch is a modelled decision, not a mood."},
+        {"title": "Boards reviewing an India proposal", "text": "Someone proposed a JV. The framework tests whether the partner solves a real constraint or just felt safer."}
+      ],
+      "why_now": {
+        "heading": "The four routes - what each buys and costs",
+        "points": [
+          "Distributor-led: fastest to revenue, lowest fixed cost, least control - right for brand and product companies in channel-led categories testing depth before committing capital.",
+          "Wholly-owned subsidiary: full control and margin, 3-6 months to operational, carries compliance overhead and working capital - right when service obligations, enterprise sales or manufacturing demand presence.",
+          "Joint venture: solves real constraints (regulated sectors, government proximity, manufacturing scale) at the price of governance complexity - right when the partner brings something you verifiably cannot build.",
+          "Digital-first: marketplaces and D2C validate demand at the lowest entry cost in eligible categories - right as a proving ground, rarely as the end state."
+        ]
+      },
+      "method_intro": "Phases 1-4 of our framework drive this decision: your business reality, validated demand, the regulatory map and the commercial model - then the route is arithmetic, not argument.",
+      "regulatory": {
+        "heading": "The structures behind the routes",
+        "text": "FDI entry rules (automatic route for most sectors, approval route for a defined list), subsidiary formation and compliance obligations, JV governance and exit design, import structures for distributor-led models, and marketplace eligibility rules for digital-first entries - mapped in phase 3 so the route decision is made with the legal reality priced in. We coordinate specialist legal and tax partners for formal structuring."
+      },
+      "proof": [
+        {"tag": "Phased entry that avoided premature capex", "text": "A board approved trading-first entry with a defined order-book trigger for local assembly - deferring a USD 12M commitment until evidence justified it."},
+        {"tag": "Distributor-led consumer entry - completed", "text": "Metro-first, capability-led distribution reaching first revenue inside 120 days without an entity commitment."},
+        {"tag": "Acquisition-route industrial entry", "text": "Cross-border plant acquisition TEV - the fifth route, for when buying an operating position beats building one."}
+      ],
+      "transparency": "The route decision is the core of our Diagnostic tier: 3-4 weeks, fixed fee, ending in a route recommendation with your numbers in the model and an implementation plan for the chosen path. If the answer is 'not yet', we say so - a funded defer with a trigger beats a proud entry into the wrong year.",
+      "faq": [
+        {"q": "What is the best way to enter the Indian market?", "a": "The one your category, capital and control needs select - distributor-led for channel categories testing depth, subsidiary for service-heavy and enterprise models, JV where regulation or scale demands a partner, digital-first as a low-cost proving ground. Generic answers are how wrong routes get chosen; the framework on this page exists to replace them."},
+        {"q": "Can a foreign company sell in India without a local entity?", "a": "Yes - through distributors and importers-of-record in most categories, and through marketplace structures in eligible ones. Entity formation becomes necessary when service obligations, enterprise contracts or manufacturing enter the picture; sequencing it after channel proof is often the capital-efficient path."},
+        {"q": "How much FDI is allowed in India and through which route?", "a": "Most sectors permit 100% FDI through the automatic route; a defined list (defence beyond thresholds, insurance, multi-brand retail among them) requires government approval or carries caps. The practical question is rarely the ceiling - it is the structure and compliance design underneath it, which we map before the route decision."},
+        {"q": "When should we switch from a distributor to our own subsidiary?", "a": "When the arithmetic flips: channel margin retained exceeds subsidiary running costs at your volume, or when service, enterprise or product-line decisions demand control. We model the crossover point explicitly - switching too early burns capital, too late burns growth."},
+        {"q": "Is a joint venture necessary to do business in India?", "a": "In most sectors, no - the mandatory-JV era ended years ago. A JV is justified only when the partner solves a verifiable constraint: regulatory access, manufacturing scale, government proximity. 'It felt safer' is the most expensive JV rationale in India's corporate history."}
+      ]
+    },
+    {
+      "type": "insight",
+      "path": "/insights/bis-certification-india-foreign-products.html",
+      "meta_title": "BIS Certification for Foreign Products Entering India - The Basics | GreyRadius",
+      "meta_description": "Does BIS certification apply to your product? Mandatory certification lists, the foreign manufacturer pathway, Chinese-origin component questions, timelines and costs - explained for exporters entering India.",
+      "h1": "BIS certification for foreign products entering India - what exporters need to know",
+      "tags": ["Market Entry", "India", "Regulatory"],
+      "sections": [
+        {"h2": "What BIS certification is and when it is mandatory", "body": "The Bureau of Indian Standards operates mandatory certification schemes covering an expanding list of product categories - electronics and IT hardware, toys, steel products, appliances, footwear, chemicals and more. If your product appears in a mandatory list (under the ISI mark scheme or the Compulsory Registration Scheme for electronics), it cannot legally be imported or sold in India without certification. The lists expand through Quality Control Orders issued sector by sector, which means a product exempt last year may be covered this year - applicability must be checked against current orders, not past experience."},
+        {"h2": "The foreign manufacturer pathway", "body": "Foreign manufacturers certify through the Foreign Manufacturers Certification Scheme: application, factory audit by BIS officials at your overseas plant, product testing in BIS-recognised labs, and an Indian authorised representative to hold local responsibility. Plan realistically for a multi-month process - audit scheduling for overseas plants is the common bottleneck - and treat the authorised representative decision seriously: that entity carries compliance obligations on your behalf."},
+        {"h2": "The Chinese-origin component question", "body": "A recurring issue for Japanese, Korean and Southeast Asian exporters: products assembled at home with Chinese-origin components face additional scrutiny at Indian customs, and in some categories the component origin affects certification and import treatment. This is answerable - with component-level documentation, origin mapping and correct declarations prepared in advance. Discovered at port, the same question strands inventory; resolved in planning, it is paperwork."},
+        {"h2": "Timelines, costs and the sequencing mistake", "body": "Certification timelines run from weeks (registration schemes with existing test reports) to several months (factory-audit routes for first-time applicants). The sequencing mistake we see repeatedly: companies sign distributors, book launch dates and then start certification - putting a regulator on the critical path of a commercial promise. The correct order runs certification applicability in the same phase as market validation, files early for covered products, and lets the launch calendar absorb reality instead of colliding with it."},
+        {"h2": "How this fits an entry plan", "body": "In our India entry framework, regulatory intelligence is phase 3 - run in parallel with commercial design, so distributor negotiations and certification progress together. Where formal filings are needed we coordinate specialist certification partners while owning the overall pathway. If you are assessing whether BIS applies to your product line, that answer is part of our 3-4 week Diagnostic - along with whether the market case justifies the filing at all."}
+      ],
+      "cta_line": "Assessing India entry for a certification-covered product? The Diagnostic answers applicability and opportunity together.",
+      "faq": [
+        {"q": "How long does BIS certification take for a foreign company?", "a": "From a few weeks under registration schemes (electronics with ready test reports) to several months under factory-audit routes - overseas audit scheduling is the usual bottleneck. File early and keep certification off your launch-critical path."},
+        {"q": "Do products with Chinese components need special treatment at Indian customs?", "a": "They face additional scrutiny in several categories, and origin can affect certification and duty treatment. Component-level origin documentation prepared in advance turns a port problem into paperwork."}
+      ]
+    },
+    {
+      "type": "insight",
+      "path": "/insights/india-distributor-margins-economics-benchmarks.html",
+      "meta_title": "Distributor Margins in India - Economics and Benchmarks for Foreign Brands | GreyRadius",
+      "meta_description": "What Indian distributors actually earn and expect - margin benchmarks by channel, credit cycle realities, trade spend loads and the agreement terms that matter more than margin. From live mandate data.",
+      "h1": "Distributor economics in India - the benchmarks foreign brands negotiate blind",
+      "tags": ["Market Entry", "India", "Distribution"],
+      "sections": [
+        {"h2": "The margin waterfall nobody shows you", "body": "Foreign brands negotiate Indian distribution agreements knowing their home-market margins and almost nothing else. The Indian waterfall differs by channel: general trade FMCG typically runs 5-8% distributor margin and 10-15% retailer margin; specialty and equipment categories run wider distributor margins (often 15-30%) against service and inventory obligations; modern trade adds listing fees and promotion participation; quick commerce and e-commerce load commissions and advertising on top. The number that matters is not any single margin - it is your landed-cost-to-consumer-price waterfall, built line by line for each channel you intend to use."},
+        {"h2": "Credit cycles - the term that sinks entrants", "body": "Indian trade runs on credit: distributor-to-retailer credit of 15-45 days is standard, and distributors pass working capital pressure upstream. Foreign brands accustomed to letter-of-credit exports discover that competitive Indian terms mean funding the channel - and the entrants who ignore this choke at month six, precisely when velocity starts. Working capital design belongs in the entry model, not in the first crisis call."},
+        {"h2": "Trade spend is a load, not an option", "body": "Schemes, retailer margins on promotions, visibility payments and launch support are structural in Indian trade - budget them as a percentage of revenue from day one. Brands that arrive with ex-factory pricing logic and no trade-spend line either lose shelf presence or destroy their own margin reacting quarter by quarter."},
+        {"h2": "The five clauses worth more than two margin points", "body": "Across our mandates, the agreements that age well share five clauses: performance gates with defined consequences, customer and sell-through data rights, pricing control boundaries, explicit marketing obligations, and exit mechanics including stock buy-back terms. Margin is the loud negotiation; these five are the quiet ones that decide who owns your market when the honeymoon ends. Distributors negotiate these agreements every month; foreign brands negotiate them once - benchmarks are how the asymmetry gets corrected."},
+        {"h2": "Using benchmarks in a live negotiation", "body": "We maintain distributor economics benchmarks from live mandates - margins by channel and category, credit norms, trade spend loads, gate structures - and carry them into every negotiation we run. The predictable result: terms typically improve by more than the cost of the engagement, and both sides sign an agreement that survives, because it was priced on evidence rather than bravado. The full benchmark sheet is part of our distribution partner development engagements; the Diagnostic includes a category-specific view."}
+      ],
+      "cta_line": "Negotiating Indian distribution terms this quarter? Ask for the category benchmark view before you table numbers.",
+      "faq": [
+        {"q": "What margin should I offer an Indian distributor?", "a": "Channel and category set the band: 5-8% in general trade FMCG, 15-30% in specialty and equipment against service obligations - but the right answer comes from your full waterfall and what you are asking the partner to fund and do. Benchmarks beat guesses; obligations should price into margin explicitly."},
+        {"q": "What payment terms do Indian distributors expect from foreign brands?", "a": "Advance or LC terms are achievable at entry but cost you partner quality and velocity; competitive terms mean extending credit as trust builds, typically staged against performance. Design the credit path into the agreement rather than discovering it in renegotiation."}
+      ]
+    }
+  ]
+}
