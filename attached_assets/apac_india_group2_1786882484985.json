@@ -1,0 +1,187 @@
+{
+  "group": 2,
+  "canonical_base": "https://greyradius.com",
+  "shared_framework_note": "IDENTICAL to group 1 - reuse the shared_framework (6 phases) and shared_tiers (3 tiers) blocks already built into the group 1 pages. Render the same way: numbered 6-step block preceded by each page's method_intro, then the 3 tier cards.",
+  "pages": [
+    {
+      "type": "landing",
+      "path": "/market-entry/india-market-entry-for-korean-companies.html",
+      "meta_title": "India Market Entry for Korean Companies | K-Brand Distribution & Launch | GreyRadius",
+      "meta_description": "India market entry for Korean companies - convert K-wave demand into distribution, certification and revenue. Phase-gated process, distributor search to signed appointment, regulatory work in parallel.",
+      "h1": "India market entry for Korean companies - K-wave demand is real; distribution is the work",
+      "sub": "Korean beauty, food, content and consumer brands enjoy an awareness advantage in India most entrants would pay millions for. Converting it into shelf presence, compliant imports and repeatable revenue is a process problem - and process is what we sell: phase-gated, deliverable-named, from opportunity validation to 2-3 signed distribution partnerships.",
+      "stat_pills": ["K-beauty and K-food demand at all-time Indian highs", "200-300 distributor candidates scored per mandate", "Certification and import workstreams in parallel"],
+      "who_this_is_for": [
+        {"title": "Korean brands with no India entity", "text": "Revenue $5M-150M, proven at home and in Southeast Asia, watching Indian demand signals - and competitors - grow without you."},
+        {"title": "Heads of overseas business under export push", "text": "Government export programmes and saturated domestic demand both point the same direction; the board wants a structured India answer, not an experiment."},
+        {"title": "Brands selling through unofficial channels today", "text": "Grey-market imports prove your demand and damage your pricing. An official channel strategy captures what leakage is currently proving."}
+      ],
+      "why_now": {
+        "heading": "Why India, why now - for Korean companies",
+        "points": [
+          "The K-wave halo is commercial, not cultural trivia: Korean beauty, food and lifestyle products carry built-in awareness with young urban Indian consumers - a customer acquisition subsidy most foreign brands never get.",
+          "Korea-India trade infrastructure is mature and underused: CEPA tariff preferences apply to qualifying Korean-origin goods, and the KOTRA/KOCHAM ecosystem provides the introductions - what it does not provide is India-side execution, which is where we sit.",
+          "The grey market is validating demand for Korean products daily - unofficial imports at premium prices are market research someone else is monetising. Official channels with proper certification capture it back."
+        ]
+      },
+      "method_intro": "Every phase ends in a deliverable reviewable in Seoul before the next begins - and CEPA origin benefits are modelled into the commercial design from phase 3, not discovered after pricing is set.",
+      "regulatory": {
+        "heading": "The regulatory reality - CEPA, certification and imports",
+        "text": "Korea-India CEPA tariff preferences apply to qualifying Korean-origin goods - origin documentation done right is a margin line, not paperwork. Category regulations run in parallel: CDSCO import registration for cosmetics, FSSAI for food, BIS for covered electronics and appliances, labelling and packaging compliance throughout. We resolve applicability in phase 3 and coordinate specialist filing partners where required, keeping regulators off your launch-critical path."
+      },
+      "proof": [
+        {"tag": "Japanese beauty and wellness brand - engagement snapshot", "text": "The corridor playbook in motion: 200-300 distribution candidates longlisted and capability-scored toward structured appointment - the same process Korean mandates follow."},
+        {"tag": "International FMCG brand - India entry, completed", "text": "National distributor onboarded in 10-14 weeks, modern trade listings across 4-6 metros, first revenue inside 120 days."},
+        {"tag": "Fresh foods CPG - Bengaluru GTM, completed", "text": "400+ consumer touchpoints, 7 micro-markets scored, an 18-month expansion blueprint executed with the founder team."}
+      ],
+      "transparency": "The Diagnostic runs 3-4 weeks at a fixed fee: opportunity sizing, CEPA and certification applicability, and a Go / No-Go your board can inspect. Full entry is priced by phase and gated on your approval at each step. Korean-language support for working sessions and documentation is available through our partner network - ask in the first call.",
+      "faq": [
+        {"q": "How can Korean companies enter the Indian market?", "a": "The proven path for brand and product companies: validate the opportunity with primary research, resolve CEPA and certification questions in parallel, design India-tier pricing, then run a scored distributor search to signed appointment. Subsidiaries come after channel proof for most categories - our route framework prices the alternatives on your numbers."},
+        {"q": "Does the Korea-India CEPA reduce import duties for our products?", "a": "For qualifying Korean-origin goods in covered categories, yes - meaningfully. Capturing it requires correct origin documentation and classification, which we build into the commercial model from the start; brands that ignore CEPA hand back margin their competitors keep."},
+        {"q": "How big is the K-beauty and K-food opportunity in India?", "a": "Large and compounding: Korean beauty is among the fastest-growing import segments in Indian e-commerce and specialty retail, and K-food is following the same curve. The honest caveat is price architecture - Indian tiers, pack sizes and channel margins decide whether awareness converts to volume."},
+        {"q": "How do we stop grey-market imports of our products in India?", "a": "By out-competing them: an official channel with proper registration, competitive landed pricing and retail presence converts grey demand into governed revenue. Legal enforcement alone rarely works; channel strategy does."},
+        {"q": "Do you work with KOTRA and Korean trade organisations?", "a": "We work alongside the Korea-India trade ecosystem - KOTRA offices and KOCHAM - as an India-side execution partner. Introductions and market perspective come from the ecosystem; validation, distributor search and appointment is the work we do next."}
+      ]
+    },
+    {
+      "type": "landing",
+      "path": "/market-entry/india-market-entry-for-singapore-companies.html",
+      "meta_title": "India Market Entry from Singapore | Regional HQ India Strategy | GreyRadius",
+      "meta_description": "For Singapore-headquartered companies and regional HQs holding the India decision - evidence-grade entry assessment, structure design and execution from a partner with teams on Indian ground.",
+      "h1": "India market entry from Singapore - for the HQ that owns the decision",
+      "sub": "Singapore is where the India decision gets made - by regional GMs, family businesses and global subsidiaries holding APAC mandates. What the decision needs is not another strategy deck: it is evidence from the Indian ground, a structure that fits your holding logic, and an execution partner who stays past the recommendation.",
+      "stat_pills": ["Singapore office - same-timezone partnership", "India teams in Delhi - on-the-ground execution", "Diagnostic to signed distributors in one engagement"],
+      "who_this_is_for": [
+        {"title": "Regional HQs holding the India mandate", "text": "The global parent wants an India answer; you own delivering it. The board deck needs primary evidence, not synthesis of syndicated reports."},
+        {"title": "Singapore-grown companies going regional", "text": "You won Singapore and maybe Malaysia; India is the scale question - with complexity your home playbook has not met."},
+        {"title": "Family businesses and trading houses", "text": "India relationships exist informally; converting them into structured distribution or JV positions needs diligence the relationship itself cannot provide."}
+      ],
+      "why_now": {
+        "heading": "Why India, why now - from Singapore",
+        "points": [
+          "The India-Singapore corridor is one of the world's densest for capital and trade: CECA frameworks, deep flight connectivity and shared business language make Singapore the natural staging point - and India the natural growth answer to Singapore's small home market.",
+          "Global capability and sourcing shifts route through Singapore HQs: parents are asking their regional offices for India strategies, and the offices that respond with evidence win the mandate and the budget.",
+          "Singapore's advantage is decision speed - but only when the India-side facts are real. Desk research from Marina Bay produces the same deck everyone else has; ground evidence is the differentiator."
+        ]
+      },
+      "method_intro": "For Singapore HQs we run the framework same-timezone: working sessions in Singapore, evidence-gathering in India, and phase deliverables built board-ready - because your output is usually someone else's approval.",
+      "regulatory": {
+        "heading": "Structure follows the holding logic",
+        "text": "Singapore-to-India structures carry real optionality: direct subsidiary, Singapore-holding routing, distributor-led entry without an entity, or acquisition. Tax treaties, transfer pricing and substance rules shape the answer alongside the commercial case - we map the structural options in phase 3 with specialist tax counsel coordinated where formal structuring is required, so the entry recommendation arrives with its legal architecture attached."
+      },
+      "proof": [
+        {"tag": "Regional expansion strategy, completed", "text": "International expansion across Southeast Asia for a metals player - a structured multi-market contest that picked the right market before commitment; the same discipline runs India-ward."},
+        {"tag": "E-learning platform - GCC expansion, completed", "text": "Market entry strategy for a platform expanding out of its home market - regulation, localisation and channel structure driving the sequencing decision."},
+        {"tag": "Phased entry that avoided premature capex", "text": "A board approved trading-first entry with a defined order-book trigger - deferring a USD 12M commitment until evidence justified it."}
+      ],
+      "transparency": "The Diagnostic runs 3-4 weeks fixed-fee with working sessions in Singapore and research in India - built to be forwarded to a global parent as-is. Full entry pricing is phase-gated. If the evidence says defer, the deliverable says defer, with the trigger conditions that would change the answer.",
+      "faq": [
+        {"q": "How should a Singapore company structure its India entry?", "a": "Against the holding logic: direct subsidiary for control, Singapore-holding structures where treaty and capital-routing logic favours them, distributor-led entry where channel proof should precede entity cost, acquisition where speed justifies premium. The commercial case picks first; the structure follows with tax counsel - not the reverse."},
+        {"q": "Why do India entries run from Singapore HQs fail?", "a": "Distance dressed as diligence: decisions made on syndicated reports and short market visits, partners chosen from introductions rather than scored searches, and pricing imported from Southeast Asian playbooks. Every one of these is avoidable with ground evidence - which is the entire reason our India teams exist."},
+        {"q": "Can you work with our global parent's requirements?", "a": "That is the design: phase deliverables built board-ready - evidence-based, assumption-explicit, format-compatible with global strategy reviews - because the regional HQ's real output is the parent's approval."},
+        {"q": "Is India worth it compared to expanding deeper into Southeast Asia?", "a": "The honest answer is a contest, not an assumption: India offers scale and capability depth, SEA offers speed and familiarity. We run exactly this comparison for Singapore HQs - and the evidence has gone both ways."},
+        {"q": "Do you coordinate with Enterprise Singapore and Singapore trade bodies?", "a": "We work alongside the Singapore-India trade ecosystem - Enterprise Singapore's India desk and the chambers - as the India-side execution partner their introductions need next. Ecosystem support plus ground execution is the working combination."}
+      ]
+    },
+    {
+      "type": "landing",
+      "path": "/market-entry/india-entry-beauty-personal-care-brands.html",
+      "meta_title": "Sell Beauty Products in India | Entry Playbook for International Brands | GreyRadius",
+      "meta_description": "The India playbook for international beauty brands - CDSCO import registration, price-tier architecture, distributor and e-commerce channel design, and the counter-building partner search. J-beauty and K-beauty proven.",
+      "h1": "India entry for beauty and personal care brands - registration, price ladder, and the right counter",
+      "sub": "India's beauty market rewards international brands that respect three realities: CDSCO registration takes months not days, the price ladder decides your ceiling, and the distributor who builds your counter matters more than the one who promises coverage. Our playbook runs all three in parallel - it is the corridor we know deepest.",
+      "stat_pills": ["USD 20B+ Indian BPC market, premium growing fastest", "Beauty e-commerce compounding at 25%+", "Live J-beauty distribution mandate in execution"],
+      "who_this_is_for": [
+        {"title": "J-beauty and K-beauty brands", "text": "The awareness halo is yours already; the registration, pricing and channel work converts it into shelf presence and repeat purchase."},
+        {"title": "Global and regional beauty brands", "text": "Established in your home market and duty-free channels, watching Indian e-commerce sell competitors while your entry waits for a plan."},
+        {"title": "Derma, wellness and personal care companies", "text": "Practitioner channels, e-pharmacy and specialty retail need different entry sequencing than mass beauty - and reward it with loyalty mass channels cannot match."}
+      ],
+      "why_now": {
+        "heading": "Why India, why now - for beauty brands",
+        "points": [
+          "India's beauty and personal care market exceeds USD 20 billion with premium segments growing fastest - and category leadership positions are being set in the current five-year window, not the next one.",
+          "Channel infrastructure has matured ahead of brand saturation: beauty e-tailers, quick commerce and specialty retail give international brands entry surfaces that did not exist five years ago.",
+          "The import-beauty shelf is being built now - Korean and Japanese brands are landing monthly, retailers are allocating the space, and the brands in the first waves set the price anchors everyone else negotiates against."
+        ]
+      },
+      "method_intro": "For beauty mandates, phase 3 runs CDSCO registration in parallel with phase 4's price-pack architecture - because a registered product priced wrong and an unregistered product priced right both miss the window.",
+      "regulatory": {
+        "heading": "CDSCO registration - the clock that starts your calendar",
+        "text": "Imported cosmetics require CDSCO import registration - product-level, with ingredient compliance against Indian standards, label requirements and an Indian authorised agent. Realistic timelines run 4-9 months; hero-SKU-first filing gets you trading while the portfolio follows. Ingredient checks matter early: formulations compliant at home can carry ingredients restricted in India, and reformulation discovered late costs a season. We run the pathway with specialist filing partners inside the entry plan."
+      },
+      "proof": [
+        {"tag": "Japanese beauty and wellness brand - engagement snapshot", "text": "India distribution partner development in execution: 200-300 organisations longlisted, capability-scored toward structured evaluation and appointment for a beauty portfolio."},
+        {"tag": "International FMCG brand - India entry, completed", "text": "The consumer playbook proven: national distributor in 10-14 weeks, 4-6 metro listings, first revenue inside 120 days."},
+        {"tag": "600-institution field mapping, completed", "text": "Ground-level channel mapping capability - the same field research method that scores beauty retail and salon channels institution by institution."}
+      ],
+      "transparency": "A beauty-category Diagnostic runs 3-4 weeks fixed-fee: demand and price-tier validation, CDSCO pathway with realistic dates, and channel economics including e-commerce and quick commerce terms. Full entry adds the distributor search to signature. Registration filing costs are quoted separately by the filing partner - transparently, before you commit.",
+      "faq": [
+        {"q": "How do I sell my beauty products in India?", "a": "Four workstreams, run in parallel: CDSCO import registration (4-9 months, hero SKUs first), price-tier architecture built for Indian ladders, channel selection across beauty e-tail, quick commerce, modern trade and specialty, and a scored distributor search. Sequential execution wastes a year; parallel execution is the playbook."},
+        {"q": "Is CDSCO registration required for imported cosmetics in India?", "a": "Yes - product-level import registration with ingredient and label compliance and an Indian authorised agent, before sale. Timelines run months, which is why registration belongs at the start of the entry calendar, not after channel commitments."},
+        {"q": "Should we launch on Nykaa and e-commerce first or find a distributor?", "a": "Often both, sequenced: e-tail proves demand and price points with lower entry cost, while distribution builds the offline depth that mass volume needs. The mistake is treating them as alternatives - the winning entries choreograph them."},
+        {"q": "How should international beauty brands price for India?", "a": "On the Indian ladder, not converted home pricing: premium works in serums and treatment categories while masstige entry points recruit trial. Import duty, channel margins and trade spend must be priced into the waterfall from day one - our benchmarks make that arithmetic honest."},
+        {"q": "What makes K-beauty and J-beauty succeed or fail in India?", "a": "Succeed: awareness halo, texture innovation and routine education matched to India-tier pricing and quick-commerce-ready packs. Fail: home-market pricing, portfolio-wide registration delays and distributor selection by enthusiasm. The difference is execution order, which is exactly what the playbook governs."}
+      ]
+    },
+    {
+      "type": "landing",
+      "path": "/market-entry/india-entry-edtech-stem-education.html",
+      "meta_title": "Sell Education & STEM Products in India | School Channel Entry | GreyRadius",
+      "meta_description": "India entry for education, STEM and edtech product companies - school-channel distributor search, BIS certification for hardware, B2G pathways and institution-level field mapping. Live mandate proven.",
+      "h1": "India entry for education and STEM companies - two doors, opened together",
+      "sub": "Education products enter India through two doors at once: the distributor who reaches schools, and the regulator who certifies hardware. Companies that queue at one door while ignoring the other lose the academic year. Our playbook holds both open - with the school-channel field mapping to prove where demand actually sits.",
+      "stat_pills": ["250M+ school students - the world's largest K-12 system", "600+ institutions mapped in one field programme", "BIS toy and electronics certification handled in parallel"],
+      "who_this_is_for": [
+        {"title": "STEM, robotics and maker-education companies", "text": "Hardware plus curriculum needs school-channel distributors and BIS certification - two workstreams, one calendar, usually discovered in the wrong order."},
+        {"title": "Education content and edtech platforms", "text": "Institutional sales into India's school and higher-ed systems run on relationships and evidence - both mappable, neither improvisable."},
+        {"title": "Educational products and learning materials brands", "text": "From clay to coding kits: the school supply chain has structure, and entering it deliberately beats distributor roulette."}
+      ],
+      "why_now": {
+        "heading": "Why India, why now - for education companies",
+        "points": [
+          "India's National Education Policy pushes experiential, skill-based and coding-inclusive learning - creating institutional budgets for exactly the products STEM and maker-education companies sell.",
+          "The K-12 system is the world's largest and structurally under-equipped in hands-on learning tools - private school chains and progressive state programmes are both buying, on different cycles.",
+          "BIS certification requirements for toys and electronic learning products reshaped the import landscape - compliant entrants now face less grey-market competition than before the rules tightened, a quiet advantage for companies that do certification properly."
+        ]
+      },
+      "method_intro": "For education mandates, phase 2 includes institution-level field mapping - schools scored by curriculum, budget authority and buying context - so the distributor search in phase 5 targets partners who reach the institutions that matter.",
+      "regulatory": {
+        "heading": "BIS certification - the hardware door",
+        "text": "Toys and many electronic learning products fall under BIS mandatory certification, with factory audits for foreign manufacturers and additional scrutiny for Chinese-origin components in products assembled elsewhere. Certification timelines run months and belong at the start of the entry calendar - filed in parallel with channel work, coordinated through specialist partners, so the academic-year launch window is set by strategy rather than by the queue at the regulator."
+      },
+      "proof": [
+        {"tag": "Japanese STEM education company - engagement snapshot", "text": "India distribution partnership mandate in execution: targeting 2-3 signed partners with BIS certification and import-regulatory feasibility run as a parallel workstream."},
+        {"tag": "600-institution field mapping, completed", "text": "UAE school universe mapped institution by institution - decision makers, contacts, curriculum and buying context. The same method runs Indian school-channel mapping."},
+        {"tag": "State education programme, completed", "text": "Proposal-grade delivery framework for a multilingual LMS programme across government schools - ten-phase delivery model, five quality gates, nine-month roadmap. The B2G door, opened properly."}
+      ],
+      "transparency": "An education-sector Diagnostic runs 3-4 weeks fixed-fee: demand validation across school segments, BIS applicability with realistic dates, and channel economics for the school supply chain. Full entry adds field mapping and the distributor search to signature. Academic-year timing is unforgiving - we scope the calendar backwards from your target season.",
+      "faq": [
+        {"q": "How do we sell education products to schools in India?", "a": "Through the school supply chain's real structure: distributors and dealers who serve school clusters, direct institutional sales for chains and premium schools, and state programmes for scale. Which mix fits depends on price point and curriculum linkage - our field mapping scores the institutions before the channel gets designed."},
+        {"q": "Is BIS certification required for educational toys and STEM kits in India?", "a": "Toys under 14 years fall under mandatory BIS certification, and many electronic learning products are covered under electronics registration schemes - including foreign-manufacturer factory audit requirements. File early, hero products first; the certification calendar and the academic calendar must be reconciled, not discovered."},
+        {"q": "Should we target private schools or government programmes first?", "a": "Private and chain schools buy faster and anchor references; government programmes deliver scale on long cycles with delivery-framework procurement. The proven sequence for most entrants: private-school beachhead funding a prepared B2G pursuit - our state-programme delivery experience covers the second door."},
+        {"q": "When should we launch to match the Indian academic year?", "a": "School purchasing concentrates ahead of the April session start, with a secondary window mid-year. Working backwards - certification, distributor appointment, dealer stocking - a serious entry decision needs 9-12 months of runway before the target season."},
+        {"q": "Can you help with government education tenders in India?", "a": "Yes - programme mapping, bid/no-bid discipline, consortium design and proposal-grade delivery frameworks with phases and quality gates. Our B2G education work includes state-scale programme frameworks; the door is different from private channels and the proposal must be too."}
+      ]
+    },
+    {
+      "type": "insight",
+      "path": "/insights/import-duty-gst-india-new-entrants.html",
+      "meta_title": "Import Duty and GST in India - Fundamentals for New Entrants | GreyRadius",
+      "meta_description": "How India's import duties and GST actually hit your landed cost - BCD, cess, IGST mechanics, CEPA/FTA preferences, classification risk and the pricing mistakes foreign brands make. An operator's guide.",
+      "h1": "Import duty and GST in India - the landed-cost arithmetic every entrant gets wrong once",
+      "tags": ["Market Entry", "India", "Regulatory"],
+      "sections": [
+        {"h2": "The stack: how a landed cost is actually built", "body": "India's import charge is a stack, not a number: Basic Customs Duty (BCD) on the assessable value, social welfare surcharge on the BCD, then IGST applied on the sum of value plus duties - and for some categories, compensation cess on top. The compounding matters: a product with 20% BCD and 18% IGST does not carry '38% tax' - the IGST applies after the duty, and the true landed multiplier is higher than intuition suggests. Every pricing decision downstream inherits this arithmetic, which is why the waterfall gets built first in our entry models."},
+        {"h2": "Classification is strategy, not clerical work", "body": "Duty rates ride on HS classification, and plausible products often straddle codes with materially different rates. Classification also determines whether mandatory certifications apply and whether FTA preferences are available. Getting it right - defensibly, with rulings where stakes justify them - is commercial work: we have seen identical products land at duty rates several points apart on classification quality alone. Aggressive classification without defence invites reassessment and penalties; lazy classification donates margin."},
+        {"h2": "FTA and CEPA preferences - margin left on the table", "body": "India's trade agreements - CEPA with Korea and Japan, agreements with ASEAN, Australia and the UAE - offer preferential duty rates for qualifying origin goods. Qualification requires origin criteria compliance and certificate discipline, and the origin question gets sharp for products assembled with third-country components. Brands that build origin documentation into their supply chain capture the preference every shipment; brands that treat it as optional paperwork pay standard rates and wonder why their landed cost loses to competitors."},
+        {"h2": "GST after the border - registration, credits and cash flow", "body": "IGST paid at import is generally creditable once you are GST-registered and selling onward - meaning for a registered entity it is cash flow, not cost. But the structure decides everything: selling through a distributor who imports on their own account changes who bears and credits what; an importer-of-record structure changes it again. Working capital planning must include the GST cycle - credits arrive on the return calendar, not on the day the container clears."},
+        {"h2": "The three pricing mistakes and the fix", "body": "Mistake one: pricing from home ex-factory logic plus a guessed 'India tax' - the stack is knowable, so know it. Mistake two: ignoring preferences your origin already qualifies for. Mistake three: building the consumer price forward from landed cost instead of backward from the Indian price ladder - if the ladder will not carry your waterfall, the answer is pack architecture or supply chain redesign, not hope. In our entry framework this arithmetic is phase 4: the commercial model that decides whether the entry clears before anything is signed."}
+      ],
+      "cta_line": "Building an India landed-cost model? The Diagnostic includes your category's full duty and GST waterfall.",
+      "faq": [
+        {"q": "How much is import duty in India?", "a": "There is no single rate: BCD varies widely by HS code (0% to 100%+ across categories), plus surcharge and IGST on the duty-inclusive value - and FTA preferences can cut qualifying rates substantially. The category-specific stack is knowable in an afternoon; guessing it is how entries misprice."},
+        {"q": "Can foreign companies claim GST credit in India?", "a": "IGST paid on imports is creditable for GST-registered entities selling onward - making it cash flow rather than cost for the right structure. Whether YOUR structure captures the credit depends on who imports and who sells; that design choice belongs in the entry plan."}
+      ]
+    }
+  ]
+}
