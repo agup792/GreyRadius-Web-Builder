@@ -91,6 +91,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://greyradius.com/case-studies/kenya-fintech-market-entry.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://greyradius.com/case-studies/gearbox-distributor-india-market-entry.html</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-07-31</lastmod>
@@ -2305,6 +2311,30 @@
     <changefreq>monthly</changefreq>
     <lastmod>2026-07-08</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/charged/chinese-ev-exports-samsung-sdi-ponyai-aug10-16-2026/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-signal/nvidia-anthropic-coreweave-aug10-16-2026/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-stack/texas-sttgdc-lt-together-ai-aug10-16-2026/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greyradius.com/insights/newsletters/the-wafer/smic-applied-materials-intel-south-korea-aug10-16-2026/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://greyradius.com/insights/how-to-enter-india-market.html</loc>
