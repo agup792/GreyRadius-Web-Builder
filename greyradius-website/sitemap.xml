@@ -3839,4 +3839,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- August 2026 additions – weekly content batch -->
+  <url><loc>https://greyradius.com/insights/neurotechnology-india-research-to-market.html</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://greyradius.com/case-studies/nigeria-fmcg-lagos-market-entry.html</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/charged/charged-battery-supply-chain-aug17-23-2026/</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/the-signal/enterprise-ai-security-cloud-aug17-23-2026/</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/the-stack/ai-data-centre-infrastructure-aug17-23-2026/</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/the-wafer/semiconductor-ai-memory-aug17-23-2026/</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
