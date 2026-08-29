@@ -2555,6 +2555,86 @@ details[open] .faq-icon { transform: rotate(45deg); }
   }
 }
 
+/* ── Contextual content discovery ─────────────────────────────────── */
+.discovery-related {
+  background: var(--color-off-white);
+  border-top: 1px solid var(--color-border);
+  padding-block: clamp(2.75rem, 5vw, 4.5rem);
+}
+.discovery-related__header {
+  align-items: end;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+.discovery-related__header h2 {
+  color: var(--color-navy);
+  margin-top: 0.35rem;
+  max-width: 720px;
+}
+.discovery-related__browse {
+  color: var(--color-navy);
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--color-orange);
+  text-underline-offset: 0.3rem;
+}
+.discovery-related__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.discovery-related__card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+  padding: 1.4rem;
+  transition: var(--transition-med);
+}
+.discovery-related__card:hover {
+  border-color: var(--color-navy);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+.discovery-related__type {
+  color: var(--color-orange);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+.discovery-related__card h3 {
+  color: var(--color-navy);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.discovery-related__link {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  margin-top: auto;
+  padding-top: 1.25rem;
+}
+@media (max-width: 800px) {
+  .discovery-related__header {
+    align-items: start;
+    flex-direction: column;
+  }
+  .discovery-related__grid {
+    grid-template-columns: 1fr;
+  }
+  .discovery-related__card {
+    min-height: 0;
+  }
+}
+
 /* ── Floating Diagnostic Side Tab ─────────────────────────────────── */
 .diag-float {
   position: fixed;

@@ -8,6 +8,13 @@
 (function () {
   'use strict';
 
+  document.querySelectorAll('.nav-main, .mobile-menu__nav').forEach(function (nav) {
+    const searchLinks = nav.querySelectorAll('a[href="/search.html"]');
+    searchLinks.forEach(function (link, index) {
+      if (index > 0) link.remove();
+    });
+  });
+
   /* ---- Sticky Navigation ---- */
   const topNav = document.querySelector('.top-nav');
   if (topNav) {
@@ -228,6 +235,87 @@
         });
     });
   });
+
+  /* ---- Contextual content discovery ---- */
+  const currentPath = window.location.pathname;
+  const isDetailPage =
+    /^\/(case-studies|insights|market-entry|services)\/.+\.html$/.test(currentPath) ||
+    /^\/industries\/[^/]+\.html$/.test(currentPath);
+  const isNewsletterIssue = currentPath.startsWith('/insights/newsletters/');
+  const hasRelatedSection = document.querySelector(
+    '.related-content, .related-grid, [aria-label*="Related"], [aria-labelledby*="related"]'
+  );
+
+  if (isDetailPage && !isNewsletterIssue && !hasRelatedSection) {
+    fetch('/data/search-index.json')
+      .then(function (response) {
+        if (!response.ok) throw new Error('Content index unavailable');
+        return response.json();
+      })
+      .then(function (items) {
+        const current = items.find(function (item) { return item.url === currentPath; });
+        if (!current) return;
+
+        const currentWords = (current.title + ' ' + current.description)
+          .toLowerCase()
+          .split(/[^a-z0-9]+/)
+          .filter(function (word) { return word.length > 4; });
+        const currentWordSet = new Set(currentWords);
+
+        const related = items
+          .filter(function (item) {
+            return item.url !== current.url &&
+              !['Page', 'About', 'Newsletter'].includes(item.type);
+          })
+          .map(function (item) {
+            let score = item.type === current.type ? 1 : 3;
+            (item.industries || []).forEach(function (label) {
+              if ((current.industries || []).includes(label)) score += 6;
+            });
+            (item.geographies || []).forEach(function (label) {
+              if ((current.geographies || []).includes(label)) score += 5;
+            });
+            (item.title || '').toLowerCase().split(/[^a-z0-9]+/).forEach(function (word) {
+              if (word.length > 4 && currentWordSet.has(word)) score += 1;
+            });
+            return { item: item, score: score };
+          })
+          .filter(function (entry) { return entry.score >= 5; })
+          .sort(function (a, b) {
+            return b.score - a.score || a.item.title.localeCompare(b.item.title);
+          })
+          .slice(0, 3);
+
+        if (!related.length) return;
+
+        const section = document.createElement('section');
+        section.className = 'discovery-related';
+        section.setAttribute('aria-labelledby', 'discovery-related-heading');
+        const cards = related.map(function (entry) {
+          const item = entry.item;
+          return '<a class="discovery-related__card" href="' + item.url + '">' +
+            '<span class="discovery-related__type">' + item.type + '</span>' +
+            '<h3>' + item.title + '</h3>' +
+            '<span class="discovery-related__link">Explore this topic &rarr;</span>' +
+          '</a>';
+        }).join('');
+        section.innerHTML =
+          '<div class="container">' +
+            '<div class="discovery-related__header">' +
+              '<div><p class="text-caption text-orange">Continue exploring</p>' +
+              '<h2 id="discovery-related-heading">Related GreyRadius research and client work</h2></div>' +
+              '<a href="/search.html" class="discovery-related__browse">Search the full library &rarr;</a>' +
+            '</div>' +
+            '<div class="discovery-related__grid">' + cards + '</div>' +
+          '</div>';
+
+        const footer = document.querySelector('.site-footer');
+        if (footer) footer.parentNode.insertBefore(section, footer);
+      })
+      .catch(function () {
+        // Related discovery is progressive enhancement; the page remains usable.
+      });
+  }
 
 })();
 

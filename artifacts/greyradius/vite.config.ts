@@ -16,6 +16,35 @@ if (Number.isNaN(port) || port <= 0) {
 }
 
 const websiteDir = path.resolve(import.meta.dirname, "../../greyradius-website");
+const legacyAliases: Record<string, string> = {
+  "/terms.html": "/legal/terms.html",
+  "/privacy.html": "/legal/privacy.html",
+  "/privacy-policy.html": "/legal/privacy.html",
+  "/industries/technology/": "/industries/technology.html",
+  "/industries/fintech-payments/": "/industries/bfsi.html",
+  "/industries/bfsi/": "/industries/bfsi.html",
+  "/industries/islamic-finance/": "/industries/bfsi.html",
+  "/industries/insurtech/": "/industries/bfsi.html",
+  "/industries/cpg-fmcg-retail/": "/industries/cpg-fmcg-retail.html",
+  "/industries/health-supplements/": "/industries/cpg-fmcg-retail.html",
+  "/industries/hospitality-tourism/": "/industries/cpg-fmcg-retail.html",
+  "/industries/ecommerce-tech/": "/industries/cpg-fmcg-retail.html",
+  "/industries/healthtech/": "/industries/healthcare-and-life-sciences.html",
+  "/industries/healthcare-life-sciences/": "/industries/healthcare-and-life-sciences.html",
+  "/industries/pharma/": "/industries/healthcare-and-life-sciences.html",
+  "/industries/renewable-energy/": "/industries/energy-and-chemicals.html",
+  "/industries/carbon-markets/": "/industries/energy-and-chemicals.html",
+  "/industries/energy-storage/": "/industries/energy-and-chemicals.html",
+  "/industries/proptech/": "/industries/real-estate-and-infrastructure.html",
+  "/industries/enterprise-saas/": "/industries/technology.html",
+  "/industries/satellite-connectivity/": "/industries/technology.html",
+  "/industries/manufacturing-industrials/": "/industries/industrials-manufacturing-and-infrastructure.html",
+  "/industries/logistics-supply-chain/": "/industries/industrials-manufacturing-and-infrastructure.html",
+  "/industries/electric-vehicles/": "/industries/industrials-manufacturing-and-infrastructure.html",
+  "/industries/agritech/": "/industries/industrials-manufacturing-and-infrastructure.html",
+  "/industries/education-edtech/": "/industries/education-and-edtech.html",
+  "/industries/media-entertainment/": "/industries/technology.html",
+};
 
 function custom404Plugin(): Plugin {
   return {
@@ -37,6 +66,12 @@ function custom404Plugin(): Plugin {
 
         // Strip query-string / hash
         const pathname = url.split("?")[0].split("#")[0];
+        if (legacyAliases[pathname]) {
+          res.statusCode = 301;
+          res.setHeader("Location", legacyAliases[pathname]);
+          res.end();
+          return;
+        }
 
         // Candidate file paths to check
         const candidates: string[] = [];
