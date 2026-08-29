@@ -15,6 +15,31 @@ import { resolve, relative } from "path";
  */
 export const EXCLUSIONS = new Set<string>([]);
 
+/**
+ * Top-level insight pages intentionally outside the generated social-card
+ * workflow. This includes the Insights hub and legacy/editorial pages whose
+ * images are maintained with their source content.
+ *
+ * New top-level insight articles must not be added here. Give them an
+ * individual image entry in both generate-og-images.ts and add-og-images.ts.
+ */
+export const INSIGHT_OG_EXCLUSIONS = new Set<string>([
+  "insights/index.html",
+  "insights/b2b-saas-pricing-india.html",
+  "insights/bis-certification-india-foreign-products.html",
+  "insights/fdi-routes-india-explained.html",
+  "insights/gtm-strategy-emerging-markets.html",
+  "insights/gulf-market-entry-mistakes.html",
+  "insights/how-japanese-korean-brands-win-india.html",
+  "insights/how-to-enter-india-market.html",
+  "insights/import-duty-gst-india-new-entrants.html",
+  "insights/india-distributor-evaluation-framework.html",
+  "insights/india-distributor-margins-economics-benchmarks.html",
+  "insights/neurotechnology-india-research-to-market.html",
+  "insights/primary-market-research-emerging-markets.html",
+  "insights/vision-2030-foreign-companies-market-entry.html",
+]);
+
 export function extractPageFiles(scriptPath: string): Set<string> {
   const src = readFileSync(scriptPath, "utf-8");
   const files = new Set<string>();
@@ -22,6 +47,30 @@ export function extractPageFiles(scriptPath: string): Set<string> {
     files.add(m[1]);
   }
   return files;
+}
+
+function extractOgImagePages(scriptPath: string): Map<string, string> {
+  const src = readFileSync(scriptPath, "utf-8");
+  const pages = new Map<string, string>();
+  for (const m of src.matchAll(
+    /file:\s*"([^"]+\.html)"\s*,\s*ogImage:\s*"([^"]+)"/g
+  )) {
+    pages.set(m[1], m[2]);
+  }
+  return pages;
+}
+
+function extractGeneratedFilenames(scriptPath: string): Set<string> {
+  const src = readFileSync(scriptPath, "utf-8");
+  const filenames = new Set<string>();
+  for (const m of src.matchAll(/filename:\s*"([^"]+\.png)"/g)) {
+    filenames.add(m[1]);
+  }
+  return filenames;
+}
+
+function filenameFromOgImage(ogImage: string): string | undefined {
+  return ogImage.match(/\/([^/]+)$/)?.[1];
 }
 
 export function findHtmlFiles(dir: string, base = dir): string[] {
@@ -96,6 +145,86 @@ export function assertOgCoverage(opts?: {
   }
 
   console.log(`✓ OG coverage OK — all ${htmlFiles.length} HTML files are covered.`);
+}
+
+/**
+ * Ensures every managed top-level insight article has its own generated social
+ * card. This prevents a newly added article from silently inheriting
+ * og-insights.png or another fallback when only its HTML page is added.
+ *
+ * Newsletter pages use a separate publishing workflow under
+ * insights/newsletters/. The Insights hub and legacy pages outside this
+ * generated-card workflow are listed in INSIGHT_OG_EXCLUSIONS.
+ */
+export function assertInsightOgCoverage(): void {
+  const scriptsDir = resolve(import.meta.dirname ?? new URL(".", import.meta.url).pathname, "..");
+  const root = resolve(scriptsDir, "../../greyradius-website");
+  const insightsDir = resolve(root, "insights");
+  const imagePages = extractOgImagePages(resolve(scriptsDir, "add-og-images.ts"));
+  const generatedFilenames = extractGeneratedFilenames(
+    resolve(scriptsDir, "generate-og-images.ts")
+  );
+  const usedImages = new Map<string, string>();
+  let errorCount = 0;
+  let checkedCount = 0;
+
+  for (const entry of readdirSync(insightsDir, { withFileTypes: true })) {
+    if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
+
+    const file = `insights/${entry.name}`;
+    if (INSIGHT_OG_EXCLUSIONS.has(file)) continue;
+
+    checkedCount++;
+    const ogImage = imagePages.get(file);
+    if (!ogImage) {
+      console.error(`  ✗ ${file} is missing from add-og-images.ts`);
+      errorCount++;
+      continue;
+    }
+
+    const filename = filenameFromOgImage(ogImage);
+    if (!filename) {
+      console.error(`  ✗ ${file} has an invalid og:image value: "${ogImage}"`);
+      errorCount++;
+      continue;
+    }
+
+    if (filename === "og-insights.png" || filename === "og-generic.png") {
+      console.error(`  ✗ ${file} uses fallback social card "${filename}"`);
+      errorCount++;
+      continue;
+    }
+
+    if (!generatedFilenames.has(filename)) {
+      console.error(
+        `  ✗ ${file} uses "${filename}", which is missing from generate-og-images.ts`
+      );
+      errorCount++;
+      continue;
+    }
+
+    const existingPage = usedImages.get(filename);
+    if (existingPage) {
+      console.error(`  ✗ ${file} shares "${filename}" with ${existingPage}`);
+      errorCount++;
+      continue;
+    }
+
+    usedImages.set(filename, file);
+  }
+
+  if (errorCount > 0) {
+    console.error(
+      `\n✗ ${errorCount} managed insight article(s) need individual generated social cards.` +
+        `\n  → Add each page to scripts/src/generate-og-images.ts and scripts/src/add-og-images.ts` +
+        `\n  → Do not use og-insights.png or og-generic.png for insight articles.\n`
+    );
+    process.exit(1);
+  }
+
+  console.log(
+    `✓ Insight OG coverage OK — ${checkedCount} managed insight articles use unique generated cards.`
+  );
 }
 
 /**
