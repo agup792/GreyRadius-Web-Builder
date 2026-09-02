@@ -2207,6 +2207,20 @@
     "geographies": []
   },
   {
+    "id": "9208bb6074",
+    "title": "Global AI Credibility Was Not Enough",
+    "description": "How GreyRadius helped an international AI platform use Arabic readiness and its first Gulf reference customer to build enterprise market-entry credibility.",
+    "url": "/case-studies/global-ai-credibility-gulf-enterprise-market-entry.html",
+    "type": "Case Study",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": [
+      "GCC",
+      "Global"
+    ]
+  },
+  {
     "id": "bd0f627c05",
     "title": "Global Fabs, OSAT and AI Memory Investment – The Wafer, Issue 001",
     "description": "CG Semi's OSAT commissioning in Sanand, Infineon's &#8364;5B Dresden Smart Power Fab, Micron-GM's automotive memory agreement, and Samsung/SK Hynix's 800 trillion won AI-chip mega-project – GreyRadius weekly semiconductor intelligence, June 29-July 5, 2026.",
@@ -3425,6 +3439,20 @@
     "industries": [],
     "geographies": [
       "India"
+    ]
+  },
+  {
+    "id": "3f90ecdb13",
+    "title": "How to Enter the Fintech Market in India: Regulation, Licensing, and GTM Sequencing",
+    "description": "A practical guide for international fintech companies entering India: regulatory perimeter, NBFC licensing, Account Aggregators, co-lending and GTM sequencing.",
+    "url": "/insights/fintech-market-entry-india-regulation-licensing-gtm-sequencing.html",
+    "type": "Insight",
+    "industries": [
+      "Financial Services"
+    ],
+    "geographies": [
+      "India",
+      "Global"
     ]
   },
   {
@@ -7021,6 +7049,17 @@
     "geographies": []
   },
   {
+    "id": "a81e0962cf",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 24–30 August 2026",
+    "description": "",
+    "url": "/insights/newsletters/charged/charged-ev-battery-intelligence-aug24-30-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": []
+  },
+  {
     "id": "6d4c5714d1",
     "title": "The GCC Renewable Energy Opportunity Is Bigger Than Most Companies Realize. So Is the Execution Risk.",
     "description": "The GCC renewable energy market is attracting global attention for the right reasons. What most international entrants underestimate is what actually determines success once they're inside.",
@@ -7125,6 +7164,17 @@
     "industries": [
       "Technology & SaaS",
       "Real Estate & Infrastructure"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "7ebd483c4a",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 24 August – 30 August 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-aug24-30-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
     ],
     "geographies": []
   },
@@ -7269,6 +7319,17 @@
     "geographies": []
   },
   {
+    "id": "2942011e20",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 24–30 August 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-aug24-30-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": []
+  },
+  {
     "id": "89631699b3",
     "title": "The Stack | GreyRadius Weekly Infrastructure Intelligence",
     "description": "Weekly infrastructure intelligence from GreyRadius: Meta C$13 billion 1GW Alberta AI data centre, UK designates AWS/Microsoft/Google/Oracle as Critical Third Parties, MasTec acquires Superior Group for US$1.65 billion.",
@@ -7338,6 +7399,15 @@
     "industries": [
       "Technology & SaaS"
     ],
+    "geographies": []
+  },
+  {
+    "id": "1f0f1191b3",
+    "title": "The Wafer | GreyRadius Weekly Semiconductor Intelligence",
+    "description": "",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-aug24-30-2026/",
+    "type": "Newsletter",
+    "industries": [],
     "geographies": []
   },
   {

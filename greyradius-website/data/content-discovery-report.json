@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-08-29T04:51:55.722Z",
+  "generatedAt": "2026-09-02T08:13:03.569Z",
   "totals": {
-    "htmlFiles": 749,
-    "indexablePages": 628,
-    "redirects": 116,
-    "noindexPages": 119,
+    "htmlFiles": 756,
+    "indexablePages": 634,
+    "redirects": 117,
+    "noindexPages": 120,
     "brokenInternalLinks": 0,
     "orphanIndexablePages": 0,
     "lowInboundIndexablePages": 184
   },
   "byType": {
     "About": 4,
-    "Case Study": 38,
+    "Case Study": 39,
     "Industry": 476,
-    "Insight": 32,
+    "Insight": 33,
     "Market Entry Guide": 23,
-    "Newsletter": 43,
+    "Newsletter": 47,
     "Page": 5,
     "Service": 7
   },
@@ -2592,6 +2592,41 @@
       "source": "/case-studies/gearbox-distributor-india-market-entry.html",
       "destination": "/contact.html",
       "count": 4
+    },
+    {
+      "source": "/case-studies/global-ai-credibility-gulf-enterprise-market-entry.html",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/global-ai-credibility-gulf-enterprise-market-entry.html",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/global-ai-credibility-gulf-enterprise-market-entry.html",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/global-ai-credibility-gulf-enterprise-market-entry.html",
+      "destination": "/search.html",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/global-ai-credibility-gulf-enterprise-market-entry.html",
+      "destination": "/case-studies/",
+      "count": 4
+    },
+    {
+      "source": "/case-studies/global-ai-credibility-gulf-enterprise-market-entry.html",
+      "destination": "/insights/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/global-ai-credibility-gulf-enterprise-market-entry.html",
+      "destination": "/contact.html",
+      "count": 3
     },
     {
       "source": "/case-studies/gulf-renewable-energy-solar-epc-market-entry.html",
@@ -46911,6 +46946,41 @@
     {
       "source": "/insights/fdi-routes-india-explained.html",
       "destination": "/market-entry/india-entry-route-options.html",
+      "count": 3
+    },
+    {
+      "source": "/insights/fintech-market-entry-india-regulation-licensing-gtm-sequencing.html",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/insights/fintech-market-entry-india-regulation-licensing-gtm-sequencing.html",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/insights/fintech-market-entry-india-regulation-licensing-gtm-sequencing.html",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/insights/fintech-market-entry-india-regulation-licensing-gtm-sequencing.html",
+      "destination": "/search.html",
+      "count": 3
+    },
+    {
+      "source": "/insights/fintech-market-entry-india-regulation-licensing-gtm-sequencing.html",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/insights/fintech-market-entry-india-regulation-licensing-gtm-sequencing.html",
+      "destination": "/insights/",
+      "count": 4
+    },
+    {
+      "source": "/insights/fintech-market-entry-india-regulation-licensing-gtm-sequencing.html",
+      "destination": "/contact.html",
       "count": 3
     },
     {
