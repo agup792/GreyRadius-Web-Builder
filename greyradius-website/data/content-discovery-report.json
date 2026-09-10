@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-09-02T08:13:03.569Z",
+  "generatedAt": "2026-09-10T12:52:52.784Z",
   "totals": {
-    "htmlFiles": 756,
-    "indexablePages": 634,
+    "htmlFiles": 764,
+    "indexablePages": 642,
     "redirects": 117,
     "noindexPages": 120,
     "brokenInternalLinks": 0,
     "orphanIndexablePages": 0,
-    "lowInboundIndexablePages": 184
+    "lowInboundIndexablePages": 188
   },
   "byType": {
     "About": 4,
-    "Case Study": 39,
+    "Case Study": 40,
     "Industry": 476,
-    "Insight": 33,
+    "Insight": 34,
     "Market Entry Guide": 23,
-    "Newsletter": 47,
+    "Newsletter": 53,
     "Page": 5,
     "Service": 7
   },
@@ -1124,6 +1124,30 @@
       "url": "/industries/wealthtech/wealthtech-robo-advisor.html",
       "title": "Wealthtech & Robo-Advisor Market Entry Strategy",
       "type": "Industry",
+      "inboundLinks": 2
+    },
+    {
+      "url": "/insights/newsletters/charged/charged-ev-battery-intelligence-aug24-30-2026/",
+      "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 24–30 August 2026",
+      "type": "Newsletter",
+      "inboundLinks": 2
+    },
+    {
+      "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-aug24-30-2026/",
+      "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 24 August – 30 August 2026",
+      "type": "Newsletter",
+      "inboundLinks": 2
+    },
+    {
+      "url": "/insights/newsletters/the-stack/infrastructure-brief-aug24-30-2026/",
+      "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 24–30 August 2026",
+      "type": "Newsletter",
+      "inboundLinks": 2
+    },
+    {
+      "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-aug24-30-2026/",
+      "title": "The Wafer | GreyRadius Weekly Semiconductor Intelligence",
+      "type": "Newsletter",
       "inboundLinks": 2
     }
   ],
@@ -3442,6 +3466,31 @@
       "source": "/case-studies/saas-product-market-fit.html",
       "destination": "/contact.html",
       "count": 4
+    },
+    {
+      "source": "/case-studies/sfda-approval-saudi-medtech-market-entry.html",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/sfda-approval-saudi-medtech-market-entry.html",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/sfda-approval-saudi-medtech-market-entry.html",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/sfda-approval-saudi-medtech-market-entry.html",
+      "destination": "/insights/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/sfda-approval-saudi-medtech-market-entry.html",
+      "destination": "/contact.html",
+      "count": 3
     },
     {
       "source": "/case-studies/southeast-asia-beauty-social-commerce-entry.html",
@@ -47944,6 +47993,11 @@
       "count": 3
     },
     {
+      "source": "/insights/newsletters/healthcare/",
+      "destination": "/insights/newsletters/",
+      "count": 3
+    },
+    {
       "source": "/insights/newsletters/",
       "destination": "/",
       "count": 3
@@ -48632,6 +48686,31 @@
       "source": "/insights/primary-market-research-emerging-markets.html",
       "destination": "/contact.html",
       "count": 5
+    },
+    {
+      "source": "/insights/real-cost-market-entry-consulting.html",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/insights/real-cost-market-entry-consulting.html",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/insights/real-cost-market-entry-consulting.html",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/insights/real-cost-market-entry-consulting.html",
+      "destination": "/insights/",
+      "count": 3
+    },
+    {
+      "source": "/insights/real-cost-market-entry-consulting.html",
+      "destination": "/contact.html",
+      "count": 3
     },
     {
       "source": "/insights/retail-expansion-market-understanding.html",

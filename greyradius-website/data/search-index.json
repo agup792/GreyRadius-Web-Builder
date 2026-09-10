@@ -2293,7 +2293,7 @@
   {
     "id": "63cef25765",
     "title": "GreyRadius Newsletters – Weekly Market Intelligence",
-    "description": "Four weekly newsletters from GreyRadius covering AI adoption, EV markets, data centres, and semiconductors. Expert-led intelligence published every Thursday.",
+    "description": "Five weekly newsletters from GreyRadius covering healthcare, AI adoption, EV markets, data centres, and semiconductors. Expert-led intelligence published every Thursday.",
     "url": "/insights/newsletters/",
     "type": "Newsletter",
     "industries": [
@@ -3364,6 +3364,15 @@
     ]
   },
   {
+    "id": "3efe9d3ce2",
+    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 31 August–6 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-aug31-sep6-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
     "id": "d99b80d20c",
     "title": "Healthcare AI Platform Market Entry Strategy",
     "description": "GreyRadius helps healthcare AI platform companies, clinical AI businesses, and medical AI solution providers with market entry strategy, GTM execution.",
@@ -3374,6 +3383,20 @@
       "Healthcare & Life Sciences"
     ],
     "geographies": []
+  },
+  {
+    "id": "fd8b86c4d7",
+    "title": "Healthcare Weekly Brief",
+    "description": "Weekly healthcare intelligence covering HealthTech, MedTech, pharma, hospitals and healthcare AI across global and emerging markets.",
+    "url": "/insights/newsletters/healthcare/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Healthcare & Life Sciences"
+    ],
+    "geographies": [
+      "Global"
+    ]
   },
   {
     "id": "5c72587230",
@@ -6161,6 +6184,19 @@
     ]
   },
   {
+    "id": "4a430578e8",
+    "title": "SFDA Approval Was Not the Market Entry",
+    "description": "How GreyRadius helped a US MedTech company connect SFDA clearance, clinical adoption and hospital procurement to secure its first Saudi hospital contract.",
+    "url": "/case-studies/sfda-approval-saudi-medtech-market-entry.html",
+    "type": "Case Study",
+    "industries": [
+      "Healthcare & Life Sciences"
+    ],
+    "geographies": [
+      "GCC"
+    ]
+  },
+  {
     "id": "e254657e97",
     "title": "Silver Economy & Eldercare Market Entry Strategy",
     "description": "GreyRadius helps eldercare companies, senior living operators, and ageing population technology providers with market entry strategy, feasibility studies.",
@@ -7060,6 +7096,17 @@
     "geographies": []
   },
   {
+    "id": "cc17ea5228",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 31 August–6 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-aug31-sep6-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": []
+  },
+  {
     "id": "6d4c5714d1",
     "title": "The GCC Renewable Energy Opportunity Is Bigger Than Most Companies Realize. So Is the Execution Risk.",
     "description": "The GCC renewable energy market is attracting global attention for the right reasons. What most international entrants underestimate is what actually determines success once they're inside.",
@@ -7079,6 +7126,15 @@
     "description": "Listen → Decide → Ship. The six steps in every GreyRadius engagement.",
     "url": "/about/method.html",
     "type": "About",
+    "industries": [],
+    "geographies": []
+  },
+  {
+    "id": "0a5a7cab99",
+    "title": "The Real Cost of Market Entry Consulting - and Why Thinking About It as a Cost Is Wrong",
+    "description": "A practical framework for evaluating market entry consulting fees against the capital, management time and commercial risk of getting expansion decisions wrong.",
+    "url": "/insights/real-cost-market-entry-consulting.html",
+    "type": "Insight",
     "industries": [],
     "geographies": []
   },
@@ -7172,6 +7228,17 @@
     "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 24 August – 30 August 2026",
     "description": "",
     "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-aug24-30-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "f24583f1de",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 24 August – 30 August 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-aug31-sep6-2026/",
     "type": "Newsletter",
     "industries": [
       "Technology & SaaS"
@@ -7330,6 +7397,17 @@
     "geographies": []
   },
   {
+    "id": "b9646ccae5",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 31 August–6 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-aug31-sep6-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": []
+  },
+  {
     "id": "89631699b3",
     "title": "The Stack | GreyRadius Weekly Infrastructure Intelligence",
     "description": "Weekly infrastructure intelligence from GreyRadius: Meta C$13 billion 1GW Alberta AI data centre, UK designates AWS/Microsoft/Google/Oracle as Critical Third Parties, MasTec acquires Superior Group for US$1.65 billion.",
@@ -7406,6 +7484,15 @@
     "title": "The Wafer | GreyRadius Weekly Semiconductor Intelligence",
     "description": "",
     "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-aug24-30-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
+    "id": "e40a0e596a",
+    "title": "The Wafer | GreyRadius Weekly Semiconductor Intelligence",
+    "description": "",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-aug31-sep6-2026/",
     "type": "Newsletter",
     "industries": [],
     "geographies": []
