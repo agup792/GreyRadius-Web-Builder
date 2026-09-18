@@ -3373,6 +3373,15 @@
     "geographies": []
   },
   {
+    "id": "b5e628c453",
+    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 7–13 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-sep7-13-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
     "id": "d99b80d20c",
     "title": "Healthcare AI Platform Market Entry Strategy",
     "description": "GreyRadius helps healthcare AI platform companies, clinical AI businesses, and medical AI solution providers with market entry strategy, GTM execution.",
@@ -5483,6 +5492,18 @@
     "geographies": []
   },
   {
+    "id": "15b53e8b75",
+    "title": "National Reach Was Not the Same as Market Access",
+    "description": "How GreyRadius helped an international consumer brand replace nationwide distributor-led entry with an SKU-first, channel-specific and geography-sequenced Indonesia launch.",
+    "url": "/case-studies/indonesia-consumer-brand-market-entry.html",
+    "type": "Case Study",
+    "industries": [],
+    "geographies": [
+      "Southeast Asia",
+      "Global"
+    ]
+  },
+  {
     "id": "feece0764a",
     "title": "NativFresh CPG GTM Strategy – GreyRadius Case Study",
     "description": "How GreyRadius built a data-led GTM strategy for NativFresh – a Bengaluru fresh foods brand – using the MCCI Framework across 7 micro-markets to deliver a consumer-validated CPG launch blueprint.",
@@ -7107,6 +7128,17 @@
     "geographies": []
   },
   {
+    "id": "207bde1518",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 7–13 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-sep7-13-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": []
+  },
+  {
     "id": "6d4c5714d1",
     "title": "The GCC Renewable Energy Opportunity Is Bigger Than Most Companies Realize. So Is the Execution Risk.",
     "description": "The GCC renewable energy market is attracting global attention for the right reasons. What most international entrants underestimate is what actually determines success once they're inside.",
@@ -7270,6 +7302,17 @@
     ]
   },
   {
+    "id": "b737a588d0",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 7 September – 13 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-sep7-13-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": []
+  },
+  {
     "id": "87f70e83b8",
     "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | June 29–July 5, 2026",
     "description": "Weekly enterprise AI intelligence from GreyRadius: Microsoft $2.5B Frontier Company launch, HCLTech $1.14B AI services deal, NVIDIA compute financing models, UN AI governance panel, Anthropic Claude Sonnet 5 and sovereign AI deployment.",
@@ -7408,6 +7451,17 @@
     "geographies": []
   },
   {
+    "id": "9a2d489724",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 7–13 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-sep7-13-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": []
+  },
+  {
     "id": "89631699b3",
     "title": "The Stack | GreyRadius Weekly Infrastructure Intelligence",
     "description": "Weekly infrastructure intelligence from GreyRadius: Meta C$13 billion 1GW Alberta AI data centre, UK designates AWS/Microsoft/Google/Oracle as Critical Third Parties, MasTec acquires Superior Group for US$1.65 billion.",
@@ -7493,6 +7547,15 @@
     "title": "The Wafer | GreyRadius Weekly Semiconductor Intelligence",
     "description": "",
     "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-aug31-sep6-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
+    "id": "6aefa041a6",
+    "title": "The Wafer | GreyRadius Weekly Semiconductor Intelligence",
+    "description": "",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep7-13-2026/",
     "type": "Newsletter",
     "industries": [],
     "geographies": []
@@ -7881,6 +7944,17 @@
     ],
     "geographies": [
       "India"
+    ]
+  },
+  {
+    "id": "7aeb903000",
+    "title": "Why Africa Market Entry Fails - and What Companies That Succeed Do Differently",
+    "description": "Why Africa expansion strategies fail, and how country prioritisation, distributor validation, pricing, regulation and execution sequencing improve market-entry outcomes.",
+    "url": "/insights/africa-market-entry-failures.html",
+    "type": "Insight",
+    "industries": [],
+    "geographies": [
+      "Africa"
     ]
   },
   {

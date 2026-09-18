@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-09-10T12:52:52.784Z",
+  "generatedAt": "2026-09-18T07:29:19.262Z",
   "totals": {
-    "htmlFiles": 764,
-    "indexablePages": 642,
+    "htmlFiles": 771,
+    "indexablePages": 649,
     "redirects": 117,
     "noindexPages": 120,
     "brokenInternalLinks": 0,
     "orphanIndexablePages": 0,
-    "lowInboundIndexablePages": 188
+    "lowInboundIndexablePages": 193
   },
   "byType": {
     "About": 4,
-    "Case Study": 40,
+    "Case Study": 41,
     "Industry": 476,
-    "Insight": 34,
+    "Insight": 35,
     "Market Entry Guide": 23,
-    "Newsletter": 53,
+    "Newsletter": 58,
     "Page": 5,
     "Service": 7
   },
@@ -1133,7 +1133,25 @@
       "inboundLinks": 2
     },
     {
+      "url": "/insights/newsletters/charged/ev-battery-intelligence-aug31-sep6-2026/",
+      "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 31 August–6 September 2026",
+      "type": "Newsletter",
+      "inboundLinks": 2
+    },
+    {
+      "url": "/insights/newsletters/healthcare/healthcare-brief-aug31-sep6-2026/",
+      "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 31 August–6 September 2026",
+      "type": "Newsletter",
+      "inboundLinks": 2
+    },
+    {
       "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-aug24-30-2026/",
+      "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 24 August – 30 August 2026",
+      "type": "Newsletter",
+      "inboundLinks": 2
+    },
+    {
+      "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-aug31-sep6-2026/",
       "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 24 August – 30 August 2026",
       "type": "Newsletter",
       "inboundLinks": 2
@@ -1145,7 +1163,19 @@
       "inboundLinks": 2
     },
     {
+      "url": "/insights/newsletters/the-stack/infrastructure-brief-aug31-sep6-2026/",
+      "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 31 August–6 September 2026",
+      "type": "Newsletter",
+      "inboundLinks": 2
+    },
+    {
       "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-aug24-30-2026/",
+      "title": "The Wafer | GreyRadius Weekly Semiconductor Intelligence",
+      "type": "Newsletter",
+      "inboundLinks": 2
+    },
+    {
+      "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-aug31-sep6-2026/",
       "title": "The Wafer | GreyRadius Weekly Semiconductor Intelligence",
       "type": "Newsletter",
       "inboundLinks": 2
@@ -2903,6 +2933,31 @@
       "count": 3
     },
     {
+      "source": "/case-studies/indonesia-consumer-brand-market-entry.html",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/indonesia-consumer-brand-market-entry.html",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/indonesia-consumer-brand-market-entry.html",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/indonesia-consumer-brand-market-entry.html",
+      "destination": "/insights/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/indonesia-consumer-brand-market-entry.html",
+      "destination": "/contact.html",
+      "count": 3
+    },
+    {
       "source": "/case-studies/kenya-fintech-market-entry.html",
       "destination": "/",
       "count": 3
@@ -46621,6 +46676,31 @@
       "source": "/industries/wealthtech/wealthtech-southeast-asia.html",
       "destination": "/business-diagnostic.html",
       "count": 4
+    },
+    {
+      "source": "/insights/africa-market-entry-failures.html",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/insights/africa-market-entry-failures.html",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/insights/africa-market-entry-failures.html",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/insights/africa-market-entry-failures.html",
+      "destination": "/insights/",
+      "count": 3
+    },
+    {
+      "source": "/insights/africa-market-entry-failures.html",
+      "destination": "/contact.html",
+      "count": 3
     },
     {
       "source": "/insights/ai-hype-to-business-results.html",
