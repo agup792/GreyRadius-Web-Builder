@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T07:29:19.262Z",
+  "generatedAt": "2026-09-21T05:38:36.535Z",
   "totals": {
     "htmlFiles": 771,
     "indexablePages": 649,
@@ -7,7 +7,7 @@
     "noindexPages": 120,
     "brokenInternalLinks": 0,
     "orphanIndexablePages": 0,
-    "lowInboundIndexablePages": 193
+    "lowInboundIndexablePages": 188
   },
   "byType": {
     "About": 4,
@@ -1133,25 +1133,7 @@
       "inboundLinks": 2
     },
     {
-      "url": "/insights/newsletters/charged/ev-battery-intelligence-aug31-sep6-2026/",
-      "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 31 August–6 September 2026",
-      "type": "Newsletter",
-      "inboundLinks": 2
-    },
-    {
-      "url": "/insights/newsletters/healthcare/healthcare-brief-aug31-sep6-2026/",
-      "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 31 August–6 September 2026",
-      "type": "Newsletter",
-      "inboundLinks": 2
-    },
-    {
       "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-aug24-30-2026/",
-      "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 24 August – 30 August 2026",
-      "type": "Newsletter",
-      "inboundLinks": 2
-    },
-    {
-      "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-aug31-sep6-2026/",
       "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 24 August – 30 August 2026",
       "type": "Newsletter",
       "inboundLinks": 2
@@ -1163,19 +1145,7 @@
       "inboundLinks": 2
     },
     {
-      "url": "/insights/newsletters/the-stack/infrastructure-brief-aug31-sep6-2026/",
-      "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 31 August–6 September 2026",
-      "type": "Newsletter",
-      "inboundLinks": 2
-    },
-    {
       "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-aug24-30-2026/",
-      "title": "The Wafer | GreyRadius Weekly Semiconductor Intelligence",
-      "type": "Newsletter",
-      "inboundLinks": 2
-    },
-    {
-      "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-aug31-sep6-2026/",
       "title": "The Wafer | GreyRadius Weekly Semiconductor Intelligence",
       "type": "Newsletter",
       "inboundLinks": 2
