@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T05:38:36.535Z",
+  "generatedAt": "2026-09-21T06:05:48.511Z",
   "totals": {
     "htmlFiles": 771,
     "indexablePages": 649,
@@ -7,7 +7,7 @@
     "noindexPages": 120,
     "brokenInternalLinks": 0,
     "orphanIndexablePages": 0,
-    "lowInboundIndexablePages": 188
+    "lowInboundIndexablePages": 187
   },
   "byType": {
     "About": 4,
@@ -1124,12 +1124,6 @@
       "url": "/industries/wealthtech/wealthtech-robo-advisor.html",
       "title": "Wealthtech & Robo-Advisor Market Entry Strategy",
       "type": "Industry",
-      "inboundLinks": 2
-    },
-    {
-      "url": "/insights/newsletters/charged/charged-ev-battery-intelligence-aug24-30-2026/",
-      "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 24–30 August 2026",
-      "type": "Newsletter",
       "inboundLinks": 2
     },
     {
