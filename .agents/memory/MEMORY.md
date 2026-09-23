@@ -1,1 +1,2 @@
 - [Batch page generator pattern](batch-generator.md) — inline Python heredoc generates industry pages from JSON; no script files; 5 icon patterns required.
+- [Weekly content publishing](weekly-content-publishing.md) — preserve source newsletters and every older archive entry; verify all issue folders remain linked exactly once.

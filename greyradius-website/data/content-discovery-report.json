@@ -1,27 +1,34 @@
 {
-  "generatedAt": "2026-09-21T06:10:31.354Z",
+  "generatedAt": "2026-09-23T07:55:42.441Z",
   "totals": {
-    "htmlFiles": 771,
-    "indexablePages": 649,
+    "htmlFiles": 778,
+    "indexablePages": 656,
     "redirects": 117,
     "noindexPages": 120,
     "brokenInternalLinks": 0,
     "orphanIndexablePages": 0,
-    "lowInboundIndexablePages": 184
+    "lowInboundIndexablePages": 186
   },
   "byType": {
     "About": 4,
-    "Case Study": 41,
+    "Blog": 1,
+    "Case Study": 42,
     "Industry": 476,
     "Insight": 35,
     "Market Entry Guide": 23,
-    "Newsletter": 58,
+    "Newsletter": 63,
     "Page": 5,
     "Service": 7
   },
   "brokenLinks": [],
   "orphanPages": [],
   "lowInboundPages": [
+    {
+      "url": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
+      "title": "EV Market Entry in India: PLI FAME and the Commercial Reality Right Now",
+      "type": "Blog",
+      "inboundLinks": 2
+    },
     {
       "url": "/business-setup-consultants-uae.html",
       "title": "Business Setup Consultants in UAE",
@@ -31,6 +38,12 @@
     {
       "url": "/case-studies/bfsi-opportunity-assessment-bank.html",
       "title": "Growth Was Slowing. The Market Was Not. – BFSI Opportunity Assessment | GreyRadius Case Study",
+      "type": "Case Study",
+      "inboundLinks": 2
+    },
+    {
+      "url": "/case-studies/india-edtech-curriculum-aligned-market-entry/",
+      "title": "Availability Was Not Adoption | India EdTech Market Entry",
       "type": "Case Study",
       "inboundLinks": 2
     },
@@ -1444,6 +1457,41 @@
       "count": 3
     },
     {
+      "source": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
+      "destination": "/search.html",
+      "count": 3
+    },
+    {
+      "source": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
+      "destination": "/insights/",
+      "count": 4
+    },
+    {
+      "source": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
+      "destination": "/contact.html",
+      "count": 3
+    },
+    {
       "source": "/business-diagnostic.html",
       "destination": "/services/opportunity-assessment.html",
       "count": 3
@@ -2826,6 +2874,11 @@
     {
       "source": "/case-studies/india-beauty-brand-market-entry.html",
       "destination": "/insights/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/india-edtech-curriculum-aligned-market-entry/",
+      "destination": "/",
       "count": 3
     },
     {

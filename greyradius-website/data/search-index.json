@@ -924,6 +924,20 @@
     "geographies": []
   },
   {
+    "id": "9c6ab59c4f",
+    "title": "Availability Was Not Adoption | India EdTech Market Entry",
+    "description": "How GreyRadius helped an international EdTech company turn a global learning-products offering into a curriculum-aligned, channel-specific entry plan for India.",
+    "url": "/case-studies/india-edtech-curriculum-aligned-market-entry/",
+    "type": "Case Study",
+    "industries": [
+      "Education & EdTech"
+    ],
+    "geographies": [
+      "India",
+      "Global"
+    ]
+  },
+  {
     "id": "49c2baa483",
     "title": "B2B Marketplace Market Entry Strategy",
     "description": "GreyRadius helps B2B marketplace companies, procurement platform businesses, and trade marketplace operators with market entry strategy, GTM execution.",
@@ -1882,6 +1896,18 @@
       "Energy & Chemicals"
     ],
     "geographies": []
+  },
+  {
+    "id": "8f1dd65d02",
+    "title": "EV Market Entry in India: PLI FAME and the Commercial Reality Right Now",
+    "description": "A practical guide to EV market entry in India covering PLI, FAME, PM E-DRIVE, localisation, OEM qualification and commercial reality for international companies.",
+    "url": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
+    "type": "Blog",
+    "industries": [],
+    "geographies": [
+      "India",
+      "Global"
+    ]
   },
   {
     "id": "e063e819f6",
@@ -3362,6 +3388,15 @@
       "India",
       "GCC"
     ]
+  },
+  {
+    "id": "8fea820027",
+    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 14–20 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-sep14-20-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
   },
   {
     "id": "3efe9d3ce2",
@@ -7094,6 +7129,17 @@
     "geographies": []
   },
   {
+    "id": "2cd3c2a5c8",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 14–20 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-sep14-20-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": []
+  },
+  {
     "id": "a955980f43",
     "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 17–23 August 2026",
     "description": "",
@@ -7226,6 +7272,17 @@
     "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 10 August – 16 August 2026",
     "description": "",
     "url": "/insights/newsletters/the-signal/nvidia-anthropic-coreweave-aug10-16-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "1d74a69f8e",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 14 September – 20 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-sep14-20-2026/",
     "type": "Newsletter",
     "industries": [
       "Technology & SaaS"
@@ -7412,6 +7469,17 @@
     "type": "Newsletter",
     "industries": [
       "Technology & SaaS",
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "698890a905",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 14–20 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-sep14-20-2026/",
+    "type": "Newsletter",
+    "industries": [
       "Real Estate & Infrastructure"
     ],
     "geographies": []
@@ -7611,6 +7679,15 @@
       "India",
       "Europe"
     ]
+  },
+  {
+    "id": "e4dd330396",
+    "title": "The Wafer | Weekly Semiconductor Intelligence | 14–20 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep14-20-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
   },
   {
     "id": "5de3c5cb5d",
