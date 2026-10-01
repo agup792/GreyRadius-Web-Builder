@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-23T07:55:42.441Z",
+  "generatedAt": "2026-10-01T09:43:15.209Z",
   "totals": {
-    "htmlFiles": 778,
-    "indexablePages": 656,
+    "htmlFiles": 785,
+    "indexablePages": 663,
     "redirects": 117,
     "noindexPages": 120,
     "brokenInternalLinks": 0,
@@ -11,12 +11,12 @@
   },
   "byType": {
     "About": 4,
-    "Blog": 1,
-    "Case Study": 42,
+    "Blog": 2,
+    "Case Study": 43,
     "Industry": 476,
     "Insight": 35,
     "Market Entry Guide": 23,
-    "Newsletter": 63,
+    "Newsletter": 68,
     "Page": 5,
     "Service": 7
   },
@@ -24,8 +24,8 @@
   "orphanPages": [],
   "lowInboundPages": [
     {
-      "url": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
-      "title": "EV Market Entry in India: PLI FAME and the Commercial Reality Right Now",
+      "url": "/blogs/how-to-validate-market-demand-before-market-entry/",
+      "title": "How to Validate Market Demand Before Committing to a New Country",
       "type": "Blog",
       "inboundLinks": 2
     },
@@ -42,8 +42,8 @@
       "inboundLinks": 2
     },
     {
-      "url": "/case-studies/india-edtech-curriculum-aligned-market-entry/",
-      "title": "Availability Was Not Adoption | India EdTech Market Entry",
+      "url": "/case-studies/south-africa-consumer-health-retail-market-entry/",
+      "title": "A Launch Budget Is Not a Route to Revenue | South Africa Consumer Health Market Entry",
       "type": "Case Study",
       "inboundLinks": 2
     },
@@ -1490,6 +1490,36 @@
       "source": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
       "destination": "/contact.html",
       "count": 3
+    },
+    {
+      "source": "/blogs/how-to-validate-market-demand-before-market-entry/",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/how-to-validate-market-demand-before-market-entry/",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/how-to-validate-market-demand-before-market-entry/",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/how-to-validate-market-demand-before-market-entry/",
+      "destination": "/search.html",
+      "count": 3
+    },
+    {
+      "source": "/blogs/how-to-validate-market-demand-before-market-entry/",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/how-to-validate-market-demand-before-market-entry/",
+      "destination": "/insights/",
+      "count": 4
     },
     {
       "source": "/business-diagnostic.html",
@@ -3544,6 +3574,11 @@
     {
       "source": "/case-studies/sfda-approval-saudi-medtech-market-entry.html",
       "destination": "/contact.html",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/south-africa-consumer-health-retail-market-entry/",
+      "destination": "/",
       "count": 3
     },
     {

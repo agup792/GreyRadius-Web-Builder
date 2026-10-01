@@ -33,6 +33,20 @@
     ]
   },
   {
+    "id": "0aebc55e45",
+    "title": "A Launch Budget Is Not a Route to Revenue | South Africa Consumer Health Market Entry",
+    "description": "How GreyRadius helped a consumer health brand reframe South African entry around retailer access, regulatory readiness and first-SKU economics.",
+    "url": "/case-studies/south-africa-consumer-health-retail-market-entry/",
+    "type": "Case Study",
+    "industries": [
+      "Healthcare & Life Sciences",
+      "CPG / FMCG / Retail"
+    ],
+    "geographies": [
+      "Africa"
+    ]
+  },
+  {
     "id": "3b79d51135",
     "title": "About GreyRadius Consulting | Boutique Market Entry Strategy",
     "description": "GreyRadius is a boutique strategy and growth consulting firm founded in 2017. Offices in Delhi, Dubai, Singapore, and Brussels. 200+ projects delivered across India, GCC, Southeast Asia, and Africa.",
@@ -3399,6 +3413,15 @@
     "geographies": []
   },
   {
+    "id": "a43aa00ea3",
+    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 21–27 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-sep21-27-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
     "id": "3efe9d3ce2",
     "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 31 August–6 September 2026",
     "description": "",
@@ -3558,6 +3581,15 @@
     "geographies": [
       "India"
     ]
+  },
+  {
+    "id": "522f1da264",
+    "title": "How to Validate Market Demand Before Committing to a New Country",
+    "description": "A growing market, a promising industry report, and an enthusiastic distributor do not establish that your business can win customers at a viable price.",
+    "url": "/blogs/how-to-validate-market-demand-before-market-entry/",
+    "type": "Blog",
+    "industries": [],
+    "geographies": []
   },
   {
     "id": "a47b8333a3",
@@ -7152,6 +7184,17 @@
     "geographies": []
   },
   {
+    "id": "9eab0caba8",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 21–27 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-sep21-27-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": []
+  },
+  {
     "id": "a81e0962cf",
     "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 24–30 August 2026",
     "description": "",
@@ -7309,6 +7352,17 @@
     "industries": [
       "Technology & SaaS",
       "Real Estate & Infrastructure"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "57904befa6",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 21 September – 27 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-sep21-27-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
     ],
     "geographies": []
   },
@@ -7492,6 +7546,17 @@
     "type": "Newsletter",
     "industries": [
       "Technology & SaaS",
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "3072dccfa5",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 21–27 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-sep21-27-2026/",
+    "type": "Newsletter",
+    "industries": [
       "Real Estate & Infrastructure"
     ],
     "geographies": []
@@ -7685,6 +7750,15 @@
     "title": "The Wafer | Weekly Semiconductor Intelligence | 14–20 September 2026",
     "description": "",
     "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep14-20-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
+    "id": "da58c53d65",
+    "title": "The Wafer | Weekly Semiconductor Intelligence | 21–27 September 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep21-27-2026/",
     "type": "Newsletter",
     "industries": [],
     "geographies": []
