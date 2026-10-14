@@ -877,6 +877,17 @@
     ]
   },
   {
+    "id": "ed40866bb1",
+    "title": "AI transformation for mid-sized businesses — how to choose the first workflow worth automating",
+    "description": "",
+    "url": "/blogs/ai-transformation-mid-sized-businesses-first-workflow/",
+    "type": "Blog",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": []
+  },
+  {
     "id": "d37116e43e",
     "title": "AI-Powered Diagnostics & Pathology Market Entry",
     "description": "GreyRadius helps AI diagnostics companies, computational pathology businesses, and medical AI platform providers with market entry strategy, GTM.",
@@ -925,6 +936,17 @@
     "geographies": [
       "GCC"
     ]
+  },
+  {
+    "id": "5f5173933d",
+    "title": "Automation Can Move the Cost.",
+    "description": "",
+    "url": "/case-studies/automation-workflow-economics-ai-pilot/",
+    "type": "Case Study",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": []
   },
   {
     "id": "9a33c1b224",
@@ -3417,6 +3439,15 @@
     "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 21–27 September 2026",
     "description": "",
     "url": "/insights/newsletters/healthcare/healthcare-brief-sep21-27-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
+    "id": "d1cc73f137",
+    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 28 September–4 October 2026",
+    "description": "",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-sep28-oct4-2026/",
     "type": "Newsletter",
     "industries": [],
     "geographies": []
@@ -7206,6 +7237,17 @@
     "geographies": []
   },
   {
+    "id": "86f61d56b6",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 28 September–4 October 2026",
+    "description": "",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-sep28-oct4-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": []
+  },
+  {
     "id": "cc17ea5228",
     "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 31 August–6 September 2026",
     "description": "",
@@ -7400,6 +7442,17 @@
     "geographies": []
   },
   {
+    "id": "d6178a87e2",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 28 September – 4 October 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-sep28-oct4-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": []
+  },
+  {
     "id": "f458384e2e",
     "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 3 August – 9 August 2026",
     "description": "",
@@ -7566,6 +7619,17 @@
     "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 24–30 August 2026",
     "description": "",
     "url": "/insights/newsletters/the-stack/infrastructure-brief-aug24-30-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "865fce24c1",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 28 September–4 October 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-sep28-oct4-2026/",
     "type": "Newsletter",
     "industries": [
       "Real Estate & Infrastructure"
@@ -7759,6 +7823,15 @@
     "title": "The Wafer | Weekly Semiconductor Intelligence | 21–27 September 2026",
     "description": "",
     "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep21-27-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
+    "id": "c0fe255647",
+    "title": "The Wafer | Weekly Semiconductor Intelligence | 28 September–4 October 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep28-oct4-2026/",
     "type": "Newsletter",
     "industries": [],
     "geographies": []
