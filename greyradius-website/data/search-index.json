@@ -47,6 +47,17 @@
     ]
   },
   {
+    "id": "fade1a8c1c",
+    "title": "A Regional Base Is Not a Revenue Plan.",
+    "description": "",
+    "url": "/case-studies/gcc-market-entry-first-contract-expansion/",
+    "type": "Case Study",
+    "industries": [],
+    "geographies": [
+      "GCC"
+    ]
+  },
+  {
     "id": "3b79d51135",
     "title": "About GreyRadius Consulting | Boutique Market Entry Strategy",
     "description": "GreyRadius is a boutique strategy and growth consulting firm founded in 2017. Offices in Delhi, Dubai, Singapore, and Brussels. 200+ projects delivered across India, GCC, Southeast Asia, and Africa.",
@@ -3462,6 +3473,15 @@
     "geographies": []
   },
   {
+    "id": "01400ea9d9",
+    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 5–11 October 2026",
+    "description": "",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-oct5-11-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
     "id": "b5e628c453",
     "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 7–13 September 2026",
     "description": "",
@@ -6196,6 +6216,17 @@
     ]
   },
   {
+    "id": "b60d2b1e33",
+    "title": "Saudi Arabia or UAE first — how to choose your GCC entry market",
+    "description": "",
+    "url": "/blogs/saudi-arabia-or-uae-first-gcc-market-entry/",
+    "type": "Blog",
+    "industries": [],
+    "geographies": [
+      "GCC"
+    ]
+  },
+  {
     "id": "9779c2ccd2",
     "title": "Sell Beauty Products in India | Entry Playbook for International Brands",
     "description": "The India playbook for international beauty brands - CDSCO import registration, price-tier architecture, distributor and e-commerce channel design, and the counter-building partner search. J-beauty and K-beauty proven.",
@@ -7259,6 +7290,17 @@
     "geographies": []
   },
   {
+    "id": "4e754c7652",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 5–11 October 2026",
+    "description": "",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-oct5-11-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": []
+  },
+  {
     "id": "207bde1518",
     "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 7–13 September 2026",
     "description": "",
@@ -7466,6 +7508,17 @@
     ]
   },
   {
+    "id": "152ab46da7",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 5 – 11 October 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-oct5-11-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": []
+  },
+  {
     "id": "b737a588d0",
     "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 7 September – 13 September 2026",
     "description": "",
@@ -7641,6 +7694,17 @@
     "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 31 August–6 September 2026",
     "description": "",
     "url": "/insights/newsletters/the-stack/infrastructure-brief-aug31-sep6-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "e33443a6b9",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 5–11 October 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-oct5-11-2026/",
     "type": "Newsletter",
     "industries": [
       "Real Estate & Infrastructure"
@@ -7832,6 +7896,15 @@
     "title": "The Wafer | Weekly Semiconductor Intelligence | 28 September–4 October 2026",
     "description": "",
     "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep28-oct4-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
+    "id": "7a833678af",
+    "title": "The Wafer | Weekly Semiconductor Intelligence | 5–11 October 2026",
+    "description": "",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-oct5-11-2026/",
     "type": "Newsletter",
     "industries": [],
     "geographies": []

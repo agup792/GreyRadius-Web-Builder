@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-14T16:45:11.069Z",
+  "generatedAt": "2026-10-15T00:45:31.723Z",
   "totals": {
-    "htmlFiles": 792,
-    "indexablePages": 670,
+    "htmlFiles": 799,
+    "indexablePages": 677,
     "redirects": 117,
     "noindexPages": 120,
     "brokenInternalLinks": 0,
@@ -11,12 +11,12 @@
   },
   "byType": {
     "About": 4,
-    "Blog": 3,
-    "Case Study": 44,
+    "Blog": 4,
+    "Case Study": 45,
     "Industry": 476,
     "Insight": 35,
     "Market Entry Guide": 23,
-    "Newsletter": 73,
+    "Newsletter": 78,
     "Page": 5,
     "Service": 7
   },
@@ -24,8 +24,8 @@
   "orphanPages": [],
   "lowInboundPages": [
     {
-      "url": "/blogs/ai-transformation-mid-sized-businesses-first-workflow/",
-      "title": "AI transformation for mid-sized businesses — how to choose the first workflow worth automating",
+      "url": "/blogs/saudi-arabia-or-uae-first-gcc-market-entry/",
+      "title": "Saudi Arabia or UAE first — how to choose your GCC entry market",
       "type": "Blog",
       "inboundLinks": 2
     },
@@ -36,14 +36,14 @@
       "inboundLinks": 2
     },
     {
-      "url": "/case-studies/automation-workflow-economics-ai-pilot/",
-      "title": "Automation Can Move the Cost.",
+      "url": "/case-studies/bfsi-opportunity-assessment-bank.html",
+      "title": "Growth Was Slowing. The Market Was Not. – BFSI Opportunity Assessment | GreyRadius Case Study",
       "type": "Case Study",
       "inboundLinks": 2
     },
     {
-      "url": "/case-studies/bfsi-opportunity-assessment-bank.html",
-      "title": "Growth Was Slowing. The Market Was Not. – BFSI Opportunity Assessment | GreyRadius Case Study",
+      "url": "/case-studies/gcc-market-entry-first-contract-expansion/",
+      "title": "A Regional Base Is Not a Revenue Plan.",
       "type": "Case Study",
       "inboundLinks": 2
     },
@@ -1557,6 +1557,41 @@
       "count": 4
     },
     {
+      "source": "/blogs/saudi-arabia-or-uae-first-gcc-market-entry/",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/saudi-arabia-or-uae-first-gcc-market-entry/",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/saudi-arabia-or-uae-first-gcc-market-entry/",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/saudi-arabia-or-uae-first-gcc-market-entry/",
+      "destination": "/search.html",
+      "count": 3
+    },
+    {
+      "source": "/blogs/saudi-arabia-or-uae-first-gcc-market-entry/",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/saudi-arabia-or-uae-first-gcc-market-entry/",
+      "destination": "/insights/",
+      "count": 4
+    },
+    {
+      "source": "/blogs/saudi-arabia-or-uae-first-gcc-market-entry/",
+      "destination": "/contact.html",
+      "count": 3
+    },
+    {
       "source": "/business-diagnostic.html",
       "destination": "/services/opportunity-assessment.html",
       "count": 3
@@ -2644,6 +2679,11 @@
     {
       "source": "/case-studies/gcc-beauty-brand-market-entry.html",
       "destination": "/insights/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/gcc-market-entry-first-contract-expansion/",
+      "destination": "/",
       "count": 3
     },
     {
