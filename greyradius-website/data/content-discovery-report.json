@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-15T00:45:31.723Z",
+  "generatedAt": "2026-10-16T07:07:08.228Z",
   "totals": {
     "htmlFiles": 799,
-    "indexablePages": 677,
+    "indexablePages": 675,
     "redirects": 117,
-    "noindexPages": 120,
+    "noindexPages": 122,
     "brokenInternalLinks": 0,
     "orphanIndexablePages": 0,
-    "lowInboundIndexablePages": 186
+    "lowInboundIndexablePages": 184
   },
   "byType": {
     "About": 4,
@@ -16,19 +16,13 @@
     "Industry": 476,
     "Insight": 35,
     "Market Entry Guide": 23,
-    "Newsletter": 78,
+    "Newsletter": 76,
     "Page": 5,
     "Service": 7
   },
   "brokenLinks": [],
   "orphanPages": [],
   "lowInboundPages": [
-    {
-      "url": "/blogs/saudi-arabia-or-uae-first-gcc-market-entry/",
-      "title": "Saudi Arabia or UAE first — how to choose your GCC entry market",
-      "type": "Blog",
-      "inboundLinks": 2
-    },
     {
       "url": "/business-setup-consultants-uae.html",
       "title": "Business Setup Consultants in UAE",
@@ -38,12 +32,6 @@
     {
       "url": "/case-studies/bfsi-opportunity-assessment-bank.html",
       "title": "Growth Was Slowing. The Market Was Not. – BFSI Opportunity Assessment | GreyRadius Case Study",
-      "type": "Case Study",
-      "inboundLinks": 2
-    },
-    {
-      "url": "/case-studies/gcc-market-entry-first-contract-expansion/",
-      "title": "A Regional Base Is Not a Revenue Plan.",
       "type": "Case Study",
       "inboundLinks": 2
     },

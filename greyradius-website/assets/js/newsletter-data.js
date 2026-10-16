@@ -12,15 +12,16 @@
       url: "/insights/newsletters/healthcare/healthcare-brief-oct5-11-2026/",
       issue: "006",
       date: "5–11 October 2026",
-      headline: "GreyRadius Weekly Healthcare Brief for 5–11 October 2026",
+      headline: "KIMS acquisition, Regency financing and radiopharmaceutical diagnostics",
       hubHeadline: "Weekly Healthcare Brief",
     }),
     "the-signal": Object.freeze({
       url: "/insights/newsletters/the-signal/enterprise-ai-intelligence-oct5-11-2026/",
       issue: "016",
+      archiveLabel: "Weekly edition",
       date: "5–11 October 2026",
       headline:
-        "The Signal: Weekly Enterprise AI Intelligence for 5–11 October 2026",
+        "AI model releases, local inference and enterprise governance",
       hubHeadline: "Enterprise AI intelligence",
     }),
     charged: Object.freeze({
@@ -28,7 +29,7 @@
       issue: "018",
       date: "5–11 October 2026",
       headline:
-        "The Charged: Weekly EV & Battery Intelligence for 5–11 October 2026",
+        "EV retail updates, European launches and charging networks",
       hubHeadline: "EV and battery intelligence",
     }),
     "the-stack": Object.freeze({
@@ -36,7 +37,7 @@
       issue: "016",
       date: "5–11 October 2026",
       headline:
-        "The Stack: Weekly Infrastructure Brief for 5–11 October 2026",
+        "India data-centre opposition, Gulf capacity and power constraints",
       hubHeadline: "Infrastructure intelligence",
     }),
     "the-wafer": Object.freeze({
@@ -44,7 +45,7 @@
       issue: "015",
       date: "5–11 October 2026",
       headline:
-        "The Wafer: Weekly Semiconductor Intelligence for 5–11 October 2026",
+        "US interposer supply, semiconductor results and Dresden expansion",
       hubHeadline: "Semiconductor intelligence",
     }),
   });
@@ -70,7 +71,7 @@
 
     const issueLabel = currentIssue.querySelector("[data-newsletter-issue]");
     if (issueLabel) {
-      issueLabel.textContent = `Issue ${newsletter.issue} · ${newsletter.date}`;
+      issueLabel.textContent = `${newsletter.archiveLabel || `Issue ${newsletter.issue}`} · ${newsletter.date}`;
     }
 
     const headline = currentIssue.querySelector("[data-newsletter-headline]");

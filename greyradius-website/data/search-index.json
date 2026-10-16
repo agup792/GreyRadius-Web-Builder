@@ -872,22 +872,6 @@
     "geographies": []
   },
   {
-    "id": "a01d8e3bd9",
-    "title": "AI Power Infrastructure and Hyperscale Investment – The Stack, Issue 004",
-    "description": "Bloom Energy-Brookfield's $25B AI power partnership, Digital Realty's $3.5B Northern Virginia acquisition, National Grid's $1.75B Joulent stake, Xlinks's 1.5GW Devon campus, and a 150MW Germany permitting fight – GreyRadius weekly infrastructure intelligence, June 29-July 5, 2026.",
-    "url": "/insights/newsletters/the-stack/ai-power-infrastructure-hyperscale-investment-june-2026/",
-    "type": "Newsletter",
-    "industries": [
-      "Technology & SaaS",
-      "Energy & Chemicals",
-      "Financial Services",
-      "Real Estate & Infrastructure"
-    ],
-    "geographies": [
-      "Europe"
-    ]
-  },
-  {
     "id": "ed40866bb1",
     "title": "AI transformation for mid-sized businesses — how to choose the first workflow worth automating",
     "description": "",
@@ -2294,20 +2278,6 @@
     ]
   },
   {
-    "id": "bd0f627c05",
-    "title": "Global Fabs, OSAT and AI Memory Investment – The Wafer, Issue 001",
-    "description": "CG Semi's OSAT commissioning in Sanand, Infineon's &#8364;5B Dresden Smart Power Fab, Micron-GM's automotive memory agreement, and Samsung/SK Hynix's 800 trillion won AI-chip mega-project – GreyRadius weekly semiconductor intelligence, June 29-July 5, 2026.",
-    "url": "/insights/newsletters/the-wafer/global-fabs-osat-ai-memory-investment-june-2026/",
-    "type": "Newsletter",
-    "industries": [
-      "Technology & SaaS",
-      "Financial Services"
-    ],
-    "geographies": [
-      "Global"
-    ]
-  },
-  {
     "id": "1c3fda7e5f",
     "title": "Global SaaS Expansion Fails Quietly Long Before Revenue Slows Down",
     "description": "Most SaaS companies don't recognise international expansion problems until the commercial damage is already done. This is what the early warning signals actually look like.",
@@ -3437,6 +3407,27 @@
     ]
   },
   {
+    "id": "d1cc73f137",
+    "title": "Healthcare | 28 September–4 October 2026",
+    "description": "Healthcare, 28 September–4 October 2026: Diagnostics expansion; Preventive healthcare funding; Pediatric heart-valve approval.",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-sep28-oct4-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
+    "id": "01400ea9d9",
+    "title": "Healthcare | 5–11 October 2026",
+    "description": "Healthcare, 5–11 October 2026: Hospital expansion; GE HealthCare–Sofie acquisition; Healthcare AI oversight.",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-oct5-11-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Healthcare & Life Sciences"
+    ],
+    "geographies": []
+  },
+  {
     "id": "8fea820027",
     "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 14–20 September 2026",
     "description": "",
@@ -3455,28 +3446,10 @@
     "geographies": []
   },
   {
-    "id": "d1cc73f137",
-    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 28 September–4 October 2026",
-    "description": "",
-    "url": "/insights/newsletters/healthcare/healthcare-brief-sep28-oct4-2026/",
-    "type": "Newsletter",
-    "industries": [],
-    "geographies": []
-  },
-  {
     "id": "3efe9d3ce2",
     "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 31 August–6 September 2026",
     "description": "",
     "url": "/insights/newsletters/healthcare/healthcare-brief-aug31-sep6-2026/",
-    "type": "Newsletter",
-    "industries": [],
-    "geographies": []
-  },
-  {
-    "id": "01400ea9d9",
-    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 5–11 October 2026",
-    "description": "",
-    "url": "/insights/newsletters/healthcare/healthcare-brief-oct5-11-2026/",
     "type": "Newsletter",
     "industries": [],
     "geographies": []
@@ -7178,6 +7151,32 @@
     ]
   },
   {
+    "id": "86f61d56b6",
+    "title": "The Charged | 28 September–4 October 2026",
+    "description": "The Charged, 28 September–4 October 2026: September passenger-EV registrations; Battery supply chains; Tesla and BYD deliveries.",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-sep28-oct4-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "4e754c7652",
+    "title": "The Charged | 5–11 October 2026",
+    "description": "The Charged, 5–11 October 2026: India September EV retail; Updated H1 two-wheeler figures; European EV launches.",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-oct5-11-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "CPG / FMCG / Retail",
+      "Energy & Chemicals"
+    ],
+    "geographies": [
+      "India",
+      "Europe"
+    ]
+  },
+  {
     "id": "92bff6094e",
     "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence",
     "description": "African Development Bank approves $113.9M for Gotion&#8217;s Morocco battery gigafactory, CATL reports 42% first-half profit growth, Spain launches $455.7M Auto+ EV incentive programme. July 20–26, 2026.",
@@ -7268,32 +7267,10 @@
     "geographies": []
   },
   {
-    "id": "86f61d56b6",
-    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 28 September–4 October 2026",
-    "description": "",
-    "url": "/insights/newsletters/charged/ev-battery-intelligence-sep28-oct4-2026/",
-    "type": "Newsletter",
-    "industries": [
-      "Energy & Chemicals"
-    ],
-    "geographies": []
-  },
-  {
     "id": "cc17ea5228",
     "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 31 August–6 September 2026",
     "description": "",
     "url": "/insights/newsletters/charged/ev-battery-intelligence-aug31-sep6-2026/",
-    "type": "Newsletter",
-    "industries": [
-      "Energy & Chemicals"
-    ],
-    "geographies": []
-  },
-  {
-    "id": "4e754c7652",
-    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 5–11 October 2026",
-    "description": "",
-    "url": "/insights/newsletters/charged/ev-battery-intelligence-oct5-11-2026/",
     "type": "Newsletter",
     "industries": [
       "Energy & Chemicals"
@@ -7370,6 +7347,30 @@
       "India",
       "GCC",
       "Southeast Asia"
+    ]
+  },
+  {
+    "id": "d6178a87e2",
+    "title": "The Signal | 28 September–4 October 2026",
+    "description": "The Signal, 28 September–4 October 2026: Meta Enterprise Platform; NVIDIA agent safety; HCLSoftware–Robotiq.ai.",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-sep28-oct4-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "152ab46da7",
+    "title": "The Signal | 5–11 October 2026",
+    "description": "The Signal, 5–11 October 2026: Claude Haiku 5.5; GPT-6 rollout; India inference and enterprise controls.",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-oct5-11-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": [
+      "India"
     ]
   },
   {
@@ -7484,17 +7485,6 @@
     "geographies": []
   },
   {
-    "id": "d6178a87e2",
-    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 28 September – 4 October 2026",
-    "description": "",
-    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-sep28-oct4-2026/",
-    "type": "Newsletter",
-    "industries": [
-      "Technology & SaaS"
-    ],
-    "geographies": []
-  },
-  {
     "id": "f458384e2e",
     "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 3 August – 9 August 2026",
     "description": "",
@@ -7506,17 +7496,6 @@
     "geographies": [
       "India"
     ]
-  },
-  {
-    "id": "152ab46da7",
-    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 5 – 11 October 2026",
-    "description": "",
-    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-oct5-11-2026/",
-    "type": "Newsletter",
-    "industries": [
-      "Technology & SaaS"
-    ],
-    "geographies": []
   },
   {
     "id": "b737a588d0",
@@ -7553,6 +7532,35 @@
       "Real Estate & Infrastructure"
     ],
     "geographies": []
+  },
+  {
+    "id": "865fce24c1",
+    "title": "The Stack | 28 September–4 October 2026",
+    "description": "The Stack, 28 September–4 October 2026: AWS India inference; Alibaba Cloud regions; UAE sovereign AI partnership.",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-sep28-oct4-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": [
+      "India",
+      "GCC"
+    ]
+  },
+  {
+    "id": "e33443a6b9",
+    "title": "The Stack | 5–11 October 2026",
+    "description": "The Stack, 5–11 October 2026: India project opposition; GCC capacity outlook; TeraWulf Kentucky campus.",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-oct5-11-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": [
+      "India",
+      "GCC"
+    ]
   },
   {
     "id": "c1614a6e27",
@@ -7679,32 +7687,10 @@
     "geographies": []
   },
   {
-    "id": "865fce24c1",
-    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 28 September–4 October 2026",
-    "description": "",
-    "url": "/insights/newsletters/the-stack/infrastructure-brief-sep28-oct4-2026/",
-    "type": "Newsletter",
-    "industries": [
-      "Real Estate & Infrastructure"
-    ],
-    "geographies": []
-  },
-  {
     "id": "b9646ccae5",
     "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 31 August–6 September 2026",
     "description": "",
     "url": "/insights/newsletters/the-stack/infrastructure-brief-aug31-sep6-2026/",
-    "type": "Newsletter",
-    "industries": [
-      "Real Estate & Infrastructure"
-    ],
-    "geographies": []
-  },
-  {
-    "id": "e33443a6b9",
-    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 5–11 October 2026",
-    "description": "",
-    "url": "/insights/newsletters/the-stack/infrastructure-brief-oct5-11-2026/",
     "type": "Newsletter",
     "industries": [
       "Real Estate & Infrastructure"
@@ -7762,6 +7748,26 @@
     "geographies": [
       "Global"
     ]
+  },
+  {
+    "id": "c0fe255647",
+    "title": "The Wafer | 28 September–4 October 2026",
+    "description": "The Wafer, 28 September–4 October 2026: VSMC Singapore fab; FC-BGA expansion; Micron quarterly results.",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep28-oct4-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": [
+      "Southeast Asia"
+    ]
+  },
+  {
+    "id": "7a833678af",
+    "title": "The Wafer | 5–11 October 2026",
+    "description": "The Wafer, 5–11 October 2026: GlobalFoundries–TSMC agreement; TSMC and Samsung results; Dresden roadmap.",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-oct5-11-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
   },
   {
     "id": "1c52ede4b7",
@@ -7887,24 +7893,6 @@
     "title": "The Wafer | Weekly Semiconductor Intelligence | 21–27 September 2026",
     "description": "",
     "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep21-27-2026/",
-    "type": "Newsletter",
-    "industries": [],
-    "geographies": []
-  },
-  {
-    "id": "c0fe255647",
-    "title": "The Wafer | Weekly Semiconductor Intelligence | 28 September–4 October 2026",
-    "description": "",
-    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep28-oct4-2026/",
-    "type": "Newsletter",
-    "industries": [],
-    "geographies": []
-  },
-  {
-    "id": "7a833678af",
-    "title": "The Wafer | Weekly Semiconductor Intelligence | 5–11 October 2026",
-    "description": "",
-    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-oct5-11-2026/",
     "type": "Newsletter",
     "industries": [],
     "geographies": []

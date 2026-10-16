@@ -2295,20 +2295,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://greyradius.com/insights/newsletters/the-stack/ai-power-infrastructure-hyperscale-investment-june-2026/</loc>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://greyradius.com/insights/newsletters/the-wafer/</loc>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://greyradius.com/insights/newsletters/the-wafer/global-fabs-osat-ai-memory-investment-june-2026/</loc>
-    <changefreq>monthly</changefreq>
     <lastmod>2026-07-08</lastmod>
     <priority>0.8</priority>
   </url>
@@ -3879,4 +3867,14 @@
   <url><loc>https://greyradius.com/insights/newsletters/the-signal/enterprise-ai-intelligence-sep7-13-2026/</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://greyradius.com/insights/newsletters/the-stack/infrastructure-brief-sep7-13-2026/</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://greyradius.com/insights/newsletters/the-wafer/semiconductor-intelligence-sep7-13-2026/</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/healthcare/healthcare-brief-sep28-oct4-2026/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/healthcare/healthcare-brief-oct5-11-2026/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/charged/ev-battery-intelligence-sep28-oct4-2026/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/charged/ev-battery-intelligence-oct5-11-2026/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/the-signal/enterprise-ai-intelligence-sep28-oct4-2026/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/the-signal/enterprise-ai-intelligence-oct5-11-2026/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/the-stack/infrastructure-brief-sep28-oct4-2026/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/the-stack/infrastructure-brief-oct5-11-2026/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/the-wafer/semiconductor-intelligence-sep28-oct4-2026/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://greyradius.com/insights/newsletters/the-wafer/semiconductor-intelligence-oct5-11-2026/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
