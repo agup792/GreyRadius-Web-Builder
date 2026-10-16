@@ -1,8 +1,9 @@
 /**
- * Shared current-issue data for the newsletter hub and archive pages.
+ * Shared current-issue data for the newsletter hub.
  *
- * Update this list when a new issue is published. The hub's "Latest" cards
- * and each newsletter archive's first issue both read from this data.
+ * Update this list when a new issue is published. Archive cards are static:
+ * never rewrite them from this data. A cached version of this script must
+ * not turn the newest card into a duplicate of an older archived edition.
  */
 (function () {
   "use strict";
@@ -62,24 +63,5 @@
     });
   }
 
-  function updateArchiveIssue() {
-    const newsletter = latestIssues[document.body.dataset.newsletter];
-    const currentIssue = document.querySelector("[data-newsletter-current]");
-    if (!newsletter || !currentIssue) return;
-
-    currentIssue.href = newsletter.url;
-
-    const issueLabel = currentIssue.querySelector("[data-newsletter-issue]");
-    if (issueLabel) {
-      issueLabel.textContent = `${newsletter.archiveLabel || `Issue ${newsletter.issue}`} · ${newsletter.date}`;
-    }
-
-    const headline = currentIssue.querySelector("[data-newsletter-headline]");
-    if (headline) {
-      headline.textContent = newsletter.headline;
-    }
-  }
-
   updateHubLinks();
-  updateArchiveIssue();
 })();

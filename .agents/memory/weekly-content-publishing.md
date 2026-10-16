@@ -14,3 +14,9 @@ Source fidelity does not establish editorial uniqueness. Compare adjacent editio
 **Why:** The supplied editions can revisit the same reporting period with different snapshots, and original issue numbers can be reused. Upload accuracy alone did not detect those editorial problems.
 
 **How to apply:** Preserve uploaded originals. If corrections are approved, add clearly attributed editorial notes without replacing the reported figures, and verify story text and source links remain intact. Use coverage dates rather than inventing replacement issue numbers when original numbering conflicts. Keep alternative presentations accessible when they contain distinct commentary; remove duplicate issue cards rather than deleting the commentary.
+
+Archive cards must remain static; current-issue JavaScript is for hub links only.
+
+**Why:** Overwriting the first archive card from cached current-issue data can turn it into an older edition while retaining that edition's existing card, producing a visible duplicate despite unique HTML links.
+
+**How to apply:** Never restore cross-edition archive-card rewriting. Weekly verification must exercise stale script data as well as current data, and updated shared scripts must use a content-versioned URL.

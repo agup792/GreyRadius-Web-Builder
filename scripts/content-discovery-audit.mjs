@@ -7,6 +7,23 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const siteRoot = path.join(root, "greyradius-website");
 const write = process.argv.includes("--write");
 
+// A new content hash prevents an older cached latest-issue script from running
+// on newly published newsletter HTML. Keep this automatic for weekly imports.
+if (write) {
+  const newsletterScript = path.join(siteRoot, "assets/js/newsletter-data.js");
+  const version = crypto.createHash("sha256")
+    .update(fs.readFileSync(newsletterScript)).digest("hex").slice(0, 12);
+  for (const series of ["", "healthcare", "charged", "the-signal", "the-stack", "the-wafer"]) {
+    const archive = path.join(siteRoot, "insights/newsletters", series, "index.html");
+    const html = fs.readFileSync(archive, "utf8");
+    const updated = html.replace(
+      /newsletter-data\.js(?:\?[^"']*)?(?=["'])/g,
+      `newsletter-data.js?v=${version}`,
+    );
+    if (updated !== html) fs.writeFileSync(archive, updated);
+  }
+}
+
 const excludedDirectories = new Set(["templates"]);
 const utilityUrls = new Set([
   "/404.html",
