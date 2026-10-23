@@ -23,21 +23,22 @@ test("every archive lists each weekly edition only once", () => {
     assert.equal((html.match(/data-newsletter-current(?=[\s=>])/g) || []).length, 1, name);
   }
   const links = cardLinks(archive("the-signal"));
-  for (const week of ["sep21-27", "sep28-oct4", "oct5-11"]) {
+  for (const week of ["sep21-27", "sep28-oct4", "oct5-11", "oct12-18"]) {
     assert.equal(links.filter((url) => url.includes(`${week}-2026`)).length, 1, week);
   }
-  assert.match(links[0], /oct5-11-2026/);
-  assert.match(links[1], /sep28-oct4-2026/);
-  assert.match(links[2], /sep21-27-2026/);
+  assert.match(links[0], /oct12-18-2026/);
+  assert.match(links[1], /oct5-11-2026/);
+  assert.match(links[2], /sep28-oct4-2026/);
+  assert.match(links[3], /sep21-27-2026/);
 });
 
 test("even stale latest-issue data cannot rewrite or duplicate archive cards", () => {
   // Reproduce the screenshot's failure mode: an older script contains Sep 21
-  // as latest, while the HTML already contains Oct 5, Sep 28 and Sep 21 cards.
+  // as latest, while the HTML already contains October and September cards.
   const staleScript = script.replace(
     /("the-signal": Object\.freeze\(\{[\s\S]*?\n    \}\)),/,
-    (record) => record.replaceAll("oct5-11-2026", "sep21-27-2026")
-      .replaceAll("5–11 October 2026", "21–27 September 2026"),
+    (record) => record.replaceAll("oct12-18-2026", "sep21-27-2026")
+      .replaceAll("12–18 October 2026", "21–27 September 2026"),
   );
   assert.notEqual(staleScript, script);
   for (const name of series) {
@@ -66,8 +67,8 @@ test("hub latest links still work", () => {
   const context = { window: {}, document: { querySelectorAll: () => links } };
   vm.runInNewContext(script, context);
   for (const link of links) {
-    assert.match(link.href, /oct5-11-2026\/$/);
-    assert.match(link.textContent, /5–11 October 2026/);
+    assert.match(link.href, /oct12-18-2026\/$/);
+    assert.match(link.textContent, /12–18 October 2026/);
   }
 });
 

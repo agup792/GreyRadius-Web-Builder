@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-16T07:12:07.286Z",
+  "generatedAt": "2026-10-23T06:29:12.128Z",
   "totals": {
-    "htmlFiles": 799,
-    "indexablePages": 675,
+    "htmlFiles": 806,
+    "indexablePages": 682,
     "redirects": 117,
     "noindexPages": 122,
     "brokenInternalLinks": 0,
@@ -11,12 +11,12 @@
   },
   "byType": {
     "About": 4,
-    "Blog": 4,
-    "Case Study": 45,
+    "Blog": 5,
+    "Case Study": 46,
     "Industry": 476,
     "Insight": 35,
     "Market Entry Guide": 23,
-    "Newsletter": 76,
+    "Newsletter": 81,
     "Page": 5,
     "Service": 7
   },
@@ -1511,6 +1511,41 @@
     },
     {
       "source": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
+      "destination": "/contact.html",
+      "count": 3
+    },
+    {
+      "source": "/blogs/gtm-execution-as-a-service-embedded-team/",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/gtm-execution-as-a-service-embedded-team/",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/gtm-execution-as-a-service-embedded-team/",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/gtm-execution-as-a-service-embedded-team/",
+      "destination": "/search.html",
+      "count": 3
+    },
+    {
+      "source": "/blogs/gtm-execution-as-a-service-embedded-team/",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/gtm-execution-as-a-service-embedded-team/",
+      "destination": "/insights/",
+      "count": 4
+    },
+    {
+      "source": "/blogs/gtm-execution-as-a-service-embedded-team/",
       "destination": "/contact.html",
       "count": 3
     },
@@ -3118,6 +3153,11 @@
       "source": "/case-studies/kenya-fintech-market-entry.html",
       "destination": "/contact.html",
       "count": 4
+    },
+    {
+      "source": "/case-studies/market-entry-qualified-pipeline-gtm-execution/",
+      "destination": "/",
+      "count": 3
     },
     {
       "source": "/case-studies/nativfresh-cpg-gtm.html",

@@ -1203,11 +1203,10 @@
   {
     "id": "de827b4103",
     "title": "Charged – Weekly EV & Battery Intelligence",
-    "description": "Archive of Charged by GreyRadius – weekly EV and battery intelligence covering commercial electrification, battery technology and mobility policy. Every Thursday.",
+    "description": "",
     "url": "/insights/newsletters/charged/",
     "type": "Newsletter",
     "industries": [
-      "Technology & SaaS",
       "Energy & Chemicals"
     ],
     "geographies": []
@@ -1395,16 +1394,11 @@
   {
     "id": "7d8e1c36b6",
     "title": "Consulting Case Studies | Market Entry, GTM & Feasibility Outcomes",
-    "description": "Primary-research-led strategy across key engagements – market entry, GTM execution, feasibility, and opportunity assessment across Southeast Asia, GCC, North America, MENA, and India.",
+    "description": "",
     "url": "/case-studies/",
     "type": "Case Study",
     "industries": [],
-    "geographies": [
-      "India",
-      "GCC",
-      "Southeast Asia",
-      "North America"
-    ]
+    "geographies": []
   },
   {
     "id": "e34614aae1",
@@ -2336,12 +2330,10 @@
   {
     "id": "63cef25765",
     "title": "GreyRadius Newsletters – Weekly Market Intelligence",
-    "description": "Five weekly newsletters from GreyRadius covering healthcare, AI adoption, EV markets, data centres, and semiconductors. Expert-led intelligence published every Thursday.",
+    "description": "",
     "url": "/insights/newsletters/",
     "type": "Newsletter",
-    "industries": [
-      "Technology & SaaS"
-    ],
+    "industries": [],
     "geographies": []
   },
   {
@@ -2353,6 +2345,15 @@
     "industries": [
       "Financial Services"
     ],
+    "geographies": []
+  },
+  {
+    "id": "546a98eb98",
+    "title": "GTM execution-as-a-service — when an embedded team makes more sense than building in-house",
+    "description": "",
+    "url": "/blogs/gtm-execution-as-a-service-embedded-team/",
+    "type": "Blog",
+    "industries": [],
     "geographies": []
   },
   {
@@ -3428,6 +3429,18 @@
     "geographies": []
   },
   {
+    "id": "2a906f3d59",
+    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 12–18 October 2026",
+    "description": "Healthcare acquisitions, hospital capacity and AI-enabled care. Park Hospital · Mankind Pharma · Digital pathology and healthcare AI.",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-oct12-18-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Healthcare & Life Sciences"
+    ],
+    "geographies": []
+  },
+  {
     "id": "8fea820027",
     "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 14–20 September 2026",
     "description": "",
@@ -3478,16 +3491,11 @@
   {
     "id": "fd8b86c4d7",
     "title": "Healthcare Weekly Brief",
-    "description": "Weekly healthcare intelligence covering HealthTech, MedTech, pharma, hospitals and healthcare AI across global and emerging markets.",
+    "description": "",
     "url": "/insights/newsletters/healthcare/",
     "type": "Newsletter",
-    "industries": [
-      "Technology & SaaS",
-      "Healthcare & Life Sciences"
-    ],
-    "geographies": [
-      "Global"
-    ]
+    "industries": [],
+    "geographies": []
   },
   {
     "id": "5c72587230",
@@ -5151,16 +5159,11 @@
   {
     "id": "e428fae4c8",
     "title": "Insights | Market Entry Research & Newsletters",
-    "description": "Market entry insights, sector research, and weekly newsletters from GreyRadius across India, Gulf, Southeast Asia, and Africa.",
+    "description": "",
     "url": "/insights/",
     "type": "Insight",
     "industries": [],
-    "geographies": [
-      "India",
-      "GCC",
-      "Southeast Asia",
-      "Africa"
-    ]
+    "geographies": []
   },
   {
     "id": "a3f5f809d9",
@@ -7222,6 +7225,20 @@
     "geographies": []
   },
   {
+    "id": "bc5deffcf0",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 12–18 October 2026",
+    "description": "EV demand, lithium supply and India charging economics. September global sales · EnergyX–Trafigura · HPCL tariffs and Jio-bp access.",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-oct12-18-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": [
+      "India",
+      "Global"
+    ]
+  },
+  {
     "id": "2cd3c2a5c8",
     "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 14–20 September 2026",
     "description": "",
@@ -7312,6 +7329,15 @@
     "geographies": []
   },
   {
+    "id": "5334627ca6",
+    "title": "The Market Was Selected. The Sale Was Still Unproven.",
+    "description": "",
+    "url": "/case-studies/market-entry-qualified-pipeline-gtm-execution/",
+    "type": "Case Study",
+    "industries": [],
+    "geographies": []
+  },
+  {
     "id": "0a5a7cab99",
     "title": "The Real Cost of Market Entry Consulting - and Why Thinking About It as a Cost Is Wrong",
     "description": "A practical framework for evaluating market entry consulting fees against the capital, management time and commercial risk of getting expansion decisions wrong.",
@@ -7336,18 +7362,13 @@
   {
     "id": "3b9a91bccd",
     "title": "The Signal – Weekly Enterprise AI Intelligence",
-    "description": "Archive of The Signal by GreyRadius – weekly enterprise AI intelligence covering adoption, funding, infrastructure and policy across India, Gulf and Southeast Asia. Every Thursday.",
+    "description": "",
     "url": "/insights/newsletters/the-signal/",
     "type": "Newsletter",
     "industries": [
-      "Technology & SaaS",
-      "Real Estate & Infrastructure"
+      "Technology & SaaS"
     ],
-    "geographies": [
-      "India",
-      "GCC",
-      "Southeast Asia"
-    ]
+    "geographies": []
   },
   {
     "id": "d6178a87e2",
@@ -7405,6 +7426,19 @@
       "Technology & SaaS"
     ],
     "geographies": []
+  },
+  {
+    "id": "6d8bb4ae5e",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 12 – 18 October 2026",
+    "description": "Governed agentic AI, India partnerships and enterprise controls. HCLTech–Anthropic · IBM–MeitY · OpenAI enterprise adoption.",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-oct12-18-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": [
+      "India"
+    ]
   },
   {
     "id": "1d74a69f8e",
@@ -7522,13 +7556,11 @@
   {
     "id": "53e676d2cc",
     "title": "The Stack – Weekly Data Centre & AI Infrastructure Intelligence",
-    "description": "Archive of The Stack by GreyRadius – weekly data centre, cloud infrastructure and AI power intelligence covering hyperscale investment, energy partnerships and digital sovereignty. Every Thursday.",
+    "description": "",
     "url": "/insights/newsletters/the-stack/",
     "type": "Newsletter",
     "industries": [
       "Technology & SaaS",
-      "Energy & Chemicals",
-      "Financial Services",
       "Real Estate & Infrastructure"
     ],
     "geographies": []
@@ -7642,6 +7674,22 @@
     "geographies": []
   },
   {
+    "id": "5bc266eb70",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 12–18 October 2026",
+    "description": "India data-centre construction, power pipelines and global capacity. Colt DCS–RMZ · Tata Power · AI infrastructure equipment and permitting.",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-oct12-18-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Manufacturing & Industrials",
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": [
+      "India",
+      "Global"
+    ]
+  },
+  {
     "id": "698890a905",
     "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 14–20 September 2026",
     "description": "",
@@ -7739,15 +7787,11 @@
   {
     "id": "37bc19da99",
     "title": "The Wafer – Weekly Semiconductor Intelligence",
-    "description": "Archive of The Wafer by GreyRadius – weekly semiconductor intelligence covering fabs, OSAT, chip design ecosystems and global supply chain policy. Every Thursday.",
+    "description": "",
     "url": "/insights/newsletters/the-wafer/",
     "type": "Newsletter",
-    "industries": [
-      "Manufacturing & Industrials"
-    ],
-    "geographies": [
-      "Global"
-    ]
+    "industries": [],
+    "geographies": []
   },
   {
     "id": "c0fe255647",
@@ -7878,6 +7922,17 @@
       "India",
       "Europe"
     ]
+  },
+  {
+    "id": "3de0b6cf01",
+    "title": "The Wafer | Weekly Semiconductor Intelligence | 12–18 October 2026",
+    "description": "Foundry earnings, silicon carbide supply and AI packaging. TSMC and ASML results · GlobalFoundries · AI connectivity and power.",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-oct12-18-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": []
   },
   {
     "id": "e4dd330396",
