@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-23T06:29:12.128Z",
+  "generatedAt": "2026-10-30T09:40:24.028Z",
   "totals": {
-    "htmlFiles": 806,
-    "indexablePages": 682,
+    "htmlFiles": 813,
+    "indexablePages": 689,
     "redirects": 117,
     "noindexPages": 122,
     "brokenInternalLinks": 0,
@@ -11,12 +11,12 @@
   },
   "byType": {
     "About": 4,
-    "Blog": 5,
-    "Case Study": 46,
+    "Blog": 6,
+    "Case Study": 47,
     "Industry": 476,
     "Insight": 35,
     "Market Entry Guide": 23,
-    "Newsletter": 81,
+    "Newsletter": 86,
     "Page": 5,
     "Service": 7
   },
@@ -1546,6 +1546,41 @@
     },
     {
       "source": "/blogs/gtm-execution-as-a-service-embedded-team/",
+      "destination": "/contact.html",
+      "count": 3
+    },
+    {
+      "source": "/blogs/healthcare-market-entry-india-hospital-adoption/",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/healthcare-market-entry-india-hospital-adoption/",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/healthcare-market-entry-india-hospital-adoption/",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/healthcare-market-entry-india-hospital-adoption/",
+      "destination": "/search.html",
+      "count": 3
+    },
+    {
+      "source": "/blogs/healthcare-market-entry-india-hospital-adoption/",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/healthcare-market-entry-india-hospital-adoption/",
+      "destination": "/insights/",
+      "count": 4
+    },
+    {
+      "source": "/blogs/healthcare-market-entry-india-hospital-adoption/",
       "destination": "/contact.html",
       "count": 3
     },
@@ -3156,6 +3191,11 @@
     },
     {
       "source": "/case-studies/market-entry-qualified-pipeline-gtm-execution/",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/medical-device-india-hospital-adoption/",
       "destination": "/",
       "count": 3
     },

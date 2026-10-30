@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+from datetime import date
 
 from bs4 import BeautifulSoup
 from docx import Document
@@ -64,7 +65,7 @@ def metadata(title, description, url):
     return result + '\n'
 
 
-def make_article(template, url, title, description, eyebrow, body, subtitle=None):
+def make_article(template, url, title, description, eyebrow, body, subtitle=None, related=None):
     page = parse((SITE / template).read_text())
     page.title.string = title + " | GreyRadius Consulting"
     for tag in page.select('link[rel="canonical"],meta[name="description"],meta[property^="og:"],meta[name^="twitter:"],script[type="application/ld+json"]'):
@@ -75,7 +76,7 @@ def make_article(template, url, title, description, eyebrow, body, subtitle=None
     page.select_one(".hero-block__eyebrow").string = eyebrow
     time = page.select_one("time")
     time["datetime"] = DATE
-    time.string = "23 October 2026"
+    time.string = date.fromisoformat(DATE).strftime("%d %B %Y").lstrip("0")
     sub = page.select_one(".hero-block__sub")
     if sub and subtitle:
         sub.string = subtitle
@@ -85,6 +86,7 @@ def make_article(template, url, title, description, eyebrow, body, subtitle=None
     for table in list(article.select("table")):
         wrapper = page.new_tag("div", attrs={"class": "table-wrap"})
         table.wrap(wrapper)
+    related_override = related
     if url.startswith("/blogs/"):
         related = "/case-studies/market-entry-qualified-pipeline-gtm-execution/"
         related_text = "Read the related market-entry execution case study"
@@ -93,6 +95,8 @@ def make_article(template, url, title, description, eyebrow, body, subtitle=None
         related = "/blogs/gtm-execution-as-a-service-embedded-team/"
         related_text = "Explore the GTM execution-as-a-service guide"
         parent_url, parent_label = "/case-studies/", "Case Studies"
+    if related_override:
+        related, related_text = related_override
     article.append(parse(
         f'<p><a href="{related}">{related_text}</a>, or '
         '<a href="/contact.html">contact GreyRadius</a> to discuss your execution priorities.</p>'

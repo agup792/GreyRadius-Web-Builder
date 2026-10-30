@@ -1287,6 +1287,19 @@
     "geographies": []
   },
   {
+    "id": "5829f6d680",
+    "title": "Clinical Interest Was Not a Purchase Pathway.",
+    "description": "",
+    "url": "/case-studies/medical-device-india-hospital-adoption/",
+    "type": "Case Study",
+    "industries": [
+      "Healthcare & Life Sciences"
+    ],
+    "geographies": [
+      "India"
+    ]
+  },
+  {
     "id": "42df85a68d",
     "title": "Cloud Infrastructure & Services Market Entry",
     "description": "GreyRadius helps cloud infrastructure companies, IaaS providers, and managed cloud services firms with market entry strategy, GTM execution, feasibility.",
@@ -3450,6 +3463,17 @@
     "geographies": []
   },
   {
+    "id": "a7c3c522cf",
+    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 19–25 October 2026",
+    "description": "Mercury-device phase-out, rural healthcare funding and FDA decisions. India 2030 target · US nursing workforce · Rural access and drug approvals.",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-oct19-25-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": [
+      "India"
+    ]
+  },
+  {
     "id": "a43aa00ea3",
     "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 21–27 September 2026",
     "description": "",
@@ -3487,6 +3511,19 @@
       "Healthcare & Life Sciences"
     ],
     "geographies": []
+  },
+  {
+    "id": "67eb017eff",
+    "title": "Healthcare market entry in India — how to turn product approval into hospital adoption",
+    "description": "",
+    "url": "/blogs/healthcare-market-entry-india-hospital-adoption/",
+    "type": "Blog",
+    "industries": [
+      "Healthcare & Life Sciences"
+    ],
+    "geographies": [
+      "India"
+    ]
   },
   {
     "id": "fd8b86c4d7",
@@ -7262,6 +7299,20 @@
     "geographies": []
   },
   {
+    "id": "4c8fe3e86e",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 19–25 October 2026",
+    "description": "India battery storage, regional EV demand and solid-state manufacturing. Failte–Sigenergy · ACME and SECI projects · Europe BEV registrations.",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-oct19-25-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": [
+      "India",
+      "Europe"
+    ]
+  },
+  {
     "id": "9eab0caba8",
     "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 21–27 September 2026",
     "description": "",
@@ -7459,6 +7510,18 @@
     "type": "Newsletter",
     "industries": [
       "Technology & SaaS"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "a86f31f64e",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 19 – 25 October 2026",
+    "description": "Enterprise AI adoption, governance and execution priorities. Enterprise platforms · Agent deployment · Infrastructure and operating controls.",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-oct19-25-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Real Estate & Infrastructure"
     ],
     "geographies": []
   },
@@ -7713,6 +7776,20 @@
     "geographies": []
   },
   {
+    "id": "49f8335515",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 19–25 October 2026",
+    "description": "GPU deployments, sovereign cloud and AI power infrastructure. Noida and Chennai compute · Saudi and UAE capacity · Power flexibility.",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-oct19-25-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": [
+      "GCC"
+    ]
+  },
+  {
     "id": "3072dccfa5",
     "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 21–27 September 2026",
     "description": "",
@@ -7941,6 +8018,18 @@
     "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep14-20-2026/",
     "type": "Newsletter",
     "industries": [],
+    "geographies": []
+  },
+  {
+    "id": "172c91896d",
+    "title": "The Wafer | Weekly Semiconductor Intelligence | 19–25 October 2026",
+    "description": "AI packaging capacity, equipment earnings and semiconductor materials. NVIDIA supply chain · Lam Research · Texas Instruments · CMP technology.",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-oct19-25-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Manufacturing & Industrials"
+    ],
     "geographies": []
   },
   {
