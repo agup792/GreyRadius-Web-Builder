@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-30T09:40:24.028Z",
+  "generatedAt": "2026-11-05T17:15:48.039Z",
   "totals": {
-    "htmlFiles": 813,
-    "indexablePages": 689,
+    "htmlFiles": 820,
+    "indexablePages": 696,
     "redirects": 117,
     "noindexPages": 122,
     "brokenInternalLinks": 0,
@@ -11,12 +11,12 @@
   },
   "byType": {
     "About": 4,
-    "Blog": 6,
-    "Case Study": 47,
+    "Blog": 7,
+    "Case Study": 48,
     "Industry": 476,
     "Insight": 35,
     "Market Entry Guide": 23,
-    "Newsletter": 86,
+    "Newsletter": 91,
     "Page": 5,
     "Service": 7
   },
@@ -1615,6 +1615,41 @@
       "count": 4
     },
     {
+      "source": "/blogs/india-quick-commerce-market-entry-unit-economics/",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/india-quick-commerce-market-entry-unit-economics/",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/india-quick-commerce-market-entry-unit-economics/",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/india-quick-commerce-market-entry-unit-economics/",
+      "destination": "/search.html",
+      "count": 3
+    },
+    {
+      "source": "/blogs/india-quick-commerce-market-entry-unit-economics/",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/india-quick-commerce-market-entry-unit-economics/",
+      "destination": "/insights/",
+      "count": 4
+    },
+    {
+      "source": "/blogs/india-quick-commerce-market-entry-unit-economics/",
+      "destination": "/contact.html",
+      "count": 3
+    },
+    {
       "source": "/blogs/saudi-arabia-or-uae-first-gcc-market-entry/",
       "destination": "/",
       "count": 3
@@ -3046,6 +3081,11 @@
     },
     {
       "source": "/case-studies/india-edtech-curriculum-aligned-market-entry/",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/india-quick-commerce-city-sku-pilot/",
       "destination": "/",
       "count": 3
     },

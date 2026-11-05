@@ -20,3 +20,9 @@ Archive cards must remain static; current-issue JavaScript is for hub links only
 **Why:** Overwriting the first archive card from cached current-issue data can turn it into an older edition while retaining that edition's existing card, producing a visible duplicate despite unique HTML links.
 
 **How to apply:** Never restore cross-edition archive-card rewriting. Weekly verification must exercise stale script data as well as current data, and updated shared scripts must use a content-versioned URL.
+
+Review embedded summary strips as well as story text when importing a newsletter.
+
+**Why:** A supplied healthcare edition contained new stories but retained an older edition's development count and unrelated headline metrics. Exact source copying would repeat stale data under a current-week label.
+
+**How to apply:** Compare stated development counts with actual stories and summary metrics with the current text. Preserve uploaded originals; ask before changing supplied figures and visibly flag mismatches if correction is not yet approved.

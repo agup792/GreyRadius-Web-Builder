@@ -58,6 +58,17 @@
     ]
   },
   {
+    "id": "f04863d765",
+    "title": "A Sales Spike Can Hide a Weak City",
+    "description": "",
+    "url": "/case-studies/india-quick-commerce-city-sku-pilot/",
+    "type": "Case Study",
+    "industries": [],
+    "geographies": [
+      "India"
+    ]
+  },
+  {
     "id": "3b79d51135",
     "title": "About GreyRadius Consulting | Boutique Market Entry Strategy",
     "description": "GreyRadius is a boutique strategy and growth consulting firm founded in 2017. Offices in Delhi, Dubai, Singapore, and Brussels. 200+ projects delivered across India, GCC, Southeast Asia, and Africa.",
@@ -3483,6 +3494,15 @@
     "geographies": []
   },
   {
+    "id": "2bacf78efb",
+    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 26 October–1 November 2026",
+    "description": "",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-oct26-nov01-2026/",
+    "type": "Newsletter",
+    "industries": [],
+    "geographies": []
+  },
+  {
     "id": "3efe9d3ce2",
     "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 31 August–6 September 2026",
     "description": "",
@@ -4822,6 +4842,17 @@
     "industries": [
       "Real Estate & Infrastructure"
     ],
+    "geographies": [
+      "India"
+    ]
+  },
+  {
+    "id": "e9e8505389",
+    "title": "India quick commerce entry – when fast delivery creates growth and when it destroys margin",
+    "description": "",
+    "url": "/blogs/india-quick-commerce-market-entry-unit-economics/",
+    "type": "Blog",
+    "industries": [],
     "geographies": [
       "India"
     ]
@@ -7335,6 +7366,19 @@
     "geographies": []
   },
   {
+    "id": "600ccc1013",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 26 October–1 November 2026",
+    "description": "Battery testing, electric freight and public charging economics. ARAI testing lab · Amazon and JSW fleets · European charging.",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-oct26-nov01-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": [
+      "Europe"
+    ]
+  },
+  {
     "id": "cc17ea5228",
     "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 31 August–6 September 2026",
     "description": "",
@@ -7567,6 +7611,18 @@
     "type": "Newsletter",
     "industries": [
       "Technology & SaaS"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "671082a935",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 26 October – 1 November 2026",
+    "description": "Enterprise AI workflows, agent controls and sovereign investment. Platform adoption · Evaluation and governance · Sovereign AI.",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-oct26-nov01-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Financial Services"
     ],
     "geographies": []
   },
@@ -7812,6 +7868,18 @@
     "geographies": []
   },
   {
+    "id": "6af76a3eec",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 26 October–1 November 2026",
+    "description": "Chennai AI capacity, cloud accelerators and power commitments. L&T and AdaniConneX · Oracle cloud · Grid access and financing.",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-oct26-nov01-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": []
+  },
+  {
     "id": "b9646ccae5",
     "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 31 August–6 September 2026",
     "description": "",
@@ -8039,6 +8107,18 @@
     "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep21-27-2026/",
     "type": "Newsletter",
     "industries": [],
+    "geographies": []
+  },
+  {
+    "id": "bc7a167230",
+    "title": "The Wafer | Weekly Semiconductor Intelligence | 26 October–1 November 2026",
+    "description": "Foundry utilisation, equipment earnings and AI memory supply. UMC · Intel and KLA · HBM, packaging and qualification.",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-oct26-nov01-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Manufacturing & Industrials"
+    ],
     "geographies": []
   },
   {

@@ -34,10 +34,10 @@ test("every archive lists each weekly edition only once", () => {
     }
   }
   const links = cardLinks(archive("the-signal"));
-  for (const week of ["sep21-27", "sep28-oct4", "oct5-11", "oct12-18", "oct19-25"]) {
+  for (const week of ["sep21-27", "sep28-oct4", "oct5-11", "oct12-18", "oct19-25", "oct26-nov01"]) {
     assert.equal(links.filter((url) => url.includes(`${week}-2026`)).length, 1, week);
   }
-  const recent = ["oct19-25", "oct12-18", "oct5-11", "sep28-oct4", "sep21-27"];
+  const recent = ["oct26-nov01", "oct19-25", "oct12-18", "oct5-11", "sep28-oct4", "sep21-27"];
   recent.forEach((week, i) => assert.ok(links[i].includes(`${week}-2026`)));
 });
 
