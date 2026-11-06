@@ -51,18 +51,22 @@ def add_newsletter(series, prefix, source_prefix, heading, summary, hub):
     check.select_one('nav[aria-label="Newsletter navigation"]').decompose()
     assert str(check.body) == str(original.body), source.name
     if series == "healthcare":
-        # Preserve the source's figures pending approval; clearly flag its stale template strip.
-        note = (
-            '<aside data-editorial-note="source-summary" style="max-width:1120px;margin:1rem auto;padding:1rem;background:#fff6e8;color:#132846;font:14px/1.6 sans-serif;">'
-            '<strong>Editorial note:</strong> This edition contains six developments. The supplied '
-            '“Healthcare Intelligence | This Week” strip below repeats older figures '
-            '(11 developments, a 2030 phase-out target, US$275M and 254 Alaska projects). '
-            'Those figures are not a summary of the 26 October–1 November reporting above.</aside>'
-        )
+        # User-approved correction: use this edition's story count and Max Healthcare figures.
+        # The uploaded original and all reporting remain unchanged.
         page = weekly.parse(result)
         strip = page.select_one(".signals")
         assert strip is not None
-        strip.parent.insert_before(weekly.parse(note))
+        values = [
+            ("Developments", str(len(page.select(".story")))),
+            ("Max Healthcare approved investment", "₹415 crore"),
+            ("Additional beds planned", "209"),
+            ("Q2 bed occupancy", "77%"),
+        ]
+        signals = strip.select(".signal")
+        assert len(signals) == len(values)
+        for signal, (label, value) in zip(signals, values):
+            signal.span.string = label
+            signal.b.string = value
         result = str(page)
     weekly.save(url.lstrip("/") + "index.html", result)
     archive = weekly.parse((SITE / f"insights/newsletters/{series}/index.html").read_text())

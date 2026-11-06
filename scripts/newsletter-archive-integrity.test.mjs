@@ -91,3 +91,19 @@ test("hub and archives request the current content-hashed script", () => {
     assert.doesNotMatch(html, /newsletter-data\.js["']/);
   }
 });
+
+test("Oct 26 healthcare summary uses approved current-week figures", () => {
+  const html = fs.readFileSync(path.join(root,
+    "insights/newsletters/healthcare/healthcare-brief-oct26-nov01-2026/index.html"), "utf8");
+  const stories = [...html.matchAll(/class="story(?:\s[^"]*)?"/g)].length;
+  assert.equal(stories, 6);
+  for (const [label, value] of [
+    ["Developments", String(stories)],
+    ["Max Healthcare approved investment", "₹415 crore"],
+    ["Additional beds planned", "209"],
+    ["Q2 bed occupancy", "77%"],
+  ]) {
+    assert.ok(html.includes(`<span>${label}</span><b>${value}</b>`), label);
+  }
+  assert.doesNotMatch(html, /data-editorial-note="source-summary"|India phase-out target|Nursing workforce|Alaska rural projects/);
+});
