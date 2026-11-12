@@ -34,10 +34,10 @@ test("every archive lists each weekly edition only once", () => {
     }
   }
   const links = cardLinks(archive("the-signal"));
-  for (const week of ["sep21-27", "sep28-oct4", "oct5-11", "oct12-18", "oct19-25", "oct26-nov01"]) {
+  for (const week of ["sep21-27", "sep28-oct4", "oct5-11", "oct12-18", "oct19-25", "oct26-nov01", "nov02-08"]) {
     assert.equal(links.filter((url) => url.includes(`${week}-2026`)).length, 1, week);
   }
-  const recent = ["oct26-nov01", "oct19-25", "oct12-18", "oct5-11", "sep28-oct4", "sep21-27"];
+  const recent = ["nov02-08", "oct26-nov01", "oct19-25", "oct12-18", "oct5-11", "sep28-oct4", "sep21-27"];
   recent.forEach((week, i) => assert.ok(links[i].includes(`${week}-2026`)));
 });
 
@@ -106,4 +106,30 @@ test("Oct 26 healthcare summary uses approved current-week figures", () => {
     assert.ok(html.includes(`<span>${label}</span><b>${value}</b>`), label);
   }
   assert.doesNotMatch(html, /data-editorial-note="source-summary"|India phase-out target|Nursing workforce|Alaska rural projects/);
+});
+
+test("Nov 2 healthcare edition has consistent dates without the previous summary strip", () => {
+  const html = fs.readFileSync(path.join(root,
+    "insights/newsletters/healthcare/healthcare-brief-nov02-08-2026/index.html"), "utf8");
+  assert.equal([...html.matchAll(/class="story(?:\s[^"]*)?"/g)].length, 5);
+  assert.ok(html.includes("GreyRadius | Weekly Healthcare Brief | 2–8 November 2026"));
+  assert.doesNotMatch(html, /26 October|1 November|class="signals"/);
+});
+
+test("manufacturing content retains its tables, illustrations and evidence caveats", () => {
+  const blog = fs.readFileSync(path.join(root,
+    "blogs/china-plus-one-manufacturing-india-vietnam-indonesia/index.html"), "utf8");
+  const caseStudy = fs.readFileSync(path.join(root,
+    "case-studies/manufacturing-location-selection-asia/index.html"), "utf8");
+  assert.equal([...blog.matchAll(/<table\b/g)].length, 4);
+  assert.ok(blog.includes("not empirically verified cost or country rankings"));
+  assert.doesNotMatch(blog, /Primary keyword:|Secondary keywords:/);
+  assert.equal([...caseStudy.matchAll(/<figure\b/g)].length, 2);
+  for (const number of [1, 2]) {
+    const image = `assets/images/case-studies/manufacturing-asia-decision-${number}.png`;
+    assert.ok(caseStudy.includes(`src="/${image}"`));
+    assert.ok(fs.statSync(path.join(root, image)).size > 0);
+  }
+  assert.ok(caseStudy.includes("do not establish realised savings"));
+  assert.ok(caseStudy.includes("no quantified investment outcome is claimed"));
 });

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-06T07:42:20.150Z",
+  "generatedAt": "2026-11-12T14:50:49.482Z",
   "totals": {
-    "htmlFiles": 820,
-    "indexablePages": 696,
+    "htmlFiles": 827,
+    "indexablePages": 703,
     "redirects": 117,
     "noindexPages": 122,
     "brokenInternalLinks": 0,
@@ -11,12 +11,12 @@
   },
   "byType": {
     "About": 4,
-    "Blog": 7,
-    "Case Study": 48,
+    "Blog": 8,
+    "Case Study": 49,
     "Industry": 476,
     "Insight": 35,
     "Market Entry Guide": 23,
-    "Newsletter": 91,
+    "Newsletter": 96,
     "Page": 5,
     "Service": 7
   },
@@ -1476,6 +1476,41 @@
     },
     {
       "source": "/blogs/ai-transformation-mid-sized-businesses-first-workflow/",
+      "destination": "/contact.html",
+      "count": 3
+    },
+    {
+      "source": "/blogs/china-plus-one-manufacturing-india-vietnam-indonesia/",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/china-plus-one-manufacturing-india-vietnam-indonesia/",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/china-plus-one-manufacturing-india-vietnam-indonesia/",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/china-plus-one-manufacturing-india-vietnam-indonesia/",
+      "destination": "/search.html",
+      "count": 3
+    },
+    {
+      "source": "/blogs/china-plus-one-manufacturing-india-vietnam-indonesia/",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/china-plus-one-manufacturing-india-vietnam-indonesia/",
+      "destination": "/insights/",
+      "count": 4
+    },
+    {
+      "source": "/blogs/china-plus-one-manufacturing-india-vietnam-indonesia/",
       "destination": "/contact.html",
       "count": 3
     },
@@ -3228,6 +3263,11 @@
       "source": "/case-studies/kenya-fintech-market-entry.html",
       "destination": "/contact.html",
       "count": 4
+    },
+    {
+      "source": "/case-studies/manufacturing-location-selection-asia/",
+      "destination": "/",
+      "count": 3
     },
     {
       "source": "/case-studies/market-entry-qualified-pipeline-gtm-execution/",
