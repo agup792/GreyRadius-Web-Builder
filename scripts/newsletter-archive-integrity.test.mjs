@@ -34,10 +34,10 @@ test("every archive lists each weekly edition only once", () => {
     }
   }
   const links = cardLinks(archive("the-signal"));
-  for (const week of ["sep21-27", "sep28-oct4", "oct5-11", "oct12-18", "oct19-25", "oct26-nov01", "nov02-08"]) {
+  for (const week of ["sep21-27", "sep28-oct4", "oct5-11", "oct12-18", "oct19-25", "oct26-nov01", "nov02-08", "nov09-15"]) {
     assert.equal(links.filter((url) => url.includes(`${week}-2026`)).length, 1, week);
   }
-  const recent = ["nov02-08", "oct26-nov01", "oct19-25", "oct12-18", "oct5-11", "sep28-oct4", "sep21-27"];
+  const recent = ["nov09-15", "nov02-08", "oct26-nov01", "oct19-25", "oct12-18", "oct5-11", "sep28-oct4", "sep21-27"];
   recent.forEach((week, i) => assert.ok(links[i].includes(`${week}-2026`)));
 });
 
@@ -132,4 +132,34 @@ test("manufacturing content retains its tables, illustrations and evidence cavea
   }
   assert.ok(caseStudy.includes("do not establish realised savings"));
   assert.ok(caseStudy.includes("no quantified investment outcome is claimed"));
+});
+
+test("Nov 9 newsletters retain current-week dates and matching highlights", () => {
+  for (const [name, prefix, count] of [
+    ["healthcare", "healthcare-brief", 11],
+    ["charged", "ev-battery-intelligence", 17],
+    ["the-signal", "enterprise-ai-intelligence", 14],
+    ["the-stack", "infrastructure-brief", 21],
+  ]) {
+    const html = fs.readFileSync(path.join(root,
+      `insights/newsletters/${name}/${prefix}-nov09-15-2026/index.html`), "utf8");
+    assert.equal([...html.matchAll(/class="story(?:\s[^"]*)?"/g)].length, count, name);
+    assert.equal([...html.matchAll(/class="highlight"/g)].length, count, name);
+    assert.match(html, /9–15 November 2026/);
+    assert.doesNotMatch(html, /2–8 November 2026/);
+  }
+});
+
+test("GCC AI articles preserve all tables and limitations on claimed outcomes", () => {
+  const blog = fs.readFileSync(path.join(root,
+    "blogs/enterprise-ai-sales-gcc-pilot-to-paid-deployment/index.html"), "utf8");
+  const caseStudy = fs.readFileSync(path.join(root,
+    "case-studies/gcc-enterprise-ai-pilot-commercialisation/index.html"), "utf8");
+  assert.equal([...blog.matchAll(/<table\b/g)].length, 5);
+  assert.equal([...caseStudy.matchAll(/<table\b/g)].length, 1);
+  assert.ok(blog.includes("hypothetical assumptions, not reported customer results"));
+  assert.ok(blog.includes("not a guarantee of contract signature"));
+  assert.ok(caseStudy.includes("No verified baseline, post-engagement performance figures, or signed-contract outcomes were supplied."));
+  assert.ok(caseStudy.includes("actual reductions in cycle time, increases in conversion, and contracted revenue gains were not provided."));
+  assert.doesNotMatch(blog + caseStudy, /w:pPr|w:tbl|Primary keyword:|Secondary keywords:/);
 });

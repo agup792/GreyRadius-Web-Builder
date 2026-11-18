@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-12T14:50:49.482Z",
+  "generatedAt": "2026-11-18T14:12:42.611Z",
   "totals": {
-    "htmlFiles": 827,
-    "indexablePages": 703,
+    "htmlFiles": 834,
+    "indexablePages": 710,
     "redirects": 117,
     "noindexPages": 122,
     "brokenInternalLinks": 0,
@@ -11,12 +11,12 @@
   },
   "byType": {
     "About": 4,
-    "Blog": 8,
-    "Case Study": 49,
+    "Blog": 9,
+    "Case Study": 50,
     "Industry": 476,
     "Insight": 35,
     "Market Entry Guide": 23,
-    "Newsletter": 96,
+    "Newsletter": 101,
     "Page": 5,
     "Service": 7
   },
@@ -1515,6 +1515,41 @@
       "count": 3
     },
     {
+      "source": "/blogs/enterprise-ai-sales-gcc-pilot-to-paid-deployment/",
+      "destination": "/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/enterprise-ai-sales-gcc-pilot-to-paid-deployment/",
+      "destination": "/services/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/enterprise-ai-sales-gcc-pilot-to-paid-deployment/",
+      "destination": "/industries/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/enterprise-ai-sales-gcc-pilot-to-paid-deployment/",
+      "destination": "/search.html",
+      "count": 3
+    },
+    {
+      "source": "/blogs/enterprise-ai-sales-gcc-pilot-to-paid-deployment/",
+      "destination": "/case-studies/",
+      "count": 3
+    },
+    {
+      "source": "/blogs/enterprise-ai-sales-gcc-pilot-to-paid-deployment/",
+      "destination": "/insights/",
+      "count": 4
+    },
+    {
+      "source": "/blogs/enterprise-ai-sales-gcc-pilot-to-paid-deployment/",
+      "destination": "/contact.html",
+      "count": 3
+    },
+    {
       "source": "/blogs/ev-market-entry-india-pli-fame-commercial-reality/",
       "destination": "/",
       "count": 3
@@ -2807,6 +2842,11 @@
     {
       "source": "/case-studies/gcc-beauty-brand-market-entry.html",
       "destination": "/insights/",
+      "count": 3
+    },
+    {
+      "source": "/case-studies/gcc-enterprise-ai-pilot-commercialisation/",
+      "destination": "/",
       "count": 3
     },
     {

@@ -69,6 +69,19 @@
     ]
   },
   {
+    "id": "d8bc684c4d",
+    "title": "A Successful AI Pilot Is Not a Purchase Decision",
+    "description": "",
+    "url": "/case-studies/gcc-enterprise-ai-pilot-commercialisation/",
+    "type": "Case Study",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": [
+      "GCC"
+    ]
+  },
+  {
     "id": "3b79d51135",
     "title": "About GreyRadius Consulting | Boutique Market Entry Strategy",
     "description": "GreyRadius is a boutique strategy and growth consulting firm founded in 2017. Offices in Delhi, Dubai, Singapore, and Brussels. 200+ projects delivered across India, GCC, Southeast Asia, and Africa.",
@@ -1914,6 +1927,19 @@
     ]
   },
   {
+    "id": "95fddee62c",
+    "title": "Enterprise AI Sales in the GCC – How to Convert a Successful Pilot into a Paid Deployment",
+    "description": "",
+    "url": "/blogs/enterprise-ai-sales-gcc-pilot-to-paid-deployment/",
+    "type": "Blog",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": [
+      "GCC"
+    ]
+  },
+  {
     "id": "e57c82536e",
     "title": "ESG Reporting & Sustainability Consulting | Market Entry",
     "description": "GreyRadius helps ESG software companies, sustainability consulting firms, and green finance advisors with market entry strategy, GTM execution, and.",
@@ -3543,6 +3569,20 @@
     "type": "Newsletter",
     "industries": [],
     "geographies": []
+  },
+  {
+    "id": "adc5936514",
+    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 9–15 November 2026",
+    "description": "Hospital investment, pharma earnings and oncology regulatory decisions. Yatharth · Jubilant Pharmova · FDA and European regulatory pathways.",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-nov09-15-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Healthcare & Life Sciences",
+      "Financial Services"
+    ],
+    "geographies": [
+      "Europe"
+    ]
   },
   {
     "id": "d99b80d20c",
@@ -7440,6 +7480,19 @@
     "geographies": []
   },
   {
+    "id": "4f02525ac3",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 9–15 November 2026",
+    "description": "EV registrations, battery recycling policy and fleet electrification. India EV demand · Battery materials · Electric fleets and charging.",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-nov09-15-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": [
+      "India"
+    ]
+  },
+  {
     "id": "5cd920ac91",
     "title": "The Cheapest Factory Location Can Become the Most Expensive Decision",
     "description": "",
@@ -7724,6 +7777,17 @@
     "geographies": []
   },
   {
+    "id": "06a27442df",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 9–15 November 2026",
+    "description": "Enterprise AI delivery, commercial platforms and sovereign deployment. Cognizant · IBM · OpenAI · Voice AI and purchasing pathways.",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-nov09-15-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": []
+  },
+  {
     "id": "87f70e83b8",
     "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | June 29–July 5, 2026",
     "description": "Weekly enterprise AI intelligence from GreyRadius: Microsoft $2.5B Frontier Company launch, HCLTech $1.14B AI services deal, NVIDIA compute financing models, UN AI governance panel, Anthropic Claude Sonnet 5 and sovereign AI deployment.",
@@ -7979,6 +8043,22 @@
     "geographies": []
   },
   {
+    "id": "f831330d87",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 9–15 November 2026",
+    "description": "AI infrastructure commissioning, financing and power readiness. India and GCC campuses · Singapore capacity · Compute and power delivery.",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-nov09-15-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": [
+      "India",
+      "GCC",
+      "Southeast Asia"
+    ]
+  },
+  {
     "id": "89631699b3",
     "title": "The Stack | GreyRadius Weekly Infrastructure Intelligence",
     "description": "Weekly infrastructure intelligence from GreyRadius: Meta C$13 billion 1GW Alberta AI data centre, UK designates AWS/Microsoft/Google/Oracle as Critical Third Parties, MasTec acquires Superior Group for US$1.65 billion.",
@@ -8205,6 +8285,17 @@
     "type": "Newsletter",
     "industries": [
       "Technology & SaaS",
+      "Manufacturing & Industrials"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "733f1bcacc",
+    "title": "The Wafer | Weekly Semiconductor Intelligence | 9–15 November 2026",
+    "description": "Semiconductor equipment earnings, foundry revenue and power-chip demand. Applied Materials · Infineon · TSMC · MediaTek · Onto Innovation.",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-nov09-15-2026/",
+    "type": "Newsletter",
+    "industries": [
       "Manufacturing & Industrials"
     ],
     "geographies": []
