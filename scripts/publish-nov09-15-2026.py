@@ -57,11 +57,8 @@ def newsletter(config, hub, wafer_policy):
         assert len(page.select(".highlight")) == 5
         assert len(page.select("tbody tr")) == 5
         raw = str(page)
-    elif series == "the-wafer" and wafer_policy == "keep":
-        raw = raw.replace(
-            "The SMIC profit report and GlobalFoundries groundbreaking candidate are excluded pending original-source confirmation.",
-            "The SMIC profit report and GlobalFoundries groundbreaking candidate are included as clearly flagged, unverified research candidates pending original-source confirmation.",
-        )
+    # User approved retaining the complete supplied Wafer edition unchanged,
+    # including both verification-pending stories and its existing editorial note.
     expected = weekly.parse(raw)
     back = (
         '<nav aria-label="Newsletter navigation" style="padding:.85rem 1rem;background:#132846;color:white;font:14px sans-serif;">'
@@ -138,7 +135,7 @@ def listing(section, url, title):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--wafer-policy", choices=["pending", "exclude", "keep"], default="pending")
+    parser.add_argument("--wafer-policy", choices=["exclude", "keep"], default="keep")
     args = parser.parse_args()
     own = {SITE / (u.lstrip("/") + "index.html") for u in [BLOG, CASE]}
     details = [p for section in ["insights/newsletters", "blogs", "case-studies"]

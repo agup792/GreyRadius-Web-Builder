@@ -150,6 +150,18 @@ test("Nov 9 newsletters retain current-week dates and matching highlights", () =
   }
 });
 
+test("Nov 9 Wafer keeps all seven supplied stories and verification labels", () => {
+  const html = fs.readFileSync(path.join(root,
+    "insights/newsletters/the-wafer/semiconductor-intelligence-nov09-15-2026/index.html"), "utf8");
+  assert.equal([...html.matchAll(/class="story(?:\s[^"]*)?"/g)].length, 7);
+  assert.equal([...html.matchAll(/class="highlight"/g)].length, 7);
+  assert.ok(html.includes('id="wafer-story-6"'));
+  assert.ok(html.includes('id="wafer-story-7"'));
+  assert.ok(html.includes("Verification pending"));
+  assert.ok(html.includes("This is a research candidate, not a verified financial announcement."));
+  assert.ok(html.includes("The SMIC profit report and GlobalFoundries groundbreaking candidate are excluded pending original-source confirmation."));
+});
+
 test("GCC AI articles preserve all tables and limitations on claimed outcomes", () => {
   const blog = fs.readFileSync(path.join(root,
     "blogs/enterprise-ai-sales-gcc-pilot-to-paid-deployment/index.html"), "utf8");
