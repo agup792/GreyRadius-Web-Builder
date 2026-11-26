@@ -34,10 +34,10 @@ test("every archive lists each weekly edition only once", () => {
     }
   }
   const links = cardLinks(archive("the-signal"));
-  for (const week of ["sep21-27", "sep28-oct4", "oct5-11", "oct12-18", "oct19-25", "oct26-nov01", "nov02-08", "nov09-15"]) {
+  for (const week of ["sep21-27", "sep28-oct4", "oct5-11", "oct12-18", "oct19-25", "oct26-nov01", "nov02-08", "nov09-15", "nov16-22"]) {
     assert.equal(links.filter((url) => url.includes(`${week}-2026`)).length, 1, week);
   }
-  const recent = ["nov09-15", "nov02-08", "oct26-nov01", "oct19-25", "oct12-18", "oct5-11", "sep28-oct4", "sep21-27"];
+  const recent = ["nov16-22", "nov09-15", "nov02-08", "oct26-nov01", "oct19-25", "oct12-18", "oct5-11", "sep28-oct4", "sep21-27"];
   recent.forEach((week, i) => assert.ok(links[i].includes(`${week}-2026`)));
 });
 
@@ -174,4 +174,25 @@ test("GCC AI articles preserve all tables and limitations on claimed outcomes", 
   assert.ok(caseStudy.includes("No verified baseline, post-engagement performance figures, or signed-contract outcomes were supplied."));
   assert.ok(caseStudy.includes("actual reductions in cycle time, increases in conversion, and contracted revenue gains were not provided."));
   assert.doesNotMatch(blog + caseStudy, /w:pPr|w:tbl|Primary keyword:|Secondary keywords:/);
+});
+
+test("Nov 16 editions have matching story and highlight counts and current dates", () => {
+  for (const [name, prefix, count] of [
+    ["healthcare", "healthcare-brief", 7],
+    ["charged", "ev-battery-intelligence", 14],
+    ["the-signal", "enterprise-ai-intelligence", 9],
+    ["the-stack", "infrastructure-brief", 27],
+    ["the-wafer", "semiconductor-intelligence", 18],
+  ]) {
+    const html = fs.readFileSync(path.join(root,
+      `insights/newsletters/${name}/${prefix}-nov16-22-2026/index.html`), "utf8");
+    assert.equal([...html.matchAll(/class="story(?:\s[^"]*)?"/g)].length, count, name);
+    assert.equal([...html.matchAll(/class="highlight"/g)].length, count, name);
+    assert.match(html, /16–22 November 2026/);
+    assert.doesNotMatch(html, /9–15 November 2026/);
+    assert.ok(html.includes('rel="canonical"'), name);
+  }
+  const signal = fs.readFileSync(path.join(root,
+    "insights/newsletters/the-signal/enterprise-ai-intelligence-nov16-22-2026/index.html"), "utf8");
+  assert.ok(signal.includes("eligibility for this reporting window remains unconfirmed"));
 });

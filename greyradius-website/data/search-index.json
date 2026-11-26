@@ -3512,6 +3512,17 @@
     "geographies": []
   },
   {
+    "id": "4e786f9e62",
+    "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 16–22 November 2026",
+    "description": "Oncology biosimilars, healthcare acquisitions and licensing partnerships. Biocon · Arcera · Viatris · Lilly · Pharmaceutical commercialisation.",
+    "url": "/insights/newsletters/healthcare/healthcare-brief-nov16-22-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Healthcare & Life Sciences"
+    ],
+    "geographies": []
+  },
+  {
     "id": "a7c3c522cf",
     "title": "Healthcare | GreyRadius Weekly Healthcare Brief | 19–25 October 2026",
     "description": "Mercury-device phase-out, rural healthcare funding and FDA decisions. India 2030 target · US nursing workforce · Rural access and drug approvals.",
@@ -7382,6 +7393,17 @@
     "geographies": []
   },
   {
+    "id": "4f90e216a9",
+    "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 16–22 November 2026",
+    "description": "Electric fleets, battery supply and charging economics. Mahindra and Uber · CEER financing · LFP batteries · Fleet charging.",
+    "url": "/insights/newsletters/charged/ev-battery-intelligence-nov16-22-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Energy & Chemicals"
+    ],
+    "geographies": []
+  },
+  {
     "id": "a955980f43",
     "title": "The Charged | GreyRadius Weekly EV & Battery Intelligence | 17–23 August 2026",
     "description": "",
@@ -7643,6 +7665,17 @@
     "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 14 September – 20 September 2026",
     "description": "",
     "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-sep14-20-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS"
+    ],
+    "geographies": []
+  },
+  {
+    "id": "a3b26f2bcd",
+    "title": "The Signal | GreyRadius Weekly Enterprise AI Intelligence | 16–22 November 2026",
+    "description": "Enterprise AI governance, sovereign delivery and workflow integration. IBM · Microsoft and Salesforce · OpenAI · HCLTech and Cohere.",
+    "url": "/insights/newsletters/the-signal/enterprise-ai-intelligence-nov16-22-2026/",
     "type": "Newsletter",
     "industries": [
       "Technology & SaaS"
@@ -7946,6 +7979,22 @@
     "geographies": []
   },
   {
+    "id": "4304de3a33",
+    "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 16–22 November 2026",
+    "description": "AI infrastructure investment, sovereign cloud and power readiness. India and GCC infrastructure · Compute contracts · Power and permitting.",
+    "url": "/insights/newsletters/the-stack/infrastructure-brief-nov16-22-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Financial Services",
+      "Real Estate & Infrastructure"
+    ],
+    "geographies": [
+      "India",
+      "GCC"
+    ]
+  },
+  {
     "id": "b84e790c63",
     "title": "The Stack | GreyRadius Weekly Infrastructure Brief | 17–23 August 2026",
     "description": "",
@@ -8243,6 +8292,18 @@
     "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-sep14-20-2026/",
     "type": "Newsletter",
     "industries": [],
+    "geographies": []
+  },
+  {
+    "id": "a4c37232c9",
+    "title": "The Wafer | Weekly Semiconductor Intelligence | 16–22 November 2026",
+    "description": "Semiconductor export controls, advanced packaging and AI supply chains. Micron · NVIDIA · Intel Foundry · Photonics and semiconductor investment.",
+    "url": "/insights/newsletters/the-wafer/semiconductor-intelligence-nov16-22-2026/",
+    "type": "Newsletter",
+    "industries": [
+      "Technology & SaaS",
+      "Financial Services"
+    ],
     "geographies": []
   },
   {

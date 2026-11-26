@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-18T14:12:42.611Z",
+  "generatedAt": "2026-11-26T09:25:00.227Z",
   "totals": {
-    "htmlFiles": 834,
-    "indexablePages": 710,
+    "htmlFiles": 839,
+    "indexablePages": 715,
     "redirects": 117,
     "noindexPages": 122,
     "brokenInternalLinks": 0,
@@ -16,7 +16,7 @@
     "Industry": 476,
     "Insight": 35,
     "Market Entry Guide": 23,
-    "Newsletter": 101,
+    "Newsletter": 106,
     "Page": 5,
     "Service": 7
   },
